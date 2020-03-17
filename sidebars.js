@@ -2,6 +2,7 @@ module.exports = {
   someSidebar: {
     Documentation: [
         'install',
+        'javascript-arguments',
         'integrating',
         'offline-online-automation',
         'smtp',
