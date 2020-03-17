@@ -17,111 +17,112 @@ Location to download:
 
 ### Install:
 
-1.  Put nodejshelper folder on your server extensions folder. Live helper chat extensions folder. It should look like "extension/nodejshelp/..."
-2.  Installing NodeJs
+1. Put nodejshelper folder on your server extensions folder. Live helper chat extensions folder. It should look like "extension/nodejshelp/..."
+2. Installing NodeJs
     1.  Ubuntu [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
     2.  Centos [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server)
         1.  Easiest is just install from EPEL repository. See tutorial
-3.  For publish notifications to work you have to install [Redis](http://redis.io/)
-    1.  On Centos it's easy as yum install redis
-    2.  Make redis startup then os starts
-        1.  systemctl enable redis.service
-    3.  Start redis service
-        1.  systemctl start redis.service
-4.  Now just navigation to extension server folder (extension/nodejshelper/server)
-    1.  We now should install dependency packages by issueing these commands
-        1.  npm install socket.io
-        2.  npm install redis
-5.  Adjust settings in:
-    1.  extension/nodejshelper/server/settings.js file
-    2.  extension/nodejshelper/design/nodejshelpertheme/tpl/pagelayouts/parts/nodejshelper_config.tpl.php set your node.js server address and port.
-6.  Enable extension in settings.ini.php file.
-    1.  'extensions' =>   
-              array (  
-                0 => 'nodejshelper',  
-              ),
-7.  Clean cache from back office.
-8.  Now ir order to make sure that everything works you can navigation to extension/nodejshelper/server and execute
-    1.  node server.js
-9.  Start some chat, you should see some messages in console.
-10.  Making running NodeJs as service on Centos
-    1.  For this we need one more packaged so while being in server folder execute 
-        1.  npm install forever
-    2.  You may want to symlink forver to /usr/bin/forever
-11.  Next we have to write nodejs service file. It's content can be the following (vim /usr/lib/systemd/system/nodejshelper.service). Adjust bolded variables based on your enviroment. Uou may want to add nodejs as user also (adduser nodejs)
+3. For publish notifications to work you have to install [Redis](http://redis.io/)
+   1.  On Centos it's easy as yum install redis
+   2.  Make redis startup then os starts
+       1.  systemctl enable redis.service
+   3.  Start redis service
+       1.  systemctl start redis.service
+4. Install composer dependencies. `cd extension/nodejshelper && componser install`
+5. Install node dependencies `cd extension/nodejshelper/serversc/lhc && npm install`
+6. https://github.com/LiveHelperChat/NodeJS-Helper/blob/master/nodejshelper/serversc/lhc/server.js#L54 file. Set same secret hash as your [settings.ini.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L12)
+7. extension/nodejshelper/settings/settings.ini.php (make copy of settings.ini.default.php)
+8. Enable extension in settings.ini.php file.
+   1.  'extensions' =>   
+             array (  
+               0 => 'nodejshelper',  
+             ),
+9. Clean cache from back office.
+10. Now ir order to make sure that everything works you can navigation to extension/nodejshelper/serversc/lhc and execute `node server.js`
+11.  Start some chat, you should see some node messages in console.
+12.  Making running NodeJs as service on Centos. `npm install -g forever`
+13.  Next we have to write nodejs service file. It's content can be the following (vim /usr/lib/systemd/system/nodejshelper.service). Adjust bolded variables based on your enviroment. You may want to add nodejs as user also (adduser nodejs)
 
 ``` 
-    > [Unit]
-    > Description=Live helper chat NodeJS Daemon
-    > 
-    > [Service]
-    > User=**nodejs**
-    > ExecStart=**/usr/bin/forever /var/www/client/lhc_web/extension/nodejshelper/server/server.js**
-    > LimitNOFILE=100000
-    > 
-    > [Install]
-    > WantedBy=multi-user.target</pre>
-
-    Now you can run service by executing
+     [Unit]
+     Description=Live helper chat NodeJS Daemon
+     
+     [Service]
+     User=nodejs
+     ExecStart=/usr/bin/forever /var/www/client/lhc_web/extension/nodejshelper/serversc/lhc/server.js
+     LimitNOFILE=100000
+     
+     [Install]
+     WantedBy=multi-user.target
 ```
 
 12.  systemctl start nodejshelper.service
 
 13.  To enable it on startup just execute systemctl enable nodejshelper.service
 
-Have fun. This extension is very usefull especialy for chatbox. Completely eliminates synchonization calls.
-
 ### How to run nodejs under nginx as proxy?
 
 In this example node.js proxy listens on 444 port.
 
 ```
-> server {  
->     listen         *:80;  
->     server_name     node.livehelperchat.com;  
->       
->     location / {  
->           proxy_set_header X-Real-IP $remote_addr;  
->           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
->           proxy_set_header Host $http_host;  
->           proxy_set_header X-NginX-Proxy true;  
->       
->           proxy_pass http://127.0.0.1:444/;  
->           proxy_redirect off;  
->           proxy_http_version 1.1;  
->           proxy_set_header Upgrade $http_upgrade;  
->           proxy_set_header Connection "upgrade";  
->     }  
-> }
+ server {  
+     listen         *:80;  
+     server_name     node.livehelperchat.com;  
+       
+     location / {  
+           proxy_set_header X-Real-IP $remote_addr;  
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+           proxy_set_header Host $http_host;  
+           proxy_set_header X-NginX-Proxy true;  
+       
+           proxy_pass http://127.0.0.1:8000/;  
+           proxy_redirect off;  
+           proxy_http_version 1.1;  
+           proxy_set_header Upgrade $http_upgrade;  
+           proxy_set_header Connection "upgrade";  
+     }  
+ }
 ```
 
-And here is how nodejshelper_config.tpl.php settings part should look like
-
+If you are using sub-location. No need separation subdomain for node
 ```
-> $nodeJsHelperSettings = array (  
->         'prefix' => 'http://',  
->         'host' => 'node.livehelperchat.com',  
->         'port' => '80',  
->         'secure' => false,  
->         'use_cdn' => true, // Use google provided socket.io.js path  
->         'use_publish_notifications' => true, // Redis has to be installed and working  
->         'redis' => array (  
->                    'scheme' => 'tcp',
->                     'host'   => '127.0.0.1',
->                     'port'   => 6379,
->         ),
->         'instance_id' => 0// If you are using automated hosting extension use erLhcoreClassInstance::getInstance()->id   as value
-> 
-> );
+location /socketcluster/ {
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-NginX-Proxy true;
+
+      proxy_pass http://127.0.0.1:8000/;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+}
+```
+
+Here is how extension/nodejshelper/settings/settings.ini.php settings part should look like
+
+```php
+return array(
+    'connect_db' => 'localhost',
+    'connect_db_id' => 0,
+    'automated_hosting' => false,
+    'public_settings' => array(
+        'hostname' => (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null),
+        'path' => '/socketcluster/',
+        'port' => null, //some custom port
+        'secure' => null, // true || false
+    )
+);
 ```
 
 ### Tip
 
-If you are provinding separate instalations for each client manually you can just set unique number for instance_id and each installation will have it's own space and will be able to use NodeJS. That means that this extension can be used for unlimited number of chats instances on the same server. You just have to be sure that instance_id is unique, it can be either number or text.
+If you are providing separate installations for each client manually you can just set unique number for instance_id and each installation will have it's own space and will be able to use NodeJS. That means that this extension can be used for unlimited number of chats instances on the same server. You just have to be sure that instance_id is unique, it can be either number or text.
 
 ### How to run node.js as background service?
 
-Need to notice one thing that you may have to uncrease ulimit in sytem to accept more connections than 1024\. I saw some flaws then nodejs stopped accepting connections because of this.
+Need to notice one thing that you may have to increase ulimit in system to accept more connections than 1024. I saw some flaws then nodejs stopped accepting connections because of this.
 
 ### How does it works and what ajax calls it eliminates?
 
@@ -155,11 +156,3 @@ Desktop client -> Web server -> Redis -> NodeJs pulls notification -> Emits sign
 ### Is there any fail over if my NodeJs dies or client cannot connect?
 
 Yes. Ajax calls is eliminated only if client succesfully connects to NodeJs. If during chat session customer or operator looses connection to NodeJs, let say node dies. LHC automatically falls back to standard ajax queries.
-
-### Does NodeJs extension is compatible with Desktop client?
-
-**Yes**, but you will have to use Redis and enable notifications in settings.ini.js file
-
-### What features of node.js you are using?
-
-Written Node.js server uses [socket.io](https://github.com/LearnBoost/socket.io) and [Rooms](https://github.com/LearnBoost/socket.io/wiki/Rooms)
