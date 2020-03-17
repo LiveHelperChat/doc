@@ -6,16 +6,16 @@ sidebar_label: Unbranding
 
 There is two options to unbrand
 
-*   Use themes and restyle basic things from [back office](/how-to-use-themes-330a.html)
+*   Use themes and restyle basic things from [back office](theme.md)
 *   Use unbranding extension and modify all required files by hand
 
-For majority of users I suggest just use theming features [for restyling](/how-to-use-themes-330a.html).
+For majority of users I suggest just use theming features [for restyling](theme.md).
 
 In order to unbrand esility Live Helper Chat we have a module for that. So unbranding takes just few steps.
 
 Download "unbrand" extension from [https://github.com/remdex/livehelperchat-extensions](https://github.com/remdex/livehelperchat-extensions) and put it in extension folder.
 
-Before making any changes please make sure that you have [disabled a cache.](/article/view/40) Also it's would be nice if you read about [debug output.](/how-to-use-debug-output-291a.html)
+Before making any changes please make sure that you have [disabled a cache.](debug.md#disabling-cache) Also it's would be nice if you read about [debug output.](debug.md#enabling-debug-output)
 
 ## Activate unbrand extension in settings/settings.ini.php
 
@@ -32,7 +32,7 @@ It's just enough write your own company copyright tag and replace images in "ext
 
 Don't forget to change some settings in back office.
 
-Also [enable cache](/article/view/40) after you finished all changes.
+Also [enable cache](debug.md#disabling-cache) after you finished all changes.
 
 ## How to change default application sounds?
 

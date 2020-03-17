@@ -7,7 +7,7 @@ In order to enable voice messages to visitors you have to do the following thing
 
 *   Make sure you are running 3.29v
 *   Make sure you are using new widget embed code.
-*   Your [nginx](https://livehelperchat.com/nginx-configuration-tips-132a.html) or [apache](https://blog.addpipe.com/recording-mp3-audio-in-html5-using-vmsg-a-webassembly-library-based-on-lame/) allows to access wasm file types and sends proper headers.
+*   Your [nginx](nginx-configuration-tips.md) or [apache](https://blog.addpipe.com/recording-mp3-audio-in-html5-using-vmsg-a-webassembly-library-based-on-lame/) allows to access wasm file types and sends proper headers.
 *   In file configuration section [https://demo.livehelperchat.com/site_admin/file/configuration](https://demo.livehelperchat.com/site_admin/file/configuration) you set
     *   "Allowed files types for operators" contains "mp3" as supported extension
     *   "Allowed files types for users" contains "mp3" as supported extension

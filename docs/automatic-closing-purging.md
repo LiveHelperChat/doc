@@ -11,7 +11,7 @@ For it you have to setup in chat configuration
 To execute process itself there is two options
 
 *   Execute automatic chats closing/purging in back office by navigating to "System configuration" => "Live help configuration" => "Maintenence" and there you will be able to close, delete chats
-*   If you do not want manually maintain these things you can just setup [cronjob](https://livehelperchat.com/how-to-setup-lhc-cronjob-340a.html)
+*   If you do not want manually maintain these things you can just setup [cronjob](development/cronjob.md)
 
 What chat's closes **"Automatic chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
 

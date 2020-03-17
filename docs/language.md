@@ -182,12 +182,12 @@ So if you want that it would be RTL just write rtl instead of ltr
 
 Languages which may require RTL support. We do not have at the moment translated any of these languages. But now you can be sure, that it will work 100% with Live Helper Chat
 
- * Arabic: ar
- * Chinese: zh
- * Farsi: fa
- * Hebrew: he, iw
- * Japanese: ja
- * Urdu: ur
- * Yiddish: yi, ji
+* Arabic: ar
+* Chinese: zh
+* Farsi: fa
+* Hebrew: he, iw
+* Japanese: ja
+* Urdu: ur
+* Yiddish: yi, ji
  
  So if anyone will translate to any of these langauges, please send me translation. 

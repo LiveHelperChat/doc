@@ -28,7 +28,7 @@ Small tutorial how to move from one location to another location LHC instance.
  * Make sure cache folder is writable
  * Clear cache in back offce
  * Enable caching by setting previous values to true
-
+ 
 # Should I export table lh_chat_online_user footprint as well?
 
 No it's not necessarily. It will fill up again just you won't have users browsing path.

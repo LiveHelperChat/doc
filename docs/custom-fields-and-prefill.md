@@ -146,9 +146,9 @@ The most important part is this. It encrypts data using these two above keys.
 There is two ways to update them
 
 1.  Either update attributes by changing prefilled attribute values. Only hidden fields values are updated. After you have updated any of these
-    1.  _LHCChatOptions.attr_prefill.push || LHCChatOptions.attr_prefill_admin || LHCChatOptions.attr_
-    2.  Just call _lh_inst.refreshCustomFields();_
+    1.  LHCChatOptions.attr_prefill.push || LHCChatOptions.attr_prefill_admin || LHCChatOptions.attr
+    2.  Just call lh_inst.refreshCustomFields();
 2.  ​Another way is just call function with arguments. In this example we pass order_id as regular field and Transaction ID as encrypted key
-    1.  _lh_inst.updateAttribute({"order_id":{"val":454},"Transaction ID":{"val":"<?php echo base64_encode(lhSecurity::encrypt('data_to_encrypt','_<secret_key>_','_<secret_data_key>'_'))?>","enc":true}});_
+    1.  lh_inst.updateAttribute({"order_id":{"val":454},"Transaction ID":{"val":"<?php echo base64_encode(lhSecurity::encrypt('data_to_encrypt','_<secret_key>_','_<secret_data_key>'_'))?>","enc":true}});_
 
-_​​_After these actions operator back office chat window will update an chat data will be shown on right column in main cha tinformation tab.
+After these actions operator back office chat window will update an chat data will be shown on right column in main cha tinformation tab.

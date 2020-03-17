@@ -66,10 +66,10 @@ And here is instant auto response message.
 And here goes automatic auto response message.  
 [![](https://livehelperchat.com/var/media/images/tutorial/22.jpg)](https://livehelperchat.com/var/media/images/tutorial/22.jpg)
 
-*   [Wondering how to setup automatic online/work hours?](https://livehelperchat.com/how-to-setup-online-hours-work-hours-and-ignore-operators-status-completely-316a.html)
-*   [Need automatically change operator status to offline/online?](https://livehelperchat.com/how-to-go-offline-online-automatically-317a.html)
-*   [Want to rebrand it according to your site style?](https://livehelperchat.com/free-themes-22c.html)
-*   [Don't know how to use screen sharing?](https://livehelperchat.com/how-to-use-co-browsing-screen-sharing-388a.html)
+*   [Wondering how to setup automatic online/work hours?](online-hours.md)
+*   [Need automatically change operator status to offline/online?](offline-online-automation.md)
+*   [Want to rebrand it according to your site style?](theme.md)
+*   [Don't know how to use screen sharing?](co-browsing.md)
 *   Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
 
 ### How to login?

@@ -3,6 +3,7 @@ module.exports = {
     Documentation: [
         'install',
         'integrating',
+        'offline-online-automation',
         'smtp',
         'voice_messages',
         'upgrading',

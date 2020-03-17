@@ -9,7 +9,7 @@ Here is basic tutorial how to perform upgrades since 2.04 version. This version 
 2.  Got to "System" -> "Update information" -> and see does LHC finds any differences in database. If it does just click update database.
 3.  Logout from LHC
 4.  [Download most recent LHC version.](http://livehelperchat.com/article/static/5) Overwrite doc,ezcomponents,lib,modules,pos,translations,design folders.
-5.  Disable [cache in settings.ini.php](https://livehelperchat.com/article/view/40)
+5.  Disable [cache in settings.ini.php](debug#disabling-cache)
 6.  Login to LHC again and go to `"System configuration" -> "Clear Cache" and click Clear Cache`
 7.  Now you can enable cache again in your settings.ini.php
 
