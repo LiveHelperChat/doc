@@ -5,7 +5,7 @@ module.exports = {
         'javascript-arguments',
         'integrating',
         'upgrading',
-        'smtp'
+        'development/quick-guide'
     ],
     Users: [
         'users/users-groups',
@@ -39,7 +39,8 @@ module.exports = {
         'canned',
         'auto-responder',
         'anonymize',
-        'auto-close-delete'
+        'auto-close-delete',
+        'chat/files-maintenance',
     ],
     Department: [
         'department-transfer'
@@ -55,6 +56,11 @@ module.exports = {
     Visitors: [
         'blocking',
         'online-visitors'
+    ],
+    System: [
+        'smtp',
+        'development/cronjob',
+        'system/system-commands',
     ],
     Developing: [
         'hooks',
@@ -82,7 +88,6 @@ module.exports = {
         'development/auto-login',
         'development/single-sign-on',
         'development/docker',
-        'development/cronjob',
         'development/site-access',
         'development/remove-index-php',
         'development/http-and-https'
