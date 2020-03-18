@@ -29,6 +29,7 @@ module.exports = {
         'need-help',
         'chat/multiple-domains',
         'voice_messages',
+        'chat/speech-to-text',
         'paid-chats',
         'product',
         'online-hours',
