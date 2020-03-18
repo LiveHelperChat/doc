@@ -86,7 +86,8 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js')
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/LiveHelperChat/doc/edit/master/'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
