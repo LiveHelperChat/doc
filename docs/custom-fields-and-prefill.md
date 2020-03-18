@@ -4,6 +4,13 @@ title: Pre-filling form fields and adding custom fields
 sidebar_label: Custom fields
 ---
 
+### Defining fields which visitor can fill
+Easiest way to do that is to define them in back office. It can be done in
+
+ > "Settings" > "Live help configuration" > "Start chat form settings" > "Default settings" > "Custom fields"
+
+See video https://youtu.be/huUlx55velk?t=88
+
 ### New way passing custom variables
 
 System Configuration -> Additional chat variables

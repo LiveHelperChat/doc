@@ -4,7 +4,7 @@ title: How to use chrome extension?
 sidebar_label: Chrome extension
 ---
 
-### Tutorial
+## Tutorial
 
 1.  Two install ways
     1.  A (recommended way)
@@ -46,4 +46,18 @@ View for popup
 
 Video tutorial
 
-<iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/8X2RsE8kMt0" width="560"></iframe>
+<iframe height="315" src="//www.youtube.com/embed/8X2RsE8kMt0" width="560"></iframe>
+
+## FAQ
+
+### I can't login from the Chrome v80
+
+```
+A cookie associated with a cross-site resource at https:/xxxxxxxxx / was set without the `SameSite` attribute. It has been blocked, as Chrome now only delivers cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.
+```
+
+Add this to the .htaccess file
+
+```
+Header always edit Set-Cookie (.*) "$1; SameSite=None; Secure"
+```

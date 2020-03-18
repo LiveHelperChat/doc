@@ -1,49 +1,70 @@
 module.exports = {
   someSidebar: {
-    Documentation: [
+    Setup: [
         'install',
         'javascript-arguments',
         'integrating',
-        'offline-online-automation',
-        'smtp',
-        'voice_messages',
         'upgrading',
+        'smtp'
+    ],
+    Users: [
+        'users/users-groups',
+        'users/users-roles',
+        'users/users-users',
+        'users/users-login-options',
         'permission',
-        'anonymize',
+        'invisible-mode',
+        'operators-chat',
+        'offline-online-automation',
+        'auto-assignment'
+    ],
+    Chat: [
+        'custom-fields-and-prefill',
+        'theme',
+        'dashboard',
+        'redirect-contact-form',
+        'co-browsing',
+        'commands',
+        'chat/chat-status',
+        'need-help',
+        'chat/multiple-domains',
+        'voice_messages',
         'paid-chats',
         'product',
-        'theme',
-        'commands',
-        'dashboard',
-        'co-browsing',
+        'online-hours',
         'priority',
         'proactive',
-        'blocking',
-        'canned',
         'leavingmessages',
-        'custom-fields-and-prefill',
-        'operators-chat',
+        'canned',
         'auto-responder',
-        'department-transfer',
-        'chrome-extension',
-        'google-analytics',
-        'need-help',
-        'redirect-contact-form',
-        'invisible-mode',
-        'online-hours',
-        'auto-assignment',
-        'auto-close-delete',
+        'anonymize',
+        'auto-close-delete'
+    ],
+    Department: [
+        'department-transfer'
+    ],
+    Bot: [
+        'how-to-use-bot',
+        'bot/bot-text',
+        'bot/bot-list',
+        'bot/bot-button-list',
+        'bot/bot-carousel',
+        'bot/collecting-information'
+    ],
+    Visitors: [
+        'blocking',
         'online-visitors'
     ],
-    Users: ['users/users-groups','users/users-roles','users/users-users','users/users-login-options'],
-    Chat: ['chat/chat-status','chat/multiple-domains'],
-    Bot: ['how-to-use-bot','bot/bot-text','bot/bot-list','bot/bot-button-list','bot/bot-carousel','bot/collecting-information'],
-    Developing: ['hooks',
+    Developing: [
+        'hooks',
         'debug',
         {
             type: 'category',
             label: 'Extending',
-            items: ['extending/writing-extension','extending/override-module','extending/override-template','development/override-class']
+            items: ['extending/writing-extension',
+                'extending/override-module',
+                'extending/override-template',
+                'development/override-class']
         },
         'development/rest-api',
         'development/move-chat',
@@ -61,6 +82,10 @@ module.exports = {
         'development/site-access',
         'development/remove-index-php',
         'development/http-and-https'
+    ],
+    Integration: [
+        'google-analytics',
+        'chrome-extension'
     ],
     Guides: ['doc1']
   },

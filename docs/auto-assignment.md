@@ -6,7 +6,7 @@ sidebar_label: Auto assignment
 
 ### Precondition
 
-To user explicitly has to be assigned department. It's not enough just check all departments. Near each department have to be checked department.
+To user explicitly has to be assigned department. It's not enough just check all departments. Within each department have to be checked department.
 
 ### Department adjustment
 

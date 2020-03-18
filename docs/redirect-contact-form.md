@@ -1,6 +1,6 @@
 ---
 id: redirect-contact-form
-title: Offline behaviour
+title: Offline behaviour [Old widget]
 sidebar_label: Contact form redirection
 ---
 

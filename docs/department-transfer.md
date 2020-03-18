@@ -6,17 +6,17 @@ sidebar_label: Department transfers
 
 This feature allows us to implement these types of workflows.
 
-Precondition
+## Precondition
 
 *   "General" is our main department | There is online operator
 *   "Commercial" is our initial department | There is online operator
 *   "Commercial" department has configured to what department chat has to be transfered if it was not accepted.
 
-Workflow
+## Workflow
 
 *   User request chat, but operator from department "Commercial" does not accepts chat for 30 second. This variable was configured in department "Commercial". So since that time no one accepted chat, chat is transfered to "General" department. Message for trasnfer is also being recorded.
 
-What happens then user closes the chat?
+## What happens then user closes the chat?
 
 *   Since user closes the chat workflow stops. To continue workflow cronjob have to be setup.
 *   "php cron.php -s site_admin -c cron/workflow"

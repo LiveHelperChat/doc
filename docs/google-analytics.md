@@ -3,6 +3,10 @@ id: google-analytics
 title: Integration with Google Analytics event tracking
 sidebar_label: Google Analytics
 ---
+## New widget
+You should refer to [Javascript Arguments](javascript-arguments.md) article
+
+## Old widget
 
 To integrate google analytics event tracking you just have to define callback for start chat action. Here is possible callbacks for widget embed code
 
