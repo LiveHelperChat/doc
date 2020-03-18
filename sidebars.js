@@ -33,15 +33,11 @@ module.exports = {
         'online-hours',
         'auto-assignment',
         'auto-close-delete',
-        'online-visitors',
-        {
-            type: 'category',
-            label: 'Bot',
-            items: ['how-to-use-bot','bot/bot-text','bot/bot-list','bot/bot-button-list','bot/bot-carousel']
-        }
+        'online-visitors'
     ],
     Users: ['users/users-groups','users/users-roles','users/users-users','users/users-login-options'],
     Chat: ['chat/chat-status','chat/multiple-domains'],
+    Bot: ['how-to-use-bot','bot/bot-text','bot/bot-list','bot/bot-button-list','bot/bot-carousel','bot/collecting-information'],
     Developing: ['hooks',
         'debug',
         {
