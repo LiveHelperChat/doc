@@ -62,10 +62,13 @@ module.exports = {
         {
             type: 'category',
             label: 'Extending',
-            items: ['extending/writing-extension',
+            items: [
+                'extending/override-quick',
+                'extending/writing-extension',
                 'extending/override-module',
                 'extending/override-template',
-                'development/override-class']
+                'development/override-class'
+            ]
         },
         'development/rest-api',
         'development/move-chat',

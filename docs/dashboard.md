@@ -3,6 +3,19 @@ id: dashboard
 title: Dashboard
 ---
 
+### How to change dashboard widgets position?
+
+1.  Repeat same steps untill 5 step and just look for "Home page dashboard widgets order"
+2.  | - means column. You can rearange as you want.
+3.  Dashboard possible widgets: online_operators, departments_stats, pending_chats, unread_chats, transfered_chats, active_chats, closed_chats
+
+### My operators does not see a departments statistic widget?
+
+You have to assign your operators new permission.  
+`lhuser => canseedepartmentstats`
+
+### Upgrading from older version
+
 Since 2.32v live helper has new main tab called Dashboard. 
 
 If you have upgraded but you do not see new dashboard tab Icon. You have to do the following.
@@ -18,16 +31,3 @@ Go to
     1.  Default after new install: dashboard,online_users,online_map
     2.  All possible options : dashboard, online_users, pending_chats, online_map, active_chats, unread_chats, closed_chats, online_operators
 6.  That's all after save you will see new dashboard tab
-
-### How to change dashboard widgets position?
-
-1.  Repeat same steps untill 5 step and just look for "Home page dashboard widgets order"
-2.  | - means column. You can rearange as you want.
-3.  Dashboard possible widgets: online_operators, departments_stats, pending_chats, unread_chats, transfered_chats, active_chats, closed_chats
-
-### My operators does not see a departments statistic widget?
-
-You have to assign your operators new permission.  
-`lhuser => canseedepartmentstats`
-
-Have fun.
