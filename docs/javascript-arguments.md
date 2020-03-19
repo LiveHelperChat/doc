@@ -4,7 +4,8 @@ title: Javascript arguments
 sidebar_label: Javascript arguments
 ---
 
-Here you will find all possible javascript arguments for new widget.
+Here you will find all possible javascript arguments for a new widget. If you want to pass custom variables or define custom fields refer to [custom fields](custom-fields-and-prefill.md) documentation.
+
 
 ## Javascript options
 
