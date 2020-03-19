@@ -20,6 +20,7 @@ module.exports = {
     ],
     Chat: [
         'chat/offline',
+        'chat/statistic',
         'custom-fields-and-prefill',
         'theme',
         'dashboard',
