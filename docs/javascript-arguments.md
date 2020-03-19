@@ -61,6 +61,7 @@ LHC_API.args = {
     pheight:520,
     pwidth:500,
     leaveamessage:true, // Should leave a message functionality be enabled or not | Optional
+    offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
     identifier : 'lhc', // Can be used for custom proactive invitation | Optional
     department: [4],    // Department, can be multiple or one | Optional
     product: [4,5],     // Product to choose from | Optional

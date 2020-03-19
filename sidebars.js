@@ -19,10 +19,10 @@ module.exports = {
         'auto-assignment'
     ],
     Chat: [
+        'chat/offline',
         'custom-fields-and-prefill',
         'theme',
         'dashboard',
-        'redirect-contact-form',
         'co-browsing',
         'commands',
         'chat/chat-status',
@@ -35,7 +35,6 @@ module.exports = {
         'online-hours',
         'priority',
         'proactive',
-        'leavingmessages',
         'canned',
         'auto-responder',
         'anonymize',
