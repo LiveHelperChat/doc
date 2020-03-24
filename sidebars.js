@@ -63,6 +63,7 @@ module.exports = {
         'smtp',
         'development/cronjob',
         'system/system-commands',
+        'time-zone',
     ],
     Developing: [
         'hooks',

@@ -5,14 +5,17 @@ sidebar_label: Priority
 ---
 
 
-Chat priority can be set two ways.
+Chat priority can be set three ways.
 
-1.  Via embed code
-2.  Heritage from department priority
+1. Via embed code
+2. Heritage from department priority
+3. Define priority condition in `System configuration > Live Help configuration > Chat priority`
+
+## Via embed code
 
 While heritage from department does not require any additional actions from admin except set desirable priorities. Embed code requires additional attribute. Here is example of embed code with priority set to 5. It overrides department priority.
 
-## New widget
+### New widget
 
 In this case priority is set to 1
 
@@ -37,7 +40,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 ```
 
 
-## Old widget
+### Old widget
 
 In this case priority is set to 5
 
@@ -52,3 +55,22 @@ var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(po, s); })(); 
 </script>
 ```
+
+## Heritage from department priority
+
+Please refer to [department priority](department/department.md#priority-used-for-chats-priority) attribute
+
+## Define priority condition 
+
+This can be defined in
+> System configuration > Live Help configuration > Chat priority
+
+Example. Means all visitors with Europe/Helsinki timezone should get 101 as priority.
+
+![Chat priroity by attribute](/img/chat/chat-priority-attribute.jpg)
+
+There is in total three types of variables you can try to check against
+
+ * `lhc.<variable>` - you can find possible attributes definition in [https://api.livehelperchat.com](https://api.livehelperchat.com) under Models section.
+ * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
+ * `chat_variable.<extension_variable>`

@@ -72,6 +72,12 @@ Online hours can be defined
  
 ![](/img/department/online-hours.jpg)
 
+:::tip 
+You should set [time zone](time-zone.md) to match your working hours.
+:::
+
+---
+
 ## Notifications
 
 In this section you can define various notifications messaged based what happens within a chat.
