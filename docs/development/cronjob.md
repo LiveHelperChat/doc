@@ -31,6 +31,7 @@ Cronjob example
 Shell script. Set your paths.
 
 ```shell script
+#!/bin/sh
 fileCron='/home/lhc/cronjobs/running-workflow'
 
 for i in {1..12}
@@ -50,8 +51,6 @@ do
     sleep 5
 done
 ```
-#!/bin/sh
-
 
 ## Chat archive cronjob setup
 
