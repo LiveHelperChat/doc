@@ -4,22 +4,94 @@ title: Auto responder
 sidebar_label: Auto responder
 ---
 
-1.  Auto responder in proactive chat invitations.
-2.  Independent responder.
+1. Auto responder in proactive chat invitations.
+2. Independent responder. Without choosing department.
+3. Auto responder for specific department.
 
-This allows you to have the following workflow.
+## Auto responder apply order
+1. First we check does chat department has department specific auto responder. If it does we apply it.
+2. If not we search for default auto responder. (Without chosen department)
 
-1.  Then users starts chat. He receives preconfigured message. E.g. "one moment please..."
-2.  If the agent doesn’t accept within a time period (e.g. 1 minute) to user is send message. "we are currenty busy with another client right now, can you leave your name and email and we will follow up"
+## Auto responder main attributes
 
-Auto responder in general have three options.
+![](/img/auto-responder/auto-responder-main.jpg)
 
-![](https://livehelperchat.com/var/media/images/auto-responder.png)
+## Attributes
 
-*   Language - for what language this message should be shown, usefull if you would like to have difference response messages for different langueges
-*   Position - messages with lower values will be send the very first. If there is few auto response messages matching criteria the message with lower position will be send the very first.
-*   Wait message. This message is shown instantly as soon user fills form start fields. If empty no message is send to user.
-*   Wait timeout - how many seconds have to pass before timeout message is shown to user. The last one fields.
-*   Messages after no one received a message. This combined with user redirect if chat was not accepted for some time can lead to very fancy behaviour like writing that he will be redirected to contact form in a second.
+Here you will find all auto responder attributes and explanation what each of them does.
 
-These options can be independed from proactive chat. There is new link in "Chat related" configuration section. "Auto responder" it has the same fields.
+### Language
+
+For what language this message should be shown, usefull if you would like to have difference response messages for different languages. Also you can use just translations.
+
+### Position
+
+Messages with lower values will be send the very first. If there is few auto response messages matching criteria the message with lower position will be send the very first.
+
+### Department
+
+To what department auto responder should be applied.
+
+### Wait message.
+
+This message is shown instantly as soon user fills form start fields. If empty no message is send to user.
+
+### Offline message. 
+
+If department is offline and visitor starts a chat this message will be send instaed of default welcome message. If this message is empty - welcome message will be send.
+
+### Operator. 
+
+Visitor will see this operator nick.
+
+### Auto responder reset
+
+#### Minimum time in second how long sync has to be stopped before allowing reset auto responder
+
+Sometimes happens on mobile devices that visitors leave a page. So sync process and auto responder stops working because no calls are executed. So if user returns after 70 or more seconds reset auto responder to state where it left.
+
+#### Maximum time in seconds how long sync has to be stopped before we do not reset auto responder
+
+But if user was offline more than this limit we won't reset as user were to long just offline. So he might be redirect to survey etc.
+
+### Disable reset auto responder if visitor was redirected to survey
+
+If user was redirected to survey we disabled reset auto responder. This means if visitor is redirected to survey we won't touch auto responder anymore. 
+
+### This auto responder applies only to proactive invitations.
+
+This auto responder won't be assigned to any department because it's used explicitly in proactive chat invitations. This option is usefull if you wan to have custom auto responder just for proactive chat invitations started chats.
+
+## Messaging attributes
+
+![](/img/auto-responder/auto-responder-messages.jpg)
+
+These sections should be self explanatory. You can have different type of messages based on chat state.
+
+### Pending chat messaging
+
+These messages will be send when chat is in pending mode
+ 
+### Visitor not replying messaging
+
+When operators writes message and visitor is not replying this type of messages will be send.
+
+### Operator not replying messaging
+
+When visitor writes a message and operator not replying this type of messages will be send.
+
+### On-hold chat messaging
+
+When operator makes chat on hold these type of messages will be send. Usefull while opeartor is looking for some information.
+
+### Close messaging
+
+This message will be send when operator closes a chat.
+
+### Survey
+
+You can redirect to survey visitor if chat remains for long period of time in pending state.
+
+### Add translation
+
+You can add custom translations based on user language. Language is detected from user browser headers.
