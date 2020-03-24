@@ -10,8 +10,8 @@ By default leave a message functionality is enabled in generated embed code. If 
 
 > Show a ‘leave a message form’ when there are no online operators
 
-when chat is offline it will be hidden. If you in "Start chat form settings" page enable.
-
+when chat is offline it will be hidden. If you in "[Start chat form settings](start-chat-form-settings.md)" page enable.
+ 
 > Enable leave a message functionality automatically if there are no online operators
 
 Offline widget will be shown again. So you can genarate embed code without enable leave a message functionality and later enable in start chat form settings page just.
@@ -71,3 +71,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 })();
 </script>
 ```
+
+## Offline settings
+
+You can also choose few options regarding offline message storage under
+
+> System configuration > Live Helper Configuration > Offline settings
+
+
+![Offline settings](/img/chat/offline-settings.jpg)
+
