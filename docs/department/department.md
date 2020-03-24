@@ -84,7 +84,7 @@ Please refer to [Department transfers](department-transfer.md) article.
 
 ## Product
 
-Please refer to [Department transfers](department/product.md) article.
+Please refer to [Product](department/product.md) article.
 
 ## Miscellaneous
 
