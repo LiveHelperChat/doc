@@ -43,7 +43,9 @@ module.exports = {
         'chat/files-maintenance',
     ],
     Department: [
-        'department-transfer'
+        'department/department',
+        'department-transfer',
+        'department/product'
     ],
     Bot: [
         'how-to-use-bot',
