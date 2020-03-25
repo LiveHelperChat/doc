@@ -7,7 +7,13 @@ module.exports = {
         'upgrading',
         'development/quick-guide'
     ],
-    Users: [
+    Design: [
+        'theme/theme',
+        'theme/widget-theme',
+        'theme/back-office-theme',
+        'theme/personal-theme'
+    ],
+   Users: [
         'users/users-groups',
         'users/users-roles',
         'users/users-users',
@@ -23,7 +29,6 @@ module.exports = {
         'chat/start-chat-form-settings',
         'chat/statistic',
         'custom-fields-and-prefill',
-        'theme',
         'chat/transferring-chat',
         'dashboard',
         'co-browsing',
