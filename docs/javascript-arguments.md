@@ -5,8 +5,6 @@ sidebar_label: Javascript arguments
 ---
 
 Here you will find all possible javascript arguments for a new widget. If you want to pass custom variables or define custom fields refer to [custom fields](custom-fields-and-prefill.md) documentation.
-
-
 ## Javascript options
 
 ```js
@@ -84,3 +82,44 @@ LHC_API.args = {
 })();
 </script>
 ```
+
+## Public methods
+
+Once you include live helper chat script you gain access to global variable `window.$_LHC`.
+
+Let say you include widget with position api. Widget status will be invisible, but you can show widget by executing.
+```js
+window.$_LHC.eventListener.emitEvent('showWidget');
+```
+
+To close widget.
+```js
+window.$_LHC.eventListener.emitEvent('closeWidget');
+```
+
+Toggle user sound setting
+```js
+window.$_LHC.eventListener.emitEvent('toggleSound');
+```
+
+To end the chat
+```js
+window.$_LHC.eventListener.emitEvent('endChat');
+```
+
+To add tag
+```js
+window.$_LHC.eventListener.emitEvent('addTag',['some_tag']);
+```
+
+To open popup
+```js
+window.$_LHC.eventListener.emitEvent('openPopup');
+```
+
+To redirect user to custom URL
+```js
+window.$_LHC.eventListener.emitEvent('location',['http://livehelperchat.com']);
+```
+
+
