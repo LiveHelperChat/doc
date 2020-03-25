@@ -7,6 +7,11 @@ module.exports = {
   organizationName: 'LiveHelperChat', // Usually your GitHub org/user name.
   projectName: 'doc', // Usually your repo name.
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-1221542-10',
+      // Optional fields.
+      anonymizeIP: true, // Should IPs be anonymized?
+    },
     navbar: {
       title: 'Live Helper Chat',
       logo: {
@@ -81,6 +86,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Live Helper Chat, Inc. Built with Docusaurus.`,
     },
   },
+  plugins: [],
   presets: [
     [
       '@docusaurus/preset-classic',
