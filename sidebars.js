@@ -29,6 +29,8 @@ module.exports = {
         'co-browsing',
         'commands',
         'chat/chat-status',
+        'chat/geo-configuration',
+        'chat/synchronization-sound',
         'need-help',
         'chat/multiple-domains',
         'voice_messages',

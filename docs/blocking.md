@@ -6,8 +6,11 @@ sidebar_label: Blocking
 
 ## How to block users based on their location?
 
-Since 2.07 version we have an option to block certain users by their country. This functionality can be found at "System configuration" => "Live help configuration" => "GEO adjustment"  
-.Here is main window of configuration. 
+We have an option to block certain users by their country. This functionality can be found at 
+
+ > "System configuration" => "Live help configuration" => "GEO adjustment"  
+
+Screenshot of main window
 
 ![](https://livehelperchat.com/var/media/images/geo-adjustment.png)
 
@@ -18,6 +21,12 @@ Variables explain
 *   Offline status - that means for these visitors chat will be offline all the time.
 *   hidden/disabled - that means if user tries to start a chat he will see message that chat is not supported in his country. For him also pro active invitations won't be shown. He also won't be able to chat.
 *   "Apply to chat widget status indicator these rules also? performance decrease is associated with this option" that means that this logic will be applied to initial stage and chat status widget generating phrase and widget initially will be shown as offline or hidden. Otherwise check will be applied on widget content only if user clicks it. There is a little performance penalty involved becaue within each reques script have to check visitor location.
+
+### Permissions
+
+For operator to be able configuration GEO Adjustments he has to have permission to
+
+> 'chat', 'geoadjustment'
 
 ### Few examples
 
@@ -37,7 +46,7 @@ Variables explain
 
 For that navigate to 
 
-"Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
+> "Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
 
 and just edit "Which ip should not be allowed to chat"
 
@@ -53,7 +62,7 @@ Values can be separated by comma, E.g 1.2.3.*,128.8.8.8
 
 For that navigate to 
 
-"Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
+> "Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
 
 and just edit "Which ip should be ignored in online users list, separate by comma"
 
