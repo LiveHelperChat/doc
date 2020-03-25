@@ -88,6 +88,10 @@ In this section you can define various notifications messaged based what happens
 
 Please refer to [Department transfers](department-transfer.md) article.
 
+## Auto assignment
+
+Please refer to [Auto assignment](auto-assignment.md) article.
+
 ## Product
 
 Please refer to [Product](department/product.md) article.
