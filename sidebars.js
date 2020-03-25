@@ -36,7 +36,6 @@ module.exports = {
         'voice_messages',
         'chat/speech-to-text',
         'paid-chats',
-        'product',
         'online-hours',
         'priority',
         'proactive',
