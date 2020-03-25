@@ -13,7 +13,7 @@ See video https://youtu.be/huUlx55velk?t=88
 
 ## Passing custom variables
 
-System Configuration -> Additional chat variables
+> System Configuration -> Additional chat variables
 
 If you want to pass nick you have to define it first in variables.
 
@@ -38,6 +38,24 @@ if (typeof lhc_var === 'undefined'){
 };
 lhc_var.gender = 'Gender';
 ```
+
+## Showing custom column in chat list
+
+It's possible in dashboard window to show custom column. This can be done by navigating to
+
+> System Configuration -> Additional chat columns
+
+ * `lhc.<variable>` - you can find possible attributes definition in [https://api.livehelperchat.com](https://api.livehelperchat.com) under Models section. E.g lhc.nick
+ * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
+ * `chat_variable.<extension_variable>`
+
+Example how to define chat column
+
+![](/img/chat/chat-nick.jpg)
+
+Example how it would look like
+
+![](/img/chat/chat-column-custom.jpg)
 
 ## Prefilling and defining custom variables
 
@@ -207,3 +225,13 @@ http://demo.livehelperchat.com/chat/startchat/(leaveamessage)/true?prefill%5Bema
 ```html
 <input type="button" value="Test workflow" onclick='lh_inst.setDefaultMessage(<?php echo json_encode('Product #fdfdf')?>);lh_inst.lh_openchatWindow()'></input>
 ```
+
+## Permissions
+
+Required permission to configure `Additional chat variables`
+
+> 'lhchat','administratechatvariable'
+
+Required permission to configure `Additional chat columns`
+
+> 'lhchat','administratecolumn'
