@@ -5,14 +5,31 @@ sidebar_label: Invisible/Offline mode
 ---
 
 ## Online && Visible
-This is default operator mode means he participates in auto assignment workflow and is automatically accepting chats.
+This is the default operator mode meaning they would participate in the auto assignment workflow process and would also automatically accept chats if this was enabled.
 
 ## Offline && Visible
-Means you do not participate in auto assignment process. If you open pending chat chat **will be** assigned to you. Makes sense if you want sometimes take some chats manually.
+The operator would not participate in the auto assignment process, however if they opened a pending chat chat it would be assigned them. This option makes sense if operators are taking chats manually.
 
 ## Offline && Invisible
-Means you do not participate in auto assignment process. If you open pending chat chat **will not be** assigned to you. Most of the time it makes sense to be in this mode if you are supervisor.
+The operator would not participate in the auto assignment process & should they open a pending chat chat it would not be assigned to them. This option is best suited for supervisors who are monitoring chats.
 
 ## Online && Invisible
-Usually it does not make sense to be in this mode as auto assignment will assign chat to you. But if you open chat, chat status won't be changed to active.
+Usually this status is not used as the auto assignment process will assign chat requests to the operator. However, if they were to open a chat the chat status would not change to active.
 
+## How can they change their visibility?
+
+They can change it either from top menu or directly in their account edit window
+
+![](/img/user/visibility-offline.jpg)
+
+ * Visible/Invisible
+ * Offline/Online
+
+
+:::tip Tip
+
+For operators I suggest do not allow to have possibility to change their visibility status, because most of the time it just confuses them.
+:::
+
+They should not have this function
+> 'lhuser','changevisibility'
