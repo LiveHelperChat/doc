@@ -24,6 +24,7 @@ module.exports = {
         'chat/statistic',
         'custom-fields-and-prefill',
         'theme',
+        'chat/transferring-chat',
         'dashboard',
         'co-browsing',
         'commands',
