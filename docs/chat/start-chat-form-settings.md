@@ -105,3 +105,9 @@ This feature is not supported yet in new widget. I would suggest just use custom
 ## Pre chat
 
 You can have custom HTML to show before start chat fields. Usefull for UI variations. Similar thing can be done with themes although.
+
+## Permissions
+
+Required permission to manage start chat form settings
+
+> 'lhchatsettings', 'administrate'

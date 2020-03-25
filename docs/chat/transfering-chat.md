@@ -58,7 +58,7 @@ When transfer happens we do not change chat status. It remains active. If you wa
 
 When transfer happens we keep original user until other operator accepts a chat. In case you want reset and assigned operator you can check this option.
 
-### Permissions
+## Permissions
 
 For operator to be able to edit these options he has to have this permission.
 

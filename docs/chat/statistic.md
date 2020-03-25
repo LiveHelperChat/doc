@@ -184,3 +184,17 @@ This chart is available only if you are using ElasticSearch
 In this section you can choose what charts should be checked by default for generation.
 
 ![](/img/statistic/charts-configuration.jpg)
+
+## Permissions
+
+To view statistic
+
+> 'lhstatistic','viewstatistic'
+
+To allow operator export statistic in XLS
+
+> 'lhstatistic','exportxls'
+
+To allow operator configure statistic default charts
+
+> 'lhstatistic','configuration'

@@ -95,3 +95,13 @@ You can redirect to survey visitor if chat remains for long period of time in pe
 ### Add translation
 
 You can add custom translations based on user language. Language is detected from user browser headers.
+
+## Permissions
+
+To manage all auto responders
+
+> 'lhchat', 'administrateresponder'
+
+To have personal auto responder
+
+> 'lhuser','personalautoresponder'

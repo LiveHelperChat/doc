@@ -50,7 +50,7 @@ module.exports = {
         'auto-responder',
         'anonymize',
         'auto-close-delete',
-        'chat/files-maintenance',
+        'chat/files',
     ],
     Department: [
         'department/department',

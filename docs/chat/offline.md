@@ -78,6 +78,10 @@ You can also choose few options regarding offline message storage under
 
 > System configuration > Live Helper Configuration > Offline settings
 
-
 ![Offline settings](/img/chat/offline-settings.jpg)
 
+## Permissions
+
+Required permissions to manage offline settings.
+
+> 'lhsystem', 'offlinesettings'
