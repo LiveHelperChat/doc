@@ -13,9 +13,11 @@ As with every open source project everyone wan't to change something. We have op
 * Change back office style
 * Have personal themes
 
-
-
 ## FAQ
+
+### How do I apply theme?
+
+You can either set default theme in back office or you can choose theme in embed code generation window.
 
 ### How do I import a theme?
 
