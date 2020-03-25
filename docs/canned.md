@@ -8,7 +8,7 @@ sidebar_label: Canned messages
 
 Canned messages purpose is to provide prepared answers for standard questions. Canned messages can be found at
 
-> System configuration -> Canned messages
+> System configuration -> Live help configuration -> Canned messages
 
 ## Usage
 

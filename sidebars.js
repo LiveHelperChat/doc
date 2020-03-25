@@ -35,6 +35,7 @@ module.exports = {
         'chat/multiple-domains',
         'voice_messages',
         'chat/speech-to-text',
+        'chat/subject',
         'paid-chats',
         'online-hours',
         'priority',
