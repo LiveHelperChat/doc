@@ -22,7 +22,9 @@ module.exports = {
         'invisible-mode',
         'operators-chat',
         'offline-online-automation',
-        'auto-assignment'
+        'auto-assignment',
+        'users/password-requirements',
+        'users/importing'
     ],
     Chat: [
         'chat/offline',
