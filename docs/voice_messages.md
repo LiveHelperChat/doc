@@ -16,3 +16,10 @@ In order to enable voice messages to visitors you have to do the following thing
 
 [![Youtube Tutorial](https://img.youtube.com/vi/yTGwGdkBCyk/0.jpg)](https://youtu.be/yTGwGdkBCyk?t=92)
 
+## Permissions
+
+Required permissions
+
+> 'lhchat','voicemessages'
+
+Operator also have to have permission to [upload files](chat/files.md#permissions).

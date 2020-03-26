@@ -120,3 +120,9 @@ Just read readme.txt file content from there also do not forget to enable it in
 ### Screenshot. You can see user mouse cursor on colors box. Click for large picture
 
 [![](https://livehelperchat.com/var/media/images/screen.png)](https://livehelperchat.com/var/media/images/screen.png)
+
+## Permissions
+
+Required permission to use Co-Browsing
+
+> 'lhcobrowse', 'browse'

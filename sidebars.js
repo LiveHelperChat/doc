@@ -29,6 +29,7 @@ module.exports = {
         'users/users-actions'
     ],
     Chat: [
+        'chat/chat',
         'chat/offline',
         'chat/start-chat-form-settings',
         'chat/statistic',

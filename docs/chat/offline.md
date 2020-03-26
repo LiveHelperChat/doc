@@ -30,6 +30,10 @@ And after that user will see request form. You can also edit template in e-mail 
 
 ![Redirect to contact](/img/files/redirect-contact.jpg)
 
+Required permission for operator to be able to do this
+
+> 'lhchat','redirectcontact'
+
 ## How to redirect user to contact form if chat is not accepted for some time?
 
 Just edit depatment and set after how many seconds user should be redirected to leave a message form.
