@@ -24,3 +24,9 @@ In all cases I suggest make backup.
 
 *   [Old update instruction](https://livehelperchat.com/old-upgrading-instructions-335a.html)
 *   [How to automate live helper chat updates?](https://livehelperchat.com/how-to-automate-live-helper-chat-updates-338a.html)
+
+## Permissions
+
+To be able to see `Update information` operator has to have
+
+> 'lhsystem','performupdate'

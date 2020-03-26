@@ -24,7 +24,9 @@ module.exports = {
         'offline-online-automation',
         'auto-assignment',
         'users/password-requirements',
-        'users/importing'
+        'users/importing',
+        'users/auto-login',
+        'users/users-actions'
     ],
     Chat: [
         'chat/offline',
@@ -76,6 +78,9 @@ module.exports = {
         'development/cronjob',
         'system/system-commands',
         'time-zone',
+        'audit/audit',
+        'system/clearing-cache',
+        'system/languages-configuration'
     ],
     Developing: [
         'hooks',
