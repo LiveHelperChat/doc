@@ -30,12 +30,12 @@ module.exports = {
     ],
     Chat: [
         'chat/chat',
+        'dashboard',
         'chat/offline',
         'chat/start-chat-form-settings',
         'chat/statistic',
         'custom-fields-and-prefill',
         'chat/transferring-chat',
-        'dashboard',
         'co-browsing',
         'commands',
         'chat/chat-status',
