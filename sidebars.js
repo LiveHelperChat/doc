@@ -14,6 +14,7 @@ module.exports = {
         'theme/personal-theme'
     ],
    Users: [
+        'users/account',
         'users/users-groups',
         'users/users-roles',
         'users/users-users',
