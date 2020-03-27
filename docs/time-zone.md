@@ -8,3 +8,7 @@ After you have installed application you should set your Time Zone. If you do no
 ![Time Zone](/img/system/time-zone.jpg)
 
 Operators also can set their own personal time zone in their user account page.
+
+## Permissions
+
+> 'lhsystem','timezone'

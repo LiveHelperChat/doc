@@ -10,8 +10,6 @@ This is our main chat window. I'll explain what each of the item does there and 
 
 ​![](/img/chat/chat-window.jpg)
 
-
-
 ## Chat tab
 
 ​![](/img/chat/chat-tab.jpg)

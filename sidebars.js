@@ -2,8 +2,8 @@ module.exports = {
   someSidebar: {
     Setup: [
         'install',
-        'javascript-arguments',
         'integrating',
+        'javascript-arguments',
         'upgrading',
         'development/quick-guide'
     ],
@@ -33,6 +33,7 @@ module.exports = {
         'chat/chat',
         'chat/chat-tabs',
         'chat/chat-popup',
+        'chat/list',
         'dashboard',
         'chat/offline',
         'chat/start-chat-form-settings',
@@ -78,6 +79,7 @@ module.exports = {
         'online-visitors'
     ],
     System: [
+        'system/configuration',
         'smtp',
         'development/cronjob',
         'system/system-commands',
