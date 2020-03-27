@@ -70,7 +70,7 @@ Usually then you go offline or online visitors has to refresh page to see new wi
 
 You just have to go to 
 
- > Configuration -> Live Help configuration -> Chat configuration -> Misc -> Interval between chat status checks in seconds, 0 disabled.
+ > Configuration -> Live Help configuration -> Chat configuration -> Visitor activity -> Interval between chat status checks in seconds, 0 disabled.
 
 I suggest to set there value 300 it will be status check every 5 minits. Usually if you have not changed default configuration it's foreseen that operator status changes if his last activity was 5 minits ago.
 

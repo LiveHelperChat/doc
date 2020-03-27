@@ -56,6 +56,18 @@ Using this functionality we can allow to participate in auto assignment chats wh
 This functionality should be used only by advanced users which want to do some fancy things :smile:
 :::
 
+## Workflow cronjob influence
+
+If you want auto assignment workflow to work independently of what visitor does (still on site or not) you have to be running [workflow cronjob](development/cronjob.md#default-cronjob-setup). I suggest in that scenario run cronjob every 5 seconds.
+
+## Disable live auto assignment
+
+Usually auto assignment happens when visitor is waiting untill someone accepts a chat. If you are running workflow cronjob it makes sense uncheck this as cronjob will do this part. This also will make visitor UI feel faster.
+
+`Disable live auto assign` option can be found here 
+
+> System configuration -> Live help configuration -> Chat configuration -> Misc
+
 ## How to deny the operator to open all pending chats?
 
 By default operator can open all pending chats. Not only assigned to him. If you are using auto assignment workflow and do not want to allow operator to open all pending chats just remove this permission.

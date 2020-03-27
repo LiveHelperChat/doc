@@ -31,5 +31,10 @@ They can change it either from top menu or directly in their account edit window
 For operators I suggest do not allow to have possibility to change their visibility status, because most of the time it just confuses them.
 :::
 
-They should not have this function
+They should **not** have this function
+
 > 'lhuser','changevisibility'
+
+Required permission to change online/offline status
+
+> 'lhuser','changeonlinestatus'

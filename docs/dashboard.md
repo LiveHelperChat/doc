@@ -114,6 +114,13 @@ If you want that operator would be able to see all departments statistic this pe
 
 Operator in dashboard widget settings ​![](/img/dashboard/dashboard-icon.jpg) has to choose `Departments stats`
 
+### How can I remove right column in dashboard?
+
+In dashboard right column duplicates what you see in dashboard itself so makes sense just hide right column.
+
+You have to activate `Hide right column in frontpage.` in
+> Configuration -> Live Help Configuration -> Chat configuration -> Misc
+
 ## Permissions
 
 For operator to be able to use dashboard in general he has to have. It's a must permission because to this page user is redirected once he logins to the system.

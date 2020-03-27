@@ -8,9 +8,15 @@ There is atleast few ways to do it. Recommended way if you are using web browser
 
 ![](/img/operator-status.jpg)
 
-You can also force this tracking by navigating to chat configuration section and activating.
+You can also force this tracking by navigating to 
 
-> Track all logged operators activity and ignore their individual settings.
+> System configuration -> Live help configuration -> Chat configuration -> Misc
+
+and activating `Track all logged operators activity and ignore their individual settings.`
+
+You can change there also default activity timeout value
+
+`How long operator should go offline automatically because of inactivity. Value in minutes`
 
 * Install chrome extension, it has support for detecting computer iddle/active states.
 * Use desktop application
