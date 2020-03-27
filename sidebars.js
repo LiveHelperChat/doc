@@ -5,7 +5,8 @@ module.exports = {
         'integrating',
         'javascript-arguments',
         'upgrading',
-        'development/quick-guide'
+        'development/quick-guide',
+        'search'
     ],
     Design: [
         'theme/theme',
@@ -122,7 +123,6 @@ module.exports = {
     Integration: [
         'google-analytics',
         'chrome-extension'
-    ],
-    Guides: ['doc1']
+    ]
   },
 };

@@ -28,3 +28,28 @@
 .markdown img{
     border:3px solid #ededed;
 }
+
+table.gsc-input{
+    margin:0
+}
+
+.gsc-above-wrapper-area-container tr {
+    width: 100%;
+}
+
+.gsc-above-wrapper-area-container td {
+    width: 50%;
+}
+
+table.gsc-above-wrapper-area-container tr,
+.gsc-search-box table tr,
+.gsc-search-box table tr td{
+    border:0;
+}
+
+table.gsc-above-wrapper-area-container tr,
+table.gsc-above-wrapper-area-container tr td{
+    border:0;
+    padding:5px;
+}
+

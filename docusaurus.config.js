@@ -34,6 +34,12 @@ module.exports = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+            to: 'docs/search',
+            activeBasePath: 'docs',
+            label: 'Search',
+            position: 'right'
+        }
       ],
     },
     footer: {
