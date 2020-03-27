@@ -98,7 +98,7 @@ Please refer to [Product](department/product.md) article.
 
 ## Miscellaneous
 
-Just few options.
+You can disable there option for operator to send mail to visitor from chat window.
 
 ## Bot configuration
 

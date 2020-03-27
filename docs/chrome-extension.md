@@ -61,3 +61,9 @@ Add this to the .htaccess file
 ```
 Header always edit Set-Cookie (.*) "$1; SameSite=None; Secure"
 ```
+
+## Permissions
+
+Required permissions
+
+> 'chat','chattabschrome'

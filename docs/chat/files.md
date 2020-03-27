@@ -7,6 +7,7 @@ sidebar_label: Files
 ## Introduction
 
 Main files configuration section.
+
 ​![](/img/files/files-configuration.jpg)
 
 You can allow either upload files to operators or visitors. Operators has to have permission to upload files also.

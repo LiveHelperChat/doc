@@ -56,6 +56,18 @@ Using this functionality we can allow to participate in auto assignment chats wh
 This functionality should be used only by advanced users which want to do some fancy things :smile:
 :::
 
+## How to deny the operator to open all pending chats?
+
+By default operator can open all pending chats. Not only assigned to him. If you are using auto assignment workflow and do not want to allow operator to open all pending chats just remove this permission.
+
+> 'chat','open_all'
+
+## How to deny the operator to open all chats?
+
+If you remove this permission operator will be able to open chats only where he is an owner.
+
+> 'lhchat','allowopenremotechat'
+
 ## Sample
 
 To user explicitly has to be assigned department. It's not enough just check all departments. Within each department have to be checked department.

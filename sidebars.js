@@ -31,6 +31,8 @@ module.exports = {
     ],
     Chat: [
         'chat/chat',
+        'chat/chat-tabs',
+        'chat/chat-popup',
         'dashboard',
         'chat/offline',
         'chat/start-chat-form-settings',

@@ -10,6 +10,8 @@ This is our main chat window. I'll explain what each of the item does there and 
 
 ​![](/img/chat/chat-window.jpg)
 
+
+
 ## Chat tab
 
 ​![](/img/chat/chat-tab.jpg)
@@ -98,6 +100,8 @@ This will change chat status to hold. Also if chat is using auto responder [hold
 ​![](/img/chat/hold-chat-icon.jpg)
 
 Required permission
+
+> 'lhchat'','holduse'
 
 ### Sending message
 
@@ -236,6 +240,34 @@ Required permissions
 Activates co-browsing session. [More information](co-browsing.md)
 
 ​![](/img/chat/screen-sharing.jpg)
+
+### Send mail to visitor
+
+Shows mail sending to visitor modal window. ​![](/img/chat/send-mail.png)
+
+​![](/img/chat/send-mail-visitor.png)
+
+Required permissions
+
+> 'lhchat','sendmail'
+
+:::tip
+This option can be [disabled by department](department/department.md#miscellaneous).
+:::
+
+### Chat status
+
+Chat status is shown in
+
+​![](/img/chat/chat-status.png)
+
+By clicking info icon you can change chat status to different. 
+
+​![](/img/chat/chat-status-modal.png)
+
+Required permissions
+
+> 'chat', 'canchangechatstatus'
 
 ## Remarks
 
