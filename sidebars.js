@@ -5,8 +5,7 @@ module.exports = {
         'integrating',
         'javascript-arguments',
         'upgrading',
-        'development/quick-guide',
-        'search'
+        'development/quick-guide'
     ],
     Design: [
         'theme/theme',

@@ -12,6 +12,12 @@ module.exports = {
       // Optional fields.
       anonymizeIP: true, // Should IPs be anonymized?
     },
+      algolia: {
+          appId: 'BH4D9OD16A',
+          apiKey: '4e69460f132c380e64701ff0b65e1de4',
+          indexName: 'livehelperchat',
+          algoliaOptions: {}, // Optional, if provided by Algolia
+      },
     navbar: {
       title: 'Live Helper Chat',
       logo: {
@@ -33,12 +39,6 @@ module.exports = {
           href: 'https://github.com/LiveHelperChat',
           label: 'GitHub',
           position: 'right',
-        },
-        {
-            to: 'docs/search',
-            activeBasePath: 'docs',
-            label: 'Search',
-            position: 'right'
         }
       ],
     },
