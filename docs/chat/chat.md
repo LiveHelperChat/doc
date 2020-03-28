@@ -320,4 +320,4 @@ Also if we detect we can show previous visitor chats.
 
 Main chat permission is 
 
-> 'lhchat','user'
+> 'lhchat','use'

@@ -16,4 +16,4 @@ It can also be reached by clicking on dashboard widget titles.
 
 ## Permissions
 
-> 'lhchat','user'
+> 'lhchat','use'
