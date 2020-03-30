@@ -34,6 +34,7 @@ module.exports = {
         'chat/configuration',
         'chat/chat-tabs',
         'chat/chat-popup',
+        'chat/multiple-clients',
         'chat/list',
         'dashboard',
         'chat/offline',
