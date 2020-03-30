@@ -33,9 +33,22 @@ Tag's allow to do quick search for canned message directly in message send area 
 
 ![Tag attribute](/img/chat/tag.jpg)
 
+There can be multiple tags in one canned messages if they are separated by a comma. E.g apple, fruit.
+
 :::tip
 You can navigate quickly through dropdown using up/down right/left arrows.
 :::
+
+## Canned messages in chat interface
+
+Canned messages are visible in chat interface at the bottom.
+
+![Canned messages in chat interface](/img/chat/canned-chat.jpg)
+
+Search is performed in these fields
+
+ * Title
+ * Message text
 
 ### Explain
 
@@ -64,12 +77,6 @@ If not all variables were placed in default message we send this message instead
 ### HTML Snippet
 
 If you enter html in this field it will be send as html code to visitor. E.g perhaps you want to execute some javascript on his browser. Like redirect to custom page.
-
-## Canned messages in chat interface
-
-Canned messages are visible in chat interface at the bottom.
-
-![Canned messages in chat interface](/img/chat/canned-chat.jpg)
 
 ## Permission
 
