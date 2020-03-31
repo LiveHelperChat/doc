@@ -64,7 +64,6 @@ Remove permission for other modules
 Giving permission to view statistic. We grant `Operators` role these permissions.
 
 ```
-'lhstatistic','use'
 'lhstatistic','exportxls'
 'lhstatistic','viewstatistic'
 ```
