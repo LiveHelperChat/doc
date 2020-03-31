@@ -8,12 +8,24 @@ sidebar_label: Rest API
 
 https://api.livehelperchat.com/#/
 
-
 Chat Rest API modules allows to do the following things
 
-*   Check global status is anyone online
-*   Check status for custom users
-*   Check status for departments
+* Check global status is anyone online
+* Check status for custom users
+* Check status for departments
+* And many more...
+
+## How do I authenticate?
+
+You can use rest api using these two options.
+
+* You can create Rest API Key
+
+> System configuration -> Live help configuration -> Rest API
+
+* Use your regular back office logins. You have to have this permision
+
+> 'lhrestapi','use_direct_logins'
 
 ## Where this module can be used?
 
