@@ -105,9 +105,24 @@ Giving permissions to work with subjects
 'lhchat', 'administratesubject'
 ```
 
+Giving permissions to work with Proactive Invitations
+```
+'lhchat', 'administrateinvitations'
+```
+
+These items are not supported and you should not give them permissions to work with these
+
+* Pro active chat variables
+* Pro active chat events
+* Pro active chat campaigns
+
 ## FAQ
 
 ### My client want more than one department. Is it supported?
+
+Yes.
+
+### Can clients user multiple domains?
 
 Yes.
 
@@ -128,7 +143,6 @@ Just contact me and maybe I can help you.
  * Survey
  * Themes. Although you can make a theme and just give them it's number.
  * Product
- * Proactive invitation
  * Bot
  * Web push notifications subscribers
  * Additional chat columns/variables.
