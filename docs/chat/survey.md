@@ -40,6 +40,7 @@ What survey should be shown to visitor can be set few ways
 
 * Either you set it in department edit window survey tab.
 * Either you redirect visitor manually from chat.
+* Either you pass `survey` [argument](javascript-arguments.md).
 
 To redirect visitor to survey you have to click this icon in chat window
 

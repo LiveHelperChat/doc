@@ -72,12 +72,13 @@ LHC_API.args = {
     pvhash : 'pvhash',  // Payment verify hash | Optional
     lang : 'lit/'       // Chat language | Optional
     fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
-    proactive : false   // Disable proactive invitations. | Optional
+    proactive : false,  // Disable proactive invitations. | Optional
+    survey : 1          // Survey Id. Department Survey id overrides this value. | Optional
 };
 
 (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    var date = new Date();po.src = '//demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?v2'+(""+date.getFullYear() + date.getMonth() + date.getDate()+date.getTime());
+    var date = new Date();po.src = '//demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?v2'+(""+date.getFullYear() + date.getMonth() + date.getDate());
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>

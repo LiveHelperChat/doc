@@ -4,11 +4,10 @@ title: How to use chat priority
 sidebar_label: Priority
 ---
 
-
 Chat priority can be set three ways.
 
-1. Via embed code
-2. Heritage from department priority
+1. Via [embed code](javascript-arguments.md)
+2. Heritage from [department priority](department/department.md#priority-used-for-chats-priority)
 3. Define priority condition in `System configuration > Live Help configuration > Chat priority`
 
 ## Via embed code
@@ -17,7 +16,7 @@ While heritage from department does not require any additional actions from admi
 
 ### New widget
 
-In this case priority is set to 1
+In this case priority is set to 5
 
 ```js
 <script>var LHC_API = LHC_API||{};
@@ -29,7 +28,7 @@ wwidth:350,
 pheight:520,
 pwidth:500,
 leaveamessage:true, 
-priority:1
+priority:5
 };
 (function() {
 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
