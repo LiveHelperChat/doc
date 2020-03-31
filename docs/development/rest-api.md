@@ -23,7 +23,7 @@ You can use rest api using these two options.
 
 > System configuration -> Live help configuration -> Rest API
 
-* Use your regular back office logins. You have to have this permision
+* Use your regular back office logins. You have to have this permission.
 
 > 'lhrestapi','use_direct_logins'
 
