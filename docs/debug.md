@@ -21,6 +21,24 @@ Do not forget that to see all used template you have to disable cache also.
 'modulecompile' => true,
 ```
 
+Web application folders structure 
+
+* `cache` (Stores cache)
+* `design` (Design categorys)
+    * <used_design>
+* `doc` (Release documentation)
+* `extension` (All extensions goes here)
+* `ezcomponents`
+* `lib` (core of the framework)
+    * `autoloads`
+        * `lhcore_autoload.php` (Main application autoload file)
+* `core` (Folder holds application logic modules files)
+* `models` (Folder contains application models clases)
+* `modules` (There goes application modules.)
+* `pos` (Represents eZ Components pos, persistent object talbles definitions)
+* `settings` (holds application settings files.)
+* `translations` (holds application translations)
+
 ## How to use debug output
 
 After you have enabled debug output you will see in popup window something like

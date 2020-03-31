@@ -99,7 +99,9 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/LiveHelperChat/doc/edit/master/'
+          editUrl: 'https://github.com/LiveHelperChat/doc/edit/master/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
