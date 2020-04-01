@@ -99,7 +99,9 @@ Required permissions
 
 ## Permissions
 
-This section allows you quickly see to what module/functions you have access to.
+This section allows you quickly see to what module/functions you have access to. User also can ask for permission to specific module. Using `Request permission` button. Mail is send to User who have checked `I receive other operators permissions request`. 
+
+To grant permission itself you have to edit `Role` and just assign requested permission manually.
 
 ​![](/img/user/permissions.png)
 
