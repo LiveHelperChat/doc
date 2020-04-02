@@ -68,7 +68,7 @@ This disables the Proactive Invitations. This is useful if you want to disable t
 
 ### My widget does not work. I have Live Helper Chat installed on one domain but code is embeded on another domain?
 
-Apache version
+Most likely it's an issue with CORS rules. There is .htaccess samples you might need to apply.
 
 .htaccess sample if you embed just on one domain code
 
