@@ -4,16 +4,16 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 Live version can be found at https://doc.livehelperchat.com
 
-I invite everyone to join and improve documentation.
+I invite everyone to join and improve documentation by creating a pull requests.
 
-### Installation
+### While developing.
 
 ```
 $ npm start
 ```
 
-### Local Development
+### To build static website
 
 ```
-$ npm build
+$ npm run build
 ```
