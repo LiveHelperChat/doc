@@ -85,11 +85,11 @@ LHC_API.args = {
 </script>
 ```
 
-## Static url for starting a chat
+## Static URL generation
 
 You can use url like
 
-> https://example.com/chat/start<arguments>
+> https://example.com/chat/start `<arguments>`
 
 Possible arguments. All arguments are optional. Most of the cases you can just open popup window to see what url system has generated and just reuse it.
 
