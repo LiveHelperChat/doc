@@ -64,6 +64,29 @@ If this checkbox is checked, the User (Visitor) does not have to make a page ref
 
 This disables the Proactive Invitations. This is useful if you want to disable them on your site.
 
+## FAQ
+
+### My widget does not work. I have Live Helper Chat installed on one domain but code is embeded on another domain?
+
+Apache version
+
+.htaccess sample if you embed just on one domain code
+
+```apacheconfig
+Header always Set Access-Control-Allow-Origin "http://example.com"
+Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+```
+
+If code will be embedded on multiple domains
+```apacheconfig
+Header always Set Access-Control-Allow-Origin "*"
+Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+```
+
+For nginx read this [article](nginx-configuration-tips.md). 
+
 ### How to make automatic status change for frontend visitors?
 
 Usually then you go offline or online visitors has to refresh page to see new widget status. It's possible to make status changes visible without required pageview also.
