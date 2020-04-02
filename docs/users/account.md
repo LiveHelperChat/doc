@@ -79,9 +79,37 @@ User can change few general settings related to chats workflow.
 
 ​![](/img/user/account-chats.png)
 
+### I can see all pending chats, not only assigned to me
+
+By default, dashboard `Pending widget` shows all pending chats. You force pending widget to show chats only assigned to you by checking this options.
+
+You can disable this option for operator by removing this permission.
+
+> 'lhuser','allowtochoosependingmode'
+
+### Automatically accept assigned chats
+
+System will automatically open assigned chat tab while you are on dashboard page.
+
+### Exclude me from auto assign workflow
+
+Let say you are Supervisor and want to accept chats also, bot do not want to participate in auto assignment workflow. This is the option for you.
+
+### Auto preload previous visitor chat messages
+
+Chat will automatically preload previous chat message if we find that visitor had any chats before.
+
+### Auto uppercase sentences
+
+We will uppercase automatically operator sentences.
+
+### Maximum active chats
+
+You can set how many active chats you can have. This will not assign any new chats to you if this number is reached. More information about [auto assignment](auto-assignment.md)
+
 ### Permissions
 
-Required permissions
+Required permissions to see this tab.
 
 > 'lhuser','allowtochoosependingmode'
 
