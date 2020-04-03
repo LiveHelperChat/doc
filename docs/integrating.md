@@ -51,6 +51,10 @@ Choose a language. Depending on combobox value javascript code below, it will be
 You can enable `Try to detect language automatically` try to detect visitor langauge, but you have configure siteacess to match content language. I would suggest just use [themes](theme/widget-theme.md) and activate in `Widget container` section `Try to detect language from browser headers` option.
 :::
 
+## Operator ID
+
+You can enter to what operator started chat should be assigned. Chat will be visible as pending with an assigned operator.
+
 ## Check for operator invitation messages
 
 If this checkbox is checked, the User (Visitor) does not have to make a page refresh to initiate the Invitation Logic (check for messages from operator/or check for the  Proactive Chat Invitation message). Please note that checking this checkbox activates messages checking for Users (Visitors) every 15 seconds and it increases server load.
