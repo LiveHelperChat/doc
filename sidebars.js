@@ -90,6 +90,13 @@ module.exports = {
         'system/clearing-cache',
         'system/languages-configuration'
     ],
+    Modules: [
+        'modules/browse-offers',
+        'modules/chatbox',
+        'modules/faq',
+        'modules/forms',
+        'modules/questionary'
+    ],
     Developing: [
         'hooks',
         'debug',
