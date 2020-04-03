@@ -10,7 +10,8 @@ Bot was introduced in 2.94 version. Basic features are these
 
 ## How to use?
 
-*   Navigate to System -> Live Helper Configuration -> Bot list
+*   Navigate to 
+> System -> Live Helper Configuration -> Bot list
 *   Create a bot. Once bot is saved go back to bot list and click bot name.
 *   To activate bot you have to edit department and choose a bot in department edit window.
 *   Dashboard also has new widget bot chats. Once widget is activate it will show bot chats. You may need in your account -> visible lists to enable bot chats listing.

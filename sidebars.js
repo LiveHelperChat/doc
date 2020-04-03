@@ -69,11 +69,24 @@ module.exports = {
     ],
     Bot: [
         'how-to-use-bot',
-        'bot/bot-text',
-        'bot/bot-list',
-        'bot/bot-button-list',
-        'bot/bot-carousel',
-        'bot/collecting-information'
+        'bot/triggers',
+        {
+            type: 'category',
+            label: 'Response types',
+            items: [
+                'bot/bot-carousel',
+                'bot/bot-text',
+                'bot/bot-list',
+                'bot/bot-button-list'
+            ]
+        },
+        {
+            type: 'category',
+            label: 'Use Cases',
+            items: [
+                'bot/collecting-information'
+            ]
+        }
     ],
     Visitors: [
         'blocking',
