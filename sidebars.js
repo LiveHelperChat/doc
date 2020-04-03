@@ -9,7 +9,6 @@ module.exports = {
     ],
     Design: [
         'theme/theme',
-        'theme/widget-theme',
         'theme/back-office-theme',
         'theme/personal-theme'
     ],

@@ -117,3 +117,9 @@ Possible action values
 Just refer to this example
 
 [https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/doc/rest_api/example.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/doc/rest_api/example.php)
+
+## Permissions
+
+Required permissions to configure Rest API keys.
+
+> 'lhrestapi','use_admin'
