@@ -6,7 +6,7 @@ sidebar_label: Multiple clients
 
 Since 3.29v you can setup Live Helper Chat in a such way so it could support multiple clients at once. Altough the best way to support multiple clients is just use automated hosting extension.
 
-:::information
+:::important
 I assume you are running at-least 3.29v default setup.
 :::
 
