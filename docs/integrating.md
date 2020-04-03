@@ -14,7 +14,7 @@ You can test widget on our [demo page.](https://livehelperchat.com/demo-12c.htm
 
 Choose `Widget embed code`
 
-![Embed code](/img/integration/embed-code.png)
+![Embed code](/img/integration/embed-code-v2.png)
 
 ## On each refresh start a new chat. Usefull in embed mode.
 
@@ -63,6 +63,10 @@ If this checkbox is checked, the User (Visitor) does not have to make a page ref
 ## Disable pro active invitations
 
 This disables the Proactive Invitations. This is useful if you want to disable them on your site.
+
+## Static URL
+
+Static url can be used directly by pasting address in browser URL address. More information can be found at [javascript argumetns](javascript-arguments.md#static-url-generation) article.
 
 ## FAQ
 
