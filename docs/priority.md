@@ -1,10 +1,10 @@
 ---
 id: priority
-title: How to use chat priority
+title: Chat priority
 sidebar_label: Priority
 ---
 
-Chat priority can be set three ways.
+Priority defines how hight in pending chat list chat will be presented. The higher the priority the faster chat will be auto assigned automatically. Chat priority can be set three ways.
 
 1. Via [embed code](javascript-arguments.md)
 2. Heritage from [department priority](department/department.md#priority-used-for-chats-priority)
@@ -73,3 +73,9 @@ There is in total three types of variables you can try to check against
  * `lhc.<variable>` - you can find possible attributes definition in [https://api.livehelperchat.com](https://api.livehelperchat.com) under Models section.
  * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
  * `chat_variable.<extension_variable>`
+
+## Permissions
+
+Required permission
+
+> 'chat','administratechatpriority'

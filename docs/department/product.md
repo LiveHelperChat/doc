@@ -25,3 +25,9 @@ If you have checked `Enable products show by departments` you will see something
 What product will be shown is based on department settings
 
 ![](/img/product/department-product-configuration.jpg)
+
+## Permissions
+
+Required permission to manage products.
+
+> 'lhproduct', 'manage_product'
