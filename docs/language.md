@@ -11,7 +11,18 @@ In order to install new translation you have to download lhc from github or just
 
 You now can make translations directly on [https://www.transifex.com/projects/p/live-helper-chat/](https://www.transifex.com/projects/p/live-helper-chat/)
 
-I constantly update live helper chat translations based on transifex updates. So the easiest way to have a new language just translate it there and i will add it automatically to live helper chat.
+I constantly update live helper chat translations based on transifex updates. So the easiest way to have a new language just translate it there and I will add it automatically to live helper chat.
+
+## How configure Live Helper Chat header detection languages?
+
+Recent version already have it configured but if you want to play around see. In 
+
+> System configuration -> Speech
+
+You can find few usefull links
+
+* `Languages` - it's all defined languages in Live Helper Chat. Where each language can be mapped to a specific siteaccess.
+* `Dialects` - dialects is basically a short code for a langauge. When we do language detection from browser we are looking to match one of these.
 
 ## Installing translations for web client.
 
@@ -178,7 +189,7 @@ Section example
       ),
 ```
 
-So if you want that it would be RTL just write rtl instead of ltr 
+So if you want that it would be RTL just write `RTL` instead of `LTR` 
 
 Languages which may require RTL support. We do not have at the moment translated any of these languages. But now you can be sure, that it will work 100% with Live Helper Chat
 
@@ -189,5 +200,5 @@ Languages which may require RTL support. We do not have at the moment translated
 * Japanese: ja
 * Urdu: ur
 * Yiddish: yi, ji
- 
- So if anyone will translate to any of these langauges, please send me translation. 
+
+So if anyone will translate to any of these langauges, please send me translation. 

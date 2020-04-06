@@ -5,7 +5,8 @@ module.exports = {
         'integrating',
         'javascript-arguments',
         'upgrading',
-        'development/quick-guide'
+        'development/quick-guide',
+        'chat/multiple-languages'
     ],
     Design: [
         'theme/theme',
@@ -70,6 +71,7 @@ module.exports = {
     Bot: [
         'how-to-use-bot',
         'bot/triggers',
+        'bot/multiple-languages',
         {
             type: 'category',
             label: 'Response types',
