@@ -3,11 +3,116 @@ id: bot-text
 title: Text message
 ---
 
-This article explains text element. Text element looks like
+## Introduction
+
+This article explains text element. Text element looks like for visitor
 
 [![](https://livehelperchat.com/var/media/images/text-buttons.png)​](https://livehelperchat.com/var/media/images/text-buttons.png)
 
-Each text element can have two types of subelemetns Quick replies (buttons) or action element.
+In back office it looks like this
+
+![](/img/bot/text-message-edit.png)
+
+## Attributes
+
+### Text message
+
+Text message can have few sending options
+
+* {__default message__t[show from hour, show till hour]} inclusive is first hour. Few examples
+    * Default message
+    * `{welcome_message__Welcome to our website}`
+    * `{good_evening__Good evening__t[17:24]}` - Show this message from 17 until midnight
+    * `{good_morning__Good morning__t[0:17]}` - Show this message from midnight until evening
+* You can give random answer by separating messages by `|||` or just clicking ![](/img/bot/new-variation.png)
+
+First message part before text message is text identifier and can be used to translating messages to multiple languages.
+
+### HTML message
+
+Content of this textarea will be rendered as HTML directly. It also supports translations.
+
+### Hide text area on response.
+
+When this message is send area for a visitor to enter a message will be hidden. Make sure you include buttons in your response.
+
+### Send a message only at chat start
+
+This message will be send only once and only on start chat event. If you have multiple triggers which is calling same text message. Sometimes it's usefull to have this.
+ 
+## Quick reply options
+
+These options defines visible buttons under a message.
+
+![](/img/bot/quick-reply-options.png)
+
+### Name
+
+Just button name visible in frontend
+
+### 'Precheck event' and  'Arguments` 
+
+Sometimes you want to show the button depending on some validation. E.g user is logged/is some third party service available etc. If you set precheck event like `valid_username` Live Helper Chat will dispatch event like
+
+```php
+$validationResult = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.genericbot_handler', array(
+    'render' => $quickReply['content']['render_precheck_function'], // `valid_username`
+    'render_args' => $quickReply['content']['render_args'],         // `Arguments`
+    'chat' => & $chat,
+));
+```
+
+When in your extension you can listen for this and validate it like this.
+
+In `bootstrap.php` file listen for an event
+```php
+$dispatcher = erLhcoreClassChatEventDispatcher::getInstance();
+$dispatcher->listen('chat.genericbot_handler', array($this,'genericBotHandler'));
+```
+
+Function could look like
+ 
+```php
+function genericBotHandler($params) {
+    if ($params['render'] == 'valid_username') {
+        return array(
+            'status' => erLhcoreClassChatEventDispatcher::STOP_WORKFLOW,
+            'content' => array(
+                'valid' => false,
+                'hide_button' => true // You can just disable it by replace this line with `'disable_button' => true`
+            )
+        );
+    }
+}
+```
+
+### Type
+
+Type describes what type of action will be executed/rendered. There is four types of actions in total.
+
+#### URL
+
+When visitor clicks a button we will open defined URL just as a link.
+
+#### Click
+
+This will issue defined payload. It's usefull if you are integrating third party AI bots. As this event can be passed to them.
+
+#### Update Chat
+
+These are quick updates you can do on button click. There are three types of events you can do from quick replies.
+  
+* `Transfer to operator` - I would personally just use `Execute trigger` and define a trigger where response type is `Update current chat` as then I can define more flexible transferring workflow.
+* `Transfer to bot` - Like an above written I prefer that workflow instead.
+* `Subscribe to notifications` - this is usefull to define in default auto responder trigger and suggest visitor subscribe while they are waiting for an operator to accept a chat.
+* `Execute trigger` - it's my preferred way to set actions as you can choose defined triggers from the list.
+
+## Add action on message
+
+These are quick updates what happens on a message. I would suggest just use `Collect custom attribute` response type. See [example](bot/collecting-information.md) how to use it.
+
+
+## Structure
 
 Syntax for simple buttons looks like. This can be send directly as a meta_msg body to [https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin ](https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin)
 ```json

@@ -110,6 +110,7 @@ So it would match these messages. Location of words are not important.
 
 * fish price
 * car price
+* car prike `notice a typo`
 
 #### `Typos number (include words)` && `Typos number (exclude words)`
 
