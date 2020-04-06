@@ -85,7 +85,8 @@ module.exports = {
             label: 'Use Cases',
             items: [
                 'bot/collecting-information',
-                'bot/validate-information'
+                'bot/validate-information',
+                'bot/integrating-any-ai-bot',
             ]
         }
     ],
