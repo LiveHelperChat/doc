@@ -30,7 +30,7 @@ To set translation group you have to edit `Department` and in `Bot configuration
 
 ## Set translation for our message
 
-When you click on translation group you will be presented with `Translations items`. Window should look like once you click on translation group title.
+When you click on translation group you will be presented with `Translations items`. Window should look like this once you click on translation group title.
 
 ![](/img/bot/translations-groups.png)
 
