@@ -84,7 +84,8 @@ module.exports = {
             type: 'category',
             label: 'Use Cases',
             items: [
-                'bot/collecting-information'
+                'bot/collecting-information',
+                'bot/validate-information'
             ]
         }
     ],
