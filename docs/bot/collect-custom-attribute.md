@@ -7,6 +7,8 @@ title: Collect custom attribute
 
 Purpose of this response type is to collect custom attributes. See an [example](collecting-information.md).
 
+There is an example how to use this attribute from [extension](https://github.com/LiveHelperChat/lhccollectcustombot).
+
 ## Attributes
 
 Description of all attributes and their purposes.
