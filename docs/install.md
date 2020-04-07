@@ -6,71 +6,129 @@ sidebar_label: Install Guide
 
 Ultimate tutorial by screenshots.
 
-1. After you gave permission to write to cache folder. You should see the following window. If you see strange error instead of install make sure that
-2. Your browser is pointing to index.php/site_admin/install/install URL
-3. You gave recursive write permission to cache folder.
+## Folders permissions
 
-[![](https://livehelperchat.com/var/media/images/tutorial/1.jpg)](https://livehelperchat.com/var/media/images/tutorial/1.jpg)
+* After you gave permission to write to cache folder. You should see the following window. If you see strange error instead of install make sure that
+    * Your browser is pointing to index.php/site_admin/install/install URL
+    * You gave recursive write permission to cache folder.
 
-After that you have to give write permission to few other folders also  
-[![](https://livehelperchat.com/var/media/images/tutorial/2.jpg)](https://livehelperchat.com/var/media/images/tutorial/2.jpg)
+```shell script
+chmod -R 777 cache/
+```
+After that you should see something like his
 
-After that you should see all items in green color.  
-[![](https://livehelperchat.com/var/media/images/tutorial/3.jpg)](https://livehelperchat.com/var/media/images/tutorial/3.jpg)
+​![](/img/install/install-step-1.png)
 
-Next you have to enter database settings. Database have to be precreated  
-[![](https://livehelperchat.com/var/media/images/tutorial/4.jpg)](https://livehelperchat.com/var/media/images/tutorial/4.jpg)
+Now just give permission to write to required folders/files
 
-At next step you will see initial application settings. All of these you will be able to change after installation also.  
-[![](https://livehelperchat.com/var/media/images/tutorial/5.jpg)](https://livehelperchat.com/var/media/images/tutorial/5.jpg)
+```shell script
+chmod 777 settings/
+chmod -R 777 var/storage
+chmod -R 777 var/userphoto
+chmod -R 777 var/storageform
+chmod -R 777 var/storageadmintheme
+chmod -R 777 var/botphoto
+chmod -R 777 var/bottrphoto
+chmod -R 777 var/storageinvitation
+chmod -R 777 var/storagedocshare
+chmod -R 777 var/storagetheme
+chmod -R 777 var/tmpfiles
+```
 
-Here is how looks our demo settings.  
-[![](https://livehelperchat.com/var/media/images/tutorial/6.jpg)](https://livehelperchat.com/var/media/images/tutorial/6.jpg)
+After that all items should be green.
 
-After clicking Finish installation you should see the following window.  
-[![](https://livehelperchat.com/var/media/images/tutorial/7.jpg)](https://livehelperchat.com/var/media/images/tutorial/7.jpg)
+## Database settings
 
-So now you can login  
-[![](https://livehelperchat.com/var/media/images/tutorial/8.jpg)](https://livehelperchat.com/var/media/images/tutorial/8.jpg)
+On next screen you should see similar window. Database has to be precreated.
+
+​![](/img/install/database-settings.png)
+
+## Application initial settings
+
+These settings you can fill up according to your needs.
+
+​![](/img/install/initial-app-settings.png)
+
+## Install completed
+
+​![](/img/install/install-completed.png)
+
+## Logging to application
+
+After clicking `Login here` you should be presented with login window.
+
+​![](/img/install/login-window.png)
+
+Install url is always `index.php/site_admin/user/login`
+
+## Dashboard page
 
 This is the main application window.  
-[![](https://livehelperchat.com/var/media/images/tutorial/9.jpg)](https://livehelperchat.com/var/media/images/tutorial/9.jpg)
 
-Now click on Settings icon on top menu. And you should see this window.  
-[![](https://livehelperchat.com/var/media/images/tutorial/10.jpg)](https://livehelperchat.com/var/media/images/tutorial/10.jpg)
+​![](/img/install/dashboard-installed.png)
 
-From above window choose "Live help embed code" => "Widget embed code" and to you will be shown window from below. For proactive chat invitation i suggest to have these settings.   
-[![](https://livehelperchat.com/var/media/images/tutorial/11.jpg)](https://livehelperchat.com/var/media/images/tutorial/11.jpg)
+## Generating embed code
 
-Now you can create a new proactive chat invitation. Click "Configuration" => "Live help configuration" => "Pro active chat invitation"
+Now click on Settings icon ​![](/img/install/settings.png) on top menu. You should see this window.  
 
-[![](https://livehelperchat.com/var/media/images/tutorial/15.jpg)](https://livehelperchat.com/var/media/images/tutorial/15.jpg)
+​![](/img/install/settings-page.png)
+
+Navigate to
+
+> Embed code -> Widget embed code (new)
+
+You should see window like this
+
+​![](/img/install/html-code.png)
+
+To have proactive enabled check `Check for operator invitation messages`
+
+Embed code should be similar to this. If you copy this code change `install.livehelperchat.com/index.php` to your install path.
+
+```js
+<script>var LHC_API = LHC_API||{};
+LHC_API.args = {mode:'widget',lhc_base_url:'//install.livehelperchat.com/index.php/',wheight:450,wwidth:350,pheight:520,pwidth:500,leaveamessage:true,proactive:true};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+var date = new Date();po.src = '//install.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+```
+
+For more information and trouble shooting see [integration article](integrating.md).
+
+## Proactive invitation setup
+
+Navigate to
+
+> System configuration -> Live help configuration -> Pro active chat invitations
 
 Here is demo configuration which we have on demo.livehelperchat.com. Some things it does:
 
-1.  Message to user is send after he spends 20 seconds on page or have more than 2 pageviews.
-2.  We require e-mail
-3.  We show random profile from online operators
-4.  Also we have to delayed messages there. Delayed messages can be also configured in autor responder sections.
-5.  Also we have there long auto delayed message 40 seconds. If during that period no one accepts a chat message is shown that all operators are busy.
+* Message to user is send after he spends 20 seconds on page or have more than 2 pageviews.
+* We show random profile from online operators
+* Also we have to delayed messages there. Delayed messages can be also configured in autor responder sections.
+* Also we have there long auto delayed message 40 seconds. If during that period no one accepts a chat message is shown that all operators are busy.
 
-[![](https://livehelperchat.com/var/media/images/tutorial/16.jpg)](https://livehelperchat.com/var/media/images/tutorial/16.jpg)
+You can see proactive invitation setup on our demo installation.
 
-And here is how looks like our invitation message on site where generated script is installed.
-
-[![](https://livehelperchat.com/var/media/images/tutorial/20.jpg)](https://livehelperchat.com/var/media/images/tutorial/20.jpg)
+​![](/img/install/proactive-invitation.png)
 
 And here is instant auto response message.  
-[![](https://livehelperchat.com/var/media/images/tutorial/21.jpg)](https://livehelperchat.com/var/media/images/tutorial/21.jpg)
+​![](/img/install/autoresponder.png)
 
-And here goes automatic auto response message.  
-[![](https://livehelperchat.com/var/media/images/tutorial/22.jpg)](https://livehelperchat.com/var/media/images/tutorial/22.jpg)
+Here goes automatic auto response message.  
+
+​![](/img/install/autoresponder-busy.png)
+
+## Further reading
 
 *   [Wondering how to setup automatic online/work hours?](online-hours.md)
 *   [Need automatically change operator status to offline/online?](offline-online-automation.md)
-*   [Want to rebrand it according to your site style?](theme.md)
+*   [Want to rebrand it according to your site style?](theme/theme.md)
 *   [Don't know how to use screen sharing?](co-browsing.md)
 *   Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
 
-### How to login?
+## How to login?
 In order to login point your browser to directory where application is installed. URL address should look like http://<your_domain>/index.php/site_admin/
