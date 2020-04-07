@@ -27,5 +27,5 @@ So basically that's the things which can go wrong. The more flexibility I give, 
 ## How to send a manual message to online visitor?
 
 * Generate code with checked option "Check for messages from operator"
-* Enable online users tracking on online users section
-* Then you see online user just click send message to user.
+* Enable online users tracking on online users section. Most likely it's already enabled :smile:
+* Then you see online user just click send message to a user.
