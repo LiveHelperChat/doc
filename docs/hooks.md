@@ -171,6 +171,7 @@ Chat was modified by system or operator.
 | ./modules/lhsurvey/backtochat.php | chat.unread_chat | array('chat' => & $chat)); |  |
 | ./modules/lhrestapi/addmsguser.php | chat.unread_chat | array('chat' => & $chat)); |  |
 | ./modules/lhrestapi/closechatasvisitor.php | chat.unread_chat | array('chat' => & $chat)); |  |
+| ./lib/models/lhabstract/erlhabstractmodelautoresponderchat.php | chat.before_auto_responder_msg_saved | array('msg' => & $msg, 'chat' => & $this->chat)); | Auto responder message is send |
 
 ## Department related events
 
