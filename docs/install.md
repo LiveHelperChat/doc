@@ -4,7 +4,7 @@ title: Install Guide
 sidebar_label: Install Guide
 ---
 
-Ultimate tutorial by screenshots.
+Tutorial how to setup Live Helper Chat.
 
 ## Folders permissions
 

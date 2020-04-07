@@ -79,7 +79,8 @@ module.exports = {
                 'bot/bot-carousel',
                 'bot/bot-text',
                 'bot/bot-list',
-                'bot/bot-button-list'
+                'bot/bot-button-list',
+                'bot/collect-custom-attribute'
             ]
         },
         {
