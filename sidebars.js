@@ -89,6 +89,7 @@ module.exports = {
                 'bot/collecting-information',
                 'bot/validate-information',
                 'bot/integrating-any-ai-bot',
+                'bot/username-based-workflow'
             ]
         }
     ],

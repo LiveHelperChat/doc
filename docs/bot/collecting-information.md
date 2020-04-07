@@ -6,11 +6,11 @@ sidebar_label: Collecting information
 
 In this tutorial I'll show how to create a simple bot which would collect customers attributes and redirect after that customer to an agent.
 
-### Download
+## Download
 You can download and import bot.
 [download](/img/bot/bot.json). Just right click and "save link as"
  
-### Triggers
+## Triggers
 
 We will need these triggers
 
