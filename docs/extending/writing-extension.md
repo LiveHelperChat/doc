@@ -4,7 +4,7 @@ title: How to write custom module/extension?
 sidebar_label: Writing extension
 ---
 
-Few extensions example can be found here. I suggest to analyze few extensions there and you will get an idea how all works.
+Few extensions example can be found [here](https://github.com/LiveHelperChat/livehelperchat-extensions). I suggest to analyze few extensions there and you will get an idea how all works.
 
  > https://github.com/LiveHelperChat/livehelperchat-extensions
 
