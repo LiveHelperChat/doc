@@ -92,7 +92,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Live Helper Chat, Inc. Built with Docusaurus.`,
     },
   },
-  plugins: [],
+  plugins: ["docusaurus-image-loader"],
   presets: [
     [
       '@docusaurus/preset-classic',
