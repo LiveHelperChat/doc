@@ -27,7 +27,7 @@ const features = [
     title: <>Rest API</>,
     description: (
       <>
-        See exposed <a target="_blank" href="https://api.livehelperchat.com">API in swagger</a>.
+        See exposed <a href="docs/development/rest-api">Rest API</a>
       </>
     ),
   },
@@ -66,7 +66,7 @@ function Home() {
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/install')}>
-              Get Started
+              Documentation
             </Link>&nbsp;&nbsp;
             <Link
               className={classnames(
