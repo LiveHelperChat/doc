@@ -80,6 +80,11 @@ If you remove this permission operator will be able to open chats only where he 
 
 > 'lhchat','allowopenremotechat'
 
+## How automatically open assigned chat for an operator?
+
+* You have to in [user account][users/account.md#automatically-accept-assigned-chats] check `Automatically accept assigned chats`
+* Operator has to have enabled `Pending chats list enabled` or `My pending and active chats list enabled`
+
 ## Sample
 
 To user explicitly has to be assigned department. It's not enough just check all departments. Within each department have to be checked department.
@@ -88,9 +93,9 @@ To user explicitly has to be assigned department. It's not enough just check al
 
 You have in department "Auto assignment" secion enable automatic chats transfer.
 
-*   Also optionally you can setup how many active chats user can have at a time.
-*   How long chat should be assigned to user before it will be transfered to another user, if first user did not accepted it.
-*   In most cases it's enough just enable enable it. I also recommend to read round robin implementation for chat's [https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit](https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit)
+* Also optionally you can setup how many active chats user can have at a time.
+* How long chat should be assigned to user before it will be transfered to another user, if first user did not accepted it.
+* In most cases it's enough just enable enable it. I also recommend to read round robin implementation for chat's [https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit](https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit)
 
 ### Users adjustment
 
