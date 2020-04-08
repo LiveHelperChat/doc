@@ -28,6 +28,14 @@ It's also from this modal window possible to change chat owner directly. For tha
 
  > 'lhchat','changeowner'
 
+## For operator to be able to see all departments.
+
+There is two ways either you have to give him permission
+
+> 'lhdepartment', 'see_all'
+
+or assign him read only departments.
+
 ## Transferring by command
 
 It's also possible to transfer chat directly by issuing command in message area. Transfer chat directly to another operator by operator username or e-mail
@@ -39,6 +47,7 @@ It's also possible to transfer chat directly by issuing command in message area.
 Operator has to have this permission.
 
 > 'lhchat', 'allowtransferdirectly'
+
 
 ## Transfer options by transferring chat to department
 
