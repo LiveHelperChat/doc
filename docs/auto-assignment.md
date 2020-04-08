@@ -82,7 +82,7 @@ If you remove this permission operator will be able to open chats only where he 
 
 ## How automatically open assigned chat for an operator?
 
-* You have to in [user account][users/account.md#automatically-accept-assigned-chats] check `Automatically accept assigned chats`
+* You have to in [user account](users/account.md#automatically-accept-assigned-chats) check `Automatically accept assigned chats`
 * Operator has to have enabled `Pending chats list enabled` or `My pending and active chats list enabled`
 
 ## Sample
