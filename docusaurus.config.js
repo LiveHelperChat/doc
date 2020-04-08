@@ -36,6 +36,14 @@ module.exports = {
             href: 'https://livehelperchat.com/news-5c.html'
         },
         {
+            label: 'Forum',
+            href: 'https://forum.livehelperchat.com'
+        },
+        {
+            label: 'Commercial Support',
+            href: 'https://livehelperchat.com/support-13c.html'
+        },
+        {
           href: 'https://github.com/LiveHelperChat',
           label: 'GitHub',
           position: 'right',
