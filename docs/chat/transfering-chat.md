@@ -88,8 +88,11 @@ Either you assign him
 
 Or assign him other departments in `read only` mode.
 
-To be able to see all online operators (from other groups he does not belong to) he has to have 
+To be able to see all online operators (from other groups he does not belong to) there is also two options
 
+Either you assign him
 > 'lhuser', 'see_all'
+
+Or you modify user group and assign with what user groups user can work with.
 
 Having these two permission will result same behaviour as before.
