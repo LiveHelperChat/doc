@@ -76,3 +76,20 @@ For operator to be able to edit these options he has to have this permission.
 :::tip 
 If you do not want to allow operator to do anything with Transferring/changing owners just do not give them `'lhchat', 'allowtransfer'` permission.
 :::
+
+## My operator sees only to him assigned departments and only his departments operators?
+
+There was a change recently what departments online operators can see without being assigned directly to them.
+
+For operator to be able to see all departments, not only assigned to him you have two ways
+
+Either you assign him  
+ > 'lhdepartment', 'see_all'
+
+Or assign him other departments in `read only` mode.
+
+To be able to see all online operators (from other groups he does not belong to) he has to have 
+
+> 'lhuser', 'see_all'
+
+Having these two permission will result same behaviour as before.
