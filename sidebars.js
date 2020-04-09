@@ -129,6 +129,7 @@ module.exports = {
                 'development/override-class'
             ]
         },
+        'development/orm',
         'development/rest-api',
         'development/move-chat',
         'development/unbrand',
