@@ -14,9 +14,11 @@ You can also force this tracking by navigating to
 
 and activating `Track all logged operators activity and ignore their individual settings.`
 
-You can change there also default activity timeout value
+You can change there also default activity timeout value.
 
 `How long operator should go offline automatically because of inactivity. Value in minutes`
+
+Operator chosen option overrides default timeout value.
 
 * Install chrome extension, it has support for detecting computer iddle/active states.
 * Use desktop application

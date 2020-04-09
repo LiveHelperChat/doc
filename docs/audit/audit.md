@@ -20,6 +20,19 @@ From audit configuration you can choose what basic objects changes should be log
 For older records deletion you have to be running [workflow cronjob](../development/cronjob.md#default-cronjob-setup) 
 :::
 
+## How to search for specific object modification/deletion?
+
+You can search for objects modification by searching by category
+
+* `CannedMsg` - canned message modification
+* `CannedMsgDelete` - canned message delete event
+* `AutoResponder` - Auto Responder modify event
+* `AutoResponderDelete` - Auto Responder delete event
+* `Subject` - Subject modify event
+* `SubjectDelete` - Subject delete event
+
+If in search you provide Object ID you can see exactly what modified object.
+
 ## How to log custom events from extensions?
 
 If you are developing extension you can log something there like this

@@ -103,9 +103,9 @@ Just find yourself in online visitors list and delete your row. Next time you re
 
 Make sure your invitation matches generated embed code rules. E.g
 
-*   Department - if you have chosen department in embed code but did not assigned any to invitation rules. If you have not assigned any department in widget code genration make sure proactive invitation also has none
-*   Make sure languages matches. E.g you made invitation with language /eng but site is /fre
-*   In general - try to follow install tutorial.
+* Department - if you have chosen department in embed code but did not assigned any to invitation rules. If you have not assigned any department in widget code generation make sure proactive invitation also has none
+* Make sure languages matches. E.g you made invitation with language /eng but site is /fre
+* If you are sending messages manually to `Online Visitor` make sure your embed code was generated with chosen `Check for operator invitation messages` option.
 
 ### How proactive messages retargeting works?
 
