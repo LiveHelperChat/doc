@@ -72,7 +72,10 @@ LHC_API.args = {
     pvhash : 'pvhash',  // Payment verify hash | Optional
     lang : 'lit/'       // Chat language | Optional
     fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
-    proactive : false,  // Disable proactive invitations. | Optional
+    proactive : false,      // Disable proactive invitations. | Optional
+    check_messages : false, // By default proactive invitation is checked on page load and we determine is there any invitation pending based on present user state.
+                            // But limitation of this is that if operator sends a message visitor seems this message only after page view.
+                            // By having this enabled you increase server load but visitor won't need to reload page to see operator invitation message.
     survey : 1,         // Survey Id. Department Survey id overrides this value. | Optional
     operator : 1        // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
 };
