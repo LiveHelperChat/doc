@@ -130,5 +130,17 @@ Here goes automatic auto response message.
 *   [Don't know how to use screen sharing?](co-browsing.md)
 *   Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
 
+## My widget does not load?
+
+Try to add this in your `.htaccess` file in root folder `lhc_web`.
+
+```apacheconfig
+AddType application/wasm .wasm
+
+Header always Set Access-Control-Allow-Origin "*"
+Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+```
+
 ## How to login?
 In order to login point your browser to directory where application is installed. URL address should look like http://<your_domain>/index.php/site_admin/

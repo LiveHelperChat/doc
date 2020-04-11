@@ -16,6 +16,16 @@ In order to enable voice messages to visitors you have to do the following thing
 
 [![Youtube Tutorial](https://img.youtube.com/vi/yTGwGdkBCyk/0.jpg)](https://youtu.be/yTGwGdkBCyk?t=92)
 
+## Apache .htaccess sample
+
+```apacheconfig
+AddType application/wasm .wasm
+
+Header always Set Access-Control-Allow-Origin "*"
+Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+```
+
 ## Permissions
 
 Required permissions
