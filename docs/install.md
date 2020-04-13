@@ -6,6 +6,14 @@ sidebar_label: Install Guide
 
 Tutorial how to setup Live Helper Chat.
 
+## Requirements
+
+If you are running wordpress site it's 99.9% chance Live Helper Chat will work just fine.
+
+* Minimum PHP 5.4
+* Mysql/MariaDB
+* Apache/Nginx
+
 ## Folders permissions
 
 * After you gave permission to write to cache folder. You should see the following window. If you see strange error instead of install make sure that
