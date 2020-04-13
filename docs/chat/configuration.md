@@ -20,13 +20,13 @@ This is the same settings operator can change from his [account page](users/acco
 
 ## Copyright settings
 
-## Application name
+### Application name
 
 Here you can change basic copyright settings globally.
 
 ​![](/img/chat-configuration/copyright-settings.png)
 
-## Site settings
+### Site settings
 
 Here you can change.
  * Copyright text visible in the bottom right corner
