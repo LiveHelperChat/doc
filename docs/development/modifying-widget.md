@@ -45,7 +45,7 @@ Wrapper is responsible for rendering sourceless iframes in page itself.
 To compile wrapper
 
 ```shell script
-cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run buil
+cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build
 ```
 
 Widget is responsible for the chat logic itself.
