@@ -131,6 +131,7 @@ module.exports = {
             ]
         },
         'development/orm',
+        'development/modifying-widget',
         'development/rest-api',
         'development/move-chat',
         'development/unbrand',

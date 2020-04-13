@@ -77,3 +77,8 @@ In order to change logo just create your logo in
 
 That way you will override default logo without changing kernel. If after change logo is displayed the same, clean the cache.
 
+## How to change style?
+
+See sample extension at
+
+https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridecss

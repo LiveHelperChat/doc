@@ -7,6 +7,7 @@ sidebar_label: Override everything
 Just thought it would be usefull to remind all that.
 
 *   It's possible to override any image in web application without [overriding default ones](development/unbrand.md#how-to-change-logo)
+*   It's possible to override any CSS in web application without [overriding default ones](development/unbrand.md)
 *   It's possible to override [any template](extending/overriding-templates.md) without overriding default ones
 *   It's possible to override [any module, class etc.](development/override-class.md)
 *   If you are not sure which template is used enable [debug output](debug.md)
