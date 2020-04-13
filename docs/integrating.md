@@ -81,16 +81,20 @@ Most likely it's an issue with CORS rules. There is .htaccess samples you might 
 .htaccess sample if you embed just on one domain code. Don't forget to change to your domain.
 
 ```apacheconfig
-Header always Set Access-Control-Allow-Origin "http://example.com"
-Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
-Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  Header always Set Access-Control-Allow-Origin "http://example.com"
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
 ```
 
 If code will be embedded on multiple domains.
 ```apacheconfig
-Header always Set Access-Control-Allow-Origin "*"
-Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
-Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  Header always Set Access-Control-Allow-Origin "*"
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
 ```
 
 For nginx read this [article](nginx-configuration-tips.md). 

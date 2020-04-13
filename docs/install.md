@@ -145,9 +145,12 @@ Try to add this in your `.htaccess` file in root folder `lhc_web`.
 ```apacheconfig
 AddType application/wasm .wasm
 
-Header always Set Access-Control-Allow-Origin "*"
-Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
-Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  Header always Set Access-Control-Allow-Origin "*"
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+
 ```
 
 ## How to login?
