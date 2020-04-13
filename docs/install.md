@@ -150,7 +150,17 @@ AddType application/wasm .wasm
   Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
   Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
 </Files>
+```
 
+## Installation under sub-folder
+
+If you are running wordpress site and have nice URL, you might need to allow access to Live Helper Chat subfolder. `.htacess` could look like.
+
+```apacheconfig
+RewriteEngine On
+# Previous rules
+RewriteRule ^lhc_web/.*$ - [L]
+# Afterward rules
 ```
 
 ## How to login?
