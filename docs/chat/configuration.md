@@ -20,9 +20,19 @@ This is the same settings operator can change from his [account page](users/acco
 
 ## Copyright settings
 
-Here you can change basic copyright settings globally
+## Application name
+
+Here you can change basic copyright settings globally.
 
 ​![](/img/chat-configuration/copyright-settings.png)
+
+## Site settings
+
+Here you can change.
+ * Copyright text visible in the bottom right corner
+ * Terms of service URL visible as link within checkbox during start chat workflow.
+
+​![](/img/chat/site-settings.png)
 
 ## Online tracking
 
