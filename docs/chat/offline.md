@@ -90,6 +90,10 @@ Let say you want to redirect user to some page then your operators are offline.
 
 You can do that by adjusting your embed code and appending redirect url. E.g
 
+´´´
+offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
+´´´
+
 ### New widget
 
 Please refer to [javascript arguments](javascript-arguments.md) page.
