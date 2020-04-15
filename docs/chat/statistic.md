@@ -185,13 +185,19 @@ In this section you can choose what charts should be checked by default for gene
 
 ![](/img/statistic/charts-configuration.jpg)
 
+:::tip
+In order operator to see all departments statistic even the ones operator do not belong to, he has to have these permissions:
+
+`'lhdepartment', 'see_all'` and `'lhuser', 'see_all'`
+:::
+
 ## Permissions
 
 To view statistic
 
 > 'lhstatistic','viewstatistic'
 
-To allow operator export statistic in XLS
+To allow operator export statistic in XLS. At the moment only department statistic can be exported in XLS.
 
 > 'lhstatistic','exportxls'
 
