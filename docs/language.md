@@ -161,7 +161,8 @@ To compile desktop client translation you have to use QT Linquist application. I
 
 ## I have updated translation file but still I see untranslated text?
 
-Clear cache in back office.
+* Clear cache in back office.
+* If you are updating widget text also disable network cache in chrome to be sure new content is delivered.
 
 ## How to switch from LTR to RTL language, how to add RTL language?
 Since 1.30v we have support for full RTL language.
