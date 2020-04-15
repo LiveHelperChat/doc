@@ -81,7 +81,8 @@ module.exports = {
                 'bot/bot-text',
                 'bot/bot-list',
                 'bot/bot-button-list',
-                'bot/collect-custom-attribute'
+                'bot/collect-custom-attribute',
+                'bot/rest-api'
             ]
         },
         {
