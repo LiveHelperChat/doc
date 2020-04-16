@@ -82,9 +82,78 @@ If you choose `Body Param` you can use this variable `Location/Key` as  replacea
 
 If you choose `Query` or `Body Post Param` key will be used as post/get parameter directly.
 
+In Rest API
+
+![](/img/bot/user-parameter-rest-api.png)
+
+In the trigger it would look like
+
+![](/img/bot/user-entered-parameter.png)
+
 ### Output parsing
 
-To be continued... :smile:
+Output parsing is dedicated to extracting usefull variables from API response.
+
+#### Name
+Name will be visible within option to execute specific trigger based on response.
+
+![](/img/bot/expected-output-name.png)
+
+In the trigger it will be visible here
+
+![](/img/bot/response-found.png)
+
+#### HTTP status code E.g 200,301,500
+
+For this response to match you can to define expected HTTP status code. It's optional. This way you can separate success response from failed one.
+
+#### Response Location 1/2/3/4.
+
+If you define success location it will parse response as JSON and will try to extract specified attribute.
+
+Examples of variables extraction
+
+`status` as location value would return `success`
+```json
+{
+  "status": "success"
+}
+```
+
+`response:location` as location value would return `Lithuania`
+```json
+{
+  "response": {
+    "location" :  "Lithuania"
+  }
+}
+```
+
+`items:0:name` as location value would return `Sub item name`
+
+```json
+{
+  "items": [
+    {
+      "name" :  "Sub item name"
+    }
+  ]
+}
+```
+
+#### Conditions checking
+
+Sometimes it makes sense to check was something found based on response attribute. So you can define condition to check.
+
+Here we expect that `status` value would be success.
+
+![](/img/bot/rest-api-conditions.png)
+
+#### Meta msg location.
+
+Here we can extract meta_msg if you provide Live Helper Chat compatible JSON response. 
+
+To be continued...
 
 ## Replaceable variables
 
@@ -99,6 +168,21 @@ Rest API in value fields you can use these replaceable variables
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly
 * `{{lhc.var.<chat variable key>}}` - these values can be set using extensions etc.
+
+## Trigger workflow
+
+In trigger once everything is setup it will look like this.
+
+![](/img/bot/rest-api-bot-trigger.png)
+
+Fields description
+
+* `Rest API` - it's our main Rest API `Name` we are working with
+* `Method` - it's our `Name of the request` from Rest API building window.
+* `User entered parameter` - it's just defined parameter which is coming from Rest API builder window `User parameters` tab.
+* `Execute trigger for [UUID Set]` - It's defined output parsing option which we defined in Rest API `Output parsing` tab.
+* `Default trigger to execute` - if we did not found any matching output combination this trigger will be executed.
+* `Send Rest API Call in the background.` - by default `Rest API` calls are send as soon visitor sends a message, they are happening on same request. This can lead to a problems if Rest API is slow. We can send Rest API calls in the background, but for that you have to be running [lhc-php-resque](https://github.com/LiveHelperChat/lhc-php-resque) extension. You won't need to code anything just setup extension itself.
 
 ## Output variables in triggers
 
