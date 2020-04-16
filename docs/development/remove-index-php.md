@@ -19,5 +19,23 @@ Also make sure that you
 
 * Have installed atleast 1.69v
 * Have installed app in root folder of domain/subdomain.
-* Have copied .htaccess file from doc/http_conf_examples
-* There are few samples. Running apache .htaccess.example should be just file so just copy it to root folder and rename it to .htaccess
+* Have copied `.htaccess` file from `doc/http_conf`_examples
+* There are few samples. Running apache `.htaccess.example` should be just file so just copy it to root folder and rename it to `.htaccess`
+
+.htaccess file example
+
+```apacheconfig
+AddType application/wasm .wasm
+
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  Header always Set Access-Control-Allow-Origin "*"
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+
+RewriteEngine On
+RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
+RewriteRule ^upgrade.php - [L]
+RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|swf|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
+DirectoryIndex index.php
+```
