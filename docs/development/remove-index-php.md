@@ -4,13 +4,13 @@ title: How to remove index.php from URL?
 sidebar_label: Remove index.php
 ---
 
-In settings/settings.ini.php file change
+In `settings/settings.ini.php` file change
 ```php
 'force_virtual_host' => false,
 ```
 to
 ```php
-'force_virtual_host' =>true,
+'force_virtual_host' => true,
 ```
 
 After that clear cache in back office.
