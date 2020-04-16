@@ -151,9 +151,13 @@ Here we expect that `status` value would be success.
 
 #### Meta msg location.
 
-Here we can extract meta_msg if you provide Live Helper Chat compatible JSON response. 
+Here we can extract meta_msg if you provide Live Helper Chat compatible JSON response. Meta message will be used in chosen response trigger [**text message**] if this trigger does not have ant meta message information.
 
-To be continued...
+```php
+echo json_encode(array(
+    'meta_msg' => json_decode('{"content":{"quick_replies":[{"type":"button","content":{"name":"Rest API Button","payload":"rest_api_button"}}]}}',true)
+));
+```
 
 ## Replaceable variables
 
