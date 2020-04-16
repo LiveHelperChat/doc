@@ -132,15 +132,16 @@ Here goes automatic auto response message.
 
 ## Further reading
 
-*   [Wondering how to setup automatic online/work hours?](online-hours.md)
-*   [Need automatically change operator status to offline/online?](offline-online-automation.md)
-*   [Want to rebrand it according to your site style?](theme/theme.md)
-*   [Don't know how to use screen sharing?](co-browsing.md)
-*   Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
+* [How to remove index.php from URL?](development/remove-index-php.md)
+* [Wondering how to setup automatic online/work hours?](online-hours.md)
+* [Need automatically change operator status to offline/online?](offline-online-automation.md)
+* [Want to rebrand it according to your site style?](theme/theme.md)
+* [Don't know how to use screen sharing?](co-browsing.md)
+* Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
 
 ## My widget does not load?
 
-Try to add this in your `.htaccess` file in root folder `lhc_web`.
+Try to add this in your `.htaccess` file in root folder `lhc_web`. If this folder does not exists just place `.htaccess` in the same folder where `index.php` file exists. It has to be placed in Live Helper Chat folder not a website.
 
 ```apacheconfig
 AddType application/wasm .wasm
