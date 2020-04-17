@@ -4,7 +4,7 @@ title: Pro active chat invitation
 sidebar_label: Proactive
 ---
 
-Since 1.38v we are capable to show users message if certain criteria are met
+Proactive invitations triggers messages which are automatically send to a visitor.
 
 *   Invitation tab
     *   "Name for personal purposes" - just enter a name. Will be used only for personal purposes
@@ -99,6 +99,14 @@ That's all. Different domains will show different messages. Using this trick you
 
 Just find yourself in online visitors list and delete your row. Next time you refresh a page you will be seen as a new visitor.
 
+### How do I disable sound on proactive invitation?
+
+Go to
+
+> System configuration -> Chat configuration -> Online tracking
+
+Uncheck `Play sound on invitation to chat.`
+
 ### I do not get any invitations?
 
 Make sure your invitation matches generated embed code rules. E.g
@@ -106,6 +114,7 @@ Make sure your invitation matches generated embed code rules. E.g
 * Department - if you have chosen department in embed code but did not assigned any to invitation rules. If you have not assigned any department in widget code generation make sure proactive invitation also has none
 * Make sure languages matches. E.g you made invitation with language /eng but site is /fre
 * If you are sending messages manually to `Online Visitor` make sure your embed code was generated with chosen `Check for operator invitation messages` option.
+* Invitations are not send to visitor who is having chat at present time.
 
 ### How proactive messages retargeting works?
 
