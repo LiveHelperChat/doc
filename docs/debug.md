@@ -65,5 +65,8 @@ As in above example you see that widget styles can be overrided editing customt
 
 ## During some action app returns white screen, what to do?
 
- * Enable debug output
- * See cache/default.log for error message.
+* [Disable cache](#disabling-cache)
+* Enable [debug output](#enabling-debug-output)
+* See `cache/default.log` for an error message.
+* See chrome console for an error. `CTRL+SHIFT+J`
+* Read [My widget does not load](install.md/#my-widget-does-not-load)
