@@ -77,7 +77,11 @@ LHC_API.args = {
                             // But limitation of this is that if operator sends a message visitor seems this message only after page view.
                             // By having this enabled you increase server load but visitor won't need to reload page to see operator invitation message.
     survey : 1,         // Survey Id. Department Survey id overrides this value. | Optional
-    operator : 1        // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
+    operator : 1,       // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
+    cookie_per_page : false  // (false | true | false | "/cookiepath")
+                             // false - cookie will be set per page. Usefull if you want to have different instances of chat per page.
+                             // true - cookie will be set per page. Cookie path argument is not set.
+                             // "/cookiepath" - you are responsible for setting cookie path
 };
 
 (function() {
