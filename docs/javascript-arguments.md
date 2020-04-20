@@ -79,7 +79,7 @@ LHC_API.args = {
     survey : 1,         // Survey Id. Department Survey id overrides this value. | Optional
     operator : 1,       // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
     cookie_per_page : false  // (false | true | false | "/cookiepath"). Default value - false
-                             // false - cookie will be set per domain. Same chat will be available across all pages where scritp is embeded.
+                             // false - cookie will be set per domain. Same chat will be available across all pages where script is embeded.
                              // true - cookie will be set per page path. Cookie path argument is not set. Usefull if you want to have different instances of chat per page.
                              // "/cookiepath" - you are responsible for setting cookie path. Usefull if you want to have same cookie under specific path main part.
 };
