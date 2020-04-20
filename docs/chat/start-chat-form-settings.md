@@ -18,7 +18,7 @@ It's possible to develop that once you change department start chat settings fie
 
 This is the main window of start chat form settings page.
 
-![Start chat form settings](/img/chat/start-chat-form-settings.jpg)
+![Start chat form settings](/img/chat/start-chat-form-settings.png)
 
 ## Attributes definition
 
@@ -93,6 +93,8 @@ Sometimes there is requirement once department is prefilled user should not be a
 ## Custom fields
 
 You can define custom fields directly from back office. See video https://youtu.be/huUlx55velk?t=88
+
+You can [prefill](../custom-fields-and-prefill.md) custom fields also.
 
 ## URL Arguments
 

@@ -63,7 +63,7 @@ Example how it would look like
  <script type="text/javascript">  
  var LHCChatOptions = {};  
 
-// Custom variables
+// Custom variables definition directly in JS
 LHCChatOptions.attr = new Array();  
 LHCChatOptions.attr.push({'name':'Bet ID','value':'bet_id','type':'text','size':6,'req':true});  
 LHCChatOptions.attr.push({'name':'Transaction ID','value':'','type':'text','size':6});  
@@ -76,28 +76,36 @@ LHCChatOptions.attr.push({'name':'Transaction ID 2','value':'','type':'text','si
 */
 LHCChatOptions.attr.push({'name':'EncryptedTwo','value':'sb29scUd/KH2O778oMAGLGqqi7Q9oNflysbpx4X6Dp8=','type':'hidden','size':0,'encrypted':true});
 
-// Prefill default fields
+
+// Prefill default fields. If you prefill fields this way even if they have checked `Hide if prefilled`
+// They will not be hidden.
 LHCChatOptions.attr_prefill = new Array();  
 LHCChatOptions.attr_prefill.push({'name':'email','value':'remdex@gmail.com','hidden':true});  
 LHCChatOptions.attr_prefill.push({'name':'phone','value':'370454654'});  
 LHCChatOptions.attr_prefill.push({'name':'username','value':'Username here'});  
 LHCChatOptions.attr_prefill.push({'name':'question','value':'Default user message'}); 
+
+// It's the easiest way to prefill all fields including the ones you defined in back office.
+// index value can be field identifier
+// 'name_surname' this time is custom admin field defined in back office.
+// If field has checked `Hide if prefilled` it will be hidden.
+LHCChatOptions.attr_prefill_admin = new Array();
+LHCChatOptions.attr_prefill_admin.push({'index':'name_surname','value':'remdex@gmail.com'});
+LHCChatOptions.attr_prefill_admin.push({'index':'question','value':'remdex@gmail.com'});
+LHCChatOptions.attr_prefill_admin.push({'index':'email','value':'remdex2@gmail.com'});
+LHCChatOptions.attr_prefill_admin.push({'index':'username','value':'remdex2@gmail.com'});
+LHCChatOptions.attr_prefill_admin.push({'index':'phone','value':'rem'});
+
 </script>
 ```
+![](/img/chat/prefill-admin-field.png)
 
 This future is usefull then user is logged and you want to pass let say logged user id etc. Some additional attributes and their value. Currently additional attributes can be two types
-
 
 * text - is visible to user
 * hidden - hidden is passed as invisible field from user point of view
 * req - field is required
 * show - (on - show this field only for online form, off - show this field only for offline form), if skipped for online and offline form field will be shown.
-
-
- > :information_source: You can't prefill in back office defined variables. It's possible to develop this feature if someone really needs it.
-
-
-
 
 ## How securely pass attributes?
 

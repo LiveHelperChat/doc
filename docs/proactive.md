@@ -99,6 +99,11 @@ That's all. Different domains will show different messages. Using this trick you
 
 Just find yourself in online visitors list and delete your row. Next time you refresh a page you will be seen as a new visitor.
 
+### I do not get any sound on invitation?
+
+* Sound for proactive invitation has to be enabled. See below item.
+* Sound is played only once per session. Does not matter if you send a new manual invitation. You have to clear `lhc_invs` variable from your browser `Session Storage` to get a sound.
+
 ### How do I disable sound on proactive invitation?
 
 Go to
