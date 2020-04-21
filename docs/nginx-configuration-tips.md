@@ -46,21 +46,6 @@ Demo install nginx configuration example
                  add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
               }
 
-                ## @todo: add expires headers...
-
-               valid_referers none blocked server_names ~(livehelperchat.com|google.|reddit.|bing.|yahoo.);
-               if ($invalid_referer) {
-                     return 403;
-               }
-
-               if ($http_user_agent ~* "(WebReaper|wget|SiteSucker|SuperBot|Mihov Picture Downloader|TALWinHttpClient|A1 Website Download|WebCopier|Download Ninja|Microsoft URL Control|GetRight|Arachmo|MJ12bot|Gaisbot|Anonymous|Yanga|Twiceler|psbot|Irvine|Indy Library|HTTrack)" ) {
-                        return 403;
-               }
-
-               if ($http_referer ~* (stockingteensex.info|cbox.ws|teensos.net|dpstream.net|tagged.com|kaskus.us|gorilladatingservice.info|taringa.net|discuss.com|craigslist.org|poringa.net)) {
-                  return 403;
-               }
-
                aio on;
                directio 512;
 
