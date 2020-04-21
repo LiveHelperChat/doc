@@ -142,6 +142,13 @@ In this section can be found all the :smile: tricky settings. Most of the time y
 
 This overrides javascript options and set's cookie always under defined domain. If you want more security and you will use chat only for one domain makes sense to enter this site domain. It has to be plain value like `example.com`
 
+### Domains where script can be embedded. E.g example.com, google.com
+
+If you want to add more security and allow Live Helper Chat script to be embeded just on specific domain(s). You can set your domain here.
+Domain's has to be separated by a comma. E.g
+
+> livehelperchat.com, google.com
+
 ### Please enter explicit http mode. Either http: or https:, do not forget : at the end.
 
 If you want to be more explicit how data is going http or https you can set this to `https:` or `http:`. Usually there is no need to touch this parameter.
