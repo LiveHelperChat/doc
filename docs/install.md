@@ -152,6 +152,25 @@ AddType application/wasm .wasm
   Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
 </Files>
 ```
+## Install from command line
+
+It's also possible to install from command line.
+
+Copy `install-cli.php` script to root folder (`lhc_web` if you pulled from github)
+
+```shell script
+cp cli/install-cli.php install-cli.php
+```
+
+Copy default `example.settings.ini` to `settings.ini`. Don't forget to modify them.
+```shell script
+cp cli/example.settings.ini cli/settings.ini
+```
+
+Install Live Helper Chat
+```shell script
+php install-cli.php cli/settings.ini
+```
 
 ## Installation under sub-folder
 
