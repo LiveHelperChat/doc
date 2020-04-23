@@ -4,7 +4,7 @@ title: Install Guide
 sidebar_label: Install Guide
 ---
 
-Tutorial how to setup Live Helper Chat.
+Tutorial how to setup Live Helper Chat. You can also use available snapshot on [DigitalOcean](development/hosting-on-digitalocean.md)
 
 ## Requirements
 

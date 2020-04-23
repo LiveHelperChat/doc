@@ -131,6 +131,7 @@ module.exports = {
                 'development/override-class'
             ]
         },
+        'development/hosting-on-digitalocean',
         'development/orm',
         'development/modifying-widget',
         'development/rest-api',
