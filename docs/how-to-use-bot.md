@@ -32,7 +32,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
 
 * Basic
     * [Send text](bot/text.md)
-    * [Collect custom attribute](collect-custom-attribute.md)
+    * [Collect custom attribute](bot/collecting-information.md)
     * [Button list](bot/button-list.md)
     * [Send list](bot/list.md)
     * Send predefined block
