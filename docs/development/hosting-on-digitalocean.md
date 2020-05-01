@@ -6,9 +6,9 @@ sidebar_label: Hosting on DigitalOcean
 
 ## Introduction
 
-While I'm waiting to be approved in [DititalOcean](https://m.do.co/c/09c74421e3c2) marketplace you can send me an e-mail to remdex@gmail.com with your account e-mail (So I'll know whom transfer a snapshot). Snapshot has to be accepted within 24 hours or I'll delete it.
+[DititalOcean](https://m.do.co/c/09c74421e3c2) let's you easily start preconfigured Live Helper Chat. 
 
-DigitalOcean let's you easily start preconfigured Live Helper Chat. 
+You can now easily host Live Helper Chat directly on DigitalOcean by using their marketplace https://marketplace.digitalocean.com/apps/live-helper-chat
 
 ## Requirements
 
