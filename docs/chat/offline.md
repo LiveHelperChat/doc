@@ -94,6 +94,17 @@ You can do that by adjusting your embed code and appending redirect url. E.g
 offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
 ```
 
+## How to redirect visitor to offline form if no one accepts a chat in defined amount of time?
+
+See video tutorial https://www.youtube.com/watch?v=mqXDCwGy3U8
+
+Basic steps are
+
+* Setup auto responder [Optional]
+* Edit department `Delay in seconds before leave a message form is shown. 0 Means functionality is disabled`
+
+That's it. :)
+
 ### New widget
 
 Please refer to [javascript arguments](javascript-arguments.md) page.
