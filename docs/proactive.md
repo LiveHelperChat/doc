@@ -51,7 +51,7 @@ They define what variables can be logged. Fields definition bellow
 3.  "Do not store event if from last event has passed less than x seconds." - if from last logged event has not passed x seconds do not log it as new event.
 4.  "Filter by value" - if checked. We will also check a value for unique event record.
 
-## Example what can be done with "Events" show invirtation if today's is user birthday
+## Example what can be done with "Events" show invitation if today's is user birthday
 
 1.  First we have to define it in "Pro active chat variables"  
     ![](https://livehelperchat.com/var/media/images/birthday.jpg)
@@ -120,6 +120,10 @@ Make sure your invitation matches generated embed code rules. E.g
 * Make sure languages matches. E.g you made invitation with language /eng but site is /fre
 * If you are sending messages manually to `Online Visitor` make sure your embed code was generated with chosen `Check for operator invitation messages` option.
 * Invitations are not send to visitor who is having chat at present time.
+* If visitor had chat past 24 hours invitation to him will not be shown. Timeout value can be changed in [chat configuration](chat/configuration.md#proactive-message-timeout-in-hours)
+* Best way to test invitation is one of these
+    * Delete `lhc_per` cookie
+    * Start new browsing session in incognito window.
 
 ### How proactive messages retargeting works?
 
