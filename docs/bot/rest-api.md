@@ -167,6 +167,8 @@ echo json_encode(array(
 ));
 ```
 
+In order for rest API to receive these clicks you should also check in trigger [Default for unknown button click](triggers.md#trigger)
+
 ## Replaceable variables
 
 Rest API in value fields you can use these replaceable variables

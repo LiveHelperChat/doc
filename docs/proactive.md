@@ -124,6 +124,7 @@ Make sure your invitation matches generated embed code rules. E.g
 * Best way to test invitation is one of these
     * Delete `lhc_per` cookie
     * Start new browsing session in incognito window.
+* By default operator has to be online for invitation to be send. Widget has to be in online state.
 
 ### How proactive messages retargeting works?
 
