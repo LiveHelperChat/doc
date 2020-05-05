@@ -31,7 +31,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
 ## Bot reply types
 
 * Basic
-    * [Send text](bot/text.md)
+    * [Send text](bot/text.md) 
     * [Collect custom attribute](bot/collecting-information.md)
     * [Button list](bot/button-list.md)
     * [Send list](bot/list.md)
@@ -52,7 +52,8 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
     * Execute Javascript
     * Execute action
     * [Rest API](bot/rest-api.md)
-
+    
+    
 ## FAQ
 
 ### What is payload?
@@ -76,3 +77,19 @@ Yes you can. Just add more than one event.
 ## Permissions
 
 > 'lhgenericbot','use'
+
+## How looks every Basic replies ?
+
+#### Examples:
+
+![enter image description here](https://s6.gifyu.com/images/specials.gif)
+
+#### Screenshot Send message 
+![enter image description here](https://i.paste.pics/95ba96acef8aec20932942b84a3c2d8b.png)
+
+#### Screnshot Button List
+![enter image description here](https://i.paste.pics/4fc2a8f88f4fbb4252da61f9edfa2578.png)
+#### Screenshot Send List
+![enter image description here](https://i.paste.pics/cfd4f6dc2e3f5eca276589652d6a2aa1.png)
+#### Screenshot Carrousel
+![enter image description here](https://i.paste.pics/df4a9dd6babc37842ccfce44639e7b89.png)fo
