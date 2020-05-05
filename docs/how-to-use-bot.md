@@ -81,15 +81,16 @@ Yes you can. Just add more than one event.
 ## How looks every Basic replies ?
 
 #### Examples:
-
-![enter image description here](https://s6.gifyu.com/images/specials.gif)
+![](/img/bot/specials.gif)
 
 #### Screenshot Send message 
-![enter image description here](https://i.paste.pics/95ba96acef8aec20932942b84a3c2d8b.png)
+![](/img/bot/send-message.png)
 
 #### Screnshot Button List
-![enter image description here](https://i.paste.pics/4fc2a8f88f4fbb4252da61f9edfa2578.png)
+![](/img/bot/button-list.png)
+
 #### Screenshot Send List
-![enter image description here](https://i.paste.pics/cfd4f6dc2e3f5eca276589652d6a2aa1.png)
+![](/img/bot/send-list.png)
+
 #### Screenshot Carrousel
-![enter image description here](https://i.paste.pics/df4a9dd6babc37842ccfce44639e7b89.png)fo
+![](/img/bot/carousel.png)
