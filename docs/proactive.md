@@ -40,7 +40,22 @@ Proactive invitations triggers messages which are automatically send to a visito
 
 "Events" and "Dynamic invitations" cannot be used at the same time!
 
-## ![](https://livehelperchat.com/var/media/images/invitation_v2.jpg)
+## Invitation widget
+
+Invitation itself looks like.
+
+![Proactive invitation](/img/chat/invitation.png)
+
+Operator `Remigijus Kiminas` in this case, will be determined the following way
+
+* You can set `Operator name` in proactive invitation itself. Usually it can be like site name. Because at this moment we still don't know what operator will accept a chat.
+* If you do not set `Operator name` and do not use `Show random operator profile` you will see `Live Support` as a sender.
+* You can also check `Show random operator profile` so random operator profile will be chosen as sender.
+
+Message itself always comes from proactive chat invitation `Message to user` or `Message to returning user` fields.
+
+## Proactive invitations list 
+![](https://livehelperchat.com/var/media/images/invitation_v2.jpg)
 
 ## Proactive chat's variables
 

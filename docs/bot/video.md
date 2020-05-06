@@ -15,9 +15,11 @@ https://developers.google.com/youtube/youtube_player_demo
 You can paste direct url to your video file.
 
 Direct video 
+
 ![](/img/bot/direct-video.png)
 
 Youtube video
+
 ![](/img/bot/youtube-video.png)
 
 Iframe JSON

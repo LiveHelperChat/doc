@@ -134,11 +134,12 @@ Chat was modified by system or operator.
 | ./modules/lhchat/cannedmsgedit.php | chat.cannedmsgedit_path | array('result' => & $Result)); |  |
 | ./modules/lhchat/cannedmsg.php | chat.cannedmsg | array()); |  |
 | ./modules/lhchat/cannedmsg.php | chat.cannedmsg_before_remove | array('msg' => & $Msg)); |  |
-| ./modules/lhchat/cannedmsg.php | chat.cannedmsg_path | array('result' => & $Result)); |  |
+| ./modules/lhchat/cannedmsg.php | chat.cannedmsg_path | array('result' => & $Result); |  |
 | ./modules/lhuser/account.php | chat.canned_msg_before_save | array('errors' => & $Errors, 'msg' => & $cannedMessage, 'scope' => 'user')); |  |
 | ./modules/lhuser/account.php | chat.canned_msg_after_save | array('msg' => & $cannedMessage)); |  |
 | ./modules/lhspeech/editlanguage.php | chat.cannedmsgedit_path | array('result' => & $Result)); |  |
 | ./modules/lhspeech/editdialect.php | chat.cannedmsgedit_path | array('result' => & $Result)); |  |
+| ./modules/lhcannedmsg/filter.php | cannedmsg.filter | array('q' => $q, 'cannedmessages' => & $cannedMessagesFormated, 'chat' => & $chat); |  |
 
 ## Messaging events
 
