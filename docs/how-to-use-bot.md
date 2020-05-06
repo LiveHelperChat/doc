@@ -37,7 +37,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
     * [Send list](bot/list.md)
     * Send predefined block
     * Send Typing
-    * Send Video
+    * [Send Video](bot/video.md)
     * [Send Carrousel](bot/carousel.md)
     * Update Current chat
     * Intent detection

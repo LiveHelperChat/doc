@@ -105,7 +105,7 @@ Basic steps are
 
 That's it. :)
 
-## How to redirect visitor to offline form from bot?
+### How to redirect visitor to offline form from bot?
 
 If there is no online operators you can use trigger
 
