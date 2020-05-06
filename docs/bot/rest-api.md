@@ -174,6 +174,7 @@ In order for rest API to receive these clicks you should also check in trigger [
 Rest API in value fields you can use these replaceable variables
 
 * `{{msg}}` - user message
+* `{{msg_clean}}` - user message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
 * `{{chat_id}}` - chat ID
 * `{{lhc.nick}}` - visitor nick
 * `{{lhc.email}}` - e-mail
@@ -182,6 +183,30 @@ Rest API in value fields you can use these replaceable variables
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly
 * `{{lhc.var.<chat variable key>}}` - these values can be set using extensions etc.
+* `{{media}}` - Will hold JSON encoded related files to send message.
+
+```json
+[
+  {
+    "id": 636,
+    "size": 10007,
+    "upload_name": "image.png",
+    "type": "image/png",
+    "extension": "png",
+    "hash": "4bcda854ef4f27e8b4003b42c84f1cb6",
+    "url": "https://devmysql.livehelperchat.com/file/downloadfile/636/4bcda854ef4f27e8b4003b42c84f1cb6"
+  }
+]
+```
+
+So your JSON body in rest API can look like
+```
+{
+    "msg":{{msg}}, // OR {{msg_clean}}
+    "query":{{query}},
+    "media":{{media}} 
+}
+```
 
 ## Trigger workflow
 
