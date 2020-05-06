@@ -23,7 +23,7 @@ Javascript part would look like
 
 ```js
 if (typeof lhc_var === 'undefined'){  
-    var lhc_var = {};  
+    window.lhc_var = {}; // Window is required to define variable in global scope 
 };  
 lhc_var.usernamepassing = 'giovanninew2';
 ```
@@ -34,7 +34,7 @@ This variable can be chagned on the fly and it will be updated automatically.
 
 ```js
 if (typeof lhc_var === 'undefined'){
-    var lhc_var = {}; 
+    window.lhc_var = {}; // Window is required to define variable in global scope 
 };
 lhc_var.gender = 'Gender';
 ```
@@ -60,8 +60,8 @@ Example how it would look like
 ## Prefilling and defining custom variables
 
 ```js
- <script type="text/javascript">  
- var LHCChatOptions = {};  
+<script type="text/javascript">
+var LHCChatOptions = {};  
 
 // Custom variables definition directly in JS
 LHCChatOptions.attr = new Array();  
@@ -128,7 +128,7 @@ The most important part is this. It encrypts data using these two keys.
 You just have to change value of javascript variable.
 ```js
 if (typeof lhc_var === 'undefined'){
-    var lhc_var = {}; 
+    window.lhc_var = {};  // Window is required to define variable in global scope 
 };
 lhc_var.gender = 'Gender Update';
 ```
