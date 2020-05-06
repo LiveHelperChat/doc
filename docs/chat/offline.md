@@ -105,6 +105,18 @@ Basic steps are
 
 That's it. :)
 
+## How to redirect visitor to offline form from bot?
+
+If there is no online operators you can use trigger
+
+> `Update current chat` -> `Update main chat attribute` -> and in `Chat attribute name` enter `status_sub` and value enter `2`
+
+Internally it just means `const STATUS_SUB_CONTACT_FORM = 2;`
+
+You can also redirect visitor to survey
+
+`const STATUS_SUB_SURVEY_SHOW = 5;`
+
 ### New widget
 
 Please refer to [javascript arguments](javascript-arguments.md) page.
