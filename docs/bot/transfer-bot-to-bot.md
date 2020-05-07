@@ -24,9 +24,12 @@ You have to edit the BotB using _These bot logic applies also_: selecting the pa
 - When one visitors uses  BotA only BotA logic is available
 - When one visitors uses BotB , is available all logic you that you made in BotB and also BotA (so browsing BotB you can *EXECUTE TRIGGER *  using a BotA trigger.
 
-![enter image description here](https://i.paste.pics/b9bb74fea0f389d373d9ab6cec629c6c.png)
+![Including other bot](/img/bot/including-other-bot.png)
 
 :::tip
 Remember that when you edit in one Bot logic (no mather where it was made) , your are editing the same logic for every bot it is included, **they are just included-linked not copied**
 :::
 
+:::warning
+If in BotB you edit BotA and choose a trigger from BotB and later go to edit directly BotA you won't see chosen trigger in BotA. You should construct bot in a such way that you would not need to choose triggers directly in BotA.
+:::
