@@ -140,6 +140,7 @@ sudo /opt/livehelperchat/lhc_upgrade.sh
 * [Generate embed code](integrating.md) and put it on your website.
 * Go to your account and configure your Username and Lastname also set your default nick as a support agent.
 * Configure your DNS records (SPF) so server can send legit e-mails.
+* If you are planning in using Rest API response type for bot. You should edit `/var/www/html/extension/lhcphpresque/settings/settings.ini.php` and set `site_address` to `http://<server_ip>` or `http(s)://exmaple.org`
 
 ## SWAP
 
