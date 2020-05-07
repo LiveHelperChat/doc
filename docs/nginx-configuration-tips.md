@@ -38,7 +38,16 @@ Demo install nginx configuration example
                 add_header 'Content-Length' 0;
                 return 204;
              }
-
+             
+             # We don't want to allow bot to load our stuff. No point...
+             if ($http_user_agent ~* "(google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|Chrome-Lighthouse)" ) {
+                 add_header 'Access-Control-Allow-Origin' '*';
+                 add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+                 add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
+                 add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
+                 return 200;
+             }
+             
              if ($request_method = 'GET') {
                  add_header 'Access-Control-Allow-Origin' '*';
                  add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
@@ -80,7 +89,16 @@ Demo install nginx configuration example
                 add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
                 add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
              }
-
+             
+             # We don't want to allow bot to load our stuff. No point...
+             if ($http_user_agent ~* "(google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|Chrome-Lighthouse)" ) {
+                 add_header 'Access-Control-Allow-Origin' '*';
+                 add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+                 add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
+                 add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
+                 return 200;
+             }
+             
              if ($request_method = 'GET') {
                 add_header 'Access-Control-Allow-Origin' '*';
                 add_header 'Access-Control-Allow-Credentials' 'true';
