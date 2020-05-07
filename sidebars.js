@@ -95,6 +95,13 @@ module.exports = {
                 'bot/integrating-any-ai-bot',
                 'bot/username-based-workflow'
             ]
+        },
+        {
+            type: 'category',
+            label: 'How to',
+            items: [
+                'bot/transfer-bot-to-bot'
+            ]
         }
     ],
     Visitors: [
