@@ -161,10 +161,22 @@ JSON should look like this
 
 Here we can extract meta_msg if you provide Live Helper Chat compatible JSON response. Meta message will be used in chosen response trigger [**text message**] if this trigger does not have ant meta message information.
 
-```php
-echo json_encode(array(
-    'meta_msg' => json_decode('{"content":{"quick_replies":[{"type":"button","content":{"name":"Rest API Button","payload":"rest_api_button"}}]}}',true)
-));
+```json
+{
+    "meta_msg": {
+        "content": {
+            "quick_replies": [
+                {
+                    "type": "button",
+                    "content": {
+                        "name": "Rest API Button",
+                        "payload": "rest_api_button"
+                    }
+                }
+            ]
+        }
+    }
+}
 ```
 
 In order for rest API to receive these clicks you should also check in trigger [Default for unknown button click](triggers.md#trigger)
