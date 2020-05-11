@@ -163,6 +163,7 @@ Here we can extract meta_msg if you provide Live Helper Chat compatible JSON res
 
 ```json
 {
+    "msg": "Standard message text from REST API",
     "meta_msg": {
         "content": {
             "quick_replies": [
