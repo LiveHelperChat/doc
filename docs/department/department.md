@@ -104,6 +104,13 @@ You can disable there option for operator to send mail to visitor from chat wind
 
 You can choose what bot should handle chats started in this department.
 
+If there is no operators and you still see offline form. You might need to do one of the following things.
+
+ * Either you set department online hours like 24/7.
+ * Or during embed code generation you choose department you generate code for.
+
+Usually chat does not know if you have more than one department and for what department you are generating code so naturally it falls back to offline mode.
+
 ## Survey
 
 To what survey visitor should be redirected
