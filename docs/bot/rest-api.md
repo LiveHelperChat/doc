@@ -159,7 +159,7 @@ JSON should look like this
 
 #### Meta msg location.
 
-Here we can extract meta_msg if you provide Live Helper Chat compatible JSON response. Meta message will be used in chosen response trigger [**text message**] if this trigger does not have ant meta message information.
+Here we can extract meta_msg if you provide Live Helper Chat compatible JSON response. Meta message will be used in chosen response trigger [**text message**] if this trigger does not have any meta message information.
 
 ```json
 {
