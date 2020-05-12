@@ -160,6 +160,7 @@ module.exports = {
         'development/http-and-https'
     ],
     Integration: [
+        'integrating/opencart',
         'google-analytics',
         'chrome-extension'
     ]
