@@ -11,7 +11,7 @@ This article explains text element. Text element looks like for visitor
 
 In back office it looks like this
 
-![](/img/bot/text-message-edit.png)
+![](/img/bot/text-message-edit.png?v=2)
 
 ## Attributes
 
@@ -44,7 +44,7 @@ This message will be send only once and only on start chat event. If you have mu
 
 These options defines visible buttons under a message.
 
-![](/img/bot/quick-reply-options.png)
+![](/img/bot/quick-reply-options.png?v=2)
 
 ### Name
 
@@ -107,10 +107,19 @@ These are quick updates you can do on button click. There are three types of eve
 * `Subscribe to notifications` - this is usefull to define in default auto responder trigger and suggest visitor subscribe while they are waiting for an operator to accept a chat.
 * `Execute trigger` - it's my preferred way to set actions as you can choose defined triggers from the list.
 
+### Store name
+
+If you enter `Store name` button click will be recorded within chat in `additional_data` als you will recorded button click within chat itself.
+
+![](/img/bot/additional_data.png)
+
+### Store value
+
+If you enter `Store value` it will be used as value instead of button name.
+
 ## Add action on message
 
 These are quick updates what happens on a message. I would suggest just use `Collect custom attribute` response type. See [example](bot/collecting-information.md) how to use it.
-
 
 ## Structure
 
