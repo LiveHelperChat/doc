@@ -46,6 +46,14 @@ To redirect visitor to survey you have to click this icon in chat window
 
 ![Survey icon](/img/chat/survey-icon.jpg)
 
+## How to redirect visitor to survey from bot?
+
+You can have this defined as button click or just as trigger to execute on auto responder.
+
+> `Update current chat` -> `Update main chat attribute` -> and in `Chat attribute name` enter `status_sub` and value enter `5`
+
+Internally it just means `const STATUS_SUB_SURVEY_SHOW = 5;`
+
 ## Permissions
 
 In order operator to be able redirect visitor to custom survey they have to have this permission.

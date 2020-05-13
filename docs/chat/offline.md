@@ -84,15 +84,17 @@ As for bonus you can have the following fancy workflow
 
 This workflow can be even futher enhanced by transfering chat to another department first and only then showing feedback form. In that case "Rejected" department have to be configured to redirect user to feedback form.
 
-## How to redirect user to custom page then user clicks on offline widget?
+## How to redirect visitor to offline form from bot?
 
-Let say you want to redirect user to some page then your operators are offline.
+If there is no online operators you can use trigger
 
-You can do that by adjusting your embed code and appending redirect url. E.g
+> `Update current chat` -> `Update main chat attribute` -> and in `Chat attribute name` enter `status_sub` and value enter `2`
 
-```
-offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
-```
+Internally it just means `const STATUS_SUB_CONTACT_FORM = 2;`
+
+You can also redirect visitor to survey
+
+`const STATUS_SUB_SURVEY_SHOW = 5;`
 
 ## How to redirect visitor to offline form if no one accepts a chat in defined amount of time?
 
@@ -105,18 +107,15 @@ Basic steps are
 
 That's it. :)
 
-### How to redirect visitor to offline form from bot?
+## How to redirect user to custom page then user clicks on offline widget?
 
-If there is no online operators you can use trigger
+Let say you want to redirect user to some page then your operators are offline.
 
-> `Update current chat` -> `Update main chat attribute` -> and in `Chat attribute name` enter `status_sub` and value enter `2`
+You can do that by adjusting your embed code and appending redirect url. E.g
 
-Internally it just means `const STATUS_SUB_CONTACT_FORM = 2;`
-
-You can also redirect visitor to survey
-
-`const STATUS_SUB_SURVEY_SHOW = 5;`
-
+```
+offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
+```
 ### New widget
 
 Please refer to [javascript arguments](javascript-arguments.md) page.
