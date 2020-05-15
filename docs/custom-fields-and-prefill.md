@@ -9,7 +9,9 @@ Easiest way to do that is to define them in back office. It can be done in
 
  > "Settings" > "Live help configuration" > "Start chat form settings" > "Default settings" > "Custom fields"
 
-See video https://youtu.be/huUlx55velk?t=88
+* See video about custom fields defined in back office - https://youtu.be/huUlx55velk?t=88
+
+* See video about custom fields passed programmatically - https://youtu.be/vEeQVGZgnds
 
 ## Passing custom variables
 
