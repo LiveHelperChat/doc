@@ -316,6 +316,18 @@ Also if we detect we can show previous visitor chats.
 
 ​![](/img/chat/previous-chats.jpg)
 
+## Permissions influencing chat opening permissions
+
+If you see error like `You do not have permission to access the current or chat was merged/deleted!` it means that one the following conditions were not met.
+
+​![](/img/chat/permission-error.png)
+
+Operator can open chat if
+
+* He is assigned to a chat.
+* (Chat is pending AND (chat is assigned to him **OR** operator has permission `lhchat`,`open_all`)) **AND** operator is a member of chat department.
+* Chat is assigned to other operator **AND** operator has permission `lhchat`,`allowopenremotechat` so he can open other's operators chats **AND** operator is a member of chat department.
+
 ## Permissions
 
 Main chat permission is 
