@@ -221,6 +221,12 @@ So your JSON body in rest API can look like
 }
 ```
 
+Replaceable variables works only in
+ * Params
+ * Body
+
+They do **not** work on Headers section.
+
 ## Trigger workflow
 
 In trigger once everything is setup it will look like this.
