@@ -20,7 +20,7 @@ We create two users groups
 
 > System configuration -> Users -> List of groups
 
-We create group `Client A` and then `Client B`
+We create group `Client A` and then `Client B`. This is required only if you are planning to have one company more than one operator. If it will be only one operator per company, you can skip this step and just remove permissions to see users from same group.
 
 After that to each group we assign `Operators` role.
 
@@ -48,7 +48,19 @@ Remove permission to see assigned departments so operator won't see other client
 
 By default operators can see all online visitors we want to remove this permission. We do this by editing `Operators` role and removing.
 
-> 'lhchat','see_all_online_visitors'
+> 'lhchat', 'sees_all_online_visitors'
+
+By default operator sees all operators from group he belongs to. Now is possible to remove this permission by deleting. After you do that operator will see only himself in operators list and not a members of the group he belongs to.
+
+> 'lhuser', 'see_all_group_users'
+
+If you do not want operator to be able to see logged operators from his department remove this permission.
+
+> 'lhuser', 'userlistonline'
+
+If you do not want to allow an operator to see in general online visitors remove this permission.
+
+> 'lhchat','use_onlineusers'
 
 Remove permission for other modules
 
