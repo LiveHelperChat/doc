@@ -20,7 +20,7 @@ We create two users groups
 
 > System configuration -> Users -> List of groups
 
-We create group `Client A` and then `Client B`. This is required only if you are planning to have one company more than one operator. If it will be only one operator per company, you can skip this step and just remove permissions to see users from same group.
+We create group `Client A` and then `Client B`. This is required only if you are planning to have more than one operator per company. If it will be only one operator per company, you can skip this step and just remove permissions to see users from same group.
 
 After that to each group we assign `Operators` role.
 
