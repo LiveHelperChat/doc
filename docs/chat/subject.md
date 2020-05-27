@@ -22,7 +22,7 @@ By clicking `+` you will see modal window where you can choose subject.
 
 ![Choosing subject](/img/chat/choosing-subject.jpg)
 
-Afterwards you can search chats by subject in chat list window or you can generate [chart by subject](statistic.md#number-of-chats-by-subject).
+Afterwards you can search chats by subject in chat list window or you can generate [chart by subject](/chat/statistic/#number-of-chats-by-subject).
 
 ## Permissions
 
