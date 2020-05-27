@@ -31,6 +31,86 @@ Some of these attributes are quite old and not used anymore. They will be remove
 
 Here you can change general outlook of widget. Like borders padding etc.
 
+### Widget header background color
+
+Sets background color for widget header
+
+### Widget border color
+
+Border color for the widget
+
+### Widget border width (px)
+
+Border width for the widget
+
+### Header height (px)
+
+If you want higher header you can set it's height here.
+
+### Header padding (px)
+
+Set custom padding for widget header
+
+### Widget width (px)
+
+Override widget width directly from a theme
+
+### Widget height (px)
+
+Override widget height directly from a theme
+
+### Minimize image | Only for a legacy widget
+
+Image used to minimize the widget
+
+### Restore image | Only for a legacy widget
+
+### Close image | Only for a legacy widget
+
+### Popup image | Only for a legacy widget
+
+### Widget response layout width trigger (px) | Only for a legacy widget
+
+### Hide widget close button
+
+You can hide close button in header by checking this.
+
+### Hide popup option
+
+Hides popup option from header dropdown menu.
+
+### Try to detect language from browser headers
+
+Widget will try to detect language by visitor browser and show language in his native langauge.
+
+See youtube video how to setup it.
+
+https://www.youtube.com/watch?v=iGGTKGrO9Ek&feature=youtu.be
+
+Things to check if it does not work.
+
+* Make sure you checked this checkbox
+* Make sure your browser sends correct language headers while testing.
+* Take a look at System configuration -> Speech -> Languages. Make sure Siteaccess column has a proper value.
+
+### Show go to survey button on chat close
+
+Usually when chat is closed visitor is automatically redirected to survey. Instead of that you can show him Go to survey button just.
+
+### Before closing chat ask user does he really want to to close chat
+
+Visitor will be asked for confirmation does he really want's to close a widget.
+
+### Close chat if page is refreshed. Usefull if you have embed code in popup.
+
+If you have embeded Live Helper Chat script in popup it makes sense on popup close also close the chat.
+
+### After how many user messages show switch to human button. empty - never, 0 - always
+
+If you want to give easy way for a visitor to be transferred to operator you can enable this option.
+
+This option is always shown and does not pay attention is there any operator at the moment in back office. So most logical way is just to use bot workflow itself as it can check is there any operators online.
+
 ## Messages style
 
 Here you can change how message style looks like for visitor.
