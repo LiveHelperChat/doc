@@ -66,6 +66,13 @@ If you are using notifications functionality you should set logo and notificatio
 
 ## FAQ
 
+### I have created a theme, how can I share it with community?
+
+Community Themes will be published in github.
+
+https://github.com/LiveHelperChat/themes
+
+
 ### How do I apply theme?
 
 You can either set default theme in back office or you can choose theme in embed code generation window.
