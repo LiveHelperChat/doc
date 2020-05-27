@@ -98,7 +98,7 @@ Should be run every 5 minutes or so.
 
 ## Files maintenance
 
-It automatically deletes files based on [files maintenance](chat/files-maintenance.md) settings.
+It automatically deletes files based on [files maintenance](chat/files/#files-maintenance) settings.
 
 ```
 php cron.php -s site_admin -c cron/util/maintain_files
