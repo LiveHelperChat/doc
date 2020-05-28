@@ -64,7 +64,7 @@ This auto responder won't be assigned to any department because it's used explic
 
 ## Messaging attributes
 
-![](/img/auto-responder/auto-responder-messages.jpg)
+![](/img/auto-responder/auto-responder-messages.jpg?v=2)
 
 These sections should be self explanatory. You can have different type of messages based on chat state.
 
@@ -91,6 +91,10 @@ This message will be send when operator closes a chat.
 ### Survey
 
 You can redirect to survey visitor if chat remains for long period of time in pending state.
+
+### Multi-language chat
+
+If chat was accepted by the same language speaking operator you can send visitor a custom message on chat accept event. If you leave empty - message we will be send only if translated message is found. Operator has to check what languages he speaks in his account `Speech` tab.
 
 ### Add translation
 
