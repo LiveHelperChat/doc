@@ -16,15 +16,26 @@ The operator would not participate in the auto assignment process & should they 
 ## Online && Invisible
 Usually this status is not used as the auto assignment process will assign chat requests to the operator. However, if they were to open a chat the chat status would not change to active.
 
+## Online conditions
+You can be online based on few options. 
+
+### Based on activity
+
+Means even if you have checked that you are online and you logout you will be see as being offline. Usefull if you only use web interface.
+
+### Always online
+
+Means if you logged out being online you still will be seen as being online. Usefull in case you are using telegram extension and still want to be visible as being online. So widget will be shown as being online also auto assignment will continue to work and include you in workflow.
+
 ## How can they change their visibility?
 
 They can change it either from top menu or directly in their account edit window
 
-![](/img/user/visibility-offline.jpg)
+![](/img/user/visibility-offline.jpg?v=2)
 
  * Visible/Invisible
+    * Based on activity/Always online
  * Offline/Online
-
 
 :::tip Tip
 
@@ -38,3 +49,7 @@ They should **not** have this function
 Required permission to change online/offline status
 
 > 'lhuser','changeonlinestatus'
+
+Required permission for operator to change his online conditions
+
+> 'lhuser','changealwaysonline'
