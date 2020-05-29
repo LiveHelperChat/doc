@@ -47,6 +47,19 @@ function widgetV2Callbacks(loadcb) {
     loadcb.eventEmitter.addListener('offlineMessage',function () {
         console.log('Offline Message');
     });
+
+    loadcb.eventEmitter.addListener('nhClicked',function () {
+        // Need help widget was clicked.
+        console.log('nhClicked');
+    });
+
+    loadcb.eventEmitter.addListener('nhClosed',function () {
+        // Need help widget was closed by visitor.
+        // If need help widget is closed by other reason. E.g visitor clicked chat icon directly
+        // Proactive invitation was shown. This event would not be called.
+        console.log('nhClosed');
+    });
+
 }
 
 var LHC_API = LHC_API||{};
