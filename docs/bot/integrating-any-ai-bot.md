@@ -1,12 +1,16 @@
 ---
 id: integrating-any-ai-bot
-title: Integrating any AI in Live Helper Chat bot
-sidebar_label: Integrating AI
+title: Integrating any AI with coding
+sidebar_label: Integrating AI (with coding)
 ---
 
 ## Introduction
 
 In this tutorial I'll give and explain how to use boilerplate template to integrate any AI into Live Helper Chat.
+
+!!!tip
+This integration requires programming skills. New versions bot has [Rest API](rest-api.md) response type which allows integrate any third party AI solution into Live Helper Chat [without coding](integrate-any-ai-without-coding.md).
+!!!
 
 Extension can be found at https://github.com/LiveHelperChat/lhcaibot
 

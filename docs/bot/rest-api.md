@@ -11,6 +11,7 @@ In order to get all working you have to setup two things
 
 * Rest API Call itself
 * Bot trigger which will use that call
+* See [example of integration](integrate-any-ai-without-coding.md)
 
 ## Rest API Call
 
@@ -188,16 +189,20 @@ Rest API in value fields you can use these replaceable variables
 
 * `{{msg}}` - user message
 * `{{msg_clean}}` - user message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
+* `{{msg_url}}` - user message will contain links instead of bbcode tags.
 * `{{chat_id}}` - chat ID
 * `{{lhc.nick}}` - visitor nick
 * `{{lhc.email}}` - e-mail
 * `{{lhc.department}}` - department name
 * `{{lhc.dep_id}}` - department ID
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
-* `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly
-* `{{lhc.var.<chat variable key>}}` - these values can be set using extensions etc.
-* `{{media}}` - Will hold JSON encoded related files to send message.
+* `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly. It's either `Field identifier` from `Start a chat form settings > Custom fields` or if you are passing manually it's `name` attribute.
 
+Example:
+> If you put `Field identifier` value as `gender` in `Start a chat form settings > Custom fields`. In Rest API Call you can access this field like `{{lhc.add.gender}}`
+
+* `{{lhc.var.<chat variable key>}}` - these values can be set using extensions etc. It's data is taken by `json_decode` function from `chat_variables` column value. This column stores JSON as `{<key> : <value>,..}`. Usually in this column extensions stores their own data.
+* `{{media}}` - Will hold JSON encoded related files to send message.
 ```json
 [
   {
