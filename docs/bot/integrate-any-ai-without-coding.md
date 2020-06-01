@@ -47,7 +47,7 @@ Trigger structure. It defines what method we should execute if visitor sends a m
 
 ## Bot message send
 
-It's a standard message we received from bot. Additionally we set additional chat variable based on response. Which we later reuse in Rest API call itself. IT's required for AI to know about what present conversation is going on.
+It's a standard message we received from bot. Additionally we set additional chat variable based on response. Which we later reuse in Rest API call itself. It's required for AI to know about what present conversation is going on.
 
 ![](/img/bot/ai/bot-message-send.png)
 
