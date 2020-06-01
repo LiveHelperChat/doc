@@ -184,6 +184,10 @@ Here we can extract meta_msg if you provide Live Helper Chat compatible JSON res
 
 In order for rest API to receive these clicks you should also check in trigger [Default for unknown button click](triggers.md#trigger)
 
+:::tip
+Each trigger at the bottom has `Show code` button. This code is supported **only** by [`Execute trigger body`](trigger-body.md) response type. If you just want to build trigger and get code for response and reuse it, it's the response type you should use instead.
+:::
+
 ## Replaceable variables
 
 Rest API in value fields you can use these replaceable variables
