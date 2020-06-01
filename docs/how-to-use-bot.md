@@ -51,6 +51,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
     * Trigger to execute by response
     * Execute Javascript
     * Execute action
+    * [Execute trigger body](bot/trigger-body.md)
     * [Rest API](bot/rest-api.md)
     
     

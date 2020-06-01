@@ -12,6 +12,7 @@ In order to get all working you have to setup two things
 * Rest API Call itself
 * Bot trigger which will use that call
 * See [example of integration](integrate-any-ai-without-coding.md)
+* Also your AI can return directly [JSON for execution](trigger-body.md).
 
 ## Rest API Call
 
