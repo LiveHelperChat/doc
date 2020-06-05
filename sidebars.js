@@ -31,6 +31,7 @@ module.exports = {
     ],
     Chat: [
         'chat/chat',
+        'chat/bbcode',
         'chat/configuration',
         'chat/chat-tabs',
         'chat/chat-popup',
