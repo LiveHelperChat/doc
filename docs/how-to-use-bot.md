@@ -49,7 +49,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
     * Collect information
     * Progress
     * Trigger to execute by response
-    * Execute Javascript
+    * [Execute Javascript](bot/execute-javascript.md)
     * Execute action
     * [Execute trigger body](bot/trigger-body.md)
     * [Rest API](bot/rest-api.md)
