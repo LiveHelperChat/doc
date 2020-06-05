@@ -119,18 +119,57 @@ Here you can change how message style looks like for visitor.
 
 You can change how need help widget looks like.
 
-:::tip
-This is not yet supported in new a widget.
-:::
-
-
 ## Chat widget
 
 Here you can change default text in widget itself.
 
 ## Custom content
 
-You can write custom HTML above start chat form fields.
+You can write custom HTML in these fields to be appended in various chat widget places.
+
+### Custom html before start chat form fields, popup
+
+This HTML is shown if chat will be started with an operator and not a bot in popup window.
+
+### Custom html before start chat form fields, widget
+
+This HTML is shown if chat will be started with an operator and not a bot.
+
+![](/img/theme/widget-operator.png)
+
+### Custom html before start chat form fields, popup (bot mode)
+
+This HTML is shown only if chat will be started with a bot.
+
+### Custom html before start chat form fields, widget (bot mode)
+
+This HTML is shown only if chat will be started with a bot.
+
+![Only bot online](/img/theme/only-bot-online.png)
+
+### Custom html before standard widget header
+
+HTML is rendered before widget header
+
+![Inside widget header](/img/theme/before-header.png)
+
+### Custom html inside standard widget header
+
+HTML content is shown above standard widget header.
+
+![Inside widget header](/img/theme/inside-header.png)
+
+### Custom html before standard widget status header
+
+This field is not used in a new widget.
+
+### Inject HTML on widget open
+
+This field is not used in a new widget.
+
+### Header HTML here you can paste custom header html you want that widget should have.
+
+This file content will be appended to widget `head` content. You can use this field to add custom JS or any other HTML you want.
 
 ## Custom CSS
 

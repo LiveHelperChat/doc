@@ -85,7 +85,8 @@ module.exports = {
                 'bot/collect-custom-attribute',
                 'bot/rest-api',
                 'bot/trigger-body',
-                'bot/bot-video'
+                'bot/bot-video',
+                'bot/execute-js'
             ]
         },
         {
