@@ -103,7 +103,7 @@ Name will be visible within option to execute specific trigger based on response
 
 In the trigger it will be visible here
 
-![](/img/bot/response-found.png)
+![](/img/bot/response-found.png?v=2)
 
 #### HTTP status code E.g 200,301,500
 
@@ -140,6 +140,27 @@ Examples of variables extraction
       "name" :  "Sub item name"
     }
   ]
+}
+```
+
+`links:link:[type=forms]:url` as location value would return element where type is forms
+
+```json
+{
+    "links": {
+        "link": [
+            {
+                "type": "prices",
+                "url": {},
+                "chat_message": "We do not have that information available online.   We could follow up with you directly to discuss."
+            },
+            {
+                "type": "forms",
+                "url": "https://livehelperchat.com",
+                "chat_message": "You can view and download our forms on this page"
+            }
+        ]
+    }
 }
 ```
 
@@ -260,6 +281,8 @@ Use can use these variables in your text triggers response text.
 * `{content_2}`
 * `{content_3}`
 * `{content_4}`
+* `{content_5}`
+* `{content_6}`
 * `{http_code}`
 
 ## Video usage example

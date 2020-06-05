@@ -113,3 +113,9 @@ You can have custom HTML to show before start chat fields. Usefull for UI variat
 Required permission to manage start chat form settings
 
 > 'lhchatsettings', 'administrate'
+
+## Video
+
+See youtube video for more combinations
+
+https://youtu.be/TFJAW5bepLM
