@@ -28,6 +28,16 @@ Text message can have few sending options
 
 First message part before text message is text identifier and can be used to translating messages to multiple languages.
 
+### Replaceable variables
+
+Text area supports these replaceable variables
+
+ * `{lhc.nick}`
+ * `{lhc.email}`
+ * `{lhc.department}`
+ * `{lhc.add.<field identifier>}` 
+ * `{lhc.var.<variable key>}`
+
 ### HTML message
 
 Content of this textarea will be rendered as HTML directly. It also supports translations.
