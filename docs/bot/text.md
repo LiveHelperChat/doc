@@ -54,7 +54,7 @@ This message will be send only once and only on start chat event. If you have mu
 
 These options defines visible buttons under a message.
 
-![](/img/bot/quick-reply-options.png?v=2)
+![](/img/bot/quick-reply-options.png?v=3)
 
 ### Name
 
@@ -126,6 +126,10 @@ If you enter `Store name` button click will be recorded within chat in `addition
 ### Store value
 
 If you enter `Store value` it will be used as value instead of button name.
+
+### Button ID
+
+We will set this dOM element ID as defined in this field.
 
 ## Add action on message
 
