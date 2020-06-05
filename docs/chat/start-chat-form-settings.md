@@ -108,6 +108,8 @@ This feature is not supported yet in new widget. I would suggest just use custom
 
 You can have custom HTML to show before start chat fields. Usefull for UI variations. Similar thing can be done with themes although.
 
+![](/img/chat/pre-chat-html.png)
+
 ## Permissions
 
 Required permission to manage start chat form settings

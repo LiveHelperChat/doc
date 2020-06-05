@@ -125,7 +125,7 @@ Here you can change default text in widget itself.
 
 ## Custom content
 
-You can write custom HTML in these fields to be appended in various chat widget places.
+You can write custom HTML in these fields to be appended in various chat widget places. You can also use [start chat form settings](../chat/start-chat-form-settings.md#pre-chat) to write HTML above all fields.
 
 ### Custom html before start chat form fields, popup
 
@@ -139,7 +139,7 @@ This HTML is shown if chat will be started with an operator and not a bot.
 
 ### Custom html before start chat form fields, popup (bot mode)
 
-This HTML is shown only if chat will be started with a bot.
+This HTML is shown only if chat will be started with a bot in a popup.
 
 ### Custom html before start chat form fields, widget (bot mode)
 
