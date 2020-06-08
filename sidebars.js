@@ -86,7 +86,8 @@ module.exports = {
                 'bot/rest-api',
                 'bot/trigger-body',
                 'bot/bot-video',
-                'bot/execute-js'
+                'bot/execute-js',
+                'bot/check-conditions'
             ]
         },
         {

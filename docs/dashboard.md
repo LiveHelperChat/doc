@@ -40,6 +40,12 @@ OR
 
 Operator in dashboard widget settings ​![](/img/dashboard/dashboard-icon.jpg) has to choose `Online operators`
 
+If operator has permission 
+
+>'lhuser', 'setopstatus'
+
+He will be able to click on ![](/img/chat/online-icon.png) and change other operator status directly.
+
 ### Departments stats
 
 You can see present department's statistic.
@@ -122,6 +128,37 @@ Shows all chats which one bot is handling.
 #### Required configuration
 
 * In `Account -> Visible` lists page he has to active `Bot chats list enabled`
+
+### Group chats
+
+In group chats operators sees 1 on 1 chats and public group chats.
+
+​![](/img/dashboard/group-chats.png)
+
+* Unread chats has this `Fire` icon in front of the name.
+* `House` icon indicates that you are an owner of the group chat.
+* `Shield` icon indicates it's a private chat.
+* `Word` icon indicates it's a public chat.
+
+#### Required configuration
+
+For operator to see this widget he has to have
+
+> 'lhgroupchat','use' 
+
+If you want private chats can open automatically for you. Navigate to `Account -> Chats -> Auto join private chats`
+
+If operator has permission to
+
+> 'lhgroupchat','public_chat'
+
+He will be able also to create a public groups.
+
+If operator has permission
+
+> 'lhgroupchat','manage'
+
+He will see also group chats settings in `System configuration`
 
 ## Chat tabs options
 
