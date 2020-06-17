@@ -11,6 +11,10 @@ Start chat settings has two options
  * Either you use default settings for all departments.
  * Either you defined start chat settings by department. For start chat settings take effect you have to pass department explicitly.
 
+I also recommend to a see few youtube videos regarding possible options
+
+* https://www.youtube.com/watch?v=TFJAW5bepLM [Part 1]
+* https://www.youtube.com/watch?v=jj4Tu_zoYaE [Part 2]
 
 :::tip 
 It's possible to develop that once you change department start chat settings fields would be updated. Anyone wishes to sponsor it :smile: ?
@@ -48,7 +52,7 @@ Define fields visible then department is offline.
 
 ## Additional form settings
 
-![Additional chat settings](/img/chat/additional-chat-settings.jpg)
+![Additional chat settings](/img/chat/additional-chat-settings.png)
 
 ### Show operator profile above input fields
 
@@ -81,6 +85,14 @@ Without message label
 If you have only message label required and have checked this you should see UI like
 
 ![Minimal UI](/img/chat/chat-minimal-ui.jpg)
+
+### Hide start chat button. Usefull if in the theme you choose bot and trigger with a buttons.
+
+If your start chat form does not require any fields by default you will see only one bottom `Start a chat with us!`. You can hide this button also by checking this option.
+
+### Lazy load widget content. Widget content will be loaded only if visitor clicks a status icon.
+
+By default we load widget content before visitor even clicks a status icon. This way we avoid any delay before showing any widget content, but it also increases payload for the website. You can minimize payload for the website and accept a small delay before widget content is shown by checking this option.
 
 ### Initial user message height in pixels
 

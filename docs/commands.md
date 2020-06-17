@@ -45,5 +45,10 @@ At the moment these commands are implemented
     *   Stores operator comment for future reference
 *   !hold
     *   Set chat status to hold status, so auto responder will be stopped.
+* !files 
+    * Enables files upload for a particular chat if general files upload is disabled. Default message text looks like
+    `I have enabled files upload for you. [fupload]Upload a file[/fupload].`
+    If you want multilanguage support you can just create a canned message with content like
+    `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
 
-Custom commands can be implemented in extensions also.
+Custom commands can be implemented in extensions also.

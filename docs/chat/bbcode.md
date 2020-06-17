@@ -57,3 +57,7 @@ Link
 Youtube video
 
 > `[youtube]https://www.youtube.com/watch?v=TFJAW5bepLM&feature=youtu.be[/youtube]`
+
+Upload a file link. Files upload has to be enabled. This code is usefull with !files command.
+
+> `[fupload]Upload a file[/fupload]`
