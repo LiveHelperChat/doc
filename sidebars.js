@@ -87,7 +87,8 @@ module.exports = {
                 'bot/trigger-body',
                 'bot/bot-video',
                 'bot/execute-js',
-                'bot/check-conditions'
+                'bot/check-conditions',
+                'bot/bot-update-current-chat'
             ]
         },
         {

@@ -39,7 +39,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
     * Send Typing
     * [Send Video](bot/video.md)
     * [Send Carrousel](bot/carousel.md)
-    * Update Current chat
+    * [Update Current chat](bot/update-current-chat.md)
     * Intent detection
     * Check for pending intentions
     * [Check for conditions to proceed](bot/check-conditions.md)
