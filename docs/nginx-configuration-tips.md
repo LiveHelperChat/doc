@@ -84,13 +84,6 @@ Demo install nginx configuration example
                 add_header 'Content-Length' 0;
                 return 204;
              }
-
-             if ($request_method = 'POST') {
-                add_header 'Access-Control-Allow-Origin' '*';
-                add_header 'Access-Control-Allow-Credentials' 'true';
-                add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-                add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
-             }
              
               # We don't want to allow bot to load our stuff. No point...
               # If you are using Cloudflare or any other CDN Cache make sure you have rule so it won't cache empty.
@@ -101,13 +94,6 @@ Demo install nginx configuration example
                  add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
                  add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
                  return 200;
-             }
-             
-             if ($request_method = 'GET') {
-                add_header 'Access-Control-Allow-Origin' '*';
-                add_header 'Access-Control-Allow-Credentials' 'true';
-                add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-                add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
              }
 
                rewrite "^(.*)$" "/index.php?$1" last;

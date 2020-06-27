@@ -55,3 +55,44 @@ To compile widget itself
 ```shell script
 cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build && npm run build-ie
 ```
+
+## How to make status icon smaller based on user resolution?
+
+You can use this approach also to edit placement of the status icon. In this particular case will make chat status icon smaller on small resolution devices.
+
+In theme `Custom CSS` tab `Status widget additional CSS, takes effect after save paste` section paste this
+
+```css
+/* This adjust icon size itself. If you want just to adjust position of the icon. You can ignore these rules. */
+@media only screen and (max-device-width: 1366px){
+    #lhc_status_container { 
+        bottom:3px!important;
+        right:3px!important;
+        padding-left:3px!important;
+        padding-top:3px!important;
+    }
+    #lhc_status_container #status-icon{
+        box-shadow:none!important;
+        padding:5px!important;
+    }
+}
+```
+
+In theme `Custom page CSS (new widget only)` section paste. This adjusts size of the icon itself.
+
+```css
+@media only screen and (max-device-width: 1366px) {
+    #lhc_container_v2 #lhc_status_widget_v2{ 
+        bottom:0px!important;   /* Adjust position from bottom */ 
+        right:0px!important;    /* Adjust position from right */
+        
+        /* Adjust dimensions themself to make smaller container to match new icon size */
+        min-height: 65px!important;
+        min-width: 65px!important;
+        max-height: 65px!important;
+        max-width: 65px!important;
+        width: 65px!important;
+        height: 65px!important;
+    }
+}
+```
