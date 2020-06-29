@@ -8,13 +8,17 @@ By default tooltip is enabled. You can disable it at
 
 Configuration -> Chat configuration -> Online Tracking -> "Show need help tooltip?"
 
+# New widget
+
+New widget look and feel can by changed in themes.
+
+![Need help tool tip](/img/chat/need-help.png)
+
+# Old widget
+
 ![](https://livehelperchat.com/var/media/images/need-help.png)
 
 You can also set timeout after how many hours this tooltip should be shown for the same user again. This tooltip is highly configurable and with embed options you can change photo, main title and subtitle
-
-:::tip
-Need help at the moment is **not** supported for new widget. Support will be added over time.
-:::
 
 ## You can style how this widget looks like from back office by [creating theme](https://livehelperchat.com/how-to-use-themes-330a.html).
 

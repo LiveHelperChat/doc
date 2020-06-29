@@ -60,6 +60,21 @@ function widgetV2Callbacks(loadcb) {
         console.log('nhClosed');
     });
 
+    // These events will be executed as soon the widget APP starts
+    // In this case we set default `Question` and disable bot.
+    // we also change auto start to true and show widget.
+    //window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true,'Question' : 'Custom question here'}}}]);
+    //window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
+    //window.$_LHC.eventListener.emitEvent('showWidget');
+
+    // This way we activate our extension
+    //window.$_LHC.eventListener.emitEvent('sendChildExtEvent',[{'cmd':'cbscheduler','arg':{}}]);
+
+    // We force react APP to start if it was lazy loading it's required.
+    //window.$_LHC.eventListener.emitEvent('sendChildExtEvent',[{'boot':true}]);
+    
+    // We show a widget
+    //window.$_LHC.eventListener.emitEvent('showWidget');
 }
 
 var LHC_API = LHC_API||{};
