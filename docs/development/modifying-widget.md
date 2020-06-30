@@ -8,6 +8,8 @@ sidebar_label: Modifying widget
 
 In this tutorial I'll try to explain how to modify new widget. For old widget you can refer to [this article](../debug.md#chrome)
 
+Recommended way to change the look is directly from [themes](../theme/theme.md#custom-css) custom css section. You can change there independently widget content style and status icon style.
+
 New widget CSS files are located at
 
 > design/defaulttheme/css/widgetv2
@@ -96,3 +98,15 @@ In theme `Custom page CSS (new widget only)` section paste. This adjusts size of
     }
 }
 ```
+
+## How two write extension for a new widget?
+
+This approach does not toucing kernel at all. Very good sample is just to take a look at https://github.com/LiveHelperChat/cbscheduler extension. 
+
+Main things to look at are
+
+* How you trigger modal window to show.
+* You register a script to load https://github.com/LiveHelperChat/cbscheduler/blob/master/bootstrap/bootstrap.php#L56
+* You write a script https://github.com/LiveHelperChat/cbscheduler/blob/master/design/cbschedulertheme/js/cbscheduler.widget.js
+
+That's it.
