@@ -151,6 +151,37 @@ There is two ways to update them
 
 After these actions operator back office chat window will update an chat data will be shown on right column in main cha tinformation tab.
 
+## Prefilling variables directly by URL?
+
+It's also possible to prefill variables directly by URL. Usefull in case you want to open popup directly to the chat start form.
+
+For options to generate main attribute 
+
+E.g
+
+`https://demo.livehelperchat.com/chat/start<arguments>`
+
+Main attributes options
+
+```
+/(id)/<chat id> - chat id to use
+/(hash)/<chat hash> - chat hash
+/(department)/<department 1/department 2> -> department to use E.g /(department)/1/2
+(theme)/<theme_id> -> theme to use 
+/(mobile)/<true|false> -> is it mobile device or not
+/(vid)/ -> visitiro unique hash.
+/(identifier)/<identifier hash>'
+/(inv)/<invitation_id>' - invitation to use
+/(survey)/<survey_id> - survey id to use
+/(priority)/<priority> - priority to set
+/(operator)/<operator_id> - operator to set for pending chat
+```
+
+To know how URL would look like with prefilled E-mail, Phone. You can just generate embed code prefill variables with Javascript and click popup window. So in popup URL you would see how URL should look like.
+
+E.g
+
+`http://demo.livehelperchat.com/chat/start?prefill%5Bemail%5D=remdex%40gmail.com&prefill%5Bphone%5D=370454654&prefill%5Busername%5D=Username%20here&value_items_admin[0]=back_office_field`
 
 
 ## Prefilling variables on old widget
