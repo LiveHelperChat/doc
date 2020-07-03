@@ -151,7 +151,7 @@ There is two ways to update them
 
 After these actions operator back office chat window will update an chat data will be shown on right column in main cha tinformation tab.
 
-## Prefilling variables directly by URL?
+## Prefilling variables by URL
 
 It's also possible to prefill variables directly by URL. Usefull in case you want to open popup directly to the chat start form.
 
@@ -175,6 +175,8 @@ Main attributes options
 /(survey)/<survey_id> - survey id to use
 /(priority)/<priority> - priority to set
 /(operator)/<operator_id> - operator to set for pending chat
+/(bot)/<bot_id> - bot to use
+/(mode)/<popup/embed> - default mode if popup. If you are planning to use it as iframe source set it to embed. This is only usefull if you want to have multiple chat's in the same page.
 ```
 
 To know how URL would look like with prefilled E-mail, Phone. You can just generate embed code prefill variables with Javascript and click popup window. So in popup URL you would see how URL should look like.

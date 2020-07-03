@@ -141,6 +141,8 @@ Possible arguments. All arguments are optional. Most of the cases you can just o
 /(survey)/<survey_id> - survey id to use
 /(priority)/<priority> - priority to set
 /(operator)/<operator_id> - operator to set for pending chat
+/(bot)/<bot_id> - bot to use
+/(mode)/<popup/embed> - default mode if popup. If you are planning to use it as iframe source set it to embed. This is only usefull if you want to have multiple chat's in the same page.
 ```
 
 E.g 
