@@ -133,7 +133,7 @@ Possible arguments. All arguments are optional. Most of the cases you can just o
 /(id)/<chat id> - chat id to use
 /(hash)/<chat hash> - chat hash
 /(department)/<department 1/department 2> -> department to use E.g /(department)/1/2
-(theme)/<theme_id> -> theme to use 
+/(theme)/<theme_id> -> theme to use 
 /(mobile)/<true|false> -> is it mobile device or not
 /(vid)/ -> visitiro unique hash.
 /(identifier)/<identifier hash>'
