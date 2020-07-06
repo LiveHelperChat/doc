@@ -21,6 +21,8 @@ There is special CSS files dedicated to CSS overriding.
 * `design/defaulttheme/css/widgetv2/widget_override.css` use this file to override main widget content
 * `design/defaulttheme/css/widgetv2/widget_override_rtl.css` use this file to override RTL widget style.
 * `design/defaulttheme/css/widgetv2/widget_mobile_override.css` use this file to override widget while chat is happening on mobile device. `widget_override.css` this file still will be used.
+* `css/widgetv2/widget_popup_override.css` use this file to override popup layout
+* `css/widgetv2/widget_mobile_popup_override.css` use this style to override popup mobile layout
 
 ## How to use CSS file dedicated to override?
 

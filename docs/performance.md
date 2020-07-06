@@ -58,6 +58,7 @@ This article represents use case where monthly chats number is around 200K and m
     *   Archive older chat's than defined days - 90
     *   Create new archive If chat's number in last archive reaches defined number - 500000
 *   Files maintenence and removement from file upload configuration window
+* Enable [lazy loading](chat/start-chat-form-settings.md#lazy-load-widget-content-widget-content-will-be-loaded-only-if-visitor-clicks-a-status-icon) for start chat form
 
 ### Running cronjobs
 
