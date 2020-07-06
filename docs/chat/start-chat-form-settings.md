@@ -102,6 +102,8 @@ Used only in old widget.
 
 Sometimes there is requirement once department is prefilled user should not be able easily change this. So this section can help with that.
 
+If you check `User can not change passed department.` and you use popup window you have to check in embed code generation `Hash arguments. Visitor will not be able to change passed arguments.` If user will try to change department ID he will get an error.
+
 ## Custom fields
 
 You can define custom fields directly from back office. See video https://youtu.be/huUlx55velk?t=88

@@ -131,6 +131,8 @@ You can write custom HTML in these fields to be appended in various chat widget 
 
 This HTML is shown if chat will be started with an operator and not a bot in popup window.
 
+![](/img/theme/custom-html-popup.png)
+
 ### Custom html before start chat form fields, widget
 
 This HTML is shown if chat will be started with an operator and not a bot.
@@ -140,6 +142,8 @@ This HTML is shown if chat will be started with an operator and not a bot.
 ### Custom html before start chat form fields, popup (bot mode)
 
 This HTML is shown only if chat will be started with a bot in a popup.
+
+![Only bot online](/img/theme/custom-html-popup-bot.png)
 
 ### Custom html before start chat form fields, widget (bot mode)
 
@@ -174,6 +178,77 @@ This file content will be appended to widget `head` content. You can use this fi
 ## Custom CSS
 
 If you want to style form directly using CSS you can use this section.
+
+### Status widget additional CSS, takes effect after save
+
+This place styles iframe of status widget itself.
+
+CSS
+
+```css
+body {
+    background-color: red!important;
+}
+```
+
+Will result
+
+![](/img/theme/status-widget.png)
+
+See [example](../development/modifying-widget.md#how-to-make-status-icon-smaller-based-on-user-resolution) how to change status widget dimensions using this field.
+
+### Widget container additional CSS, takes effect after save
+
+This field has to contain direct CSS rules.
+
+```css
+box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px!important;border-radius: 12px!important;
+```
+
+Will result in a widget with a shadow. It set's style directly to an iframe itself.
+
+![](/img/theme/shadow-widget.png)
+
+### Widget body additional CSS, takes effect after save
+
+```css
+.message-send-area{
+    background-color: red!important;
+}
+```
+
+Will result in
+
+![](/img/theme/message-area-red.png)
+
+### Custom CSS only for popup
+
+```css
+#messagesBlock{
+    background-color:red;
+}
+```
+
+Will result
+
+![](/img/theme/popup-css.png)
+
+This will be applied only to a popup.
+
+### Custom page CSS (new widget only)
+
+This will move widget. Same way you can change dimensions of a status widget.
+
+```css
+#lhc_container_v2 #lhc_status_widget_v2{ 
+        bottom:80px!important;   /* Adjust position from bottom */ 
+        right:20px!important;    /* Adjust position from right */
+}
+```
+
+Changed position from bottom. If you want to change size see this [example](../development/modifying-widget.md#how-to-make-status-icon-smaller-based-on-user-resolution)
+
+![](/img/theme/position-change.png)
 
 ## Custom bot style
 

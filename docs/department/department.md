@@ -115,3 +115,7 @@ Usually chat does not know if you have more than one department and for what dep
 
 To what survey visitor should be redirected
 
+## How to disable user to change department?
+
+ * Easiest way is just to pass department and make other departments invisible. So even if visitor does not pass any department he won't be able to see all departments in dropdown.
+ * Another way is just make some changes in [start chat form settings](../chat/start-chat-form-settings.md#department-settings).
