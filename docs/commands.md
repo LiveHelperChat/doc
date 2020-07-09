@@ -50,5 +50,7 @@ At the moment these commands are implemented
     `I have enabled files upload for you. [fupload]Upload a file[/fupload].`
     If you want multilanguage support you can just create a canned message with content like
     `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
+* !stopfiles
+    * Disables files upload if it was enabled before by `!files` command
 
 Custom commands can be implemented in extensions also.
