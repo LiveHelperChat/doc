@@ -98,6 +98,8 @@ LHC_API.args = {
     bot_id : 5          // Set bot ID for this chat | Optional
     loadcb : widgetV2Callbacks, // Chat was loaded callback | Option
     phash : 'phash',    // Payment ID | Optional
+    events:[{id:"birthday",val:"value"}], // Events to log for proactive chat invitation. `val` is optional | Optional
+    tag: 'some_tag',     // Tag for proactive chat invitation | Optional
     pvhash : 'pvhash',  // Payment verify hash | Optional
     lang : 'lit/'       // Chat language | Optional
     fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
@@ -172,9 +174,19 @@ To end the chat
 window.$_LHC.eventListener.emitEvent('endChat');
 ```
 
-To add tag
+To add tag. We automatically check for matching invitation once you add a event.
 ```js
 window.$_LHC.eventListener.emitEvent('addTag',['some_tag']);
+```
+
+Log event for proactive chat invitation. We automatically check for matching invitation once you add an event. `val` is optional
+```js
+window.$_LHC.eventListener.emitEvent('addEvent',[[{id:"birthday",val:"value"}]]);
+```
+
+If for some reason you want to check for invitation manually you can do that.
+```js
+window.$_LHC.eventListener.emitEvent('checkMessageOperator');
 ```
 
 To open popup

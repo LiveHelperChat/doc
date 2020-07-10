@@ -1,6 +1,6 @@
 ---
 id: proactive
-title: Pro active chat invitation
+title: Proactive chat invitation
 sidebar_label: Proactive
 ---
 
@@ -73,10 +73,29 @@ They define what variables can be logged. Fields definition bellow
     1.  We set identifier as birthday
     2.  We set store timeout to 0 - this will avoid duplicate records. Because birthday does not have an expire time.
 2.  First we have to define log event for online visitor. It's possible to do in two options.
-    1.  Either call JS function - lh_inst.logEvent([{id:"birthday"}]);
-    2.  Either define it in arguments   
+    1.  Either call JS function - 
+        New widget. `val` is optional
+        ```js
+        window.$_LHC.eventListener.emitEvent('addEvent',[[{id:"birthday",val:"value"}]]);
+        ``` 
+        Old widget
+        ```js
+        lh_inst.logEvent([{id:"birthday"}]);
+        ```
+
+    2.  Either define it in arguments
+        New widget. `val` is optional
+        ```js
+        ...
+        events:[{id:"birthday",val:"value"}],
+        ...
+        ```
+        
+        Old widget
+        ```js
         LHCChatOptions.events = new Array();  
         LHCChatOptions.events.push({id:'birthday'});
+        ```
 3.  Next we have to configure proactive invitation events part like that
     1.  ![](https://livehelperchat.com/var/media/images/birthday(1).jpg)
 
