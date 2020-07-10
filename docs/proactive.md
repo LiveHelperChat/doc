@@ -145,4 +145,5 @@ Make sure your invitation matches generated embed code rules. E.g
 
 Proactive messages retargeting. In returning message field you can enter {nick}, if we will find a previous chat associated with this online user, nick from previous chat will be used if not proactive invitation nick field value will be used.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DZ_s_6Qlyac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+* https://www.youtube.com/embed/DZ_s_6Qlyac general proactive invitation setup guide
+* https://youtu.be/jUjgxy2EzzQ proactive invitation integration with a bot
