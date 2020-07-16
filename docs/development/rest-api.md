@@ -27,6 +27,10 @@ You can use rest api using these two options.
 
 > 'lhrestapi','use_direct_logins'
 
+Authentication requires username and password (Basic Authentication method). If you are using `Rest API` keys. Username is a username of the account under which API key is created.
+
+If you are using direct logins username is the account username and password is your account password.
+
 ## Where this module can be used?
 
 this module can be used for custom status widget generation. Integration LHC with other applicatios. Writing custom UI from scratch
