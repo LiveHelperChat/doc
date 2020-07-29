@@ -147,6 +147,7 @@ module.exports = {
             ]
         },
         'development/hosting-on-digitalocean',
+        'development/install-cli',
         'development/orm',
         'development/modifying-widget',
         'development/rest-api',
