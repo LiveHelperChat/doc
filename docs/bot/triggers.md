@@ -99,6 +99,22 @@ Requiring exact end of the word
 
 `price$` - word has to end with a letter `e`
 
+Requiring any end of the word. Number of typos in the word still applies.
+
+`cash*`
+
+Requiring any part of the word. Number of typos in the word still applies.
+
+`*cash*`
+
+Requiring any end of the word by it has to end `h` letter.
+
+`cash$*`
+
+You can also define preg match rules. There is known limitation that preg match rule can't have `,` because we use this word to separate words. This will be addressed in next updates.
+
+`/^cashba(.*?)/is`
+
 Requiring words combinations
 
 `car && price`
