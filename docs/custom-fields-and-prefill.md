@@ -121,7 +121,7 @@ At the top there is class commented out and at the bottom there is example how t
 The most important part is this. It encrypts data using these two keys.
 
 ```php
-<?php echo base64_encode(lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>','<secret_data_key>'))?>
+<?php echo base64_encode(lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>'))?>
 ```
 
 ## How to update attributes while user already is having a chat?
