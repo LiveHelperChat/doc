@@ -61,6 +61,8 @@ Example how it would look like
 
 ## Prefilling and defining custom variables
 
+This feature allows to prefill various variables including the ones defined in back office start chat form settings. If you want to prefill `Department` refer to [Javascript arguments](javascript-arguments.md) article.
+
 ```js
 <script type="text/javascript">
 var LHCChatOptions = {};  
@@ -90,6 +92,7 @@ LHCChatOptions.attr_prefill.push({'name':'question','value':'Default user messag
 // It's the easiest way to prefill all fields including the ones you defined in back office.
 // index value can be field identifier
 // 'name_surname' this time is custom admin field defined in back office.
+// 'dropdopwn' this time is custom admin field defined in back office and is dropdown.
 // If field has checked `Hide if prefilled` it will be hidden.
 LHCChatOptions.attr_prefill_admin = new Array();
 LHCChatOptions.attr_prefill_admin.push({'index':'name_surname','value':'remdex@gmail.com'});
@@ -97,6 +100,7 @@ LHCChatOptions.attr_prefill_admin.push({'index':'question','value':'remdex@gmail
 LHCChatOptions.attr_prefill_admin.push({'index':'email','value':'remdex2@gmail.com'});
 LHCChatOptions.attr_prefill_admin.push({'index':'username','value':'remdex2@gmail.com'});
 LHCChatOptions.attr_prefill_admin.push({'index':'phone','value':'rem'});
+LHCChatOptions.attr_prefill_admin.push({'index':'dropdopwn','value':'Siauliai'});
 
 </script>
 ```

@@ -7,10 +7,26 @@ sidebar_label: Javascript arguments
 Here you will find all possible javascript arguments for a new widget. If you want to pass custom variables or define custom fields refer to [custom fields](custom-fields-and-prefill.md) documentation.
 ## Javascript options
 
+```html
+<div id="online-status"></div>
+```
+
 ```js
 <script>
 
 function widgetV2Callbacks(loadcb) {
+
+    // Show offline/online status manually in specific webplace 
+    loadcb.onlineStatus.subscribe(function(data) {
+        if (data === true) {
+            document.getElementById('online-status').innerHTML =
+                '<button style="cursor: pointer" onclick="window.$_LHC.eventListener.emitEvent(\'openPopup\');">We are online [Popup]</button>' +
+                '<button style="cursor: pointer" onclick="window.$_LHC.eventListener.emitEvent(\'showWidget\');">We are online [Widget]</button>';
+        } else {
+            document.getElementById('online-status').innerHTML = '<span>We are offline</span>';
+        }
+    });
+
 
     loadcb.eventEmitter.addListener('closeWidget',function () {
         console.log('widget close');

@@ -20,9 +20,15 @@ If you are running wordpress site it's 99.9% chance Live Helper Chat will work j
     * Your browser is pointing to index.php/site_admin/install/install URL
     * You gave recursive write permission to cache folder.
 
+Try to change owner to apache user or the user under which you are running http server.
+
 ```shell script
-chmod -R 777 cache/
+chown apache:apache -R cache/
+chown apache:apache -R var/
+chown apache:apache settings/
+chmod -R 755 cache/
 ```
+
 After that you should see something like his
 
 ​![](/img/install/install-step-1.png)
@@ -30,17 +36,17 @@ After that you should see something like his
 Now just give permission to write to required folders/files
 
 ```shell script
-chmod 777 settings/
-chmod -R 777 var/storage
-chmod -R 777 var/userphoto
-chmod -R 777 var/storageform
-chmod -R 777 var/storageadmintheme
-chmod -R 777 var/botphoto
-chmod -R 777 var/bottrphoto
-chmod -R 777 var/storageinvitation
-chmod -R 777 var/storagedocshare
-chmod -R 777 var/storagetheme
-chmod -R 777 var/tmpfiles
+chmod 755 settings/
+chmod -R 755 var/storage
+chmod -R 755 var/userphoto
+chmod -R 755 var/storageform
+chmod -R 755 var/storageadmintheme
+chmod -R 755 var/botphoto
+chmod -R 755 var/bottrphoto
+chmod -R 755 var/storageinvitation
+chmod -R 755 var/storagedocshare
+chmod -R 755 var/storagetheme
+chmod -R 755 var/tmpfiles
 ```
 
 After that all items should be green.
