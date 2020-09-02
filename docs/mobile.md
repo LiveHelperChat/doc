@@ -4,11 +4,21 @@ title: Mobile app setup
 sidebar_label: Mobile
 ---
 
+In order for mobile app to function properly you have to be using min 3.40v.
+
 ## Android
 
 Mobile app for android while we are waiting for google store review. Can be found at
 
 > https://github.com/LiveHelperChat/lhc_messenger/tree/master/apk
+
+## How to keep online status?
+
+As we all know once app is closed background sync processe is stopped so Live Helper Chat can't know is it online or not. To retain your online status you can do following things.
+
+ * Setup department online hours
+ * Change your online status to "Always online" from "Based on activity"
+ * Once you finished your work shift don't forget to go offline.
 
 ## Permissions
 
