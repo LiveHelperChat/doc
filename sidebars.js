@@ -3,6 +3,7 @@ module.exports = {
     Setup: [
         'install',
         'integrating',
+        'mobile',
         'javascript-arguments',
         'upgrading',
         'development/quick-guide',
