@@ -39,6 +39,12 @@ If you are not receiving notification check those things.
  * You are online as an operator.
  * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
  * You have permission to access department where chat started.
+ * App is using few notifications channels where each channel can have different settings. Make sure app notifications settings are correct.
+ * If for some reason sessions status is `thumbs down`. You can delete a session and re-login from the app and try again to test notifications.
+ 
+:::tip 
+At the moment clicking notifications does not open chat window. It just opens an app. This will be changed in next releases.
+:::
 
 ## How to test?
 
