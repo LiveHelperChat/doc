@@ -32,6 +32,14 @@ In order to enable mobile app notifications
 
 > Configuration -> System -> Mobile (Settings)
 
+If you are not receiving notification check those things.
+
+ * You have proper permissions as operator
+ * You see your device registered in `System configuration -> Mobile (Sessions)` in edit window you can try to send notification.
+ * You are online as an operator.
+ * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
+ * You have permission to access department where chat started.
+
 ## How to test?
 
 Login to demo live helper chat.
