@@ -8,9 +8,9 @@ In order for mobile app to function properly you have to be using min 3.40v.
 
 ## Android
 
-Mobile app for android while we are waiting for google store review. Can be found at
+Mobile app for android while we are waiting for google store review. Can be found at Codemagic
 
-> https://github.com/LiveHelperChat/lhc_messenger/tree/master/apk
+[![Codemagic build status](https://api.codemagic.io/apps/5f50c50be2db272d7690ae45/5f50c50be2db272d7690ae44/status_badge.svg)](https://codemagic.io/apps/5f50c50be2db272d7690ae45/5f50c50be2db272d7690ae44/latest_build)
 
 ## How to keep online status?
 
