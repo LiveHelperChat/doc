@@ -6,6 +6,10 @@ sidebar_label: Mobile
 
 In order for mobile app to function properly you have to be using min 3.40v.
 
+## Apple
+
+[![Apple store](https://livehelperchat.com/design/defaulttheme/images/apps/apple.svg)](https://apps.apple.com/us/app/id1530399116)
+
 ## Android
 
 Mobile app for android while we are waiting for google store review. Can be found at Codemagic
@@ -32,16 +36,31 @@ In order to enable mobile app notifications
 
 > Configuration -> System -> Mobile (Settings)
 
+### Testing
+
+The Easiest way to test is just to login to server and go to `System configuration -> Mobile (Sessions)` and edit session record. In edit window just click `Send test notification`.
+
 If you are not receiving notification check those things.
 
+ * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
+
+Most of the time if app is installed on iPhone for some reason it does not receive notifications. If this is happening to you do the following
+
+ * Uninstall the app
+ * Delete related session record `Configuration -> System -> Mobile (Sessions)`
+ * Install an app
+ * Now notifications should work.
+
+### Live notifications testing
+
+If you do not receive notification once chat is started, but you receive notification with `Send test notification` check those things.
+
  * You have proper permissions as operator
- * You see your device registered in `System configuration -> Mobile (Sessions)` in edit window you can try to send notification.
  * You are online as an operator.
  * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
  * You have permission to access department where chat started.
  * App is using few notifications channels where each channel can have different settings. Make sure app notifications settings are correct.
  * If for some reason sessions status is `thumbs down`. You can delete a session and re-login from the app and try again to test notifications.
- * If still does not work try to reinstall an app.
  
 :::tip 
 At the moment clicking notifications does not open chat window. It just opens an app. This will be changed in next releases.
