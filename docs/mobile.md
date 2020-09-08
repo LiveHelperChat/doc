@@ -4,15 +4,15 @@ title: Mobile app setup
 sidebar_label: Mobile
 ---
 
-In order for mobile app to function properly you have to be using min 3.40v.
+In order for mobile app to function properly you have to be using min 3.42v.
 
-## Apple
+## Mobile apps
 
 [![Apple store](https://livehelperchat.com/design/defaulttheme/images/apps/apple.svg)](https://apps.apple.com/us/app/id1530399116)
 
-## Android
+[![Google Play](https://livehelperchat.com/design/defaulttheme/images/apps/google-play.png)](https://play.google.com/store/apps/details?id=com.livehelperchat.chat)
 
-Mobile app for android while we are waiting for google store review. Can be found at Codemagic
+The most recent build can be found here.
 
 [![Codemagic build status](https://api.codemagic.io/apps/5f50c50be2db272d7690ae45/5f50c50be2db272d7690ae44/status_badge.svg)](https://codemagic.io/apps/5f50c50be2db272d7690ae45/5f50c50be2db272d7690ae44/latest_build)
 
@@ -32,13 +32,13 @@ In order for mobile app to work correctly operator has to have permission to
 
 ## Notifications
 
-In order to enable mobile app notifications
+In order to enable mobile app notifications you have to enable mobile notifications there.
 
 > Configuration -> System -> Mobile (Settings)
 
 ### Testing
 
-The Easiest way to test is just to login to server and go to `System configuration -> Mobile (Sessions)` and edit session record. In edit window just click `Send test notification`.
+The Easiest way to test is just to login to Live Helper Chat back office and go to `System configuration -> Mobile (Sessions)` and edit session record. In edit window just click `Send test notification`.
 
 If you are not receiving notification check those things.
 
@@ -79,18 +79,19 @@ Login to demo live helper chat.
 
 Refer to flutter documentation. Few quick tips.
 
- > Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L18-L20
- > Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L39-L46
- > Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L39-L46
- > Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L53
- > Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L72
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L18-L20
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L39-L46
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L39-L46
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L53
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L72
 
 ## Demo images
 
 ![Mobile screenshot](/img/mobile/screen-1.chat.jpg)
 ![Mobile screenshot](/img/mobile/screen-2.chat.jpg)
-![Mobile screenshot](/img/mobile/screen-3.chat.jpg)
 ![Mobile screenshot](/img/mobile/screen-4.chat.jpg)
-![Mobile screenshot](/img/mobile/screen-5.chat.jpg)
 ![Mobile screenshot](/img/mobile/screen-6.chat.jpg)
 ![Mobile screenshot](/img/mobile/screen-7.chat.jpg)
+![Mobile screenshot](/img/mobile/screenshot-8.png)
+![Mobile screenshot](/img/mobile/screenshot-9.png)
+
