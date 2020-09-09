@@ -34,8 +34,17 @@ AddType application/wasm .wasm
 </Files>
 
 RewriteEngine On
+
+# If for some reason you can't authentificate for Rest API try to uncomment following lines
+# https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request
+
+# RewriteCond %{HTTP:Authorization} ^(.*)
+# RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# Adds support for URL without index.php in URL
 RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
 RewriteRule ^upgrade.php - [L]
 RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|swf|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
+
 DirectoryIndex index.php
 ```

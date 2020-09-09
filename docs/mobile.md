@@ -85,6 +85,10 @@ Refer to flutter documentation. Few quick tips.
  * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L53
  * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L72
 
+## My visitors can't see while I'm typing
+
+Most likely it's a problem of apache because it removes `Authorization` header. Please see this [article](development/remove-index-php.md) for a possible fix.
+
 ## Demo images
 
 ![Mobile screenshot](/img/mobile/screen-1.chat.jpg)

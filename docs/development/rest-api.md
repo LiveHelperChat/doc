@@ -127,3 +127,7 @@ Just refer to this example
 Required permissions to configure Rest API keys.
 
 > 'lhrestapi','use_admin'
+
+## Apache tricks
+
+If for some reason you can't authenticate refer to this [article](development/remove-index-php.md).
