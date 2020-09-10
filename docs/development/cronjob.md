@@ -116,6 +116,36 @@ php cron.php -s site_admin -c cron/util/maintain_database
 
 Should be run every few hours or so.
 
+## Static cache
+
+If you are using load balancers. E.g AWS Load Balancer it can happen that one instance is clearing a cache but browser makes request to another instance so it happens that static file CSS/JS is not found.
+
+This will generate new static cache without removing old files. Means you won't override any of existing files so not github conflicts.
+```
+php cron.php -s site_admin -c cron/util/generate_css
+```
+
+This will generate new static cache and remove all files from present static cache folders. 
+```shell script
+php cron.php -s site_admin -c cron/util/generate_css -p 1
+```
+
+To gain even more performance you can run gulp command to compress JS files.
+
+```
+gulp js-static
+```
+
+In all cases you will have to do before publishing to your fork.
+
+```shell script
+git add .
+git commit -a -m "Static cache"
+git push origin master 
+```
+
+
+
 ## How to add cronjob in extension?
  
 Yes, extensions supports cronjobs. What you have to do is:

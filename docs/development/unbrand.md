@@ -82,3 +82,19 @@ That way you will override default logo without changing kernel. If after change
 See sample extension at
 
 https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridecss
+
+## My styles are not applied
+
+If you are modifying CSS files directly most likely static cache are used. Static cache is not used if [debug output](../debug/#enabling-debug-output) is enabled. I always recommend to override CSS files properly either with extensions or custom themes. You can avoid this problem by [generating static cache.](cronjob.md#static-cache)
+
+If you have a merge conflicts in `design/defaulttheme/css/css_static` or `design/defaulttheme/js/js_static` there is no need to solve these manually. Just regenerate a static cache.
+
+## Boosting performance for static files
+
+Once you active an extension or add custom theme CSS/JS files are generated on the fly. By default LHC if no extensions or custom themes are used uses once per lifetime compiled CSS/JS files.
+
+### How do I generate static cache?
+
+[generating static cache.](cronjob.md#static-cache)
+
+
