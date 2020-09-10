@@ -28,14 +28,14 @@ In order to see online operators following conditions has to be satisfied
 You have to activate `List online operators.` in
 > Configuration -> Live Help Configuration -> Chat configuration -> Misc
 
-Operator has to have one of these permissions
+Operator has to have one of these permissions. Operator will see only operators from his departments. Don't forget to assign department to operator...
 
-> Operator will see only operators from his departments 
->'lhuser', 'userlistonline'
+> 'lhuser', 'userlistonline'
 
 OR
 
-> Operator will see all online operators not only from his departments
+Operator will see all online operators not only from his departments
+
 > 'lhuser', 'userlistonlineall'
 
 Operator in dashboard widget settings ​![](/img/dashboard/dashboard-icon.jpg) has to choose `Online operators`
@@ -44,7 +44,7 @@ If operator has permission
 
 >'lhuser', 'setopstatus'
 
-He will be able to click on ![](/img/chat/online-icon.png) and change other operator status directly.
+He will be able to click on ![](/img/dashboard/online-icon.png) and change other operator status directly.
 
 ### Departments stats
 

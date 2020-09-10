@@ -80,10 +80,19 @@ If you enter html in this field it will be send as html code to visitor. E.g per
 
 ## Permission
 
-For operator to be able edit all canned message he has to have
+For operator to be able edit canned message he has to have this permission
 
-> 'chat', 'administratecannedmsg'
+> 'lhchat', 'administratecannedmsg'
 
-For operators to have personal canned messages, to them have to be assigned this permission.
+For operator to be able to see global ones he has to have in addition this permission
 
-> 'lhuser','personalcannedmsg'
+> 'lhcannedmsg', 'see_global'
+
+For operators to have personal canned messages, to them have to be assigned this permission
+
+> 'lhuser', 'personalcannedmsg'
+
+For operators to be able to use canned messages module in chat window this permission is required
+
+> 'lhcannedmsg', 'use'
+
