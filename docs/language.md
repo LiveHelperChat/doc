@@ -24,6 +24,8 @@ You can find few usefull links
 * `Languages` - it's all defined languages in Live Helper Chat. Where each language can be mapped to a specific siteaccess.
 * `Dialects` - dialects is basically a short code for a langauge. When we do language detection from browser we are looking to match one of these.
 
+[More information](chat/multiple-languages.md)
+
 ## Installing translations for web client.
 
 Let say we are installing Russian language, the workflow would be the following.
