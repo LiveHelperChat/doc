@@ -65,6 +65,7 @@ module.exports = {
         'anonymize',
         'auto-close-delete',
         'chat/files',
+        'chat/web-push-notifications',
     ],
     Department: [
         'department/department',
