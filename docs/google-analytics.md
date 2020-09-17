@@ -4,7 +4,10 @@ title: Integration with Google Analytics event tracking
 sidebar_label: Google Analytics
 ---
 ## New widget
-You should refer to [Javascript Arguments](javascript-arguments.md) article
+
+In version 3.42v there is new option in `System configuration -> Live Help configuration -> Events Tracking` there you can configure Google Analytics integration. More information available at [Events Tracking](chat/events-tracking.md)
+
+If you want manually configure integration you can do that using available callbacks see [Javascript Arguments](javascript-arguments.md) article
 
 ## Old widget
 

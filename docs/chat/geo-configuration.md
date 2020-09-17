@@ -14,6 +14,6 @@ In order for google maps to work you will have to get REST API key from google.
 
 ## Permissions
 
-For operator to be able configure this section he has to have this permission
+For an operator to be able configure this section he has to have this permission
 
-> 'chat','administrategeoconfig'
+> 'lhchat','administrategeoconfig'
