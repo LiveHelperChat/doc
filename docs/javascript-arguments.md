@@ -27,6 +27,10 @@ function widgetV2Callbacks(loadcb) {
         }
     });
 
+    // Circle icon was clicked
+    loadcb.eventEmitter.addListener('clickAction',function () {
+        console.log('Circle was clicked');
+    });
 
     loadcb.eventEmitter.addListener('closeWidget',function () {
         console.log('widget close');
@@ -34,26 +38,6 @@ function widgetV2Callbacks(loadcb) {
 
     loadcb.eventEmitter.addListener('showWidget',function () {
         console.log('widget shown');
-    });
-
-    loadcb.eventEmitter.addListener('endChat',function () {
-        console.log('chat finished');
-    });
-
-    // Chat started
-    loadcb.eventEmitter.addListener('chatStarted',function (data, mode) {
-        console.log(data);
-    });
-
-    loadcb.eventEmitter.addListener('showInvitation',function (data) {
-        // Invitation data
-        console.log(data);
-    });
-
-    loadcb.eventEmitter.addListener('hideInvitation',function (data) {
-        // Invitation data
-        console.log('Invitation hidden');
-        console.log(data);
     });
 
     loadcb.eventEmitter.addListener('openPopup',function () {
@@ -64,6 +48,66 @@ function widgetV2Callbacks(loadcb) {
         console.log('Offline Message');
     });
 
+    /**
+    * Chat related events
+    */
+    // Chat ended
+    loadcb.eventEmitter.addListener('endChat',function () {
+        console.log('chat finished');
+    });
+
+    // Chat started
+    loadcb.eventEmitter.addListener('chatStarted',function (data, mode) {
+        console.log(data);
+    });
+
+    /**
+    * Proactive invitation related events
+    */
+    loadcb.eventEmitter.addListener('showInvitation',function (data) {
+        // Invitation data
+        // data.name - will hold invitation name
+        console.log('showInvitation');
+        console.log(data);
+    });
+
+    // Invitation was hidden
+    // It happens during migration to full widget mode
+    loadcb.eventEmitter.addListener('hideInvitation',function (data) {
+        // Invitation data
+        console.log('hideInvitation');
+        console.log(data);
+    });
+
+    // Invitation was read. Means visitor opened widget with an invitation either by clicking invitation tooltip or status icon.
+    loadcb.eventEmitter.addListener('readInvitation',function (data) {
+        // Invitation data
+        // data.name - will hold invitation name
+        console.log('readInvitation');
+        console.log(data);
+    });
+
+    // Invitation clicked. Visitor clicked invitation tooltip. It is not triggered if it just clicks status icon while invitation tooltip is shown.
+    loadcb.eventEmitter.addListener('fullInvitation',function (data) {
+        // Invitation data
+        // data.name - will hold invitation name
+        console.log('fullInvitation');
+        console.log(data);
+    });
+
+    // Called if invitation was in full widget and widget was minimised
+    // Or visitor clicked close icon in invitation tooltip
+    loadcb.eventEmitter.addListener('cancelInvitation',function (data) {
+        // Invitation data
+        // data.name - will hold invitation name
+        console.log('cancelInvitation');
+        console.log(data);
+    });
+
+
+    /**
+    * Need Help widget related events
+    */
     loadcb.eventEmitter.addListener('nhClicked',function () {
         // Need help widget was clicked.
         console.log('nhClicked');
@@ -75,6 +119,27 @@ function widgetV2Callbacks(loadcb) {
         // Proactive invitation was shown. This event would not be called.
         console.log('nhClosed');
     });
+
+    loadcb.eventEmitter.addListener('nhShow',function () {
+        // Need help widget was shown
+        console.log('nhShow');
+    });
+
+    loadcb.eventEmitter.addListener('nhHide',function () {
+        // Need help widget was hidden
+        console.log('nhHide');
+    });
+
+    /**
+    * Bot related events
+    */
+    loadcb.eventEmitter.addListener('botTrigger',function (data) {
+        // Need help widget was hidden
+        // data.trigger will hold an array of executed triggers from last user action
+        console.log('botTrigger');
+    });
+
+
 
     // These events will be executed as soon the widget APP starts
     // In this case we set default `Question` and disable bot.
