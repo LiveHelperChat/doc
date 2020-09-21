@@ -48,6 +48,11 @@ Just in your site css add
 
 #lhc_need_help_container{background:red !important;}
 
+## I do not see any tooltip?
+
+ * Try to open window in incognito mode.
+ * Once chat is started it won't show invitation for the next 24h.
+
 ## How do I change general tooltip style?
 
 *   Either override using important flag.

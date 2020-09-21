@@ -66,14 +66,19 @@ If you do not receive notification once chat is started, but you receive notific
 At the moment clicking notifications does not open chat window. It just opens an app. This will be changed in next releases.
 :::
 
-## How to test?
+## How to login?
 
-Login to demo live helper chat.
+Login to demo of live helper chat details: 
  
  * https://demo.livehelperchat.com
  * Login: admin
  * Password: demo
  * Un check "Append index.php to address"
+
+## What to enter if I'm running Live Helper Chat in subfolder/subdomain?
+
+ * If subdomain host in that case would be `https://<subdomain>.example.org`
+ * If sub-folder host would be `https://example.org/support`  
 
 ## How to compile?
 
