@@ -223,6 +223,7 @@ Rest API in value fields you can use these replaceable variables
 * `{{lhc.dep_id}}` - department ID
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly. It's either `Field identifier` from `Start a chat form settings > Custom fields` or if you are passing manually it's `name` attribute.
+* `{{lhc.<any chat attribute>}}` - all possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat` also you can access ant dynamic attribute like [`{{lhc.department_name}}`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L400). You can even pass any sub-object E.g `{{lhc.department}}`
 
 Example:
 > If you put `Field identifier` value as `gender` in `Start a chat form settings > Custom fields`. In Rest API Call you can access this field like `{{lhc.add.gender}}`
