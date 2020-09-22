@@ -10,25 +10,26 @@ For it you have to setup in chat configuration
 
 To execute process itself there is two options
 
-*   Execute automatic chats closing/purging in back office by navigating to "System configuration" => "Live help configuration" => "Maintenence" and there you will be able to close, delete chats
-*   If you do not want manually maintain these things you can just setup [cronjob](development/cronjob.md)
+ * Execute automatic chats closing/purging in back office by navigating to "System configuration" => "Live help configuration" => "Maintenence" and there you will be able to close, delete chats
+ * If you do not want manually maintain these things you can just setup [cronjob](development/cronjob.md)
 
 What chat's closes **"Automatic chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
 
-1.  Where chat is active and visitor has send more than one message and from hist last message passed defined amount of time
-2.  Where chat is pending or active and the only message was visitor first message
+1. Where chat is active and visitor has send more than one message and from hist last message passed defined amount of time
+2. Where chat is pending or active and the only message was visitor first message
 
 What chat's closes **"Automatic pending chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
 
-1.  Where chat is pending and from chat start passed defined amount of time. Means chat was not accepted for this period of time.
+1. Where chat is pending and from chat start passed defined amount of time. Means chat was not accepted for this period of time.
 
 What chat's closes **"Automatic active chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"**?
 
-1.  Where chat is active and from chat start passed defined amount of time.
+1. Where chat is active and from chat start passed defined amount of time.
 
 What chat's closes **"Automatic bot chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"**?
 
-1.  Where chat is bot chat and from chat start passed defined amount of time.
+1. Where chat is bot chat and from chat start passed defined amount of time, and the only message was user first message.
+2. Where chat is bot chat and from last visitor message passed defined amount of time.
 
 What chat's deletes **"Automatic chats purging. 0 - disabled, n > 0 time in minutes before chat is automatically deleted"**?
 
