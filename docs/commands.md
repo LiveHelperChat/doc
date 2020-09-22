@@ -45,6 +45,8 @@ At the moment these commands are implemented
     *   Stores operator comment for future reference
 *   !hold
     *   Set chat status to hold status, so auto responder will be stopped.
+*   !gotobot
+    *   Transfer chat to bot. Chat status will be changed to bot chat.
 * !files 
     * Enables files upload for a particular chat if general files upload is disabled. Default message text looks like
     `I have enabled files upload for you. [fupload]Upload a file[/fupload].`
@@ -52,5 +54,11 @@ At the moment these commands are implemented
     `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
 * !stopfiles
     * Disables files upload if it was enabled before by `!files` command
+
+You can define custom command based on `bot` `trigger`.
+
+> System configuration -> Live help configuration -> Bot -> Commands
+
+Each command then will be available in admin chat interface.
 
 Custom commands can be implemented in extensions also.

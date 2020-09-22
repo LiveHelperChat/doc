@@ -11,7 +11,7 @@ This article explains text element. Text element looks like for visitor
 
 In back office it looks like this
 
-![](/img/bot/text-message-edit.png?v=2)
+![](/img/bot/text-message.png)
 
 ## Attributes
 
@@ -41,6 +41,14 @@ Text area supports these replaceable variables
 ### HTML message
 
 Content of this textarea will be rendered as HTML directly. It also supports translations.
+
+### Save as system message.
+
+Message will be saved a system message and won't be visible by visitor. Might be usefull during Rest API calls integration if you want to store some information just for operators.
+
+### Render buttons as dropdown.
+
+If you have many buttons. E.g countries you provide services. You can check this option and buttons will be rendered as dropdown options.
 
 ### Hide text area on response.
 

@@ -216,11 +216,13 @@ Rest API in value fields you can use these replaceable variables
 * `{{msg}}` - user message
 * `{{msg_clean}}` - user message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
 * `{{msg_url}}` - user message will contain links instead of bbcode tags.
+* `{{msg_all}}` - all chat messages.
 * `{{chat_id}}` - chat ID
 * `{{lhc.nick}}` - visitor nick
 * `{{lhc.email}}` - e-mail
 * `{{lhc.department}}` - department name
 * `{{lhc.dep_id}}` - department ID
+* `{{footprint}}` - last 25 viewed pages url's
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly. It's either `Field identifier` from `Start a chat form settings > Custom fields` or if you are passing manually it's `name` attribute.
 * `{{lhc.<any chat attribute>}}` - all possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat` also you can access ant dynamic attribute like [`{{lhc.department_name}}`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L400). You can even pass any sub-object E.g `{{lhc.department}}`
