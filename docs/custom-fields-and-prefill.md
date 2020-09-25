@@ -47,6 +47,8 @@ It's possible in dashboard window to show custom column. This can be done by nav
 
 > System Configuration -> Additional chat columns
 
+You can set these values as `Variable name`
+
  * `lhc.<variable>` - you can find possible attributes definition in [https://api.livehelperchat.com](https://api.livehelperchat.com) under Models section. E.g lhc.nick
  * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
  * `chat_variable.<extension_variable>`

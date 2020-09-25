@@ -64,8 +64,10 @@ I have configured a bot and it's working perfectly. Then I noticed that when the
 Usually chat does not know if you have more than one department and for what department you are generating code so naturally it falls back to offline mode.
 
 You can solve that by doing one of the following things
+
 * Either you set department online hours like 24/7.
-* During embed code generation you choose department you generate code for.
+* During embed code generation you *have to choose department* you generate code for.
+* Older versions 3.42v were showing offline form if pending chats limit were reached.
 
 ### What is payload?
 

@@ -106,8 +106,9 @@ You can choose what bot should handle chats started in this department.
 
 If there is no operators online and you still see offline form, you might need to do one of the following things.
 
- * Either you set department online hours like 24/7.
- * Or during embed code generation you choose department you generate code for.
+ * Make sure you do not have department online hours 24/7
+ * During embed code generation **choose** department you generate code for.
+ * In older version 3.42v if department reached max pending chats limit it went offline and offline form was shown. Since 3.43v it will still be online but bot will take over a chat.
 
 Usually chat does not know if you have more than one department and for what department you are generating code so naturally it falls back to offline mode.
 

@@ -31,3 +31,47 @@ What events does Live Helper Chat dispatches?
 Here is example to what events Automated hosting extension is listening
 
  > https://github.com/LiveHelperChat/automated-hosting/blob/master/instancecustomer/bootstrap/bootstrap.php
+
+## Translating extension
+
+There is command to generate extension default translations.
+
+> php cron.php -s site_admin -c cron/util/generate_translation_file_ext -p extension/cbscheduler
+
+If running this command you can an error. Create a file in extension E.g
+
+> extension/cbscheduler/doc/default.ts
+
+with following content and try to run again command.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
+</TS>
+```
+
+Let say now you want to add Lithuanian translations. We have to create a folder/file location at this location.
+
+> extension/cbscheduler/translations/lt_LT/translation.ts
+
+Content we can copy from `extension/cbscheduler/doc/default.ts` or just write manually translations. E.g
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
+  <context>
+    <name>module/cbscheduler</name>
+    <message>
+      <source>Callback scheduler</source>
+      <translation>Paskambinimo užsakymas</translation>
+    </message>
+  </context>
+</TS>
+```
+
+:::tip Tip
+
+You can copy from `extension/cbscheduler/doc/default.ts` only required translations as some of the strings will be system context `system/buttons` which is already translated.
+:::
