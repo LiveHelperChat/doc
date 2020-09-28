@@ -48,3 +48,5 @@ RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|
 
 DirectoryIndex index.php
 ```
+
+For nginx refer [nginx configuration tips](..//nginx-configuration-tips.md)

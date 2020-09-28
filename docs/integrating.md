@@ -115,7 +115,7 @@ In any case if you want to be more realtime you can reduce this time. Have in mi
 
 Few possible cases
 
-### You are offline but page shows that you are online
+### You are offline, but page shows that you are online
 
 * You have setup department online hours, and chat just shows status based on that.
 * There is 5 minits timeout before chat status change to offline. It's time before last time operator was seen. This can be changed in chat configuraiton. I suggest do not keep it shorter than 30 seconds.
@@ -127,13 +127,15 @@ Few possible cases
 
 ### How it is decided to show online/offline user?
 
-* Visitor can be assigned to Individual department, Department or Department Group
+You should check those conditions if you are online, but widget shows that no operators are connected.
+
+* Visitor can be assigned to Individual department, Department or Department Group or all departments.
 * By checking is someone online we first check was department provided or not
 * If department id **is or not** provided we decide to show widget or not based on this workflow
   * We check is someone online from directly assigned operators or someone with all departments assigned
   * If we did not found any, we check is department online hours provided.
-  * We also check is department overloaded or not
-  * We check that is online and have write access to specific department or atleast one
+  * We also check is department overloaded or not. If department is overloaded (max pending chats limit has been reached) it will go to offline mode except if bot is assigned.
+  * We check that is operator online and have write access to specific department or at-least one
 * Operators themself can have two statuses
   * Online/Offline - is operator online or not
-  * Visible/Invisible - if operator opens pending chat being in invisbile mode. Chat is not assigned to him and chat does not change status
+  * Visible/Invisible - if operator opens pending chat being in invisbile mode. Chat is not assigned to him and chat does not change status.
