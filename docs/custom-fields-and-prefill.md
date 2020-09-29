@@ -45,7 +45,7 @@ if (typeof lhc_var === 'undefined'){
 lhc_var.gender = 'Gender';
 ```
 
-You can update any core attribute of chat object. Like `email`,`phone` etc. All possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
+You can update any core attribute of chat object. Like `lhc.email`,`lhc.phone` etc. All possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
 
 ## Showing custom column in chat list
 
