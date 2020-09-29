@@ -4,6 +4,8 @@ title: Pre-filling form fields and adding custom fields
 sidebar_label: Custom fields
 ---
 
+This feature is usefull if you are integrating third party system and want to prefill/pass some variables to Live Helper Chat. Later these variables can be used in Rest API calls etc...
+
 ## Defining fields which visitor can fill
 Easiest way to do that is to define them in back office. It can be done in
 
@@ -14,6 +16,8 @@ Easiest way to do that is to define them in back office. It can be done in
 * See video about custom fields passed programmatically - https://youtu.be/vEeQVGZgnds
 
 ## Passing custom variables
+
+This is preferred way to pass attributes without exposing any UI for the visitor.
 
 > System Configuration -> Additional chat variables
 
@@ -40,6 +44,8 @@ if (typeof lhc_var === 'undefined'){
 };
 lhc_var.gender = 'Gender';
 ```
+
+You can update any core attribute of chat object. Like `email`,`phone` etc. All possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
 
 ## Showing custom column in chat list
 
@@ -82,6 +88,8 @@ LHCChatOptions.attr.push({'name':'Transaction ID 2','value':'','type':'text','si
 */
 LHCChatOptions.attr.push({'name':'EncryptedTwo','value':'sb29scUd/KH2O778oMAGLGqqi7Q9oNflysbpx4X6Dp8=','type':'hidden','size':0,'encrypted':true});
 
+
+// For default fields being prefilled/collected they have to be enabled in start chat form settings page.
 
 // Prefill default fields. If you prefill fields this way even if they have checked `Hide if prefilled`
 // They will not be hidden.
@@ -142,8 +150,6 @@ lhc_var.gender = 'Gender Update';
 ```
 
  > :information_source: If you are passing encrypted variables and providing department. Make sure you use same encryption settings in all start chat form settings.
-
-
 
 
 ### Old widget
