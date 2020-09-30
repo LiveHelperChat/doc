@@ -129,6 +129,14 @@ So it would match these messages. Location of words are not important.
 * car price
 * car prike `notice a typo`
 
+`fish,car && price [params max_words=3]`
+
+Means it will match
+
+* fish price please
+* car price 
+* ~~car price and fish price~~ `but not this because of to many wods`
+
 #### `Typos number (include words)` && `Typos number (exclude words)`
 
 If you do not want to define number of allowable typos per word you can define them here. They will be applied to all words.
