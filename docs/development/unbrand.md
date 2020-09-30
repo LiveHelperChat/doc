@@ -6,10 +6,10 @@ sidebar_label: Unbranding
 
 There is two options to unbrand
 
-*   Use themes and restyle basic things from [back office](theme.md)
+*   Use themes and restyle basic things from [back office](../theme/theme.md)
 *   Use unbranding extension and modify all required files by hand
 
-For majority of users I suggest just use theming features [for restyling](theme.md).
+For majority of users I suggest just use theming features [for restyling](../theme/theme.md).
 
 In order to unbrand esility Live Helper Chat we have a module for that. So unbranding takes just few steps.
 
