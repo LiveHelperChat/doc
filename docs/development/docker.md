@@ -3,6 +3,11 @@ id: docker
 title: Docker and Live Helper Chat
 ---
 
-Did you know that Live Helper Chat is fully compatible with Docker the you just have to open account in Docker supported hosting. Let say in digitalocean.com and just use this tutorial after you have installed docker application you just have to use this https://github.com/cthulhu666/docker-livehelperchat
+Live Helper Chat is fully compatible with docker since 3.44v you can find all related information here.
 
-So basically that's it.
+https://github.com/LiveHelperChat/docker-standalone
+
+There is at the moment two versions prepared
+
+ * Without NodeJS plugin
+ * With NodeJS plugin

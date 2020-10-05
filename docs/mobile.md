@@ -75,6 +75,58 @@ Login to demo of live helper chat details:
  * Password: demo
  * Un check "Append index.php to address"
 
+## I can't login?
+
+ * Make sure you have entered domain address correctly, pay attention does your URL requires `www` or not. `https://www.example.com` and `https://example.com` are two different URL's
+ * If you still can't login please apply this `.htaccess` file because sometimes `Authorization` headers are not parsed correctly by apache server.
+ 
+Apache config file if you are running in a *root* directory. E.g `https://example.com/index.php/site_admin/user/login` or `https://example.com/site_admin/user/login`
+ 
+```apacheconfig
+AddType application/wasm .wasm
+
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  Header always Set Access-Control-Allow-Origin "*"
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+
+RewriteEngine On
+
+# If for some reason you can't authentificate for Rest API try to uncomment following lines
+# https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request
+
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# Adds support for URL without index.php in URL
+RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
+RewriteRule ^upgrade.php - [L]
+RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|swf|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
+
+DirectoryIndex index.php
+```
+
+Apache config to try if you are running in a subdirectory. E.g https://example.com/lhc_web/index.php/site_admin/user/login
+
+```apacheconfig
+AddType application/wasm .wasm
+
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  Header always Set Access-Control-Allow-Origin "*"
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+
+RewriteEngine On
+
+# If for some reason you can't authentificate for Rest API try to uncomment following lines
+# https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request
+
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+```
+
 ## What to enter if I'm running Live Helper Chat in subfolder/subdomain?
 
  * If subdomain host in that case would be `https://<subdomain>.example.org`
