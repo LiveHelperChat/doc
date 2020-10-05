@@ -260,6 +260,45 @@ If you are using notifications functionality you should set logo and notificatio
 
 ## FAQ
 
+### How do I place new widget at the bottom left corner?
+
+Create a new theme and make it default or just choose it while generating an embed code
+
+In `Custom CSS` tab do the following changes.
+
+In `Widget container additional CSS, takes effect after save` enter 
+
+```
+  left:30px;
+```
+
+In `Widget body additional CSS, takes effect after save` enter
+
+```css
+.proactive-need-help{
+  border-radius:10px!important;
+  border-bottom-left-radius:0px!important;
+}
+```
+
+In `Custom page CSS (new widget only)` enter
+    
+```css
+#lhc_container_v2 #lhc_status_widget_v2{ 
+        left:20px!important;
+}
+
+#lhc_container_v2 #lhc_widget_v2{
+    left:50px!important;;
+}
+
+#lhc_container_v2 #lhc_needhelp_widget_v2{
+    left:45px!important;
+}
+```
+
+That's it.
+
 ### I have created a theme, how can I share it with community?
 
 Community Themes will be published in github.
@@ -267,7 +306,7 @@ Community Themes will be published in github.
 https://github.com/LiveHelperChat/themes
 
 
-### How do I apply theme?
+### How do I apply a theme?
 
 You can either set default theme in back office or you can choose theme in embed code generation window.
 
@@ -284,7 +323,7 @@ In this window just upload a new theme.
 > Configuration -> Live Chat configuration -> Default theme
 *   Also you can apply themes individually to embed code by selecting combobox in widget generation window. So you can just choose which theme widget should use.
 
-### How do I pass theme to start chat window?
+### How do I pass theme to start chat window?
 
 Theme argument is /(theme)/<theme_id> so you can just manually write what theme should use. E.g index.php/chat/start/(theme)/2
 
