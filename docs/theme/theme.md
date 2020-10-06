@@ -260,7 +260,40 @@ If you are using notifications functionality you should set logo and notificatio
 
 ## FAQ
 
-### How do I place new widget at the bottom left corner?
+### How do I make status icon smaller?
+
+In `Custom CSS` tab do the following changes.
+
+In `Status widget additional CSS, takes effect after save` enter
+ 
+```css
+#lhc_status_container{ 
+    bottom:3px!important;
+    right:3px!important;
+    padding-left:3px!important;
+    padding-top:3px!important;
+}
+
+#lhc_status_container #status-icon{
+    box-shadow:none!important;
+    padding:5px!important;
+}
+```
+
+In `Custom page CSS (new widget only)` enter
+
+```css
+#lhc_container_v2 #lhc_status_widget_v2{ 
+    min-height: 65px!important;
+    min-width: 65px!important;
+    max-height: 65px!important;
+    max-width: 65px!important;
+    width: 65px!important;
+    height: 65px!important;
+}
+```
+
+### How do I place new widget at the bottom left corner using custom CSS section?
 
 Create a new theme and make it default or just choose it while generating an embed code
 
