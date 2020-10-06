@@ -25,6 +25,19 @@ If you want to pass nick you have to define it first in variables.
 
 [![](https://livehelperchat.com/var/media/images/customvars.png)](https://livehelperchat.com/var/media/images/customvars.png)
 
+Fields while defining custom chat variable
+
+![](/img/chat/chat-variable.png)
+
+* `Department` if you do not choose department this field presence will be always checked. I suggest do not choose anything in this field.
+* `Javascript variable value` - I suggest always use `lhc_var.` prefix. Live Helper Chat monitors this variable for a changes and updates chats automatically. 
+* `Variable name` - this field will be visible for an operator as additional variable name.
+* `Variable identifier` - this is the key by which you can access this attribute from Rest API calls `{{lhc.var.<chat variable key>}}` or `{{lhc.add.<additional variable key/identifier>}}` or in bot responses `{lhc.add.<field identifier>}` or `{lhc.var.<variable key>}`
+* `Log message for for variable. Variables you can use {old_val}, {new_val}` - if you enter a text operator will see a system message if variable is changed while chat is going.
+* `If variable is not passed should we keep previously recorded value?` - if you want to keep previously passed value even if current page view does not have it. check it. Usefull for passing username if user logs out.
+* `This variable is invisible for operator and will be stored in chat_variables attribute` - this variable will be stored in `chat_variables` attribute and later can be accessed through `{{lhc.var.<chat variable key>}}` or in bot responses `{lhc.var.<variable key>}`
+* `Variable type` - choose data type variable should be checked against.
+
 Javascript part would look like
 
 ```js

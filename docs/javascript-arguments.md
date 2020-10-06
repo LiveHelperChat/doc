@@ -167,6 +167,10 @@ LHC_API.args = {
     wwidth:350,
     pheight:520,
     pwidth:500,
+    sright:0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
+    sbottom:0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
+    position:'api',     //If you do not pass we will default to a widget mode | Optional | Default - bottom_right
+    position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
     leaveamessage:true, // Should leave a message functionality be enabled or not | Optional
     offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
                                                     // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
