@@ -4,6 +4,37 @@ title: How to use chrome extension?
 sidebar_label: Chrome extension
 ---
 
+## I can't login?
+
+Chrome recently changed that iframe cookies are not allowed by default. You can bypass that in a few ways
+
+### Option A
+
+Modify `lhc_web/index.php` file and uncomment these lines https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/index.php#L26-L27
+
+```php
+// @ini_set('session.cookie_samesite', 'None');
+// @ini_set('session.cookie_secure', true);
+```
+
+Change to
+
+```php
+@ini_set('session.cookie_samesite', 'None');
+@ini_set('session.cookie_secure', true);
+```
+
+You might need to restart a browser
+
+### Option B
+
+Another way is (not recommended as it will lower your browser security)
+
+* Enter in chrome url address `chrome://flags/`
+* In `Search flags` enter `samesite`
+* Change found items values from `Default` to `Disabled`
+* You might need to restart a browser
+
 ## Tutorial
 
 1.  Two install ways
