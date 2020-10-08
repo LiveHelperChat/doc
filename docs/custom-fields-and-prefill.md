@@ -38,10 +38,10 @@ Fields while defining custom chat variable
 * `This variable is invisible for operator and will be stored in chat_variables attribute` - this variable will be stored in `chat_variables` attribute and later can be accessed through `{{lhc.var.<chat variable key>}}` or in bot responses `{lhc.var.<variable key>}`
 * `Variable type` - choose data type variable should be checked against.
 
-Javascript part would look like
+Javascript part would look like.
 
 ```js
-if (typeof lhc_var === 'undefined'){  
+if (typeof lhc_var === 'undefined') { // This variable has to be defined before Live Helper Chat embed script.
     window.lhc_var = {}; // Window is required to define variable in global scope 
 };  
 lhc_var.usernamepassing = 'giovanninew2';
@@ -52,7 +52,8 @@ This variable can be chagned on the fly and it will be updated automatically.
 [![](https://livehelperchat.com/var/media/images/gender.png)](https://livehelperchat.com/var/media/images/gender.png)And if you want to pass any other additional variable. Just define it as above :)
 
 ```js
-if (typeof lhc_var === 'undefined'){
+
+if (typeof lhc_var === 'undefined') { // This variable has to be defined before Live Helper Chat embed script.
     window.lhc_var = {}; // Window is required to define variable in global scope 
 };
 lhc_var.gender = 'Gender';
@@ -86,6 +87,7 @@ This feature allows to prefill various variables including the ones defined in b
 
 ```js
 <script type="text/javascript">
+// This variable has to be defined before Live Helper Chat embed script.
 var LHCChatOptions = {};  
 
 // Custom variables definition directly in JS
