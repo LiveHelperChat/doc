@@ -137,6 +137,7 @@ module.exports = {
     ],
     Developing: [
         'hooks',
+        'development/webhooks',
         'debug',
         {
             type: 'category',
