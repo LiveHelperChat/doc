@@ -22,7 +22,7 @@ It's possible to develop that once you change department start chat settings fie
 
 This is the main window of start chat form settings page.
 
-![Start chat form settings](/img/chat/start-chat-form-settings.png)
+![Start chat form settings](/img/chat/start-chat-form-settings.png?v=1)
 
 ## Attributes definition
 
@@ -41,6 +41,20 @@ Usefull if you want to start chat as soon visitor opens a widget. You should not
 ### Do not process internal pages and use redirects.
  
 Not used in new widget anymore. Effects only old widget.
+ 
+### Disable start chat URL
+
+If you do not want to allow visitors start chat directly by typing `lhc_web/index.php` url you can check this checkbox. It will disable this form.
+
+Another way to disable this is just edit `settings.ini.php` file and change
+
+```php
+'default_url' => 
+    array (
+      'module' => 'chat', // change to 'user'
+      'view' => 'start', // change to 'login'
+    ),
+```  
  
 ## Define custom fields for online mode
 
