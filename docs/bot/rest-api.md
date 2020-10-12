@@ -18,7 +18,7 @@ In order to get all working you have to setup two things
 
 Rest API call building window is build such way that you can execute almost any request you want.
 
-![](/img/bot/rest-api.png)
+![](/img/bot/rest-api.png?v=1)
 
 ## Fields definition for Rest API
 
@@ -209,6 +209,16 @@ In order for rest API to receive these clicks you should also check in trigger [
 Each trigger at the bottom has `Show code` button. This code is supported **only** by [`Execute trigger body`](trigger-body.md) response type. If you just want to build trigger and get code for response and reuse it, it's the response type you should use instead.
 :::
 
+### Conditions
+
+Only if these conditions are met we will send Rest API request. Usefull in webhook cases.
+
+Let say you want to send request only if chat happened with a bot?
+
+Condition for that chat could look like
+
+![](/img/bot/bot-closed-chat.png)
+
 ## Replaceable variables
 
 Rest API in value fields you can use these replaceable variables
@@ -226,6 +236,7 @@ Rest API in value fields you can use these replaceable variables
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly. It's either `Field identifier` from `Start a chat form settings > Custom fields` or if you are passing manually it's `name` attribute.
 * `{{lhc.<any chat attribute>}}` - all possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat` also you can access ant dynamic attribute like [`{{lhc.department_name}}`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L400). You can even pass any sub-object E.g `{{lhc.department}}`
+* `{{args.<any argument attribute>.<any subargument attribute>}}` - if you are implementing [webhooks](../development/webhooks.md) most likely you will be using this as placeholder.
 
 Example:
 > If you put `Field identifier` value as `gender` in `Start a chat form settings > Custom fields`. In Rest API Call you can access this field like `{{lhc.add.gender}}`

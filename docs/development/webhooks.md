@@ -38,6 +38,7 @@ I'll give a sample how to setup an event on chat close.
  * `chat` - Chat instance.
  * `user_data` - User instance.
  * Their model's descriptions we can find in https://api.livehelperchat.com/#/
+* You can those variables in rest API with new placeholder like `{{args.chat.id}}` or `{{args.user_data.id}` you can access as deep as you want into these variables.
 
 So our `webhook` configuraiton can look like this.
 
@@ -55,3 +56,6 @@ Our close trigger configuration can look like this.
 
 Rest API can be configured same way as it's working with normal bot workflow. Please read [an article](../bot/rest-api.md).
 
+## How to send to Rest API only bot chats?
+
+You can use [Rest API conditions](../bot/rest-api.md#conditions) tab. 
