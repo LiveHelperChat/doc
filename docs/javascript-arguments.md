@@ -161,23 +161,24 @@ function widgetV2Callbacks(loadcb) {
 var LHC_API = LHC_API||{};
 
 LHC_API.args = {
-    mode:'widget',      // widget, embed | Required
+    mode: 'widget',      // widget, embed | Required
     lhc_base_url:'//demo.livehelperchat.com/',  // Required
-    wheight:450,
-    wwidth:350,
-    pheight:520,
-    pwidth:500,
-    sright:0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
-    sbottom:0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
-    position:'api',     //If you do not pass we will default to a widget mode | Optional | Default - bottom_right
+    wheight: 450,
+    wwidth: 350,
+    pheight: 520,
+    pwidth: 500,
+    sright: 0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
+    sbottom: 0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
+    fscreen: false,      // Should widget content opened in full screen mode. Usefull in page embed 'mode:mode'. Can be activated from theme also only for embed mode.| Optional
+    position: 'api',     //If you do not pass we will default to a widget mode | Optional | Default - bottom_right
     position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
-    leaveamessage:true, // Should leave a message functionality be enabled or not | Optional
+    leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
     offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
                                                     // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
     identifier : 'lhc', // Can be used for custom proactive invitation | Optional
     department: [4],    // Department, can be multiple or one | Optional
     product: [4,5],     // Product to choose from | Optional
-    priority:10005,     // Set priority for started chat | Optional
+    priority: 10005,     // Set priority for started chat | Optional
     theme: 1,           // Set theme | Optional
     domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
     bot_id : 5          // Set bot ID for this chat | Optional
