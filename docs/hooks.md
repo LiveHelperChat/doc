@@ -151,6 +151,7 @@ Chat was modified by system or operator.
 | ./modules/lhchat/addmsgadmin.php | chat.before_msg_admin_saved | array('msg' => & $msg,'chat' => & $Chat)); |  |
 | ./modules/lhrestapi/addmsgadmin.php | chat.before_msg_admin_saved | array('msg' => & $msg,'chat' => & $Chat)); |  |
 | ./lib/core/lhcore/lhfileupload.php | chat.before_msg_admin_saved | array('msg' => & $msg, 'chat' => & $chat)); |  |
+| ./modules/lhchat/transferuser.php | chat.before_msg_admin_saved | array('msg' => & $msg, 'chat' => & $chat, 'user_id' => $userData->id)); | If we send a system message user_id is provided to know who original initiated an action. |
 | ./modules/lhrestapi/addmsgadmin.php | chat.web_add_msg_admin | array('msg' => & $msg,'chat' => & $Chat)); |  |
 | ./modules/lhchatbox/addmsguser.php | chatbox.before_msg_user_saved | array('msg' => & $msg,'chat' => & $Chat)); |  |
 | ./modules/lhchat/addmsguser.php | chat.before_msg_user_saved | array('msg' => & $msg,'chat' => & $chat)); |  |
