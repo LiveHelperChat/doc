@@ -242,6 +242,9 @@ function openWidget(department){
 You can use url like
 
 > https://example.com/chat/start `<arguments>`
+> https://example.com/chat/begin `<arguments>`
+
+Second URL has default logo and footer and can be usefull depending on your usage scenario and start chat form combination.
 
 Possible arguments. All arguments are optional. Most of the cases you can just open popup window to see what url system has generated and just reuse it.
 
@@ -263,6 +266,35 @@ Possible arguments. All arguments are optional. Most of the cases you can just o
 
 E.g 
 > https://example.com/chat/start/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
+> https://example.com/chat/begin/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
+
+### How do I set default URL for Live Helper Chat?
+
+Now if you enter `https://example.com/` you see default URL content. You can change what `module/view` should be rendered by default in `settings.ini.php` file. 
+
+https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L68-L72
+
+```php
+...
+'default_url' =>
+    array (
+        'module' => 'chat',
+        'view' => 'start', // Change value to begin or startchat.
+    ),
+...
+```
+
+If you do not want to allow to start chat directly at all you can change settings to.
+
+```php
+...
+'default_url' =>
+    array (
+        'module' => 'user',
+        'view' => 'login',
+    ),
+...
+```
 
 ## Public methods
 

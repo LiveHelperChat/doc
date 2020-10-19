@@ -26,6 +26,8 @@ Chat tab shows this information
 In this area you will see visitor messages. Also if there are previous visitor messages you will see load a previous messages button.
 ​![](/img/chat/message-area.jpg)
 
+You can also click right mouse button and see context menu related to a message.
+
 ### Load previous chat button.
 
 ​![](/img/chat/previous-button.jpg)

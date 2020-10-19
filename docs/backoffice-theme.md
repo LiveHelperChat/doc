@@ -3,6 +3,12 @@ id: back-office-theme
 title: Back office theming
 ---
 
+## Change back office look directly in back office
+
+Navigate to `Settings > Live help configuration > Back office theming` and change back office theme look directly.
+
+## Coding way of changing back office theme
+
 Since 2.23v back office is bootstrap 3 powered, the easiest way to change back office theme is
 
 1.  Download/generate bootstrap css file. Few url's where you can do that
