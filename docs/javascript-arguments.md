@@ -305,6 +305,32 @@ Let say you include widget with position api. Widget status will be invisible, b
 window.$_LHC.eventListener.emitEvent('showWidget');
 ```
 
+Reload widget. Usefull in case you want to change passed attribute to completely different ones.
+```js
+window.$_LHC.eventListener.emitEvent('reloadWidget');
+```
+
+On click event can look something like this
+```
+function onClick()
+{
+    /* You can change like this */
+    // window.LHCChatOptions = {};
+    // LHCChatOptions.attr_prefill = new Array();
+    // LHCChatOptions.attr_prefill.push({'name':'question','value':'Default user message live'});
+
+    
+    // Reload a widget
+    window.$_LHC.eventListener.emitEvent('reloadWidget');
+
+    // If you use reoad you have to set passet attribute like this.
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'Question' : 'Custom question here'}}}]);
+    
+    // Show widget
+    window.$_LHC.eventListener.emitEvent('showWidget');
+}
+```
+
 To close widget.
 ```js
 window.$_LHC.eventListener.emitEvent('closeWidget');
