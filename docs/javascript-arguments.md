@@ -195,6 +195,8 @@ LHC_API.args = {
                             // By having this enabled you increase server load but visitor won't need to reload page to see operator invitation message.
     survey : 1,         // Survey Id. Department Survey id overrides this value. | Optional
     operator : 1,       // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
+    scope_storage: false,    // Should we store Live Helper Chat related data within passed scope or use global one. `lhc` | Optional
+    lhc_var: {},             // If you are passing variables you can modify this object and attribute would be updated automatically. E.g LHC_API.args.lhc_var.gender = 'some gender' | Optional
     cookie_per_page : false  // (false | true | false | "/cookiepath"). Default value - false
                              // false - cookie will be set per domain. Same chat will be available across all pages where script is embeded.
                              // true - cookie will be set per page path. Cookie path argument is not set. Usefull if you want to have different instances of chat per page.
@@ -204,6 +206,7 @@ LHC_API.args = {
 (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
     var date = new Date();po.src = '//demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?v2'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+    // po.setAttribute('scope','LHC2'); You can set scope of script. Please go to section How to embed multiple widgets on same page
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>
@@ -236,6 +239,45 @@ function openWidget(department){
 }
 ```
 
+## How to embed multiple pages widgets on the same page?
+
+E.g you have a page embed code and you want to have a widget always on bottom left corner.
+
+Related settings to this approach is `scope_storage`,`LHC_API.args.lhc_var`
+
+For a widget embed we use standard code and change nothing. Now in order to embed page widget without conflicting previous code. Embed code has to look something like this.
+
+Things you have to do.
+
+ * `po.setAttribute('scope','PAGE2');` always has to be uppercase
+ * Change id to lowercase prefix `page2` `<div id="page2_status_container_page" ></div>`
+ * Change `LHC_API` to `PAGE2_API`
+ * `LHCChatOptions` will become `PAGE2ChatOptions`
+ * `window.$_LHC` will become `window.$_PAGE2`
+ * `LHC_API.args.lhc_var` will become `PAGE2_API.args.lhc_var`
+
+Pay attention to `page2`/`PAGE2` keyword in embed code
+
+```
+<!-- Place this tag where you want the Live Helper Status to render. -->
+<div id="page2_status_container_page" ></div>
+
+<!-- Place this tag after the Live Helper status tag. -->
+<script>var PAGE2_API = PAGE2_API||{};
+PAGE2_API.args = {mode:'embed',domain:'qu.lt',scope_storage: true,lhc_base_url:'//devmysql.livehelperchat.com/index.php/',wheight:450,wwidth:350,pheight:520,pwidth:500,leaveamessage:true,check_messages:false};
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin','anonymous'); po.async = true;
+    var date = new Date();po.src = '//devmysql.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+    po.setAttribute('scope','PAGE2');
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+```
+
+Same way you can embed unlimited number of page embeds in a single page. See live samples
+
+ * Sample of two page embeds in a single place https://livehelperchat.com/lhcsamples/sample-1.html
+ * Sample of page embed and two widget embeds, one of them has custom fields passed in javascript https://livehelperchat.com/lhcsamples/sample-2.html
 
 ## Static URL generation
 
