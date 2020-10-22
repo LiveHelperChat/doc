@@ -239,7 +239,7 @@ function openWidget(department){
 }
 ```
 
-## How to embed multiple pages widgets on the same page?
+## How to embed multiple widgets on the same page?
 
 E.g you have a page embed code and you want to have a widget always on bottom left corner.
 
