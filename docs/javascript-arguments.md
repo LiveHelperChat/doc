@@ -258,16 +258,16 @@ Things you have to do.
 
 Pay attention to `page2`/`PAGE2` keyword in embed code
 
-```
+```html
 <!-- Place this tag where you want the Live Helper Status to render. -->
 <div id="page2_status_container_page" ></div>
 
 <!-- Place this tag after the Live Helper status tag. -->
 <script>var PAGE2_API = PAGE2_API||{};
-PAGE2_API.args = {mode:'embed',domain:'qu.lt',scope_storage: true,lhc_base_url:'//devmysql.livehelperchat.com/index.php/',wheight:450,wwidth:350,pheight:520,pwidth:500,leaveamessage:true,check_messages:false};
+PAGE2_API.args = {mode:'embed', scope_storage: true,lhc_base_url:'//demo.livehelperchat.com/',department: [1],theme:2,wheight:450,wwidth:350,pheight:520,pwidth:500,leaveamessage:true,check_messages:false};
 (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin','anonymous'); po.async = true;
-    var date = new Date();po.src = '//devmysql.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+    var date = new Date();po.src = '//demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
     po.setAttribute('scope','PAGE2');
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
