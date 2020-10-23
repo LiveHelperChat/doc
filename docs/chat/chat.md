@@ -255,7 +255,7 @@ Required permissions
 This option can be [disabled by department](department/department.md#miscellaneous).
 :::
 
-### Chat status
+### Changing chat status
 
 Chat status is shown in
 
@@ -264,6 +264,9 @@ Chat status is shown in
 By clicking info icon you can change chat status to different. 
 
 ​![](/img/chat/chat-status-modal.png)
+
+ * If chat status is set to pending we reset assigned operator.
+ * If chat status is set to active we assign it to operator who did that, but only if chat did not had any assigned operator previously.
 
 Required permissions
 
