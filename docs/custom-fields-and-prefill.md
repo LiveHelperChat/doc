@@ -61,6 +61,34 @@ lhc_var.gender = 'Gender';
 
 You can update any core attribute of chat object. Like `lhc.email`,`lhc.phone` etc. All possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
 
+## Passing monitored variable directly as argument
+
+```javascript
+LHC_API = LHC_API||{};
+LHC_API.args = {lhc_var : {gender: 'Male'}, mode:'widget',lhc_base_url:'//demo.livehelperchat.com/',wheight:450,wwidth:350,pheight:520,pwidth:500,leaveamessage:true,department:[1],check_messages: true};
+//... Rest of the script
+```
+
+Now you can change variable value on the fly by doing something like this
+
+```javascript
+LHC_API.args.lhc_var.gender = 'Male seller'
+```
+
+Most common mistake is just pass your variable and later modify it expecting it will be monitored.
+
+```javascript
+var myVariable = {"gender":"Male"};
+LHC_API.args = {lhc_var : myVariable,// ... rest of arguments
+
+// Somewhere in async call of your app
+// myVariable.gender = "Male seller"; This will NOT work. You have to do something like this instead
+LHC_API.args = {lhc_var : myVariable, loadcb : function(){ myVariable = LHC_API.args.lhc_var; },//...
+
+// Now you can just modify anywhere you want. `myVariable` should be type of `Proxy`
+myVariable.gender = "Male seller";
+```
+
 ## Showing custom column in chat list
 
 It's possible in dashboard window to show custom column. This can be done by navigating to
