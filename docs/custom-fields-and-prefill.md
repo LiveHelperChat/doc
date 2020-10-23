@@ -21,11 +21,21 @@ This is preferred way to pass attributes without exposing any UI for the visitor
 
 > System Configuration -> Additional chat variables
 
+### Main chart variable definition
+
 If you want to pass nick you have to define it first in variables.
 
 [![](https://livehelperchat.com/var/media/images/customvars.png)](https://livehelperchat.com/var/media/images/customvars.png)
 
-Fields while defining custom chat variable
+### Additional chart variable visible by operator
+
+Fields while defining custom chat variable which will be visible by operator. This variable is non main chat variable.
+
+![](/img/chat/additional-variable.png)
+
+### Additional chat variable not visible by operator.
+
+Fields while defining custom chat variable which will be NOT visbile by operator. This variable is non main chat variable.
 
 ![](/img/chat/chat-variable.png)
 
@@ -101,13 +111,17 @@ You can set these values as `Variable name`
  * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
  * `chat_variable.<extension_variable>`
 
-Example how to define chat column
+### Example how to define chat column from main chat attributes
 
 ![](/img/chat/chat-nick.jpg)
 
 Example how it would look like
 
 ![](/img/chat/chat-column-custom.jpg)
+
+### Example how to define chat column from additional chat variables
+
+![](/img/chat/additional-chat-column.jpg)
 
 ## Prefilling and defining custom variables
 
