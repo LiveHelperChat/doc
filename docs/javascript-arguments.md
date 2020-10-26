@@ -7,13 +7,75 @@ sidebar_label: Javascript arguments
 Here you will find all possible javascript arguments for a new widget. If you want to pass custom variables or define custom fields refer to [custom fields](custom-fields-and-prefill.md) documentation.
 ## Javascript options
 
+
+```js
+<script>
+var LHC_API = LHC_API||{};
+LHC_API.args = {
+    mode: 'widget',      // widget, embed | Required
+    pnode : 'lhc-node-id'// Where should we render our HTML. By default we append it to body | Optional <div id="lhc-node-id"></div>
+    lhc_base_url:'//demo.livehelperchat.com/',  // Required
+    wheight: 450,
+    wwidth: 350,
+    pheight: 520,
+    pwidth: 500,
+    sright: 0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
+    sbottom: 0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
+    fscreen: false,      // Should widget content opened in full screen mode. Usefull in page embed 'mode:mode'. Can be activated from theme also only for embed mode.| Optional
+    position: 'api',     //If you do not pass we will default to a widget mode | Optional | Default - bottom_right
+    position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
+    leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
+    offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
+                                                    // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
+    identifier : 'lhc', // Can be used for custom proactive invitation | Optional
+    department: [4],    // Department, can be multiple or one | Optional
+    product: [4,5],     // Product to choose from | Optional
+    priority: 10005,     // Set priority for started chat | Optional
+    theme: 1,           // Set theme | Optional
+    domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
+    bot_id : 5          // Set bot ID for this chat | Optional
+
+    // Read next section about callback function
+    loadcb : widgetV2Callbacks, // Chat was loaded callback | Option
+
+    phash : 'phash',    // Payment ID | Optional
+    events:[{id:"birthday",val:"value"}], // Events to log for proactive chat invitation. `val` is optional | Optional
+    tag: 'some_tag',     // Tag for proactive chat invitation | Optional
+    pvhash : 'pvhash',  // Payment verify hash | Optional
+    lang : 'lit/'       // Chat language | Optional
+    fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
+    proactive : false,      // Disable proactive invitations. | Optional
+    check_messages : false, // By default proactive invitation is checked on page load and we determine is there any invitation pending based on present user state.
+                            // But limitation of this is that if operator sends a message visitor seems this message only after page view.
+                            // By having this enabled you increase server load but visitor won't need to reload page to see operator invitation message.
+    survey : 1,         // Survey Id. Department Survey id overrides this value. | Optional
+    operator : 1,       // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
+    scope_storage: false,    // Should we store Live Helper Chat related data within passed scope or use global one. `lhc` | Optional
+    lhc_var: {},             // If you are passing variables you can modify this object and attribute would be updated automatically. E.g LHC_API.args.lhc_var.gender = 'some gender' | Optional
+    cookie_per_page : false  // (false | true | false | "/cookiepath"). Default value - false
+                             // false - cookie will be set per domain. Same chat will be available across all pages where script is embeded.
+                             // true - cookie will be set per page path. Cookie path argument is not set. Usefull if you want to have different instances of chat per page.
+                             // "/cookiepath" - you are responsible for setting cookie path. Usefull if you want to have same cookie under specific path main part.
+};
+
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    var date = new Date();po.src = '//demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?v2'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+    // po.setAttribute('scope','LHC2'); You can set scope of script. Please go to section How to embed multiple widgets on same page
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+```
+
+## Load callback function
+
+This allows to make various tweaks to based on received callback.
+
 ```html
 <div id="online-status"></div>
 ```
 
 ```js
-<script>
-
 function widgetV2Callbacks(loadcb) {
 
     // Show offline/online status manually in specific webplace 
@@ -139,8 +201,6 @@ function widgetV2Callbacks(loadcb) {
         console.log('botTrigger');
     });
 
-
-
     // These events will be executed as soon the widget APP starts
     // In this case we set default `Question` and disable bot.
     // we also change auto start to true and show widget.
@@ -157,59 +217,6 @@ function widgetV2Callbacks(loadcb) {
     // We show a widget
     //window.$_LHC.eventListener.emitEvent('showWidget');
 }
-
-var LHC_API = LHC_API||{};
-
-LHC_API.args = {
-    mode: 'widget',      // widget, embed | Required
-    lhc_base_url:'//demo.livehelperchat.com/',  // Required
-    wheight: 450,
-    wwidth: 350,
-    pheight: 520,
-    pwidth: 500,
-    sright: 0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
-    sbottom: 0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
-    fscreen: false,      // Should widget content opened in full screen mode. Usefull in page embed 'mode:mode'. Can be activated from theme also only for embed mode.| Optional
-    position: 'api',     //If you do not pass we will default to a widget mode | Optional | Default - bottom_right
-    position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
-    leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
-    offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
-                                                    // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
-    identifier : 'lhc', // Can be used for custom proactive invitation | Optional
-    department: [4],    // Department, can be multiple or one | Optional
-    product: [4,5],     // Product to choose from | Optional
-    priority: 10005,     // Set priority for started chat | Optional
-    theme: 1,           // Set theme | Optional
-    domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
-    bot_id : 5          // Set bot ID for this chat | Optional
-    loadcb : widgetV2Callbacks, // Chat was loaded callback | Option
-    phash : 'phash',    // Payment ID | Optional
-    events:[{id:"birthday",val:"value"}], // Events to log for proactive chat invitation. `val` is optional | Optional
-    tag: 'some_tag',     // Tag for proactive chat invitation | Optional
-    pvhash : 'pvhash',  // Payment verify hash | Optional
-    lang : 'lit/'       // Chat language | Optional
-    fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
-    proactive : false,      // Disable proactive invitations. | Optional
-    check_messages : false, // By default proactive invitation is checked on page load and we determine is there any invitation pending based on present user state.
-                            // But limitation of this is that if operator sends a message visitor seems this message only after page view.
-                            // By having this enabled you increase server load but visitor won't need to reload page to see operator invitation message.
-    survey : 1,         // Survey Id. Department Survey id overrides this value. | Optional
-    operator : 1,       // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
-    scope_storage: false,    // Should we store Live Helper Chat related data within passed scope or use global one. `lhc` | Optional
-    lhc_var: {},             // If you are passing variables you can modify this object and attribute would be updated automatically. E.g LHC_API.args.lhc_var.gender = 'some gender' | Optional
-    cookie_per_page : false  // (false | true | false | "/cookiepath"). Default value - false
-                             // false - cookie will be set per domain. Same chat will be available across all pages where script is embeded.
-                             // true - cookie will be set per page path. Cookie path argument is not set. Usefull if you want to have different instances of chat per page.
-                             // "/cookiepath" - you are responsible for setting cookie path. Usefull if you want to have same cookie under specific path main part.
-};
-
-(function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    var date = new Date();po.src = '//demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?v2'+(""+date.getFullYear() + date.getMonth() + date.getDate());
-    // po.setAttribute('scope','LHC2'); You can set scope of script. Please go to section How to embed multiple widgets on same page
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
 ```
 
 ## What variables are available in `window.$_LHC` object?

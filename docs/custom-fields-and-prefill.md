@@ -121,7 +121,7 @@ Example how it would look like
 
 ### Example how to define chat column from additional chat variables
 
-![](/img/chat/additional-chat-column.jpg)
+![](/img/chat/additional-chat-column.png)
 
 ## Prefilling and defining custom variables
 

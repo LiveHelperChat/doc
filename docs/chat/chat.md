@@ -44,6 +44,10 @@ If operator has only read only permission area would not be editable by him.
 
 ​![](/img/chat/writing-message-area.jpg)
 
+Operator also would see read only area if he's not a chat owner and he does not have this permission.
+
+> 'lhchat', 'writeremotechat' 
+
 ## Toolbar actions
 
 ### Files
@@ -327,11 +331,12 @@ If you see error like `You do not have permission to access the current or chat 
 
 ​![](/img/chat/permission-error.png)
 
-Operator can open chat if
+Operator can open a chat or write a message if
 
 * He is assigned to a chat.
 * (Chat is pending AND (chat is assigned to him **OR** operator has permission `lhchat`,`open_all`)) **AND** operator is a member of chat department.
 * Chat is assigned to other operator **AND** operator has permission `lhchat`,`allowopenremotechat` so he can open other's operators chats **AND** operator is a member of chat department.
+* Operator can write a message if operator has write permission to department **AND** (he has `'lhchat','writeremotechat'` permission **OR** chat is not assigned yet to anyone **OR** he is a chat owner)
 
 ## Permissions
 
