@@ -279,11 +279,11 @@ If we find that passed department is disabled we should not show a widget otherw
 
 ### Home page tabs order 
 
-(More information)[dashboard.md]
+[More information](dashboard.md)
 
 ### Hide right column in frontpage
 
-(More information)[dashboard.md]
+[More information](dashboard.md)
 
 ### Suggest user to leave a message then user chooses offline department
 
