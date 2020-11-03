@@ -72,6 +72,20 @@ This disables the Proactive Invitations. This is useful if you want to disable t
 
 Static url can be used directly by pasting address in browser URL address. More information can be found at [javascript argumetns](javascript-arguments.md#static-url-generation) article.
 
+## Static image
+
+Now you can generate static images also. These static images can be used for e-mails as example.
+
+```html
+<a href="//demo.livehelperchat.com/chat/start">
+    <img src="https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200" alt="" />
+</a>
+```
+
+Live example
+
+![](https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200)
+
 ## FAQ
 
 ### My widget does not work. I have Live Helper Chat installed on one domain but code is embeded on another domain?
