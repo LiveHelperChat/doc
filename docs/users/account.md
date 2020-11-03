@@ -141,6 +141,6 @@ Required permissions
 
 ## Notifications
 
-In this section operator can configure settings related to new chats notifications aldo enable activity tracking so he would go offline/online automatically.
+In this section operator can configure settings related to new chats notifications aldo enable activity tracking so operator would go offline/online automatically. Related information [how to automate online offline status](../offline-online-automation.md)
 
 ​![](/img/user/notifications.png)

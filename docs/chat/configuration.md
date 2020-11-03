@@ -130,7 +130,7 @@ Make sure you are running [workflow cronjob](development/cronjob.md#default-cron
 
 ### How long keep operators online sessions data? (days)
 
-This data is used to generate [agents performance statistic](chat/statistic.md#agents-statistic), but over time this table can get quite big so makes sense just have limited days this data should be stored.
+This data is used to generate [agents performance statistic](chat/statistic.mdx#agents-statistic), but over time this table can get quite big so makes sense just have limited days this data should be stored.
 
 Make sure you are running [workflow cronjob](development/cronjob.md#default-cronjob-setup).
 
@@ -243,11 +243,11 @@ When we send chat acceptance link we can define how long this link is valid. Thi
 
 ### How long operator should go offline automatically because of inactivity. Value in minutes
 
-(More information)[offline-online-automation.md]
+[More information](offline-online-automation.md)
 
 ### Track all logged operators activity and ignore their individual settings.
 
-(More information)[offline-online-automation.md]
+[More information](offline-online-automation.md)
 
 ### Disable chat print
 
@@ -315,7 +315,7 @@ Related to above item.
 
 ### Chat closing options
 
-[Read article](auto-close-delete.md)
+[Read article](automatic-closing-purging.md)
 
 ### Hide close button in dropdown
 
