@@ -4,6 +4,11 @@ title: How to setup round robin/automatic chats assignment workflow?
 sidebar_label: Auto assignment
 ---
 
+This article describes how to setup auto assignment workflow in Live Helper Chat. Auto assignment works two ways out of the box.
+
+* Live auto assignment - means chats are auto assignment on chat sync event in visitor widget. This allows auto assignment work even if there is no cronjob running. Disadvantage is it **does not** respect FIFO order if you have a lot of chats.
+* Using [workflow cronjob](development/cronjob.md#default-cronjob-setup) - this is a recommended way of having auto assignment setup. You should also **disable** [live auto assignment](#disable-live-auto-assignment) in that case. Using cronjob chats will be assigned in FIFO order.
+
 ## Introduction
 In department you can find auto assignment settings.
 
