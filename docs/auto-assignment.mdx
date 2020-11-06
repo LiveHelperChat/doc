@@ -4,6 +4,8 @@ title: How to setup round robin/automatic chats assignment workflow?
 sidebar_label: Auto assignment
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This article describes how to setup auto assignment workflow in Live Helper Chat. Auto assignment works two ways out of the box.
 
 * Live auto assignment - means chats are auto assignment on chat sync event in visitor widget. This allows auto assignment work even if there is no cronjob running. Disadvantage is it **does not** respect FIFO order if you have a lot of chats.
@@ -12,7 +14,7 @@ This article describes how to setup auto assignment workflow in Live Helper Chat
 ## Introduction
 In department you can find auto assignment settings.
 
-![](/img/department/auto-assignment.jpg)
+<img height="774" width="669" src={useBaseUrl('img/department/auto-assignment.jpg')} />
 
 ## Attributes definition
 
@@ -89,6 +91,10 @@ If you remove this permission operator will be able to open chats only where he 
 
 * You have to in [user account](users/account.md#automatically-accept-assigned-chats) check `Automatically accept assigned chats`
 * Operator has to have enabled `Pending chats list enabled` or `My pending and active chats list enabled`
+
+## How to show pending chats order from oldest to newest?
+
+You can change pending chats order in [chat configuration](chat/configuration.md#make-default-pending-chats-order-from-old-to-new)
 
 ## Sample
 

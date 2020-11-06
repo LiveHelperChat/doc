@@ -177,7 +177,7 @@ There can be thousands of closed chats and to render only 10 of takes really put
 
 ### Disable live auto assign
 
-More information about [auto assignment](auto-assignment.md)
+More information about [auto assignment](auto-assignment.mdx)
 
 ### List unread chats
 

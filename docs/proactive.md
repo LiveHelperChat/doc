@@ -54,6 +54,13 @@ Operator `Remigijus Kiminas` in this case, will be determined the following way
 
 Message itself always comes from proactive chat invitation `Message to user` or `Message to returning user` fields.
 
+## Invitation dimensions
+
+ * Default invitation width is `200px` pixels. You can set invitation width in invitation `Design > Invitation message width` field.
+ * Invitation height is calculated automatically. If for some reason you see a scrollbar you can use widget themes and define static height.
+
+![Proactive height](/img/chat/proactive-height.png)
+
 ## Proactive invitations list 
 ![](https://livehelperchat.com/var/media/images/invitation_v2.jpg)
 

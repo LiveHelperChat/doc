@@ -90,7 +90,7 @@ Please refer to [Department transfers](department-transfer.md) article.
 
 ## Auto assignment
 
-Please refer to [Auto assignment](auto-assignment.md) article.
+Please refer to [Auto assignment](auto-assignment.mdx) article.
 
 ## Product
 

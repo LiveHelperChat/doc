@@ -182,7 +182,7 @@ You have two ways to accept chat
 
 * Either you click popup icon ​![](/img/dashboard/popup-icon.jpg)
 * Either you click just nick and new tab will be loaded.
-* If you are using [auto assignment](auto-assignment.md) workflow for you tabs might [open automatically](users/account.md#chats).
+* If you are using [auto assignment](auto-assignment.mdx) workflow for you tabs might [open automatically](users/account.md#chats).
 
 ## FAQ
 
