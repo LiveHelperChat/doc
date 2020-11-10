@@ -204,4 +204,25 @@ Languages which may require RTL support. We do not have at the moment translated
 * Urdu: ur
 * Yiddish: yi, ji
 
-So if anyone will translate to any of these langauges, please send me translation. 
+Example of back office RTL language. Dark theme does not support RTL language.
+
+```php
+'site_admin' => array (
+    'locale' => 'he_HE',
+    'content_language' => 'he',
+    'dir_language' => 'rtl',
+    'theme' =>
+        array (
+          0 => 'customtheme',
+          1 => 'defaulttheme',
+        ),
+    'login_pagelayout' => 'login',
+    'default_url' =>
+        array (
+            'module' => 'front',
+            'view' => 'default',
+        ),
+),
+```
+
+So if anyone will translate to any of these languages, please send me translation. 

@@ -6,7 +6,14 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'LiveHelperChat', // Usually your GitHub org/user name.
   projectName: 'doc', // Usually your repo name.
-  themeConfig: {
+    scripts: [
+        {
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+            async: true,
+            'data-ad-client' : "ca-pub-3487178404951359"
+        }
+    ],
+    themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-1221542-10',
       // Optional fields.
