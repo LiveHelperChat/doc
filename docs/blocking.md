@@ -6,7 +6,7 @@ sidebar_label: Blocking
 
 ## Block users directly from chat
 
-You can do this by clicking block icon ​![](/img/chat/block-user.jpg)
+You can do this by clicking block icon ![](/img/chat/block-user.jpg)
 
 You can see all blocked IP's in blocked visitors list.
 
@@ -33,7 +33,7 @@ Screenshot of main window
 Variables explain
 
 *   Offline status - that means for these visitors chat will be offline all the time.
-*   hidden/disabled - that means if user tries to start a chat he will see message that chat is not supported in his country. For him also pro active invitations won't be shown. He also won't be able to chat.
+*   hidden/disabled - that means if user tries to start a chat he will see message that chat is not supported in his country. For him also pro active invitations won't be shown. He also won't be able to chat.
 *   "Apply to chat widget status indicator these rules also? performance decrease is associated with this option" that means that this logic will be applied to initial stage and chat status widget generating phrase and widget initially will be shown as offline or hidden. Otherwise check will be applied on widget content only if user clicks it. There is a little performance penalty involved becaue within each reques script have to check visitor location.
 
 
@@ -55,11 +55,11 @@ For operator to be able configuration GEO Adjustments he has to have permission 
 
 #### You want to show normal status for Frech and show offline for Germany and for all other countries just hide?
 
-![](https://livehelperchat.com/var/media/images/example-geo-3.png)​
+![](https://livehelperchat.com/var/media/images/example-geo-3.png)
 
 ## How to block users from starting a chat?
 
-For that navigate to 
+For that navigate to
 
 > "Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
 
@@ -89,3 +89,6 @@ Possible values
 
 Values can be separated by comma, E.g 1.2.3.*,128.8.8.8
 
+## Live Helper Chat does not detect IP?
+
+If you are running under load balancer or any other proxy server. You have to change `settings.ini.php` `proxy_mode` to `true`.
