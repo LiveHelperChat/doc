@@ -91,3 +91,17 @@ You can also set product directly from bot.
 Department you can change also with `Update main chat attribute`, since 3.42v was done improvement and now it's more clear how to change department. 
 
 In order to change department you just have to `Enter department ID` ID you can find in department list.
+
+## Set subject
+
+You can add a subject to the chat automatically by entering subject id.
+
+## Remove any previous process
+
+In case you allow visitor to start another information collection process in the middle of one. You can encounter an error message like `Please complete previous process`.
+
+If you want to clean any previous process you can use this response type before executing `Collect custom attribute` response type.
+
+Another way to avoid this error just check mark `Soft event` in `Collect custom attribute` response type. We will automatically terminate it if user starts another one.
+
+

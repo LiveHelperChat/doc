@@ -101,3 +101,9 @@ This trigger is executed once visitor cancels information collecting workflow.
 ### Message on cancelation
 
 If you do not define trigger for cancelation this message is send.
+
+### Soft event
+
+In case you see `Please complete previous process` you can avoid this error by checking `Soft event`.
+
+You can also avoid this error manually executing `Update Current chat` response type and choosing `Remove any previous process`

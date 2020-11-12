@@ -21,7 +21,7 @@ Demo install nginx configuration example
            }
 
            # Do not allow to hotlink full size images except our self and major search engines
-           location ~* \.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$ {
+           location ~* \.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|map|ogg|wasm|wav|pdf|ico|txt)$ {
 
              if ($request_method = 'OPTIONS') {
                 add_header 'Access-Control-Allow-Origin' '*';

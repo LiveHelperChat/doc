@@ -22,7 +22,7 @@ In order to enable voice messages to visitors you have to do the following thing
 ```apacheconfig
 AddType application/wasm .wasm
 
-<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|map|ogg|wasm|wav|pdf|ico|txt)$">
   Header always Set Access-Control-Allow-Origin "*"
   Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
   Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"

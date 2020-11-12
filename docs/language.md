@@ -226,3 +226,46 @@ Example of back office RTL language. Dark theme does not support RTL language.
 ```
 
 So if anyone will translate to any of these languages, please send me translation. 
+
+## How to override default translations?
+
+Create an extension with the following structure. In this case we are overriding `lt_LT` translations.
+
+```
+overridetranslation
+    translations
+        lt_LT (change folder name to your language)
+            translation.ts
+```
+
+`translation.ts` file content can look like
+
+```xml
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt">
+  <context>
+    <name>system/configuration</name>
+    <message>
+    <source>Browse offers embed code</source>
+    <translation>Default translation changed</translation>
+    </message>
+  </context>
+  <context>
+    <name>extensioncontent/extensioncontent</name>    
+    <message>
+      <source>Only in extesnion found text</source>
+      <translation>Completely new context</translation>
+    </message>
+  </context>
+</TS>
+```
+
+Activate extension in `lhc_web/settings.ini.php` file
+
+```php
+...
+'extensions' => 
+      array (
+        'overridetranslation'
+      ),
+...
+```

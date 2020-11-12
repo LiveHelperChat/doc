@@ -39,6 +39,27 @@ Web application folders structure
 * `settings` (holds application settings files.)
 * `translations` (holds application translations)
 
+## How to long javascript errors?
+
+Go to `System configuration > Audit (Configuration)` and enable `Log javascript errors` after that. If there is any JS error it will be logged to `System configuration > Audit (Audit Logs)`. 
+
+You can search for javascript errors by these search attributes.
+
+ * Category - `js`
+ * Source - `lhc`
+
+Using javascript log. Most of the time compiled js file has map file E.g 
+
+If error as an example happened in
+
+`https://demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js`
+
+there will be also source map file 
+
+`https://demo.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js.map`
+
+Afterwards you can just use https://jimbly.github.io/stackwalker/index.html to find exact error.
+
 ## How to use debug output
 
 After you have enabled debug output you will see in popup window something like
@@ -46,6 +67,15 @@ After you have enabled debug output you will see in popup window something like
 ![](https://livehelperchat.com/var/media/images/used-templates.png)
 
 Regarding widget debuging, you will not see debug output so easily. These instructions applies also to embed widgets and site widgets.
+
+## Understanding debug output
+
+![](https://livehelperchat.com/var/media/images/css-override.png)
+
+As in above example you see that widget styles can be overrided editing `customtheme/css/widget_override.css` file. Debug shows all searched files during page load. If you want to edit [invitation to chat green block](https://livehelperchat.com/need-help-tool-tip-configuration-280a.html) the easiest way to do that is just override styles using !important flag. These styles should be in your site CSS not widget_override.css file.
+
+
+## Debugging old widget
 
 ### Chrome
 
@@ -56,12 +86,6 @@ After you do that. New window will open on chrome, so just delete "view-source:"
 ### Firefox
 
 ![](https://livehelperchat.com/var/media/images/ff.png)
-
-## Understanding debug output
-
-![](https://livehelperchat.com/var/media/images/css-override.png)
-
-As in above example you see that widget styles can be overrided editing customtheme/css/widget_override.css file. Debug shows all searched files during page load. If you want to edit [invitation to chat green block](https://livehelperchat.com/need-help-tool-tip-configuration-280a.html) the easiest way to do that is just override styles using !important flag. These styles should be in your site CSS not widget_override.css file.
 
 ## During some action app returns white screen, what to do?
 

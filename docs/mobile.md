@@ -85,7 +85,7 @@ Apache config file if you are running in a *root* directory. E.g `https://exampl
 ```apacheconfig
 AddType application/wasm .wasm
 
-<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|map|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
   Header always Set Access-Control-Allow-Origin "*"
   Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
   Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
@@ -102,7 +102,7 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 # Adds support for URL without index.php in URL
 RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
 RewriteRule ^upgrade.php - [L]
-RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|swf|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
+RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|map|swf|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
 
 DirectoryIndex index.php
 ```
