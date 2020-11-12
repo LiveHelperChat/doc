@@ -92,3 +92,5 @@ Values can be separated by comma, E.g 1.2.3.*,128.8.8.8
 ## Live Helper Chat does not detect IP?
 
 If you are running under load balancer or any other proxy server. You have to change `settings.ini.php` `proxy_mode` to `true`.
+
+https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L18
