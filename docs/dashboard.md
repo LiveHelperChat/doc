@@ -86,7 +86,7 @@ By default operator sees only visitors from departments assigned to him. If you 
 
 This widget shows only chats assigned to logged operator. Chat can be either in pending or active state, but it has to be assigned to logged operator.
 
-​![](/img/dashboard/my-chats.png)
+![](/img/dashboard/my-chats.png)
 
 #### Required configuration
 
@@ -97,7 +97,10 @@ This widget shows only chats assigned to logged operator. Chat can be either in 
 
 This widget shows all departments pending chats to which operator has access to.
 
-​![](/img/dashboard/pending-chats.png)
+![](/img/dashboard/pending-chats.png)
+
+ * [How to deny the operator to open all pending chats?](auto-assignment.mdx#how-to-deny-the-operator-to-open-all-pending-chats). 
+ * [How to show only to operator assigned pending chats?](users/account.md#i-can-see-all-pending-chats-not-only-assigned-to-me)
 
 #### Required configuration
 
@@ -107,13 +110,15 @@ This widget shows all departments pending chats to which operator has access to.
 
 Transferred chats to him directly or one of his departments will be shown here.
 
-​![](/img/dashboard/transfered-chats.png)
+![](/img/dashboard/transfered-chats.png)
 
 ### Active chats
 
 Shows presently ongoing chats. Shows only chats from his departments.
 
-​![](/img/dashboard/active-chats.png)
+![](/img/dashboard/active-chats.png)
+
+ * [How to deny the operator to open all chats?](auto-assignment.mdx#how-to-deny-the-operator-to-open-all-chats). 
 
 #### Required configuration
 
@@ -123,7 +128,9 @@ Shows presently ongoing chats. Shows only chats from his departments.
 
 Shows all chats which one bot is handling. 
 
-​![](/img/dashboard/bot-chats.png)
+![](/img/dashboard/bot-chats.png)
+
+* [How to deny to operator open bot chats?](users/account.md#visible-lists)
 
 #### Required configuration
 

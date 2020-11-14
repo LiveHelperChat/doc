@@ -11,11 +11,11 @@ This article will explain everything about user account and permission options.
 
 Operator can access his account by clicking top right menu icon. 
 
-​![](/img/user/account-dropdown.jpg)
+![](/img/user/account-dropdown.jpg)
 
 Once he logs in he will see his account like this
 
-​![](/img/user/account.png)
+![](/img/user/account.png)
 
 ### Permissions
 
@@ -49,8 +49,12 @@ Required permission to be able edit assigned departments. Without this list will
 
 Use can choose what lists he can see.
 
-​![](/img/user/visible-lists.png)
- 
+![](/img/user/visible-lists.png)
+
+### How to disable bot chats for an operator to see ?
+
+You can disable this window for an operator and remove option to see bot chats. So operator would not see a bot chats.
+
 ### Permissions
 
 Required permission to change lists.

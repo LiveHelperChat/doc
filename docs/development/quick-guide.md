@@ -19,6 +19,8 @@ sidebar_label: Developing
    * There is two apps [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app)
    * `cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build`
    * `cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build && npm run build-ie`
+ * Recompile static JS/CSS files. This is required if you change core JS files. It also avoids missing CSS/JS files if more than one server is used.
+   * `php cron.php -s site_admin -c cron/util/generate_css -p 1 && gulp js-static`
 
 More usefull links
 

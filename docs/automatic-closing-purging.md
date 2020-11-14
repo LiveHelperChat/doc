@@ -26,11 +26,11 @@ What chat's closes **"Automatic active chats closing. 0 - disabled, n > 0 time i
 
 1. Where chat is active and from chat start passed defined amount of time.
 
-What chat's closes **"Automatic bot chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"**?
+What chat's closes **"Automatic bot chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"**?
 
 1. Where chat is bot chat and from chat start passed defined amount of time, and the only message was user first message.
 2. Where chat is bot chat and from last visitor message passed defined amount of time.
 
-What chat's deletes **"Automatic chats purging. 0 - disabled, n > 0 time in minutes before chat is automatically deleted"**?
+What chat's deletes **"Automatic chats purging. 0 - disabled, n > 0 time in minutes before chat is automatically deleted"**?
 
-1.  Chat s ckised and from user last message passed defined amount of time
+1. Chat is closed and from user last message passed defined amount of time. 

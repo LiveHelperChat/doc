@@ -77,7 +77,7 @@ Usually auto assignment happens when visitor is waiting untill someone accepts a
 
 ## How to deny the operator to open all pending chats?
 
-By default operator can open all pending chats. Not only assigned to him. If you are using auto assignment workflow and do not want to allow operator to open all pending chats just remove this permission.
+By default operator can open all pending chats. Not only assigned to him. If you are using auto assignment workflow and do not want to allow an operator to open all pending chats just remove this permission.
 
 > 'chat','open_all'
 
@@ -96,17 +96,27 @@ If you remove this permission operator will be able to open chats only where he 
 
 You can change pending chats order in [chat configuration](chat/configuration.md#make-default-pending-chats-order-from-old-to-new)
 
+## How prioritise a chat to be assigned first if chat is waiting more than X amount of time?
+
+This is usefull in case you are having long queue and chat's wait time becomes very long. As an example if chat is waiting more than 10 minutes you want it to be assigned first.
+
+Navigate to
+> System configuration -> Chat configuration > Misc
+
+Enter value for this field
+`Chats waiting in pending queue more than n seconds should be auto-assigned first. Time in seconds'`
+
 ## Sample
 
-To user explicitly has to be assigned department. It's not enough just check all departments. Within each department have to be checked department.
+To user explicitly has to be assigned department. It's not enough just check all departments. Within each department have to be checked department.
 
 ### Department adjustment
 
 You have in department "Auto assignment" secion enable automatic chats transfer.
 
 * Also optionally you can setup how many active chats user can have at a time.
-* How long chat should be assigned to user before it will be transfered to another user, if first user did not accepted it.
-* In most cases it's enough just enable enable it. I also recommend to read round robin implementation for chat's [https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit](https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit)
+* How long chat should be assigned to user before it will be transfered to another user, if first user did not accepted it.
+* In most cases it's enough just enable enable it. I also recommend to read round robin implementation for chat's [https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit](https://docs.google.com/file/d/0B5uaj1QNYoNTVjRnd1ozdmJDYlkwMEl0T0p6NnZLeThXeEww/edit)
 
 ### Users adjustment
 
@@ -117,7 +127,7 @@ By default users sees all pending department chats. To disable that and show onl
 *   "lhuser" => "allowtochoosependingmode" | "Users, groups management" => "Allow user to choose what pending chats he can see, only assigned to him or all."
 *   User has to be online for chat being assigned to him
 *   If you want that assigned chat would be opened automatically for user. User in his account has have checked "Chats" => "Automatically accept assigned chats"
-    *   If user does not see Chats tab in his account you have to give operators role this permission Module - (lhuser) Function - (allowtochoosependingmode)
+    *   If user does not see Chats tab in his account you have to give operators role this permission Module - (lhuser) Function - (allowtochoosependingmode)
 *   Also in "Visible lists" worh checking "My pending and active chats list enabled" so user would see new widget where only to him assigned active and pending chats would be presented. For user to be able to change what he sees he has to have this permission
     *   Module - ('lhuser'), Function - ('change_visibility_list')
 
