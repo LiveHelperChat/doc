@@ -52,6 +52,9 @@ Just in your site css add
 
  * Try to open window in incognito mode.
  * Once chat is started it won't show invitation for the next 24h.
+ * Make sure you have enabled [need help tooltip](chat/configuration.md#show-need-help-tooltip)
+ * Make sure tooltip [timeout value](chat/configuration.md#need-help-tooltip-timeout-after-how-many-hours-show-again-tooltip) is bigger than 0 
+ * If you are using themes, make sure you have not disabled it accidentally
 
 ## How do I change general tooltip style?
 
