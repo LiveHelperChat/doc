@@ -50,7 +50,18 @@ He will be able to click on ![](/img/dashboard/online-icon.png) and change other
 
 You can see present department's statistic.
 
-![](/img/dashboard/departments-stats.png)
+![](/img/dashboard/departments-stats.png?v=2)
+
+Columns and their meanings
+
+ * `Pending chats` - number of pending chats department/department group has
+ * `Active chats` - number of actives chats department/department group has
+ * `Bot chats` - number of active bot chats
+ * `Load columns` - current status of department load based on max chats operators can have. 
+    * It's value is calculated  by `hard limit - active chats (soft limit - active chats)`
+    * `Hard limit` - is the sum of max chats value of **logged** operators who were **active** during last **5** minutes
+    * `Active chats` - number of active chats in department or department group
+    * `Soft limit` - is the sum of max chats of operators who were **active** during last **10** minutes.
 
 #### Required configuration
 

@@ -105,6 +105,18 @@ Visitor will be asked for confirmation does he really want's to close a widget.
 
 If you have embeded Live Helper Chat script in popup it makes sense on popup close also close the chat.
 
+### Show start chat form instantly after operator closes a chat.
+
+Instead of writing message chat was closed we will show start chat form for the visitor instantly.
+
+### Show previous chat messages in chat widget.
+
+In case you want to allow visitor to see previous chat message you can check this. Previous messages are shown only if we find previous chats by same online visitor.
+
+### Show operator profile in a new row
+
+Usefull for UI combinations.
+
 ### After how many user messages show switch to human button. empty - never, 0 - always
 
 If you want to give easy way for a visitor to be transferred to operator you can enable this option.
