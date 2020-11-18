@@ -90,6 +90,8 @@ module.exports = {
                 'bot/trigger-body',
                 'bot/bot-video',
                 'bot/execute-js',
+                'bot/alert-icon',
+                'bot/match-action',
                 'bot/check-conditions',
                 'bot/bot-update-current-chat'
             ]

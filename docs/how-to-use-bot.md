@@ -43,8 +43,9 @@ Dashboard also has new widget bot chats. Once widget is activate it will show b
     * Intent detection
     * Check for pending intentions
     * [Check for conditions to proceed](bot/check-conditions.md)
-    * Search for default actions on message
+    * [Search for default actions on message](bot/match-action.md)
     * Restrict execution more than defined times
+    * [Alert icon](bot/alert-icon.md)
 * Advanced
     * Collect information
     * Progress

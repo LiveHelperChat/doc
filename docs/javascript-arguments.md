@@ -292,6 +292,7 @@ You can use url like
 
 > https://example.com/chat/start `<arguments>`
 > https://example.com/chat/begin `<arguments>`
+> https://example.com/chat/modal `<arguments>`
 
 Second URL has default logo and footer and can be usefull depending on your usage scenario and start chat form combination.
 
@@ -316,6 +317,7 @@ Possible arguments. All arguments are optional. Most of the cases you can just o
 E.g 
 > https://example.com/chat/start/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
 > https://example.com/chat/begin/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
+> https://example.com/chat/modal/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
 
 ### How do I set default URL for Live Helper Chat?
 
