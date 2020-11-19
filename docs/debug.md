@@ -39,7 +39,7 @@ Web application folders structure
 * `settings` (holds application settings files.)
 * `translations` (holds application translations)
 
-## How to long javascript errors?
+## How to log javascript errors?
 
 Go to `System configuration > Audit (Configuration)` and enable `Log javascript errors` after that. If there is any JS error it will be logged to `System configuration > Audit (Audit Logs)`. 
 
