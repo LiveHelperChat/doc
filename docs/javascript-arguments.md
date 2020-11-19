@@ -422,4 +422,17 @@ To redirect user to custom URL
 window.$_LHC.eventListener.emitEvent('location',['http://livehelperchat.com']);
 ```
 
+## How to execution custom action on offline status click
+
+You have to do few things
+
+* Pass `offline_redirect` value as `#` so visitor won't be redirected to any page.
+* Listen to `offlineClickAction` action
+
+```js
+loadcb.eventEmitter.addListener('offlineClickAction',function () {
+    // Here you can 
+    console.log('Now nothing will happen');
+});
+```
 
