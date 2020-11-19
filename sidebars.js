@@ -105,7 +105,8 @@ module.exports = {
                 'bot/integrating-any-ai-bot-without-coding',
                 'bot/integrating-any-ai-bot',
                 'bot/username-based-workflow',
-                'bot/rest-api-to-fetch-customer-info'
+                'bot/rest-api-to-fetch-customer-info',
+                'bot/rasa-integration'
             ]
         },
         {
