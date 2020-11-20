@@ -91,7 +91,7 @@ This article represents use case where monthly chats number is around 200K and m
  * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e fbmessenger -c cron/send_notification > /dev/null 2>&1
 ```
 
-### Challanges we had
+### Challenges we had
 
 *   Because of concurency we had some probelms with MySQL transactions and table lockins.
     *   Lesson learned - locking has to be done always by primary key to avoid problems in the future.
@@ -102,6 +102,82 @@ This article represents use case where monthly chats number is around 200K and m
 *   Because of lacking chat locking there was scenario then operators opens a chat and it shows another operator as owner...
     *   Lesson learned - use transactions and row lockings by primary keys.
 *   There was so many small issues because of concurency it's hard to remember what was changed, but app is now stable with sutch load...
+
+### Mysql/MariaDB configuration
+
+These settings are for 24GB, 8 threads server.
+
+```ini
+[mysqld]
+query_cache_limit=8M
+query_cache_size=128M
+query_cache_type=1
+max_heap_table_size=64M
+tmp_table_size=64M
+interactive_timeout=20
+wait_timeout=900
+connect_timeout=60
+thread_cache_size=128
+key_buffer=128M
+max_allowed_packet=16M
+table_cache=8024
+sort_buffer_size=4M
+read_buffer_size=4M
+max_connect_errors=10000
+max_connections=10000
+
+innodb_log_file_size = 256M
+innodb_buffer_pool_size = 16GB
+innodb_log_buffer_size=4M
+innodb_thread_concurrency=8
+innodb_flush_method=O_DIRECT
+innodb_file_per_table=1
+```
+
+### Nginx configuration sample for main settings
+
+```apacheconfig
+sendfile            on;
+tcp_nopush          on;
+tcp_nodelay         on;
+types_hash_max_size 2048;
+
+server_tokens   off;
+
+gzip            on;
+gzip_static     on;
+gzip_comp_level 1;
+gzip_min_length 0;
+gzip_types text/css image/x-icon image/bmp application/x-javascript application/javascript text/javascript application/json;
+gzip_proxied        any;
+gzip_http_version   1.1;
+gzip_disable        "MSIE [1-6]\.";
+gzip_vary           on;
+
+keepalive_timeout  10 10;
+
+client_max_body_size 128m;
+client_body_buffer_size    128k;
+
+client_header_buffer_size       128k;
+large_client_header_buffers   4 64k;
+server_names_hash_max_size 4112;
+server_names_hash_bucket_size 128;
+
+include             /etc/nginx/mime.types;
+default_type        application/octet-stream;
+
+map $http_user_agent $isbot_ua {
+        default 0;
+        ~*(GoogleBot|bingbot|YandexBot|mj12bot) 1;
+}
+map $isbot_ua $limit_bot {
+        0       "";
+        1       $binary_remote_addr;
+}
+limit_req_zone $limit_bot zone=bots:10m rate=1r/m;
+limit_req zone=bots burst=2 nodelay;
+```
 
 ### Future
 
