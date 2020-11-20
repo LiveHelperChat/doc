@@ -53,9 +53,8 @@ curl --request POST   --url http://localhost:5005/webhooks/rest/webhook   --head
   "message": "Hello"
 }'
 
-curl --request POST   --url http://localhost:5005/webhooks/rest/webhook   --header 'content-type: application/json'   --data '{
-  "message": "Hello"
-}'
+# Response
+[{"recipient_id":"default","text":"Hey! How are you?"}]
 ```
 
 ## Configuring Rest API in Live Helper Chat
