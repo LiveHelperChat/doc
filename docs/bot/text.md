@@ -37,7 +37,9 @@ Text area supports these replaceable variables
  * `{lhc.department}`
  * `{lhc.add.<field identifier>}` 
  * `{lhc.var.<variable key>}`
-
+ * `{args.chat.<any chat attribute>}`
+ * `{args.msg.msg}` - visitor message.
+ 
 ### HTML message
 
 Content of this textarea will be rendered as HTML directly. It also supports translations.
