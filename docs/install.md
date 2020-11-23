@@ -13,6 +13,7 @@ If you are running wordpress site it's 99.9% chance Live Helper Chat will work j
 * Minimum PHP 5.4
 * Mysql/MariaDB
 * Apache/Nginx
+* For Laravel version please go to https://github.com/LiveHelperChat/livehelperchat_laravel
 
 ## Folders permissions
 
