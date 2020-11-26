@@ -116,6 +116,59 @@ php cron.php -s site_admin -c cron/util/maintain_database
 
 Should be run every few hours or so.
 
+## Statistic cronjob
+
+This cronjob you can run every 12 hours. If you just starting to use this feature run it once before setting cronjob. This cronjob data is used only in [continuous webhooks](development/webhooks.md#how-to-setup-a-continuous-hook-event)
+
+```
+php cron.php -s site_admin -c cron/stats/department
+```
+
+Crontab can look like.
+
+```
+15 */12 * * * www-data cd /code && php cron.php -s site_admin -c cron/stats/department >> /dev/null 2>&1
+```
+
+## Continuous webhooks cronjob
+
+This cronjob should be running every 20 seconds. For simplified version you can run it every minute. This is a required cronjob for a [continuous webhooks](development/webhooks.md#how-to-setup-a-continuous-hook-event)
+
+```
+php cron.php -s site_admin -c cron/webhook
+```
+
+Crontab command example. You should change `/scripts` and `/code` directories according to your environment.
+
+```
+* * * * * www-data cd /scripts && ./webhook.sh >> /dev/null 2>&1
+```
+
+Shell script example running every 20 seconds
+
+```shell script
+#!/bin/sh
+
+fileCronHook='/code/running-webhook'
+
+for i in {1..3}
+do
+    if [ ! -f $fileCronHook ];
+    then
+      touch $fileCronHook;
+      cd /code && php cron.php -s site_admin -c cron/webhook >> cache/webhook.log
+      echo "$(tail -1000 cache/webhook.log)" > cache/webhook.log
+      rm -f $fileCronHook;
+    else
+      if [ `stat --format=%Y $fileCronHook` -le $(( `date +%s` - 30 )) ]; then
+        rm -f $fileCronHook;
+      fi
+      echo "Already running"
+    fi
+    sleep 20
+done
+```
+
 ## Static cache
 
 If you are using load balancers. E.g AWS Load Balancer it can happen that one instance is clearing a cache but browser makes request to another instance so it happens that static file CSS/JS is not found.
