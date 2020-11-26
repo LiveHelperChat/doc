@@ -226,7 +226,32 @@ There is two main attributes you might find usefull
 * `window.$_LHC.eventListener` you should be familiar with this variable from above.
 * `window.$_LHC.attributes` holds main chat attributes and live workflow state. For more information see https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/widget/wrapper/src/index.js#L69
 
-## How to change department on the fly?
+## How to change department or any other attribute on the fly?
+
+You can change any react application attribute before chat is started. 
+For possible attributes see here [here](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/widget/react-app/src/reducers/chatWidgetReducer.js#L5)
+
+### Operator scenario
+
+Imagine a scenario.
+
+* You have embedded Live Helper Chat embed code with `Widget position` `api`
+* You have few buttons and each button should open widget with different operator.
+* How do you do that?
+
+You have to do the following things
+
+* Embed code with all possible departments OR do not choose department at all.
+* Choose `api` as `Widget position` 
+* On button click have something like this. Where you just pass operator ID
+```javascript
+function openWidget(department){
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['operator'], data : 1}}]); // 1 is operator id
+    window.$_LHC.eventListener.emitEvent('showWidget');
+}
+```
+
+### Department scenario
 
 Imagine a scenario.
 
