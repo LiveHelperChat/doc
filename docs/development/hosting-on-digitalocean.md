@@ -135,6 +135,12 @@ For that purposes I have prepared shell script. Just run this command once logge
 sudo /opt/livehelperchat/lhc_upgrade.sh
 ```
 
+If you are running older version you can also run this command.
+
+```shell script
+cd /var/www/git/NodeJS-Helper/ && git pull origin master
+```
+
 ## Todo's after install
 
 * [Generate embed code](integrating.md) and put it on your website.
