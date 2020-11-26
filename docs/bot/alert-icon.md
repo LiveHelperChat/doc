@@ -12,3 +12,5 @@ Bot configuration looks like
 Once this trigger is executed you would see something like this. This chat as example has two alert icons added.
 
 ![](/img/bot/alert-icon-list.png)
+
+[See sample](bot/check-conditions.md) how to add alert icon if visitor message contains custom words.
