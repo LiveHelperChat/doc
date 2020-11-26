@@ -229,7 +229,8 @@ There is two main attributes you might find usefull
 ## How to change department or any other attribute on the fly?
 
 You can change any react application attribute before chat is started. 
-For possible attributes see here [here](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/widget/react-app/src/reducers/chatWidgetReducer.js#L5)
+
+For all possible attributes see here https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/widget/react-app/src/reducers/chatWidgetReducer.js#L5
 
 ### Operator scenario
 
@@ -246,6 +247,8 @@ You have to do the following things
 * On button click have something like this. Where you just pass operator ID
 ```javascript
 function openWidget(department){
+    // If you are using lazy load it makes sense to change operator also in the args themself
+    LHC_API.args.operator = 1;
     window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['operator'], data : 1}}]); // 1 is operator id
     window.$_LHC.eventListener.emitEvent('showWidget');
 }
