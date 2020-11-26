@@ -51,7 +51,11 @@ As you can see I have chosen a bot and trigger to execute on that event.
 
 ## How to setup a continuous hook event?
 
-First of all there are three conditions you can check before event is executed
+General purpose is the same as hooks based events. Execute trigger if conditions are valid. E.g add an [alert icon](bot/alert-icon.md) to the chat.
+
+Conditions are checked **only** for `Active`, `Bot`, `Pending` chats.
+
+First of all there are three conditions you can check before event is executed.
 
  * `Visitor message contains` - in this checking last chat message has to be a visitor message
  * `Compare attribute` - you can compare any chat attribute for conditions to be matched
