@@ -7,12 +7,12 @@ sidebar_label: Javascript arguments
 Here you will find all possible javascript arguments for a new widget. If you want to pass custom variables or define custom fields refer to [custom fields](custom-fields-and-prefill.md) documentation.
 ## Javascript options
 
-
 ```js
 <script>
 var LHC_API = LHC_API||{};
 LHC_API.args = {
     mode: 'widget',      // widget, embed | Required
+    cookie_enabled: true, // Is cookies enabled in for Live Helper Chat to use, | Optional | Default - true. See `Implementing GDPR scenario` section in this article
     pnode : 'lhc-node-id'// Where should we render our HTML. By default we append it to body | Optional <div id="lhc-node-id"></div>
     lhc_base_url:'//demo.livehelperchat.com/',  // Required
     wheight: 450,
@@ -449,6 +449,42 @@ To redirect user to custom URL
 ```js
 window.$_LHC.eventListener.emitEvent('location',['http://livehelperchat.com']);
 ```
+
+To inform Live Helper Chat that visitor accepted cookies
+
+## Implementing GDPR scenario
+
+Requirements
+ 
+ 1. Visitor comes to page and Live Helper Chat should not store any cookie untill visitor agrees
+ 2. On page refresh if visitor has accepted cookies Live Helper Chat should use cookies instantly
+ 3. On GDPR acceptance we should inform Live Helper Chat that cookies policy was accepted
+ 
+Implementation
+
+1. and 2. points can be done by passing argument.
+
+```js
+var LHC_API = LHC_API||{};
+LHC_API.args = {
+    cookie_enabled: (<your check was cookies enabled>), // Boolean value
+...
+```
+
+3. Point can be solved by executing this script.
+
+If you did everything correctly proactive invitation and need help tooltip will start to work.
+
+```js
+window.$_LHC.eventListener.emitEvent('enableCookies');
+```
+
+**What happens if cookies are disabled?**
+
+ * We do not track this visitor in online vistiors list
+ * We do not store any cookies. Clicking on widget will open a popup as it does not use any cookies.
+ * We do not execute proactive chat invitations
+ * We do not show need help tooltip
 
 ## How to execution custom action on offline status click
 
