@@ -19,6 +19,12 @@ Available placeholders. You do not need to use quotes because this text is proce
  * {{eventLabel}} - event label
  * {{eventInternal}} - this holds systematic [name of an event](../javascript-arguments.md). E.g `clickAction`,`closeWidget` etc.
 
+## Tracking events in static URL
+
+Static url example you can find [here](javascript-arguments.md#static-url-generation)
+
+To track events in popup you have to embed your tracking script in `Javascript for static URL. Please paste your GA or any other script here.` it has to include `<script>` tags.
+
 ## Permissions
 
 For an operator to be able configure this section he has to have this permission

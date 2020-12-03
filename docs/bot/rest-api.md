@@ -296,7 +296,23 @@ Use can use these variables in your text triggers response text.
 * `{content_4}`
 * `{content_5}`
 * `{content_6}`
-* `{http_code}`
+* `{http_code}` - https status code returned from request
+* `{http_error}` - additional error explanation from `curl_error($ch);`
+* `{content_raw}` - raw response returned from Rest API call without any parsing
+* `{http_data}` - Request parameters used for rest api call.
+
+## How to find out problems with Rest API
+
+ * Setup output combination for success call.
+ * In default response have two text messages as response
+
+In rest api define trigger for `Unknown` unmatched output combination
+
+![](/img/bot/default-trigger.png)
+
+In response have something like this. Pay attention second text message is send as system message.
+
+![](/img/bot/rest-api-debug.png)
 
 ## Video usage example
 

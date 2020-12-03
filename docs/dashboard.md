@@ -23,6 +23,8 @@ Default dashboard widgets. It's default look you should get once you login to ba
 
 #### Required configuration
 
+Operator can see only operator from the departments he is assigned to **OR** he has `All departments` checked.
+
 In order to see online operators following conditions has to be satisfied
 
 You have to activate `List online operators.` in

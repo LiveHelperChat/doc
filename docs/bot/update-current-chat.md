@@ -77,6 +77,8 @@ With this action you can update any chat attribute. You can find all main chat a
  * `Chat attribute name` enter your attribute you want to change.
  * `Chat attribute value` enter a value
 
+For value field you can use also replaceable variables like defined [here](text.md#replaceable-variables)
+
 ### How to set product attribute?
 
 You can also set product directly from bot.

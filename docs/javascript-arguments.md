@@ -347,6 +347,8 @@ E.g
 > https://example.com/chat/begin/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
 > https://example.com/chat/modal/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
 
+You can also [track events](chat/events-tracking.md) in static url.
+
 ### How do I set default URL for Live Helper Chat?
 
 Now if you enter `https://example.com/` you see default URL content. You can change what `module/view` should be rendered by default in `settings.ini.php` file. 

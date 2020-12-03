@@ -45,7 +45,7 @@ I'll give a sample how to setup an event on chat close.
 
 So our `webhook` configuration can look like this.
 
-![](/img/chat/webhook.png)
+![](/img/chat/webhook.png?v=2)
 
 As you can see I have chosen a bot and trigger to execute on that event.
 

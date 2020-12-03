@@ -21,6 +21,7 @@ Proactive invitations triggers messages which are automatically send to a visito
     *   "Tag" - show invitation only for specifically tagged online visitors. (**Tutorial pending**)
     *   "Department" - show invitation only for visitors where department is provided in embed code. Otherwise invitation won't be triggered. In embed code generation you have to choose department.
     *   "Message to user" - message to be send to visitor. 
+        * This field can use replaceable variables like `{lhc.var.<variable key>}` (invisible by operator) `{lhc.add.<variable key>}` (visible by operator)
     *   "Message to returning user" - If we detect that it's not the first time invitation is triggered for online visitor then we check is this message filled. This message field can have {nick} variable. It will be replaced with previous chat nick.
     *   "Nick which will be used if we cannot determine returning user name" - self explanatory
     *   "Wait message. Visible then users starts chat and is waiting for someone to accept a chat." - self explanatory
