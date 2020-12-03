@@ -36,8 +36,20 @@ LHC_API.args = {
     bot_id : 5          // Set bot ID for this chat | Optional
 
     // Read next section about callback function
-    loadcb : widgetV2Callbacks, // Chat was loaded callback | Option
-
+    loadcb : widgetV2Callbacks, // Chat was loaded callback | Optional
+    manual_init: false,         // If you want manually to let app start pass false. After that you can init app by running | Optional
+                                // window.$_LHC.init();
+                                // Usefull in case you want to run widget, set UUID only after your app started or page loaded.
+                                // Also can be usefull if you want to show widget only to logged visiors.
+                                // If you vistor logins you can set
+                                // LHC_API.args.UUID = 'md5(user_id + some hash)';
+                                // window.$_LHC.init();
+    before_init: function(inst) { // Called before Live Helper Chat starts it's workflow |  Optional
+            // If you are using manual_init = true, you can 
+            LHC_API.args.manual_init = false; // if you app is started we can change to false and app will start normaly.
+            LHC_API.args.manual_init = true;  // if you app has not started yet change to true and once you ready call
+            window.$_LHC.init();
+    },
     phash : 'phash',    // Payment ID | Optional
     events:[{id:"birthday",val:"value"}], // Events to log for proactive chat invitation. `val` is optional | Optional
     tag: 'some_tag',     // Tag for proactive chat invitation | Optional
@@ -52,6 +64,8 @@ LHC_API.args = {
     operator : 1,       // To what opeartor chat should be assigned once it's started automaticaly. It's User ID | Optional
     scope_storage: false,    // Should we store Live Helper Chat related data within passed scope or use global one. `lhc` | Optional
     lhc_var: {},             // If you are passing variables you can modify this object and attribute would be updated automatically. E.g LHC_API.args.lhc_var.gender = 'some gender' | Optional
+    UUID: null,              // While tracking online visitors we generate unique hash for each visitor. If you want to track back always same logged visitor. You can pass UUID as unique identifier for your logged vistior.
+                             // This way previous chat history will show chats only by this UUID
     cookie_per_page : false  // (false | true | false | "/cookiepath"). Default value - false
                              // false - cookie will be set per domain. Same chat will be available across all pages where script is embeded.
                              // true - cookie will be set per page path. Cookie path argument is not set. Usefull if you want to have different instances of chat per page.
