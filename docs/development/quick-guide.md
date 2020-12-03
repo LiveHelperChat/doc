@@ -31,4 +31,5 @@ More usefull links
 * If you are not sure which template is used enable [debug output](debug.md)
 * If you change templates and nothing changes [disable cache](debug.md#disabling-cache)
 * You can write [your own extensions](extending/writing-extension.md)
+* You can [override default translations](language.md#how-to-override-default-translations)
 * We are using bootstrap 4 CSS framework.

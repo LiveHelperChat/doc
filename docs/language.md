@@ -273,3 +273,5 @@ Activate extension in `lhc_web/settings.ini.php` file
 ```
 
 After you modify translations file you have to click `System -> Clear cache`. You might need to click few times to effect.
+
+It's possible to change some main text directly in [widget themes](theme/theme.md#chat-widget)
