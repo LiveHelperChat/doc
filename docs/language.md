@@ -229,12 +229,14 @@ So if anyone will translate to any of these languages, please send me translatio
 
 ## How to override default translations?
 
-Create an extension with the following structure. In this case we are overriding `lt_LT` translations.
+Create an extension with the following structure. In this case we are overriding `lt_LT` and `en_EN` translations. Source on [github](https://github.com/LiveHelperChat/livehelperchat-extensions)
 
 ```
 overridetranslation
     translations
         lt_LT (change folder name to your language)
+            translation.ts
+        en_EN (override english translations)
             translation.ts
 ```
 
