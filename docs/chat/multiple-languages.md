@@ -6,10 +6,24 @@ sidebar_label: Multiple languages
 
 ## Introduction
 
-Although Live Helper Chat support many languages sometimes it's confusing how to use Live Helper Chat in multiple languages environment. I'll give basic tips how to have it properly setup.
+Live Helper Chat support many languages sometimes it's confusing how to use Live Helper Chat in multiple language environment. I'll give basic tips how to have it properly setup.
 
- * So first thing if possible you should generate Embed Code by langauge.
+ * So first thing if possible you should generate Embed Code and use `Choose a language` option in that window.
  * If above is not possible you can setup theme and just `Widget container section` check `Try to detect language from browser headers option`
+ * If you are using static URL e.g `chat/start`, `chat/begin`, `/` etc. You can change default `siteaccess`. See below.
+ * For static URL you can also just append language to url E.g `/fre`, `/fre/chat/start`
+
+## How to change default language (`siteaccess`)?
+
+If you are not using embed code, where you can choose a langauge, chat language is english. You can change default language by editing `settings/settings.ini.php` file and changing.
+
+```php
+'default_site_access' => 'eng', // Change to fre as example.
+```
+
+You should set to one of the available [siteaccess options](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L32) you can also add a new language [language](language.md)
+
+You should click clear cache in back office after you have changed this value.
 
 ## How to apply multiple languages for `Canned messages`, `Auto responder`, `Pro active chat invitations`?
 
