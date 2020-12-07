@@ -395,12 +395,14 @@ If you do not want to allow to start chat directly at all you can change setting
 
 Once you include live helper chat script you gain access to global variable `window.$_LHC`.
 
+### Show a widget
 Let say you include widget with position api. Widget status will be invisible, but you can show widget by executing.
 ```js
 window.$_LHC.eventListener.emitEvent('showWidget');
 ```
 
-Reload widget. Usefull in case you want to change passed attribute to completely different ones.
+### Reload widget
+Usefull in case you want to change passed attribute to completely different ones.
 ```js
 window.$_LHC.eventListener.emitEvent('reloadWidget');
 ```
@@ -426,47 +428,120 @@ function onClick()
 }
 ```
 
-To close widget.
+### Close widget.
+
 ```js
 window.$_LHC.eventListener.emitEvent('closeWidget');
 ```
 
-Toggle user sound setting
+### Toggle user sound setting
+
 ```js
 window.$_LHC.eventListener.emitEvent('toggleSound');
 ```
 
-To end the chat
+### To end the chat
 ```js
 window.$_LHC.eventListener.emitEvent('endChat');
 ```
 
-To add tag. We automatically check for matching invitation once you add a event.
+### To add tag. 
+
+We automatically check for matching invitation once you add a event.
+
 ```js
 window.$_LHC.eventListener.emitEvent('addTag',['some_tag']);
 ```
 
+### Log event
+
 Log event for proactive chat invitation. We automatically check for matching invitation once you add an event. `val` is optional
+
 ```js
 window.$_LHC.eventListener.emitEvent('addEvent',[[{id:"birthday",val:"value"}]]);
 ```
+
+### Check invitation manually
 
 If for some reason you want to check for invitation manually you can do that.
 ```js
 window.$_LHC.eventListener.emitEvent('checkMessageOperator');
 ```
 
-To open popup
+### Open popup
+
 ```js
 window.$_LHC.eventListener.emitEvent('openPopup');
 ```
 
+### Redirect visitor
+
 To redirect user to custom URL
+
 ```js
 window.$_LHC.eventListener.emitEvent('location',['http://livehelperchat.com']);
 ```
 
-To inform Live Helper Chat that visitor accepted cookies
+### Visitor has accepted a cookies
+
+To inform Live Helper Chat that visitor accepted cookies. See section about GDPR scenario
+```
+window.$_LHC.eventListener.emitEvent('enableCookies');
+```
+
+### Send a message as a visitor
+
+To send a message as a visitor from website. We take care of two scenarios
+
+* Chat has started
+* Chat has not started yet
+
+```js
+function addMessage(message) {
+    // Get user session
+    var chatParams = window.$_LHC.attributes['userSession'].getSessionAttributes();
+    
+    // Chat has not started yet
+    if (!chatParams['id'] && window.$_LHC.attributes['onlineStatus'].value == true) {
+        // Prefill message field
+        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true, 'Question' : message}}}]);
+    
+        // We change attribute to auto submit so it will try automatically submit online form first time
+        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
+        
+    } else if (chatParams['id']) {
+        // Send as message if chat has started alerady
+        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_event', 'arg' : {
+            func:'addMessage',
+            attr: {
+                'id' : ['chatData','id'],
+                'hash' : ['chatData','hash'],
+                'mn' : ['chat_ui','mn'],
+                'theme' : ['theme'],
+                'lmgsid' : ['chatLiveData','lmsgid'],
+            },
+            attr_params : { msg: message }
+        }}]);
+    }
+    
+    // We show a widget
+    window.$_LHC.eventListener.emitEvent('showWidget');
+}
+```
+
+Force manually visitor to fetch for a new messages
+
+```js
+window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_event', 'arg' : {
+    func:'fetchMessages',
+    attr: {
+        'id' : ['chatData','id'],
+        'hash' : ['chatData','hash'],
+        'theme' : ['theme'],
+        'lmgsid' : ['chatLiveData','lmsgid'],
+    }
+}}]);
+```
 
 ## Implementing GDPR scenario
 

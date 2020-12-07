@@ -1,7 +1,7 @@
 ---
 id: rasa-integration
-sidebar_label: Rasa integration
-title: Integrating Rasa into Live Helper Chat
+sidebar_label: Rasa integration (chatbot)
+title: Integrating Rasa into Live Helper Chat (chatbot)
 ---
 
 Rasa is just AI bot which does all the hard work. Integration once you have rasa is dead simple. Once you have `Rasa` running. 

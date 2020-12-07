@@ -12,6 +12,7 @@ Live Helper Chat support many languages sometimes it's confusing how to use Live
  * If above is not possible you can setup theme and just `Widget container section` check `Try to detect language from browser headers option`
  * If you are using static URL e.g `chat/start`, `chat/begin`, `/` etc. You can change default `siteaccess`. See below.
  * For static URL you can also just append language to url E.g `/fre`, `/fre/chat/start`
+ * You can also use [widget themes](theme/theme.md) and translate basic texts there
 
 ## How to change default language (`siteaccess`)?
 
