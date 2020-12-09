@@ -108,6 +108,7 @@ module.exports = {
                 'bot/rest-api-to-fetch-customer-info',
                 'bot/rasa-integration',
                 'bot/rasa-integration-intent',
+                'bot/rasa-faq',
                 'bot/sentiment-analysis',
                 'bot/deeppavlov-faq'
             ]
