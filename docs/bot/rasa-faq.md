@@ -4,7 +4,7 @@ sidebar_label: Rasa integration (FAQ)
 title: Integrating Rasa as FAQ server
 ---
 
-This is FAQ bot build on top of [Rasa AI](https://rasa.com).
+This is FAQ bot build on top of [Rasa AI](https://rasa.com). This workflow is similar to [intent detection using Rasa](bot/rasa-integration-intent.md)
 
 To have it running we will need
 
@@ -166,5 +166,18 @@ Unknown message configuration
 Conversation example
 
 ![](/img/bot/rasa-faq-example.png)
+
+## What if I want to define custom answers in Live Helper Chat directly?
+
+Simples solution would be just as answer define keywords which afterwards ou can use in lhc bot.
+
+We define just one answer
+
+```yaml
+  utter_chitchat/ask_weather:
+  - text: "rasa_weather"
+```
+
+Bot setup should be similar to this [example](bot/rasa-integration-intent.md#configuration-bot-in-live-helper-chat)
 
 **Don't forget to set your bot as default department bot.**

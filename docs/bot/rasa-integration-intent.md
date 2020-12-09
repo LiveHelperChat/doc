@@ -12,7 +12,44 @@ We will need few things
 * Rest API configuration in Live Helper Chat
 * Bot configuration in LHC
 
-## Running Rasa
+## Install instructions for docker version
+
+```shell
+git clone https://github.com/LiveHelperChat/intent-rasa.git && cd intent-rasa
+```
+
+Now you can edit `data/nlu.yml` and write your model data in this file.
+
+Build docker image
+
+```shell
+docker-compose build
+```
+
+Run one time
+```shell
+docker-compose up
+```
+
+Run as a service
+
+```shell
+docker-compose up -d
+```
+
+You can try out Rasa rest API using `curl` commands
+
+```shell script
+curl -i http://localhost:5005
+
+# Send demo request
+curl localhost:5005/model/parse -d '{"text":"who are you"}'
+
+# Response. In this case intent is bot_challange
+{"text":"who are you","intent":{"id":234572354186811386,"name":"bot_challenge","confidence":0.9868453741073608},"entities":[],"intent_ranking":[{"id":234572354186811386,"name":"bot_challenge","confidence":0.9868453741073608},{"id":6404620717205297070,"name":"goodbye","confidence":0.005530951544642448},{"id":-411671348428771358,"name":"affirm","confidence":0.0027931963559240103},{"id":-6453914516151693962,"name":"mood_great","confidence":0.002673292765393853},{"id":3246239079246662505,"name":"deny","confidence":0.0013442487688735127},{"id":-2677704442101564553,"name":"greet","confidence":0.00047634306247346103},{"id":3489442963776345962,"name":"mood_unhappy","confidence":0.00033664595684967935}],"response_selector":{"all_retrieval_intents":[],"default":{"response":{"id":null,"response_templates":null,"confidence":0.0,"intent_response_key":null,"template_name":"utter_None"},"ranking":[]}}}
+```
+
+## Install instructions for non docker version
 
 This tutorial is partly based on 
 
@@ -53,18 +90,6 @@ rasa shell -m models/nlu-20190515-144445.tar.gz
 # Run it as API server
 rasa run --enable-api -m models/nlu-20190515-144445.tar.gz
 
-```
-
-You can try out Rasa rest API using `curl` commands
-
-```shell script
-curl -i http://localhost:5005
-
-# Send demo request
-curl localhost:5005/model/parse -d '{"text":"who are you"}'
-
-# Response. In this case intent is bot_challange
-{"text":"who are you","intent":{"id":234572354186811386,"name":"bot_challenge","confidence":0.9868453741073608},"entities":[],"intent_ranking":[{"id":234572354186811386,"name":"bot_challenge","confidence":0.9868453741073608},{"id":6404620717205297070,"name":"goodbye","confidence":0.005530951544642448},{"id":-411671348428771358,"name":"affirm","confidence":0.0027931963559240103},{"id":-6453914516151693962,"name":"mood_great","confidence":0.002673292765393853},{"id":3246239079246662505,"name":"deny","confidence":0.0013442487688735127},{"id":-2677704442101564553,"name":"greet","confidence":0.00047634306247346103},{"id":3489442963776345962,"name":"mood_unhappy","confidence":0.00033664595684967935}],"response_selector":{"all_retrieval_intents":[],"default":{"response":{"id":null,"response_templates":null,"confidence":0.0,"intent_response_key":null,"template_name":"utter_None"},"ranking":[]}}}
 ```
 
 With `Rasa` we have now everything we need now.
