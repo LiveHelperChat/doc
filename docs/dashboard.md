@@ -61,7 +61,7 @@ Columns and their meanings
  * `Bot chats` - number of active bot chats
  * `Load columns` - current status of department load based on max chats operators can have. 
     * It's value is calculated  by `hard limit - active chats (soft limit - active chats)`
-    * `Hard limit` - is the sum of max chats value of **logged** operators who were **active** during last **5** minutes
+    * `Hard limit` - is the sum of max chats value of **logged** operators OR the operators who were online in last 10 minutes
     * `Active chats` - number of active chats in department or department group
     * `Soft limit` - is the sum of max chats of operators who were **active** during last **10** minutes.
 
