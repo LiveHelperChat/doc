@@ -107,9 +107,9 @@ In the trigger it will be visible here
 
 #### HTTP status code E.g 200,301,500
 
-For this response to match you can to define expected HTTP status code. It's optional. This way you can separate success response from failed one.
+For this response to match you can define expected HTTP status code. It's optional. This way you can separate success response from failed one.
 
-#### Response Location 1/2/3/4.
+#### Response Location 1/2/3/4/5/6.
 
 If you define success location it will parse response as JSON and will try to extract specified attribute.
 
