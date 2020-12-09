@@ -126,3 +126,45 @@ cd rasa-faq/faq/Dockerfiles/faq/faq && rasa run -p 5005
 ```
 
 ## Live Helper Chat configuration
+
+Create a new `Rest API` by navigating to
+
+> System configuration > Live help configuration > Rest API Calls
+
+Just create a `new`. Configuration looks like this
+
+We set body request as JSON and set content.
+
+![](/img/bot/rasa-faq.png)
+
+We also set `Outpout parsing`
+
+![](/img/bot/rasa-faq-outputparsing.png)
+
+Now just save.
+
+### Configuration bot in Live Helper Chat
+
+For bot configuration we only need three triggers
+
+* `Default` it has checked `Default`, `Default for unknown message`
+* `Message received` just message text with content `{content_1}`
+* `Unknown` - this message we will send if `Rasa` did not returned anything.
+
+`Default` trigger configuration
+
+![](/img/bot/rasa-faq-default.png)
+
+Message received configuration
+
+![](/img/bot/rasa-message-received.png)
+
+Unknown message configuration
+
+![](/img/bot/rasa-unknown.png)
+
+Conversation example
+
+![](/img/bot/rasa-faq-example.png)
+
+**Don't forget to set your bot as default department bot.**

@@ -49,15 +49,15 @@ Just create a `new`. Configuration looks like this
 
 We set body request as JSON and set content.
 
-![](/img/bot/rasa-faq.png)
+![](/img/bot/deep-pavlov-faq.png)
 
 We also set `Outpout parsing`
 
-![](/img/bot/rasa-faq-outputparsing.png)
+![](/img/bot/deep-pavlov-answer.png)
 
 Now just save.
 
-### Configuration bot in Live Helper Chat
+## Configuration bot in Live Helper Chat
 
 For bot configuration we only need three triggers
 
@@ -67,7 +67,7 @@ For bot configuration we only need three triggers
 
 `Default` trigger configuration
 
-![](/img/bot/rasa-faq-default.png)
+![](/img/bot/deep-pavlov-faq-default.png)
 
 Message received configuration
 
@@ -79,6 +79,6 @@ Unknown message configuration
 
 Conversation example
 
-![](/img/bot/rasa-faq-example.png)
+![](/img/bot/deep-pavlov-conv-faq.png)
 
 **Don't forget to set your bot as default department bot.**
