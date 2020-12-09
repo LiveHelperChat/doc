@@ -223,10 +223,20 @@ Condition for that chat could look like
 
 Rest API in value fields you can use these replaceable variables
 
-* `{{msg}}` - user message
+All chat messages. These combinations are usefull in case you are implementing sentimetn analysis and want for example determine the sentiment of operator/visitor or both messages:
+
 * `{{msg_clean}}` - user message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
-* `{{msg_url}}` - user message will contain links instead of bbcode tags.
+* `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
+* `{{msg_all_since_transfer_content}}` - Messages since chat was transferred to operator. All messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
+* `{{msg_all_op_msg_content}}` - All operator messages in the chat. All messages without `[<date>] [<nick>]` prefix within each message.
+* `{{msg_all_vis_msg_content}}` - All visitor messages in the chat. All messages without `[<date>] [<nick>]` prefix within each message.
+* `{{msg_all_vis_since_transfer_content}}` - All visitor messages in the chat since operator took over the chat. All messages without `[<date>] [<nick>]` prefix within each message.
 * `{{msg_all}}` - all chat messages.
+
+Other:
+
+* `{{msg}}` - user message
+* `{{msg_url}}` - user message will contain links instead of bbcode tags.
 * `{{chat_id}}` - chat ID
 * `{{lhc.nick}}` - visitor nick
 * `{{lhc.email}}` - e-mail
