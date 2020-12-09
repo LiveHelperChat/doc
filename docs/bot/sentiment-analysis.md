@@ -1,6 +1,6 @@
 ---
 id: sentiment-analysis
-title: Sentiment analysis
+title: DeepPavlov (Sentiment analysis)
 ---
 
 In this article I'll show you how to setup sentiment analysis using https://deeppavlov.ai/ and my prepared [docker image](https://github.com/LiveHelperChat/sentiment)
