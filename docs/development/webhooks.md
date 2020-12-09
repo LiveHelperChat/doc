@@ -45,9 +45,13 @@ I'll give a sample how to setup an event on chat close.
 
 So our `webhook` configuration can look like this.
 
-![](/img/chat/webhook.png?v=2)
+![](/img/chat/webhook.png?v=3)
 
-As you can see I have chosen a bot and trigger to execute on that event.
+As you can see I have chosen a bot and trigger to execute on that event `Execute if conditions are valid`.
+
+`Execute if conditions are NOT valid` this is usefull in continuous webhooks. E.g
+
+If conditions `A` is met we add an alert icon if conditions is **not** met we remove alert icon.
 
 ## How to setup a continuous hook event?
 

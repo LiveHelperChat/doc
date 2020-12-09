@@ -65,7 +65,7 @@ In the bot for simplicity we will have
 
 * `chat.close` This trigger will be the one who get's executed on chat close event.
 * `Set sentiment` This trigger will be executed if Rest API returns sentiment.
-* `very_positive`,`neutral` just trigger which set's a subject.
+* `very_negative`, `negative`, `neutral`, `positive`, `very_positive` just trigger which set's a subject.
 
 `chat.close` trigger screenshot
 
