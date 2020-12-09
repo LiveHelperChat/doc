@@ -1,7 +1,7 @@
 ---
 id: deeppavlov-faq
-sidebar_label: DeepPavlov FAQ
-title: Integrating DeepPavlov FAQ
+sidebar_label: DeepPavlov (FAQ)
+title: DeepPavlov as FAQ server
 ---
 
 We will need few things. https://github.com/LiveHelperChat/faq-deeppavlov

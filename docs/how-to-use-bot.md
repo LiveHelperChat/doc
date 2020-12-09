@@ -5,8 +5,15 @@ title: How to use bot?
 
 Basic features are
 
-*   Extensions can have custom information [collecting functionality](bot/collecting-information.md).
-*   Bot can match text or quick reply buttons. This allows to create navigation style workflow.
+* Extensions can have custom information [collecting functionality](bot/collecting-information.md).
+* Bot can match text or quick reply buttons. This allows to create navigation style workflow.
+* AI Integrations (you can integrate any third party API)
+* [Rasa integration (chatbot)](bot/rasa-integration.md)
+* [Rasa integration (FAQ)](bot/rasa-faq.md)
+* [Rasa integration (intent)](bot/rasa-integration-intent.md)
+* [DeepPavlov (Sentiment analysis)](bot/sentiment-analysis.md)
+* [DeepPavlov (FAQ)](bot/deeppavlov-faq.md)
+* [Insult detection](https://github.com/LiveHelperChat/lhcinsult)
 
 ## How to use?
 
@@ -18,7 +25,9 @@ Create a bot. Once bot is saved go back to bot list and click bot name.
 
 To activate bot you have to edit department and choose a bot in department edit window.
 
-Dashboard also has new widget bot chats. Once widget is activate it will show bot chats. You may need in your account -> visible lists to enable bot chats listing.
+Dashboard also has new widget bot chats. Once widget is activate it will show bot chats. You may need in your account -> visible lists to enable bot chats listing.
+
+
 
 ## How bot building workflow looks like?
 
