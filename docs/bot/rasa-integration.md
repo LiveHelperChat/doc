@@ -4,7 +4,7 @@ sidebar_label: Rasa integration (chatbot)
 title: Integrating Rasa into Live Helper Chat (chatbot)
 ---
 
-Rasa is just AI bot which does all the hard work. Integration once you have rasa is dead simple. Once you have `Rasa` running. 
+Rasa is just AI bot which does all the hard work. Integration once you have `Rasa` running is dead simple.
 
 We will need few things
 
@@ -75,7 +75,7 @@ We also set `Outpout parsing`
 
 Now just save. 
 
-## Configuration bot in Live Helper Chat
+## Bot configuration in Live Helper Chat
 
 For bot configuration we only need three triggers
 
