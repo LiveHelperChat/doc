@@ -6,6 +6,11 @@ title: Rasa intent server with entities extraction
 
 Rasa is just AI bot which does all the hard work. Integration once you have Rasa running is very simple.
 
+With this workflow by extending your training data you could do a 
+
+* A bot which you can ask for a stock price
+* A bot which you ask for a next match for the games
+
 We will need few things
 
 * Running Rasa service. https://rasa.com/docs/rasa/installation
@@ -16,6 +21,7 @@ For more information please read
 
 * https://medium.com/better-programming/chatbots-and-whats-new-in-rasa-2-0-a51c61ca3c33
 * https://github.com/RasaHQ their main github repository where you can find also few more sample bots
+* https://towardsdatascience.com/a-beginners-guide-to-rasa-nlu-for-intent-classification-and-named-entity-recognition-a4f0f76b2a96
 
 ## Install instructions for docker version
 
