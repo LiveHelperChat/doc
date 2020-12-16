@@ -12,6 +12,11 @@ We will need few things
 * Rest API configuration in Live Helper Chat
 * Bot configuration in LHC
 
+For more information please read
+
+* https://medium.com/better-programming/chatbots-and-whats-new-in-rasa-2-0-a51c61ca3c33
+* https://github.com/RasaHQ their main github repository where you can find also few more sample bots
+
 ## Install instructions for docker version
 
 ```shell
