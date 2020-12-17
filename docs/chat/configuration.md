@@ -335,7 +335,7 @@ When visitor minimizes chat we should close chat. Influence only old widget.
 
 This determines should status widget change it's status once operator logins. Recommended value 290.
 
-(More information)[integrating.md#how-to-make-automatic-status-change-for-frontend-visitors]
+[More information](integrating.md#how-to-make-automatic-status-change-for-frontend-visitors)
 
 ### Track is user still on site, chat status checks also has to be enabled
 
