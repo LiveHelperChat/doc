@@ -139,7 +139,10 @@ Here you can change default text in widget itself. Few more complex ones I have 
 
 * You have to be running department [statistic cronbjob](development/cronjob.md#statistic-cronjob)
 * `Text when user starts a chat and is waiting for operator to join a chat. Only if queue is 1 or if less than a minute wait time.` set value like `Less than a minute`
-* `Text when user starts a chat and is waiting for operator to join a chat. Only if queue is > 1. {number}, {avg_wait_time}, {avg_wait_time__string if more than one minute wait time}` set value as `Your average waiting time for attention is {avg_wait_time} minute{avg_wait_time__s}`
+* `Text when user starts a chat and is waiting for operator to join a chat. Only if queue is > 1. {number}, {avg_wait_time}, {avg_wait_time_live}, {avg_wait_time_live__string if more than one minute live wait time}, {avg_wait_time__string if more than one minute wait time}` 
+ * Department average wait time - `Your average waiting time for attention is {avg_wait_time} minute{avg_wait_time__s}`
+ * Live wait time (`departament wait time` - `how long visitor is waiting`) `Estimated wait time {avg_wait_time_live} minute{avg_wait_time_live__s}`
+ * If `departament wait time` - `how long visitor is waiting` < 0 we assume less than a minute is left. So first text is used.
 
 Average wait time will be calculated for all closed chat from last 3 days.
 
