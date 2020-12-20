@@ -118,16 +118,39 @@ Should be run every few hours or so.
 
 ## Statistic cronjob
 
-This cronjob you can run every 12 hours. If you just starting to use this feature run it once before setting cronjob. This cronjob data is used only in [continuous webhooks](development/webhooks.md#how-to-setup-a-continuous-hook-event)
+This cronjob calculates a statistic for two attributes of department
 
-```
+* `avg_chat_duration` - average chat duration. Can be used in continous webhooks. This cronjob data is used only in [continuous webhooks](development/webhooks.md#how-to-setup-a-continuous-hook-event).
+* `avg_wait_time` - calculates average chat time. This value is used in setting pending text to [average wait time](theme/theme.md#how-to-show-average-wait-time-instead-of-a-number-in-the-queue).
+
+For what period this data is calculated depends on your settings in `Live help configuration (tab) -> Chat (section) -> Statistic -> Configuration (tab)`. Frequency of cronjob should depend on your use case. You can calculate both values if you run. I would recommend just calculate the part you want.
+
+```shell
 php cron.php -s site_admin -c cron/stats/department
+# Equal to
+php cron.php -s site_admin -c cron/stats/department -p avg_chat_duration,avg_wait_time
 ```
 
-Crontab can look like.
+Average chat duration. This one you can run less often.
+```shell
+php cron.php -s site_admin -c cron/stats/department -p avg_chat_duration
+```
+
+Let's run it every 12 hours
 
 ```
-15 */12 * * * www-data cd /code && php cron.php -s site_admin -c cron/stats/department >> /dev/null 2>&1
+15 */12 * * * www-data cd /code && php cron.php -s site_admin -c cron/stats/department -p avg_chat_duration >> /dev/null 2>&1
+```
+
+Average wait time. This cronjob you can run more frequently. Depends on your requirements.
+```shell
+php cron.php -s site_admin -c cron/stats/department -p avg_wait_time
+```
+
+Let's run it every 5 minutes
+
+```
+*/5 * * * * www-data cd /code && php cron.php -s site_admin -c cron/stats/department -p avg_wait_time >> /dev/null 2>&1
 ```
 
 ## Continuous webhooks cronjob

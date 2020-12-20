@@ -144,7 +144,7 @@ Here you can change default text in widget itself. Few more complex ones I have 
     * Live wait time (`departament wait time` - `how long visitor is waiting`) E.g **Estimated wait time {avg_wait_time_live} minute{avg_wait_time_live__s}**
     * If `departament wait time` - `how long visitor is waiting` < 0 we assume less than a minute is left. First text is used in that case.
 
-Average wait time will be calculated for all closed chat from last 3 days.
+Average wait time will be calculated for all closed chat from last 3 days. You can change that in `Live help configuration (tab) -> Chat (section) -> Statistic -> Configuration (tab)`. You can set shorter period of time. In that case you should set also this cronjob to run more frequently.
 
 ## Custom content
 
