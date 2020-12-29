@@ -408,7 +408,7 @@ window.$_LHC.eventListener.emitEvent('reloadWidget');
 ```
 
 On click event can look something like this
-```
+```javascript
 function onClick()
 {
     /* You can change like this */
@@ -423,8 +423,28 @@ function onClick()
     // If you use reoad you have to set passet attribute like this.
     window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'Question' : 'Custom question here'}}}]);
     
-    // Show widget
-    window.$_LHC.eventListener.emitEvent('showWidget');
+    // Show widget only if it was opened
+    // As above you have exension executing you can ommit this
+    if (window.$_LHC.attributes.widgetStatus.valueInternal === true) {
+        window.$_LHC.eventListener.emitEvent('showWidget');
+    }
+}
+```
+
+### Reload widget to switch theme
+
+Also you can use `reloadWidget` call to change theme on the fly. It's usefull if your website has bright/dark theme and your use switches themes.
+
+Live sample can be found here https://livehelperchat.com/lhcsamples/themes-switch.html
+
+```javascript
+function setTheme(id) {
+    LHC_API.args.theme = id;
+    window.$_LHC.attributes.theme = id;
+    window.$_LHC.eventListener.emitEvent('reloadWidget');
+    if (window.$_LHC.attributes.widgetStatus.valueInternal === true) {
+        window.$_LHC.eventListener.emitEvent('showWidget');
+    }
 }
 ```
 
