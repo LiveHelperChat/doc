@@ -15,8 +15,15 @@ To execute process itself there is two options
 
 What chat's closes **"Automatic chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
 
-1. Where chat is active and visitor has send more than one message and from hist last message passed defined amount of time
+1. Where chat is active and visitor has send more than one message and from his last message passed defined amount of time
 2. Where chat is pending or active and the only message was visitor first message
+
+What chat's closes **"Automatically close active chat if from last visitor/operator message passed. 0 - disabled, n > 0 time in minutes"?**
+
+1. We close all active chats if from last chat activity passed defined amount of time. Activity happens on
+    1. Operator accepts a chat
+    2. Visitor writes a message
+    3. Operator writes a message
 
 What chat's closes **"Automatic pending chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
 

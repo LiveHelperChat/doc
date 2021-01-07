@@ -137,6 +137,30 @@ Shows presently ongoing chats. Shows only chats from his departments.
 
 * In `Account -> Visible` lists page he has to active `Active chats list enabled`
 
+### Closed chats
+
+Shows recently closed chats. Up to 50 last closed chats. Limit is because of performance. We take last 50 chats and return only closed ones.
+
+![](/img/dashboard/closed-chats.png)
+
+#### Required configuration
+
+* `Chat configuration -> Misc -> List closed chats, disabled for high performance` check and save
+* In dashboard configuration choose `Closed chats`
+* In `Account -> Visible` lists page he has to active `Closed chats list enabled`
+
+### Unread chats
+
+Shows chats where there is indication about an unread message. Up to 50 unread chats. Limit is because of performance. We take last 50 chats and return only chats with unread messages. Usually there is no requirement to have this list because active chat list has indication about an unread message in any case.
+
+![](/img/dashboard/urnead-chats.png)
+
+#### Required configuration
+
+* `Chat configuration -> Misc -> List unread chats, disabled for high performance` check and save
+* In dashboard configuration choose `Unread chats`
+* In `Account -> Visible` lists page he has to active `Unread chats list enabled`
+
 ### Bot chats
 
 Shows all chats which one bot is handling. 
