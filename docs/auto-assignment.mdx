@@ -40,6 +40,11 @@ Auto assignment workflow would be executed only if department is having less act
 
 If you set 10 means operator would have 10 seconds to accept a chat before chat is assigned to another operator.
 
+:::tip
+ * Back office is checking for a new chats every 10 seconds by default. You should decrease that time to 3 or 4 seconds in. [chat configuration](chat/synchronization-sound.md#sync-for-new-chats-interval-in-seconds)
+ * Chat is assigned to operator even if operator is in invisible mode. Operator participating in auto assignment workflow should be online and in visible mode. If invisbile operator opens a chat nothing will happen and chat will be assigned to another operator!
+:::
+
 ### Minimum delay between chat assignment to operator
 
 Then we assign chat to one operator we can give some delay before another chat can be assigned to the same operator.
