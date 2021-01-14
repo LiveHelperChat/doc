@@ -65,6 +65,10 @@ Columns and their meanings
     * `Active chats` - number of active chats in department or department group
     * `Soft limit` - is the sum of max chats of operators who were **active** during last **10** minutes.
 
+Operator also can click on `Load column` and see detailed load statistic.
+
+![](/img/dashboard/load-modal.png)
+
 #### Required configuration
 
 In order for operators to see his own department statistic he has to have this permission
@@ -78,6 +82,10 @@ To see all departments statistic, not only assigned to him - this permission is 
 In order to see download stats icon this permission is required.
 
 > 'lhstatistic', 'exportxls'
+
+To see department detailed load statistic by clicking on `Load column` operator has to have this permission
+
+> 'lhstatistic','statisticdep'
 
 ### Online visitors
 

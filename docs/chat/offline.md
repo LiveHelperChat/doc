@@ -84,6 +84,12 @@ As for bonus you can have the following fancy workflow
 
 This workflow can be even futher enhanced by transfering chat to another department first and only then showing feedback form. In that case "Rejected" department have to be configured to redirect user to feedback form.
 
+## How do not prefill an offline message?
+
+* Create a widget theme in back office
+* Set it as default
+* In theme edit page `Widget container` check `Do not prefill offline message with chat messages.`
+
 ## How to redirect visitor to offline form from bot?
 
 If there is no online operators you can use trigger

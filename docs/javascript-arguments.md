@@ -565,12 +565,14 @@ window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_event'
 
 ## Implementing GDPR scenario
 
+Live Helper chat uses `lhc_*` cookie variables.
+
 Requirements
  
  1. Visitor comes to page and Live Helper Chat should not store any cookie untill visitor agrees
  2. On page refresh if visitor has accepted cookies Live Helper Chat should use cookies instantly
  3. On GDPR acceptance we should inform Live Helper Chat that cookies policy was accepted
- 
+
 Implementation
 
 1. and 2. points can be done by passing argument.
