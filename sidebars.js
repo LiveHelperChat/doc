@@ -118,7 +118,8 @@ module.exports = {
             type: 'category',
             label: 'How to',
             items: [
-                'bot/transfer-bot-to-bot'
+                'bot/transfer-bot-to-bot',
+                'bot/multiple-unknown-messages'
             ]
         }
     ],
