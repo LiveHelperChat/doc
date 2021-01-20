@@ -8,7 +8,7 @@ sidebar_label: Files
 
 Main files configuration section.
 
-​![](/img/files/files-configuration.jpg)
+![](/img/files/files-configuration.jpg)
 
 You can allow either upload files to operators or visitors. Operators has to have permission to upload files also.
 
@@ -19,11 +19,26 @@ Operator can upload file few ways
   
 Files can be two types persistent or not. Persistent file means it won't be deleted by files maintenance workflow.
 
+## Antivirus setup (ClamAV)
+
+You can test antivirus setup by executing
+
+```shell
+php cron.php -s site_admin -c cron/util/test_antivirus -p <path_to_file>
+```
+
+To debug you can by editing these file
+
+```
+https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/core/lhexternal/Clamav.php
+modules/lhcron/util/test_antivirus.php
+```
+
 ## Files maintenance
 
 This article will explain how files maintenance works. To automate this process you have to have [files maintenance cronjob](development/cronjob.md#files-maintenance) running. This maintenance script deletes only chat related files. So if you upload files separately it won't be deleted as they are presistent. 
 
-​![](/img/files/maintain.jpg)
+![](/img/files/maintain.jpg)
 
 [Cronjob location (github)](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/modules/lhcron/util/maintain_files.php)
 

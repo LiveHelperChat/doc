@@ -4,6 +4,8 @@ module.exports = {
         'install',
         'integrating',
         'mobile',
+        'voice-video-screenshare',
+        'voice_messages',
         'javascript-arguments',
         'upgrading',
         'development/quick-guide',
