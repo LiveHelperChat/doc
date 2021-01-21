@@ -19,7 +19,7 @@ Default dashboard widgets. It's default look you should get once you login to ba
 
 ### Online operators
 
-![](/img/dashboard/operators-online.png)
+![](/img/dashboard/operators-online.png?v=2)
 
 #### Required configuration
 
@@ -48,9 +48,11 @@ If operator has permission
 
 He will be able to click on ![](/img/dashboard/online-icon.png) and change other operator status directly.
 
-In order to enable messaging other operators through the Online operators following module has to be enabled:
+In order to enable messaging other operators ![](/img/dashboard/start-chat-operator.png) through the Online operators following module has to be enabled:
 
 >'lhgroupchat', 'use'
+
+This is part of the `Group chats` functionality.
 
 ### Departments stats
 
@@ -198,7 +200,7 @@ In group chats operators sees 1 on 1 chats and public group chats.
 
 #### Required configuration
 
-For operator to see this widget he has to have
+For the operator to see this widget he has to have
 
 > 'lhgroupchat','use' 
 
