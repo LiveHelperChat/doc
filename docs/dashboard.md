@@ -48,6 +48,10 @@ If operator has permission
 
 He will be able to click on ![](/img/dashboard/online-icon.png) and change other operator status directly.
 
+In order to enable messaging other operators through the Online operators following module has to be enabled:
+
+>'lhgroupchat', 'use'
+
 ### Departments stats
 
 You can see present department's statistic.
