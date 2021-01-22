@@ -9,7 +9,10 @@ We are using [agora.io](https://www.agora.io/en/) as service provider for our im
 
 You can also test video calls live on official website [demo](https://livehelperchat.com/demo-12c.html)
 
-# Installation
+:::tip Tip
+
+Voice & Video & ScreenShare works only with a new widget. An old widget is not supported
+:::
 
 ## Live Helper Chat installation.
 
@@ -109,6 +112,6 @@ To set [agora.io](https://www.agora.io/en/) parameters
 
 > 'lhvoicevideo','configuration'
 
-To user it as operator
+To use it as operator
 
 > 'lhvoicevideo','use'

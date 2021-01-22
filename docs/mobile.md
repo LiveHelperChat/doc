@@ -136,11 +136,10 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
 Refer to flutter documentation. Few quick tips.
 
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L18-L20
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L39-L46
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L39-L46
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L53
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/master/android/app/build.gradle#L72
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L18-L20
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L39-L46
+ * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53
+ * Comment these lines - hhttps://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72
 
 ## My visitors can't see while I'm typing
 
