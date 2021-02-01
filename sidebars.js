@@ -44,6 +44,7 @@ module.exports = {
         'chat/unread-chat-notifications',
         'dashboard',
         'chat/offline',
+        'chat/automatic-translations',
         'chat/start-chat-form-settings',
         'chat/statistic',
         'custom-fields-and-prefill',

@@ -81,21 +81,15 @@ Required permission to use speech functionality
 
 This will activate voice messages and will allow operator to send voice message to visitor. For required permissions refer to voice [voice messages](voice_messages.md) article.
 
-​![](/img/chat/voice-messages-icon.jpg)
+![](/img/chat/voice-messages-icon.jpg)
 
 ### Auto translate
 
-This will activate auto translation function. For more information refer to. Pending article
+This will translate operator message to visitor language directly in message area.
 
-​![](/img/chat/auto-translate.jpg)
+![](/img/chat/auto-translate-icon.jpg)
 
-If you are using auto translate functionality. You can set manually what language chat is going on. 
-
-​![](/img/chat/auto-translate-tab.jpg)
-
-Required permission
-
-> 'lhtranslation','use'
+For more information refer to [Automatic translations article](automatic-translations.md)
 
 ### Hold chat
 
