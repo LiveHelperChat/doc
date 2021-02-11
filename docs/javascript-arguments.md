@@ -19,10 +19,13 @@ LHC_API.args = {
     wwidth: 350,
     pheight: 520,
     pwidth: 500,
+    mobile_view: null    // You can force widget to render in mobile view (full screen) or not | Optional | Default - shows full screen on mobile devices | Possible value true or false
     sright: 0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
     sbottom: 0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
     fscreen: false,      // Should widget content opened in full screen mode. Usefull in page embed 'mode:mode'. Can be activated from theme also only for embed mode.| Optional
-    position: 'api',     //If you do not pass we will default to a widget mode | Optional | Default - bottom_right
+    position: 'api',     // If you do not pass we will default to a widget mode | Optional | Default - bottom_right
+    hide_status: null,   // By default if position is api we show status widget once chat is started. You can force always to have hidden status widget.
+                         // In that case it makes sense to listen to unread_message_title title event for unread messages indication.
     position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
     leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
     offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
@@ -204,6 +207,16 @@ function widgetV2Callbacks(loadcb) {
     loadcb.eventEmitter.addListener('nhHide',function () {
         // Need help widget was hidden
         console.log('nhHide');
+    });
+    
+    loadcb.eventEmitter.addListener('unread_message_title',function (data) {
+        // false means there is unread message
+        // true means messages were read
+        if (data.status == false) {
+            // blink something in ui
+        } else {
+            // stop blinking something in ui
+        }
     });
 
     /**

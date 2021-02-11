@@ -8,7 +8,7 @@ sidebar_label: Rest API
 
 https://api.livehelperchat.com/#/
 
-Chat Rest API modules allows to do the following things
+Chat Rest API modules allows to do the following things
 
 * Check global status is anyone online
 * Check status for custom users
@@ -30,6 +30,13 @@ You can use rest api using these two options.
 Authentication requires username and password (Basic Authentication method). If you are using `Rest API` keys. Username is a username of the account under which API key is created.
 
 If you are using direct logins username is the account username and password is your account password.
+
+If for some reasons you can't log in make sure that your `.htaccess` file has the following lines
+
+```apacheconf
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+```
 
 ## Where this module can be used?
 

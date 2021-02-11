@@ -24,6 +24,15 @@ If visitor writes a message and chat is pending. Chat becomes unanswered.
 
 <Image img={require('../../static/img/statistic/unanswered.jpg')} />
 
+Chat remains unanswered even if operator accepts a chat if
+
+* Visitor has closed the chat
+* From last message sync passed more than 60 seconds on desktop devices OR more than 240 seconds on mobile devices.
+
+As second condition can be false positive. E.g Visitor just left the chat and operator accepted a chat this flag would be removed.
+
+It's recommended to check just filter `Abandoned chat`
+
 ### Message types
 
 Let's you see what types of messages were most popular.
@@ -149,6 +158,16 @@ Clicking on `Time online (sum of time spend online)` will give you log of operat
 This will represent general performance and will let you know how many chats were abandoned before they even got accepted.
 
 <Image img={require('../../static/img/statistic/general-performance.jpg')} />
+
+Abandoned chat is considered if
+ * There is no operator assigned to the chat and visitor has already left and chat was closed
+ * Last sync was before chat was accepted by the operator
+
+You can also filter for abandoned chats directly in statistic section by checking `Abandoned chat`.
+
+To optimise operators performance and avoid operator accepting abandoned chats it's recommended to [setup automatic](automatic-closing-purging.md) chat closing for
+
+`Automatically close pending chats where visitor has left a chat. Timeout in minutes, last activity by visitor desktop timeout,mobile timeout.`
 
 ## Departments
 
