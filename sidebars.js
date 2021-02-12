@@ -172,6 +172,7 @@ module.exports = {
         'nginx-configuration-tips',
         'architecture',
         'performance',
+        'hosting-variations',
         'back-office-theme',
         'node-js',
         'language',
