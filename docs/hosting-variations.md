@@ -25,7 +25,7 @@ Purpose of this article is to give ideas how much hosting can cost depending on 
     * C3 - 235$ changes to 315$ (it's 200$ cheaper to host per a month than D.3 which is an identical setup)
  * Automatic updates and monthly support up to 3H - 120 EUR/Month. Every additional hour 35 EUR/H unless we make some other agreement.
  * If you want that I just did support on demand, standard fee applies 35 EUR/H. You will be responsible for servers maintenance, and I won't be monitoring resources.
- * Always once we have system live a lot of depends on customer website how he integrates a widget. Does he wants proactive invitations or not. E.g checks is live anyone online or not. All this increase/decrease load and can influence requires resources for the hosting.
+ * Always once we have system live a lot of depends on customer website how he integrates a widget. Does he wants proactive invitations or not. E.g checks is live anyone online or not. All this increase/decrease load and can influence required resources for the hosting.
 
 ## Production example of real world hosting. 
 
@@ -49,7 +49,7 @@ These are virtual linux machines
 
 ## Without load balancers
 
-These combinations are for the one who wants to host knowing that if one instance goes down, the whole chat down.
+These combinations are for the one who wants to host knowing that if one instance goes down, the whole chat down. For these setups you can just use https://marketplace.digitalocean.com/apps/live-helper-chat
 
 In all cases I suggest having running
 
