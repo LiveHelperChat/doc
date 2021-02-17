@@ -281,7 +281,7 @@ function openWidget(department){
 }
 ```
 
-### Department scenario
+### Department scenario from parent page
 
 Imagine a scenario.
 
@@ -309,6 +309,29 @@ function openWidget(department) {
     }
 }
 ```
+
+### Department scenario from widget itself.
+
+It's also possible to change department directly from a widget itself using `Pre-chat HTML` capabilities.
+
+To have this UI you should
+
+* Pass main department ID which will work as our main widget screen configuration holder. There we will have `Pre chat` HTML fields filled.
+* In `Online form settings` disable all fields for the main department where you will put main `Pre chat` HTML
+* In `Additional form settings` check `Hide start chat button.` and check `No border under a profile`
+* You should have separate `Start chat forms` configuration per department.
+
+Here is a sample HTML how to change department directly in the widget using `Pre-chat HTML` field.
+
+```html
+<button class="btn btn-sm btn-secondary" onclick="window.parent.LHC_API.args.department = [2];window.parent.$_LHC.attributes.department = [2];window.parent.$_LHC.eventListener.emitEvent('reloadWidget');">Set department A</button>
+```
+
+One of the scenario can be - you want to allow a visitor to choose explicitly with what department he wants to start a chat. So you can have a Pre chat HTML just with department buttons.
+
+​![](/img/chat/pre-chat-widget.png)
+
+Another scenario can be you want to deny leaving a message form, but just to show some text showing that we are offline at the moment.
 
 ## How to embed multiple widgets on the same page?
 
