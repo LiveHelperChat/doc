@@ -295,9 +295,18 @@ You have to do the following things
 * Choose `api` as `Widget position` 
 * On button click have something like this. Where you just pass department ID
 ```javascript
-function openWidget(department){
+function openWidget(department) {
+    LHC_API.args.department = [department];
+    
     window.$_LHC.attributes.department = [department];
-    window.$_LHC.eventListener.emitEvent('showWidget');
+    
+    // Reload widget so new start chat form settings will be picked up
+    window.$_LHC.eventListener.emitEvent('reloadWidget');
+    
+    // If widget is open, open it again
+    if (window.$_LHC.attributes.widgetStatus.valueInternal === true) {
+        window.$_LHC.eventListener.emitEvent('showWidget');
+    }
 }
 ```
 
@@ -574,6 +583,34 @@ window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_event'
         'lmgsid' : ['chatLiveData','lmsgid'],
     }
 }}]);
+```
+
+### How do I check is widget open?
+
+Code sample
+
+```js
+if (window.$_LHC.attributes.widgetStatus.value === false) {
+    console.log('widget is closed');
+} else {
+    console.log('widget is opened');
+}
+```
+
+### Change widget online/offline status on the fly
+
+This is usefull if you want to set widget online/offline manually.
+
+ * Usually it's done automatically once you setup an automatic online status tracking. [More information](integrating.md/#how-to-make-automatic-status-change-for-frontend-visitors)
+ * If widget is open it's content automatically won't be changed to online/offline mode. We do not want user to lose whatever he was doing in the opened widget.
+
+Manual method will always refresh widget content.
+
+```js
+// We will set widget cotnent to online only if widget is not opened
+if (window.$_LHC.attributes.widgetStatus.value === false) {
+    window.$_LHC.attributes['onlineStatus'].next(true); // Will put status widget in live mode
+}
 ```
 
 ## Implementing GDPR scenario
