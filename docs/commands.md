@@ -54,6 +54,11 @@ At the moment these commands are implemented
     `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
 * !stopfiles
     * Disables files upload if it was enabled before by `!files` command
+* !modal `<form_id>` `<explain>`
+    * Will show a form module form with passed id and will write a passed explain. Explain is optional.
+* !modal `https://example.com`
+    * You can pass external URL also. More documentation [here](modules/forms.md)
+    
 
 You can define custom command based on `bot` `trigger`.
 
