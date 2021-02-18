@@ -156,7 +156,14 @@ I would recommend passing `jsvar[5]` where key is additional chat variable `id`
 Additionally, you can also pass them directly by constructing arguments via URL
 
 ```
-https://demo.livehelperchat.com/index.php/form/fill/1?&name[]=Bet%20ID&encattr[]=f&value[]=bet_id&type[]=text&size[]=6&req[]=t&sh[]=b&name[]=Transaction%20ID&encattr[]=f&value[]=&type[]=text&size[]=6&req[]=f&sh[]=b&name[]=Bet%20ID%202&encattr[]=f&value[]=bet_id%202&type[]=hidden&size[]=0&req[]=f&sh[]=b&name[]=Transaction%20ID%202&encattr[]=f&value[]=&type[]=text&size[]=12&req[]=f&sh[]=on&name[]=EncryptedTwodd&encattr[]=t&value[]=sb29scUd%2FKH2O778oMAGLGqqi7Q9oNflysbpx4X6Dp8%3D&type[]=hidden&size[]=0&req[]=f&sh[]=b&prefill[email]=remdex2%40gmail.com&hattr[]=email&prefill[phone]=370454654&prefill[username]=Username%20here&prefill[question]=Default%20user%20message&value_items_admin[name_surname]=remdex%40gmail.com&value_items_admin[question]=remdex%40gmail.com&value_items_admin[email]=remdex2%40gmail.com&value_items_admin[username]=remdex2%40gmail.com&value_items_admin[dropdopwn]=Siauliai&value_items_admin[textfield]=Text%20field&jsvar[2]=just%20some%20casn&jsvar[3]=Pirmass&jsvar[5]=Replaced%20by%20PROactive%2056
+https://demo.livehelperchat.com/index.php/form/fill/1?&name[]=Bet%20ID&encattr[]=f&value[]=bet_id&type[]=text&size[]=6
+&req[]=t&sh[]=b&name[]=Transaction%20ID&encattr[]=f &value[]=&type[]=text&size[]=6&req[]=f&sh[]=b&name[]=Bet%20ID%202&encattr[]=f&value[]=bet_id%202
+&type[]=hidden&size[]=0&req[]=f&sh[]=b &name[]=Transaction%20ID%202&encattr[]=f&value[]=&type[]=text&size[]=12&req[]=f&sh[]=on
+&name[]=EncryptedTwodd&encattr[]=t&value[]=sb29scUd%2FKH2O778oMAGLGqqi7Q9oNflysbpx4X6Dp8%3D&type[]=hidden&size[]=0 
+&req[]=f&sh[]=b&prefill[email]=remdex2%40gmail.com&hattr[]=email&prefill[phone]=370454654&prefill[username]=Username%20here
+&prefill[question]=Default%20user%20message&value_items_admin[name_surname]=remdex%40gmail.com
+&value_items_admin[question]=remdex%40gmail.com&value_items_admin[email]=remdex2%40gmail.com&value_items_admin[username]=remdex2%40gmail.com 
+&value_items_admin[dropdopwn]=Siauliai&value_items_admin[textfield]=Text%20field&jsvar[2]=just%20some%20casn&jsvar[3]=Pirmass&jsvar[5]=Replaced%20by%20PROactive%2056
 ```
 
 ## Sample HTML
