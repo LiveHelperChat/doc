@@ -33,10 +33,6 @@ There is two URLs which can be used
 
 Widget integration should always use first one.
 
-## How do I define a fields?
-
-
-
 ## Integration into a new widget
 
 Forms can be called either from website either form pre-chat html

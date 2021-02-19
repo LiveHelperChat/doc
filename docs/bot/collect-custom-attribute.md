@@ -23,6 +23,7 @@ Few examples:
 * `lhc.nick` - set user provided data as visitor username
 * `lhc.phone` - set user provided data as visitor phone
 * `order_number` - non internal attribute. Can be anything.
+* `[file]` - this attributes expects that visitor would upload a file. Preg match rule can look like `(gif|jpg|png)`
 
 ### Attribute name
 
@@ -40,7 +41,7 @@ You can have custom validation preg match rule. Few examples
 * **[abc]** a, b, or c
 * **[a-z]** Any lowercase letter
 * **[^A-Z]** Any character that is not a uppercase letter
-* **(gif|jpg)** Matches either “gif” or “jpg”
+* **(gif|jpg)** Matches either `gif` or `jpg`. This can be used to match file extension.
 * **[a-z]+** One or more lowercase letters
 * **[0-9.-]** Any number, dot, or minus sign
 * **^[a-zA-Z0-9_]{1,}$** Any word of at least one letter, number or _
@@ -107,3 +108,7 @@ If you do not define trigger for cancelation this message is send.
 In case you see `Please complete previous process` you can avoid this error by checking `Soft event`.
 
 You can also avoid this error manually executing `Update Current chat` response type and choosing `Remove any previous process`
+
+### File expecting trigger example
+
+​![](/img/bot/collect-file.png)
