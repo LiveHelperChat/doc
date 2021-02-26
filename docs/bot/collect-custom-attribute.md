@@ -111,4 +111,17 @@ You can also avoid this error manually executing `Update Current chat` response 
 
 ### File expecting trigger example
 
-​![](/img/bot/collect-file.png)
+Scenario if files uploads are disabled by default and enabled by bot automatically and after a successful upload disabled again.
+
+* Files upload for the visitor is disabled. 
+* In files configuration section you have enabled `Allow visitor to choose only one file for the upload`
+* Very first trigger in bot response is `Send Text` with content `!files no` this will enable files upload for the visitor without sending any message.
+* Next response within trigger is the file collecting workflow itself
+
+Files upload trigger configuration example
+
+![](/img/bot/collect-file.png?v=1)
+
+* On success of file upload we disable files upload by sending `Send Text` with content `!stopfiles we have received your file!`
+
+![](/img/bot/file-received.png?v=1)

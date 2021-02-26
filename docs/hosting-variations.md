@@ -27,7 +27,7 @@ Purpose of this article is to give ideas how much hosting can cost depending on 
  * If you want that I just did support on demand, standard fee applies 35 EUR/H. You will be responsible for servers maintenance, and I won't be monitoring resources.
  * Always once we have system live a lot of depends on customer website how he integrates a widget. Does he wants proactive invitations or not. E.g checks is live anyone online or not. All this increase/decrease load and can influence required resources for the hosting.
 
-## Production example of real world hosting. 
+## Example 1. Production example of real world hosting. 
 
 * 10K chats per day
   * 4.5K chats served by operators
@@ -38,6 +38,7 @@ Purpose of this article is to give ideas how much hosting can cost depending on 
 
 These are virtual linux machines
 
+* OS - Centos
 * Web server (nginx, php-fpm, redis, nodejshelper, php-resque)
     * 6TH, Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
     * Memory 8GB
@@ -46,6 +47,22 @@ These are virtual linux machines
     * 8TH, Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
 * ElasticSearch
     * Used for statistic generation. I don't have exact server specification, but I think something like Web server it should be.
+
+## Example 2. Production example of real world hosting.
+
+* 3K - 4K chats per day
+* Around 5-10 operators online
+
+There is only one linux machine. This amount of chats should handle server also with 2x less resources than it has now.
+
+* OS - Centos
+* Web and database are on the same server. (nginx, php-fpm, redis, php-resque)
+    * CPU - 8 Threads. Intel(R) Xeon(R) D-2123IT CPU @ 2.20GHz
+    * Memory - 32GB
+* Disk HDD - it's biggest disadvantage of this server as it does not have SSD disks.
+* Migration from Windows server took 6h - 8h
+
+Migration was done from Windows server. Client had integration with third party API where request were send to third party API within each message send from operator. It was the biggest issue (API call was taking long time and blocking php-fpm process worker). This task was moved to php-resque.
 
 ## Without load balancers
 

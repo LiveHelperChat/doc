@@ -50,10 +50,17 @@ At the moment these commands are implemented
 * !files 
     * Enables files upload for a particular chat if general files upload is disabled. Default message text looks like
     `I have enabled files upload for you. [fupload]Upload a file[/fupload].`
-    If you want multilanguage support you can just create a canned message with content like
+    * If you want multilanguage support you can just create a canned message with content like
     `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
+    * It's possible to enable files upload without any message by sending command like
+    `!files no`
 * !stopfiles
-    * Disables files upload if it was enabled before by `!files` command
+    * Disables files upload if it was enabled before by `!files` command. Default message looks like 
+    `Files upload was disabled!`
+    * You can have custom message by sending 
+    `!stopfiles files upload was disabled`
+    * To disable files upload without any message for the visitor
+    `!stopfiles no`
 * !modal `<form_id>` `<explain>`
     * Will show a form module form with passed id and will write a passed explain. Explain is optional.
 * !modal `https://example.com`

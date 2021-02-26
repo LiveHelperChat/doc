@@ -164,6 +164,22 @@ Examples of variables extraction
 }
 ```
 
+##### Parsing array for the output
+
+* `user_info:phones^implode=={n}` would output phones array combined with new line character.
+* `user_info:phones^implode==[b]{item}[/b]{n}` would output phones array wrapper with bold and new line character
+
+```json
+{
+    "user_info": {
+        "phones": [
+            "111111",
+            "222222"
+        ]
+    }
+}
+```
+
 #### Conditions checking
 
 Sometimes it makes sense to check was something found based on response attribute. So you can define condition to check.
