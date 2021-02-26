@@ -10,15 +10,12 @@ Start chat settings has two options
 
  * Either you use default settings for all departments.
  * Either you defined start chat settings by department. For start chat settings take effect you have to pass department explicitly.
+ * If you pass more than one department widget fields will automatically represent selected department options
 
 I also recommend to a see few youtube videos regarding possible options
 
 * https://www.youtube.com/watch?v=TFJAW5bepLM [Part 1]
 * https://www.youtube.com/watch?v=jj4Tu_zoYaE [Part 2]
-
-:::tip 
-It's possible to develop that once you change department start chat settings fields would be updated. Anyone wishes to sponsor it :smile: ?
-:::
 
 This is the main window of start chat form settings page.
 
