@@ -21,6 +21,8 @@ sidebar_label: Developing
    * `cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build && npm run build-ie`
  * Recompile static JS/CSS files. This is required if you change core JS files. It also avoids missing CSS/JS files if more than one server is used.
    * `php cron.php -s site_admin -c cron/util/generate_css -p 1 && gulp js-static`
+    
+During development process make sure you disable network cache `Network -> Disable cache` in Chrome developer toolbar.
 
 More usefull links
 
