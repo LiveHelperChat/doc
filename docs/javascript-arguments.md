@@ -31,7 +31,8 @@ LHC_API.args = {
     offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
                                                     // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
     identifier : 'lhc', // Can be used for custom proactive invitation | Optional
-    department: [4],    // Department, can be multiple or one | Optional
+    dep_default: 4,     // Department id which should be selected by default. Usefull in case you are passing more than one department | Optional
+    department: [5,4],  // Department, can be multiple or one | Optional
     product: [4,5],     // Product to choose from | Optional
     priority: 10005,     // Set priority for started chat | Optional
     theme: 1,           // Set theme | Optional
@@ -279,6 +280,25 @@ function openWidget(department){
     window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['operator'], data : 1}}]); // 1 is operator id
     window.$_LHC.eventListener.emitEvent('showWidget');
 }
+```
+
+### How to change default department from parent page?
+
+This scenario is usefull only if you have widget already rendered, and you want to change `dep_default` value after widget was already rendered.
+
+This is the case when you are passing more than one department, but clicking on different places on page should show different preselected department. So this should be called on page button click.
+
+You can do something like this:
+
+```js
+function setDepartmentDefault(dep_id) {
+     window.LHC_API.args.dep_default = dep_id;
+     window.$_LHC.attributes.dep_default = dep_id;
+     window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['departmentDefault'], data : dep_id}}]);
+     
+     // Show widget if you want
+     window.$_LHC.eventListener.emitEvent('showWidget');
+ }
 ```
 
 ### Department scenario from parent page
