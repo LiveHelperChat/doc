@@ -61,3 +61,15 @@ Youtube video
 Upload a file link. Files upload has to be enabled. This code is usefull with !files command.
 
 > `[fupload]Upload a file[/fupload]`
+ 
+Base URL. This will render URL as internal URL.
+
+> `[baseurl]user/login[/baseurl]`
+
+Renders link to view survey results for the admin
+
+> `[survey="?(.*?)"?\]`
+
+Renders button. Chat should have assigned bot
+
+> `[button_action="?(.*?)"?\](.*?)\[/button_action\]`
