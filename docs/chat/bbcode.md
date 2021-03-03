@@ -38,6 +38,10 @@ File or Image
 
 > `[file=639_f2f84b4d09a2e5bb492efa189b8ebad4]`
 
+Link to file with your own link title
+
+> `[url=[baseurl]file/downloadfile/639/f2f84b4d09a2e5bb492efa189b8ebad4[/baseurl]] Click to download an invoice [/url]`
+
 Image with a link to some URL
 
 > `[file=639_f2f84b4d09a2e5bb492efa189b8ebad4_img link=http://google.com]`
