@@ -13,6 +13,32 @@ This is small sampel how combining Rest API and Bot you can verify visitior e-ma
 You can download and import bot.
 [download](/img/bot/bot-email.json). Just right click and "save link as"
 
+## Chat workflow
+
+Chat started
+
+![](/img/bot/chat-workflow-started.png)
+
+Validate e-mail clicked
+
+![](/img/bot/validate-e-mail-clicked.png)
+
+Invalid e-mail format
+
+![](/img/bot/invalid-format-email)
+
+Format valid but not Rest API validation
+
+![](/img/bot/format-valid-but-not-rest-api.png)
+
+Validated by Rest API call
+
+![](/img/bot/valid-rest-api.png)
+
+If e-mail was an already verified visitor won't be asked for it again.
+
+![](/img/bot/already-verified-email.png)
+
 ## Third party API sample
 
 It just verified that visitor has entered expected e-mail.
@@ -79,6 +105,6 @@ If Rest API check fails we execute this trigger and we
 
 #### Validate Rest API
 
-This trigger executes our defined Rest API call and based on putput executes either `Verified by API` or `E-mail unferified` trigger.
+This trigger executes our defined Rest API call and based on output executes either `Verified by API` or `E-mail unferified` trigger.
 
 ![](/img/bot/validate-email-rest-api-call.png)
