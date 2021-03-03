@@ -248,6 +248,8 @@ All chat messages. These combinations are usefull in case you are implementing s
 * `{{msg_all_vis_msg_content}}` - All visitor messages in the chat. All messages without `[<date>] [<nick>]` prefix within each message.
 * `{{msg_all_vis_since_transfer_content}}` - All visitor messages in the chat since operator took over the chat. All messages without `[<date>] [<nick>]` prefix within each message.
 * `{{msg_all}}` - all chat messages.
+* `{{msg_items}}` - all chat messages objects encoded in JSON. Just do `json_decode` on passed variable
+* `{{msg_all_html}}` - all chat messages rendered as HTML. You might need to style classes.
 
 Other:
 
