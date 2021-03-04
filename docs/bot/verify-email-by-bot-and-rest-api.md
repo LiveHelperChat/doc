@@ -25,9 +25,9 @@ Validate e-mail clicked
 
 Invalid e-mail format
 
-![](/img/bot/invalid-format-email)
+![](/img/bot/invalid-format-email.png)
 
-Format valid but not Rest API validation
+Format valid, but not Rest API validation
 
 ![](/img/bot/format-valid-but-not-rest-api.png)
 

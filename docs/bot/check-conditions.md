@@ -21,6 +21,8 @@ One of the few possible scenarios can be
 * `<chat_variable>` - identical to `{args.chat.chat_variables_array.<variable_key>}` It can be set using `Update current chat response` [response type](bot/update-current-chat.md/#set-chat-variable-not-visible-by-operator)  
  So if you set variable `bot_touched` in attribute field you can use either `bot_touched` or `{args.chat.chat_variables_array.bot_touched}`
 * `{args.chat.<main chat attr>}` or `{args.msg.msg}` you can use text matching for visitor message. 
+* `online_department` use as attribute to check is department online (***espects** department online hours). In value field 1 means online, 0 - means offline
+* `online_op_department` use as attribute to check is department online (**ignores** department online hours). In value field 1 means online, 0 - means offline
 
 If you do not enter `Value` means it's empty.
 
