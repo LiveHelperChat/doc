@@ -6,7 +6,7 @@ sidebar_label: Validate e-mail by bot and Rest API
 
 ## Introduction
 
-This is small sampel how combining Rest API and Bot you can verify visitior e-mail using third party Rest API
+This is a small sample how combining Rest API and Bot you can verify visitor e-mail using third party Rest API
 
 ## Download
 
