@@ -255,25 +255,24 @@ Other:
 
 * `{{msg}}` - user message
 * `{{msg_url}}` - user message will contain links instead of bbcode tags.
+* `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
+* `{{footprint}}` - last 25 viewed pages url's
 * `{{chat_id}}` - chat ID
+
+Main chat attributes. You can access only first level attributes.
+
 * `{{lhc.nick}}` - visitor nick
 * `{{lhc.email}}` - e-mail
 * `{{lhc.department}}` - department name
 * `{{lhc.dep_id}}` - department ID
-* `{{footprint}}` - last 25 viewed pages url's
-* `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
-* `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly. It's either `Field identifier` from `Start a chat form settings > Custom fields` or if you are passing manually it's `name` attribute.
 * `{{lhc.<any chat attribute>}}` - all possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat` also you can access any dynamic attribute like [{{lhc.department_name}}](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L430).
-* `{{args.<any argument attribute>.<any subargument attribute>}}` - if you are implementing [webhooks](../development/webhooks.md) most likely you will be using this as placeholder.
-* `{{args.chat.department.identifier}}` - This way you can access any chat and child object attributes. In this example department identifier. 
-* `{{args.chat.department}}` - you can pass even all department object.
 
+To access custom passed variables or fields.
 
-Example:
-> If you put `Field identifier` value as `gender` in `Start a chat form settings > Custom fields`. In Rest API Call you can access this field like `{{lhc.add.gender}}`
-
+* `{{lhc.add.<additional variable key/identifier>}}` - these values you are passing additionaly. It's either `Field identifier` from `Start a chat form settings > Custom fields` or if you are passing manually it's `name` attribute. If you put `Field identifier` value as `gender` in `Start a chat form settings > Custom fields`. In Rest API Call you can access this field like `{{lhc.add.gender}}`
 * `{{lhc.var.<chat variable key>}}` - these values can be set using extensions etc. It's data is taken by `json_decode` function from `chat_variables` column value. This column stores JSON as `{<key> : <value>,..}`. Usually in this column extensions stores their own data.
 * `{{media}}` - Will hold JSON encoded related files to send message.
+
 ```json
 [
   {
@@ -287,6 +286,14 @@ Example:
   }
 ]
 ```
+
+Dynamic attributes extraction. You can go as deep as you want.  
+
+* `{{args.<any argument attribute>.<any subargument attribute>}}` - if you are implementing [webhooks](../development/webhooks.md) most likely you will be using this as placeholder.
+* `{{args.chat.department.identifier}}` - This way you can access any chat and child object attributes. In this example department identifier. 
+* `{{args.chat.department}}` - you can pass even all department object.
+
+Example
 
 So your JSON body in rest API can look like
 ```
