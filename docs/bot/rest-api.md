@@ -293,6 +293,11 @@ Dynamic attributes extraction. You can go as deep as you want.
 * `{{args.chat.department.identifier}}` - This way you can access any chat and child object attributes. In this example department identifier. 
 * `{{args.chat.department}}` - you can pass even all department object.
 
+Incoming chat attributes. This is usefull if you want to access to payload attribute of `Incoming webhook` created chat.
+
+* `{{args.chat.incoming_chat.chat_external_id}}` - external chat id
+* `{{args.chat.incoming_chat.payload_array.*}}` - you can access any first payload attribute. E.g session Id
+
 Example
 
 So your JSON body in rest API can look like

@@ -38,6 +38,8 @@ Text area supports these replaceable variables
  * `{lhc.add.<field identifier>}` 
  * `{lhc.var.<variable key>}`
  * `{args.chat.<any chat attribute>}`
+ * `{args.chat.incoming_chat.chat_external_id}` - incoming chat id
+ * `{args.chat.incoming_chat.payload_array.*}` - first payload attributes in array format
  * `{args.msg.msg}` - visitor message.
  
 ### HTML message
