@@ -37,7 +37,8 @@ LHC_API.args = {
     priority: 10005,     // Set priority for started chat | Optional
     theme: 1,           // Set theme | Optional
     domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
-    bot_id : 5          // Set bot ID for this chat | Optional
+    bot_id : 5,          // Set bot ID for this chat | Optional
+    kcw : false,         // While chatting in the widget customer opens popup of the same chat. Should we keep chat in the widget? default - false | Optional
 
     // Read next section about callback function
     loadcb : widgetV2Callbacks, // Chat was loaded callback | Optional
