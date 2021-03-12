@@ -43,7 +43,7 @@ If in BotB you edit BotA and choose a trigger from BotB and later go to edit dir
 If BotA includes many other bots (BotB, BotC, BotD, ... BotN), BotA have all the logic of children Bots so you can easily have situations in which BotB trigger B listen on same event of BotN trigger N and this can be confusing and make you lose control of what happens. You have to know what you are doing!
 :::
 
-## Direclty
+## Directly
 Directly means that one bot can transfer to another bot in same way that bot transfer to human.
 In this stage this is not supported but there is a way to accomplish it. 
 
