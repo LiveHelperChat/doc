@@ -13,9 +13,14 @@ For example:
  - BotC - is for Customer Care
  - BotD - is for Billing 
 
-You can not transfer directly from **one bot to another bot**,  just like you transfer to an operator.
-But one bot can include the context that you made in another.
- 
+Bot can transfer to:
+ - an operator
+ - another bot **indireclty**
+ - another bot **direclty**
+
+## Indireclty
+Indirectly means that one bot can include the context that you made in another.
+
 ### How to do it
 
 You have to edit the BotB using _These bot logic applies also_: selecting the parent Bot logic what you want to include.
@@ -33,3 +38,26 @@ Remember that when you edit one Bot logic (no matter where it was made), you are
 :::warning
 If in BotB you edit BotA and choose a trigger from BotB and later go to edit directly BotA you won't see chosen trigger in BotA. You should construct bot in a such way that you would not need to choose triggers directly in BotA.
 :::
+
+:::warning
+If BotA includes many other bots (BotB, BotC, BotD, ... BotN), BotA have all the logic of children Bots so you can easily have situations in which BotB trigger B listen on same event of BotN trigger N and this can be confusing and make you lose control of what happens. You have to know what you are doing!
+:::
+
+## Direclty
+Directly means that one bot can transfer to another bot in same way that bot transfer to human.
+In this stage this is not supported but there is a way to accomplish it. 
+
+### How to do it
+
+Let's imagine BotA have to transfer chat to BotB.
+
+BotA trigger performimg the transfer to BotB must have this responses:
+
+![BotA transfer configuration](https://user-images.githubusercontent.com/10348142/110941201-3ffec300-8338-11eb-9ec4-70e64e9e0da4.png)
+
+
+BotB must "listen" on that event:
+
+![BotB event listen configuration](https://user-images.githubusercontent.com/10348142/110941594-e5199b80-8338-11eb-8fcb-364267976558.png)
+
+**In this example** BotA does not include the logic that you make in BotB, BotA transfer to BotB so that visitor keep chatting with BotB.
