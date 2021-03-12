@@ -18,7 +18,7 @@ Bot can transfer to:
  - another bot **indireclty**
  - another bot **direclty**
 
-## Indireclty
+## Indirectly
 Indirectly means that one bot can include the context that you made in another.
 
 ### How to do it
@@ -51,13 +51,12 @@ In this stage this is not supported but there is a way to accomplish it.
 
 Let's imagine BotA have to transfer chat to BotB.
 
-BotA trigger performimg the transfer to BotB must have this responses:
+BotA trigger performing the transfer to BotB must have these responses:
 
-![BotA transfer configuration](https://user-images.githubusercontent.com/10348142/110941201-3ffec300-8338-11eb-9ec4-70e64e9e0da4.png)
-
+![BotA transfer configuration](/img/bot/bot-transfer-bot.png)
 
 BotB must "listen" on that event:
 
-![BotB event listen configuration](https://user-images.githubusercontent.com/10348142/110941594-e5199b80-8338-11eb-8fcb-364267976558.png)
+![BotB event listen configuration](/img/bot/bot-transfer-event.png)
 
 **In this example** BotA does not include the logic that you make in BotB, BotA transfer to BotB so that visitor keep chatting with BotB.
