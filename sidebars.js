@@ -188,6 +188,7 @@ module.exports = {
     ],
     Integration: [
         'integrating/opencart',
+        'integrating/custom-post-survey',
         'google-analytics',
         'chrome-extension'
     ]
