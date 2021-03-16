@@ -59,4 +59,4 @@ Rest API can look like this. We acceess external Chat ID so third party API know
 }
 ```
 
-See [WhatsApp integration](integration/whatsapp.md) using open https://github.com/open-wa
+See [WhatsApp integration](integrating/whatsapp.md) using open https://github.com/open-wa
