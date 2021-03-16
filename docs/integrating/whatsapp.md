@@ -11,6 +11,31 @@ Usefull information regarding wa
 * https://docs.openwa.dev/pages/Getting%20Started/quick-run.html
 * https://github.com/open-wa/wa-automate-docker
 
+## Tips for open-wa integration
+
+Start one time manually by executing. Once logged from mobile app `session.data.json` file will be generated.
+
+> npx @open-wa/wa-automate -w 'https://webhook.site/7a00ac21-60f2-411e-a571-515b37b2025a'
+
+Clone `https://github.com/open-wa/wa-automate-docker` repository
+
+To cloned repository copy `session.data.json` file.
+
+Modify 
+
+`package.json` file and set webhook which you will see during `Incoming webhook definition` configuration step. `-w` - argument
+
+> "start": "npx @open-wa/wa-automate --in-docker -p 8002 --npm-options=--ignore-scripts -w 'https://webhook.site/7a00ac21-60f2-411e-a571-515b37b2025a'",
+
+Run
+
+> docker-compose up --build
+
+Run as a service
+
+> docker-compose up -d
+
+
 ## Incoming webhook definition
 
 First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/open-wa.json)
@@ -26,7 +51,19 @@ You will need to do few bits now
 
 Save changes.
 
+### How do I add another phone number?
+
+After you have completed all configurations you can just 
+
+* export your working `Incoming webhook` 
+* re-import and change `Identifier`.
+* Set webhook in open-wa
+
+All the rest should work out of the box.
+
 ## Rest API calls setup
+
+**One time configuration**
 
 This will be required for an admin messages being send back to visitor (WhatsApp).
 
@@ -36,7 +73,9 @@ Import configuration. You do not need to change anything once imported.
 
 ## Bot setup
 
-We need to setup bot which trigger will be executed upon webhook event.
+**One time configuration**
+
+We need to set a bot which trigger will be executed upon webhook event.
 
 You can import configuration download it [here](/img/integration/open-wa-bot.json)
 
@@ -48,6 +87,8 @@ Configuration should look like
 
 ## Webhook configuration
 
+**One time configuration**
+
 Webhook configuration is needed for an admin messages being send back to visitor.
 
 * Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
@@ -56,6 +97,3 @@ Webhook configuration is needed for an admin messages being send back to visitor
 
 If you did everything correct you should have it all working. Without coding a single line.
 
-## How do I add another phone number?
-
-As you have all configured you will need just export your `Incoming webhook` and re-import and change `Identifier`. All the rest should work out of the box.
