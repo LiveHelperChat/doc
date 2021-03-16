@@ -89,6 +89,11 @@ Configuration should look like
 
 **One time configuration**
 
+Identical webhooks should be setup for these events
+
+* chat.web_add_msg_admin
+* chat.workflow.canned_message_before_save
+
 Webhook configuration is needed for an admin messages being send back to visitor.
 
 * Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
