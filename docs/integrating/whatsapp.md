@@ -5,6 +5,12 @@ title: WhatsApp integration
 
 This tutorial described how you can add WhatsApp support using https://github.com/open-wa product. This tutorial won't teach you how to setup `open-wa` product. Only how to integrate it
 
+Usefull information regarding wa
+
+* https://github.com/open-wa
+* https://docs.openwa.dev/pages/Getting%20Started/quick-run.html
+* https://github.com/open-wa/wa-automate-docker
+
 ## Incoming webhook definition
 
 First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/open-wa.json)
@@ -44,8 +50,12 @@ Configuration should look like
 
 Webhook configuration is needed for an admin messages being send back to visitor.
 
-* MAke sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
+* Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
 
 ![](/img/integration/whatsapp-webhook.png)
 
 If you did everything correct you should have it all working. Without coding a single line.
+
+## How do I add another phone number?
+
+As you have all configured you will need just export your `Incoming webhook` and re-import and change `Identifier`. All the rest should work out of the box.
