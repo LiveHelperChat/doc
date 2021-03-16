@@ -259,6 +259,12 @@ Other:
 * `{{footprint}}` - last 25 viewed pages url's
 * `{{chat_id}}` - chat ID
 
+Attributes usefull for sending content in `Sub URL for file`
+
+* `{{file_body}}` - base64 encoded file content `'data:'.$mediaFile->type.';base64,'.base64_encode(file_get_contents($mediaFile->file_path_server));`
+* `{{file_url}}` - url to download file directly
+* `{{file_name}}` - uploaded file name from operator
+
 Main chat attributes. You can access only first level attributes.
 
 * `{{lhc.nick}}` - visitor nick
@@ -297,6 +303,8 @@ Incoming chat attributes. This is usefull if you want to access to payload attri
 
 * `{{args.chat.incoming_chat.chat_external_id}}` - external chat id
 * `{{args.chat.incoming_chat.payload_array.*}}` - you can access any first payload attribute. E.g session Id
+* `{{args.chat.incoming_chat.incoming.attributes.<you defined key in attribtues of incoming webhook>}}` - you can use this as placeholder for `Sub URL` or `Sub URL for file`. Just leave empty host attribute.
+* `{{args.chat.incoming_chat.incoming.scope}}` - you can access any attribute of incoming webhook definition
 
 Example
 

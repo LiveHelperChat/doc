@@ -190,7 +190,8 @@ module.exports = {
         'integrating/opencart',
         'integrating/custom-post-survey',
         'google-analytics',
-        'chrome-extension'
+        'chrome-extension',
+        'integrating/whatsapp'
     ]
   },
 };

@@ -42,6 +42,10 @@ If your created webhook id is 1 so condition should look like this
 
 `{args.chat.chat_variables_array.iwh_id} = 1`
 
+You can also use condition like. 
+
+`{args.chat.incoming_chat.incoming.scope} = whatsapp` 
+
 After that you should setup bot and trigger with Rest API call.
 
 ### Setup Rest API call.
@@ -54,3 +58,5 @@ Rest API can look like this. We acceess external Chat ID so third party API know
     "body": {{msg_url}}
 }
 ```
+
+See [WhatsApp integration](integration/whatsapp.md) using open https://github.com/open-wa

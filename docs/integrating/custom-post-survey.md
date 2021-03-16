@@ -25,6 +25,6 @@ public function initReactChat($params) {
 
 You should call this javascript function. Once this happens Live Helper Chat will know that survey has been completed and will close widget for the visitor. You can have some kinda of `setTimeout` before calling this function.
 
-```
+```js
 window.parent.postMessage("lhc_survey_completed","*");
 ```
