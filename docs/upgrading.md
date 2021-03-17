@@ -6,7 +6,8 @@ title: Upgrading
 Here is basic tutorial how to perform upgrades since 2.04 version. This version can update database automatically from any previous LHC version.
 
 1.  Read new version announcement article for any possible changes in settings/settings.ini.php. If article does not mention anything you do not have to do anything.
-2.  Got to "System" -> "Update information" -> and see does LHC finds any differences in database. If it does just click update database.
+2.  Got to "System" -> "Update information" -> and see does LHC finds any differences in database. If it does just click update database. It can be that you won't see differences if your server does not allow making request to remote URL's. In that case follow this 
+    * [Updating database from local definition](system/command.md#updates-live-helper-chat-database-directly-from-console)
 3.  Logout from LHC
 4.  [Download most recent LHC version.](http://livehelperchat.com/article/static/5) Overwrite doc,ezcomponents,lib,modules,pos,translations,design folders.
 5.  Disable [cache in settings.ini.php](debug.md#disabling-cache)
