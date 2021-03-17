@@ -26,7 +26,7 @@ server {
 
      if ($request_method = 'OPTIONS') {
         add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
         #
         # Custom headers and headers various browsers *should* be OK with but aren't
         #
@@ -45,7 +45,7 @@ server {
      # In general I suggest do not use this in case you have CDN because of complexity it brings.
      if ($http_user_agent ~* "(google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|Chrome-Lighthouse)" ) {
          add_header 'Access-Control-Allow-Origin' '*';
-         add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+         add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
          add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
          return 200;
@@ -53,7 +53,7 @@ server {
      
      if ($request_method = 'GET') {
          add_header 'Access-Control-Allow-Origin' '*';
-         add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+         add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
          add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
       }
@@ -86,7 +86,7 @@ server {
             # Om nom nom cookies
             #
             add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
             #
             # Custom headers and headers various browsers *should* be OK with but aren't
             #
@@ -105,7 +105,7 @@ server {
           # In general I suggest do not use this in case you have CDN because of complexity it brings.
          if ($http_user_agent ~* "(google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|Chrome-Lighthouse)" ) {
              add_header 'Access-Control-Allow-Origin' '*';
-             add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+             add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE';
              add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
              add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
              return 200;
