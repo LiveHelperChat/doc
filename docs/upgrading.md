@@ -12,7 +12,7 @@ Here is basic tutorial how to perform upgrades since 2.04 version. This version 
 4.  [Download most recent LHC version.](http://livehelperchat.com/article/static/5) Overwrite doc,ezcomponents,lib,modules,pos,translations,design folders.
 5.  Disable [cache in settings.ini.php](debug.md#disabling-cache)
 6.  Login to LHC again and go to `"System configuration" -> "Clear Cache" and click Clear Cache`
-7.  Now you can enable cache again in your settings.ini.php
+7.  Now you can enable a cache again in your settings.ini.php
 
 Also if you are updating from any older version you can foolow this pattern, you can do this also for new versions.
 

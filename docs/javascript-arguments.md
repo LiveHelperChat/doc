@@ -528,7 +528,13 @@ window.$_LHC.eventListener.emitEvent('toggleSound');
 
 ### To end the chat
 ```js
+
+// More gracefull method. Visitor has closed chat message will be shown
+window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'end_chat_visitor', 'arg' : {}}]);
+
+// Just terminates chat instantly
 window.$_LHC.eventListener.emitEvent('endChat');
+
 ```
 
 ### To add tag. 
