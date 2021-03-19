@@ -25,6 +25,12 @@ This trigger is usefull to set any internal chat attribute which should not be v
 {"bot_touched":true}
 ```
 
+If you set value like below. Attribute will be removed.
+
+```json
+{"bot_touched":null}
+```
+
 These variables later on can be used by [Rest API](rest-api.md#replaceable-variables) as replaceable variables. `{{lhc.var.<variable_name>}}`
 
 ## Set chat additional attribute [visible by operator]
@@ -40,6 +46,15 @@ These variables will be visible by operator.
 This way you can reset from bot any collected attribute from custom fields. You have to fill both key and identifier with same field identifier and set value as `null`
 
 ![](/img/chat/reset-custom-variables-from-bot.png)
+
+## Set widget live attribute
+
+This is usefull while the widget is live. 
+
+* `Live attribute path` defines path of attribute of React APP state
+* `Live attribute value in JSON format.`
+
+See how bot uses it to [control survey](bot/survey-control-from-bot.md)
 
 ## Dispatch Event
 

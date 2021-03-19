@@ -124,7 +124,8 @@ module.exports = {
             label: 'How to',
             items: [
                 'bot/transfer-bot-to-bot',
-                'bot/multiple-unknown-messages'
+                'bot/multiple-unknown-messages',
+                'bot/survey-control-from-bot'
             ]
         }
     ],
