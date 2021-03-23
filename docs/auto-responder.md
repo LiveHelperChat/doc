@@ -8,6 +8,11 @@ sidebar_label: Auto responder
 2. Independent responder. Without choosing department.
 3. Auto responder for specific department.
 
+Important
+
+* Bot responses will work only if there is also main message in responder text area. Text message above bot choosing option has to be filled.
+* Text messages from first level bot responses are not saved, only from child. See example [how to transfer chat to pending state if operator is not responding](bot/operator-not-responding.md).
+
 ## Auto responder apply order
 1. First we check does chat department has department specific auto responder. If it does we apply it.
 2. If not we search for default auto responder. (Without chosen department)

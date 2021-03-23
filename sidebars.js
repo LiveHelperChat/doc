@@ -125,7 +125,8 @@ module.exports = {
             items: [
                 'bot/transfer-bot-to-bot',
                 'bot/multiple-unknown-messages',
-                'bot/survey-control-from-bot'
+                'bot/survey-control-from-bot',
+                'bot/operator-not-responding'
             ]
         }
     ],

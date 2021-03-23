@@ -352,6 +352,12 @@ Use can use these variables in your text triggers response text.
 * `{content_raw}` - raw response returned from Rest API call without any parsing
 * `{http_data}` - Request parameters used for rest api call.
 
+There variables can be used in most of the response types including
+
+* [Set main chat attribute](bot/update-current-chat.md#update-main-chat-attribute) for setting `email`, `nick`, `phone` etc.
+* [Set additional chat attribute](bot/update-current-chat.md#set-chat-additional-attribute-visible-by-operator) for custom chat attributes
+* [Text responses](bot/text.md#replaceable-variables) for showing visitor information for the user itself. E.g package location
+
 ## How to find out problems with Rest API
 
  * Setup output combination for success call.

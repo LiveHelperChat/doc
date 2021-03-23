@@ -58,9 +58,13 @@ Here we just call Rest API to fetch customer information.
 
 ### Set user information
 
-Here after we detected output we just set fetched information as chat attribute.
+After we detected output we just set fetched information as chat attribute.
 
 ![](/img/bot/information-fetcher/set-user-information.png)
+
+You can also set main chat attributes like `nick`, `email` by choosing command `Update main chat attribute`
+
+Attribute would be `nick` and value would be `{content_1}`. More information how to use [`Update main chat attribute`](bot/update-current-chat.md#update-main-chat-attribute)
 
 ## Output
 

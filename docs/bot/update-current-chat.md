@@ -92,7 +92,14 @@ With this action you can update any chat attribute. You can find all main chat a
  * `Chat attribute name` enter your attribute you want to change.
  * `Chat attribute value` enter a value
 
-For value field you can use also replaceable variables like defined [here](text.md#replaceable-variables)
+For value field you can use also replaceable variables like defined [here](text.md#replaceable-variables) you can also use placeholder from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
+
+* `{content_1}` up to `{content_6}`
+
+If you want to set vistor `nick`, `email`, `phone` or any other attribute from `Rest API`
+
+* set `Chat attribute name` to `nick`
+* set `Chat attribute value` to `{content_1}`
 
 ### How to set product attribute?
 

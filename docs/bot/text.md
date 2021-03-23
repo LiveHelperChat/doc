@@ -42,6 +42,11 @@ Text area supports these replaceable variables
  * `{args.chat.incoming_chat.payload_array.*}` - first payload attributes in array format
  * `{args.msg.msg}` - visitor message.
  
+You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
+
+* `{content_1}` up to `{content_6}`
+
+
 ### HTML message
 
 Content of this textarea will be rendered as HTML directly. It also supports translations.
