@@ -126,7 +126,8 @@ module.exports = {
                 'bot/transfer-bot-to-bot',
                 'bot/multiple-unknown-messages',
                 'bot/survey-control-from-bot',
-                'bot/operator-not-responding'
+                'bot/operator-not-responding',
+                'bot/show-offline-form-if-no-online-operators'
             ]
         }
     ],
