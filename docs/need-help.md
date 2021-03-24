@@ -55,6 +55,7 @@ Just in your site css add
  * Make sure you have enabled [need help tooltip](chat/configuration.md#show-need-help-tooltip)
  * Make sure tooltip [timeout value](chat/configuration.md#need-help-tooltip-timeout-after-how-many-hours-show-again-tooltip) is bigger than 0 
  * If you are using themes, make sure you have not disabled it accidentally
+ * With [fresh: true javascript option](javascript-arguments.md#javascript-options) cookies are not saved so need help tooltip does not work 
 
 ## How do I change general tooltip style?
 
