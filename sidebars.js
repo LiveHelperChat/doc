@@ -105,6 +105,7 @@ module.exports = {
             label: 'Use Cases',
             items: [
                 'bot/collecting-information',
+                'bot/collecting-information-two-tries',
                 'bot/validate-information',
                 'bot/integrating-any-ai-bot-without-coding',
                 'bot/integrating-any-ai-bot',

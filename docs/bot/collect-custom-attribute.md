@@ -83,13 +83,17 @@ You can show a visitor `Cancel` button with your defined text. If you are using 
 
 This message is shown before user enters any required information.
 
-### Confirmation message
+### Execute trigger on validation failure
 
-If validation passed this message is send to the visitor.
+You can choose to execute custom trigger on validation error. See [sample](bot/collecting-information-two-tries.md) how to allow a visitor to enter information two times before terminating a process.
 
 ### Validation error message
 
 If validation fails. This message is send to the visitor.
+
+### Success message
+
+If validation passed this message is send to the visitor.
 
 ### Execute trigger on success
 
