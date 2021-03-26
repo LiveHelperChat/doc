@@ -10,8 +10,6 @@ For this scenario to work these conditions has to be met
 * Auto responder has to be setup for the department
 * Bot has to be setup
 
-If you set text message directly in bot response it won't be send. Text message are saved only on child triggers, as in this scenario on success transfer.
-
 ## Setup bot
 
 In bot we will have two triggers
@@ -29,7 +27,7 @@ In bot we will have two triggers
 
 ## Setup auto responder
 
-* Message field is a **must**. If you leave empty message field it won't work.
+* You can setup either text either bot response trigger. It will send one or another or both.
 
 ![](/img/bot/auto-responder-operator-gone.png)
 
