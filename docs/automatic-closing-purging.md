@@ -42,7 +42,7 @@ What chat's deletes **"Automatic chats purging. 0 - disabled, n > 0 time in minu
 
 1. Chat is closed and from user last message passed defined amount of time. 
 
-What chat's closes **"Automatically close pending chats where visitor has left a chat. Timeout in minutes, last activity by visitor `desktop timeout`,`mobile timeout`."**?
+What chat's closes **"Automatically close pending chats where visitor has left a chat. Timeout in minutes, last activity by visitor `desktop timeout`,`mobile timeout`,`status chat`."**?
 
 1. Chats where visitor
     1. Has been redirected to survey form
@@ -50,6 +50,9 @@ What chat's closes **"Automatically close pending chats where visitor has left a
     3. Has closed chat explicitly
 2. Visitor was seen online based on defined timeout values
     1. `desktop timout` - applies to desktop devices
-    2. `mobile timeout` - applies to mobile and tablet devices.
+    2. `mobile timeout` - applies to mobile and tablet devices
+    3. `status chat` - 0 or absent close include only pending, 1 - include only active, 2 - include pending and active chats
 
-E.g `1,3` would mean that pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
+* E.g `1,3` would mean that pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
+* E.g `1,3,1` would mean that active chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
+* E.g `1,3,2` would mean that active/pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
