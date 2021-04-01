@@ -97,7 +97,8 @@ module.exports = {
                 'bot/alert-icon',
                 'bot/match-action',
                 'bot/check-conditions',
-                'bot/bot-update-current-chat'
+                'bot/bot-update-current-chat',
+                'bot/restrict-execution-more-than-defined-times'
             ]
         },
         {
