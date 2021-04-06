@@ -180,6 +180,21 @@ Examples of variables extraction
 }
 ```
 
+##### Parsing XML for the output
+
+when you parse xml you should omit first tag and start from the second tag:
+* use `pin:value`, NOT `response:pin:value`
+
+```json
+<response> 
+  <pin> 
+    <value>2222</value> 
+  </pin>
+  ....
+</response>
+```
+
+
 #### Conditions checking
 
 Sometimes it makes sense to check was something found based on response attribute. So you can define condition to check.
