@@ -341,7 +341,7 @@ Replaceable variables works only in
 
 In trigger once everything is setup it will look like this.
 
-![](/img/bot/rest-api-bot-trigger.png)
+![](/img/bot/rest-api-trigger-sample.png)
 
 Fields description
 
@@ -351,6 +351,13 @@ Fields description
 * `Execute trigger for [UUID Set]` - It's defined output parsing option which we defined in Rest API `Output parsing` tab.
 * `Default trigger to execute` - if we did not found any matching output combination this trigger will be executed.
 * `Send Rest API Call in the background.` - by default `Rest API` calls are send as soon visitor sends a message, they are happening on same request. This can lead to a problems if Rest API is slow. We can send Rest API calls in the background, but for that you have to be running [lhc-php-resque](https://github.com/LiveHelperChat/lhc-php-resque) extension. You won't need to code anything just setup extension itself.
+* `Process on next visitor message` - this call will be executed only on next visitor message. Usefull in case you want to check only for specific actions.
+* `Save response as system message` - will save a message as system message. It will be invisible for the visitor.
+* `Do not save response.` - usefull in case you want to execute a call, but do not save any related information.
+
+### Example of `Process on next visitor message`
+
+![](/img/bot/sample-next-visitor-message.png)
 
 ## Output variables in triggers
 
@@ -385,6 +392,10 @@ In rest api define trigger for `Unknown` unmatched output combination
 In response have something like this. Pay attention second text message is send as system message.
 
 ![](/img/bot/rest-api-debug.png)
+
+## How to handle API Errors?
+
+The easiest way is set fallback trigger on `Default trigger to execute`. If API works correctly your defined output combination will be executed.
 
 ## Video usage example
 
