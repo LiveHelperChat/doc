@@ -56,7 +56,7 @@ Internally it just means `const STATUS_SUB_SURVEY_SHOW = 5;`
 
 ## Tips
 
-* [Disable/Enable a survey from bot?](https://doc.livehelperchat.com/docs/bot/survey-control-from-bot/)
+* [Disable/Enable a survey from bot?](bot/survey-control-from-bot.md)
 
 ## I close a chat, but I don't see any survey
 
