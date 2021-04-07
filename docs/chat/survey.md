@@ -54,6 +54,19 @@ You can have this defined as button click or just as trigger to execute on auto 
 
 Internally it just means `const STATUS_SUB_SURVEY_SHOW = 5;`
 
+## Tips
+
+* [Disable/Enable a survey from bot?](https://doc.livehelperchat.com/docs/bot/survey-control-from-bot/)
+
+## I close a chat, but I don't see any survey
+
+There is a few conditions has to be satisfied for a survey to be shown. On chat close event **one** these of these conditions has to be satisfied
+
+* Chat has to be in bot mode
+* Chat has to be accepted by operator
+
+If chat is closed by a visitor and chat is in pending state. Survey won't be shown.
+
 ## Permissions
 
 In order operator to be able redirect visitor to custom survey they have to have this permission.
