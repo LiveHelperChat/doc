@@ -201,19 +201,19 @@ Not used anymore and will be removed over time.
 
 ### Reopen chat functionality enabled
 
-Only active for older widget. Means visitor can reopen closed chats. This function was removed in new widget.
+Only active for older widget. Means visitor can reopen closed chats.
 
 ### Reopen closed chat as new? Otherwise it will be reopened as active.
 
-Does what it tells :smile:. This function was removed in new widget.
+Does what it tells :smile:.
 
 ### Automatically reopen chat on widget open
 
-Does what it tells :smile:. This function was removed in new widget.
+Does what it tells :smile:.
 
 ### Allow user to reopen closed chats?
 
-Does what it tells :smile:. This function was removed in new widget.
+Does what it tells :smile:.
 
 (automatic chat's closing/purging)[auto-close-delete.md]
 

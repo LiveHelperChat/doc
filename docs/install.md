@@ -146,6 +146,7 @@ Here goes automatic auto response message.
 * [Want to rebrand it according to your site style?](theme/theme.md)
 * [Don't know how to use screen sharing?](co-browsing.md)
 * Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
+* [My users loose chat session then they navigate through the site, duplicate online users records](online-visitors.md#my-users-loose-chat-session-then-they-navigate-through-the-site-duplicate-online-users-records)
 
 ## My widget does not load?
 
@@ -160,6 +161,13 @@ AddType application/wasm .wasm
   Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
 </Files>
 ```
+
+## Chat was closed by an operator/visitor, but visitor starting chat again opens an old chat?
+
+Most likely you have enabled `Chat configuration -> Misc -> Reopen chat functionality enabled`
+
+[More information](chat/configuration.md#reopen-chat-functionality-enabled)
+
 ## Install from command line
 
 It's also possible to install from command line.
