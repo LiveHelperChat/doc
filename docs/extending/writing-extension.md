@@ -32,6 +32,26 @@ Here is example to what events Automated hosting extension is listening
 
  > https://github.com/LiveHelperChat/automated-hosting/blob/master/instancecustomer/bootstrap/bootstrap.php
 
+## How to include custom JS only for specific URL
+
+You can just define `additional_footer_js` variable in `$Result` array
+
+```php
+// ...
+$Result['content'] = $tpl->fetch();
+$Result['additional_footer_js'] = '<script src="'.erLhcoreClassDesign::designJS('js/angular.incoming.webhooks.js').'"></script>';
+```
+
+## How to include custom CSS only for specific URL
+
+You can just define `additional_header_css` variable in `$Result` array
+
+```php
+// ...
+$Result['content'] = $tpl->fetch();
+$Result['additional_header_css'] = '<link rel="stylesheet" type="text/css" href="'.erLhcoreClassDesign::designCSS('css/jquery-ui-1.10.4.custom.css').'" />';
+```
+
 ## Translating extension
 
 There is command to generate extension default translations.

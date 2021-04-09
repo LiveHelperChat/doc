@@ -31,8 +31,59 @@ Like in settings/settings.ini.php themes order is in the following order
 
 Customtheme has priority against defaulttheme, so that way you can override any template you want without changing default templates. You can also override same way images/css/js and so on. Don't forget to disable cache while developing. Also after you enable cache again, clear it from back office by clicking clear cache.
 
-For native placement template you have to override "defaulttheme/tpl/lhchat/getstatus/native_placement.tpl.php" the most easiest way to override widget interface you which is rendered on site is just override it using css with !important flag.
+## Main templates to override
 
-Also if you are building extension and want to add custom js and css you can override just "defaulttheme/tpl/pagelayouts/parts/page_head_css_extension_multiinclude.tpl.php" multiinclude keyword at the end indicates that each time template is found (let say in another extension) it's included.
+To include custom CSS
 
-If you want to style widget content itself please refer to this article.
+* `design/defaulttheme/tpl/pagelayouts/parts/page_head_css_extension_multiinclude.tpl.php` - for back office pages
+* `design/defaulttheme/tpl/pagelayouts/parts/page_head_css_user_extension_multiinclude.tpl.php` - for front end pages
+
+Sample code
+
+```html
+<link rel="stylesheet" type="text/css" href="<?php echo erLhcoreClassDesign::designCSS('css/myextension.css');?>" />
+```
+
+To include custom JS
+
+* `design/defaulttheme/tpl/pagelayouts/parts/page_head_js_extension_multiinclude.tpl.php` - for back office pages
+* `design/defaulttheme/tpl/pagelayouts/parts/page_head_js_user_extension_multiinclude.tpl.php` - for front end pages
+
+Sample code
+
+```html
+<script type="text/javascript" src="<?php echo erLhcoreClassDesign::designJS('js/extension.lhc.js');?>"></script>
+```
+
+`multiinclude` keyword at the end indicates that each time template is found (let say in another extension) it's included.
+
+Read [here](development/unbrand.md) how to override only CSS/JS files
+
+## How do I know in what module template is executed. Usefull in case you want to execute your JS in specific modules only without overriding module itself.
+
+To check is it specific module.
+
+```php
+
+// To get siteaccess site_admin/eng/fre etc.
+erLhcoreClassSystem::instance()->SiteAccess;
+
+// To get module
+if (erLhcoreClassModule::getModuleName() == 'chat') {
+    // do your thing
+};
+
+// To get function
+if (erLhcoreClassModule::getCurrentView() == 'start') {
+    // do your thing
+};
+
+// To check is it dashboard
+if (erLhcoreClassModule::getModuleName() == 'front' && erLhcoreClassModule::getCurrentView() == 'default') {
+    // do your thing
+};
+```
+
+## Old widget
+
+For native placement template you have to override `defaulttheme/tpl/lhchat/getstatus/native_placement.tpl.php`"` the most easiest way to override widget interface you which is rendered on site is just override it using css with !important flag.
