@@ -10,11 +10,13 @@ Using Live Helper chat as crisis/helpline solution need to fulfill these require
 
 * Agents should see as little as possible information about a visitor - preferable none.
 * Chats should be deleted after specific period of time. Or their data should be anonymized.
+* Agents should not see what visitor is typing
 
 To fulfill this requirement I recommend.
 
 * `Chat configuration -> Data protection` - check `Do not track visitors IP.` we will not log full IP of the visitor. Only country will be shown.
 * `Chat configuration -> Data protection` - enter `After how many days encrypt messaes.` we will encrypt visitor messages after specified period of data. You can also check to encrypt operator messages.
+* `Chat configuration -> Data protection` - check `Do not store what visitor is typing` we will not store what visitor is typing
 
 Live Helper Chat by default tracks visitor pageviews and his previous chat. This can be avoided by turning off online visitors tracking.
 

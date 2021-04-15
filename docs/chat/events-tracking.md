@@ -27,6 +27,10 @@ To track events in popup you have to embed your tracking script in `Javascript f
 
 ## Permissions
 
-For an operator to be able configure this section he has to have this permission
+Permission to see `Events tracking` link in `Live help configuration` section and have configuration per department. 
+
+> 'lhchatsettings','events'
+
+Permission to change default configuration
 
 > 'lhsystem','ga_configuration'

@@ -44,7 +44,7 @@ RewriteEngine On
 # Adds support for URL without index.php in URL
 RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
 RewriteRule ^upgrade.php - [L]
-RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|swf|map|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
+RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|svg|ico|mp3|wasm|ogg|wav|ogv|swf|map|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
 
 DirectoryIndex index.php
 ```
