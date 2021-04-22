@@ -97,7 +97,19 @@ To see department detailed load statistic by clicking on `Load column` operator 
 
 In this widget you will see your site visitors.
 
-​![](/img/dashboard/online-visitors.png)
+![](/img/dashboard/online-visitors.png?v=2)
+
+Background colors and their meanings
+
+* blue background - page view happened in the last 15 seconds
+* green background - is visitor still connected check happened less than `Chat configuration < Visitor activity < Interval between chat status checks in seconds, 0 disabled.`
+* grey - visitor check for online was missed
+
+Text colors and their meanings
+
+* green text - is visitor still connected check happened less than `Chat configuration < Visitor activity < Interval between chat status checks in seconds, 0 disabled.`
+* yellow text - check was received `Chat configuration < Visitor activity < Interval between chat status checks in seconds, 0 disabled.` + 300 seconds *OR* if activity tracking is enabled and check is received + 10 seconds
+* grey text - visitor is offline
 
 #### Required configuration
 
