@@ -25,7 +25,7 @@ LHC_API.args = {
     fscreen: false,      // Should widget content opened in full screen mode. Usefull in page embed 'mode:mode'. Can be activated from theme also only for embed mode.| Optional
     position: 'api',     // If you do not pass we will default to a widget mode | Optional | Default - bottom_right
     hide_status: null,   // By default if position is api we show status widget once chat is started. You can force always to have hidden status widget.
-                         // In that case it makes sense to listen to unread_message_title title event for unread messages indication.
+                         // In that case it makes sense to listen to unread_message_title or unread_message events for unread messages indication.
     position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
     leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
     offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
@@ -56,6 +56,10 @@ LHC_API.args = {
             window.$_LHC.init();
     },
     phash : 'phash',    // Payment ID | Optional
+    profile_pic : null,    // Profile picture to use for the visitor. This 
+                           // It can be direct path to the image - 'https://demo.livehelperchat.com/design/defaulttheme/images/general/logo.png',
+                           // Or can be string used for avatar generation 'remdex' same as https://demo.livehelperchat.com/index.php/widgetrestapi/avatar/remdex
+                           // See documentation from below how to change avatar on the fly 
     events:[{id:"birthday",val:"value"}], // Events to log for proactive chat invitation. `val` is optional | Optional
     tag: 'some_tag',     // Tag for proactive chat invitation | Optional
     pvhash : 'pvhash',  // Payment verify hash | Optional
@@ -132,9 +136,16 @@ function widgetV2Callbacks(loadcb) {
     /**
     * Chat related events
     */
-    // Chat ended
+    // Chat ended and it's cookies were deleted. Happen when visitor ends chat permanently and widget is closed.
+    // This event does NOT happen if just operator closes a chat.
     loadcb.eventEmitter.addListener('endChat',function () {
         console.log('chat finished');
+    });
+    
+    // Chat was closed by visitor or operator.
+    // Happens if visitor or operator closes a chat.
+    loadcb.eventEmitter.addListener('chatClosed',function () {
+        console.log('chat was closed either by operator or visitor');
     });
 
     // Chat started
@@ -185,6 +196,12 @@ function widgetV2Callbacks(loadcb) {
         console.log(data);
     });
 
+    // Listen for status widget changes
+    // Returns indication is widget status visible/invisible
+    // Alias of window.$_LHC.attributes.widgetStatus.subscribe
+   loadcb.attributes.widgetStatus.subscribe(function(data) {
+        console.log(data); // True / False
+    });
 
     /**
     * Need Help widget related events
@@ -220,7 +237,34 @@ function widgetV2Callbacks(loadcb) {
             // stop blinking something in ui
         }
     });
+    
+    // Event is emited if there is unread message and chat widget is not opened, or not focused
+    // Alias of window.$_LHC.eventListener.addListener method
+    // This event is used internally. I would suggest just to use `unread_counter` attribute to track unread messages counter,
+    loadcb.eventEmitter.addListener('unread_message',function (data) {
+        console.log(data);
+    });
+    
+    // Event is emited if we try to remove unread indicator.
+    // This can be called multiple times even if there is no indication set presently
+    // Alias of window.$_LHC.eventListener.addListener
+    loadcb.eventEmitter.addListener('remove_unread_indicator',function (data) {
+        console.log(data);
+    });
+    
+    // Monitor unread messages counter variable
+    // You can also access at any time unread messages counter - window.$_LHC.attributes.unread_counter.value;
+    loadcb.unread_counter.subscribe(function(data) {
+        if (isNaN(data) || !data || data == 0) {
+            // Remove unread indicator
+        } else {
+            // data will hold number of unread messages
+        }
+    });
 
+    // Access variable who holds unread messages counter value
+    console.log(window.$_LHC.attributes.unread_counter.value);
+    
     /**
     * Bot related events
     */
@@ -236,6 +280,9 @@ function widgetV2Callbacks(loadcb) {
     //window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true,'Question' : 'Custom question here'}}}]);
     //window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
     //window.$_LHC.eventListener.emitEvent('showWidget');
+
+    // Dispatch event directly with it's data
+    // window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_direct', 'arg' : {'type': 'profile_pic', data : "remdex"}}]);
 
     // This way we activate our extension
     //window.$_LHC.eventListener.emitEvent('sendChildExtEvent',[{'cmd':'cbscheduler','arg':{}}]);
@@ -465,6 +512,21 @@ Once you include live helper chat script you gain access to global variable `win
 Let say you include widget with position api. Widget status will be invisible, but you can show widget by executing.
 ```js
 window.$_LHC.eventListener.emitEvent('showWidget');
+```
+
+### Set profile picture for the visitor on the fly
+
+* Avatar generator logic is based on https://github.com/multiavatar/multiavatar-php
+* Avatar is visible only for the visitor. It's not remembered next time. So you have to pass it.
+* It won't be shown if visitor opens popup. Might be improved in the future.
+* It works best if you use bubble style widget and use embed or widget modes and do not have popup enabled.
+
+```javascript
+// Set for avatar logic to generate it
+window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_direct', 'arg' : {'type': 'profile_pic', data : "remdex"}}]);
+
+// Set profile picture yourself
+window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_direct', 'arg' : {'type': 'profile_pic', data : "https://demo.livehelperchat.com/design/defaulttheme/images/general/logo.png"}}]);
 ```
 
 ### Reload widget
