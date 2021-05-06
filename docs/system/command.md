@@ -1,6 +1,6 @@
 ---
 id: system-commands
-title: Usefull console commands
+title: Useful console commands
 sidebar_label: Commands
 ---
 
