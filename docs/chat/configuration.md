@@ -217,6 +217,10 @@ Does what it tells :smile:.
 
 (automatic chat's closing/purging)[auto-close-delete.md]
 
+### How many seconds customer has to open already closed chat.
+
+This value controls how long visitor can access chat which was closed by the operator, this applies only after page refresh.
+
 ### Make default pending chats order from old to new
 
 You can change here default order of pending chats.
