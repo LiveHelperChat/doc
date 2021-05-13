@@ -374,6 +374,16 @@ Use can use these variables in your text triggers response text.
 * `{content_raw}` - raw response returned from Rest API call without any parsing
 * `{http_data}` - Request parameters used for rest api call.
 
+## How to iterate through response if `content_[n]` holds an array?
+
+Text message content can look like this. Your iterable object will be available under `{args.item.<internal property of you object>` attribute.
+
+```
+{foreach=content_1}
+- {args.item.mail_asesor}
+{/foreach}
+```
+
 There variables can be used in most of the response types including
 
 * [Set main chat attribute](bot/update-current-chat.md#update-main-chat-attribute) for setting `email`, `nick`, `phone` etc.

@@ -55,6 +55,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show bo
     * [Search for default actions on message](bot/match-action.md)
     * [Restrict execution more than defined times](bot/restrict-execution-more-than-defined-times.md)
     * [Alert icon](bot/alert-icon.md)
+    * Send mail
 * Advanced
     * Collect information
     * Progress
