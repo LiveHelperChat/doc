@@ -35,17 +35,27 @@ Text area supports these replaceable variables
  * `{lhc.nick}`
  * `{lhc.email}`
  * `{lhc.department}`
- * `{lhc.add.<field identifier>}` 
- * `{lhc.var.<variable key>}`
+ * `{lhc.add.<field identifier>}` - supports only first level attributes
+ * `{lhc.var.<variable key>}` - supports only first level attributes
  * `{args.chat.<any chat attribute>}`
  * `{args.chat.incoming_chat.chat_external_id}` - incoming chat id
  * `{args.chat.incoming_chat.payload_array.*}` - first payload attributes in array format
  * `{args.msg.msg}` - visitor message.
- 
+ * `{args.chat.chat_variables_array.debts.0.nit}` - you can go as deep as you want to show chat variable
+
 You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
 
-* `{content_1}` up to `{content_6}`
+* `{content_1}` up to `{content_6}` (these will be string values)
+* `{content_1_json}` up to `{content_6_json}` (will be already json encoded string). This is usefull in case you set [chat variable](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator)
 
+### Foreach cycle
+
+You can foreach any chat variable. In this scenario we foreach `chat variable`
+
+```
+{foreach=args[chat.chat_variables_array.debts]} - {args.item.debt_organisation} for the value of {args.item.debt_value}
+{/foreach}
+```
 
 ### HTML message
 

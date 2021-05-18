@@ -31,6 +31,14 @@ If you set value like below. Attribute will be removed.
 {"bot_touched":null}
 ```
 
+You can also store an object returned from Rest API
+
+```json
+{"debts":{content_5_json}}
+```
+
+After that you can just access any internal attribute or just [cycle through items](text.md#foreach-cycle).
+
 These variables later on can be used by [Rest API](rest-api.md#replaceable-variables) as replaceable variables. `{{lhc.var.<variable_name>}}`
 
 ## Set chat additional attribute [visible by operator]
