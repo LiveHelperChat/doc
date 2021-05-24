@@ -108,6 +108,7 @@ module.exports = {
                 'bot/collecting-information',
                 'bot/collecting-information-two-tries',
                 'bot/validate-information',
+                'bot/text-menu-bot',
                 'bot/integrating-any-ai-bot-without-coding',
                 'bot/integrating-any-ai-bot',
                 'bot/username-based-workflow',
