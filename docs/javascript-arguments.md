@@ -592,11 +592,14 @@ window.$_LHC.eventListener.emitEvent('toggleSound');
 ```js
 
 // More gracefull method. Visitor has closed chat message will be shown
+// To visitor message confirm close modal window will be shown if it's setup
 window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'end_chat_visitor', 'arg' : {}}]);
 
-// Just terminates chat instantly
+// Just terminates chat instantly and delete cookies and closes a widget
 window.$_LHC.eventListener.emitEvent('endChat');
 
+// Just to delete chat cookie, without touching a widget UI
+window.$_LHC.eventListener.emitEvent('endChatCookies',[{"force":true}]);
 ```
 
 ### To add tag. 
