@@ -589,6 +589,9 @@ window.$_LHC.eventListener.emitEvent('toggleSound');
 ```
 
 ### To end the chat
+
+From javascript
+
 ```js
 
 // More gracefull method. Visitor has closed chat message will be shown
@@ -600,6 +603,13 @@ window.$_LHC.eventListener.emitEvent('endChat');
 
 // Just to delete chat cookie, without touching a widget UI
 window.$_LHC.eventListener.emitEvent('endChatCookies',[{"force":true}]);
+```
+
+From backend. PHP Example
+
+```php
+// Make sure you change example.com to your cookie domain
+setcookie('lhc_per', '', time() - 300, '/', 'example.com');
 ```
 
 ### To add tag. 
