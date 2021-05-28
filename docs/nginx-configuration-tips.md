@@ -202,3 +202,23 @@ http {
 
 # Rest of default config
 ```
+
+
+## Running apache under nginx proxy
+
+If your SSL connection is terminated under nginx, php app has to know that it was served through https. Here is an example how nginx configuration section might look like
+
+```apacheconf
+location / {
+        proxy_hide_header Access-Control-Allow-Origin;
+        add_header 'Access-Control-Allow-Origin' 'domain.example.com';
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+        add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH';
+        proxy_pass              http://lhc/;
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $remote_addr;
+        proxy_set_header        Host            $host;
+        proxy_set_header        X-Forwarded-Proto $scheme;
+}
+```
