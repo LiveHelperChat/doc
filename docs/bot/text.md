@@ -42,6 +42,7 @@ Text area supports these replaceable variables
  * `{args.chat.incoming_chat.payload_array.*}` - first payload attributes in array format
  * `{args.msg.msg}` - visitor message.
  * `{args.chat.chat_variables_array.debts.0.nit}` - you can go as deep as you want to show chat variable
+ * `{args.msg_text}` - payload value if button/dropdown value click is unknown.
 
 You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
 

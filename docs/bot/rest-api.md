@@ -320,6 +320,7 @@ Incoming chat attributes. This is usefull if you want to access to payload attri
 * `{{args.chat.incoming_chat.payload_array.*}}` - you can access any first payload attribute. E.g session Id
 * `{{args.chat.incoming_chat.incoming.attributes.<you defined key in attribtues of incoming webhook>}}` - you can use this as placeholder for `Sub URL` or `Sub URL for file`. Just leave empty host attribute.
 * `{{args.chat.incoming_chat.incoming.scope}}` - you can access any attribute of incoming webhook definition
+* `{{args.msg_text}}` - unknown button click payload value
 
 Example
 

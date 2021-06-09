@@ -738,6 +738,17 @@ if (window.$_LHC.attributes.widgetStatus.value === false) {
 }
 ```
 
+### Open offline form while keeping option to start a chat normally
+
+This is usefull if you want to have a button on website which would open widget with offline form instead of a start chat form.
+
+```js
+function showOfflineForm() {
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['isOfflineMode'], data : true}}]);
+    window.$_LHC.eventListener.emitEvent('showWidget');
+}
+```
+
 ## Implementing GDPR scenario
 
 Live Helper chat uses `lhc_*` cookie variables.
