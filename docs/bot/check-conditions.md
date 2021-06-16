@@ -24,6 +24,7 @@ One of the few possible scenarios can be
 * `online_department` use as attribute to check is department online (**respects** department online hours and operators online statuses). In value field 1 means online, 0 - means offline
 * `online_op_department` use as attribute to check is department online (**ignores** department online hours) and checks only for operators. In value field 1 means online, 0 - means offline
 * `online_department_hours` use as attribute to check is department online by online hours settings (**ignores** ignores operators statuses). In value field 1 means online, 0 - means offline
+* `siteaccess` you can use this attribute to check what `siteaccess` visitor is on and execute appropriate trigger. E.g if you want different response by language. `eng`,`lit` [list of default siteacess](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L34-L66)
 
 If you do not enter `Value` means it's empty.
 
