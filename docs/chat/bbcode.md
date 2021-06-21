@@ -77,3 +77,21 @@ Renders link to view survey results for the admin
 Renders button. Chat should have assigned bot
 
 > `[button_action="?(.*?)"?\](.*?)\[/button_action\]`
+ 
+Ordered list
+
+```
+[list]
+[*] First
+[*] Second
+[/list]
+```
+
+Numbered list. Number indicates starting point.
+
+```
+[list=1]
+[*] First
+[*] Second
+[/list]
+```

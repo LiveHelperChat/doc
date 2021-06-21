@@ -252,7 +252,7 @@ Condition for that chat could look like
 
 ## Replaceable variables
 
-Rest API in value fields you can use these replaceable variables
+Rest API in value fields you can use these replaceable variables. These variables by default are already in json format with quotes. To use them without quotes in JSON payload use them like `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
 
 All chat messages. These combinations are usefull in case you are implementing sentimetn analysis and want for example determine the sentiment of operator/visitor or both messages:
 

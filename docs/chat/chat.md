@@ -48,6 +48,8 @@ Operator also would see read only area if he's not a chat owner and he does not 
 
 > 'lhchat', 'writeremotechat' 
 
+In user account Chat tab there is also option to enable/disable sentences [Auto uppercase sentences](users/account.md#auto-uppercase-sentences)
+ 
 ## Toolbar actions
 
 ### Files
