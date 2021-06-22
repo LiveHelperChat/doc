@@ -38,6 +38,7 @@ LHC_API.args = {
     theme: 1,           // Set theme | Optional
     domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
     bot_id : 5,          // Set bot ID for this chat | Optional
+    triger_id : 5,       // Set trigger ID as argument. Usefull in case of testing or some fancy scenarios :) Trigger has to have checked `Can be passed as argument`
     kcw : false,         // While chatting in the widget customer opens popup of the same chat. Should we keep chat in the widget? default - false | Optional
 
     // Read next section about callback function
@@ -466,6 +467,7 @@ Possible arguments. All arguments are optional. Most of the cases you can just o
 /(priority)/<priority> - priority to set
 /(operator)/<operator_id> - operator to set for pending chat
 /(bot)/<bot_id> - bot to use
+/(trigger)/<trigger_id> - trigger to use
 /(mode)/<popup/embed> - default mode if popup. If you are planning to use it as iframe source set it to embed. This is only usefull if you want to have multiple chat's in the same page.
 ```
 

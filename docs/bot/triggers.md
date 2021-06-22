@@ -19,12 +19,13 @@ Each trigger group can be exported and deleted separately.
 
 There can be three types of triggers in general.
 
-![](/img/bot/trigger-type.png?v2)
+![](/img/bot/trigger-type.png?v3)
 
 * `Default` - this trigger is executed as default trigger as soon chat starts.
 * `Default for unknown message` - when bot does not find relevant trigger to user message this trigger is executed.
 * `Default for unknown button click` - when bot does not find relevant trigger to button click this trigger is executed.
 * `Execute always` - this trigger is executed very first all the time. Most of the time you don't need to use this trigger.
+* `Can be passed as argument` - this has to be checked for trigger to be used in Widget themes, Proactive Invitation or `trigger_id` as argument.
 
 ## Trigger events
 
