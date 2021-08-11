@@ -141,6 +141,42 @@ If you are running older version you can also run this command.
 cd /var/www/git/NodeJS-Helper/ && git pull origin master
 ```
 
+If you run into issue like
+
+```
+Updating nodejs extension
+remote: Enumerating objects: 144, done.
+remote: Counting objects: 100% (144/144), done.
+remote: Compressing objects: 100% (39/39), done.
+remote: Total 118 (delta 72), reused 104 (delta 58), pack-reused 0
+Receiving objects: 100% (118/118), 12.58 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (72/72), completed with 15 local objects.
+From https://github.com/LiveHelperChat/NodeJS-Helper
+* branch            master     -> FETCH_HEAD
+  Updating 636aeb4..5631e10
+  error: Your local changes to the following files would be overwritten by merge:
+  nodejshelper/serversc/lhc/server.js
+  Please, commit your changes or stash them before you can merge.
+  Aborting
+  Redirecting to /bin/systemctl restart nodejshelper.service
+```
+
+Run this command
+
+```shell script
+cd /var/www/git/NodeJS-Helper && git checkout -f && git pull origin master
+```
+
+After that just modify `/var/www/git/NodeJS-Helper/nodejshelper/serversc/lhc/server.js` and change `<use_your_secret_hash>` with in `/var/www/html/settings/settings.ini.php` file located `secrethash` variable value.
+
+After that just restart NodeJSHelper service. 
+
+```
+service nodejshelper restart
+```
+
+After all that click clear cache in back office.
+
 ## Todo's after install
 
 * [Generate embed code](integrating.md) and put it on your website.

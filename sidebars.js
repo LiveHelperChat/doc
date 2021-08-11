@@ -197,7 +197,8 @@ module.exports = {
         'integrating/custom-post-survey',
         'google-analytics',
         'chrome-extension',
-        'integrating/whatsapp'
+        'integrating/whatsapp',
+        'integrating/messagebird-whatsapp'
     ]
   },
 };

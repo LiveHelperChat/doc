@@ -25,6 +25,7 @@ LHC_API.args = {
     fscreen: false,      // Should widget content opened in full screen mode. Usefull in page embed 'mode:mode'. Can be activated from theme also only for embed mode.| Optional
     position: 'api',     // If you do not pass we will default to a widget mode | Optional | Default - bottom_right
     hide_status: null,   // By default if position is api we show status widget once chat is started. You can force always to have hidden status widget.
+                         // If other position than api is used, status widget will be shown once chat is started
                          // In that case it makes sense to listen to unread_message_title or unread_message events for unread messages indication.
     position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
     leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
@@ -514,6 +515,22 @@ Once you include live helper chat script you gain access to global variable `win
 Let say you include widget with position api. Widget status will be invisible, but you can show widget by executing.
 ```js
 window.$_LHC.eventListener.emitEvent('showWidget');
+```
+
+### Show/Hide status widget
+
+You can explicitly control when status widget becomes visible.
+
+These command are usefull in combination with `hide_status` argument.
+
+```js
+
+// Show a status widget
+window.$_LHC.attributes.shidden.next(false);
+
+// Hide a status widget
+window.$_LHC.attributes.shidden.next(true);
+
 ```
 
 ### Set profile picture for the visitor on the fly
