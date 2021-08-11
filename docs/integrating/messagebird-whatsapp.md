@@ -21,6 +21,7 @@ You will need to do few bits now
 * Click `Show integration information.`
   * In `Attributes` set your `access_key`
   * After you go live change `https://whatsapp-sandbox.messagebird.com/v1/conversations/` to `https://conversations.messagebird.com/v1/conversations/`
+* Set scope to `messagebird` if it's missing.
 
 Save changes.
 
