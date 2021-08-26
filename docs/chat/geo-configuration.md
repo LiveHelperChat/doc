@@ -8,7 +8,22 @@ sidebar_label: Geo configuration
 
 In geo configuration you can configure how LHC is detecting user location. By default we use [maxmind](https://www.maxmind.com/en/home) for that purpose and you do not have to do any configuration.
 
-![](/img/chat/geo-configuration.jpg)
+Remote ones
+
+* https://www.abstractapi.com/ip-geolocation-api
+* https://ipstack.com
+* https://ipinfodb.com
+* https://locatorhq.com
+* http://ip-api.com
+
+### Local ones
+* mod_geoip2
+* MaxMind - http://dev.maxmind.com/geoip/geoip2/geolite2/
+* PHP-GeoIP module
+
+
+
+![](/img/chat/geo-configuration.jpg?v=2)
 
 To show online visitors icons in the map you will have
 
