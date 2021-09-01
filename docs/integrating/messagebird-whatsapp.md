@@ -12,7 +12,7 @@ Usefull information regarding integration
 
 ## Incoming webhook definition
 
-First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/messagebird-iwh.json?v=2)
+First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/messagebird-iwh.json?v=3)
 
 You will need to do few bits now
 
@@ -41,7 +41,7 @@ All the rest should work out of the box.
 
 This will be required for an admin messages being send back to visitor (WhatsApp).
 
-You can import configuration download it [here](/img/integration/messagebird-restapi.json)
+You can import configuration download it [here](/img/integration/messagebird-restapi.json?v=2)
 
 Import configuration. You do not need to change anything once imported.
 
