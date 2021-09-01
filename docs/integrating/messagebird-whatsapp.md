@@ -41,7 +41,7 @@ All the rest should work out of the box.
 
 This will be required for an admin messages being send back to visitor (WhatsApp).
 
-You can import configuration download it [here](/img/integration/messagebird-restapi.json?v=2)
+You can import configuration download it [here](/img/integration/messagebird-restapi.json?v=3)
 
 Import configuration. You do not need to change anything once imported.
 
