@@ -280,6 +280,11 @@ Attributes usefull for sending content in `Sub URL for file`
 * `{{file_url}}` - url to download file directly
 * `{{file_name}}` - uploaded file name from operator
 
+Additional attribute you can use for `Sub URL for file` and `If you are sending file you can have a different body content`
+
+* `{file_api}your request body in case it's a file{/file_api}`
+* `{image_api}your request body in case it's an image{/image_api}`
+
 Main chat attributes. You can access only first level attributes.
 
 * `{{lhc.nick}}` - visitor nick
