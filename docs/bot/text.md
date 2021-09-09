@@ -43,6 +43,9 @@ Text area supports these replaceable variables
  * `{args.msg.msg}` - visitor message.
  * `{args.chat.chat_variables_array.debts.0.nit}` - you can go as deep as you want to show chat variable
  * `{args.msg_text}` - payload value if button/dropdown value click is unknown.
+ * `{args.chat.online_user.previous_chat.<previous chat attribute>}` This is usefull if on chat start you want to update present chat attributes based on [previous one](/img/bot//previous-chat.png.jpg). This action should be executed on chat start trigger. Few examples
+   * `{args.chat.online_user.previous_chat.nick}` - access previous chat nick
+   * `{args.chat.online_user.previous_chat.chat_variables_array.debts.0.nit}` - access previous chat chat variables
 
 You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
 
