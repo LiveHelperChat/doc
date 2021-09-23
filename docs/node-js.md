@@ -147,7 +147,7 @@ Yes it does. We are waiting users actions and only when there is some informatio
 
 Yes it does!
 
-### what is publish notifications option?
+### what does publish notifications option do?
 
 When enabled they eliminate administration sync calls. (Right column chats list). Also publish notifications are used when desktop client writes a mesage. Like desktop client does not connect to NodeJs. Workflow is the following
 
