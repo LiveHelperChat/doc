@@ -126,7 +126,7 @@ Need to notice one thing that you may have to increase ulimit in system to accep
 
 ### How does it works and what ajax calls it eliminates?
 
-1.  Then user sends a message using ajax and receives a html for message list append. This already formated html is send directly to Node.js and is distrubuted in real time to all connected users (Chatbox case). They do not have to execute sync. Actually there is no sync going in the background anymore with this extension. Also then user sends a message, admin is informted that there is some information and only then operator executes sync call.
+1.  When user sends a message using ajax and receives a html for message list append. This already formated html is send directly to Node.js and is distrubuted in real time to all connected users (Chatbox case). They do not have to execute sync. Actually there is no sync going in the background anymore with this extension. Also when user sends a message, admin is informted that there is some information and only then operator executes sync call.
 2.  Then operator sends a message to chat. User is informed that there is pending message and ajax call is executed. So there is no running ajax calls in the background anymore. Ajax is executed only then there is some information.
 3.  If you use publish notifications, administration interface sync calls are also eliminated.
 
@@ -137,19 +137,19 @@ Need to notice one thing that you may have to increase ulimit in system to accep
 ### I do not receive a messages, what to do?
 
 *   Enable debug output in NodeJS extension. Just edit settings.js file and enable debug output.
-*   Then you accept or start new chat as a client, you should see some actions in the console. Also check in chrome debug that there is no errors and it connects to your server.
+*   When you accept or start new chat as a client, you should see some actions in the console. Also check in chrome debug that there is no errors and it connects to your server.
 
 ### Does it also reduces back office operators sync calls?
 
-Yes it does. We are waiting users actions and only then there is some information we execute ajax sync call.
+Yes it does. We are waiting users actions and only when there is some information we execute ajax sync call.
 
 ### Does this extensions supports automated hosting plugin?
 
 Yes it does!
 
-### What for publish notifications are used?
+### what does publish notifications option do?
 
-Then enabled they eliminates administration sync calls. (Right column chats list). Also publish notifications are using then desktop client writes a mesage. Like desktop client does not connect to NodeJs. Workflow is the following
+When enabled they eliminate administration sync calls. (Right column chats list). Also publish notifications are used when desktop client writes a mesage. Like desktop client does not connect to NodeJs. Workflow is the following
 
 Desktop client -> Web server -> Redis -> NodeJs pulls notification -> Emits signal to listening socket -> Web browser issues ajax request to update it's messages list.
 
