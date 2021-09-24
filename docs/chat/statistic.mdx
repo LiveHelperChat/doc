@@ -12,6 +12,37 @@ If you have large number of chats I would suggest to use ElasticSearch plugin fo
 
 Main statistic tab. These charts are grouped by month by default. If you want grouping by day use `Chats statistic` tab.
 
+## Terminology
+
+Attributes used for closing chat
+
+* `lsync` - time last time we saw a visitor.
+* `pnd_time` - time since chat become pending. This can be different than chat start time. (Bot transfer chat to pending state)
+* `wait_time` - how long visitor waited before chat was accepted
+* `user_id` - operator id
+
+### Abandoned chat
+
+Rule in the code looks like
+```
+((`lsync` < (`pnd_time` + `wait_time`) AND `wait_time` > 1) OR  (`lsync` > (`pnd_time` + `wait_time`) AND `wait_time` > 1 AND `user_id` = 0))
+```
+
+* Last time we saw a visitor is less than the time chat was accepted and wait time was longer than 1 second. Chat's where only bot participated wait time is equal to 1. That's why we have to check only wait time > 1
+* Last time we saw visitor is greater than wait time but user is not assigned to a chat.
+
+### Dropped chat
+
+Rule in the code looks like.
+
+```
+(`lsync` > (`pnd_time` + `wait_time`) AND `has_unread_op_messages` = 1 AND `user_id` > 0)
+```
+
+* Chat was accepted by operator
+* Visitor was seen after chat was accepted
+* Chat has unread operator messages
+
 ### Chat numbers by status
 
 Usefull to see general number of chats.
@@ -158,12 +189,6 @@ Clicking on `Time online (sum of time spend online)` will give you log of operat
 This will represent general performance and will let you know how many chats were abandoned before they even got accepted.
 
 <Image img={require('../../static/img/statistic/general-performance.jpg')} />
-
-Abandoned chat is considered if
- * There is no operator assigned to the chat and visitor has already left and chat was closed
- * Last sync was before chat was accepted by the operator
-
-You can also filter for abandoned chats directly in statistic section by checking `Abandoned chat`.
 
 To optimise operators performance and avoid operator accepting abandoned chats it's recommended to [setup automatic](automatic-closing-purging.md) chat closing for
 
