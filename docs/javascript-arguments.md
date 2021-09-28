@@ -19,6 +19,8 @@ LHC_API.args = {
     wwidth: 350,
     pheight: 520,
     pwidth: 500,
+    hide_parent: false,  // If we get event if any iframe page has already lhc embeded we just hide script in parent page. Oposite action to `hide_iframe`
+    hide_iframe: false,  // If script is embeded in iframe we can hide automatically it if we detect that parent page already has Live Helper Chat script embeded
     mobile_view: null    // You can force widget to render in mobile view (full screen) or not | Optional | Default - shows full screen on mobile devices | Possible value true or false
     sright: 0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
     sbottom: 0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
