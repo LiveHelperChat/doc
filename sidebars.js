@@ -18,6 +18,7 @@ module.exports = {
     ],
    Users: [
         'users/account',
+        'users/account-edit',
         'users/users-groups',
         'users/users-roles',
         'users/users-users',

@@ -1,6 +1,6 @@
 ---
 id: messagebird-whatsapp
-title: MessageBird WhatsApp
+title: MessageBird WhatsApp/Facebook Messenger
 ---
 
 This tutorial described how you can add WhatsApp support using https://messagebird.com/en/ product.
@@ -10,9 +10,32 @@ Usefull information regarding integration
 * During integration we will be using `https://whatsapp-sandbox.messagebird.com/v1/conversations/` sandbox address. 
 * After you go live you have to switch to production `https://conversations.messagebird.com/v1/conversations/`
 
+## Setting webhook address for production
+
+To set webhook listener execute this curl command after replacing these variables
+
+* `<live access key>` - your live api/access key
+* `<channel id from MessageBird back office>` - channel id from MessageBird back office
+* `<identifier>` - your identifier
+* `<lhc install path>` - install path of Live Helper Chat
+
+```shell
+curl -X POST "https://conversations.messagebird.com/v1/webhooks/" \
+  -H "Authorization: AccessKey <live access key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "events": ["message.created"],
+    "channelId": "<channel id from MessageBird back office>",
+    "url": "https://<lhc install path>/index.php/webhooks/incoming/<identifier> from lhc back office>",
+    "settings": {
+       "expected_http_code" : "2xx"
+    }
+  }'
+```
+
 ## Incoming webhook definition
 
-First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/messagebird-iwh.json?v=3)
+First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/messagebird-iwh.json?v=4)
 
 You will need to do few bits now
 
@@ -51,7 +74,7 @@ Import configuration. You do not need to change anything once imported.
 
 We need to set a bot which trigger will be executed upon webhook event.
 
-You can import configuration download it [here](/img/integration/messagebird-bot.json)
+You can import configuration download it [here](/img/integration/messagebird-bot.json?v=4)
 
 * Set correct Rest API which you imported previously and method to call.
 

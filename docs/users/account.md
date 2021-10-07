@@ -45,6 +45,10 @@ Required permission to be able edit assigned departments. Without this list will
 
 > 'lhuser','editdepartaments'
 
+Required permission to choose all departments in account edit
+
+> 'lhuser','self_all_departments'
+
 ## Visible lists
 
 Use can choose what lists he can see.
