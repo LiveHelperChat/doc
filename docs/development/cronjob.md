@@ -40,6 +40,8 @@ do
     then
       touch $fileCron;
       cd /home/lhc/lhc-official/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow >> workflow.log
+      # You can comment out line below if you are not using transfer between departments workflow
+      cd /home/lhc/lhc-official/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/transfer_workflow >> transfer_workflow.log
       echo "$(tail -1000 workflow.log)" > workflow.log
       rm -f $fileCron;
     else
@@ -53,7 +55,6 @@ done
 ```
 
 ## Chat archive cronjob setup
-
 
 
 ```shell script
@@ -81,6 +82,32 @@ php cron.php -s site_admin -c cron/encrypt
 ```
 
 Should be run every 12 hours or so.
+
+## Transfers between departments workflow
+
+If you are using transfer between department workflow. You can setup this cronjob. So chat would be transferred to other department even if the visitor left the chat. By default, transfer happens only if visitor in the chat.
+
+In order for this script being executed in chat configuration this option has to be enabled
+
+```
+Should cronjob run departments transfer workflow, even if user leaves a chat
+```
+
+Cronjob script
+
+```
+php cron.php -s site_admin -c cron/transfer_workflow
+```
+
+## Login monitoring
+
+This cronjob monitors for users matching `Disable user automatically if from last login passed X number of days` and `Force user logout if last login was X hours ago`
+
+Should be run every hour
+
+```shell script
+php cron.php -s site_admin -c cron/login_monitoring
+```
 
 ## Notifications
 

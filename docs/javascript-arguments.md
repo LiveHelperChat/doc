@@ -662,6 +662,27 @@ window.$_LHC.eventListener.emitEvent('checkMessageOperator');
 window.$_LHC.eventListener.emitEvent('openPopup');
 ```
 
+### Track custom event
+
+If you are making custom theme and want to track event in custom HTML you have written in `Widget themes -> Custom content -> Custom html before start chat form fields, widget`
+
+P.s please remove `parent` if you want trigger event just from website
+
+```js
+window.parent.$_LHC.eventListener.emitEvent('trackingEvent',[{'ec':'Channel','el':'WhatsApp'}]);
+```
+
+Possible arguments are
+
+```json
+{
+  ec: "Event Category", 
+  ea: "Event action",
+  el: "Event label",
+  ev: "EVent Value"
+}
+```
+
 ### Redirect visitor
 
 To redirect user to custom URL
