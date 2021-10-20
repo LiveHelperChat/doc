@@ -37,17 +37,24 @@ Required permission to access account page
 If operator clicks checked to the left of the `eye` icon he will get access to read this departments chats but not accept/chat.
 
 ### Permissions
-Required permissions to access assigned departments tab
+
+Required permissions to access assigned departments tab and see assigned departments
 
 > 'lhuser','see_assigned_departments'
 
-Required permission to be able edit assigned departments. Without this list will be just rendered without possibility for operator edit assigned departments.
+Required permissions to access assigned departments tab and see assigned departments groups
+
+> 'lhuser','see_assigned_departments_groups'
+
+Required permission to be able to edit assigned departments/departments groups. Without this list will be just rendered without possibility for operator edit assigned departments. This gives permission to choose departments groups and departments.
 
 > 'lhuser','editdepartaments'
 
 Required permission to choose all departments in account edit
 
 > 'lhuser','self_all_departments'
+
+If operator will have `'lhuser','editdepartaments'`, but won't have any of `'lhuser','see_assigned_departments'`, `'lhuser','see_assigned_departments_groups'` he still won't be able to edit his own departments.
 
 ## Visible lists
 

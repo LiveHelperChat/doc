@@ -152,11 +152,23 @@ You can write custom HTML in these fields to be appended in various chat widget 
 
 ### Custom html before start chat form fields, popup
 
+React attribute path 
+
+```js
+{'k': ['chat_ui','custom_html_widget'], 'v' : 'Custom html before start chat form fields, popup'}
+```
+
 This HTML is shown if chat will be started with an operator and not a bot in popup window.
 
 ![](/img/theme/custom-html-popup.png)
 
 ### Custom html before start chat form fields, widget
+
+React attribute path
+
+```js
+{'k': ['chat_ui','custom_html_widget'], 'v' : 'Custom html before start chat form fields, popup'}
+```
 
 This HTML is shown if chat will be started with an operator and not a bot.
 
@@ -164,11 +176,23 @@ This HTML is shown if chat will be started with an operator and not a bot.
 
 ### Custom html before start chat form fields, popup (bot mode)
 
+React attribute path
+
+```js
+{'k': ['chat_ui','custom_html_widget'], 'v' : 'Custom html before start chat form fields, popup (bot mode)'}
+```
+
 This HTML is shown only if chat will be started with a bot in a popup.
 
 ![Only bot online](/img/theme/custom-html-popup-bot.png)
 
 ### Custom html before start chat form fields, widget (bot mode)
+
+React attribute path
+
+```js
+{'k': ['chat_ui','custom_html_widget'], 'v' : 'Custom html before start chat form fields, widget (bot mode)'}
+```
 
 This HTML is shown only if chat will be started with a bot.
 
@@ -176,15 +200,81 @@ This HTML is shown only if chat will be started with a bot.
 
 ### Custom html before standard widget header
 
+React attribute path
+
+```js
+{'k': ['chat_ui','custom_html_header'], 'v' : 'Custom html before start chat form fields, popup'}
+```
+
 HTML is rendered before widget header
 
 ![Inside widget header](/img/theme/before-header.png)
 
 ### Custom html inside standard widget header
 
+React attribute path
+
+```js
+{'k': ['chat_ui','custom_html_header_body'], 'v' : 'inside header'}
+```
+
 HTML content is shown above standard widget header.
 
 ![Inside widget header](/img/theme/inside-header.png)
+
+### Custom html above status/profile body in online mode
+
+React attribute path
+
+```js
+{'k': ['chat_ui','pre_chat_html'], 'v' : '<b>Intro</b> pre chat HTML'}
+```
+
+This field location is identical to Start chat form settings. `Pre-chat HTML` field location.
+
+![Pre-chat HTML](/img/theme/before-profile.png)
+
+### Custom html above status/profile body in offline mode
+
+React attribute path
+
+```js
+{'k': ['chat_ui','pre_chat_html'], 'v' : '<b>Intro</b> pre chat HTML'}
+```
+
+This field location is identical to Start chat form settings. `Offline Pre-chat HTML` field location.
+
+![Offline Pre-chat HTML](/img/theme/offline-pre-chat-html.png)
+
+### Intro messages
+
+#### Operator intro message. You can wrap custom HTML with [html][/html] bbcode`
+
+React attribute path
+
+```js
+{'k': ['chat_ui','intro_message'], 'v' : '[html]<b>Intro</b> message with custom html[/html]'}
+```
+
+```html
+[html]<b>Intro</b> message with custom html[/html]
+```
+
+#### Operator intro message in HTML
+
+React attribute path
+
+```js
+{'k': ['chat_ui','intro_message_html'], 'v' : 'Custom html before start chat form fields, popup'}
+```
+
+```html
+<b>Intro</b> message with custom html
+```
+
+Results in
+
+![Intro messages](/img/theme/intro-messages.png)
 
 ### Custom html before standard widget status header
 

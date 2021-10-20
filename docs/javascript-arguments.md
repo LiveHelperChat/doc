@@ -15,6 +15,11 @@ LHC_API.args = {
     cookie_enabled: true, // Is cookies enabled in for Live Helper Chat to use, | Optional | Default - true. See `Implementing GDPR scenario` section in this article
     pnode : 'lhc-node-id'// Where should we render our HTML. By default we append it to body | Optional <div id="lhc-node-id"></div>
     lhc_base_url:'//demo.livehelperchat.com/',  // Required
+    react_attr: [       // Optional
+        // In this case we set custom Intro operator message in HTML format
+        {'k': ['chat_ui','intro_message_html'], 'v' : '<b>just dymmy html</b>'}, // 'k' : <attribute path>, 'v' : <attribute value>
+        // For all possible UI related attributes please refer to React UI Attributes section 
+    ],
     wheight: 450,
     wwidth: 350,
     pheight: 520,
@@ -296,6 +301,27 @@ function widgetV2Callbacks(loadcb) {
     
     // We show a widget
     //window.$_LHC.eventListener.emitEvent('showWidget');
+
+    /* 
+     * You can set custom UI attributes also from load callack 
+     * */
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[
+        {
+            'cmd' : 'attr_set', 'arg' : {
+                'type':'attr_set','attr': ['chat_ui','pre_chat_html'],
+                data : "Pre chat HTML"
+            }
+        }
+    ]);
+
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[
+        {
+            'cmd' : 'attr_set', 'arg' : {
+                'type':'attr_set','attr': ['chat_ui','intro_message'],
+                data : "[html]<b>Intro message</b>[/html]"
+            }
+        }
+    ]);
 }
 ```
 
@@ -751,6 +777,37 @@ window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_event'
     }
 }}]);
 ```
+
+### React UI Attributes
+
+Sample page - https://livehelperchat.com/lhcsamples/sample-3.html
+
+```js
+LHC_API.args = {
+    ...
+    react_attr: [       // Optional
+        // In this case we set custom Intro operator message in HTML format
+        {'k': ['chat_ui', 'intro_message_html'], 'v': '<b>just dymmy html</b>'}, // 'k' : <attribute path>, 'v' : <attribute value>
+        // For all possible UI related attributes please refer to React UI Attributes section 
+    ]
+    ...
+}
+```
+
+![](/img/theme/chat-ui-all.png)
+
+Quick list of `chat_ui` attributes
+
+ * `['chat_ui','custom_html_widget']`
+ * `['chat_ui','custom_html_header']`
+ * `['chat_ui','custom_html_header_body']`
+ * `['chat_ui','pre_chat_html']`
+ * `['chat_ui','intro_message']`
+ * `['chat_ui','intro_message_html']`
+ * `['chat_ui','cmmsg_widget']` - this html is set inside messages block and is usefull if you want manually format messages layout in start chat form, otherwise `intro_message` or `intro_message_html` should be used
+ * `['chat_ui','operator_profile']` - overrides default operator profile HTML
+
+[Please refer to theme article custom attributes section](theme/theme.md/#how-to-make-automatic-status-change-for-frontend-visitors)
 
 ### How do I check is widget open?
 
