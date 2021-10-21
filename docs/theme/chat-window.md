@@ -76,6 +76,12 @@ Voice call icon is visible only if operator accepts a chat. [More about voice ca
 
 ![](/img/theme/voice-call.png)
 
+### Voice message
+
+Read more about [voice messages](voice_messages.md)
+
+![](/img/theme/chat-window-voice-message.png)
+
 ## I don't like one of the text and it's not changeable in widget theme?
 
 Use simple [extension](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridetranslation/translations) to translate english text directly there
