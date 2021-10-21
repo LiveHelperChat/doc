@@ -35,6 +35,16 @@ Here you can change general outlook of widget. Like borders padding etc.
 
 Sets background color for widget header
 
+### Header icons order. _print is optional and indicates we should also print a text after an icon
+
+Using this field you can adjust icons location in the widget
+
+E.g let's put minimize and close icon to the right
+
+```
+right_close,right_min
+```
+
 ### Widget border color
 
 Border color for the widget
@@ -108,6 +118,10 @@ If you have embeded Live Helper Chat script in popup it makes sense on popup clo
 ### Show start chat form instantly after operator closes a chat.
 
 Instead of writing message chat was closed we will show start chat form for the visitor instantly.
+
+### Allow visitor to change font size.
+
+You can allow visitor to change messages font size directly in widget.
 
 ### Show previous chat messages in chat widget.
 

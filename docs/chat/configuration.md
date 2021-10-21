@@ -197,7 +197,7 @@ Not supporter in a new widget yet.
 
 ### Show BB Code button
 
-Not used anymore and will be removed over time.
+Show/Hide face icon for the new widget
 
 ### Reopen chat functionality enabled
 

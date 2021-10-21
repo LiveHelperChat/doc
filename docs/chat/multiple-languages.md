@@ -13,6 +13,9 @@ Live Helper Chat support many languages sometimes it's confusing how to use Live
  * If you are using static URL e.g `chat/start`, `chat/begin`, `/` etc. You can change default `siteaccess`. See below.
  * For static URL you can also just append language to url E.g `/fre`, `/fre/chat/start`
  * You can also use [widget themes](theme/theme.md) and translate basic texts there
+ * [Read how to override default translations](language.md#how-to-override-default-translations)
+
+If you want you can also use [extension to translate text](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridetranslation/translations)
 
 ## How to change default language (`siteaccess`)?
 

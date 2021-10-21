@@ -13,6 +13,7 @@ module.exports = {
     ],
     Design: [
         'theme/theme',
+        'theme/chat-window',
         'theme/back-office-theme',
         'theme/personal-theme'
     ],
