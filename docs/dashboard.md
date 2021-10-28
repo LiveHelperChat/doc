@@ -65,6 +65,13 @@ This widget shows only chats with specific triggers selected. It's usefull for m
 
 ![](/img/dashboard/ongoing-trigger-alerts.png?v=2)
 
+For managers, I recommend having something like that in their account
+
+* They will see subject notifications and chats only if it's assigned to them.
+
+![](/img/dashboard/trigger-alerts-manager.png)
+
+
 #### Required configuration
 
 > 'lhchat','subject_chats'
