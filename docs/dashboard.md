@@ -54,6 +54,21 @@ In order to enable messaging other operators ![](/img/dashboard/start-chat-opera
 
 This is part of the `Group chats` functionality.
 
+### Ongoing trigger alerts!
+
+This widget shows only chats with specific triggers selected. It's usefull for monitoring purposes to see only chats with specific subjects.
+
+* It also plays sound independently on sound settings of operator.
+* Notification is shown based on operator settings.
+* Sound played - `design/defaulttheme/sound/subject_chat.mp3`
+* By default, once enabled, we show all chats which has at-least one subject set
+
+![](/img/dashboard/ongoing-trigger-alerts.png?v=2)
+
+#### Required configuration
+
+> 'lhchat','subject_chats'
+
 ### Departments stats
 
 You can see present department's statistic.
