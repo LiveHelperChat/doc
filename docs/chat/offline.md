@@ -152,6 +152,21 @@ You can also choose few options regarding offline message storage under
 
 ![Offline settings](/img/chat/offline-settings.jpg)
 
+## Tracking offline messaging statistic
+
+If you have not checked option `Automatically change offline chat status to closed`. Most likely main chat status `status_sub` from 7 (offline request) upon chat acceptance or close will change to any other and statistic wll be mixed.
+
+To precisely track offline chats you can 
+
+* Either `Automatically change offline chat status to closed` check in `Offline settings`
+* You can listen for an event `chat.chat_offline_request_saved` and add subject to a chat.
+
+![Offline settings](/img/chat/offline-saved-request.png)
+
+Bot trigger adds subject with ID 12 (replace to your own) to the chat.
+
+![Offline request subject](/img/chat/offline-request-subject.png)
+
 ## Permissions
 
 Required permissions to manage offline settings.

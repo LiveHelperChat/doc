@@ -196,6 +196,7 @@ module.exports = {
     ],
     Integration: [
         'integrating/opencart',
+        'integrating/third-party-back-office',
         'integrating/custom-post-survey',
         'google-analytics',
         'chrome-extension',
