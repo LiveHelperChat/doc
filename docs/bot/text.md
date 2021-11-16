@@ -46,6 +46,7 @@ Text area supports these replaceable variables
  * `{args.chat.online_user.previous_chat.<previous chat attribute>}` This is usefull if on chat start you want to update present chat attributes based on [previous one](/img/bot//previous-chat.png.jpg). This action should be executed on chat start trigger. Few examples
    * `{args.chat.online_user.previous_chat.nick}` - access previous chat nick
    * `{args.chat.online_user.previous_chat.chat_variables_array.debts.0.nit}` - access previous chat chat variables
+ * `{msg_id}` - present message id.
 
 You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
 
@@ -65,13 +66,31 @@ You can foreach any chat variable. In this scenario we foreach `chat variable`
 
 Content of this textarea will be rendered as HTML directly. It also supports translations.
 
+Example how to generate trigger button. Trigger in this case is `1355`. Trigger ID you can see always in trigger menu.
+
+```
+To return to main menu click <a onclick='lhinst.updateTriggerClicked()' data-id="{msg_id}" data-payload="1355" class="action-image link-trigger-button">here</a>
+```
+
 ### Save as system message.
 
 Message will be saved a system message and won't be visible by visitor. Might be usefull during Rest API calls integration if you want to store some information just for operators.
 
+### Save as a visitor message.
+
+Sometimes you want to save a message as it was a visitor message.
+
+### Hide on next message.
+
+This message will be auto hidden as soon there is at-least one other message after present one.
+
 ### Render buttons as dropdown.
 
 If you have many buttons. E.g countries you provide services. You can check this option and buttons will be rendered as dropdown options.
+
+### Render buttons even if it's not the last message.
+
+This will render buttons even if buttons is not the last message in bot response.
 
 ### Hide text area on response.
 

@@ -95,3 +95,9 @@ Numbered list. Number indicates starting point.
 [*] Second
 [/list]
 ```
+
+Generate button clicks
+
+```
+To return to main menu click [link_trigger=1355]here[/link_trigger]
+```
