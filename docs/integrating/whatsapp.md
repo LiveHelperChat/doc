@@ -96,6 +96,13 @@ Identical webhooks should be setup for these events
 
 Webhook configuration is needed for an admin messages being send back to visitor.
 
+Condition : Compare attribute (then click Add)
+
+Attribute : {args.chat.incoming_chat.incoming.scope}
+Condition : =
+Value     : whatsapp
+
+
 * Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
 
 ![](/img/integration/whatsapp-webhook.png)
