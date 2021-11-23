@@ -8,7 +8,7 @@ sidebar_label: Chat window
 
 This is our main chat window. I'll explain what each of the item does there and how can it be used.
 
-​![](/img/chat/chat-window.jpg)
+​![](/img/chat/chat-window-v2.png)
 
 ## Chat tab
 
@@ -148,6 +148,16 @@ Copying messages to clipboard can be done by clicking this icon
 Modal window content
 
 ​![](/img/chat/copy-messages-modal.jpg)
+
+### Bot
+
+If in the chat was involed bot we show bot icon. Tooltip will show bot ID
+
+![](/img/chat/bot.png)
+
+If operator has permission `'lhgenericbot','see_actions'` he can click an icon and if there we any [Log actions](bot/log-action.md) he will see a modal window like this
+
+![](/img/chat/log-action.png)
 
 ### Redirect to survey
 

@@ -60,6 +60,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show bo
     * Collect information
     * Progress
     * Trigger to execute by response
+    * [Log action](bot/log-action.md)
     * [Execute Javascript](bot/execute-javascript.md)
     * Execute action
     * [Execute trigger body](bot/trigger-body.md)
