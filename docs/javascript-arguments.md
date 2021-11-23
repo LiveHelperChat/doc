@@ -778,6 +778,20 @@ window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'dispatch_event'
 }}]);
 ```
 
+### How to execute any trigger manually?
+
+In this scenario we are executing trigger with id `1306`
+
+This trigger in his settings also has checked `Can be passed as argument`
+
+```js
+// Just to show a widget
+window.$_LHC.eventListener.emitEvent('showWidget');
+
+// This will work only if chat has started
+window.$_LHC.attributes.mainWidget.cont.elmDom.contentWindow.postMessage('lhc_trigger_click:1306', '*');
+```
+
 ### React UI Attributes
 
 Sample page - https://livehelperchat.com/lhcsamples/sample-3.html
