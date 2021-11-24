@@ -7,8 +7,25 @@ This trigger logs custom content into separate table `lh_chat_action`.
 
 Bot configuration can look like this
 
-![](/img/bot/log-action.png)
+![](/img/bot/log-action.png?v=2)
 
-In above scenario we log very first trigger information which was executed and the last one. As this trigger is used as target for `Send predefined block` first trigger will be the trigger where all action started.
+In above scenario we log 
 
-About `first_trigger` and `current_trigger` variables you can read in [Text messages](bot/text.md)
+* Current trigger data
+* First trigger which was executed as soon bot workflow started
+* Trigger data which execute Log action trigger from using `Send predefined block` response type
+
+About `first_trigger`, `current_trigger` variables you can read in [Text messages](bot/text.md)
+
+`predefined_trigger` - is a special variable is available only if `Log action` trigger is called from `Send predefined block`
+
+```json
+{
+    "current_trigger_id": {args.current_trigger.id},
+    "current_trigger_name": {args.current_trigger.name},
+    "first_trigger_id": {args.first_trigger.id},
+    "first_trigger_name": {args.first_trigger.name},
+    "predefined_trigger_id": {args.predefined_trigger.id},
+    "predefined_trigger_name": {args.predefined_trigger.name}
+}
+```
