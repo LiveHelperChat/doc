@@ -155,6 +155,9 @@ function widgetV2Callbacks(loadcb) {
     // Happens if visitor or operator closes a chat.
     loadcb.eventEmitter.addListener('chatClosed',function () {
         console.log('chat was closed either by operator or visitor');
+        
+        // You can emit this event and it will close a widget for the vistior as soon operator closes a chat
+        // window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'end_chat_visitor', 'arg' : {}}]);
     });
 
     // Chat started
