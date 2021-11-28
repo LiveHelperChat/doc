@@ -40,10 +40,14 @@ LHC_API.args = {
                                                     // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
     identifier : 'lhc', // Can be used for custom proactive invitation | Optional
     dep_default: 4,     // Department id which should be selected by default. Usefull in case you are passing more than one department | Optional
-    department: [5,4],  // Department, can be multiple or one | Optional
+    department: [5,4,'alias-of-department'],  // If department has entered alias, chat can't be started with that departmnet if argumetn is not an alias
+                                              // In combination with Start chat form settings `Requires pre-filled department` user won't be able to figureout existing departments in the system
+                                              // Department, can be multiple or one | Optional
     product: [4,5],     // Product to choose from | Optional
-    priority: 10005,     // Set priority for started chat | Optional
-    theme: 1,           // Set theme | Optional
+    priority: 10005,    // Set priority for started chat | Optional
+    theme: 1,           // Set theme | Optional. Can be either theme number or alias
+                        // <theme id> or 'alias-of-theme'
+                        // If theme has alias set up. Theme can be set only using alias
     domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
     bot_id : 5,          // Set bot ID for this chat | Optional
     triger_id : 5,       // Set trigger ID as argument. Usefull in case of testing or some fancy scenarios :) Trigger has to have checked `Can be passed as argument`

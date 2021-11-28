@@ -118,5 +118,10 @@ To what survey visitor should be redirected
 
 ## How to disable user to change department?
 
+This allows to hide all existing departments from visitors in case one chat instance supports multiple clients as examples.
+
  * Easiest way is just to pass department and make other departments invisible. So even if visitor does not pass any department he won't be able to see all departments in dropdown.
  * Another way is just make some changes in [start chat form settings](../chat/start-chat-form-settings.md#department-settings).
+   * In start chat form settings check `Requires pre-filled department`
+   * In departments use `Alias` fields.
+   * Chat will be able to be started if valid alias of specific department is set.
