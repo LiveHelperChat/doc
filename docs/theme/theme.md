@@ -493,7 +493,7 @@ Just send it to me. remdex@gmail.com
 
 <div class="flex-video"><iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/hNLuLxOq7E0" width="560"></iframe></div>
 
-### How to avoid visitors figuring out existing themes?
+### How to avoid visitors finding out existing themes?
 
 Just set an alias in widget theme. Theme won't be used if not valid theme alias is passed as argument.
 

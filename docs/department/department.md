@@ -124,4 +124,5 @@ This allows to hide all existing departments from visitors in case one chat inst
  * Another way is just make some changes in [start chat form settings](../chat/start-chat-form-settings.md#department-settings).
    * In start chat form settings check `Requires pre-filled department`
    * In departments use `Alias` fields.
+   * In embed code make sure you pass `Alias` value as department
    * Chat will be able to be started if valid alias of specific department is set.
