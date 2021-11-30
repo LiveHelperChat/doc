@@ -12,9 +12,34 @@ If you are running wordpress site it's 99.9% chance Live Helper Chat will work j
 
 * Download zip - https://github.com/remdex/livehelperchat/archive/master.zip
 * Minimum PHP 7.2
-* Mysql/MariaDB
+* Mysql 5.7 >= OR MariaDB 10.2.3 >=
 * Apache/Nginx
 * For Laravel version please go to https://github.com/LiveHelperChat/livehelperchat_laravel
+
+```
+# Optional but recommended
+php-phpiredis
+php-imap
+php-pecl-redis4
+php-pecl-igbinary
+php-geos
+php-fpm
+php-opcache
+
+# Required
+php-json
+php-cli
+php-gd
+php-xml
+php-common
+php-pdo
+php-pecl-zip
+php-mysqlnd
+php-mbstring
+php
+php-bcmath
+```
+
 
 ## Folders permissions
 
