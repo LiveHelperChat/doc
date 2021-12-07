@@ -48,6 +48,55 @@ You will need to do few bits now
 
 Save changes.
 
+Sample of webhook this configuration support
+
+```json
+{
+    "contact": {
+        "id": "3637e85836bd49a185c8cabd62a88f8c",
+        "href": "",
+        "msisdn": 37065272274,
+        "displayName": "Remigijus Kiminas",
+        "firstName": "",
+        "lastName": "",
+        "customDetails": [],
+        "attributes": [],
+        "createdDatetime": "2021-08-07T05:13:01Z",
+        "updatedDatetime": "2021-08-07T05:13:01Z"
+    },
+    "conversation": {
+        "id": "2386ce6e75af4286a5617f7900c498dd",
+        "contactId": "3637e85836bd49a185c8cabd62a88f8c",
+        "status": "active",
+        "createdDatetime": "2021-08-07T05:13:01Z",
+        "updatedDatetime": "2021-10-28T05:00:01.084071333Z",
+        "lastReceivedDatetime": "2021-10-28T05:07:13.735316379Z",
+        "lastUsedChannelId": "13e2cb41651e4af5a31bd379145433b5",
+        "messages": {
+            "totalCount": 0,
+            "href": "https://whatsapp-sandbox.messagebird.com//v1/conversations/2386ce6e75af4286a5617f7900c498dd/messages"
+        }
+    },
+    "message": {
+        "id": "4587a9c901d7426ba66eb2ec153c68dd",
+        "conversationId": "2386ce6e75af4286a5617f7900c498dd",
+        "platform": "whatsapp",
+        "to": "+447418310508",
+        "from": "+37065272274",
+        "channelId": "13e2cb41651e4af5a31bd379145433b5",
+        "type": "text",
+        "content": {
+            "text": "Gggg"
+        },
+        "direction": "received",
+        "status": "received",
+        "createdDatetime": "2021-10-28T05:07:13Z",
+        "updatedDatetime": "2021-10-28T05:07:13.735327939Z"
+    },
+    "type": "message.created"
+}
+```
+
 ### How do I add another phone number?
 
 After you have completed all configurations you can just

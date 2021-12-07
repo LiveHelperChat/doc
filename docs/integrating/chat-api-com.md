@@ -20,6 +20,67 @@ You will need to do few bits now
 
 Save changes.
 
+Sample of webhook this configuration support
+
+
+```json
+{
+    "messages": [
+        {
+            "id": "false_<chat_id>@c.us_AF3E2B1636F9EDB87F80D90CF6A76413",
+            "body": "Buenas",
+            "fromMe": false,
+            "self": 0,
+            "isForwarded": 0,
+            "author": "<chat_id>@c.us",
+            "time": 1638829630,
+            "chatId": "<chat_id>@c.us",
+            "messageNumber": 108929,
+            "type": "chat",
+            "senderName": "Remigijus Kiminas",
+            "caption": null,
+            "quotedMsgBody": null,
+            "quotedMsgId": null,
+            "quotedMsgType": null,
+            "metadata": null,
+            "ack": null,
+            "chatName": "+<phone_number>"
+        }
+    ],
+    "instanceId": "<instance_id>"
+}
+```
+
+Message sample if it contains an image
+
+```json
+{
+    "messages": [
+        {
+            "id": "false_<chat_id>@c.us_A0EED4D0BCBBAB9E57010D7EC3301BB0",
+            "body": "https://s3.eu-central-1.wasabisys.com/incoming-chat-api/<path>/<to>/<image>.jpeg",
+            "fromMe": false,
+            "self": 0,
+            "isForwarded": 0,
+            "author": "<chat_id>@c.us",
+            "time": 1638833014,
+            "chatId": "<chat_id>@c.us",
+            "messageNumber": 108991,
+            "type": "image",
+            "senderName": "Edwar",
+            "caption": null,
+            "quotedMsgBody": null,
+            "quotedMsgId": null,
+            "quotedMsgType": null,
+            "metadata": null,
+            "ack": null,
+            "chatName": "+<phone_number>"
+        }
+    ],
+    "instanceId": "<instance_id>"
+}
+```
+
 ## Rest API calls setup
 
 **One time configuration**
