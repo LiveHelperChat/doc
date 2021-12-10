@@ -115,6 +115,7 @@ This allows to make various tweaks to based on received callback.
 function widgetV2Callbacks(loadcb) {
 
     // Show offline/online status manually in specific webplace 
+    // Full sample https://livehelperchat.com/lhcsamples/sample-4.html
     loadcb.onlineStatus.subscribe(function(data) {
         if (data === true) {
             document.getElementById('online-status').innerHTML =
@@ -513,6 +514,17 @@ E.g
 > https://example.com/chat/modal/(department)/4/(identifier)/lhc/(operator)/17/(survey)/1/(priority)/10005
 
 You can also [track events](chat/events-tracking.md) in static url.
+
+### How to have custom status widget?
+
+Let say you do not want to show default status widget, but you want to have your own HTML for that. E.g somewhere integrated in menu etc.
+
+This sample supports
+
+* Online/Offline status
+* Unread messages counter
+
+https://livehelperchat.com/lhcsamples/sample-4.html
 
 ### How do I set default URL for Live Helper Chat?
 
