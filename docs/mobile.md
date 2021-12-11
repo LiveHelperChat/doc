@@ -36,6 +36,10 @@ In order to enable mobile app notifications you have to enable mobile notificati
 
 > Configuration -> System -> Mobile (Settings)
 
+## Notifications categories
+
+Mobile version 1.7v and lhc version 3.90v supports Mobile Notifications categories. They will appear as soon you will receive a one notification in the mobile app. After that you will be able to set custom notifications settings per notification category.
+
 ### Testing
 
 The Easiest way to test is just to login to Live Helper Chat back office and go to `System configuration -> Mobile (Sessions)` and edit session record. In edit window just click `Send test notification`.
