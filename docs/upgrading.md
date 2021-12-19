@@ -19,7 +19,8 @@ Here is basic tutorial how to perform upgrades since 2.04 version. This version 
 6. Disable [cache in settings.ini.php](debug.md#disabling-cache)
 7. Login to LHC again and go to `"System configuration" -> "Clear Cache" and click Clear Cache`
    1. Clear cache you can also can by executing this command from command line `php cron.php -s site_admin -c cron/util/clear_cache`
-8. Now you can enable a cache again in your settings.ini.php
+8. Now you can enable a cache again in your `settings.ini.php`
+9. In case you still get an error [Enable debug output](debug.md)
 
 If you are updating from any older version you can follow this pattern, you can do this also for new versions.
 
