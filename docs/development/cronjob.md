@@ -123,6 +123,23 @@ php cron.php -s site_admin -c cron/notifications
 
 Should be run every 5 minutes or so.
 
+## Views
+
+Either you are using chats or elasticSearch extension they can have a saved `Views`
+
+This command should be run every minute or so. Views also supports php-resque. Make sure you are executing `lhc_views_update` job queue.
+
+```
+php cron.php -s site_admin -c cron/update_views
+```
+
+If a view takes more than 1 seconds to update. It will be logged in audit log with these parameters
+
+* `source` - View
+* `category` - slow_view
+
+So you can find afterward them.
+
 ## Files maintenance
 
 It automatically deletes files based on [files maintenance](chat/files.md#files-maintenance) settings.
@@ -246,9 +263,6 @@ git add .
 git commit -a -m "Static cache"
 git push origin master 
 ```
-
-
-
 ## How to add cronjob in extension?
  
 Yes, extensions supports cronjobs. What you have to do is:
