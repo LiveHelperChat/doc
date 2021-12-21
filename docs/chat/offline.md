@@ -24,6 +24,15 @@ Offline widget will be shown again. So you can genarate embed code without enabl
 * Make sure you do **not** have checked `Enable leave a message functionality automatically if there are no online operators` in  "[Start chat form settings](start-chat-form-settings.md)"
 * Widget should be hidden now if there is no online operators.
 
+## How to show a custom message if there is no online operators?
+
+This scenario is usefull for the widget if you still want to show a status widget. On widget open they should see a custom message.
+
+* Make sure you **DO** have checked `Enable leave a message functionality automatically if there are no online operators` in  "[Start chat form settings](start-chat-form-settings.md)"
+* In disable conditions check `Disable conditions.`
+* Click `Add conditions` like `{args.is_online} = 0`
+* Enter custom message in `Show this message to the visitors who opens a chat widget.`
+
 ## Disable the offline message for a static url
 
 Two scenarios here. 
