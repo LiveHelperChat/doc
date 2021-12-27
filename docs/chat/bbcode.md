@@ -26,6 +26,10 @@ HTML Code. This tag is supported only by operators!
 
 > `[html]your custom html goes here[/html]`
 
+Operators require this permission to use this bbcode
+
+`lhchat`,`htmlbbcodeenabled`
+
 Change font size. Font size can be to whatever value you want actually.
 
 > `[fs12]Font size 12[/fs]`
