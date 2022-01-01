@@ -1,7 +1,7 @@
 ---
 id: common-classes
 title: Most common classes used in Live Helper Chat
-sidebar_label: ORM
+sidebar_label: Common classes
 ---
 
 ## Introduction
