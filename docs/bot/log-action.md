@@ -29,3 +29,5 @@ About `first_trigger`, `current_trigger` variables you can read in [Text message
     "predefined_trigger_name": {args.predefined_trigger.name}
 }
 ```
+
+Log itself can be fetched using Rest API and `chat_actions` prefill variable in https://api.livehelperchat.com/#/chat/get_restapi_chats call.
