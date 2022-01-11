@@ -30,7 +30,9 @@ Operators require this permission to use this bbcode
 
 `lhchat`,`htmlbbcodeenabled`
 
-Change font size. Font size can be to whatever value you want actually.
+This tag also supports plain *JS* code. This can lead so some security concerns. As operator can execute JS directly on visitor side. That's why it requires special permission to use.
+
+Change font size. Font size can be to whatever value you want, actually.
 
 > `[fs12]Font size 12[/fs]`
 
