@@ -58,6 +58,24 @@ Next you can assign Live Helper Chat agent to correct CloudTalk agent.
 
 After that your agent can start sending invitation for a live call during conversations. Agent will see relevant actions only of chat has phone number. So agent might need to enter it before a call.
 
+### Bot configuration
+
+For extension to work correctly two commands have to be defined. These commands are sent once invitation or direct call is started. Bot you can download [here](/img/integration/cloudtalk/bot.json)
+
+```
+!cloudtalk
+```
+
+and
+
+```
+!cloudtalkdirect
+```
+
+Configuration example
+
+![](/img/integration/cloudtalk/commands.png)
+
 ### Contacts remove cronjob
 
 If you do not want to keep contacts in CloudTalk after a chat has ended. You can setup this cronjob. It will remove contacts if from call has passed more than 1 hour.
