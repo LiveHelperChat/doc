@@ -204,7 +204,8 @@ module.exports = {
         'google-analytics',
         'chrome-extension',
         'integrating/whatsapp',
-        'integrating/messagebird-whatsapp'
+        'integrating/messagebird-whatsapp',
+        'integrating/cloudtalk'
     ]
   },
 };
