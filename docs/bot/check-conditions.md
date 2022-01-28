@@ -30,6 +30,7 @@ One of the few possible scenarios can be
   * `chat_files` `contains` `pdf,jpg` - chat has pdf or jpg
 * `operator_files` same checks as `chat_files` except only for operator files
 * `user_files` same checks as `chat_files` except only for visitor files
+* `{validation_event__<event_name>}` E.g `{validation_event__my_event_validator}` event with `my_event_validator` will be dispatched and result afterwards compared with expected output. `my_event_validator` `=` `1`
 
 If you do not enter `Value` means it's empty.
 
@@ -37,6 +38,37 @@ E.g
 
  * so `lhc.email != <empty>` as in screenshot. Means I'm checking that e-mail would not be an empty string.
  * `{args.msg.msg}` I'm expecting message to contain one of the words `dispute, chargeback, refund{2}, money back, contact bank`. `Refund` word can have two typos.
+
+## How to validate `{validation_event__<event_name>}`
+
+```php
+class erLhcoreClassExtensionValidateevent
+{
+
+    public $configData = false;
+
+    public function __construct()
+    {
+        
+    }
+
+    public function run()
+    {
+        $dispatcher = erLhcoreClassChatEventDispatcher::getInstance();
+        $dispatcher->listen('chat.genericbot_event_handler', 'erLhcoreClassExtensionValidateevent::genericEventHandler');
+    }
+    
+    public static function genericEventHandler($params)
+    {
+        if ($params['render'] == 'my_event_validator') {
+            return array(
+                'status' => erLhcoreClassChatEventDispatcher::STOP_WORKFLOW,
+                'validation_result' => 1
+            );
+        }
+    }
+}
+```
 
 ## Value supported placeholders
 
