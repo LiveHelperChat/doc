@@ -16,7 +16,7 @@ So purpose of this extension is
 
 For all these cases there is new extension
 
-[https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/singlesignon](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/singlesignon)
+[https://github.com/LiveHelperChat/sso-boilerplate](https://github.com/LiveHelperChat/sso-boilerplate)
 
 ### Where this extension can be used?
 
