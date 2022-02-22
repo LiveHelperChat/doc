@@ -31,7 +31,7 @@ Cronjob example
 Shell script. Set your paths.
 
 ```shell script
-#!/bin/sh
+#!/bin/bash
 fileCron='/home/lhc/cronjobs/running-workflow'
 
 for i in {1..12}
