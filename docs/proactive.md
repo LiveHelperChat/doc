@@ -156,13 +156,23 @@ Uncheck `Play sound on invitation to chat.`
 
 ### I do not get any invitations?
 
-Make sure your invitation matches generated embed code rules. E.g
+Invitation will be shown automatically only if you 
+
+Requirements in embed code and notices regarding manual invitations
+
+* If you are sending messages manually to `Online Visitor` make sure your embed code was generated with chosen `Check for operator invitation messages` option. Without this option enabled invitations will be shown only after page refresh.
+* If visitor has closed manual/automatic invitation, and you send a new manual invitation message it won't be delivered until next page refresh.
+* If visitor has opened invitation, and you send another manual message old message will be overriden and will be shown only after page refresh.
+* If to visitor is in automatic invitation mode (it was activated and visitor has not closed it), manual invitation won't be seen by visitor.
+* How often check for an automatic or manual invitations are executed depends on `Synchronisation and sound settings` -> `Check for messages from the operators, interval in seconds` settings.
+
+General requirements and most common configuration failures
 
 * Department - if you have chosen department in embed code but did not assigned any to invitation rules. If you have not assigned any department in widget code generation make sure proactive invitation also has none
-* Make sure languages matches. E.g you made invitation with language /eng but site is /fre
-* If you are sending messages manually to `Online Visitor` make sure your embed code was generated with chosen `Check for operator invitation messages` option.
+* Make sure languages matches. E.g you made invitation with language `/eng` but site is `/fre`
 * Invitations are not send to visitor who is having chat at present time.
-* If visitor had chat past 24 hours invitation to him will not be shown. Timeout value can be changed in [chat configuration](chat/configuration.md#proactive-message-timeout-in-hours)
+* If visitor had chat past 24 hours automatic invitation to him will not be shown. Timeout value can be changed in [chat configuration](chat/configuration.md#proactive-message-timeout-in-hours)
+* If visitor has closed manual invitation automatic invitation also won't be shown for the next 24 hours.
 * Best way to test invitation is one of these
     * Delete `lhc_per` cookie
     * Start new browsing session in incognito window.

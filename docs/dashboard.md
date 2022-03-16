@@ -74,7 +74,13 @@ For managers, I recommend having something like that in their account
 
 #### Required configuration
 
+To see subjects widget
+
 > 'lhchat','subject_chats'
+
+To be able to set subjects filter for that widget and set mobile notifications for specific chat subjects.
+
+> 'lhchat','subject_chats_options'
 
 ### Departments stats
 

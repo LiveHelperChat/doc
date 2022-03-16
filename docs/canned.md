@@ -10,6 +10,20 @@ Canned messages purpose is to provide prepared answers for standard questions. C
 
 > System configuration -> Live help configuration -> Canned messages
 
+## Exploring canned messages list
+
+For operator to access canned messages list he has to have this permission
+
+> 'lhchat', 'explorecannedmsg'
+
+To see all canned messages, not only from departments he is member of he has to have this permission
+
+> 'lhchat', 'explorecannedmsg_all'
+
+To have possibility create/edit canned message's operator has to have this permission
+
+> 'lhchat', 'administratecannedmsg'
+
 ## Usage
 
 ![Canned messages](/img/chat/canned-messages.jpg)
