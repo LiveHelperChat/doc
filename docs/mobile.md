@@ -70,13 +70,44 @@ Most of the time if app is installed on iPhone for some reason it does not recei
 
 If you do not receive notification once chat is started, but you receive notification with `Send test notification` check those things.
 
+For floating notification to be seen they have to be enabled in notifications settings Android and IOs. On android these can be enabled per notification category.
+
+:::tip
+ * Test notification should be seen only on locked phone screen.
+ * IOs
+   * Test notification will be visible on locked screen.
+   * They are not floating notification and won't be seen on un-locked phone, only on locked phone screen.
+   * Test notification does not influence is app running or not. 
+   * Unread number on IOs won't appear for test notification.
+ * Android
+   * Red number appears on unlocked phone app icon.
+   * They are not floating notification and won't be seen on unlocked phone only on locked phone screen.
+   * Test notification does not influence is app running or not.
+:::
+
+:::tip
+ * Scenario with live notifications
+ * App is or not running and phone is locked
+   * IOs
+     * Notification is seen on locked phone screen
+   * Android
+     * Notification is seen on locked phone screen
+ * Phone is unlocked and app is or running in the background. App window is not active.
+   * IOs
+     * Notification is seen on locked phone screen
+   * Android
+     * Notification is seen on locked phone screen
+ * Phone app is opened
+   * Floating notification is seen on the top.
+:::
+
  * You have proper permissions as operator
  * You are online as an operator.
  * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
  * You have permission to access department where chat started.
  * App is using few notifications channels where each channel can have different settings. Make sure app notifications settings are correct.
  * If for some reason sessions status is `thumbs down`. You can delete a session and re-login from the app and try again to test notifications.
- 
+
 :::tip 
 At the moment clicking notifications does not open chat window. It just opens an app. This will be changed in next releases.
 :::
