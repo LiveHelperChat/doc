@@ -9,7 +9,8 @@ module.exports = {
         'javascript-arguments',
         'upgrading',
         'development/quick-guide',
-        'chat/multiple-languages'
+        'chat/multiple-languages',
+        'security'
     ],
     Design: [
         'theme/theme',
