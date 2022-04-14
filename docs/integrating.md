@@ -86,6 +86,17 @@ Live example
 
 ![](https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200)
 
+By default the static image is not refreshed automatically.
+You can adapt the code to refresh image every 60000 milliseconds (1 minute)
+
+Example of the auto-refresh code for static image:
+
+```html
+<a href="//demo.livehelperchat.com/chat/start">
+    <img src="https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200" alt="" id="reloader" onload="setTimeout( () => { document.getElementById('reloader').src='https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200' + '?' + new Date().getMilliseconds() } ,60000)" />
+</a>
+```
+
 ## FAQ
 
 ### My widget does not work. I have Live Helper Chat installed on one domain but code is embeded on another domain?
