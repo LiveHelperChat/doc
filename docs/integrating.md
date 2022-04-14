@@ -103,7 +103,7 @@ Respect the original example 1 we add after alt="" the following code
 ```html
 id="reloader" onload="setTimeout( () => { document.getElementById('reloader').src='test2.jpg' + '?' + new Date().getMilliseconds() } ,5000)"
 ```
-than replaced test2,jpg with the restapi live helper chat URL.
+than replaced test2.jpg with the restapi live helper chat URL.
 
 ## FAQ
 
