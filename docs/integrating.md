@@ -76,6 +76,8 @@ Static url can be used directly by pasting address in browser URL address. More 
 
 Now you can generate static images also. These static images can be used for e-mails as example.
 
+Code example 1:
+
 ```html
 <a href="//demo.livehelperchat.com/chat/start">
     <img src="https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200" alt="" />
@@ -88,14 +90,20 @@ Live example
 
 By default the static image is not refreshed automatically.
 You can adapt the code to refresh image every 60000 milliseconds (1 minute)
-
 Example of the auto-refresh code for static image:
+
+Code example 2:
 
 ```html
 <a href="//demo.livehelperchat.com/chat/start">
     <img src="https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200" alt="" id="reloader" onload="setTimeout( () => { document.getElementById('reloader').src='https://demo.livehelperchat.com/site_admin/restapi/onlineimage?&online=I'm%20online&offline=I'm%20offline&w=200' + '?' + new Date().getMilliseconds() } ,60000)" />
 </a>
 ```
+Respect the original example 1 we add after alt="" the following code
+```html
+id="reloader" onload="setTimeout( () => { document.getElementById('reloader').src='test2.jpg' + '?' + new Date().getMilliseconds() } ,5000)"
+```
+than replaced test2,jpg with the restapi live helper chat URL.
 
 ## FAQ
 
