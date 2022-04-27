@@ -122,6 +122,7 @@ module.exports = {
                 'bot/rasa-intent-entities',
                 'bot/rasa-faq',
                 'bot/sentiment-analysis',
+                'bot/sentiment-analysis-per-message',
                 'bot/deeppavlov-faq',
                 'bot/verify-email-by-bot-and-rest-api'
             ]

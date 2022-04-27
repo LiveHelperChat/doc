@@ -136,4 +136,80 @@ If you want to clean any previous process you can use this response type before 
 
 Another way to avoid this error just check mark `Soft event` in `Collect custom attribute` response type. We will automatically terminate it if user starts another one.
 
+## Set meta_msg attribute
 
+This updates visitor message `meta_msg` attribute.
+
+E.g from [sentiment per message trigger](sentiment-analysis-per-message.md#messages-aggregation)
+
+```json
+{"sentiment":"{content_1}","sentiment_value":{content_2}}
+```
+
+## Messages aggregation
+
+This response type iterates through all chat messages and calculates desired aggregation values.
+
+Fields description
+
+Chat fields
+
+* `Chat variable as Group field` - main variable to store of grouped field
+* `Calculated value from group method` - score value of the grouped result
+
+Message fields by which we should do grouping
+
+* `Group field (sentiment)` - stores initial grouping field E.g `sentiment`
+* `Group value field. Eg (score field of the sentiment)` - stores score of the sentiment `sentiment_value`
+
+Aggregated messages sample
+
+![](/img/bot/sentiment-per-message/messages-sample.png)
+
+
+### AVG
+
+Groups messages by `Group field (sentiment)` and calculates average of `Group value field. Eg (score field of the sentiment)` the highest average is stored within chat 
+as `Chat variable as Group field` (E.g `sentiment_visitor` and average itself as `sentiment_visitor_value` )
+
+E.g ![](/img/bot/sentiment-per-message/sentiment-visitor-aggr.png)
+
+### SUM
+
+Instead of average we compare by the sum of the grouped fields.
+
+### SUM as comparator and AVG as value
+
+Similar to `AVG` just aggregation value is chosen by sum of the `Group value field. Eg (score field of the sentiment)` but value itself is as AVG
+
+### MAX
+
+Finds the MAX from grouped fields and stores it as aggregated field and it's value.
+
+From sample it would be	`{"sentiment":"positive","sentiment_value":0.9620355963707}`
+
+### MIN
+
+Finds the MIN from grouped fields and stores it as aggregated field and it's value.
+
+From sample it would be	`{"sentiment":"neutral","sentiment_value":0.56032991409302}`
+
+### COUNT MAX (maximum number of grouped record)
+
+Chooses the most frequent value of the grouped field. In case it's same score very first one would be stored.
+
+### COUNT (total number of messages)
+
+Stores only count of the selected messages type
+
+### COUNT FILTER (filtered by group value field)
+
+Stores only count of the selected messages type plus applies filtering by message meta_attr
+
+### RATIO in comparison with all messages
+
+Stores ratio compared to the all/filtered messages.
+
+In this sample we store ratio of positive messages compared to negative messages
+
+E.g ![](/img/bot/sentiment-per-message/ratio.png)

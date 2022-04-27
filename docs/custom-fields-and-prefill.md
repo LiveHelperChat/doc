@@ -123,6 +123,10 @@ Example how it would look like
 
 ![](/img/chat/additional-chat-column.png)
 
+### Example how to define custom icon within chat
+
+![](/img/bot/sentiment-per-message/sentiment-icon-chat.png)
+
 ## Prefilling and defining custom variables
 
 This feature allows to prefill various variables including the ones defined in back office start chat form settings. If you want to prefill `Department` refer to [Javascript arguments](javascript-arguments.md) article.
