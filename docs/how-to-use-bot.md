@@ -12,6 +12,7 @@ Basic features are
 * [Rasa integration (FAQ)](bot/rasa-faq.md)
 * [Rasa integration (intent)](bot/rasa-integration-intent.md)
 * [DeepPavlov (Sentiment analysis)](bot/sentiment-analysis.md)
+* [DeepPavlov (Sentiment analysis per message)](bot/sentiment-analysis-per-message.md)
 * [DeepPavlov (FAQ)](bot/deeppavlov-faq.md)
 * [Insult detection](https://github.com/LiveHelperChat/lhcinsult)
 
