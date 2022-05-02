@@ -250,14 +250,27 @@ Condition for that chat could look like
 
 ![](/img/bot/bot-closed-chat.png)
 
+In case you want to send Rest API only if user message is not empty sample would look like
+
+> {{msg_clean_lowercase}} != // Do not enter anything
+
 ## Replaceable variables
 
 Rest API in value fields you can use these replaceable variables. These variables by default are already in json format with quotes. To use them without quotes in JSON payload use them like `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
 
-All chat messages. These combinations are usefull in case you are implementing sentimetn analysis and want for example determine the sentiment of operator/visitor or both messages:
+All chat messages. These combinations are usefully in case you are implementing sentiment analysis and want for example determine the sentiment of operator/visitor or both messages:
 
-* `{{msg_clean}}` - user message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
-* `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
+Single messages
+
+* `{{msg}}` - user/operator message.
+* `{{msg_lowercase}}` - user/operator message. **Lowercase version**.
+* `{{msg_url}}` - user/operator message will contain links instead of bbcode tags.
+* `{{msg_url_lowercase}}` - user/operator message will contain links instead of bbcode tags. **Lowercase version**.
+* `{{msg_clean}}` - user/operator message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
+* `{{msg_clean_lowercase}}` - user/operator message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message. **Lowercase version**.
+
+All messages at once
+
 * `{{msg_all_since_transfer_content}}` - Messages since chat was transferred to operator. All messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
 * `{{msg_all_op_msg_content}}` - All operator messages in the chat. All messages without `[<date>] [<nick>]` prefix within each message.
 * `{{msg_all_vis_msg_content}}` - All visitor messages in the chat. All messages without `[<date>] [<nick>]` prefix within each message.
@@ -265,11 +278,10 @@ All chat messages. These combinations are usefull in case you are implementing s
 * `{{msg_all}}` - all chat messages.
 * `{{msg_items}}` - all chat messages objects encoded in JSON. Just do `json_decode` on passed variable
 * `{{msg_all_html}}` - all chat messages rendered as HTML. You might need to style classes.
+* `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
 
 Other:
 
-* `{{msg}}` - user message
-* `{{msg_url}}` - user message will contain links instead of bbcode tags.
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{footprint}}` - last 25 viewed pages url's
 * `{{chat_id}}` - chat ID

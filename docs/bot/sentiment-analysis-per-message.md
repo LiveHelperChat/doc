@@ -67,7 +67,7 @@ For that we will be using [webhooks](development/webhooks.md).
 
 In this scenario Rest API will be sending individual message to get a sentiment. 
 
-[Download configuration](/img/bot/sentiment-per-message/rest-api.json)
+[Download configuration](/img/bot/sentiment-per-message/rest-api-v2.json)
 
 After import make sure you change host if you are not running it on local machine.
 
