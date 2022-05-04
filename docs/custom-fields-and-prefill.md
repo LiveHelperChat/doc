@@ -69,6 +69,8 @@ if (typeof lhc_var === 'undefined') { // This variable has to be defined before 
 lhc_var.gender = 'Gender';
 ```
 
+For static URL you can prefill those by `?jsvar[7]=customvar` structure is as `jsvar[<additional chat variable id>]=<value>`
+
 You can update any core attribute of chat object. Like `lhc.email`,`lhc.phone` etc. All possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
 
 ## Passing monitored variable directly as argument
@@ -250,14 +252,14 @@ Main attributes options
 /(operator)/<operator_id> - operator to set for pending chat
 /(bot)/<bot_id> - bot to use
 /(mode)/<popup/embed> - default mode if popup. If you are planning to use it as iframe source set it to embed. This is only usefull if you want to have multiple chat's in the same page.
+?jsvar[7]=customvar - prefill additional chat variable defined in `Additional chat variables` section. 7 is additional chat variable ID
 ```
 
 To know how URL would look like with prefilled E-mail, Phone. You can just generate embed code prefill variables with Javascript and click popup window. So in popup URL you would see how URL should look like.
 
 E.g
 
-`http://demo.livehelperchat.com/chat/start?prefill%5Bemail%5D=remdex%40gmail.com&prefill%5Bphone%5D=370454654&prefill%5Busername%5D=Username%20here&value_items_admin[0]=back_office_field`
-
+`http://demo.livehelperchat.com/chat/start?prefill%5Bemail%5D=remdex%40gmail.com&prefill%5Bphone%5D=370454654&prefill%5Busername%5D=Username%20here&value_items_admin[0]=back_office_field&jsvar[7]=customvar`
 
 ## Prefilling variables on old widget
 
