@@ -15,7 +15,11 @@ If operator clicks checked to the left of the `eye` icon he will get access to r
 
 ### Permissions
 
-Operator has to be member of all user groups editing user are
+To edit groups of other users editing user has to be a member of all groups edited user is.
+Example: In order to edit groups of user A, who is a is member of groups B,C I also have to be a member of groups B,C
+To overcome this you can add permission:
+
+> 'lhuser', 'editusergroupall'
 
 Required permissions to access assigned departments tab, one of
 
