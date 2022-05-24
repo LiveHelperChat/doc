@@ -60,3 +60,9 @@ BotB must "listen" on that event:
 ![BotB event listen configuration](/img/bot/bot-transfer-event.png)
 
 **In this example** BotA does not include the logic that you make in BotB, BotA transfer to BotB so that visitor keep chatting with BotB.
+
+## Widget theme based scenario
+
+Widget theme is one bot, but department is another bot.
+
+https://youtu.be/Jxaji9Y4tQY
