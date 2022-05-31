@@ -149,6 +149,21 @@ You can change how need help widget looks like.
 
 Here you can change default text in widget itself. Few more complex ones I have explained here.
 
+### Blocked visitor message
+
+This field also support replaceable variables.
+
+* E.g department e-mail `{args.chat.department.email}`
+* Custom text from Translatable group items. `{blocked_email__Blocked email}`
+
+Text you can use in translation item or directly in widget theme.
+
+Few more samples
+
+* `You can't chat with us at the moment contact us by [url=mailto:{args.chat.department.email}]e-mail[/url]`
+* `You can't chat with us at the moment contact us by {args.chat.department.email}`
+* `{blocked_email__Blocked email}`
+
 ### How to show average wait time instead of a number in the queue?
 
 * You have to be running department [statistic cronbjob](development/cronjob.md#statistic-cronjob)
