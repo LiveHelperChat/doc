@@ -110,7 +110,25 @@ These options defines visible buttons under a message.
 
 ### Name
 
-Just button name visible in frontend
+Just button name visible in frontend. Button names support [translations by department](bot/multiple-languages.md#translations-groups)
+
+#### How to render button by department without cloning a bot?
+
+Buttons are not rendered if their name is empty. In combination with bot translations you can have buttons to render for one department and empty for another.
+
+**Example of workflow if button should be rendered only for specific department.**
+
+* If you want to render button for specific department put it's name like `{<some_identifier>__}` E.g `{visible_for_a_department__}`. Default value will be empty so button won't be rendered.
+* Create a translation with `visible_for_a_department` as identifier [in translation group](bot/multiple-languages.md#translations-groups)
+* Modify department and assign translations group.
+* Now bot will find button name in translation group and will render a button, but button won't be rendered for any other department.
+
+**Example of workflow if button should be rendered only for specific department.**
+
+* If you want to render button for all departments put it's name like `{<some_identifier>__Default name}` E.g `{visible_for_a_department__Default name}` Default value will be `Default name` so button will be rendered.
+* Create a translation with `visible_for_a_department` as identifier [in translation group](bot/multiple-languages.md#translations-groups). Do not enter any value in `Default` tab `Translation` field
+* Modify department and assign translations group.
+* Now bot will find button name in translation group and will not render a button, but button will be rendered for any other department.
 
 ### 'Precheck event' and  'Arguments` 
 
