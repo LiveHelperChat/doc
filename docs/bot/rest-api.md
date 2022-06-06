@@ -330,6 +330,7 @@ Dynamic attributes extraction. You can go as deep as you want.
 * `{{args.<any argument attribute>.<any subargument attribute>}}` - if you are implementing [webhooks](../development/webhooks.md) most likely you will be using this as placeholder.
 * `{{args.chat.department.identifier}}` - This way you can access any chat and child object attributes. In this example department identifier. 
 * `{{args.chat.department}}` - you can pass even all department object.
+* `{{args.chat.chat_variables_array.order_id}}` - access `order_id` if field is defined as `This variable is invisible for operator and will be stored in chat_variables attribute` 
 
 Incoming chat attributes. This is usefull if you want to access to payload attribute of `Incoming webhook` created chat.
 
