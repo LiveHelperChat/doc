@@ -262,11 +262,48 @@ He will see also group chats settings in `System configuration`
 
 You can choose few quick options how chat tabs are displayed
 
-​![](/img/dashboard/dashboard-tabs-settings.jpg)
+​![](/img/dashboard/dashboard-tabs-settings.png)
 
-If you choose to hide nick for offline chats. You will get similar look to this. Chat where visitor is gone will be without nick.
+
+### Open my active chats
+
+Clicking this button will load your active chats. Limit of 10 chats applies.
+
+### Keep my active chats
+
+We will automatically load your active chats in chat window. Limit of 10 chats applies. If you want to see your open chats even if you opened some in other windows makes sense to have this checked.
+
+### hide nick for offline chats
+
+If you choose to `hide nicknames for offline chats`. You will get similar look to this. Chat where visitor is gone will be without nick.
 
 ​![](/img/dashboard/hide-nick-for-offline.jpg)
+
+### Reset widget filters
+
+Sometimes operators applies so many filters and get lost why he seems/or does not see all chats. This will reset all applied operator custom filters and will leave default only.
+
+### Old dashboard
+
+You can switch to old dashboard without left column. This option will be removed over time.
+
+### In static/dynamic chats order mode
+
+Dynamic mode - default
+ * If chat is clicked it's position always will be at the top of chats
+ * If customer replies his chat will move to the top of chat list.
+
+Static mode
+ * Opened chats will be placed from lowest to highest ID (by chat start time).
+ * Visitor message won't move chat to the top of chat list
+
+### Hide/Show chat tabs
+
+If you are using new dashboard and don't want to see tab of opened chat you can disable that.
+
+### Tabs/List in left column
+
+You can switch left column to tab mode or have it as a list.
 
 ## Information icon
 
