@@ -3,7 +3,7 @@ id: commands
 title: Commands
 ---
 
-Commands allows using any client web, desktop or XMPP if you have configured it to execute specific actions against user.
+Command's allows using any client web, desktop or XMPP if you have configured it to execute specific actions against user.
 
 At the moment these commands are implemented
 
@@ -65,9 +65,18 @@ At the moment these commands are implemented
     * Will show a form module form with passed id and will write a passed explain. Explain is optional.
 * !modal `https://example.com`
     * You can pass external URL also. More documentation [here](modules/forms.md)
-    
 
-You can define custom command based on `bot` `trigger`.
+## Sub-commands
+
+While defining commands you can put in subfield these values
+
+ * `--silent` - we will not store a system message which command was executed
+ * `--update_status` - we will update chat interface right column. E.g if your trigger sets as subjects.
+
+You can define custom command 
+
+ * based on `bot` `trigger`.
+ * Or define shortcut for existing commands
 
 > System configuration -> Live help configuration -> Bot -> Commands
 
