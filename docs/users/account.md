@@ -122,6 +122,14 @@ We will uppercase automatically operator sentences.
 
 You can set how many active chats you can have. This will not assign any new chats to you if this number is reached. More information about [auto assignment](auto-assignment.md)
 
+### Remove my closed chats from opened chat list on page refresh
+
+Chats will be removed from open chat tabs if
+
+* Chat is closed
+* You are a chat owner
+* Chat was closed minimum 5 minutes ago
+
 ### Permissions
 
 Required permissions to see this tab.
