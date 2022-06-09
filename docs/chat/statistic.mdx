@@ -21,6 +21,17 @@ Attributes used for closing chat
 * `wait_time` - how long visitor waited before chat was accepted
 * `user_id` - operator id
 
+### Transfer happened
+
+* Chat has transfer set `transfer_uid`
+* Chat has owner set `user_id`
+* Operator who transferred and chat owner is not the same
+
+Rule in the code look slike
+```
+(`lh_chat`.`transfer_uid` > 0 AND `lh_chat`.`transfer_uid` != `lh_chat`.`user_id`)
+```
+
 ### Abandoned chat
 
 Rule in the code looks like
@@ -149,6 +160,13 @@ You can see what operator had send biggest number of message for selection perio
 You can see what operator had biggest number of chats for selection period. 0 in this chart means bot. So you can see how many chats were served directly by bot.
 
 <Image img={require('../../static/img/statistic/chats-by-opeator.jpg')} />
+
+### Number of chats by transfer operator
+
+* It shows operator and number of transfers he did.
+* While generating chart I suggest to choose in filters `Transfer happened` so only real transfers will be presented.
+* If `Transfer happened` option is not chosen First column will be all chats without transfer. We are grouping by operator who transferred and because it's none. It will have a highest number of records.
+* If you choose `Chats with an operator` we will make sure that chat owner and operator who transferred will be set. But they can match. That's the only difference from `Transfer happened`
 
 ### Average chat duration by user in seconds
 
