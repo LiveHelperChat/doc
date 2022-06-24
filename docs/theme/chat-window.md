@@ -82,6 +82,14 @@ Read more about [voice messages](voice_messages.md)
 
 ![](/img/theme/chat-window-voice-message.png)
 
+### Change language
+
+Icon for the visitor to change widget language.
+
+![](/img/bot/language.png)
+
+Read more about this option [chat settings](chat/configuration.md#show-users-option-to-switch-language-at-widget)
+
 ## I don't like one of the text and it's not changeable in widget theme?
 
 Use simple [extension](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridetranslation/translations) to translate english text directly there
