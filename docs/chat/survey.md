@@ -34,6 +34,10 @@ You can have custom values for survey options by defining survey option like
 `[value=15] 15 value`
 :::
 
+### Feedback text
+
+This attribute supports `Canned replaceable variables` and `{args.chat.<attribute>` syntax.
+
 ## Chat and survey
 
 What survey should be shown to visitor can be set few ways

@@ -311,11 +311,14 @@ Related to FAQ module. Pending article...
 
 ### Show users option to switch language at widget
 
-In old widget user can choose language before starting a chat. This option will not be supported in new widget because we can use just language detection options.
+Show option to switch language for the visitor.
 
 ### Between what languages user should be able to switch
 
-Related to above item.
+You can define between what languages visitor can switch. In list should be put siteAccess list separated by comma. E.g
+
+> eng,lit,hrv,esp,por,nld,ara,ger,pol,rus,ita,fre,chn,cse,nor,tur,vnm,idn,sve,per,ell,dnk,rou,bgr,tha,geo,fin,alb
+
 
 ### Chat closing options
 
