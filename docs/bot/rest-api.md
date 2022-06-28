@@ -409,6 +409,13 @@ There variables can be used in most of the response types including
 * [Set additional chat attribute](bot/update-current-chat.md#set-chat-additional-attribute-visible-by-operator) for custom chat attributes
 * [Text responses](bot/text.md#replaceable-variables) for showing visitor information for the user itself. E.g package location
 
+## How to pass in what language chat is going?
+
+Best way is just to pass `{{args.chat.chat_locale}}` if customer is chatting in any other language than english, and you pass `lang` argument it's value will be always `content_language` attribute from `siteaccess` settings.
+
+* https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L154
+* If you wish to pass strictly `en` on english language you can just define another `siteacess` for english language and make it default. Then in embed code pass `eng/` as language. Live Helper Chat will see it's not the default `siteacess` and will set chat locale to siteacess `content_langauge` value.
+
 ## How to find out problems with Rest API
 
  * Setup output combination for success call.

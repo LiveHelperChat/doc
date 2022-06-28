@@ -149,6 +149,14 @@ You can change how need help widget looks like.
 
 Here you can change default text in widget itself. Few more complex ones I have explained here.
 
+### Thank you for your feedback text
+
+This text is visible after visitor fills in offline form. You can write bbcode there including custom html by warpping it with `[html][/html]` tag
+
+```
+Your request was logged [b]bold[/b] [html]<i>Italic</i>[/html]
+```
+
 ### Blocked visitor message
 
 This field also support replaceable variables.

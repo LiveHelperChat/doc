@@ -38,6 +38,16 @@ You can have custom values for survey options by defining survey option like
 
 This attribute supports `Canned replaceable variables` and `{args.chat.<attribute>` syntax.
 
+## Multilingual support
+
+Every question support Bot individualisation which you can set per department. So for questions/answers you can use.
+
+```
+{main_question__Main question here}
+```
+
+After that just translate text in [Bot individualisation](bot/multiple-languages.md)
+
 ## Chat and survey
 
 What survey should be shown to visitor can be set few ways
