@@ -102,7 +102,88 @@ When this message is send area for a visitor to enter a message will be hidden. 
 ### Send a message only at chat start
 
 This message will be send only once and only on start chat event. If you have multiple triggers which is calling same text message. Sometimes it's usefull to have this.
- 
+
+### Save as a log message.
+
+Message will be saved as a log message.
+
+### Reaction options
+
+Reaction allows to have reaction to bot message. They are visible for the operator in the back office.
+
+* Reactions are available only for bot text messages.
+* Operator can see reactions in the back office.
+* Future releases might add support for admin reactions to visitor messages.
+
+Few samples how thumb reaction can be setup.
+
+Row structure
+```
+<Material Icon>|<internal value>|<identifier>|<Title,<optional>>
+```
+
+* Material icon - at the moment only `thumb_up` and `thumb_down` is supported.
+* Internal value - You can put number or string. It's value is stored as selected value for identifier.
+* Identifier - if multiple icons have same identifier other icon is unselected by value and new is selected.
+* Title - you can put title for the icon.
+
+Message body sample using Material Icons. 
+```
+thumb_up|1|thumb|Thumbs up
+thumb_down|0|thumb|Thumbs down
+```
+
+Message body sample using native UTF reaction icons.
+```
+&#128077;|1|thumb|Thumbs up
+&#128078;|0|thumb|Thumbs down
+```
+
+You can listen to reaction also using. Sample values are based on above samples
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.reaction_visitor', array(
+    'reaction_identifier' => $identifier,   // `thumb`
+    'reaction_value' => $valueAction,       // `0` OR `1`
+    'action' => $action,                    // `add` OR `remove`
+    'msg' => & $message,                    // Message object
+    'chat' => & $chat                       // Chat object
+));
+```
+
+##### Styling reactions
+
+For styling, you should use `Widget themes -> Custom CSS -> Widget body additional CSS, takes effect after save` section 
+
+Few samples
+
+```css
+/* Have a different color for material icons thumb icons */
+#messagesBlock .reaction-item,
+#messagesBlock .reaction-item:hover {
+    color:#FFF!important;
+}
+
+/* Thumb down icons should be red reaction-id-thumb-0 => reaction-id-<identifier>-<internal value> */
+#messagesBlock .reaction-item.reaction-id-thumb-0 {
+    color:red!important;
+}
+
+#messagesBlock .reaction-item.reaction-selected {
+    /* Selected reaction item style */
+}
+
+/* Set various reaction bubble color options */
+#messagesBlock div.reactions-holder {
+    background-color:blue!important; /* Set custom background color*/
+    border:1px solid red!important; /* Set custom border */
+    border-radius: 5px!important; /* Set custom border radius */
+}
+```
+
+### Reactions always visible.
+
+Reaction icons will be always visible.
+
 ## Quick reply options
 
 These options defines visible buttons under a message.
