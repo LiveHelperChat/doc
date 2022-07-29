@@ -124,7 +124,7 @@ Older records than defined amount will be deleted.
 
 ### How long department availability statistic should be kept? (days)
 
-If you are using [department availability chart](chat/statistic.md#departments) you can define how long we should store this data.
+If you are using [department availability chart](chat/statistic.mdx#departments) you can define how long we should store this data.
 
 Make sure you are running [workflow cronjob](development/cronjob.md#default-cronjob-setup).
 

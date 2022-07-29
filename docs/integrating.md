@@ -48,7 +48,7 @@ You can choose more than one department at a time. If you choose one department 
 Choose a language. Depending on combobox value javascript code below, it will be rendered in that language. If you have more than one language, then choose the language and you will get the code for that language. Once this code is embedded into your website and depending on the language chosen, the User/Visitor Widget interfaces will be in that language.
 
 :::tip
-You can enable `Try to detect language automatically` try to detect visitor langauge, but you have configure siteacess to match content language. I would suggest just use [themes](theme/widget-theme.md) and activate in `Widget container` section `Try to detect language from browser headers` option.
+You can enable `Try to detect language automatically` try to detect visitor langauge, but you have configure siteacess to match content language. I would suggest just use [themes](theme/theme.md) and activate in `Widget container` section `Try to detect language from browser headers` option.
 :::
 
 ## Operator ID

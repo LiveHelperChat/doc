@@ -3,26 +3,23 @@ module.exports = {
   tagline: 'Open Source Live Support',
   url: 'https://doc.livehelperchat.com',
   baseUrl: '/',
+  onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'LiveHelperChat', // Usually your GitHub org/user name.
   projectName: 'doc', // Usually your repo name.
     scripts: [
-        {
+        /*{
             src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
             async: true,
             'data-ad-client' : "ca-pub-3487178404951359"
-        }
+        }*/
     ],
     themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-1221542-10',
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
       algolia: {
           appId: 'BH4D9OD16A',
           apiKey: '4e69460f132c380e64701ff0b65e1de4',
           indexName: 'livehelperchat',
+          contextualSearch: true,
           algoliaOptions: {}, // Optional, if provided by Algolia
       },
     navbar: {
@@ -31,7 +28,7 @@ module.exports = {
         alt: 'Live Helper Chat',
         src: 'img/logo.png',
       },
-      links: [
+      items: [
         {
           to: 'docs/install',
           activeBasePath: 'docs',
@@ -58,7 +55,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: '',
+      style: 'light',
       links: [
         {
           title: 'Docs',
@@ -112,6 +109,11 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+          googleAnalytics: {
+              trackingID: 'UA-1221542-10',
+              // Optional fields.
+              anonymizeIP: true, // Should IPs be anonymized?
+          },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/LiveHelperChat/doc/edit/master/',
