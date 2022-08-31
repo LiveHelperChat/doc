@@ -67,6 +67,13 @@ LHC_API.args = {
             LHC_API.args.manual_init = false; // if you app is started we can change to false and app will start normaly.
             LHC_API.args.manual_init = true;  // if you app has not started yet change to true and once you ready call
             window.$_LHC.init();
+
+            // Sample on mobile devices do not show status icon
+            // In that scenario dedicated HTML should call window.$_LHC.eventListener.emitEvent('showWidget');
+            if (inst.isMobile) {
+                LHC_API.args.position = 'api';
+                LHC_API.args.hide_status = true;
+            }
     },
     phash : 'phash',    // Payment ID | Optional
     profile_pic : null,    // Profile picture to use for the visitor. This 

@@ -116,6 +116,10 @@ return array(
 );
 ```
 
+:::tip Tip
+If your website is in `HTTPS` mode please put `secure` to `true`
+:::
+
 ### Tip
 
 If you are providing separate installations for each client manually you can just set unique number for instance_id and each installation will have it's own space and will be able to use NodeJS. That means that this extension can be used for unlimited number of chats instances on the same server. You just have to be sure that instance_id is unique, it can be either number or text.

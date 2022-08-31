@@ -16,8 +16,8 @@ module.exports = {
     ],
     themeConfig: {
       algolia: {
-          appId: 'BH4D9OD16A',
-          apiKey: '4e69460f132c380e64701ff0b65e1de4',
+          appId: 'DU0VWURKF8',
+          apiKey: '9eb0af19c0a5e66add270c05de84f985',
           indexName: 'livehelperchat',
           contextualSearch: true,
           algoliaOptions: {}, // Optional, if provided by Algolia
@@ -104,7 +104,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Live Helper Chat, Inc. Built with Docusaurus.`,
     },
   },
-  plugins: ["@docusaurus/plugin-ideal-image"],
+  plugins: ["@docusaurus/plugin-ideal-image"/*,require.resolve("@cmfcmf/docusaurus-search-local")*/],
   presets: [
     [
       '@docusaurus/preset-classic',
