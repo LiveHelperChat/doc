@@ -1,6 +1,6 @@
 ---
 id: bbcode
-title: BBCode tags you can use in Live Helper Chat
+title: Text formatting syntax in Live Helper Chat - BBCode tags
 sidebar_label: BBCode
 ---
 
