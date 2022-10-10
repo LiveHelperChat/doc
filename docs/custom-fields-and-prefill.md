@@ -191,14 +191,31 @@ This future is usefull then user is logged and you want to pass let say logged u
 You can securely pass attributes. User won't be able to see their values. Usefull for passing user ID etc...
 
 1. First navigate to start chat form settings (Additional form settings) - E.g [https://demo.livehelperchat.com/site_admin/chat/startchatformsettings#/panel3](https://demo.livehelperchat.com/site_admin/chat/startchatformsettings#/panel3)
-2. Enter encryptiuon key and additional encryption key. It has to be strings not shorter than 40 characters.
+2. Enter encryptiuon key. It has to be strings not shorter than 40 characters.
 3. To encrypt on your site part you will need [https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/doc/autologin/lhsecurity.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/doc/autologin/lhsecurity.php)
 At the top there is class commented out and at the bottom there is example how to encrypt data.
 
-The most important part is this. It encrypts data using these two keys.
+The most important part is this. It encrypts data using key.
 
 ```php
-<?php echo base64_encode(lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>'))?>
+<?php echo lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>')?>
+```
+
+Example
+```
+<script>
+
+    if (typeof window.lhc_var === 'undefined'){
+        window.lhc_var = {};
+    };
+
+    /**
+     * We do not want that one websites would be passing variables in secure way and others not in secure way.
+     * Because we would end up in a mess just.
+     */
+    // Can be changed on the fly
+    lhc_var.login = '<?php echo lhSecurity::encrypt("remdex_encrypted","<your_secret_key>")?>'; // this has to be encrypted
+    ...
 ```
 
 ## How to update attributes while user already is having a chat?
