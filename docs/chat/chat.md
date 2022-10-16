@@ -48,6 +48,15 @@ Operator also would see read only area if he's not a chat owner and he does not 
 
 > 'lhchat', 'writeremotechat' 
 
+If operator opens other operator chat and he has permission `'lhchat', 'impersonate'` he will be presented with option to join a chat as `Chat Owner` or `Me`. Joining as chat owner will allow him to send messages on the name of original chat owner.
+
+He can choose again to join as by clicking
+
+​![](/img/chat/impersonate.png)
+
+> 'lhchat', 'impersonate'
+
+
 In user account Chat tab there is also option to enable/disable sentences [Auto uppercase sentences](users/account.md#auto-uppercase-sentences)
  
 ## Toolbar actions

@@ -66,13 +66,20 @@ This can be defined in
 
 Example. Means all visitors with Europe/Helsinki timezone should get 101 as priority.
 
-![Chat priroity by attribute](/img/chat/chat-priority-attribute.jpg)
+![Chat priroity by attribute](/img/chat/chat-priority-variable.png)
 
 There is in total three types of variables you can try to check against
 
  * `lhc.<variable>` - you can find possible attributes definition in [https://api.livehelperchat.com](https://api.livehelperchat.com) under Models section.
  * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
  * `chat_variable.<extension_variable>`
+
+Important things
+
+* Default rules apply order `dep_id DESC, sort_priority DESC, priority DESC` first we try to apply department rules only after that global ones.
+* If rule is matched other rules are ignored.
+* If you update one of the chat attributes, chat priority is modified but not department after chat has started.
+* Chats are auto assigned in this order - `priority DESC, id ASC`. Chat with higher priority is assigned first.
 
 ## Permissions
 

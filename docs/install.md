@@ -173,6 +173,12 @@ Here goes automatic auto response message.
 * Try [windows app](https://livehelperchat.com/demo-12c.html) or [chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
 * [My users loose chat session then they navigate through the site, duplicate online users records](online-visitors.md#my-users-loose-chat-session-then-they-navigate-through-the-site-duplicate-online-users-records)
 
+## Chat does not start?
+
+If you are running behind CloudFare or any other proxy. Which influences what IP is seen by Live Helper Chat. Please enable in that case in settings file
+
+> https://github.com/LiveHelperChat/livehelperchat/blob/a60a3b485ed08650b9e081ed827998e050717e37/lhc_web/settings/settings.ini.default.php#L18
+
 ## My widget does not load?
 
 Try to add this in your `.htaccess` file in root folder `lhc_web`. If this folder does not exists just place `.htaccess` in the same folder where `index.php` file exists. It has to be placed in Live Helper Chat folder not a website.
