@@ -54,6 +54,14 @@ do
 done
 ```
 
+## Statistic reporting cronjob
+
+This cronjob sends saved reports. Should be run every minute
+
+```
+* * * * * cd web_root_folder/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/report > /dev/null 2>&1
+```
+
 ## Chat archive cronjob setup
 
 

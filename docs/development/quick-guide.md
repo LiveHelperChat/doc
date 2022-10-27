@@ -19,9 +19,20 @@ sidebar_label: Developing
    * There is two apps [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app)
    * `cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build`
    * `cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build && npm run build-ie`
+ * To recompile back office React APP (Left toolbar, Group Chat etc...)
+   * `cd lhc_web/design/defaulttheme/js/admin &&  npm run build`
  * Recompile static JS/CSS files. This is required if you change core JS files. It also avoids missing CSS/JS files if more than one server is used.
    * `php cron.php -s site_admin -c cron/util/generate_css -p 1 && gulp js-static`
-    
+
+## One command to rule them all
+
+I usually before releasing next version I just run
+from `lhc_web` folder. It will recompile everything.
+
+```shell
+cd lhc_web/ && ./deploy.sh
+```
+
 During development process make sure you disable network cache `Network -> Disable cache` in Chrome developer toolbar.
 
 More usefull links
