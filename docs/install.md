@@ -193,6 +193,12 @@ AddType application/wasm .wasm
 </Files>
 ```
 
+Other possible reasons
+
+* You have changed `Chat configuration -> Misc -> Domains where script can be embedded. E.g example.com, google.com` but embedded script in not listed domain.
+* You have enabled `System configuration -> GEO Adjustment` but provided invalid data.
+* You have blocked yourself via `System configuration -> Live help configuration -> Blocking -> Blocked users`
+
 ## Chat was closed by an operator/visitor, but visitor starting chat again opens an old chat?
 
 Most likely you have enabled `Chat configuration -> Misc -> Reopen chat functionality enabled`

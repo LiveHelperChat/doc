@@ -99,6 +99,17 @@ Shows maximum chats per hour logged.
 
 ### Number of chats per hour, average chat duration 08 m. 32 s.
 
+#### Chat duration is calculation
+
+Chat duration is calculated by summarising time spend between message if they do not exceed defined thresholds.
+
+* How long operator can wait for message from visitor before time between messages are ignored. Values in minutes. (4 minutes default)
+* How long visitor can wait for message from operator before time between messages are ignored. Values in minutes. (10 minutes default)
+
+These values can be changed in `Chat configuration -> Misc`
+
+Chart example
+
 Shows total number of chats logged per hour for selected period. In this case it was for two weeks.
 
 <Image img={require('../../static/img/statistic/chats-per-hour.jpg')} />
