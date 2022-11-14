@@ -49,6 +49,7 @@ LHC_API.args = {
                         // <theme id> or 'alias-of-theme'
                         // If theme has alias set up. Theme can be set only using alias
     domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
+    subject_id : 5,      // Set subject id of the chat. Usefull for early classification of the chats. | Optional
     bot_id : 5,          // Set bot ID for this chat | Optional
     triger_id : 5,       // Set trigger ID as argument. Usefull in case of testing or some fancy scenarios :) Trigger has to have checked `Can be passed as argument`
     kcw : false,         // While chatting in the widget customer opens popup of the same chat. Should we keep chat in the widget? default - false | Optional
@@ -876,6 +877,17 @@ if (window.$_LHC.attributes.widgetStatus.value === false) {
     window.$_LHC.attributes['onlineStatus'].next(true); // Will put status widget in live mode
 }
 ```
+
+### Change initial chat subject
+
+Usefull if you want to change chat subject before starting a chat. So operator will know chat subject/topic.
+
+```js
+function setSubjectCustom(subjectId) {
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['subject_id'], data :subjectId}}]);
+    window.$_LHC.eventListener.emitEvent('showWidget');
+}
+````
 
 ### Open offline form while keeping option to start a chat normally
 

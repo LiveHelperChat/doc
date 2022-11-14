@@ -21,7 +21,15 @@ Proactive invitations triggers messages which are automatically send to a visito
     *   "Tag" - show invitation only for specifically tagged online visitors. (**Tutorial pending**)
     *   "Department" - show invitation only for visitors where department is provided in embed code. Otherwise invitation won't be triggered. In embed code generation you have to choose department.
     *   "Message to user" - message to be send to visitor. 
-        * This field can use replaceable variables like `{lhc.var.<variable key>}` (invisible by operator) `{lhc.add.<variable key>}` (visible by operator)
+
+```
+[html]
+<img src="{proactive_img_1}" alt="" />
+[/html]
+```
+
+* This field can use replaceable variables like `{lhc.var.<variable key>}` (invisible by operator) `{lhc.add.<variable key>}` (visible by operator)
+    * Sample with html syntax support.
     *   "Message to returning user" - If we detect that it's not the first time invitation is triggered for online visitor then we check is this message filled. This message field can have {nick} variable. It will be replaced with previous chat nick.
     *   "Nick which will be used if we cannot determine returning user name" - self explanatory
     *   "Wait message. Visible then users starts chat and is waiting for someone to accept a chat." - self explanatory
@@ -38,6 +46,21 @@ Proactive invitations triggers messages which are automatically send to a visito
     *   "Event" - choose from defined events.
     *   "Min number of times" - how many times event has to be detectd in "During last N seconds"
     *   "During last N seconds" - interval during which "Min number of times"
+* Design
+  * New widget options
+    * `Custom CSS, applies also to invitation bubble`
+      * You can apply custom CSS to bubble using this section.
+```css
+.proactive-need-help{
+    background-color: blue!important;
+    padding: 0px!important;
+}
+
+#invitation-close-btn{
+    color: blue;
+}
+```
+
 
 "Events" and "Dynamic invitations" cannot be used at the same time!
 
