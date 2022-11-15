@@ -82,7 +82,8 @@ LHC_API.args = {
                            // Or can be string used for avatar generation 'remdex' same as https://demo.livehelperchat.com/index.php/widgetrestapi/avatar/remdex
                            // See documentation from below how to change avatar on the fly 
     events:[{id:"birthday",val:"value"}], // Events to log for proactive chat invitation. `val` is optional | Optional
-    tag: 'some_tag',     // Tag for proactive chat invitation | Optional
+    tag: 'some_tag',        // Tag for proactive chat invitation | Optional
+    conversion: 'oredered', // Conversionn | Optional
     pvhash : 'pvhash',  // Payment verify hash | Optional
     lang : 'lit/'       // Chat language | Optional
     fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
@@ -692,6 +693,14 @@ We automatically check for matching invitation once you add a event.
 
 ```js
 window.$_LHC.eventListener.emitEvent('addTag',['some_tag']);
+```
+
+### To make conversion
+
+Make conversion if something happens in the website and visitor got previously invitation with `Event id` equal to `ordered`
+
+```js
+window.$_LHC.eventListener.emitEvent('addConversion',['ordered']);
 ```
 
 ### Log event

@@ -61,8 +61,33 @@ Proactive invitations triggers messages which are automatically send to a visito
 }
 ```
 
-
 "Events" and "Dynamic invitations" cannot be used at the same time!
+
+## Conversion
+
+Conversion allow to have custom conversion based on your own logic. This conversion happens not related was chat started or not.
+
+Attributes
+
+* `Conversion has to happen within this period of time after invitation was send/clicked.` - defines how long conversion has to happen to be considered as a success. 
+* `Event id to receive from website for conversion to finish.` - defines event id we expect to receive from website. If `Event id` is defined as `ordered` we expect to 
+
+```js
+window.$_LHC.eventListener.emitEvent('addConversion',['ordered']);
+```
+
+or just receive conversion attribute in the args like
+
+```
+var LHC_API = LHC_API||{};
+LHC_API.args = {
+...
+'conversion': 'ordered'
+...
+}
+```
+
+You will see conversion statistic in proactive invitation statistic modal window.
 
 ## Invitation widget
 
