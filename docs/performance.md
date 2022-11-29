@@ -42,22 +42,23 @@ This article represents use case where monthly chats number is around 200K and m
 ### Configuration tweaks done to Live Helper Chat
 
 *   Disabled for operators listing closed and unread chats
-    *   With a lot of chat's naturally that fetch all closed chat's and sort them takes a lot of resources we these two lists were disabled. In chat configuration "List unread chats" and "List closed chats" is unchecked
-*   Automatic auto assignment from visitors widgets were disabled. 
+    *   With a lot of chat's naturally that fetch all closed chat's and sort them takes a lot of resources we these two lists were disabled. In chat configuration `List unread chats` and `List closed chats` is unchecked
+*   Automatic auto assignment from visitors widgets were disabled. [workflow cronjob](development/cronjob.md#default-cronjob-setup)
     *   In chat configuration "Disable live auto assign" was checked
 *   Synchronization and sound settings
     *   How many seconds for a user to be considered as being online - 290
     *   Sync for new chats, interval in seconds - 1.1 I suggest to keep it bigger. But client wanted more live experience
     *   Check for messages from the operators, interval in seconds - 290
 *   "Chat configuration" -> "Visitor activity" -> "Interval between chat status checks in seconds, 0 disabled." I suggest to keep original one values only.
-*   Disabled online visitors listing for operator 
+*   Disabled online visitors listing for operator.
+  * We just disable online visitors widget for the operators by removing this permission. `'lhchat', 'use_onlineusers'`
 *   "Chat configuration" -> "Misc" -> "Home page tabs order" only dashboard is there
-*   "Chat configuration" -> "Online tracking" -> "Cleanup should be done only using cronjob." - checked
-*   Automatic chat archive is setup
+*   "Chat configuration" -> "Online tracking" -> "Cleanup should be done only using cronjob." - checked. [workflow cronjob](development/cronjob.md#default-cronjob-setup)
+*   Automatic chat archive is setup. [Archive cronjob](development/cronjob.md#chat-archive-cronjob-setup)
     *   Automatic archiving - checked
     *   Archive older chat's than defined days - 90
     *   Create new archive If chat's number in last archive reaches defined number - 500000
-*   Files maintenence and removement from file upload configuration window
+* Files maintenance and removement from file upload configuration window.
 * Enable [lazy loading](chat/start-chat-form-settings.md#lazy-load-widget-content-widget-content-will-be-loaded-only-if-visitor-clicks-a-status-icon) for start chat form
 
 ### Running cronjobs

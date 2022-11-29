@@ -285,6 +285,7 @@ Other:
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.
 * `{{footprint}}` - last 25 viewed pages url's
 * `{{chat_id}}` - chat ID
+* `{{timestamp}}` - unix timestamp
 
 Attributes usefull for sending content in `Sub URL for file`
 
