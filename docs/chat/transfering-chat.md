@@ -6,27 +6,61 @@ sidebar_label: Transferring chat
 
 This article explains how transferring chat to another user/department works and what permissions are involved.
 
-![](/img/chat/chat-transfer.jpg)
+![](/img/chat/chat-transfer.png)
 
 Transfer init icon
 
 ![](/img/chat/transfer-icon.jpg)
 
-## Permissions
+## Transfer to a user
 
 For operator to be able to transfer chat to another department/operator first he has to have
 
 > 'lhchat', 'allowtransfer'
 
-If you want that operator would be able to transfer to any online operator. Operator has to have this permission. Otherwise he would see online operators only from his department.
+If you want that operator would be able to transfer to any online operator. Operator has to have this permission. Otherwise, he would see online operators only from departments he is member of.
 
 > 'lhchat', 'allowtransfertoanyuser'
+
+This permission can have limitation like. It defines `user groups`, he can transfer chat to.
+
+```json
+{"group":[1,2,3,9,10]}
+```
+
+## Transfer to a department
+
+For operator to be able to transfer chat to another department/operator first he has to have
+
+> 'lhchat', 'allowtransfer'
+
+Operator sees only his departments and departments groups if he does not have permission
+
+> 'lhdepartment', 'see_all'
+
+This permission can have limitation like. It defines `departments` and `departments groups`
+
+```json
+{"group":[1,2,3,9,10],"department":[45,46]}
+```
 
 ## Changing chat owner
 
 It's also from this modal window possible to change chat owner directly. For that operator has to have this permission.
 
  > 'lhchat','changeowner'
+
+Operator can see all system operators there. It's not influenced by any restrictions.
+
+## Change department
+
+For operator to be able to change department directly. He has to have this permission.
+
+> 'lhchat','changedepartment'
+
+By default, operator can change department only to departments he is member of `Read Only` and `As Operator`
+
+> 'lhchat','allowtransfertoanydep'
 
 ## For operator to be able to see all departments.
 

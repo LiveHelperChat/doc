@@ -434,6 +434,14 @@ In response have something like this. Pay attention second text message is send 
 
 The easiest way is set fallback trigger on `Default trigger to execute`. If API works correctly your defined output combination will be executed.
 
+## Events you can listen
+
+See this extension sample
+https://github.com/LiveHelperChat/lhcrestapi
+
+You can also see directly in the code for the events it dispatches
+https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/core/lhgenericbot/actionTypes/lhgenericbotactionrestapi.php
+
 ## Video usage example
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oFWQBLZmzOA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
