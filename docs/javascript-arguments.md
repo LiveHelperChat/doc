@@ -48,6 +48,8 @@ LHC_API.args = {
     theme: 1,           // Set theme | Optional. Can be either theme number or alias
                         // <theme id> or 'alias-of-theme'
                         // If theme has alias set up. Theme can be set only using alias
+                        // You can pass multiple themes for chat system to choose from
+                        // '1,2,'alias-of-theme'' OR [1,2,'alias-of-theme']
     domain : 'livehelperchat.com', // Domain, if you provide domain chat will work including subdomains | Optional
     subject_id : 5,      // Set subject id of the chat. Usefull for early classification of the chats. | Optional
     bot_id : 5,          // Set bot ID for this chat | Optional

@@ -28,6 +28,25 @@ This permission can have limitation like. It defines `user groups`, he can trans
 {"group":[1,2,3,9,10]}
 ```
 
+:::tip
+We always apply online timeout filter. 
+> System configuration > Synchronization and sound settings > How many seconds for a user to be considered as being online
+:::
+
+### Notifications for operator whom chat was transferred
+
+If `Automatically accept assigned chats` *is checked* for chat recipient operator
+
+* If operator is on dashboard or chat list where tabs are present chat will load automatically for them.
+* If operator is on page where tabs are not available popup will be automatically shown. They have to be sure popups are not blocked. Top right corner indicates that popup was blocked. That way they could miss chat completely.
+
+If `Automatically accept assigned chats` *is NOT checked* for chat recipient operator
+
+* Alert is shown on the dashboard.
+* Alert is shown in any other page also.
+
+If operator is in inactive mode, because of inactivity, he won't receive transfer notification, but will receive one as soon he goes online.
+
 ## Transfer to a department
 
 For operator to be able to transfer chat to another department/operator first he has to have
