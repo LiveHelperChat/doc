@@ -104,7 +104,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Live Helper Chat, Inc. Built with Docusaurus.`,
     },
   },
-  plugins: ["@docusaurus/plugin-ideal-image",require.resolve("@cmfcmf/docusaurus-search-local")],
+  plugins: ["@docusaurus/plugin-ideal-image",require.resolve('docusaurus-lunr-search')],
   presets: [
     [
       '@docusaurus/preset-classic',

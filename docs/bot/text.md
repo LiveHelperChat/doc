@@ -50,11 +50,22 @@ Text area supports these replaceable variables
  * `{msg_id}` - present message id.
  * `{args.current_trigger.<id|name>}` - current trigger id. Stores current trigger
  * `{args.first_trigger.<id|name>}` - first trigger id. As during bot trigger execution multiple triggers can be involved this variables stores very first one.
+ * `{random_20}` - generate random string length of 20
 
 You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
 
 * `{content_1}` up to `{content_6}` (these will be string values)
 * `{content_1_json}` up to `{content_6_json}` (will be already json encoded string). This is usefull in case you set [chat variable](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator)
+
+### Escaping variables for url and [html] blocks
+
+Escape arguments are supported only for `{args.*` syntax.
+
+* `{args.chat.plain_user_name__url}` - escape argument in the url
+* `{args.chat.nick__url}` - escape argument in the url
+* `{args.chat.nick__escape}` - escape argument in the `[html]{args.chat.nick__escape}[/html]` block.
+
+This feature is used in [Jitsi](integrating/jitsi.md) integration
 
 ### Foreach cycle
 

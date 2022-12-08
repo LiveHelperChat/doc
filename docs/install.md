@@ -10,7 +10,7 @@ Tutorial how to setup Live Helper Chat. You can also use available snapshot on [
 
 If you are running wordpress site it's 99.9% chance Live Helper Chat will work just fine.
 
-* Download zip - https://github.com/remdex/livehelperchat/archive/master.zip
+* Download [zip](https://github.com/LiveHelperChat/livehelperchat/archive/refs/heads/master.zip), [tgz](https://github.com/LiveHelperChat/livehelperchat/tarball/master)
 * Minimum PHP 7.2
 * Mysql 5.7 >= OR MariaDB 10.2.3 >=
 * Apache/Nginx

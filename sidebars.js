@@ -199,6 +199,7 @@ module.exports = {
             'development/http-and-https'
         ],
         Integration: [
+            'integrating/jitsi',
             'integrating/opencart',
             'integrating/chat-api-com',
             'integrating/third-party-back-office',
