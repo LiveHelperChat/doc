@@ -135,7 +135,9 @@ module.exports = {
                     'bot/multiple-unknown-messages',
                     'bot/survey-control-from-bot',
                     'bot/operator-not-responding',
-                    'bot/show-offline-form-if-no-online-operators'
+                    'bot/show-offline-form-if-no-online-operators',
+                    'bot/transfer-to-bot-if-not-accepted',
+                    'bot/execute-bot-of-transferred-department'
                 ]
             }
         ],

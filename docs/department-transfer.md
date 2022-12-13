@@ -51,7 +51,7 @@ This feature allows us to implement these types of workflows.
 ### What happens then user closes the chat?
 
 *   Since user closes the chat workflow stops. To continue workflow cronjob have to be setup.
-*   "php cron.php -s site_admin -c cron/workflow"
+*   `php cron.php -s site_admin -c cron/transfer_workflow` [more information](development/cronjob.md#default-cronjob-setup)
 *   [http://demo.livehelperchat.com/index.php/site_admin/chat/editchatconfig/run_departments_workflow](http://demo.livehelperchat.com/index.php/site_admin/chat/editchatconfig/run_departments_workflow) - variable have to be configured. 1 - it will allow cronjob to continue default workflow.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vA-Jik_vJPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
