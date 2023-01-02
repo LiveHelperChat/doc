@@ -305,7 +305,20 @@ If you are using new dashboard and don't want to see tab of opened chat you can 
 
 You can switch left column to tab mode or have it as a list.
 
-## Information icon
+## Icons and their meanings
+
+### Main icons in the widgets
+
+ * ![](/img/dashboard/icons/send-received.png) - last message we send was received by visitor
+ * ![](/img/dashboard/icons/send-received-not.png) - last message we send was **not** received by visitor
+ * ![](/img/dashboard/icons/visitor-online.png) - visitor is connected
+ * ![](/img/dashboard/icons/visitor-online-not.png) - visitor is **not** connected anymore
+ * ![](/img/dashboard/icons/we-send-last-message.png) - we have sent the last message
+ * ![](/img/dashboard/icons/we-received-last-message.png) - we have received the last message
+ * ![](/img/dashboard/icons/timer-wait.png?v=1) - visitor is waiting reply from us longer than defined amount of time in `(Chat configuration -> Misc -> How long we should wait before we inform operator about unanswered chat.)` and chat is not closed. `($chat->status != erLhcoreClassModelChat::STATUS_CLOSED_CHAT && $chat->last_user_msg_time > ($chat->last_op_msg_time > 0 ? $chat->last_op_msg_time : $chat->pnd_time) && (time() - $chat->last_user_msg_time > (int)erLhcoreClassModelChatConfig::fetchCache('vwait_to_long')->current_value) ? erLhcoreClassChat::formatSeconds(time() - $chat->last_user_msg_time) : null));`
+ * ![](/img/dashboard/icons/red-background.png) - red background is for the same reason as above
+
+### Information icon
 
 If you click information icon ​![](/img/dashboard/information-icon.jpg) you will be see chat preview modal window.
 

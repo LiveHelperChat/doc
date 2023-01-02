@@ -38,6 +38,43 @@ RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 ```
 
+## How to set up Rest API for third party?
+
+Let say you want to give third party developer access only to the chats and nothing else
+
+* Create a role named `Rest API` under 
+  * List roles URL `/site_admin/permission/roles`
+  * New role URL `/site_admin/permission/newrole`
+* Give permission to that role `'lhchat', 'use'`
+* Create a group `Rest API`
+  * Group list URL `/site_admin/user/grouplist`
+  * New group URL `/site_admin/user/newgroup`
+* Assign just created role `Rest API` to this group by modifying it.
+* Create a user and assign him to `Rest API` group.
+* Don't forget to assign to that user departments, so only those departments chats he will be able to see.
+* Navigate to `/site_admin/restapi/index` and create a Rest API key under that user.
+* Your username will be 
+  * `e-mail` or `username`
+  * Password will be the one you created in Rest API section
+
+To explore API navigate to `https://api.livehelperchat.com/#/` and change `https://demo.livehelperchat.com/restapi/swagger` to your address
+
+Quick reminder about chat messages types. Message type depends on `user_id`
+
+ * `0` - Visitor message, 
+ * `> 0` - Operator Message, 
+ * `-1` - System message. Not visible by visitor 
+ * `-2` - Bot message
+
+Quick reminder about chat status
+
+ * const STATUS_PENDING_CHAT = 0;
+ * const STATUS_ACTIVE_CHAT = 1;
+ * const STATUS_CLOSED_CHAT = 2;
+ * const STATUS_CHATBOX_CHAT = 3;
+ * const STATUS_OPERATORS_CHAT = 4;
+ * const STATUS_BOT_CHAT = 5;
+
 ## Where this module can be used?
 
 this module can be used for custom status widget generation. Integration LHC with other applicatios. Writing custom UI from scratch
