@@ -43,6 +43,8 @@ Not used in new widget anymore. Effects only old widget.
 
 If you do not want to allow visitors start chat directly by typing `lhc_web/index.php` url you can check this checkbox. It will disable this form.
 
+Checking this checkbox also will disable `chat/start` URL. So chat will be able to be started only from embedded widget.
+
 Another way to disable this is just edit `settings.ini.php` file and change
 
 ```php
@@ -53,6 +55,34 @@ Another way to disable this is just edit `settings.ini.php` file and change
     ),
 ```  
  
+Also you should see this value. In this case default site access is `eng`
+```
+'default_site_access' => 'eng',
+```
+
+and change default URL in relative section also
+
+```php
+    'eng' =>
+      array (
+        'locale' => 'en_EN',
+        'content_language' => 'en',
+        'dir_language' => 'ltr',
+        'default_url' =>
+        array (
+          'module' => 'chat', // change to 'user'
+          'view' => 'start', // change to 'login'
+        ),
+        'theme' =>
+        array (
+          0 => 'customtheme',
+          1 => 'defaulttheme',
+        ),
+      ),
+```
+
+After doing all that make sure you clear a cache.
+
 ## Define custom fields for online mode
 
 You can have custom fields then department is online.

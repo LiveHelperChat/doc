@@ -75,6 +75,11 @@ module.exports = {
             'chat/files',
             'chat/web-push-notifications',
         ],
+        Mail: [
+            'mail/intro',
+            'mail/oauth',
+            'mail/close-from-chat'
+        ],
         Department: [
             'department/department',
             'department-transfer',
