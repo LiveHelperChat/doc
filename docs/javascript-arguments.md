@@ -88,6 +88,7 @@ LHC_API.args = {
     conversion: 'oredered', // Conversionn | Optional
     pvhash : 'pvhash',  // Payment verify hash | Optional
     lang : 'lit/'       // Chat language | Optional
+    status_delay : 0,   // Delay showing status widget. It also influence proactive invitation and need help widget | Optional
     fresh : true,       // Do not save started chat. Eeach refresh will result in a new chat | Optional
     proactive : false,      // Disable proactive invitations. | Optional
     check_messages : false, // By default proactive invitation is checked on page load and we determine is there any invitation pending based on present user state.
