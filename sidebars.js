@@ -26,6 +26,7 @@ module.exports = {
             'users/users-users',
             'users/users-login-options',
             'permission',
+            'users/advanced-permissions',
             'invisible-mode',
             'operators-chat',
             'offline-online-automation',

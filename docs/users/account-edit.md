@@ -25,9 +25,9 @@ Required permissions to access assigned departments tab, one of
 
 #### Individual departments related permissions
 
-> 'lhuser','see_user_assigned_departments'
-> 'lhuser','assign_all_department_individual'
-> 'lhuser','assign_to_own_department_individual'
+> `'lhuser','see_user_assigned_departments'`
+> `'lhuser','assign_all_department_individual'`
+> `'lhuser','assign_to_own_department_individual'`
 
 To see other operators departments in edit window user has to have
 
@@ -43,9 +43,9 @@ To allow operator assign one of his own department to another operator he has to
 
 #### Departments groups related permissions
 
-> 'lhuser','assign_all_department_group'
-> 'lhuser','see_user_assigned_departments_groups'
-> 'lhuser','assign_to_own_department_group'
+> `'lhuser','assign_all_department_group'`
+> `'lhuser','see_user_assigned_departments_groups'`
+> `'lhuser','assign_to_own_department_group'`
 
 To see other operators departments groups in edit window user has to have
 
