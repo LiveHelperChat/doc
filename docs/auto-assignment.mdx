@@ -53,6 +53,10 @@ Then we assign chat to one operator we can give some delay before another chat c
 
 Pending and active chats which visitors has closed chats explicitly or visitors being redirected to survey will be excluded
 
+### Assign chat to lowest number of chats having operator
+
+We will try to assign chat first to operator who has the lowest number of chats
+
 ### Try to assign chats first to the same language speaking operators
 
 Operator in their accounts can choose what languages they are speaking. So it's possible to try first to assign chats to same language speaking operators.
@@ -67,6 +71,50 @@ Using this functionality we can allow to participate in auto assignment chats wh
 :::tip
 This functionality should be used only by advanced users which want to do some fancy things :smile:
 :::
+
+`Resume auto assign if chat remains pending for n seconds` will keep looking for additional chat variables until chat is in the pending queue less than defined amount of time. In other words keep looking for chat variables for that amount of time before continuing default auto assignment workflow.
+
+### Assign chat by operator priority
+
+In user account once you are assigning operator to department you can set his assignment priority. Once you activate this option in department
+
+```
+$sort = 'last_accepted ASC'; // Sort by default by last accepted chat
+if (should I sort by `lowest number of chats having operator`) {
+    $sort = 'active_chats ASC, last_accepted ASC';
+}
+
+if (should I sort by agent assignment priority) {
+    $sort = 'assign_priority DESC, '.$sort;
+}
+```
+
+Assignment priority can be set in user account per department or department group.
+
+## Prioritized assignment workflow
+
+First you have to active it by checking `Activate prioritized assignment`
+
+Next besides all below conditions you can also sort agents by `Assign chat by operator priority also`
+
+### Department settings
+
+ * Minimum agent assignment priority - if you set this value other than 0 we will select operators only whois priority is higher or equal to defined number `>=`
+ * Minimum chat priority for it being processed with prioritized assignment workflow - if you set value other than zero we will check that chat priority is `>` greater. If this condition is not met chat will not be processed by by prioritized assigned workflow.
+ * Maximum chat priority for it being processed with prioritized assignment workflow -  if you set value other than zero we will check that chat priority is `<` less. If this condition is not met chat will not be processed by by prioritized assigned workflow.
+
+### User settings
+
+Assignment priority can be set in user account per department or department group.
+
+User in his account has `Min and Max chat priority for chat being assigned by my assign priority`
+
+* Min chat priority - chats only with equal or higher priority will be assigned to that agent.
+* Max chat priority - chats only with equal or less priority will be assigned to that agent.
+
+```
+$appendSQLPriority .= ' AND (chat_max_priority = 0 OR chat_max_priority >= ' . (int)$chat->priority .') AND (chat_min_priority = 0 OR chat_min_priority <= ' . (int)$chat->priority .')';
+```
 
 ## Workflow cronjob influence
 
