@@ -11,6 +11,18 @@ All work by default are happening in dashboard. Operators during work session do
 * Chat with customers
 * See departments/operators statistic
 
+## Required permissions for chat listing
+
+In short grant `'lhchat','list_all_chats'`(required) **or** `'lhchat','list_my_chats'`(required) `'lhchat','list_pending_chats'`(optional)
+
+[More information](chat/list.md)
+
+## Required permissions for mail listing
+
+In short grant `'lhmailconv','list_all_mails'`(required) **or** `'lhmailconv','list_my_mails'`(required) `'lhmailconv','list_pending_mails'`(optional)
+
+[More information](mail/list.md)
+
 ## Dashboard widgets
 
 Default dashboard widgets. It's default look you should get once you login to back office first time.

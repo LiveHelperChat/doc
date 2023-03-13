@@ -49,6 +49,12 @@ Here you will find all auto responder attributes and explanation what each of th
 
 For what language this message should be shown, usefull if you would like to have difference response messages for different languages. Also you can use just translations.
 
+If you want to setup just one auto responder and have custom message per department/language you can
+ * Add language and choose department to which one it applies
+ * You will have to add as many languages department combinations as you need.
+
+You can also just add a single language and use `{timeout_message__Default text}` and use [bot individualization](bot/multiple-languages.md) in that scenario each department will have to have it's own individualization.
+
 ### Position
 
 Messages with lower values will be send the very first. If there is few auto response messages matching criteria the message with lower position will be send the very first.

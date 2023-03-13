@@ -79,7 +79,8 @@ module.exports = {
         Mail: [
             'mail/intro',
             'mail/oauth',
-            'mail/close-from-chat'
+            'mail/close-from-chat',
+            'mail/list'
         ],
         Department: [
             'department/department',
