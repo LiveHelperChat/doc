@@ -257,6 +257,10 @@ When we send chat acceptance link we can define how long this link is valid. Thi
 
 Hides print option from a visitor chat widget.
 
+### Disable chat download
+
+Hides `Download as txt` option from the widget
+
 ### Disable chat transcript send
 
 Hides option for a visitor to print a chat.

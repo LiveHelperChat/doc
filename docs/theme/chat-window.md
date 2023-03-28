@@ -90,6 +90,12 @@ Icon for the visitor to change widget language.
 
 Read more about this option [chat settings](chat/configuration.md#show-users-option-to-switch-language-at-widget)
 
+### Download as txt
+
+Download option can be disabled at global level using chat configuration  [chat settings](chat/configuration.md#disable-chat-download) 
+
+![](/img/theme/download-as-txt-v2.png)
+
 ## I don't like one of the text and it's not changeable in widget theme?
 
 Use simple [extension](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridetranslation/translations) to translate english text directly there

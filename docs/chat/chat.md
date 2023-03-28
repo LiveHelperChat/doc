@@ -130,6 +130,23 @@ In right column you will see main chat attributes.
 
 ​![](/img/chat/right-column-chat.jpg)
 
+
+### Phone number
+
+For operator to see full phone number he has to have this permission.
+
+> 'lhchat','use_unhidden_phone'
+
+### E-mail
+
+For operator to see e-mail details he has to have
+
+> 'lhchat','chat_see_email'
+
+For operator to see full e-mail address he has to have
+
+> 'lhchat','chat_see_unhidden_email'
+
 ### Edit chat
 
 Editing chat main information be done by clicking this icon. This icon will be visible only if operator has permission to edit current chat. 
