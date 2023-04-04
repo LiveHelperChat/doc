@@ -45,7 +45,11 @@ Fields while defining custom chat variable which will be NOT visbile by operator
 * `Variable identifier` - this is the key by which you can access this attribute from Rest API calls `{{lhc.var.<chat variable key>}}` or `{{lhc.add.<additional variable key/identifier>}}` or in bot responses `{lhc.add.<field identifier>}` or `{lhc.var.<variable key>}`
 * `Log message for for variable. Variables you can use {old_val}, {new_val}` - if you enter a text operator will see a system message if variable is changed while chat is going.
 * `If variable is not passed should we keep previously recorded value?` - if you want to keep previously passed value even if current page view does not have it. check it. Usefull for passing username if user logs out.
-* `This variable is invisible for operator and will be stored in chat_variables attribute` - this variable will be stored in `chat_variables` attribute and later can be accessed through `{{lhc.var.<chat variable key>}}` or in bot responses `{lhc.var.<variable key>}`
+* `This variable is invisible for operator and will be stored in chat_variables attribute` - this variable will be stored in `chat_variables` attribute and later can be accessed through 
+  * For bot response - `{{lhc.var.<chat variable key>}}` or in bot responses `{lhc.var.<variable key>}`
+  * `chat_variable.<Variable identifier>` or `{args.chat.chat_variables_array.<Variable identifier>}` for additional chat column.
+  * If you do *not* check this variable it should be accessed for additional chat columns
+    * `additional_data.<Variable identifier>`
 * `Variable type` - choose data type variable should be checked against.
 
 Javascript part would look like.
@@ -110,8 +114,11 @@ It's possible in dashboard window to show custom column. This can be done by nav
 You can set these values as `Variable name`
 
  * `lhc.<variable>` - you can find possible attributes definition in [https://api.livehelperchat.com](https://api.livehelperchat.com) under Models section. E.g lhc.nick
- * `additional_data.<custom_variable_passed>` - E.g additional_data.gender
- * `chat_variable.<extension_variable>`
+ * `additional_data.<custom_variable_passed>` - E.g `additional_data.gender`
+ * `chat_variable.<extension_variable>` - E.g `chat_variable.pid` to show data from `chat.chat_variables_array`. This would be invisible variable if you choose from `Chat Variables` options.
+ * `{args.chat.<any_var>.<any_var>}` - you can go as deep as you want.
+ * `{args.chat.chat_variables_array.playerClass}||{args.chat.mail_variables_array.player.playerClass}` - will pickup which one founds first. Either `{args.chat.chat_variables_array.playerClass}` or `{args.chat.mail_variables_array.player.playerClass}`
+
 
 ### Example how to define chat column from main chat attributes
 
