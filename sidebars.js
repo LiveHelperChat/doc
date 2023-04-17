@@ -189,6 +189,7 @@ module.exports = {
             'development/hosting-on-digitalocean',
             'development/install-cli',
             'development/orm',
+            'development/working-with-messages',
             'development/common-classes',
             'development/modifying-widget',
             'development/rest-api',

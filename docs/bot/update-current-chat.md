@@ -128,6 +128,10 @@ In order to change department you just have to `Enter department ID` ID you can 
 
 You can add a subject to the chat automatically by entering subject id.
 
+For value field you can use also replaceable variables like defined [here](text.md#replaceable-variables) you can also use placeholder from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
+
+* `{content_1}` up to `{content_6}`
+
 ## Remove any previous process
 
 In case you allow visitor to start another information collection process in the middle of one. You can encounter an error message like `Please complete previous process`.

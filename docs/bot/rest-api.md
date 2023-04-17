@@ -286,6 +286,7 @@ Other:
 * `{{footprint}}` - last 25 viewed pages url's
 * `{{chat_id}}` - chat ID
 * `{{timestamp}}` - unix timestamp
+* `{{subject_ids}}` - array of subject id's assigned to chat
 
 Attributes usefull for sending content in `Sub URL for file`
 
@@ -348,7 +349,8 @@ So your JSON body in rest API can look like
 {
     "msg":{{msg}}, // OR {{msg_clean}}
     "query":{{query}},
-    "media":{{media}} 
+    "media":{{media}},
+    "subject_ids": {{subject_ids}} 
 }
 ```
 
