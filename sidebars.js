@@ -70,6 +70,7 @@ module.exports = {
             'priority',
             'proactive',
             'canned',
+            'replaceable-variables',
             'auto-responder',
             'anonymize',
             'auto-close-delete',
