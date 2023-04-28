@@ -24,13 +24,35 @@ curl -X POST "https://conversations.messagebird.com/v1/webhooks/" \
   -H "Authorization: AccessKey <live access key>" \
   -H "Content-Type: application/json" \
   -d '{
-    "events": ["message.created"],
+    "events": ["message.created",","message.updated"],
     "channelId": "<channel id from MessageBird back office>",
     "url": "https://<lhc install path>/index.php/webhooks/incoming/<identifier> from lhc back office>",
     "settings": {
        "expected_http_code" : "2xx"
     }
   }'
+```
+
+Update webhook
+```shell
+curl -X PATCH "https://conversations.messagebird.com/v1/webhooks/<webhook ID>" \
+-H "Authorization: AccessKey <live access key>" \
+-H "Content-Type: application/json" \
+-d '{
+"events": ["message.created","message.updated"]
+}'
+```
+
+List webhooks
+```shell
+curl -X GET "https://conversations.messagebird.com/v1/webhooks/" \
+-H "Authorization: AccessKey <live access key>"
+```
+
+Delete webhook
+```shell
+curl -X DELETE "https://conversations.messagebird.com/v1/webhooks/<webhook ID>" \
+-H "Authorization: AccessKey <live access key>"
 ```
 
 ## Incoming webhook definition
