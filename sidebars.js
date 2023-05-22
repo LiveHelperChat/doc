@@ -190,6 +190,7 @@ module.exports = {
             'development/hosting-on-digitalocean',
             'development/install-cli',
             'development/orm',
+            'bot/custom-variables-extension',
             'development/working-with-messages',
             'development/common-classes',
             'development/modifying-widget',

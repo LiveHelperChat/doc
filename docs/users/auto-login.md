@@ -98,6 +98,12 @@ This section allows to generate persistent auto login link. It's way less secure
 
 ![](/img/user/custom-auto-login.jpg)
 
+## Rest API way
+
+You can generate auto login link using [Rest API](development/rest-api.md) also.
+
+> https://api.livehelperchat.com/#/user/post_restapi_generateautologin
+
 ## Permissions
 
 Required permissions

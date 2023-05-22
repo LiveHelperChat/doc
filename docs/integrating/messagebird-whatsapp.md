@@ -24,7 +24,7 @@ curl -X POST "https://conversations.messagebird.com/v1/webhooks/" \
   -H "Authorization: AccessKey <live access key>" \
   -H "Content-Type: application/json" \
   -d '{
-    "events": ["message.created",","message.updated"],
+    "events": ["message.created","message.updated"],
     "channelId": "<channel id from MessageBird back office>",
     "url": "https://<lhc install path>/index.php/webhooks/incoming/<identifier> from lhc back office>",
     "settings": {

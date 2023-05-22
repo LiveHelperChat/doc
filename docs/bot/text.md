@@ -51,6 +51,7 @@ Text area supports these replaceable variables
  * `{args.current_trigger.<id|name>}` - current trigger id. Stores current trigger
  * `{args.first_trigger.<id|name>}` - first trigger id. As during bot trigger execution multiple triggers can be involved this variables stores very first one.
  * `{random_20}` - generate random string length of 20
+ * `{args.chat.chat_dynamic_array.*}` - variables which were defined by extensions. Lear how to define [your own custom variables](bot/extension-custom-variables.md).
 
 You can also set value from [Rest API](bot/rest-api.md#output-variables-in-triggers) E.g
 
