@@ -75,6 +75,7 @@ module.exports = {
             'anonymize',
             'auto-close-delete',
             'chat/files',
+            'chat/participant',
             'chat/web-push-notifications',
         ],
         Mail: [
@@ -87,11 +88,13 @@ module.exports = {
         Department: [
             'department/department',
             'department-transfer',
-            'department/product'
+            'department/product',
+            'department/brand'
         ],
         Bot: [
             'how-to-use-bot',
             'bot/triggers',
+            'bot/conditions',
             'bot/multiple-languages',
             {
                 type: 'category',

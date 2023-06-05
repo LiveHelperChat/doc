@@ -59,6 +59,12 @@ s.parentNode.insertBefore(po, s); })();
 
 Please refer to [department priority](department/department.md#priority-used-for-chats-priority) attribute
 
+## Setting transfer to department
+
+In this configuration chat department will be set to brand department with role `food` independently in which shop customer started a chat. We are also checking [condition](bot/conditions.md). We also check that transfer can happen only if present department role is `support`. E.g. bot has changed department to some other than `support`
+
+![](/img/department/brand-chat-priority.png)
+
 ## Define priority condition 
 
 This can be defined in
@@ -80,6 +86,8 @@ Important things
 * If rule is matched other rules are ignored.
 * If you update one of the chat attributes, chat priority is modified but not department after chat has started.
 * Chats are auto assigned in this order - `priority DESC, id ASC`. Chat with higher priority is assigned first.
+
+
 
 ## Permissions
 

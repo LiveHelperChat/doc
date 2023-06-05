@@ -196,6 +196,10 @@ Few samples
 
 Reaction icons will be always visible.
 
+### Webhook execution delay
+
+In case you are running [php-resque](development/webhooks.md#worker-options) worker and your messages are not delivered in the order you write in the bot you can add delay to any next message.
+
 ## Quick reply options
 
 These options defines visible buttons under a message.
