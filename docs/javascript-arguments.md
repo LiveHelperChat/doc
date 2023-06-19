@@ -36,6 +36,7 @@ LHC_API.args = {
                          // In that case it makes sense to listen to unread_message_title or unread_message events for unread messages indication.
     position_placement: 'bottom_right',  // One of bottom_right, bottom_left, middle_right, middle_left, full_height_right, full_height_left  || Placement options for a widget. Used only if mode is 'widget'. | Optional
     leaveamessage: true, // Should leave a message functionality be enabled or not | Optional
+    offline: null,       // true - to set widget for offline mode independently on department operators settings. It forces widget to be rendered in offline mode alays.
     offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
                                                     // If embed mode is used and leave a message is disabled and offline_redirect is provided. Live Helper Chat will redirect customer to provided page.
     identifier : 'lhc', // Can be used for custom proactive invitation | Optional

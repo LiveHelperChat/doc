@@ -28,6 +28,26 @@ In this area you will see visitor messages. Also if there are previous visitor m
 
 You can also click right mouse button and see context menu related to a message.
 
+### Message delivery status indication
+
+1. ![](/img/chat/scehduled-for-sent.png) - was was scheduled for sent. This status is used if you are using third party integration and message itself is send via webhooks workflow.
+2. ![](/img/chat/msg-sent.png) - message was sent. In case it's standard widget chat it means lhc has stored message internally.
+3. ![](/img/chat/msg-delivered.png) - message was delivered to client device, but is un-read. This status is used for messagebird or fbmessenger exensions.
+4. ![](/img/chat/msg-was-read.png) - this is how default message looks like was it was read, either in the widget or via remote integrations. 
+5. ![](/img/chat/delivery-failed-msg.png) - message delivery has failed. This icon is used in combination with third party extensions like messagebird or fbmessenger. In case of the widget scenario you will never see this icon.
+
+At the moment website widget will differentiate between 3 and 4 status if you are using [NodeJS-Helper](https://github.com/LiveHelperChat/NodeJS-Helper). Otherwise, message will become `read` only if visitor has widget open and browser tab is active.
+
+Internal messages status for reference
+
+```
+const STATUS_PENDING = 0;   
+const STATUS_SENT = 1;      
+const STATUS_DELIVERED = 2; 
+const STATUS_READ = 3;      
+const STATUS_REJECTED = 4;
+```
+
 ### Load previous chat button.
 
 ​![](/img/chat/previous-button.jpg)
