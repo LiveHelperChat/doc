@@ -36,7 +36,7 @@ You can also click right mouse button and see context menu related to a message.
 4. ![](/img/chat/msg-was-read.png) - this is how default message looks like was it was read, either in the widget or via remote integrations. 
 5. ![](/img/chat/delivery-failed-msg.png) - message delivery has failed. This icon is used in combination with third party extensions like messagebird or fbmessenger. In case of the widget scenario you will never see this icon.
 
-At the moment website widget will differentiate between 3 and 4 status if you are using [NodeJS-Helper](https://github.com/LiveHelperChat/NodeJS-Helper). Otherwise, message will become `read` only if visitor has widget open and browser tab is active.
+These status messages are supported also by [NodeJS-Helper](https://github.com/LiveHelperChat/NodeJS-Helper).
 
 Internal messages status for reference
 
