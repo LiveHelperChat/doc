@@ -66,6 +66,7 @@ Dashboard also has new widget bot chats. Once widget is activate it will show bo
     * Execute action
     * [Execute trigger body](bot/trigger-body.md)
     * [Rest API](bot/rest-api.md)
+    * [Sourceless Iframe](bot/iframe.md)
     
     
 ## FAQ

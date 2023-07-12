@@ -65,6 +65,7 @@ First of all there are three conditions you can check before event is executed.
  * `Compare attribute` - you can compare any chat attribute for conditions to be matched
  * `Start of OR` - you can have `OR` conditions between conditions groups
 
+
 Related cronjobs
 
  * For continuous events to work you have to be running [webhooks cronjob](development/cronjob.md#continuous-webhooks-cronjob) 
@@ -82,8 +83,50 @@ You can compare any chat attribute using this condition. You also have access to
 
 Supported placeholders
 
- * `{args.chat.<any chat attr>}` you can use for comparison including sub attribute like `{args.chat.department.<any_department_attribute>}`
- * `{time}`
+ * `{args.chat.<any chat attr>}` you can use for comparison including sub attribute like `{args.chat.department.<any_department_attribute>}`. [Chat object](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L196) also see `__get` method for magic attributes like
+   * `department` or `user`
+     * `{args.chat.user.name_support}` name visible in the widget or 
+     * `{args.chat.user.name_official}` name visible in the back office
+ * `{time}` - current timestamp
+ * `{args.chat.lsync}` - last time visitor was seen online or checked for messages.
+ * `{args.chat.status_sub}` - check for chat sub-status
+   * ```
+     const STATUS_SUB_DEFAULT = 0;
+     const STATUS_SUB_OWNER_CHANGED = 1;
+     const STATUS_SUB_CONTACT_FORM = 2;
+     const STATUS_SUB_USER_CLOSED_CHAT = 3;
+     const STATUS_SUB_START_ON_KEY_UP = 4;
+     const STATUS_SUB_SURVEY_SHOW = 5;
+     const STATUS_SUB_SURVEY_COLLECTED = 6;
+     const STATUS_SUB_OFFLINE_REQUEST = 7;
+     const STATUS_SUB_ON_HOLD = 8;
+     const STATUS_SUB_SURVEY_COMPLETED = 9;
+     ```
+ * `{args.chat.status}` - check for chat status 
+   * ```
+     const STATUS_PENDING_CHAT = 0;
+     const STATUS_ACTIVE_CHAT = 1;
+     const STATUS_CLOSED_CHAT = 2;
+     const STATUS_CHATBOX_CHAT = 3;
+     const STATUS_OPERATORS_CHAT = 4;
+     const STATUS_BOT_CHAT = 5;
+     ```
+ * `{args.chat.user.id}` - operator object with it's own [attributes](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhuser/erlhcoreclassmodeluser.php#L15)
+ * `{args.chat.last_op_msg_time}` - you *cannot* use this attribute in bot chat status because while chatting with bot it remains zero always. Use `{args.chat.last_user_msg_time}` as bot should always respond within few seconds.
+ * `{args.chat.id}` [Chat object](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L196) also see `__get` method for magic attributes like
+    * `department` or `user`
+        * `{args.chat.user.name_support}` name visible in the widget or
+        * `{args.chat.user.name_official}` name visible in the back office
+
+These are the main classes
+
+* [`args.chat.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php)
+* [`args.chat.user.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhuser/erlhcoreclassmodeluser.php)
+* [`args.chat.department.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhdepartament/erlhcoreclassmodeldepartament.php)
+* [`args.chat.incoming_chat.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatincoming.php)
+* [`args.chat.incoming_chat.incoming.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatincomingwebhook.php)
+
+All classes can be found [here](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/lib/models)
 
 ### Examples
 
@@ -98,6 +141,17 @@ Supported placeholders
 You can combine these two rules into single continuous webhook using `Start of OR`
 
 ![](/img/chat/webhook-example-3.png)
+
+#### When bot does not respond for 60 seconds
+
+Because we are not setting `last_op_msg_time` in case visitor is talking with a bot we have to use following approach.
+
+* First we check that chat is in bot status `{args.chat.status} = 5`
+* From visitor last message time passed more than 60 seconds. `{args.chat.last_user_msg_time} < {time}-60`
+* Widget is not closed `{args.chat.status_sub} != 3`
+* Visitor was seen in the last two minutes `{args.chat.lsync} > {time}-120`
+
+![](/img/bot/bot-is-gone.png)
 
 #### When an agent chat duration time is > 1.5 department average chat time.
 

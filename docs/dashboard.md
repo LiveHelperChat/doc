@@ -172,6 +172,10 @@ This widget shows only chats assigned to logged operator. Chat can be either in 
 * In `Account -> Visible` lists page he has to active `My pending and active chats list enabled`
 * Operator in dashboard widget settings ​![](/img/dashboard/dashboard-icon.jpg) has to choose `My active and pending chats`
 
+By default operator does not have permission to set custom filters for that widget. This is default because if auto assignment is setup and operator set's filter he might miss a chat from other departments.
+
+> 'lhchat','my_chats_filter'
+
 ### Pending chats
 
 This widget shows all departments pending chats to which operator has access to.

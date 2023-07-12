@@ -114,7 +114,8 @@ module.exports = {
                     'bot/check-conditions',
                     'bot/bot-update-current-chat',
                     'bot/restrict-execution-more-than-defined-times',
-                    'bot/log-action'
+                    'bot/log-action',
+                    'bot/iframe'
                 ]
             },
             {

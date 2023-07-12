@@ -279,6 +279,17 @@ All messages at once
 * `{{msg_items}}` - all chat messages objects encoded in JSON. Just do `json_decode` on passed variable
 * `{{msg_all_html}}` - all chat messages rendered as HTML. You might need to style classes.
 * `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
+* `{{media_all}}` - array of files attached `[file...` syntax.
+* `{{media_all_links}}` - plain text with structure of 
+  * ```
+http://example.com/link/to/file_1.pdf [file_1.pdf]
+http://example.com/link/to/file_2.pdf [file_2.pdf]
+```
+* `{{media_all_links_raw}}` - plain text with structure of 
+  * ```
+http://example.com/link/to/file_1.pdf
+http://example.com/link/to/file_2.pdf 
+```
 
 Other:
 
@@ -332,7 +343,11 @@ Dynamic attributes extraction. You can go as deep as you want.
 * `{{args.<any argument attribute>.<any subargument attribute>}}` - if you are implementing [webhooks](../development/webhooks.md) most likely you will be using this as placeholder.
 * `{{args.chat.department.identifier}}` - This way you can access any chat and child object attributes. In this example department identifier. 
 * `{{args.chat.department}}` - you can pass even all department object.
-* `{{args.chat.chat_variables_array.order_id}}` - access `order_id` if field is defined as `This variable is invisible for operator and will be stored in chat_variables attribute` 
+* `{{args.chat.chat_variables_array.order_id}}` - access `order_id` if field is defined as `This variable is invisible for operator and will be stored in chat_variables attribute`
+* `{{args.chat.id}}` [Chat object](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L196) also see `__get` method for magic attributes like
+  * `department` or `user` 
+    * `{{args.chat.user.name_support}}` name visible in the widget or 
+    * `{{args.chat.user.name_official}}` name visible in the back office
 
 Incoming chat attributes. This is usefull if you want to access to payload attribute of `Incoming webhook` created chat.
 
@@ -341,6 +356,18 @@ Incoming chat attributes. This is usefull if you want to access to payload attri
 * `{{args.chat.incoming_chat.incoming.attributes.<you defined key in attribtues of incoming webhook>}}` - you can use this as placeholder for `Sub URL` or `Sub URL for file`. Just leave empty host attribute.
 * `{{args.chat.incoming_chat.incoming.scope}}` - you can access any attribute of incoming webhook definition
 * `{{args.msg_text}}` - unknown button click payload value
+
+All possible models attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
+
+These are the main classes
+
+* [`args.chat.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php)
+* [`args.chat.user.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhuser/erlhcoreclassmodeluser.php)
+* [`args.chat.department.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhdepartament/erlhcoreclassmodeldepartament.php)
+* [`args.chat.incoming_chat.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatincoming.php)
+* [`args.chat.incoming_chat.incoming.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatincomingwebhook.php)
+
+All classes can be found [here](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/lib/models)
 
 Example
 
