@@ -298,6 +298,8 @@ Other:
 * `{{chat_id}}` - chat ID
 * `{{timestamp}}` - unix timestamp
 * `{{subject_ids}}` - array of subject id's assigned to chat
+* `{{subject_list}}` - array of subjects objects with all attributes
+* `{{subject_list_names}}` - string of subject names imploded by comma 
 
 Attributes usefull for sending content in `Sub URL for file`
 
@@ -309,6 +311,45 @@ Additional attribute you can use for `Sub URL for file` and `If you are sending 
 
 * `{file_api}your request body in case it's a file{/file_api}`
 * `{image_api}your request body in case it's an image{/image_api}`
+
+Additional attributes you can use 
+
+* `{interactive_api}quick reply buttons wrapper{/interactive_api}`
+* `{button_template}quick reply individual button template{/button_template}`
+* `{is_button}"button"{/is_button}` - in case quick reply button is a button
+* `{is_url}"url"{/is_url}` - in case quick reply button is an url
+* `{{rest_api_button}}` - custom content from bot builder `Rest API button custom content.` field
+* `{{button_payload}}` - either lhc genrared internal payload for the trigger execution or just an URL
+* `{{button_title}}` - quick reply button title
+
+```
+{
+   "receiver":{{args.chat.incoming_chat.chat_external_id}},
+   "min_api_version":7,
+   "sender":{
+      "name":"Live Helper Chat"
+   },
+   "type":"text",
+   "text":{{msg_url}}
+{interactive_api}
+,"keyboard": {
+ "Type": "keyboard",
+  "Buttons": [
+{button_template}
+          {
+            "ActionType":{is_button}"reply"{/is_button}{is_url}"open-url"{/is_url},
+            "ActionBody": {{button_payload}},
+            "Text":{{button_title}},
+            "TextSize":"regular"
+            {{rest_api_button}}
+         }
+{/button_template}
+      ] 
+    }
+{/interactive_api}
+}
+```
+
 
 Main chat attributes. You can access only first level attributes.
 
