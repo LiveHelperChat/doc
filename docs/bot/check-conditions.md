@@ -110,3 +110,20 @@ Trigger setup can look like
 Webhook setup can look like
 
 ![](/img/bot/webhook-event.png)
+
+## How to execute bottom triggers if conditions is matched
+
+There is two scenarios
+
+### If you are using `If conditions are met execute this trigger`
+
+* `{args.chat.dep_id} = 31` We want to execute only if department id is `31`.
+* check `If conditions are matched continue executing responses.` This is required if you are using `If conditions are met execute this trigger`
+
+![](/img/bot/bot-conditions-trigger.png)
+
+### If you are not using `If conditions are met execute this trigger`
+
+* Condition changes to `{args.chat.dep_id} != 31` We want to execute only if department id is `31`. This time it's reverse
+
+![](/img/bot/bot-conditions-trigger-reverse.png)
