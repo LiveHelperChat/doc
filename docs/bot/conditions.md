@@ -50,7 +50,8 @@ E.g
 I expect to find only two words where both of them should be `edas` and `em`
 
 If you want to match any value from list of values just do
-`{args.chat.nick}` `Text like` `remdex,vip_player`
+> `{args.chat.nick}` `Text like` `remdex,vip_player` nick should be either `remdex` or `vip_player`
+> `{args.chat.dep_id}` `Text like` `5,8` Matches if department id is 5 or 8
 
 
 ### `Contains`
