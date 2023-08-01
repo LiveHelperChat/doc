@@ -44,6 +44,15 @@ Internally it's called `like` and `notlike`
 
 These rules are defined [here](bot/triggers.md#custom-text-matching)
 
+E.g
+`{args.chat.department.name}` `Text like` `edas && em [params max_words=2]` 
+
+I expect to find only two words where both of them should be `edas` and `em`
+
+If you want to match any value from list of values just do
+`{args.chat.nick}` `Text like` `remdex,vip_player`
+
+
 ### `Contains`
 
 Is checking if one part of the string is presented in another string.
