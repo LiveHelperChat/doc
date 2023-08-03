@@ -20,6 +20,12 @@ While defining conditions it can check other conditions. E.g
 
 ![](/img/bot/condition.png)
 
+## Chat attributes extraction
+
+You can extract any attribute using this modal window
+
+![](/img/bot/extract-attribute.png)
+
 ## Conditions explanations
 
 These explains are valid everywhere you see conditions checking

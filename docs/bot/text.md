@@ -37,7 +37,7 @@ Text area supports these replaceable variables
  * `{lhc.department}`
  * `{lhc.add.<field identifier>}` - supports only first level attributes
  * `{lhc.var.<variable key>}` - supports only first level attributes
- * `{args.chat.<any chat attribute>}`
+ * `{args.chat.<any chat attribute>}` You can see all available variables using [this modal window](bot/conditions.md#chat-attributes-extraction)
  * `{args.chat.incoming_chat.chat_external_id}` - incoming chat id
  * `{args.chat.incoming_chat.payload_array.*}` - first payload attributes in array format
  * `{args.msg.msg}` - visitor message.
@@ -57,6 +57,7 @@ Text area supports these replaceable variables
          * `{args.chat.user.name_support}` name visible in the widget or
          * `{args.chat.user.name_official}` name visible in the back office
 
+
 These are the main classes
 
 * [`args.chat.<attr>`](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php)
@@ -71,6 +72,7 @@ You can also set value from [Rest API](bot/rest-api.md#output-variables-in-trigg
 
 * `{content_1}` up to `{content_6}` (these will be string values)
 * `{content_1_json}` up to `{content_6_json}` (will be already json encoded string). This is usefull in case you set [chat variable](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator)
+
 
 ### Escaping variables for url and [html] blocks
 

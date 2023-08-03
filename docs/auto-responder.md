@@ -13,6 +13,19 @@ Important
 * Bot responses will work only if there is also main message in responder text area. Text message above bot choosing option has to be filled.
 * Text messages from first level bot responses are not saved, only from child. See example [how to transfer chat to pending state if operator is not responding](bot/operator-not-responding.md).
 * Text messages supports translations syntax `{identifier_text__My message here}`
+* Auto responder works only for active/pending status chats
+* Auto responder in third party integrations supports
+  * WhatsApp - https://github.com/LiveHelperChat/fbmessenger
+  * GoogleBusinessMessage - https://github.com/LiveHelperChat/GoogleBusinessMessage
+  * MessageBird - https://github.com/LiveHelperChat/messagebird
+* If you are using auto responder with any of third party services make sure you are using [workflow cronjob every 5 seconds](development/cronjob.md#default-cronjob-setup).
+
+For auto responder to work with third party integrations make sure you have this webhook setup. `chat.before_auto_responder_msg_saved`
+
+Bot mode auto responders setup
+
+* Webhook/Auto-responder setup if bot is not replying for [60 seconds](development/webhooks.md#when-bot-does-not-respond-for-60-seconds)
+* Webhook/Auto-responder setup if visitor is not replying for [60 seconds](development/webhooks.md#when-user-is-not-responding-to-bot-for-60-seconds)
 
 ## Auto responder apply order
 1. First we check does chat department has department specific auto responder. If it does we apply it.

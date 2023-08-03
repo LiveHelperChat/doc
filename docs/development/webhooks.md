@@ -144,14 +144,26 @@ You can combine these two rules into single continuous webhook using `Start of O
 
 #### When bot does not respond for 60 seconds
 
-Because we are not setting `last_op_msg_time` in case visitor is talking with a bot we have to use following approach.
+Conditions
 
 * First we check that chat is in bot status `{args.chat.status} = 5`
-* From visitor last message time passed more than 60 seconds. `{args.chat.last_user_msg_time} < {time}-60`
+* From visitor last message time passed more than 60 seconds. `{args.chat.last_user_msg_time} < {time}-60` OR `{args.chat.last_msg.time} < {time}-60`
 * Widget is not closed `{args.chat.status_sub} != 3`
-* Visitor was seen in the last two minutes `{args.chat.lsync} > {time}-120`
+* Visitor was seen in the last two minutes `{args.chat.lsync} > {time}-120`. *Remove* that rule in third party integrated chats! as this attribute is always zero in that case. WhatsApp etc...
+* Last message was a visitor message `{args.chat.last_msg.user_id} = 0`. We do not want to terminate chat if visitor is not replying.
 
-![](/img/bot/bot-is-gone.png)
+![](/img/bot/bot-not-responding.png)
+
+#### When user is not responding to bot for 60 seconds?
+
+Conditions
+
+* First we check that chat is in bot status `{args.chat.status} = 5`
+* From bot last message time passed more than 60 seconds. `{args.chat.last_msg.time} < {time}-60`
+* Widget is not closed `{args.chat.status_sub} != 3`
+* Last message was a bot message `{args.chat.last_msg.user_id} = -2`. 
+
+![](/img/bot/user-not-replying.png)
 
 #### When an agent chat duration time is > 1.5 department average chat time.
 
