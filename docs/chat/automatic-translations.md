@@ -6,6 +6,11 @@ sidebar_label: Automatic translation
 
 Live Helper Chat supports automatic translations while conversation is going.
 
+Youtube manuals
+
+* https://youtu.be/B8By48wGbSg - translation setup for normal chatting
+* https://youtu.be/WnIzwbz4hr8 - bot messages automatic translation
+
 ## Setup
 
 Navigate to `System configuration -> Live help configuration -> Atomation (Automatic translations)`
@@ -42,6 +47,20 @@ If you do not want to use automatic translations for whatever reason you can tra
 ![](/img/chat/translation-opt-in-message.png)
 
 Also after you wrote a message you can click on the toolbar ![](/img/chat/toolbar-language-icon.png) and operator message will be translated in the message area.
+
+### How to setup AWS messages translations
+
+For AWS messages translations you have to setup composer first from `lhc_web` folder
+
+Just do. If you get an error make sure you have the most recent version from official repository. And your `composer.json` file look like https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/composer.json
+If you are updating from older version make sure you replace `index.php` and `cron.php` file
+
+> `composer install`
+
+Also uncomment those lines. Remove two dashes
+
+* https://github.com/LiveHelperChat/livehelperchat/blob/ee3aea143c3f57751206ca4b3cfeee95f4ba51d5/lhc_web/index.php#L31
+* https://github.com/LiveHelperChat/livehelperchat/blob/ee3aea143c3f57751206ca4b3cfeee95f4ba51d5/lhc_web/cron.php#L25
 
 ## Permissions
 
