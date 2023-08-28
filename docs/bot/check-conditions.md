@@ -31,6 +31,7 @@ One of the few possible scenarios can be
 * `operator_files` same checks as `chat_files` except only for operator files
 * `user_files` same checks as `chat_files` except only for visitor files
 * `{validation_event__<event_name>}` E.g `{validation_event__my_event_validator}` event with `my_event_validator` will be dispatched and result afterwards compared with expected output. `my_event_validator` `=` `1`
+* `{{args.chat.online_user.previous_chat.id}} > 0` and use that condition to check did visitor had chat before with you.
 
 If you do not enter `Value` means it's empty.
 

@@ -395,6 +395,8 @@ Dynamic attributes extraction. You can go as deep as you want.
 Incoming chat attributes. This is usefull if you want to access to payload attribute of `Incoming webhook` created chat.
 
 * `{{args.chat.incoming_chat.chat_external_id}}` - external chat id
+* `{{args.chat.incoming_chat.chat_external_first}}` - first part of chat external if two fields are used
+* `{{args.chat.incoming_chat.chat_external_last}}` - last part of chat external if two fields are used
 * `{{args.chat.incoming_chat.payload_array.*}}` - you can access any first payload attribute. E.g session Id
 * `{{args.chat.incoming_chat.incoming.attributes.<you defined key in attribtues of incoming webhook>}}` - you can use this as placeholder for `Sub URL` or `Sub URL for file`. Just leave empty host attribute.
 * `{{args.chat.incoming_chat.incoming.scope}}` - you can access any attribute of incoming webhook definition
