@@ -76,6 +76,11 @@ He can choose again to join as by clicking
 
 > 'lhchat', 'impersonate'
 
+### Typing indicator
+
+In order for operators to see full text what visitor is typing - not only indicator. They must have this permission
+
+> 'lhchat','see_sensitive_information'
 
 In user account Chat tab there is also option to enable/disable sentences [Auto uppercase sentences](users/account.md#auto-uppercase-sentences)
  

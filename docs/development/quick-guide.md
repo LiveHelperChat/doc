@@ -18,7 +18,7 @@ sidebar_label: Developing
  * To compile new widget V2
    * There is two apps [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app)
    * `cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build`
-   * `cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build && npm run build-ie`
+   * `cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build`
  * To recompile back office React APP (Left toolbar, Group Chat etc...)
    * `cd lhc_web/design/defaulttheme/js/admin &&  npm run build`
  * Recompile static JS/CSS files. This is required if you change core JS files. It also avoids missing CSS/JS files if more than one server is used.

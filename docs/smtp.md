@@ -28,7 +28,7 @@ You can use google SMTP settings. There is demo configuration screenshot. Also I
 
 In general:
 
-* host: tls://smtp.google.com
+* host: tls://smtp.gmail.com
 * port: 587
 * Username: Your google email address
 * Password: Your google password

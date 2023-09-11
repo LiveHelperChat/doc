@@ -204,6 +204,18 @@ AddType application/wasm .wasm
 </Files>
 ```
 
+If for some reason above one does not work try this without `always` keyword
+
+```apacheconfig
+AddType application/wasm .wasm
+
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|map|wav|pdf|ico|txt)$">
+  Header Set Access-Control-Allow-Origin "*"
+  Header Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+```
+
 Other possible reasons
 
 * You have changed `Chat configuration -> Misc -> Domains where script can be embedded. E.g example.com, google.com` but embedded script in not listed domain.
