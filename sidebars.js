@@ -115,6 +115,7 @@ module.exports = {
                     'bot/bot-update-current-chat',
                     'bot/restrict-execution-more-than-defined-times',
                     'bot/log-action',
+                    'bot/send-mail',
                     'bot/iframe'
                 ]
             },
