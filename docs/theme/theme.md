@@ -407,6 +407,15 @@ Will result in
 
 ![](/img/theme/message-area-red.png)
 
+
+If you want to style messages depending on their state here is logic to follow.
+
+* Messages which will be stored has a class `.msg-to-store`
+* Messages appearing as intro bot messages can be selected by `.start-chat > .index-row-0` should *be* animated
+* Messages which are fetched first can be selected by `.online-chat > .index-row-0` these should *not be* animated
+* Messages not having `.online-chat > .index-row-0` should be animated.
+
+
 ### Custom CSS only for popup
 
 ```css
