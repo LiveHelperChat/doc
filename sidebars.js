@@ -83,7 +83,8 @@ module.exports = {
             'mail/oauth',
             'mail/close-from-chat',
             'mail/list',
-            'mail/mail-window'
+            'mail/mail-window',
+            'mail/lifespan'
         ],
         Department: [
             'department/department',
