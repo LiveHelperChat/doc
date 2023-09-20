@@ -79,6 +79,12 @@ How listen this even in extension see an [example](https://github.com/LiveHelper
 
 You can show a visitor `Cancel` button with your defined text. If you are using extension you will have to throw exception with this option.
 
+You can add a 'cancel' button when using the Telegram module for users. To achieve this, you need to create two separate triggers:
+
+Create a trigger named 'cancel.' Choose the 'send text' department as the first step. Next, add a 'quick reply' and specify the name for the cancel button, with the type set to 'execute trigger.' Choose the second trigger you've created, let's call it 'Cancel Action,' as the trigger to execute.
+
+Create a trigger called 'Cancel Action.' Within this trigger, select the 'send text' department and enter the text that should appear after cancellation. Add a second department, 'update current chat,' and choose the action 'remove any previous process.'
+
 ### Intro message
 
 This message is shown before user enters any required information.
