@@ -268,6 +268,10 @@ Single messages
 * `{{msg_url_lowercase}}` - user/operator message will contain links instead of bbcode tags. **Lowercase version**.
 * `{{msg_clean}}` - user/operator message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message.
 * `{{msg_clean_lowercase}}` - user/operator message without `[file=616_6f13fafc726e119f5a0a3f49221b45f7]` in it's body if it's the only content in message. **Lowercase version**.
+* `{{msg_html}}` - msg in HTML format
+* `{{msg_html_lowercase}}` - msg in HTML format lowercase
+* `{{msg_html_nobr}}` - msg in HTML format without `<br />` tags. Presently used in telegram integration.
+* `{{msg_html_lowercase_nobr}}` - msg in HTML format lowercase without `<br />` tags.
 
 All messages at once
 
