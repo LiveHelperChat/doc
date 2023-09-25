@@ -19,7 +19,7 @@ This cronjob does the following things.
  * Executes automatic chat's purging/closing
  * Executes round robin workflow
  * Auto Responder for third party services. WhatsApp, Facebook, MessageBird
- *  Please note that the auto-responder functionality is designed to work for a maximum of 500 active chats. If there are more than 500 active chats, it will only operate for the first 500.   
+ * Please note that the auto-responder functionality is designed to work for a maximum of 500 active/pending/bot chats. If there are more than 500 in total of active/bot/pending chats, it will only operate for the first 500.   
 
 Should be run every minute or even more frequent if you want live chat auto assignment workflow to feel like live. See [performance tweaks](performance.md)
 
