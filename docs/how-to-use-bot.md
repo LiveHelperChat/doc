@@ -26,19 +26,19 @@ Create a bot. Once bot is saved go back to bot list and click bot name.
 
 To activate bot you have to edit department and choose a bot in department edit window.
 
-Dashboard also has new widget bot chats. Once widget is activate it will show bot chats. You may need in your account -> visible lists to enable bot chats listing.
+Dashboard also has new widget bot chats. Once widget is activated it will show bot chats. You may need to go to your account -> visible lists to enable bot chats listing.
 
 
 
-## How bot building workflow looks like?
+## What does the bot-building workflow look like?
 
-* Firs thing you have to do is to create a triggers group. Trigger is just action on which something will happen. Trigger can listen to multiple events. Like hi, hey, hellow text and button clicks.
+* First thing you have to do is to create a triggers group. Trigger is just action on which something will happen. Trigger can listen to multiple events. Like hi, hey, hello text and button clicks.
 * Middle column represents what actions bot will do if trigger is matched.
 * Right column will represent what visitor will see.
 
 ![](/img/bot/bot-building-workflow.png)
 
-## Bot reply types
+## Types of Bot Replies
 
 * Basic
     * [Send text](bot/text.md) 
@@ -105,7 +105,7 @@ Yes you can. Just add more than one event.
 
 > 'lhgenericbot','use'
 
-## How looks every Basic replies ?
+## What do basic replies look like?
 
 #### Examples:
 ![](/img/bot/specials.gif)
