@@ -5,11 +5,11 @@ title: Triggers
 
 ## Introduction
 
-Triggers are response holders. Triggers always are placed in [Trigger group](#trigger-groups).
+Triggers are response holders. Triggers are always placed in a [Trigger group](#trigger-groups).
 
 ## Trigger groups
 
-Trigger groups are usefull to separate logic by business logic. Your logic related to users password remind workflow should be placed in one group and in another group parcel tracking workflow for example.
+Trigger groups are useful to separate logic by business logic. Your logic related to users password remind workflow should be placed in one group and in another group, you can put the parcel tracking workflow, for example.
 
 Each trigger group can be exported and deleted separately.
 
@@ -17,15 +17,15 @@ Each trigger group can be exported and deleted separately.
 
 ## Trigger
 
-There can be three types of triggers in general.
+There can be three general types of triggers.
 
 ![](/img/bot/trigger-type.png?v3)
 
-* `Default` - this trigger is executed as default trigger as soon chat starts.
-* `Default for unknown message` - when bot does not find relevant trigger to user message this trigger is executed.
-* `Default for unknown button click` - when bot does not find relevant trigger to button click this trigger is executed.
-* `Execute always` - this trigger is executed very first all the time. Most of the time you don't need to use this trigger.
-* `Can be passed as argument` - this has to be checked for trigger to be used in Widget themes, Proactive Invitation or `trigger_id` as argument.
+* `Default` - This trigger is executed as default trigger as soon chat starts.
+* `Default for unknown message` - When bot does not find relevant trigger to user message this trigger is executed.
+* `Default for unknown button click` - When bot does not find relevant trigger to button click this trigger is executed.
+* `Execute always` - This trigger is executed very first all the time. Most of the time you don't need to use this trigger.
+* `Can be passed as argument` - This has to be checked for trigger to be used in Widget themes, Proactive Invitation or `trigger_id` as argument.
 
 ## Trigger events
 
@@ -136,15 +136,15 @@ Means it will match
 
 * fish price please
 * car price 
-* ~~car price and fish price~~ `but not this because of to many wods`
+* ~~car price and fish price~~ `but not this because of too many words`
 
 #### `Typos number (include words)` && `Typos number (exclude words)`
 
-If you do not want to define number of allowable typos per word you can define them here. They will be applied to all words.
+If you do not want to define the number of allowable typos per word, you can define them here. They will be applied to all words.
 
 #### `Should include only words from above, not any.`
 
-Means message has to contain only defined words. In that case you should not be using `&&` operator.
+Means message has to contain only the defined words. In that case you should not be using `&&` operator.
 
 `car,price`
 
