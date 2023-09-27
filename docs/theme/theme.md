@@ -42,8 +42,17 @@ Using this field you can adjust icons location in the widget
 E.g let's put minimize and close icon to the right
 
 ```
-right_close,right_min
+* dropdown_print,dropdown_min,dropdown_popup,dropdown_fullheight,dropdown_close
+* left_close,right_min,dropdown_popup,left_fullheight,dropdown_close
 ```
+
+E.g `dropdown_print,dropdown_min,dropdown_popup,dropdown_fullheight,dropdown_close`
+
+![](/img/theme/burger-menu.png)
+
+`left_min,dropdown_print,dropdown_popup,dropdown_fullheight,dropdown_close`
+
+![](/img/theme/left-min.png)
 
 ### Widget border color
 
@@ -246,6 +255,16 @@ React attribute path
 HTML is rendered before widget header
 
 ![Inside widget header](/img/theme/before-header.png)
+
+### Custom html after widget content
+
+This field also supports JS execution on rendering.
+
+```
+<script data-bot-action="execute-js">
+</script>
+```
+![Below content](/img/theme/below-content-widget.png)
 
 ### Custom html inside standard widget header
 
