@@ -396,6 +396,14 @@ body {
 }
 ```
 
+You can also change default icon by SVG body
+
+```css
+#lhc_status_container #status-icon:not(.offline-status):before, #lhc_status_container .lhc-icon-online:before {
+    content: url("data:image/svg+xml,rest of your SVG");
+}
+```
+
 Will result
 
 ![](/img/theme/status-widget.png)
@@ -420,6 +428,25 @@ Will result in a widget with a shadow. It set's style directly to an iframe itse
 .message-send-area{
     background-color: red!important;
 }
+```
+
+This field also supports fonts/styles preloads
+
+If you put something like that font will be preloaded. Quotes `"` is required around font path
+```css
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+```
+
+This way style itself would be preloaded
+```
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 ```
 
 Will result in
