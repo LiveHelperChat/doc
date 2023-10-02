@@ -187,7 +187,7 @@ fastcgi_send_timeout 180s;
 fastcgi_read_timeout 180s;
 
 ```
-You need also set domain in live helper chat settins, Live help configuration (tab), chat configuration, misc (tab) then compile the filed: Domains where script can be embedded. E.g example.com, google.com
+You need also set domain in live helper chat settings, live help configuration (tab), chat configuration, misc (tab) then compile the filed: domains where script can be embedded. E.g example.com, google.com
 
 ### How to make automatic status change for frontend visitors?
 
