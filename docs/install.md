@@ -224,7 +224,7 @@ Other possible reasons:
 
 ## What if you have to limitate the widget to few domain and subdomain?
 Embedded on multiple domains.
-[More information](doc/integrating.md#what-if-you-have-to-limitate-the-widget-to-few-domain-and-subdomain)
+[More information](integrating.md#what-if-you-have-to-limitate-the-widget-to-few-domain-and-subdomain)
 
 ## Chat was closed by an operator/visitor, but when the visitor starts a new chat, an old chat opens?
 
