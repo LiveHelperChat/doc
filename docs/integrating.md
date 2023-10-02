@@ -166,6 +166,27 @@ Embedded on multiple domains.
     </IfModule>
 </FilesMatch>
 ```
+For nginx on Plesk need this configuration
+
+```nginx
+
+location ~* ^/internal-nginx-static-location/(.+\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt))$ {
+	alias /var/www/vhosts/domain.ext/httpdocs/domainfolder/domainchat/livechat$1;
+	internal;
+	if ($http_origin ~* "^https?://(domain1.ext|www.domain1.ext|domin2.ext|www.domain2.ext)$") {
+		add_header Access-Control-Allow-Origin "$http_origin";
+	}
+	add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE';
+	add_header Access-Control-Allow-Headers 'Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization, X-Test';
+}
+
+proxy_connect_timeout 180s;
+proxy_send_timeout 180s;
+proxy_read_timeout 180s;
+fastcgi_send_timeout 180s;
+fastcgi_read_timeout 180s;
+
+```
 
 ### How to make automatic status change for frontend visitors?
 
