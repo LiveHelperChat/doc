@@ -132,6 +132,41 @@ If code will be embedded on multiple domains.
 
 For nginx read this [article](nginx-configuration-tips.md). 
 
+### What if you have to limitate the widget to few domain and subdomain?
+Embedded on multiple domains.
+
+```apacheconfig
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  SetEnvIf Origin "(http(s)?://localhost:8080)|(http(s)?://www.domain1.ext)|(http(s)?://www.domain2.ext)|(http(s)?://subdomain1.domain.ext))$" AccessControlAllowOrigin=$0
+  Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+
+# DISABLE CACHING
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+<FilesMatch "\.(css|flv|gif|htm|html|ico|jpe|jpeg|jpg|js|mp3|mp4|png|pdf|swf|txt)$">
+    <IfModule mod_expires.c>
+        ExpiresActive Off
+    </IfModule>
+    <IfModule mod_headers.c>
+        FileETag None
+        Header unset ETag
+        Header unset Pragma
+        Header unset Cache-Control
+        Header unset Last-Modified
+        Header set Pragma "no-cache"
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Expires "Thu, 1 Jan 1970 00:00:00 GMT"
+    </IfModule>
+</FilesMatch>
+```
+
 ### How to make automatic status change for frontend visitors?
 
 Usually then you go offline or online visitors has to refresh page to see new widget status. It's possible to make status changes visible without required pageview also.
