@@ -11,7 +11,7 @@ Tutorial on how to set up Live Helper Chat. You can also use the available snaps
 If you are running a WordPress site, there is a 99.9% chance that Live Helper Chat will work just fine.
 
 * Download [zip](https://github.com/LiveHelperChat/livehelperchat/archive/refs/heads/master.zip), [tgz](https://github.com/LiveHelperChat/livehelperchat/tarball/master)
-* Minimum PHP 7.4
+* Minimum PHP 8.0
 * Mysql 5.7 >= OR MariaDB 10.2.3 >= with `json_` functions support.
 * Apache/Nginx
 * For the Laravel version, please visit https://github.com/LiveHelperChat/livehelperchat_laravel
@@ -221,6 +221,63 @@ Other possible reasons:
 * You have changed `Chat configuration -> Misc -> Domains where script can be embedded. E.g example.com, google.com`, but the embedded script is not listed in the domain.
 * You have enabled `System configuration -> GEO Adjustment`, but you have provided invalid data.
 * You have blocked yourself via `System configuration -> Live help configuration -> Blocking -> Blocked users`
+
+## What if you have to limitate the widget to few domain and subdomain?
+Embedded on multiple domains.
+
+```apacheconfig
+<Files ~ "\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt)$">
+  SetEnvIf Origin "(http(s)?://localhost:8080)|(http(s)?://www.domain1.ext)|(http(s)?://www.domain2.ext)|(http(s)?://subdomain1.domain.ext))$" AccessControlAllowOrigin=$0
+  Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+  Header always Set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Header always Set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization"
+</Files>
+
+# DISABLE CACHING
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+<FilesMatch "\.(css|flv|gif|htm|html|ico|jpe|jpeg|jpg|js|mp3|mp4|png|pdf|swf|txt)$">
+    <IfModule mod_expires.c>
+        ExpiresActive Off
+    </IfModule>
+    <IfModule mod_headers.c>
+        FileETag None
+        Header unset ETag
+        Header unset Pragma
+        Header unset Cache-Control
+        Header unset Last-Modified
+        Header set Pragma "no-cache"
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Expires "Thu, 1 Jan 1970 00:00:00 GMT"
+    </IfModule>
+</FilesMatch>
+```
+For nginx on Plesk need this configuration
+
+```nginx
+
+location ~* ^/internal-nginx-static-location/(.+\.(gif|jpe?g?|png|bmp|swf|css|js|svg|otf|eot|ttf|woff|woff2|swf|mp3|ogg|wasm|wav|pdf|ico|txt))$ {
+	alias /var/www/vhosts/domain.ext/httpdocs/domainfolder/domainchat/livechat$1;
+	internal;
+	if ($http_origin ~* "^https?://(domain1.ext|www.domain1.ext|domin2.ext|www.domain2.ext)$") {
+		add_header Access-Control-Allow-Origin "$http_origin";
+	}
+	add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE';
+	add_header Access-Control-Allow-Headers 'Origin, X-Requested-With, Content-Type, Accept, API-Key, Authorization, X-Test';
+}
+
+proxy_connect_timeout 180s;
+proxy_send_timeout 180s;
+proxy_read_timeout 180s;
+fastcgi_send_timeout 180s;
+fastcgi_read_timeout 180s;
+
+```
+You need also set domain in live helper chat settings, live help configuration (tab), chat configuration, misc (tab) then compile the field: domains where script can be embedded. E.g example.com, google.com
 
 ## Chat was closed by an operator/visitor, but when the visitor starts a new chat, an old chat opens?
 
