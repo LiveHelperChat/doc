@@ -222,6 +222,10 @@ Other possible reasons:
 * You have enabled `System configuration -> GEO Adjustment`, but you have provided invalid data.
 * You have blocked yourself via `System configuration -> Live help configuration -> Blocking -> Blocked users`
 
+## What if you have to limitate the widget to few domain and subdomain?
+Embedded on multiple domains.
+[More information](docs/integrating.md#what-if-you-have-to-limitate-the-widget-to-few-domain-and-subdomain)
+
 ## Chat was closed by an operator/visitor, but when the visitor starts a new chat, an old chat opens?
 
 Most likely, you have enabled `Chat configuration -> Misc -> Reopen chat functionality enabled`
