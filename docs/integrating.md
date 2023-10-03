@@ -166,7 +166,7 @@ Embedded on multiple domains.
     </IfModule>
 </FilesMatch>
 ```
-For nginx on Plesk need this configuration
+For nginx on Plesk need this configuration added on domain > hosting & DNS (tab) > Apache & nginx > Additional nginx directives:
 
 ```nginx
 
