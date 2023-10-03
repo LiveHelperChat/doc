@@ -166,7 +166,7 @@ Embedded on multiple domains.
     </IfModule>
 </FilesMatch>
 ```
-For nginx on Plesk need this configuration
+For nginx on Plesk need this configuration added on domain > hosting & DNS (tab) > Apache & nginx > Additional nginx directives:
 
 ```nginx
 
@@ -188,6 +188,32 @@ fastcgi_read_timeout 180s;
 
 ```
 You need also set domain in live helper chat settings, live help configuration (tab), chat configuration, misc (tab) then compile the field: domains where script can be embedded. E.g example.com, google.com
+
+### Additional block for "bad" live traffic unwanted that comes from a not authorized domain
+Following steps above will block a unahtorized domain to use your chat widget and so generate traffic from a not authorized domain.
+Sometimes you can still see unwanted visit from the unhautorized domains, this can arrive from some pop up request.
+
+You can block the unauthorized domain by adding a rule in your httaccess file.
+First in the live helper chat get the domain unautorized from with the visit comes.
+In exampe below will be badsite.domain.ext
+
+Code to add to the main .htaccess file in the root of live helper chat
+
+For a domain:
+``` .htaccess code
+RewriteEngine On
+RewriteCond %{HTTP_HOST} baddomain\.ext [NC,OR]
+RewriteCond %{QUERY_STRING} baddomain\.ext [NC]
+RewriteRule .* - [F,L]
+```
+For a subdomain:
+``` .htaccess code
+RewriteEngine On
+RewriteCond %{HTTP_HOST} badsite\.domain\.ext [NC,OR]
+RewriteCond %{QUERY_STRING} badsite\.domain\.ext [NC]
+RewriteRule .* - [F,L]
+```
+With this code you should stop visit from the unhautorized domains if still be present with the previous steps.
 
 ### How to make automatic status change for frontend visitors?
 
