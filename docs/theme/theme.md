@@ -616,3 +616,7 @@ Just set an alias in widget theme. Theme won't be used if not valid theme alias 
 In order operator to be able edit themes, set default theme he has to have this permission
 
 > 'lhtheme', 'administratethemes'
+
+Manage abstract objects
+
+> 'lhabstract','use'
