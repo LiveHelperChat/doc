@@ -611,11 +611,21 @@ Just send it to me. remdex@gmail.com
 
 Just set an alias in widget theme. Theme won't be used if not valid theme alias is passed as argument.
 
-## Permissions
+## Permissions for themes management
 
 In order operator to be able edit themes, set default theme he has to have this permission
 
 > 'lhtheme', 'administratethemes'
+
+Manage abstract objects
+
+> 'lhabstract','use'
+
+## Permissions for personal themes
+
+Give permission to manage personal themes
+
+> 'lhtheme','personaltheme'
 
 Manage abstract objects
 
