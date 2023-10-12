@@ -353,6 +353,31 @@ There is two main attributes you might find usefull
 * `window.$_LHC.eventListener` you should be familiar with this variable from above.
 * `window.$_LHC.attributes` holds main chat attributes and live workflow state. For more information see https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/widget/wrapper/src/index.js#L69
 
+## How to handle user login scenario and update chat information operator can see in the widget?
+
+1. The easiest way is just to use `lhc_var` method and update custom variables.
+2. You can also call this JS function. This is usefull if username is remembered from previous sessions. But you know exact moment visitor logged in and want to refresh some additional information.
+```
+window.$_LHC.attributes.userSession.updateChatStatus({"action":"update_status"});
+```
+It will trigger php event you can listen on your end. Basically it's a good event to listen if you want to listen for various events that happens on website and modify chat data based on it.
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.update_chat_vars', array(
+    'chat' => & $chat,
+    'data' => $jsonData
+));
+```
+
+`data` variable will hold `$params['data]['user_vars']` your passed data and `$params['data]['lhc_vars']` will hold custom chat variables.
+
+By default if `lhc_var` variable value changes on website this event is dispatched.
+
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.modified', array('chat' => & $chat, 'params' => array()));
+```
+
+How to listen for events please see https://github.com/LiveHelperChat/clientoverride extension.
+
 ## How to change department or any other attribute on the fly?
 
 You can change any react application attribute before chat is started. 

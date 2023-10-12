@@ -260,6 +260,8 @@ Rest API in value fields you can use these replaceable variables. These variable
 
 All chat messages. These combinations are usefully in case you are implementing sentiment analysis and want for example determine the sentiment of operator/visitor or both messages:
 
+You can quickly explore all possible chat attributes by clicking `Explore possible chat attributes directly.` link in Rest API builder interface next to `Add request` button.
+
 Single messages
 
 * `{{msg}}` - user/operator message.
