@@ -40,7 +40,7 @@ Fields while defining custom chat variable which will be NOT visbile by operator
 ![](/img/chat/chat-variable.png)
 
 * `Department` if you do not choose department this field presence will be always checked. I suggest do not choose anything in this field.
-* `Javascript variable value` - I suggest always use `lhc_var.` prefix. Live Helper Chat monitors this variable for a changes and updates chats automatically. 
+* `Javascript/Cookie variable value` - I suggest always use `lhc_var.` prefix. Live Helper Chat monitors this variable for a changes and updates chats automatically. If you are using cookie name and variable is not passed try to change `.` to `_` in the variable name.
 * `Variable name` - this field will be visible for an operator as additional variable name.
 * `Variable identifier` - this is the key by which you can access this attribute from Rest API calls `{{lhc.var.<chat variable key>}}` or `{{lhc.add.<additional variable key/identifier>}}` or in bot responses `{lhc.add.<field identifier>}` or `{lhc.var.<variable key>}`
 * `Log message for for variable. Variables you can use {old_val}, {new_val}` - if you enter a text operator will see a system message if variable is changed while chat is going.
