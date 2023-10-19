@@ -308,6 +308,7 @@ Other:
 * `{{subject_ids}}` - array of subject id's assigned to chat
 * `{{subject_list}}` - array of subjects objects with all attributes
 * `{{subject_list_names}}` - string of subject names imploded by comma 
+* `{{survey}}` - filled chat surveys
 
 Attributes usefull for sending content in `Sub URL for file`
 
