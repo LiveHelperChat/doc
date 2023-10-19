@@ -61,3 +61,4 @@ What chat's closes **"Automatically close pending chats where visitor has left a
 * E.g `1,3` would mean that pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
 * E.g `1,3,1` would mean that active chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
 * E.g `1,3,2` would mean that active/pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
+* E.g `20,30,3` would mean that pending/bot chats where `desktop timeout` is 20 minutes and `mobile timeout` is 30 minutes will be closed automatically.

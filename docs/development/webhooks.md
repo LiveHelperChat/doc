@@ -176,6 +176,18 @@ Here we do few tricks.
 
 ![](/img/chat/webhook-example-4.png)
 
+#### Send an e-mail when customer fills a survey
+
+Idea is to send an e-mail to department e-mail once a survey is filled by a visitor. Same workflow can be used for any other events.
+
+* We listen for `survey.filled`
+
+![](/img/bot/surve-filled.png)
+
+* We execute trigger with `Send mail` trigger.
+
+![](/img/bot/survey-filled-bot.png)
+
 ## How to setup bot and trigger?
 
 Our close trigger configuration can look like this.
