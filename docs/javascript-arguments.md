@@ -886,7 +886,7 @@ Quick list of `chat_ui` attributes
  * `['chat_ui','cmmsg_widget']` - this html is set inside messages block and is usefull if you want manually format messages layout in start chat form, otherwise `intro_message` or `intro_message_html` should be used
  * `['chat_ui','operator_profile']` - overrides default operator profile HTML
 
-[Please refer to theme article custom attributes section](theme/theme.md/#how-to-make-automatic-status-change-for-frontend-visitors)
+[Please refer to theme article custom attributes section](theme/theme.md#how-to-make-automatic-status-change-for-frontend-visitors)
 
 ### How do I check is widget open?
 
@@ -904,7 +904,7 @@ if (window.$_LHC.attributes.widgetStatus.value === false) {
 
 This is usefull if you want to set widget online/offline manually.
 
- * Usually it's done automatically once you setup an automatic online status tracking. [More information](integrating.md/#how-to-make-automatic-status-change-for-frontend-visitors)
+ * Usually it's done automatically once you setup an automatic online status tracking. [More information](integrating.md#how-to-make-automatic-status-change-for-frontend-visitors)
  * If widget is open it's content automatically won't be changed to online/offline mode. We do not want user to lose whatever he was doing in the opened widget.
 
 Manual method will always refresh widget content.

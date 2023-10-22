@@ -93,4 +93,4 @@ After you do that. New window will open on chrome, so just delete "view-source:"
 * Enable [debug output](#enabling-debug-output)
 * See `cache/default.log` for an error message.
 * See chrome console for an error. `CTRL+SHIFT+J`
-* Read [My widget does not load](install.md/#my-widget-does-not-load)
+* Read [My widget does not load](install.md#my-widget-does-not-load)

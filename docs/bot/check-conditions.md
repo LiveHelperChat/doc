@@ -8,7 +8,7 @@ This trigger allows to have custom conditions to be checked before rest of the t
 One of the few possible scenarios can be
 
 * Collecting multiple fields before next trigger can be executed
-* Comparing user message with internal chat variable. E.g you set [chat variable](bot/update-current-chat.md/#set-chat-variable-not-visible-by-operator) and later you want that visitor entered correct text.
+* Comparing user message with internal chat variable. E.g you set [chat variable](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator) and later you want that visitor entered correct text.
 
 ![](/img/bot/check-conditions.png?v=2)
 
@@ -18,7 +18,7 @@ One of the few possible scenarios can be
 
 * `lhc.<main chat attribute>` E.g `lhc.email`, `lhc.nick`, `lhc.phone` etc. See [swagger](https://api.livehelperchat.com) for all attributes.
 * `<identifier>` - this can be either custom attribute `Field identifier` or just array key from `chat_variables`
-* `<chat_variable>` - identical to `{args.chat.chat_variables_array.<variable_key>}` It can be set using `Update current chat response` [response type](bot/update-current-chat.md/#set-chat-variable-not-visible-by-operator)  
+* `<chat_variable>` - identical to `{args.chat.chat_variables_array.<variable_key>}` It can be set using `Update current chat response` [response type](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator)  
  So if you set variable `bot_touched` in attribute field you can use either `bot_touched` or `{args.chat.chat_variables_array.bot_touched}`
 * `{args.chat.<main chat attr>}` or `{args.msg.msg}` you can use text matching for visitor message. 
 * `online_department` use as attribute to check is department online (**respects** department online hours and operators online statuses). In value field 1 means online, 0 - means offline
