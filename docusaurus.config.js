@@ -3,6 +3,7 @@ module.exports = {
   tagline: 'Open Source Live Support',
   url: 'https://doc.livehelperchat.com',
   baseUrl: '/',
+  /*themes: ['@docusaurus/theme-search-algolia'],*/
   onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'LiveHelperChat', // Usually your GitHub org/user name.
@@ -20,7 +21,11 @@ module.exports = {
           apiKey: '9eb0af19c0a5e66add270c05de84f985',
           indexName: 'livehelperchat',
           contextualSearch: true,
-          algoliaOptions: {}, // Optional, if provided by Algolia
+          /*searchParameters: {
+              facetFilters: ['language:en'],
+          }*//*,
+          searchParameters: {},
+          algoliaOptions: {}, */// Optional, if provided by Algolia
       },
     navbar: {
       title: 'Live Helper Chat',
@@ -104,7 +109,8 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Live Helper Chat, Inc. Built with Docusaurus.`,
     },
   },
-  plugins: ["@docusaurus/plugin-ideal-image",require.resolve('docusaurus-lunr-search')],
+  trailingSlash: true,
+  plugins: ["@docusaurus/plugin-ideal-image"/*,require.resolve('docusaurus-lunr-search')*/],
   presets: [
     [
       '@docusaurus/preset-classic',
