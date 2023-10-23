@@ -501,6 +501,18 @@ If you are using notifications functionality you should set logo and notificatio
 
 ## FAQ
 
+### How do I make custom status icon?
+
+In `Custom CSS` tab do the following changes.
+
+In `Status widget additional CSS, takes effect after save` enter
+
+```css
+#lhc_status_container #status-icon:not(.offline-status):before, #lhc_status_container .lhc-icon-online:before {
+    content: url("data:image/svg+xml,%3Csvg%20class%3D%22w-20%20h-20%22%20xmlns......."); /*SVG content urlencoded*/
+}
+```
+
 ### How do I make status icon smaller?
 
 In `Custom CSS` tab do the following changes.

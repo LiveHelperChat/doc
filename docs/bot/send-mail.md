@@ -13,6 +13,16 @@ You can use all attributes in the fields same as in [Send text](bot/text.md) res
 
 In addition to that `Mail body` supports [rest api](bot/rest-api.md) variables like `{{msg_all}}`.
 
+## How to send an e-mail if survey is filled?
+
+This is usefull in case you want to monitor how your operators are working.
+
+![](/img/bot/survey-filled-webhook.png)
+
+Bot trigger content looks like
+
+![](/img/bot/survey-filled-trigger.png)
+
 ## How to send an e-mail on chat close to visitor?
 
 For that we need two things. 

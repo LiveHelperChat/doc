@@ -81,6 +81,26 @@ Example condition can look like
 
 ![](/img/bot/check-internal-conditions.png)
 
+## How do I execute triggers based on visitor priority
+
+Let say we want to transfer players with player class VIP to operator and others keep with a bot.
+
+We have defined custom chat variables
+
+```JS
+if (typeof lhc_var === 'undefined') { // This variable has to be defined before Live Helper Chat embed script.
+    window.lhc_var = {}; // Window is required to define variable in global scope
+};
+
+lhc_var.playerClass = 'VIP';
+```
+
+Next we have `default` trigger with this check
+
+![](/img/bot/vip-player.png)
+
+It means if player is `VIP` class trigger `VIP` will be executed, if not `NonVIP` trigger will be executed.
+
 ## Collect all information and write information was collected.
 
 Main trigger can look like this.
