@@ -115,10 +115,9 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-          googleAnalytics: {
-              trackingID: 'UA-1221542-10',
-              // Optional fields.
-              anonymizeIP: true, // Should IPs be anonymized?
+          gtag: {
+              trackingID: 'G-E8YM5FP73M',
+              anonymizeIP: true,
           },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),

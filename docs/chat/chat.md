@@ -341,13 +341,15 @@ You can set chat remarks for future reference.
 
 ## Take screenshot
 
-Operator also can see exactly what customer sees by taking screenshot of his screen.
+Operator also can see exactly what customer sees by taking screenshot of his screen. It only works for page where widget is embedded.
 
 ​![](/img/chat/screenshot-take.jpg)
 
 :::tip
 If you are working with sensitive information this permision should **not** be granted to operators.
 :::
+
+
 
 Required permissions
 

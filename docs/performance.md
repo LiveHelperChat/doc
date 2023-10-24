@@ -183,5 +183,5 @@ limit_req zone=bots burst=2 nodelay;
 ### Future
 
 *   There is still some core tables missing archiving
-*   Proper NodeJS integration to reduce server load
+*   [NodeJS integration](https://github.com/LiveHelperChat/NodeJS-Helper) to reduce server load
 *   And many more things :)

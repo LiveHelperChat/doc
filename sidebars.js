@@ -206,6 +206,7 @@ module.exports = {
             'nginx-configuration-tips',
             'architecture',
             'performance',
+            'development/reducing-request-number',
             'hosting-variations',
             'back-office-theme',
             'node-js',
