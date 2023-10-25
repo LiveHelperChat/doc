@@ -4,7 +4,7 @@ title: How to reduce number of request to server?
 sidebar_label: Reducing number of request
 ---
 
-First of all user [NodeJS integration](https://github.com/LiveHelperChat/NodeJS-Helper) to reduce server load if possible.
+First of all use [NodeJS integration](https://github.com/LiveHelperChat/NodeJS-Helper) to reduce server load if possible.
 
 Here is all related parts which control frequency of http requests lhc sends to servers and related url's.
 

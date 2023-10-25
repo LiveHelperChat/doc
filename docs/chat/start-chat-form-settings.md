@@ -16,6 +16,7 @@ I also recommend to a see few youtube videos regarding possible options
 
 * https://www.youtube.com/watch?v=TFJAW5bepLM [Part 1]
 * https://www.youtube.com/watch?v=jj4Tu_zoYaE [Part 2]
+* https://www.youtube.com/watch?v=6pYWAqDrqts [Part 3]
 
 This is the main window of start chat form settings page.
 
