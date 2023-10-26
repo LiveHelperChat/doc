@@ -7,7 +7,7 @@ With this trigger you can perform these actions
 
 ## Stop chat and transfer to human
 
-By using this trigger chat can exist bot mode and can execute triggers depending on outcome.
+By using this trigger chat can exist bot mode and can execute triggers depending on outcome.  YouTube demo https://youtu.be/AL7RVRcvOas
 
 ## Transfer chat to bot
 

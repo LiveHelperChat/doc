@@ -10,6 +10,8 @@ One of the few possible scenarios can be
 * Collecting multiple fields before next trigger can be executed
 * Comparing user message with internal chat variable. E.g you set [chat variable](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator) and later you want that visitor entered correct text.
 * https://www.youtube.com/watch?v=6pYWAqDrqts how to use this element in a start chat form.
+* https://youtu.be/AL7RVRcvOas how to use this element and show custom content if there is no operators available.
+
 
 ![](/img/bot/check-conditions.png?v=2)
 
