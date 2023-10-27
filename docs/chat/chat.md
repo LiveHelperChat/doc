@@ -52,6 +52,10 @@ const STATUS_REJECTED = 4;
 
 ​![](/img/chat/previous-button.jpg)
 
+Operator has to have this permission to view previous visitor chats.
+
+> 'lhchat', 'prev_chats'
+
 ### Other operator is chat owner
 
 If you are not chat owner you will see placeholder with a message
