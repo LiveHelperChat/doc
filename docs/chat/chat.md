@@ -396,6 +396,7 @@ If you see error like `You do not have permission to access the current or chat 
 
 Operator can open a chat or write a message if
 
+* For operator to be able to open **closed chat** he has to have `lhchat`,`allowopenclosedchats` at first place.
 * He is assigned to a chat.
 * (Chat is pending AND (chat is assigned to him **OR** operator has permission `lhchat`,`open_all`)) **AND** operator is a member of chat department.
 * Chat is assigned to other operator **AND** operator has permission `lhchat`,`allowopenremotechat` so he can open other's operators chats **AND** operator is a member of chat department.
