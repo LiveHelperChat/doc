@@ -32,7 +32,7 @@ Description for your own purposes.
 
 ### Host
 
-This should be a non-changing URL part. To this part, the 'Sub URL' part is always appended.
+This should be a non-changing URL part. To this part, the `Sub URL` part is always appended.
 
 ### Add request
 
@@ -58,7 +58,7 @@ URL to append to the host. It can be one of the replaceable variables.
 
 ### Params
 
-In the 'Params' section, you define arguments that should be accessible as 'GET' parameters.
+In the `Params` section, you define arguments that should be accessible as `GET` parameters.
 
 ### Authorization
 
@@ -72,17 +72,17 @@ These values will be added to the header. They are combined like this:
 
 ### Body
 
-The body can be sent either as 'RAW', also known as 'JSON Body', or as regular 'POST' parameters.
+The body can be sent either as `RAW`, also known as `JSON Body`, or as regular `POST` parameters.
 
 ### User parameters
 
 These parameters can be entered directly in the bot trigger itself once the method is chosen.
 
-If you choose 'Body Param', you can use this variable 'Location/Key' as a replaceable variable in your body JSON content.
+If you choose `Body Param`, you can use this variable `Location/Key` as a replaceable variable in your body JSON content.
 
 `{{<Location/Key>}}`
 
-If you choose 'Query' or 'Body Post Param', the key will be used as a post/get parameter directly.
+If you choose `Query` or `Body Post Param`, the key will be used as a post/get parameter directly.
 
 In Rest API
 
