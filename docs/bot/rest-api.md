@@ -5,22 +5,22 @@ title: Rest API
 
 ## Introduction
 
-This article explains how to use Rest API response type in bot. With this thing basically you can integrate any third party API without any coding.
+This article explains how to use the REST API response type in a bot. With this feature, you can integrate any third-party API without any coding.
 
-In order to get all working you have to setup two things
+In order to make it work, you need to set up two things:
 
-* Rest API Call itself
-* Bot trigger which will use that call
-* See [example of integration](integrate-any-ai-without-coding.md)
-* Also your AI can return directly [JSON for execution](trigger-body.md).
+* The REST API call itself
+* A bot trigger that will use that call
+* See [an example of integration](integrate-any-ai-without-coding.md)
+* Also, your AI can return [JSON directly for execution](trigger-body.md).
 
 ## Rest API Call
 
-Rest API call building window is build such way that you can execute almost any request you want.
+The REST API call building window is built in such a way that you can execute almost any request you want.
 
 ![](/img/bot/rest-api.png?v=1)
 
-## Fields definition for Rest API
+## Fields Definition for REST API
 
 ### Name
 
@@ -32,88 +32,88 @@ Description for your own purposes.
 
 ### Host
 
-This should be not changing URL part. To this part always are appended `Sub URL` part.
+This should be a non-changing URL part. To this part, the 'Sub URL' part is always appended.
 
 ### Add request
 
-This button ads new request options to this API. You can have as many request as you want. Request name is visible in trigger method choosing dropdown.
+This button adds new request options to this API. You can have as many requests as you want. The request name is visible in the trigger method choosing dropdown.
 
 ## Request fields
 
 ### Name of the request
 
-Visible in method choosing dropdown in trigger.
+Visible in the method choosing dropdown in the trigger.
 
 ![](/img/bot/rest-api-method.png)
 
 ### Method
 
-Just appropriate method type for the request
+The appropriate method type for the request.
 
 ### Sub URL
 
-URL to append to host. It can be one of the replaceable variables.
+URL to append to the host. It can be one of the replaceable variables.
 
 ![](/img/bot/rest-api-trigger.png)
 
 ### Params
 
-In `Params` section you define arguments which should be accessible as `GET` parameters.
+In the 'Params' section, you define arguments that should be accessible as 'GET' parameters.
 
 ### Authorization
 
-If you are using authorization API. You can setup basic authorization methods there.
+If you are using an authorized API, you can set up basic authorization methods there.
 
 ### Headers
 
-These values will be added to header. They are combined like.
+These values will be added to the header. They are combined like this:
 
 `<Key>: <value>`
 
 ### Body
 
-Body can be send either as `RAW` also known as `JSON Body` or as regular `POST` parameters.
+The body can be sent either as 'RAW', also known as 'JSON Body', or as regular 'POST' parameters.
 
 ### User parameters
 
-These parameters can be entered directly in bot trigger itself once method is chosen.
+These parameters can be entered directly in the bot trigger itself once the method is chosen.
 
-If you choose `Body Param` you can use this variable `Location/Key` as  replaceable variable in your body json content.
+If you choose 'Body Param', you can use this variable 'Location/Key' as a replaceable variable in your body JSON content.
 
 `{{<Location/Key>}}`
 
-If you choose `Query` or `Body Post Param` key will be used as post/get parameter directly.
+If you choose 'Query' or 'Body Post Param', the key will be used as a post/get parameter directly.
 
 In Rest API
 
 ![](/img/bot/user-parameter-rest-api.png)
 
-In the trigger it would look like
+In the trigger, it would look like
 
 ![](/img/bot/user-entered-parameter.png)
 
 ### Output parsing
 
-Output parsing is dedicated to extracting usefull variables from API response.
+Output parsing is dedicated to extracting useful variables from the API response.
 
 #### Name
-Name will be visible within option to execute specific trigger based on response.
+The name will be visible within the option to execute a specific trigger based on the response.
 
 ![](/img/bot/expected-output-name.png)
 
-In the trigger it will be visible here
+In the trigger, it will be visible here
 
 ![](/img/bot/response-found.png?v=2)
 
 #### HTTP status code E.g 200,301,500
 
-For this response to match you can define expected HTTP status code. It's optional. This way you can separate success response from failed one.
+For this response to match, you can define the expected HTTP status code. It's optional. This way you can separate the success response from the failed one.
 
 #### Response Location 1/2/3/4/5/6.
 
-If you define success location it will parse response as JSON and will try to extract specified attribute.
+If you define a success location, it will parse the response as JSON and try to extract the specified attribute.
 
-Examples of variables extraction
+Examples of variable extraction:
 
 `status` as location value would return `success`
 ```json
@@ -122,7 +122,7 @@ Examples of variables extraction
 }
 ```
 
-`response:location` as location value would return `Lithuania`
+`response:location` as a location value would return `Lithuania`
 ```json
 {
   "response": {
@@ -131,7 +131,7 @@ Examples of variables extraction
 }
 ```
 
-`items:0:name` as location value would return `Sub item name`
+`items:0:name` as a location value would return `Sub item name`
 
 ```json
 {
@@ -143,7 +143,7 @@ Examples of variables extraction
 }
 ```
 
-`links:link:[type=forms]:url` as location value would return element where type is forms
+`links:link:[type=forms]:url` as a location value would return an element where the type is forms
 
 ```json
 {
