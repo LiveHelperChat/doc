@@ -109,7 +109,6 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Live Helper Chat, Inc. Built with Docusaurus.`,
     },
   },
-  trailingSlash: true,
   plugins: ["@docusaurus/plugin-ideal-image"/*,require.resolve('docusaurus-lunr-search')*/],
   presets: [
     [
