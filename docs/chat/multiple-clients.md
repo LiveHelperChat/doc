@@ -152,7 +152,7 @@ Just contact me and maybe I can help you.
 
 ### Unsupported features in multiple clients environment
 
- * Survey
+ * ~~Survey~~ See [Multiple clients support in survey](chat/survey.md#multiple-clients-support)
  * Themes. Although you can make a theme and just give them it's number.
  * Product
  * Bot

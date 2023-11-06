@@ -81,12 +81,27 @@ There is a few conditions has to be satisfied for a survey to be shown. On chat 
 
 If chat is closed by a visitor and chat is in pending state. Survey won't be shown.
 
+## Multiple clients support
+
+If operator does not have permission to access all departments survey is assigned he won't tbe able to view/edit survey details.
+
+* Operator has to be assigned to all departments survey is assigned to
+* For basic permission just to view survey statistic `'lhsurvey', 'list_survey'` permission should be assigned.
+
 ## Permissions
 
 In order operator to be able redirect visitor to custom survey they have to have this permission.
 
 > 'lhsurvey', 'redirect_to_survey'
 
-In order to configure surveys. Create a new one/delete and old one. Operator has to have this permission.
+In order to configure surveys. Create a new one/edit and old one. Operator has to have this permission.
 
 > 'lhsurvey', 'manage_survey'
+
+In order to list surveys and view their statistic he has to have this permission.
+
+> 'lhsurvey', 'list_survey'
+
+In order to delete surveys he has to have this permission.
+
+> 'lhsurvey', 'delete_survey'

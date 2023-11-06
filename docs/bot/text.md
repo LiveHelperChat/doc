@@ -296,10 +296,11 @@ This will issue defined payload. It's usefull if you are integrating third party
 
 These are quick updates you can do on button click. There are three types of events you can do from quick replies.
   
-* `Transfer to operator` - I would personally just use `Execute trigger` and define a trigger where response type is `Update current chat` as then I can define more flexible transferring workflow.
-* `Transfer to bot` - Like an above written I prefer that workflow instead.
+* `Transfer to operator [Depreciated]` - I would personally just use `Execute trigger` and define a trigger where response type is `Update current chat` as then I can define more flexible transferring workflow.
+* `Transfer to bot [Depreciated]` - Like an above written I prefer that workflow instead.
 * `Subscribe to notifications` - this is usefull to define in default auto responder trigger and suggest visitor subscribe while they are waiting for an operator to accept a chat.
 * `Execute trigger` - it's my preferred way to set actions as you can choose defined triggers from the list.
+* `Minimize widget` - usefull in case you are showing intro button and want that one of them would minimize a widget. It can be used in proactive invitations also.
 
 ### Store name
 
