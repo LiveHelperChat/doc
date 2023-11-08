@@ -314,7 +314,21 @@ If you enter `Store value` it will be used as value instead of button name.
 
 ### Button ID
 
-We will set this dOM element ID as defined in this field.
+We will set this DOM element ID as defined in this field.
+
+### Bot conditions to satisfy
+
+You can enter condition `Identifier` [read more about conditions](bot/conditions.md)
+
+Idea is that this button will be shown only if condition is satisfied, otherwise button will be hidden.
+
+You can enter multiple conditions and all of them has to be satisfied.
+
+![](/img/bot/is-vip.png)
+
+and condition itself can look like this
+
+![](/img/bot/condition-vip-check.png)
 
 ## Add action on message
 
