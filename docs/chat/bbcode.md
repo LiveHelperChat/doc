@@ -107,3 +107,5 @@ Generate button clicks
 ```
 To return to main menu click [link_trigger=1355]here[/link_trigger]
 ```
+
+How you hide BB Code button in the visitor widget you can read [here](theme/chat-window.md#face-icon)

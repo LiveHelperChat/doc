@@ -48,7 +48,8 @@ Files upload option can be enabled/disable in [file settings](chat/files.md)
 
 ### Face icon
 
-Face button can be disabled in [chat settings](chat/configuration.md#show-bb-code-button)
+* If you are not using widget theme Face button can be disabled in [chat configuration](chat/configuration.md#show-bb-code-button)
+* If you are using widget theme Face button should be disabled directly in widget theme [Hide BB Code button](theme/theme.md#hide-bb-code-button) 
 
 ![](/img/theme/chat-window-bbcode.png)
 

@@ -140,6 +140,16 @@ In case you want to allow visitor to see previous chat message you can check thi
 
 Usefull for UI combinations.
 
+### Close chat if page is refreshed. Usefull if you have embed code in popup.
+
+### Do not prefill offline message with chat messages.
+
+In case you are prefilling user message, but do not want to prefill it in offline mode you can check this option.
+
+### Hide BB Code button
+
+If you are using widget theme and want to hide Face icon (bb code) you have to check this option.
+
 ### After how many user messages show switch to human button. empty - never, 0 - always
 
 If you want to give easy way for a visitor to be transferred to operator you can enable this option.
