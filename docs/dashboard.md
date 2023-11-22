@@ -213,6 +213,8 @@ Shows recently closed chats. Up to 50 last closed chats. Limit is because of per
 
 ![](/img/dashboard/closed-chats.png)
 
+Permissions for chat opening is explained [here](chat/chat.md#permissions-influencing-chat-opening-permissions)
+
 #### Required configuration
 
 * `Chat configuration -> Misc -> List closed chats, disabled for high performance` check and save

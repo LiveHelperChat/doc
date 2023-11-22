@@ -187,3 +187,20 @@ By default users sees all pending department chats. To disable that and show onl
     *   Module - ('lhuser'), Function - ('change_visibility_list')
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4PTkaAs452A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Chat acceptance workflow
+
+* `click_notification` - notification was clicked
+* `click` - widget was clicked or chat list
+* `opened_chats` - chat was loaded because it was opened before
+* `alert_open` - alert was shown and operator opened a chat
+* `transfer_open_background` - transferred chat was opened in background mode
+* `transfer_open` - transferred chat was opened
+* `auto_accept` - chat was auto opened because auto accept is turned on
+* `auto_accept_transfer` - transferred chat was auto opened because auto accept is turned on
+* `view_clicked` - chat in the view was clicked
+* `support_chat` - opened from `support_chats` list
+* `start_chat_by_id` - chat was started by `startChatByID` function
+* `channel_message_open` - opened by received channel message
+* `channel_message_reload` - opened by received channel channel message
+* `popup_open` - chat was opened from popup

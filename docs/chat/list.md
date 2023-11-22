@@ -46,3 +46,6 @@ Also if you want to allow hom to list pending chats without a chat owner grant h
 
 General permission
 > 'lhchat','use'
+
+Permissions for chat opening is explained [here](chat/chat.md#permissions-influencing-chat-opening-permissions)
+
