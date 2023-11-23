@@ -22,6 +22,10 @@ Quote
 
 > `[quote]Quote[/quote]`
 
+Strike-through
+
+> `[s]Strike-through[/s]`
+
 HTML Code. This tag is supported only by operators!
 
 > `[html]your custom html goes here[/html]`
@@ -36,9 +40,21 @@ Change font size. Font size can be to whatever value you want, actually.
 
 > `[fs12]Font size 12[/fs]`
 
+Mark text button
+
+> `[mark]mark text syntax[/mark]` => `<mark>mark text syntax</mark>`
+
+Paypal donate button
+
+> `[paypal]remdex@gmail.com[/paypal]`
+
 Change color
 
 > `[color=FF0000]Custom color text[/color]`
+
+Location google maps
+
+> `[loc]55.9314582,23.2975904[/loc]`
 
 File or Image
 
@@ -102,6 +118,10 @@ Numbered list. Number indicates starting point.
 [/list]
 ```
 
+Text with css class 
+
+> `[level=bg-warning]css class[/level]`
+
 Generate button clicks
 
 ```
@@ -109,3 +129,5 @@ To return to main menu click [link_trigger=1355]here[/link_trigger]
 ```
 
 How you hide BB Code button in the visitor widget you can read [here](theme/chat-window.md#face-icon)
+
+You can also control which bbcode tags is supported at `System configuration -> Live help configuration -> BBCode configuration`
