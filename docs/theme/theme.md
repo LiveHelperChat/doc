@@ -485,8 +485,8 @@ to
 ```css
 
 /* To change buttons focus options */
-
-.btn-primary,.btn-info,.btn-success,.btn-secondary {
+/* You can apply similar rules to .btn-primary,.btn-info,.btn-success buttons also */
+.btn-secondary {
     --bs-btn-color: #fff;
     --bs-btn-bg: #6c757d;
     --bs-btn-border-color: #6c757d;
@@ -501,15 +501,15 @@ to
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
-    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .25); /*Increase .25 tto have higher contrast ratio*/
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .25); /*Increase .25 to have higher contrast ratio*/
 }
 
 /* Options to change colors for form fields. */
 .form-control:focus {
     color: var(--bs-body-color);
     background-color: var(--bs-form-control-bg);
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+    border-color: #86b7fe; /* Border color of input field */
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25) /*You can increase 0.25 to have higher contrast radio or just change a color*/
 }
 
 /* Make higher contrast ratio for settings icons */

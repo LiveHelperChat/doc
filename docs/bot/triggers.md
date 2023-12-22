@@ -112,7 +112,12 @@ Requiring any end of the word by it has to end `h` letter.
 
 `cash$*`
 
-You can also define preg match rules. There is known limitation that preg match rule can't have `,` because we use this word to separate words. This will be addressed in next updates.
+You can also define preg match rules. In order to define comma you have to use `_com_` keyword for `,` comma character in your preg_match rules.
+
+E.g 1
+`/^[A-Za-z0-9]{3_com_6}$/` would translate to `/^[A-Za-z0-9]{3,6}$/`
+
+E.g 2
 
 `/^cashba(.*?)/is`
 
