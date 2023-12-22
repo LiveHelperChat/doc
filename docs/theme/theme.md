@@ -472,6 +472,58 @@ If you want to style messages depending on their state here is logic to follow.
 * Messages not having `.online-chat > .index-row-0` should be animated.
 
 
+#### CSS Rules to style form buttons and inputs and their shadows
+
+E.g if you want high contrast ratio you can set `--bs-btn-focus-shadow-rgb: 0,0,0` and change 
+
+> `--bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .25);`
+
+to 
+
+> `--bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .95);`
+
+```css
+
+/* To change buttons focus options */
+
+.btn-primary,.btn-info,.btn-success,.btn-secondary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #6c757d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #5c636a;
+    --bs-btn-hover-border-color: #565e64;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145; /*change focus shadow color*/
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #565e64;
+    --bs-btn-active-border-color: #51585e;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c757d;
+    --bs-btn-disabled-border-color: #6c757d;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .25); /*Increase .25 tto have higher contrast ratio*/
+}
+
+/* Options to change colors for form fields. */
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+}
+
+/* Make higher contrast ratio for settings icons */
+#chat-dropdown-options {
+    color: #000000!important;
+}
+
+/* Make send icon color red if it's missing text to sent */
+#ChatSendButtonContainer .text-muted-light{
+    color: red!important;
+}
+
+```
+
 ### Custom CSS only for popup
 
 ```css

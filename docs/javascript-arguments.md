@@ -602,6 +602,12 @@ Let say you include widget with position api. Widget status will be invisible, b
 window.$_LHC.eventListener.emitEvent('showWidget');
 ```
 
+If you are opening widget from some child popup you can also use `postMessage` method
+
+```js
+window.parent.postMessage('lhc::showWidget::{}','*');
+```
+
 ### Show/Hide status widget
 
 You can explicitly control when status widget becomes visible.
@@ -723,6 +729,13 @@ We automatically check for matching invitation once you add a event.
 ```js
 window.$_LHC.eventListener.emitEvent('addTag',['some_tag']);
 ```
+
+With `postMessage` protocol
+
+```js
+window.parent.postMessage('lhc::addTag::["error_deposit"]','*');
+```
+error_deposit
 
 ### To make conversion
 
