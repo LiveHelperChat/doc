@@ -199,6 +199,19 @@ The main difference between above chats and charts in `Chats statistic` section 
 
 <Image img={require('../../static/img/statistic/chats-by-day.jpg')} />
 
+## Mail statistic
+
+This section allows to generate statistic statistic for mails module
+
+### Number of messages per user
+
+<Image img={require('../../static/img/mail/mail-messages-statistic.png')} />
+
+If you see different messages number it's just because statistic is calculated different way.
+
+* Mail list is searching by conversation user id - all messages. ['conv_user_id']
+* Statistic is searching exactly by message sender. ['user_id']
+
 ## Total statistic
 
 It's lifetime statistic. If you are using archive functionality. This statistic does not include chats from archives.
