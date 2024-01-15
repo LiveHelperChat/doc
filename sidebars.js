@@ -228,7 +228,8 @@ module.exports = {
             'chrome-extension',
             'integrating/whatsapp',
             'integrating/messagebird-whatsapp',
-            'integrating/cloudtalk'
+            'integrating/cloudtalk',
+            'integrating/slack-notification'
         ]
     },
 };

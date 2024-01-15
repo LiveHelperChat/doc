@@ -282,3 +282,166 @@ php cron.php -s site_admin -e customstatus -c cron/customcron
 ```
 
 Example file in github which will [executed](https://github.com/remdex/livehelperchat/blob/master/lhc_web/extension/customstatus/modules/lhcron/customcron.php).
+
+## Boilerplate cronjobs if you have mail version of live helper chat and you are using php-resque
+
+You have to check each shell script for the correct path. Also make sure you have run from `lhc_web`folder run.
+
+> `composer install`
+
+ * https://github.com/LiveHelperChat/lhc-php-resque make sure you enable worker as bellow in main `settings.ini.php` file
+```php
+'webhooks' =>
+array (
+'enabled' => true,
+'worker' => 'resque'//'http',
+),
+```
+ * https://doc.livehelperchat.com/docs/node-js
+
+```cronexp
+40 7 * * * /usr/bin/touch /var/www/git/cronjobs/runresque.lock > /dev/null 2>&1
+* * * * * cd /var/www/git/cronjobs && ./resque.sh >> /dev/null 2>&1
+* * * * * cd /var/www/git/cronjobs && ./workflow.sh >> /dev/null 2>&1
+* * * * * cd /var/www/git/cronjobs && ./transfer.sh >> /dev/null 2>&1
+* * * * * cd /var/www/git/cronjobs && ./webhook.sh >> /dev/null 2>&1
+* 5 * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/archive >> /dev/null 2>&1
+* 6 * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/encrypt >> /dev/null 2>&1
+* * * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/report >> /dev/null 2>&1
+* 7 * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/util/maintain_files >> /dev/null 2>&1
+  15 */12 * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/stats/department >> /dev/null 2>&1
+* * * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/mail/auto_close >> /dev/null 2>&1
+*/15 * * * * cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/mail/monitor_mailbox >> /dev/null 2>&1
+```
+
+`/var/www/git/cronjobs/phpresque.sh`
+
+```shell
+#!/bin/sh
+# live site cronjobs
+
+echo "Running live site cronjobs"
+
+cd /var/www/git/livehelperchat/lhc_web
+REDIS_BACKEND=127.0.0.1:6379 INTERVAL=1 REDIS_BACKEND_DB=1 COUNT=4 VERBOSE=0 QUEUE='*' /usr/bin/php resque.php 2>&1
+```
+
+`/var/www/git/cronjobs/resque.sh`
+
+```shell
+#!/bin/sh
+
+## exit immediately if uptime is lower than 120 seconds:
+uptime_secs=$(cat /proc/uptime | /bin/cut -d"." -f1)
+if (( ${uptime_secs} < 180 )); then
+    echo "uptime lower than 180 seconds. Exit."
+    exit 1
+fi
+
+fileCron='/var/www/git/cronjobs/.enable-cron'
+
+if [ -f $fileCron ] && [ -f /var/www/git/livehelperchat/lhc_web/settings/settings.ini.php ];
+then
+
+numberProcess=$(ps aux | grep "[0-9] resque-1.2: *" | awk '{print $2}' | wc -l)
+
+if (( $numberProcess > 4 ));
+then
+  echo "To many running process..."
+  exit 1
+fi
+
+fileLock="/var/www/git/cronjobs/runresque.lock"
+
+if [ -f $fileLock ];
+then
+    kill -9 $(ps aux | grep "[0-9] resque-1.2: *" | awk '{print $2}')
+    cd /var/www/git/cronjobs && ./phpresque.sh
+    rm -f $fileLock;
+else
+    PIDS=`ps aux | grep '[0-9] resque-1.2: *'`
+    if [ -z "$PIDS" ]; then
+       echo "Starting resque"
+       cd /var/www/git/cronjobs && ./phpresque.sh
+    fi
+fi
+
+fi
+```
+
+`/var/www/git/cronjobs/transfer.sh`
+
+```shell
+#!/bin/sh
+fileCron='/tmp/running-workflow-transfer'
+
+for i in {1..30}
+do
+    if [ ! -f $fileCron ];
+    then
+      touch $fileCron;
+      cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/transfer_workflow >> cache/transfer.log
+      echo "$(tail -1000 cache/transfer.log)" > cache/transfer.log
+      rm -f $fileCron;
+    else
+      if [ `stat --format=%Y $fileCron` -le $(( `date +%s` - 30 )) ]; then
+        rm -f $fileCron;
+      fi
+      echo "Already running"
+    fi
+    sleep 2
+done
+```
+
+`/var/www/git/cronjobs/webhook.sh`
+
+```shell
+#!/bin/sh
+
+fileCronHook='/tmp/running-webhook'
+
+for i in {1..3}
+do
+    if [ ! -f $fileCronHook ];
+    then
+      touch $fileCronHook;
+      cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/webhook >> cache/webhook.log
+      echo "$(tail -1000 cache/webhook.log)" > cache/webhook.log
+      rm -f $fileCronHook;
+    else
+      if [ `stat --format=%Y $fileCronHook` -le $(( `date +%s` - 30 )) ]; then
+        rm -f $fileCronHook;
+      fi
+      echo "Already running"
+    fi
+    sleep 20
+done
+```
+
+`/var/www/git/cronjobs/workflow.sh`
+
+```shell
+#!/bin/sh
+fileCron='/tmp/running-workflow'
+
+for i in {1..12}
+do
+    if [ ! -f $fileCron ];
+    then
+      touch $fileCron;
+      cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow >> cache/workflow.log
+      # Have in mind if you are not using worker resque you have to have separate cronjob for bellow command and run it every minute
+      cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/syncmail >> cache/workflow.log
+      cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/update_views >> cache/workflow.log
+      cd /var/www/git/livehelperchat/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/mailing >> cache/workflow.log
+      echo "$(tail -1000 cache/workflow.log)" > cache/workflow.log
+      rm -f $fileCron;
+    else
+      if [ `stat --format=%Y $fileCron` -le $(( `date +%s` - 30 )) ]; then
+        rm -f $fileCron;
+      fi
+      echo "Already running"
+    fi
+    sleep 5
+done
+```
