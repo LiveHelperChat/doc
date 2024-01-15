@@ -23,7 +23,7 @@ For that you will need to setup APP for slack and get `Webhook URL` and `xoxb-xx
 
 * After import you will need to adjust `Sub URL` after import it's value will be `/services/XXXXX/XXXXXXXXXX/XXXXXXXXXXXXXXXX`
 * `Authorization` set proper value for Bearer token `xoxb-XXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXX`
-* You might want to edit `Body` section
+* You will need to edit `Body` section and set correct URL for live helper chat installation
 
 ### Bot setup
 
