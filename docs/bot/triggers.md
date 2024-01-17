@@ -115,7 +115,7 @@ Requiring any end of the word, but it has to end with the letter `h`:
 You can also define preg_match rules. To specify a comma, use the com keyword for the comma character in your preg_match rules. Remember to enclose the regular expression with '/' on both sides.
 
 E.g 1
-`/^[A-Za-z0-9]{3_com_6}$/` would translate to `/^[A-Za-z0-9]{3,6}$/`
+`/^[A-Za-z0-9]{3_com_6}$/` would translate to `^[A-Za-z0-9]{3,6}$`
 
 E.g 2
 
