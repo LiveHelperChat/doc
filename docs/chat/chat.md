@@ -80,6 +80,10 @@ He can choose again to join as by clicking
 
 > 'lhchat', 'impersonate'
 
+To write in a whisper mode operator has to have this permission
+
+> 'lhchat', 'whispermode'
+
 ### Typing indicator
 
 In order for operators to see full text what visitor is typing - not only indicator. They must have this permission
