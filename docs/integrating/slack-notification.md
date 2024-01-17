@@ -33,7 +33,7 @@ This is how looks trigger content for webhooks event. `chat.addmsguser` trigger
 
 `Notify` trigger content
 
-![](/img/integration/slack-notify.png)
+![](/img/integration/slack-notify.png?v=1)
 
 `Debug` trigger content
 
