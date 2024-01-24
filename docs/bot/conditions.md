@@ -30,16 +30,19 @@ You can extract any attribute using this modal window
 
 These explains are valid everywhere you see conditions checking
 
-### `=` as a number and string comparison
+### `=` or `!=` as a number and string comparison
 
 Equal condition. Has to be exact match. It can be a number comparing or string
 
 E.g chat department identifier field is equal to `my_storage`
 
 > `{args.chat.department.identifier} = 'my_storage'`
-> `{args.chat.chat_variables_array.pid}` = 'my_pid'`
 
-### `>,>=, <,<=` as a number comparison
+> `{args.chat.chat_variables_array.pid} = 'my_pid'`
+
+> `{content_1} != 1` - allows checking Rest API call response.
+
+### `>,>=,<,<=` as a number comparison
 
 E.g Chat duration is more than 5 seconds
 > `{args.chat.chat_duration} > 5`
@@ -69,6 +72,16 @@ Is checking if one part of the string is presented in another string.
 Usage in bot example
 
 ![](/img/bot/check-condition.png)
+
+## Bot example with buttons using conditions
+
+Quick reply button condition looks like. We check for `bot_not_answered` condition and only then we show a button.
+
+![](/img/bot/conditions-button.png)
+
+Condition looks like
+
+![](/img/bot/condition-rest-api.png)
 
 #### Permissions
 
