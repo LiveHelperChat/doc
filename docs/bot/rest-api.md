@@ -319,7 +319,30 @@ Attributes usefull for sending content in `Sub URL for file`
 Additional attribute you can use for `Sub URL for file` and `If you are sending file you can have a different body content`
 
 * `{file_api}your request body in case it's a file{/file_api}`
-* `{image_api}your request body in case it's an image{/image_api}`
+* `{image_api}your request body in case it's an image{/image_api}` - 'image/jpeg','image/png','image/gif'
+* `{vodeo_api}your request body in case it's an image{/vodeo_api}` - 'video/mp4'
+
+You can have dynamic variable based on file extension by using `{api_by_ext__<file_type>_<other_file_type>}sendVoice{/api_by_ext}` E.g
+
+* `{api_by_ext__ogg}sendVoice{/api_by_ext}` - use `sendVoice` value if media file extension is `ogg`
+* `{api_by_ext__mp3_m4a}sendAudio{/api_by_ext}` use `sendAudio` value if media file extension is `mp3` or `m4a`
+
+Same pattern has to be defined in `Sub URL for file` and `If you are sending file you can have a different body content` fields.
+
+Example from telegram. `Sub URL for file` file url
+```
+/bot{{args.chat.incoming_chat.incoming_dynamic_array.access_token}}/{api_by_ext__ogg}sendVoice{/api_by_ext}{api_by_ext__mp3_m4a}sendAudio{/api_by_ext}{api_by_ext__mp4}sendVideo{/api_by_ext}{image_api}sendPhoto{/image_api}{file_api}sendDocument{/file_api}
+````
+
+Example from telegram.  `If you are sending file you can have a different body content` file content
+
+```
+{
+   "chat_id":{{args.chat.incoming_chat.chat_external_id}},
+   "{api_by_ext__ogg}voice{/api_by_ext}{api_by_ext__mp3_m4a}audio{/api_by_ext}{api_by_ext__mp4}video{/api_by_ext}{file_api}document{/file_api}{image_api}photo{/image_api}":{{file_url}}
+}
+```
+
 
 Additional attributes you can use 
 
