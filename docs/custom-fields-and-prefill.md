@@ -77,6 +77,15 @@ For static URL you can prefill those by `?jsvar[7]=customvar` structure is as `j
 
 You can update any core attribute of chat object. Like `lhc.email`,`lhc.phone` etc. All possible attributes you can find [https://api.livehelperchat.com](https://api.livehelperchat.com) at the bottom under `Models > Chat`
 
+## Passing monitor variable via postMessage 
+
+* In this scenario we are passing `login` and `token` variables defined in back office.
+* `action: 'lhc_set_var'` is a required part for it work.
+
+```
+window.postMessage({action: 'lhc_set_var', login: 'my_login', token: 'my_token'},'*');
+```
+
 ## Passing monitored variable directly as argument
 
 ```javascript
