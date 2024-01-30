@@ -11,7 +11,7 @@ Here you will find all possible javascript arguments for a new widget. If you wa
 <script>
 var LHC_API = LHC_API||{};
 LHC_API.args = {
-    mode: 'widget',      // widget, embed | Required
+    mode: 'widget',      // widget, embed, popup | Required
     cookie_enabled: true, // Is cookies enabled in for Live Helper Chat to use, | Optional | Default - true. See `Implementing GDPR scenario` section in this article
     pnode : 'lhc-node-id'// Where should we render our HTML. By default we append it to body | Optional <div id="lhc-node-id"></div>
     lhc_base_url:'//demo.livehelperchat.com/',  // Required
