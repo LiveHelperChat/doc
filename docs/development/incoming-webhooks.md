@@ -48,6 +48,8 @@ You can also use condition like.
 
 After that you should setup bot and trigger with Rest API call.
 
+[Read more](bot/rest-api.md#replaceable-variables) about possible chat variables under `{args.chat`.
+
 ### Setup Rest API call.
 
 Rest API can look like this. We acceess external Chat ID so third party API knows the chat.
