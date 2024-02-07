@@ -246,6 +246,22 @@ do
 done
 ```
 
+## Campaign mailing cronjob
+
+This cronjob is responsible for mailing campaigns. Should be run every minute or so.
+
+```shell
+php cron.php -s site_admin -c cron/mailing
+```
+
+## Mail syncing cronjobs
+
+This cronjob is responsible for mail fetching. Should be run every minute or so.
+
+```shell
+php cron.php -s site_admin -c cron/syncmail
+```
+
 ## Static cache
 
 If you are using load balancers. E.g AWS Load Balancer it can happen that one instance is clearing a cache but browser makes request to another instance so it happens that static file CSS/JS is not found.

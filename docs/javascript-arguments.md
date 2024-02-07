@@ -818,9 +818,25 @@ function addMessage(message) {
     if (!chatParams['id'] && window.$_LHC.attributes['onlineStatus'].value == true) {
         // Prefill message field
         window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true, 'Question' : message}}}]);
-    
+
+        /* If you want prefill multiple fields at once
+        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true,
+                    'Username' : document.getElementById('chat-name').value,
+                    'Email':document.getElementById('chat-email').value,
+                    'Question':document.getElementById('chat-question').value,
+                    'Phone' : document.getElementById('chat-phone').value}}}]);*/
+
+        /* If you have embed code with popup option you have to prefill those vars using
+        LHCChatOptions.attr_prefill = new Array();
+        LHCChatOptions.attr_prefill.push({'name':'email','value': document.getElementById('chat-email').value,'hidden':true});
+        LHCChatOptions.attr_prefill.push({'name':'phone','value': document.getElementById('chat-phone').value});
+        LHCChatOptions.attr_prefill.push({'name':'username','value': document.getElementById('chat-name').value});
+        LHCChatOptions.attr_prefill.push({'name':'question','value': document.getElementById('chat-question').value});
+        */
+
         // We change attribute to auto submit so it will try automatically submit online form first time
-        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
+        // Uncomment if you want chat to be auto started
+        // window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
         
     } else if (chatParams['id']) {
         // Send as message if chat has started alerady

@@ -15,6 +15,20 @@ Workflow to integrate any third party api should look like
 
 It's not necessary to do steps in exact order as above. It's just a basic workflow.
 
+## How to find out `chat_id` if I'm sending webhook request
+
+Just append `?output=json` to your webhook URL.
+
+Sample request simulate `Telegram` request
+```shell
+curl -X POST 'https://demo.livehelperchat.com/index.php/webhooks/incoming/xxxxxxxxxxxxxxxxxx?output=json' --header 'accept: application/json' --header 'content-type: application/json' -d '{    "update_id": 532262132,    "message": {        "message_id": 2383,        "from": {            "id": 441347276,            "is_bot": false,            "first_name": "Remigijus",            "last_na,            "language_code": "en"        },        "chat": {            "id": 441347276,            "first_name": "Remigijus",            "last_name": "Kiminas",            "username": "remdex",            "type": "private"        },        "date": 1706693999,        "text": "new chat visitor"    }}'
+```
+
+Response sample
+```json
+{"error":false,"result":{"chat_id":1647601504}}
+```
+
 ## Fields definition
 
 * `Name` - will be visible within chat. So operator will know from where come this chat.

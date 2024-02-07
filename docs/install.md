@@ -40,6 +40,20 @@ php
 php-bcmath
 ```
 
+## Composer dependencies
+
+If you are using new Version with Mails support. You have to run from `lhc_web` folder
+
+```
+composer.phar install
+```
+
+If you are getting some like an incompatible php version. You can try to remove composer.lock file and then install
+
+```
+rm composer.lock
+composer.phar install
+```
 
 ## Folders permissions
 
