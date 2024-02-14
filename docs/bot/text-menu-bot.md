@@ -22,4 +22,4 @@ We will use these bot responses
 
 ![](/img/bot/text-menu-bot.png)
 
-You can download bot source [here](/img/bot/ai/text-bot.json) (Click right mouse button and choose `Save link as...`). Afterwards you can just import a file.
+You can download bot source [here](/img/bot/ai/text-bot.json?v=2) (Click right mouse button and choose `Save link as...`). Afterwards you can just import a file.
