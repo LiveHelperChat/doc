@@ -11,7 +11,8 @@ Tutorial on how to set up Live Helper Chat. You can also use the available snaps
 If you are running a WordPress site, there is a 99.9% chance that Live Helper Chat will work just fine.
 
 * Download [zip](https://github.com/LiveHelperChat/livehelperchat/archive/refs/heads/master.zip), [tgz](https://github.com/LiveHelperChat/livehelperchat/tarball/master)
-* Minimum PHP 7.4
+* You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz`
+* Minimum PHP 8.1. If you will want older php version support you will have to install composer dependencies yourself.
 * Mysql 5.7 >= OR MariaDB 10.2.3 >= with `json_` functions support.
 * Apache/Nginx
 * For the Laravel version, please visit https://github.com/LiveHelperChat/livehelperchat_laravel
@@ -42,7 +43,9 @@ php-bcmath
 
 ## Composer dependencies
 
-If you are using new Version with Mails support. You have to run from `lhc_web` folder
+It's not required if you have downloaded a version with dependencies included.
+
+If you are using a new Version with Mails support or any newer version from 3.30v. You have to run from `lhc_web` folder.
 
 ```
 composer.phar install
