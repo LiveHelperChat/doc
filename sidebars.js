@@ -221,6 +221,7 @@ module.exports = {
         ],
         Integration: [
             'integrating/jitsi',
+            'integrating/GLPI',
             'integrating/opencart',
             'integrating/chat-api-com',
             'integrating/third-party-back-office',

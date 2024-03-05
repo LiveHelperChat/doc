@@ -11,7 +11,9 @@ cd lhc_web
 composer install
 ```
 
-* You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz`
+* You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz` **8.1 PHP** version is required.
+
+It has a folder `lib/vendor` in it so you don't need to install composer thing yourself. Copy it to `lib/vendor`
 
 1. Read the new version announcement article for any possible changes in settings/settings.ini.php. If the article does not mention anything, you do not have to do anything.
 2. Go to "System" -> "Update information" and check if LHC finds any differences in the database. If it does, click on "Update database." You may not see differences if your server does not allow making requests to remote URLs. 
@@ -34,9 +36,10 @@ composer install
 If you are updating from any older version, you can follow this pattern, which can also be applied to new versions:
 
 1. [Download the most recent LHC version](http://livehelperchat.com/article/static/5) Overwrite the following folders `doc`,`ezcomponents`,`lib`,`modules`,`pos`,`translations`,`design` folders. Also, overwrite `index.php` and `cron.php` files with the new version.
-2. Copy from doc/shell/upgrade.php file to the root folder of LHC.
-3. In your browser, type chatfolder/upgrade.php. It will update the database to the most recent version and clear the cache automatically.
-4. Delete upgrade.php from the root folder.
+2. Install composer dependencies as described above. You can just download most recent https://github.com/LiveHelperChat/livehelperchat/releases `*.**v-with-dependencies.tgz` file and copy `lhc_web/lib/vendor` to your existing installation. This folder should be non existing if you are upgrading from older version than 4.29v
+3. Copy from doc/shell/upgrade.php file to the root folder of LHC.
+4. In your browser, type chatfolder/upgrade.php. It will update the database to the most recent version and clear the cache automatically.
+5. Delete upgrade.php from the root folder.
 
 In all cases, I suggest making a backup.
 

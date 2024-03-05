@@ -282,3 +282,9 @@ RewriteRule ^lhc_web/.*$ - [L]
 
 ## How to log in?
 To log in, point your browser to the directory where the application is installed. The URL address should look like: http://<your_domain>/index.php/site_admin/
+
+If for some reason, you forgot password and password reminder does not work for you. You can execute this query. It will set `admin` (user_id 1) password to `demo`
+
+```sql
+UPDATE `lh_users` SET password = '$2y$10$IwnZfDcPm7nqvp/BLNmJietHT/TSHCRPXWHKFqheQfojwk4c4znVG' WHERE `id` = 1;
+```
