@@ -29,7 +29,8 @@ Save changes.
 
 This will be required for an admin messages being send back to visitor (WhatsApp).
 
-You can import configuration download it [here](/img/integration/open-wa-restapi.json)
+You can import configuration download it [here](https://github.com/mysubcult/doc/files/14537064/rest-api-8.json)
+
 
 Import configuration. 
 
@@ -41,7 +42,8 @@ Change host `http://server:8002` to your server address.
 
 We need to set a bot which trigger will be executed upon webhook event.
 
-You can import configuration download it [here](/img/integration/open-wa-bot.json)
+You can import configuration download it [here](https://github.com/mysubcult/doc/files/14537067/lhc-bot-38.json)
+
 
 * Set correct Rest API whcih you imported previously and method to call.
 
