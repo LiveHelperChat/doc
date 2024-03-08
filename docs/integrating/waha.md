@@ -23,6 +23,15 @@ You will need to do few bits now
 
 Save changes.
 
+## WAHA Starting settings
+
+After receiving the link in the `incoming webhook` section, we now proceed to our server where WAHA is already running to initiate a new session. To do this, we click on `Try it out`, replace the link with our link from LHC, and then click on `Execute`.
+![browser_xDmCkYB8Jm](https://github.com/LiveHelperChat/doc/assets/10582537/5eecab5d-73a5-456d-8ff7-311a2512af8f)
+![71RdrDJ9EQ](https://github.com/LiveHelperChat/doc/assets/10582537/14b99870-e8df-40a0-8ea0-5869a697ccec)
+
+Afterward, we scroll down to the `/api/screenshot` section, and similarly click on `Try it out`, followed by `Execute`, to view the screenshot, which helps us perform the login to the WhatsApp system.
+
+
 ## Rest API calls setup
 
 **One time configuration**
