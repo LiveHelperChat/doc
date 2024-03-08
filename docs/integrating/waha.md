@@ -1,4 +1,3 @@
----
 id: waga
 title: WhatsApp WAHA integration
 ---
@@ -12,7 +11,8 @@ Usefull information regarding wa
 
 ## Incoming webhook definition
 
-First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/open-wa.json)
+First you have to create an incoming webhook. You can import configuration download it [here](https://github.com/mysubcult/doc/files/14537055/incoming-webhook-9.json)
+
 
 You will need to do few bits now
 
