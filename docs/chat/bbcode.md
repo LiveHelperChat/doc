@@ -98,7 +98,7 @@ Renders link to view survey results for the admin
 
 Renders button. Chat should have assigned bot
 
-> `[button_action="?(.*?)"?\](.*?)\[/button_action\]`
+> `[button_action="?(.*?)"?\](.*?)\[/button_action]`
  
 Ordered list
 
