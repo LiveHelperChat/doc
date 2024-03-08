@@ -64,15 +64,15 @@ If you are not chat owner you will see placeholder with a message
 
 ### Writing message area
 
-If operator has only read only permission area would not be editable by him.
+If an operator has only read-only permission, the area will not be editable by him.
 
 ​![](/img/chat/writing-message-area.jpg)
 
-Operator also would see read only area if he's not a chat owner and he does not have this permission.
+An operator will also see the read-only area if he is not the chat owner and does not have the necessary permission.
 
 > 'lhchat', 'writeremotechat' 
 
-If operator opens other operator chat and he has permission `'lhchat', 'impersonate'` he will be presented with option to join a chat as `Chat Owner` or `Me`. Joining as chat owner will allow him to send messages on the name of original chat owner.
+If an operator opens another operator's chat and has the permissions `'lhchat', 'impersonate'`, he will be presented with the option to join the chat as either `Chat Owner` or `Me`. Joining as the chat owner will allow him to send messages in the name of the original chat owner.
 
 He can choose again to join as by clicking
 
@@ -80,7 +80,7 @@ He can choose again to join as by clicking
 
 > 'lhchat', 'impersonate'
 
-To write in a whisper mode operator has to have this permission
+To write in whisper mode, an operator must have this permission:
 
 > 'lhchat', 'whispermode'
 
