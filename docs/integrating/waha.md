@@ -75,9 +75,17 @@ Webhook configuration is needed for an admin messages being send back to visitor
 
 Condition : Compare attribute (then click Add)
 
-Attribute : {args.chat.incoming_chat.incoming.scope}
+1. Attribute : `{args.chat.incoming_chat.incoming.scope}`
 Condition : =
 Value     : whatsapp
+
+2. Attribute : `{args.chat.last_message.meta_msg_array.content.whisper}`
+Condition : !=
+Value     : 1
+
+3. Attribute : `{args.chat.last_message.user_id}`
+Condition : !=
+Value     : -1
 
 
 * Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
