@@ -53,7 +53,7 @@ As you can see I have chosen a bot and trigger to execute on that event `Execute
 
 If conditions `A` is met we add an alert icon if conditions is **not** met we remove alert icon.
 
-## How to setup a continuous hook event?
+## How to setup a continuous chat hook event?
 
 General purpose is the same as hooks based events. Execute trigger if conditions are valid. E.g add an [alert icon](bot/alert-icon.md) to the chat.
 
@@ -187,6 +187,32 @@ Idea is to send an e-mail to department e-mail once a survey is filled by a visi
 * We execute trigger with `Send mail` trigger.
 
 ![](/img/bot/survey-filled-bot.png)
+
+
+## How to setup a continuous mail hook event?
+
+* All conditions are based on message model attributes. https://api.livehelperchat.com/#/ MailMessage object definition
+* Conversation object can be reached with `{args.chat.conversation....}`
+* Event is always triggered for newest mail messages.
+* As same mail message can be matched multiple times we are tracking which mail messages were matched already so no duplicate events is processed.
+* It's important to limit number of result matched. This can be done via `{args.chat.udate}` attribute.
+
+### How to trigger if mail is in active/pending state for 6 hours
+
+* Let's assume our trigger is run every 20 seconds.
+* We are limiting result set by collecting only mails if they are older than 6 hours but not more than 7 hours.
+
+> `{args.chat.udate} < {time} - 21600` - older than 6 hours
+> `{args.chat.udate} > {time} - 25200` - younger than 6 hours
+> `{args.chat.status} != 2 ` - mail message is not responded.
+
+
+If you are storing custom variables in a conversation object, you can reach those this way.
+
+```
+{args.chat.conversation.mail_variables_array.custom.customerClass}
+```
+
 
 ## How to setup bot and trigger?
 

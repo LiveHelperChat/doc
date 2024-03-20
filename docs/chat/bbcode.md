@@ -22,6 +22,10 @@ Quote
 
 > `[quote]Quote[/quote]`
 
+Code
+
+> `[quote]code your here[/quote]` or ``` or ` for inline code
+
 Strike-through
 
 > `[s]Strike-through[/s]`
