@@ -213,6 +213,10 @@ If you are storing custom variables in a conversation object, you can reach thos
 {args.chat.conversation.mail_variables_array.custom.customerClass}
 ```
 
+### How do I find message id for debug?
+
+* Open any conversation and click three dots on desired mail message and copy `Download (eml)` it should look like https://demo.livehelperchat.com/site_admin/mailconv/apimaildownload/3000000929266/1467 `3000000929266` will be your message id
+* Navigate to Audit Log and click `Debug chat attributes`. Instead of Chat ID enter Message ID
 
 ## How to setup bot and trigger?
 
