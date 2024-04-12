@@ -132,6 +132,8 @@ For value field you can use also replaceable variables like defined [here](text.
 
 * `{content_1}` up to `{content_6}`
 
+This supports E-mail events, continuous webhooks as a chats also.
+
 ## Remove any previous process
 
 In case you allow visitor to start another information collection process in the middle of one. You can encounter an error message like `Please complete previous process`.
