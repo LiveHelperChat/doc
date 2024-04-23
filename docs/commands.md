@@ -73,6 +73,8 @@ While defining commands you can put in subfield these values
  * `--silent` - we will not store a system message which command was executed
  * `--update_status` - we will update chat interface right column. E.g if your trigger sets as subjects.
 
+## Bot commands
+
 You can define custom command 
 
  * based on `bot` `trigger`.
@@ -80,6 +82,57 @@ You can define custom command
 
 > System configuration -> Live help configuration -> Bot -> Commands
 
-Each command then will be available in admin chat interface.
+* Each command then will be available in admin chat interface.
+* Custom commands can be implemented in extensions also.
 
-Custom commands can be implemented in extensions also.
+> !arguments first --arg second --arg third
+
+If a text message is defined as
+
+```
+1. - {args.arg_1} {arg_1}
+2. - {args.arg_2} {arg_2}
+2. - {args.arg_3} {arg_3}
+```
+
+Output will be
+
+```
+1. - first first [first argument]
+2. - second second [second argument]
+2. - third third [third argument]
+```
+
+### How to dispatch custom event and listen in lhc extension
+
+Just use `Update current chat > Dispatch Event` command.
+
+In `bootstrap.php` listen for this event
+
+```php
+$dispatcher->listen('chat.genericbot_chat_command_dispatch_event', array($this,'listenDispatchEvent');
+```
+
+```php
+public function listenDispatchEvent($params) {
+    if ($params['action']['content']['payload'] == 'my_command.custom_command') {
+        // Your code in the extension
+    }
+}
+```
+
+### How to listen for args in REST API Calls
+
+In Rest API call you can access argument like 
+
+```
+// json_encode output
+{{args.arg_1}} 
+{{args.arg_2}}
+
+// Raw output
+raw_{{args.arg_1}}
+raw_{{args.arg_2}}
+```
+
+

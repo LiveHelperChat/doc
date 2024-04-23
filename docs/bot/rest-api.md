@@ -424,6 +424,7 @@ Dynamic attributes extraction. You can go as deep as you want.
   * `department` or `user` 
     * `{{args.chat.user.name_support}}` name visible in the widget or 
     * `{{args.chat.user.name_official}}` name visible in the back office
+* `{{args.arg_1}}` - commands arguments
 
 Incoming chat attributes. This is usefull if you want to access to payload attribute of `Incoming webhook` created chat.
 
