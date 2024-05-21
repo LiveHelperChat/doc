@@ -47,20 +47,20 @@ At the moment these commands are implemented
     *   Set chat status to hold status, so auto responder will be stopped.
 *   !gotobot
     *   Transfer chat to bot. Chat status will be changed to bot chat.
-* !files 
+* !files
     * Enables files upload for a particular chat if general files upload is disabled. Default message text looks like
-    `I have enabled files upload for you. [fupload]Upload a file[/fupload].`
+      `I have enabled files upload for you. [fupload]Upload a file[/fupload].`
     * If you want multilanguage support you can just create a canned message with content like
-    `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
+      `!files I have enabled files upload for you. [fupload]Upload a file[/fupload].`
     * It's possible to enable files upload without any message by sending command like
-    `!files no`
+      `!files no`
 * !stopfiles
-    * Disables files upload if it was enabled before by `!files` command. Default message looks like 
-    `Files upload was disabled!`
-    * You can have custom message by sending 
-    `!stopfiles files upload was disabled`
+    * Disables files upload if it was enabled before by `!files` command. Default message looks like
+      `Files upload was disabled!`
+    * You can have custom message by sending
+      `!stopfiles files upload was disabled`
     * To disable files upload without any message for the visitor
-    `!stopfiles no`
+      `!stopfiles no`
 * !modal `<form_id>` `<explain>`
     * Will show a form module form with passed id and will write a passed explain. Explain is optional.
 * !modal `https://example.com`
@@ -70,15 +70,15 @@ At the moment these commands are implemented
 
 While defining commands you can put in subfield these values
 
- * `--silent` - we will not store a system message which command was executed
- * `--update_status` - we will update chat interface right column. E.g if your trigger sets as subjects.
+* `--silent` - we will not store a system message which command was executed
+* `--update_status` - we will update chat interface right column. E.g if your trigger sets as subjects.
 
 ## Bot commands
 
-You can define custom command 
+You can define custom command
 
- * based on `bot` `trigger`.
- * Or define shortcut for existing commands
+* based on `bot` `trigger`.
+* Or define shortcut for existing commands
 
 > System configuration -> Live help configuration -> Bot -> Commands
 
@@ -123,7 +123,7 @@ public function listenDispatchEvent($params) {
 
 ### How to listen for args in REST API Calls
 
-In Rest API call you can access argument like 
+In Rest API call you can access argument like
 
 ```
 // json_encode output
@@ -135,4 +135,12 @@ raw_{{args.arg_1}}
 raw_{{args.arg_2}}
 ```
 
+### UI to call command directly from chat
 
+Since 4.37v it's possible to call command directly from a chat window.
+
+![](/img/bot/bot-command.png)
+
+Required permissions
+
+> 'lhchatcommand', 'use'

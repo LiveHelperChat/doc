@@ -54,7 +54,7 @@ Operator will see all online operators not only from his departments
 
 Operator in dashboard widget settings ​![](/img/dashboard/dashboard-icon.jpg) has to choose `Online operators`
 
-If operator has permission 
+If operator has permission
 
 >'lhuser', 'setopstatus'
 
@@ -65,6 +65,19 @@ In order to enable messaging other operators ![](/img/dashboard/start-chat-opera
 >'lhgroupchat', 'use'
 
 This is part of the `Group chats` functionality.
+
+#### Offline indicators
+
+If the operator recently went offline, there is icons which shows that
+
+* Time offline < 60 seconds color will be ![#90EF90](https://placehold.co/15x15/90EF90/90EF90.png)
+* Time offline > 60 [1m.] AND Time offline <= 120 [2m.] seconds color will be ![#B0F5AB](https://placehold.co/15x15/B0F5AB/B0F5AB.png)
+* Time offline > 120 [2m. 1s.] AND Time offline <= 360 [6m.] seconds color will be ![#CDFFCC](https://placehold.co/15x15/CDFFCC/CDFFCC.png)
+* Time offline > 360 [6m. 1s.] AND Time offline <= 600 [10m.] seconds color will be ![#FFCCCB](https://placehold.co/15x15/FFCCCB/FFCCCB.png)
+* Time offline > 600 [10m. 1s.] AND Time offline <= 900 [15m.] seconds color will be ![#FC94A1](https://placehold.co/15x15/FC94A1/FC94A1.png)
+* Time offline > 900 [15m. 1s.] AND Time offline <= 3600 [1h.] seconds color will be ![#FC6C85](https://placehold.co/15x15/FC6C85/FFC6C85.png)
+
+After one-hour icon disappears.
 
 ### Ongoing trigger alerts!
 
@@ -102,10 +115,10 @@ You can see present department's statistic.
 
 Columns and their meanings
 
- * `Pending chats` - number of pending chats department/department group has
- * `Active chats` - number of actives chats department/department group has
- * `Bot chats` - number of active bot chats
- * `Load columns` - current status of department load based on max chats operators can have. 
+* `Pending chats` - number of pending chats department/department group has
+* `Active chats` - number of actives chats department/department group has
+* `Bot chats` - number of active bot chats
+* `Load columns` - current status of department load based on max chats operators can have.
     * It's value is calculated  by `hard limit - active chats (soft limit - active chats)`
     * `Hard limit` - is the sum of max chats value of **logged** operators OR the operators who were online in last 10 minutes
     * `Active chats` - number of active chats in department or department group
@@ -182,8 +195,8 @@ This widget shows all departments pending chats to which operator has access to.
 
 ![](/img/dashboard/pending-chats.png)
 
- * [How to deny the operator to open all pending chats?](auto-assignment.mdx#how-to-deny-the-operator-to-open-all-pending-chats). 
- * [How to show only to operator assigned pending chats?](users/account.md#i-can-see-all-pending-chats-not-only-assigned-to-me)
+* [How to deny the operator to open all pending chats?](auto-assignment.mdx#how-to-deny-the-operator-to-open-all-pending-chats).
+* [How to show only to operator assigned pending chats?](users/account.md#i-can-see-all-pending-chats-not-only-assigned-to-me)
 
 #### Required configuration
 
@@ -201,7 +214,7 @@ Shows presently ongoing chats. Shows only chats from his departments.
 
 ![](/img/dashboard/active-chats.png)
 
- * [How to deny the operator to open all chats?](auto-assignment.mdx#how-to-deny-the-operator-to-open-all-chats). 
+* [How to deny the operator to open all chats?](auto-assignment.mdx#how-to-deny-the-operator-to-open-all-chats).
 
 #### Required configuration
 
@@ -235,7 +248,7 @@ Shows chats where there is indication about an unread message. Up to 50 unread c
 
 ### Bot chats
 
-Shows all chats which one bot is handling. 
+Shows all chats which one bot is handling.
 
 ![](/img/dashboard/bot-chats.png)
 
@@ -260,7 +273,7 @@ In group chats operators sees 1 on 1 chats and public group chats.
 
 For the operator to see this widget he has to have
 
-> 'lhgroupchat','use' 
+> 'lhgroupchat','use'
 
 If you want private chats can open automatically for you. Navigate to `Account -> Chats -> Auto join private chats`
 
@@ -308,12 +321,12 @@ You can switch to old dashboard without left column. This option will be removed
 ### In static/dynamic chats order mode
 
 Dynamic mode - default
- * If chat is clicked it's position always will be at the top of chats
- * If customer replies his chat will move to the top of chat list.
+* If chat is clicked it's position always will be at the top of chats
+* If customer replies his chat will move to the top of chat list.
 
 Static mode
- * Opened chats will be placed from lowest to highest ID (by chat start time).
- * Visitor message won't move chat to the top of chat list
+* Opened chats will be placed from lowest to highest ID (by chat start time).
+* Visitor message won't move chat to the top of chat list
 
 ### Hide/Show chat tabs
 
@@ -327,14 +340,14 @@ You can switch left column to tab mode or have it as a list.
 
 ### Main icons in the widgets
 
- * ![](/img/dashboard/icons/send-received.png) - last message we send was received by visitor
- * ![](/img/dashboard/icons/send-received-not.png) - last message we send was **not** received by visitor
- * ![](/img/dashboard/icons/visitor-online.png) - visitor is connected
- * ![](/img/dashboard/icons/visitor-online-not.png) - visitor is **not** connected anymore
- * ![](/img/dashboard/icons/we-send-last-message.png) - we have sent the last message
- * ![](/img/dashboard/icons/we-received-last-message.png) - we have received the last message
- * ![](/img/dashboard/icons/timer-wait.png?v=1) - visitor is waiting reply from us longer than defined amount of time in `(Chat configuration -> Misc -> How long we should wait before we inform operator about unanswered chat.)` and chat is not closed. `($chat->status != erLhcoreClassModelChat::STATUS_CLOSED_CHAT && $chat->last_user_msg_time > ($chat->last_op_msg_time > 0 ? $chat->last_op_msg_time : $chat->pnd_time) && (time() - $chat->last_user_msg_time > (int)erLhcoreClassModelChatConfig::fetchCache('vwait_to_long')->current_value) ? erLhcoreClassChat::formatSeconds(time() - $chat->last_user_msg_time) : null));`
- * ![](/img/dashboard/icons/red-background.png) - red background is for the same reason as above
+* ![](/img/dashboard/icons/send-received.png) - last message we send was received by visitor
+* ![](/img/dashboard/icons/send-received-not.png) - last message we send was **not** received by visitor
+* ![](/img/dashboard/icons/visitor-online.png) - visitor is connected
+* ![](/img/dashboard/icons/visitor-online-not.png) - visitor is **not** connected anymore
+* ![](/img/dashboard/icons/we-send-last-message.png) - we have sent the last message
+* ![](/img/dashboard/icons/we-received-last-message.png) - we have received the last message
+* ![](/img/dashboard/icons/timer-wait.png?v=1) - visitor is waiting reply from us longer than defined amount of time in `(Chat configuration -> Misc -> How long we should wait before we inform operator about unanswered chat.)` and chat is not closed. `($chat->status != erLhcoreClassModelChat::STATUS_CLOSED_CHAT && $chat->last_user_msg_time > ($chat->last_op_msg_time > 0 ? $chat->last_op_msg_time : $chat->pnd_time) && (time() - $chat->last_user_msg_time > (int)erLhcoreClassModelChatConfig::fetchCache('vwait_to_long')->current_value) ? erLhcoreClassChat::formatSeconds(time() - $chat->last_user_msg_time) : null));`
+* ![](/img/dashboard/icons/red-background.png) - red background is for the same reason as above
 
 ### Information icon
 
@@ -361,10 +374,10 @@ Go to
 * Link on demo E.g http://demo.livehelperchat.com/site_admin/chat/listchatconfig
 * Find "Home page tabs order" and at very begining add "dashboard" in demo it looks like
 
-Default after new install: 
+Default after new install:
 > dashboard,online_users,online_map
 
-All possible options: 
+All possible options:
 
 > dashboard, online_users, pending_chats, online_map, active_chats, unread_chats, closed_chats, online_operators
 
@@ -384,13 +397,13 @@ Go to
 > Configuration -> Live Help Configuration -> Chat configuration -> Misc
 
 * Find "Home page dashboard widgets order"
-* Dashboard possible widgets. 
+* Dashboard possible widgets.
 
-> widgets: online_operators, departments_stats, pending_chats, unread_chats, transfered_chats, active_chats, closed_chats, bot_chats, my_chats
+> widgets: online_operators, departments_stats, pending_chats, unread_chats, transfered_chats, active_chats, closed_chats, bot_chats, my_chats
 
 ### My operators does not see a departments statistic widget?
 
-You have to assign to your operators new permission.  
+You have to assign to your operators new permission.
 
 > 'lhuser','canseedepartmentstats'
 

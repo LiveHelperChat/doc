@@ -18,7 +18,7 @@ Chat tab shows this information
 
 * Was last message seen by vistior. If send icon is green ![](/img/chat/send-status-icon.jpg) he saw last message.
 * If operator clicks `x` button he closes chat tab, but chat status is **not** changed in any way.
-* If visitor icon is red means visitor is not connected anymore. ![](/img/chat/visitor-status-chat-tab.jpg) 
+* If visitor icon is red means visitor is not connected anymore. ![](/img/chat/visitor-status-chat-tab.jpg)
 * And it shows shorten visitor nick.
 
 ## Message area
@@ -33,7 +33,7 @@ You can also click right mouse button and see context menu related to a message.
 1. ![](/img/chat/scehduled-for-sent.png) - was was scheduled for sent. This status is used if you are using third party integration and message itself is send via webhooks workflow.
 2. ![](/img/chat/msg-sent.png) - message was sent. In case it's standard widget chat it means lhc has stored message internally.
 3. ![](/img/chat/msg-delivered.png) - message was delivered to client device, but is un-read. This status is used for messagebird or fbmessenger exensions.
-4. ![](/img/chat/msg-was-read.png) - this is how default message looks like was it was read, either in the widget or via remote integrations. 
+4. ![](/img/chat/msg-was-read.png) - this is how default message looks like was it was read, either in the widget or via remote integrations.
 5. ![](/img/chat/delivery-failed-msg.png) - message delivery has failed. This icon is used in combination with third party extensions like messagebird or fbmessenger. In case of the widget scenario you will never see this icon.
 
 These status messages are supported also by [NodeJS-Helper](https://github.com/LiveHelperChat/NodeJS-Helper).
@@ -70,7 +70,7 @@ If an operator has only read-only permission, the area will not be editable by h
 
 An operator will also see the read-only area if he is not the chat owner and does not have the necessary permission.
 
-> 'lhchat', 'writeremotechat' 
+> 'lhchat', 'writeremotechat'
 
 If an operator opens another operator's chat and has the permissions `'lhchat', 'impersonate'`, he will be presented with the option to join the chat as either `Chat Owner` or `Me`. Joining as the chat owner will allow him to send messages in the name of the original chat owner.
 
@@ -91,7 +91,7 @@ In order for operators to see full text what visitor is typing - not only indica
 > 'lhchat','see_sensitive_information'
 
 In user account Chat tab there is also option to enable/disable sentences [Auto uppercase sentences](users/account.md#auto-uppercase-sentences)
- 
+
 ## Toolbar actions
 
 ### Files
@@ -113,7 +113,7 @@ Before sending message to visitor you can preview how it would look like with pr
 
 ### Speech
 
-This allows to use speech to text functionality. 
+This allows to use speech to text functionality.
 
 ​![](/img/chat/speech-to-text.jpg)
 
@@ -163,6 +163,15 @@ In right column you will see main chat attributes.
 
 ​![](/img/chat/right-column-chat.jpg)
 
+### Bot command
+
+Allows executing bot command directly from UI
+
+![](/img/chat/bot-command.png)
+
+Required permissions
+
+> 'lhchatcommand', 'use'
 
 ### Phone number
 
@@ -182,7 +191,7 @@ For operator to see full e-mail address he has to have
 
 ### Edit chat
 
-Editing chat main information be done by clicking this icon. This icon will be visible only if operator has permission to edit current chat. 
+Editing chat main information be done by clicking this icon. This icon will be visible only if operator has permission to edit current chat.
 
 ​![](/img/chat/edit-icon.jpg)
 
@@ -244,7 +253,7 @@ This will delete chat permanently. You will have no way to restore it.
 
 ​![](/img/chat/delete-chat-permanently.jpg)
 
-For operator to be able delete chat he has either has permission to 
+For operator to be able delete chat he has either has permission to
 >  'lhchat','deleteglobalchat'
 
 OR be chat owner and have permission to
@@ -330,12 +339,12 @@ Chat status is shown in
 
 ​![](/img/chat/chat-status.png)
 
-By clicking info icon you can change chat status to different. 
+By clicking info icon you can change chat status to different.
 
 ​![](/img/chat/chat-status-modal.png)
 
- * If chat status is set to pending we reset assigned operator.
- * If chat status is set to active we assign it to operator who did that, but only if chat did not had any assigned operator previously.
+* If chat status is set to pending we reset assigned operator.
+* If chat status is set to active we assign it to operator who did that, but only if chat did not had any assigned operator previously.
 
 Required permissions
 
@@ -375,8 +384,8 @@ If system detects visitor location you will see visitor location map here. You a
 
 General conditions have to be met for map to be shown
 
- * Visitor location has to be detected
- * Google maps api key has to be set.
+* Visitor location has to be detected
+* Google maps api key has to be set.
 
 ​![](/img/chat/visitor-location.jpg)
 
@@ -408,6 +417,6 @@ Operator can open a chat or write a message if
 
 ## Permissions
 
-Main chat permission is 
+Main chat permission is
 
 > 'lhchat','use'
