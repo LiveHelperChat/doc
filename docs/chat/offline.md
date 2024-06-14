@@ -176,6 +176,10 @@ Bot trigger adds subject with ID 12 (replace to your own) to the chat.
 
 ![Offline request subject](/img/chat/offline-request-subject.png)
 
+## What happens if both departments are `Visible only if online`
+
+E-mail and offline request will be assigned to the very first defined department.
+
 ## Permissions
 
 Required permissions to manage offline settings.

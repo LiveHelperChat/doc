@@ -201,6 +201,12 @@ Here is the automatic auto-response message.
 * Try the [Windows app](https://livehelperchat.com/demo-12c.html) or the [Chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
 * [My users lose chat sessions when they navigate through the site, resulting in duplicate online user records](online-visitors.md#my-users-loose-chat-session-then-they-navigate-through-the-site-duplicate-online-users-records)
 
+## On windows IIS I get 404 error?
+
+Please refer to this comment. It might happen because of to many URL segments.
+
+https://github.com/orgs/LiveHelperChat/discussions/1900#discussioncomment-9767891
+
 ## Chat does not start?
 
 If you are running behind CloudFlare or any other proxy that influences the IP seen by Live Helper Chat, please enable it in the settings file.

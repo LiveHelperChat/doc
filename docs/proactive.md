@@ -227,6 +227,23 @@ General requirements and most common configuration failures
 * By default operator has to be online for invitation to be send. Widget has to be in online state.
 * Make sure you have entered default message
 
+### How to setup URL based invitations?
+
+* Make sure you enter `URL to match. Multiple URL can be defined by comma. Wildcard is supported at the end of URL`
+* You check those items
+  * `Invitation is visible only if URL matches`
+  * `Do not show invitation after it was closed in the same session.`
+  * `Show next matching invitation if URL changes and present invitation was closed`
+
+If you are combining general invitations with URL based make sure
+
+ * Global invitation position is lower. E.g enter 10 as `Position`
+ * Enter `*` as `URL to match. Multiple URL can be defined by comma. Wildcard is supported at the end of URL` So invitation will work on any URL
+ * Check
+   * `Invitation is visible only if URL matches`
+   * `Do not show invitation after it was closed in the same session.`
+   * `Show next matching invitation if URL changes and present invitation was closed`
+
 ### How proactive messages retargeting works?
 
 Proactive messages retargeting. In returning message field you can enter {nick}, if we will find a previous chat associated with this online user, nick from previous chat will be used if not proactive invitation nick field value will be used.
