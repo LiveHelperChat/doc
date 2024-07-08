@@ -103,10 +103,15 @@ Renders link to view survey results for the admin
 Renders button. Chat should have assigned bot
 
 > `[button_action="?(.*?)"?\](.*?)\[/button_action]`
- 
+
 Plain text. This would avoid content to be parsed for BBCode tags.
 
 > `[plain]info@exmaple.com[/plain]` would avoid rendering text as a link.
+
+Date format. 
+
+> `[dateformat=Y.m.d H:i:s]{args.chat.time}[/dateformat]` Would print chat creation date in your preferred format.
+> `[dateformat=m/d/Y]{lhc.var.remind_dob}[/dateformat]` Would print chat variable in date format where unix timestamp is stored.
 
 Ordered list
 
