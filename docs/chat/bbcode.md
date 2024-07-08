@@ -104,6 +104,10 @@ Renders button. Chat should have assigned bot
 
 > `[button_action="?(.*?)"?\](.*?)\[/button_action]`
  
+Plain text. This would avoid content to be parsed for BBCode tags.
+
+> `[plain]info@exmaple.com[/plain]` would avoid rendering text as a link.
+
 Ordered list
 
 ```
