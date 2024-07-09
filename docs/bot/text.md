@@ -56,7 +56,7 @@ Text area supports these replaceable variables
      * `department` or `user`
          * `{args.chat.user.name_support}` name visible in the widget or
          * `{args.chat.user.name_official}` name visible in the back office
-
+ * `{current_time_ts}` current time in unix timestamp. E.g `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]`
 
 These are the main classes
 

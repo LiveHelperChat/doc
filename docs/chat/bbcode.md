@@ -112,6 +112,7 @@ Date format.
 
 > `[dateformat=Y.m.d H:i:s]{args.chat.time}[/dateformat]` Would print chat creation date in your preferred format.
 > `[dateformat=m/d/Y]{lhc.var.remind_dob}[/dateformat]` Would print chat variable in date format where unix timestamp is stored.
+> `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]` {current_time_ts} - if this variables is not printed, means in that place it's not supported
 
 Ordered list
 
