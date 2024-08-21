@@ -34,6 +34,8 @@ HTML Code. This tag is supported only by operators!
 
 > `[html]your custom html goes here[/html]`
 
+By default we ignore clicks on elements  for the visitor. To enable click process add a class `process-click` to an element.
+
 Operators require this permission to use this bbcode
 
 `lhchat`,`htmlbbcodeenabled`

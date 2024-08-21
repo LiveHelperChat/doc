@@ -302,6 +302,20 @@ http://example.com/link/to/file_2.pdf
 
 * `{if_previous_visitor_messages}{"content":{{previous_visitor_messages_url__100}},"role":"user"},{/if_previous_visitor_messages}` print last 100 messages if there is any. We print here only visitor last 100 messages.
 
+Reply to scenario
+
+```
+{reply_to},"context": { "message_id":  {{iwh_msg_id}}  }{/reply_to}
+```
+
+For this to work you have to 
+
+* Enter `Messages ID` in icoming webhooks `Message related attributes`
+* Enter `Reply to message ID` in icoming webhooks `Message related attributes` so we will know to which message visitor is replying.
+* In `Rest API Calls` section in `Remote Message ID` enter attribute location of send message.
+ 
+ Reply to messages are support in official facebook whatsapp integration. So take a look there just.
+
 Other:
 
 * `{{ip}}` - visitor ip. If you are running background worker this value will be localhost.

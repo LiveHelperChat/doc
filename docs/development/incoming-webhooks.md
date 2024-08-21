@@ -76,3 +76,12 @@ Rest API can look like this. We acceess external Chat ID so third party API know
 ```
 
 See [WhatsApp integration](integrating/whatsapp.md) using open https://github.com/open-wa
+
+## How to debug if something does not work
+
+1. [Disable cache](debug.md)
+2. In incoming webhook configuration enable `Log request. All request will be logged`. You will find problematic request payload in Audit log
+3. Modify `modules/lhwebhooks/incoming.php` at the top you will find `$dummyPayload = null;`. Replace it with `$dummyPayload = json_decode('{"msg":"data"}',true);` and save file.
+4. In browser now type `https://example.com/webhooks/incoming/4654654654?output=json` you will see output of request. Replace URL with yours.
+5. Now you can just modify `lib/core/lhchat/lhchatwebhookincomming.php` and see output just by refreshing page.
+6. If files are not uploaded correctly make sure you have `fileinfo` extension installed. It's used to detect file types.

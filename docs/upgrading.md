@@ -26,7 +26,7 @@ It has a folder `lib/vendor` in it so you don't need to install composer thing y
       1. In your browser, enter `https://example.com/upgrade.php` to update the database directly. 
 4. Log out from LHC.
 5. [Download the most recent LHC version](http://livehelperchat.com/article/static/5) Overwrite `doc`,`ezcomponents`,`lib`,`modules`,`pos`,`translations`,`design` folders. Also, overwrite `index.php` and `cron.php` files with the new version.
-6. Overwrite `composer.json` and `composer.lock` files and run `composer install` command.
+6. Overwrite `composer.json` and `composer.lock` files and run `composer install` or `composer update` command.
 7. Disable [cache in settings.ini.php](debug.md#disabling-cache)
 8. Log in to LHC again and go to `"System configuration" -> "Clear Cache" and click Clear Cache`
    1. You can also clear the cache by executing this command from the command line: `php cron.php -s site_admin -c cron/util/clear_cache`

@@ -19,6 +19,15 @@ Widget themes has few sections. I'll try in short term describe what you can do 
 
 ![](/img/design/theme.png)
 
+## Multilanguage flow
+
+Some of the widget theme attributes can be translated. `Main` translation will be shown if widget language matches `default_site_access` from settings file
+
+If you are embedding widget in other language than default you have two options
+
+* Either put text in correct language by clicking `Add translation`
+* Either edit [`default_site_access`](https://github.com/LiveHelperChat/livehelperchat/blob/bb8f5b8c5b4e5df6cedc7dbae61cbfd463b14d9f/lhc_web/settings/settings.ini.default.php#L28) and put same value as your widget `lang` attribute without slashes 
+
 ## Status widget style
 
 Here you can change main widget attributes. Like logo etc.
