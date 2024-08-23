@@ -11,7 +11,7 @@ cd lhc_web
 composer install
 ```
 
-* You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz` **8.1 PHP** version is required.
+* You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz` **8.2 PHP** version is required.
 
 It has a folder `lib/vendor` in it so you don't need to install composer thing yourself. Copy it to `lib/vendor`
 
@@ -45,6 +45,21 @@ In all cases, I suggest making a backup.
 
 *   [Old update instructions](https://livehelperchat.com/old-upgrading-instructions-335a.html)
 *   [How to automate live helper chat updates?](https://livehelperchat.com/how-to-automate-live-helper-chat-updates-338a.html)
+
+## How to make PHP 8.1 version compatible?
+
+You will loose facebook messenger compatibility.
+
+* Modify `lhc_web/composer.json` file and 
+  * Change `"php": ">=8.2"` to `"php": ">=8.1"
+  * Remove 
+
+```
+    "tgallice/fb-messenger-sdk": "dev-master#47498e9926df01f2633835ff3ffb310f88ac444f",
+    "symfony/event-dispatcher": "^7.1",
+```
+
+* Execute `composer update`
 
 ## Permissions
 
