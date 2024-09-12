@@ -232,7 +232,8 @@ module.exports = {
             'integrating/messagebird-whatsapp',
             'integrating/cloudtalk',
             'integrating/slack-notification',
-            'integrating/waha'
+            'integrating/waha',
+            'integrating/rezdy'
         ]
     },
 };
