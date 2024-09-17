@@ -7,7 +7,7 @@ sidebar_label: Install Guide
 ## Alternative ways
 
  * Use [Docker](https://github.com/LiveHelperChat/docker-standalone)
- * USe [softaculous](https://softaculous.com/apps/customersupport/live_helper_chat)
+ * Use [softaculous](https://softaculous.com/apps/customersupport/live_helper_chat)
 
 ## Requirements
 
