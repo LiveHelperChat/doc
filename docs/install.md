@@ -4,7 +4,10 @@ title: Install Guide
 sidebar_label: Install Guide
 ---
 
-Tutorial on how to set up Live Helper Chat. You can also use the available snapshot on [DigitalOcean](development/hosting-on-digitalocean.md).
+## Alternative ways
+
+ * Use [Docker](https://github.com/LiveHelperChat/docker-standalone)
+ * USe [softaculous](https://softaculous.com/apps/customersupport/live_helper_chat)
 
 ## Requirements
 
@@ -12,7 +15,7 @@ If you are running a WordPress site, there is a 99.9% chance that Live Helper Ch
 
 * Download [zip](https://github.com/LiveHelperChat/livehelperchat/archive/refs/heads/master.zip), [tgz](https://github.com/LiveHelperChat/livehelperchat/tarball/master)
 * You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz`
-* Minimum PHP 8.1. If you will want older php version support you will have to install composer dependencies yourself.
+* Minimum PHP 8.2. If you will want older php version support you will have to install composer dependencies yourself.
 * Mysql 5.7 >= OR MariaDB 10.2.3 >= with `json_` functions support.
 * Apache/Nginx
 * For the Laravel version, please visit https://github.com/LiveHelperChat/livehelperchat_laravel
