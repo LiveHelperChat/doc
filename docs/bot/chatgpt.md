@@ -1,8 +1,13 @@
 ---
 id: chatgpt-integration
-sidebar_label: ChatGPT integration
+sidebar_label: ChatGPT integration (Completions)
 title: Integrating ChatGPT into Live Helper Chat
 ---
+
+This integration flow uses Chat Completions flow.
+
+ * https://platform.openai.com/docs/api-reference/chat
+ * https://platform.openai.com/docs/guides/text-generation
 
 Video tutorial you can find here - https://youtu.be/A0_zTeynmOA
 

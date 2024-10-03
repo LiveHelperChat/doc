@@ -5,16 +5,16 @@ title: DeepPavlov (Sentiment analysis per message)
 
 In this article I'll show you how to setup sentiment analysis using https://deeppavlov.ai/ and my prepared [docker image](https://github.com/LiveHelperChat/sentiment-per-message)
 
-Required 3.99v Live Helper Chat version.
+Required 4.48v Live Helper Chat version.
 
 ## Installing DeepPavlov
 
 ```shell
 git clone https://github.com/LiveHelperChat/sentiment-per-message && cd sentiment-per-message
 docker-compose -f docker-compose.yml pull
-wget https://livehelperchat.com/var/deep_sentence.tgz
-tar zxfv deep_sentence.tgz
-rm -f deep_sentence.tgz
+wget https://livehelperchat.com/var/deep_sentence_v2.tgz
+tar zxfv deep_sentence_v2.tgz
+rm -f deep_sentence_v2.tgz
 ```
 
 Run one time
@@ -45,8 +45,20 @@ curl -X 'POST' \
 
 If you did everything right you should see output like this
 
-```shell
-[[["negative",0.8363235592842102]]]
+```json
+[
+  [
+    "negative"
+  ],
+  [
+    [
+      0.0346120223402977,
+      0.8017117977142334,
+      0.023267682641744614,
+      0.14040860533714294
+    ]
+  ]
+]
 ```
 
 You can also point your browser to 
@@ -67,7 +79,7 @@ For that we will be using [webhooks](development/webhooks.md).
 
 In this scenario Rest API will be sending individual message to get a sentiment. 
 
-[Download configuration](/img/bot/sentiment-per-message/rest-api-v2.json)
+[Download configuration](/img/bot/sentiment-per-message/rest-api-v3.json)
 
 After import make sure you change host if you are not running it on local machine.
 
