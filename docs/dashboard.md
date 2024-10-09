@@ -128,7 +128,7 @@ Operator also can click on `Load column` and see detailed load statistic.
 
 ![](/img/dashboard/load-modal.png)
 
-> Statistics will be update whene first event happen after change on settings (es. user chat limits)
+> Statistics will be update when first event happen after change on settings (es. user chat limits)
 
 #### Required configuration
 
