@@ -128,6 +128,8 @@ Operator also can click on `Load column` and see detailed load statistic.
 
 ![](/img/dashboard/load-modal.png)
 
+> Statistics will be update when first event happen after change on settings (es. user chat limits)
+
 #### Required configuration
 
 In order for operators to see his own department statistic he has to have this permission
