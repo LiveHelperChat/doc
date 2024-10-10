@@ -187,7 +187,24 @@ Refer to flutter documentation. Few quick tips.
  * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53
  * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72
 
-## How to send notification using tour own firebid project?
+## How do I create firebird project
+
+ * https://console.firebase.google.com/ create project there
+ * In `Project overview` page add Android or IOS depending on which one app you are configuring
+
+![Mobile screenshot](/img/mobile/project-overview.png)
+
+ * Navigate to `Project settings` page and click `Service accounts` tab.
+
+![Mobile screenshot](/img/mobile/project-settings.png)
+
+ * There click `Generate new private key`
+
+![Mobile screenshot](/img/mobile/service-account.png)
+
+After that you will download `*.json` file which one you will use to generate `Bearer token` for notifications.
+
+## How to send notification using tour own firebird project?
 
 Take a look at this file. Firebase recent version require Bearer AccessToken which I generate on my on server.
 https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/core/lhmobile/lhmobile.php#L437

@@ -128,7 +128,9 @@ Operator also can click on `Load column` and see detailed load statistic.
 
 ![](/img/dashboard/load-modal.png)
 
-> Statistics will be update when first event happen after change on settings (es. user chat limits)
+> Statistics will be updated when first event happen after change of settings (es. user chat limits)
+> Operator has to be assigned explicitly to department or department group
+> Operator should have limits set (E.g Max Chats)
 
 #### Required configuration
 
