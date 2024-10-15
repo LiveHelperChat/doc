@@ -166,6 +166,20 @@ You can have custom HTML to show before start chat fields. Usefull for UI variat
 
 ![](/img/chat/pre-chat-html.png)
 
+
+## Pre chat conditions
+
+Possible use cases
+
+ * With these rules you can enable chat only for specific visitors
+ * Go to maintenance mode and disable widget completely.
+ * Provide chat only for specific players and for others leave a message that chat is available only as example for VIP visitors.
+
+### How to handle maintenance during update
+
+ * To go to maintenance mode you can just active `Activate maintenance mode` option in `Start a chat form settings` and enter a custom message for your visitors.
+ * To inform your operator you can go to `System configuration > Notice message` and enter a custom message which will be seen at the top left of the back office.
+
 ## Permissions
 
 Required permission to manage start chat form settings

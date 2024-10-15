@@ -28,6 +28,28 @@ In this area you will see visitor messages. Also if there are previous visitor m
 
 You can also click right mouse button and see context menu related to a message.
 
+### Message edit actions
+
+![](/img/chat/chat-message-popover.png)
+
+ * `Quote` - will append message area with quoted message text. 
+   * General `lhchat,use` permission is required.
+   * Chat must be not closed
+ * `Edit` - will be visible if
+   * Chat is not closed
+   * Selected message is not the last one operator message and operator has `lhchat,editpreviousall` permission
+   * Selected message is visitor message and operator has `lhchat,editpreviouvis` permission
+   * Selected message is the last operator message and operator has `lhchat,editprevious` permission
+ * `Remove` - Removes messages permanently from database
+   * To remove `Visitor` message `lhchat,removemsgvi` permission is required
+   * To remove `Operator` or `Bot` message `lhchat,removemsgop` permission is required. It will allow to remove message independently who wrote this message.
+ * `Ask for help` Will work if
+   * Chat is not closed
+   * Operator has permission to use `lhgroupchat,use` permission
+ * `Copy (Ctrl+C)` - will copy single message content
+ * `Copy all` - will copy whole section of conversation part
+ * `Translate` - will translate a message if chat translation service is set up.
+
 ### Message delivery status indication
 
 1. ![](/img/chat/scehduled-for-sent.png) - was was scheduled for sent. This status is used if you are using third party integration and message itself is send via webhooks workflow.
