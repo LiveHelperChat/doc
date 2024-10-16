@@ -8,11 +8,11 @@ This article represents use case where monthly chats number is around 200K and m
 
 ### Servers specs
 
-*   1 Web servers (nginx, php-fpm, redis)
-    *   4 X Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+*   1 Web servers (nginx, php-fpm, redis, NodeJS, Cronjobs, PHP-Resque)
+    *   (4 threads) X Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
     *   5GB of memory
 *   1 DB Server (MariaDB) (No slow queries in slow query log!)
-    *   8 X Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+    *   (8 threads) X Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
     *   8GB of memory, I wish I had more :D
 *   1 ElasticSearch server
 
