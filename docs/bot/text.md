@@ -93,6 +93,22 @@ You can foreach any chat variable. In this scenario we foreach `chat variable`
 {/foreach}
 ```
 
+You can also loop `{content_1}` if it contains an array
+```
+{foreach=content_1} - {args.item.paid_at}  {args.item.delivery_status}{/foreach}
+```
+
+Render as JSON. Do not miss `{as_json}` argument inside foreach loop. It's usefull for `Rest API` call `Custom argument for the Rest API Call` arguments rendering where it can be used as `{{custom_args_1}}` in Rest API call.
+
+```
+[{foreach=content_1}{as_json}{separator},{/separator}{"requested_at":{args.item.requested_at},"method_name":{args.item.approved_method_name}}{/foreach}]
+```
+
+Special variables
+
+ * `{separator},{/separator}` put comma between elements
+ * `{index_element}` holds element index in the array
+
 ### HTML message
 
 Content of this textarea will be rendered as HTML directly. It also supports translations.

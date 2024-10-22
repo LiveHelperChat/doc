@@ -276,6 +276,7 @@ Single messages
 * `{{msg_html_lowercase}}` - msg in HTML format lowercase
 * `{{msg_html_nobr}}` - msg in HTML format without `<br />` tags. Presently used in telegram integration.
 * `{{msg_html_lowercase_nobr}}` - msg in HTML format lowercase without `<br />` tags.
+* `{{custom_args_1}}` - comes from trigger definition `Custom argument for the Rest API Call` field from bot trigger.
 
 All messages at once
 
@@ -290,12 +291,12 @@ All messages at once
 * `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
 * `{{media_all}}` - array of files attached `[file...` syntax.
 * `{{media_all_links}}` - plain text with structure of 
-  * ```
+```
 http://example.com/link/to/file_1.pdf [file_1.pdf]
 http://example.com/link/to/file_2.pdf [file_2.pdf]
 ```
 * `{{media_all_links_raw}}` - plain text with structure of 
-  * ```
+```
 http://example.com/link/to/file_1.pdf
 http://example.com/link/to/file_2.pdf 
 ```
@@ -496,6 +497,9 @@ Fields description
 * `Process on next visitor message` - this call will be executed only on next visitor message. Usefull in case you want to check only for specific actions.
 * `Save response as system message` - will save a message as system message. It will be invisible for the visitor.
 * `Do not save response.` - usefull in case you want to execute a call, but do not save any related information.
+* `Custom argument for the Rest API Call` - this content can be reached via Rest API call directly through `{{custom_args_1}}` var. It's usefull in ChatGPT integration
+   * If your Rest API fails you can just have something like this `{"success":false,"reason":"service is temporrary offline, try after 5 minutes"}`
+   * Or you can forward direct response from Your Rest API `{"success":true,"list":{content_1}}` Take a look https://github.com/LiveHelperChat/chatGPT
 
 ### Example of `Process on next visitor message`
 
