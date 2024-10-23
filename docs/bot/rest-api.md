@@ -361,6 +361,15 @@ Example from telegram.  `If you are sending file you can have a different body c
 }
 ```
 
+* `{not_empty__*}body if variable is not empty{/not_empty}` variable `{{msg_url}}` has to be not empty. In this scenario we send ChatGPT additional message only if it's not empty.
+* As for check you can use any replaceable variables like `{{msg_url}}` etc.
+```json
+{
+    "assistant_id": "asst_XXXXXXXXXXXXXXX",
+    "parallel_tool_calls": false
+    {not_empty__msg_url},"additional_messages" : [{"role" : "user", "content" :  {{msg_url}} }]{/not_empty}
+}
+```
 
 Additional attributes you can use 
 

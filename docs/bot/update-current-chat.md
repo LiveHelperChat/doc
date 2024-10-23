@@ -124,6 +124,10 @@ Department you can change also with `Update main chat attribute`, since 3.42v wa
 
 In order to change department you just have to `Enter department ID` ID you can find in department list.
 
+## Disable visitor sending messages untill next operator/bot messages.
+
+It disables possibility for visitor to send a message untill there is some response to his previous message. It's usefull in ChatGPT integration case if we want to wait untill bot response to our previous request.
+
 ## Set subject
 
 You can add a subject to the chat automatically by entering subject id.
