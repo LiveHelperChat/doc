@@ -371,6 +371,20 @@ Example from telegram.  `If you are sending file you can have a different body c
 }
 ```
 
+* `{is_empty__*}body if variable is empty{/is_empty}` variable `{{msg_url}}` has to be not empty. In this scenario we send ChatGPT additional message only if it's not empty.
+* As for check you can use any replaceable variables like `{{msg_url}}` etc. In below exampel we check if `is_logged` variable is not set. We instruct Chat GPT do not call any functions and ask user to login.
+```json
+{
+  "assistant_id": "asst_XXXXXXXXXXXXXXX",
+  "parallel_tool_calls": false
+{is_empty__args.chat.chat_variables_array.is_logged}
+,"tools":[]
+, "additional_instructions":"Visitor is not logged in and functions calls are not enable to him. You can answer questions only from documentation. Ask him to login to get personal account information. You can get personal information once visitor is logged in."
+{/is_empty}
+{not_empty__msg_url},"additional_messages" : [{"role" : "user", "content" :  {{msg_url}} }]{/not_empty}
+}
+```
+
 Additional attributes you can use 
 
 * `{interactive_api}quick reply buttons wrapper{/interactive_api}`
