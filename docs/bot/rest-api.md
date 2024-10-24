@@ -568,6 +568,13 @@ Best way is just to pass `{{args.chat.chat_locale}}` if customer is chatting in 
 
 ## How to find out problems with Rest API
 
+### Audit log
+
+ * Newer version has option in Rest API configuration check `Log all request and their responses in audit log.`
+ * After that you will see all request made by your chosen Rest API in Audit log
+
+### Triggers
+
  * Setup output combination for success call.
  * In default response have two text messages as response
 
