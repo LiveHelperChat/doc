@@ -194,6 +194,10 @@ Here is the automatic auto-response message.
 
 ​![](/img/install/autoresponder-busy.png)
 
+## Desktop client
+
+Desktop application can be found at https://github.com/LiveHelperChat/electron It is based on electron framework and acts as a standalone browser and is much faster than chrome. 
+
 ## Further reading
 
 * [How to remove index.php from URL?](development/remove-index-php.md)

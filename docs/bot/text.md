@@ -24,7 +24,7 @@ Text message can have few sending options
     * `{welcome_message__Welcome to our website}`
     * `{good_evening__Good evening__t[17:24]}` - Show this message from 17 until midnight
     * `{good_morning__Good morning__t[0:17]}` - Show this message from midnight until evening
-    * `{good_morning_monday__Good morning monday__t[7:9]||1}` show this message only on monday
+    * `{good_morning_monday__Good morning monday__t[7:9]||1}` show this message only on Monday
     * `{good_morning_tue_wed__Good morning monday__t[7:9]||2,3}` show this message only on Tuesday and Wednesday
 * You can give random answer by separating messages by `|||` or just clicking ![](/img/bot/new-variation.png)
 
