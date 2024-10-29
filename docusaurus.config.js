@@ -9,6 +9,10 @@ module.exports = {
   organizationName: 'LiveHelperChat', // Usually your GitHub org/user name.
   projectName: 'doc', // Usually your repo name.
     scripts: [
+        {
+            'src' : '/js/lhc.js',
+            async: true
+        }
         /*{
             src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
             async: true,

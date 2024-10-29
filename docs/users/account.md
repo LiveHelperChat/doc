@@ -166,4 +166,25 @@ Required permissions
 
 In this section operator can configure settings related to new chats notifications aldo enable activity tracking so operator would go offline/online automatically. Related information [how to automate online offline status](../offline-online-automation.md)
 
+In this window operators can also
+
+ * Turn of/off sound notifications for a pending chat
+ * Turn of/off sound notifications for a new messages
+ * Show or not alert for new chat
+ * Hide/Show quick notifications at the top left corner of the app
+ * Subscribe to browser notifications for a new chats
+ * Option to hide notifications for pending chats if he is not an owner of it.
+ * Subscribe to browser notifications.
+
+# FAQ
+
+### My operators do not hear a sound when a new chat comes?
+
+Make sure they have turned on sound notifications in `Account > Notfications`. There are two sound notifications icons. One for new chats and the other for new messages. Operator also
+ * He should see this pending chat in their dashboard
+ * Interacted with a back office page. Click anywhere in dashboard. Recommended.
+ * Chat should be in pending state or pending and assigned to him.
+ * Operator should use `Resquest notification permission` for maximum alert for a new chats.
+ * He will not hear a sound after refreshing back office, only for new incoming chats he will hear a sound.
+
 ​![](/img/user/notifications.png)
