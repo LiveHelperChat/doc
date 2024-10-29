@@ -216,6 +216,14 @@ If you are running behind CloudFlare or any other proxy that influences the IP s
 
 > https://github.com/LiveHelperChat/livehelperchat/blob/a60a3b485ed08650b9e081ed827998e050717e37/lhc_web/settings/settings.ini.default.php#L18
 
+## Widget content looks very small on my website?
+
+Make sure your website has `viewport` tag
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
 ## My widget does not load?
 
 Try adding this to your `.htaccess` ile in the root folder `lhc_web`. If this folder does not exist, just place the `.htaccess` file in the same folder where the `index.php` file exists. It has to be placed in the Live Helper Chat folder, not the website.

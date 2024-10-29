@@ -10,6 +10,18 @@ Bold the text
 
 > `[b]Bold[/b]`
 
+OR
+
+> `**Bold**`
+
+Italic and bold at the same time
+
+> `___bold and italic___`
+
+Headers
+
+> `##` till `######`
+
 Italic text
 
 > `[i]Italic[/i]`
