@@ -90,6 +90,7 @@ Value     : -1
 
 * Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
 
-![](/img/integration/whatsapp-webhook.png)
+![image](https://github.com/LiveHelperChat/doc/assets/10582537/89806d7f-0d17-4674-97f3-518469e216b1)
+
 
 If you did everything correct you should have it all working. Without coding a single line.
