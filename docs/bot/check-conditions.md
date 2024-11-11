@@ -151,3 +151,26 @@ There is two scenarios
 * Condition changes to `{args.chat.dep_id} != 31` We want to execute only if department id is `31`. This time it's reverse
 
 ![](/img/bot/bot-conditions-trigger-reverse.png)
+
+
+## How do I check if I had a chat with this user and skip bot in that scenario?
+
+We will have three triggers
+
+ * `Default`
+ * `Remember VIP` will be triggered on `remember` keyword
+ * `Welcome back VIP` will send a message if we had a chat with this visitor before.
+
+[Download bot](/img/bot/bots/remember.json)
+
+### `Default` trigger content
+
+Conditions content
+
+`{args.chat.online_user.previous_chat.chat_variables_array.vip} = 1`
+
+### `Remember VIP` trigger content
+
+Trigger is triggered on `remember` keyword
+
+### `Welcome back VIP` trigger content
