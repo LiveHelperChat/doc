@@ -13,14 +13,35 @@ sidebar_label: Developing
    templatecompile => false
    modulecompile => false
 ```
+
+## Compressing JS files
+
+ * Each time you modify any js file you should run this command. It compresses JS files.
  * To compile JS from lhc_web folder execute. This will compile main JS and old widget javascript files.
    * `npm install && gulp`
- * To compile new widget V2
+
+## New frontend widget
+
+ * To compile new widget V2 (frontend)
    * There is two apps [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app)
    * `cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build`
    * `cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build`
- * To recompile back office React APP (Left toolbar, Group Chat etc...)
-   * `cd lhc_web/design/defaulttheme/js/admin &&  npm run build`
+
+## Back office application
+
+Back office consists of multiple mini parts
+
+ * Dashboard Left toolbar (`DashboardChatTabs.js`), Group Chat (`GroupChat.js`), Canned Messages (`CannedMessages.js`), Mail application (`MailChat.js`))
+   * `cd lhc_web/design/defaulttheme/js/admin && npm run build`
+* Bot builder application (ReactJS)
+  * `cd lhc_web/design/defaulttheme/js/react && npm run build`
+* Dashboard widgets (Svelte)
+ *  `cd lhc_web/design/defaulttheme/js/svelte && npm run build`
+
+## Preparing production build
+
+This should be run with all extensions installed. It generates unique hash files including active extensions.
+
  * Recompile static JS/CSS files. This is required if you change core JS files. It also avoids missing CSS/JS files if more than one server is used.
    * `php cron.php -s site_admin -c cron/util/generate_css -p 1 && gulp js-static`
 
@@ -34,6 +55,14 @@ cd lhc_web/ && ./deploy.sh
 ```
 
 During development process make sure you disable network cache `Network -> Disable cache` in Chrome developer toolbar.
+
+## How to change back office style
+
+* Override styles
+* Compile them with steps from `Preparing production build`
+
+
+## Other usefull development links
 
 More usefull links
 
