@@ -45,6 +45,7 @@ Text area supports these replaceable variables
  * `{args.chat.incoming_chat.chat_external_id}` - incoming chat id
  * `{args.chat.incoming_chat.payload_array.*}` - first payload attributes in array format
  * `{args.msg.msg}` - visitor message.
+ * `{args.chat.online_user.previous_chat.chat_variables_array.vip}` - access previous chat variable 
  * `{args.chat.chat_variables_array.debts.0.nit}` - you can go as deep as you want to show chat variable
  * `{args.chat.chat_variables_array.order_id}` - access `order_id` from additionally defined chat variable which is stored as `This variable is invisible for operator and will be stored in chat_variables attribute`
  * `{args.msg_text}` - payload value if button/dropdown value click is unknown.
