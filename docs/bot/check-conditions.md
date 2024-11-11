@@ -169,8 +169,15 @@ Conditions content
 
 `{args.chat.online_user.previous_chat.chat_variables_array.vip} = 1`
 
+![image](https://github.com/user-attachments/assets/de98e325-f6d6-4681-9beb-ccc0aa124b4f)
+
 ### `Remember VIP` trigger content
 
 Trigger is triggered on `remember` keyword
 
+![image](https://github.com/user-attachments/assets/efedc807-8ab8-4ed5-8106-3562cd09fa0d)
+
 ### `Welcome back VIP` trigger content
+
+![image](https://github.com/user-attachments/assets/68756188-cb5f-474e-90c5-a73a32dda394)
+
