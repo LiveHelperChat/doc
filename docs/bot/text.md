@@ -387,3 +387,18 @@ Syntax for simple buttons looks like. This can be send directly as a meta_msg bo
   }
 ]
 ```
+
+## How to's
+
+### How to display week day in my language?
+
+There is two ways to do it.
+ * Have text directly in text message. You will have to create a bot individualization and assign it to department.
+   * `[dateformat=H:i]{current_time_ts}[/dateformat] - {wednesday__Wednesday__t[0:24]||3}` 
+   * `[dateformat=H:i]{current_time_ts}[/dateformat] - {thursday__Thursday__t[0:24]||4}`
+ * Another option is to have something like 
+   * `{week_day__Day of week}` and have bot individualization with that one string `week_day`
+   * Default content will look like
+     * `{wednesday__Wednesday__t[0:24]||3}{tuesday__Tuesday__t[0:24]||2}`
+   * Your language content E.g `[lt]` will look like. It's in Lithuanian language
+   * `{wednesday__Trečiadienis__t[0:24]||3}{tuesday__Antradienis__t[0:24]||2}`
