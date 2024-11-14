@@ -106,6 +106,13 @@ To write in whisper mode, an operator must have this permission:
 
 > 'lhchat', 'whispermode'
 
+Support shortcuts for a new editor
+
+ * `Ctrl+i` - make text `italic` or indicate next letters will be `italic`.
+ * `Ctrl+b` - make text `bold` or indicate next letters will be `bold`.
+ * `Ctrl+u` - make text `underline` or indicate next letters will be `underline`.
+ * `Ctrl+Space`- jump cursor to the end of input area and terminate all present styles. Next letter will be without any style. Useful in case you are writing something in style and want nest phrase to start to write without any style.
+
 ### Typing indicator
 
 In order for operators to see full text what visitor is typing - not only indicator. They must have this permission
