@@ -386,3 +386,62 @@ Required permission to configure `Additional chat variables`
 Required permission to configure `Additional chat columns`
 
 > 'lhchat','administratecolumn'
+ 
+## How to pass registered visitor username as a nick?
+
+This is the common flow to show logged visitor username in the chat application. Instead of a `Visitor` you will see his real nick.
+
+ * We have to define `System configuration -> Live help configuration -> Additiona chat variables`
+
+Username definition looks like.
+
+![](/img/chat/additional-chat-username.png)
+
+ * `Javascript/Cookie variable value` - `lhc_var.usernamepassing`
+ * `Variable name` - `Login`
+ * `Variable identifier` - `lhc.nick`
+ * `Log message for for variable. Variables you can use {old_val}, {new_val}` - just for log in the chat. It's optional.
+ * `Variable type` - `String (case insensitive)`
+
+Modify embedded JS
+
+```js
+if (typeof lhc_var === 'undefined') { // This variable has to be defined before Live Helper Chat embed script.
+    window.lhc_var = {}; // Window is required to define variable in global scope 
+};  
+lhc_var.usernamepassing = 'remdex'; // PHP generated or just some plain JS var
+```
+
+How to map same logged visitor online session across multiple devices. More information you can find at [javascript arguments](javascript-arguments.md)
+
+```js
+if (typeof lhc_var === 'undefined') { // This variable has to be defined before Live Helper Chat embed script.
+    window.lhc_var = {}; // Window is required to define variable in global scope 
+};  
+lhc_var.usernamepassing = 'remdex'; // PHP generated or just some plain JS var
+
+var LHC_API = LHC_API || {};
+LHC_API.args = {
+    UUID : '<?php echo md5($user_id + "some hash")?>'; // PHP generated or just some plain JS var
+    mode: 'widget',
+    lhc_base_url: '//chatgpt.livehelperchat.com/index.php/',
+    wheight: 450,
+    wwidth: 350,
+    pheight: 520,
+    pwidth: 500,
+    leaveamessage: true,
+    department: ["1"],
+    check_messages: false
+};
+(function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.setAttribute('crossorigin', 'anonymous');
+    po.async = true;
+    var date = new Date();
+    po.src = '//chatgpt.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+}
+)();
+```
