@@ -1,6 +1,6 @@
 ---
 id: rest-api
-title: Rest API
+title: Bot Rest API
 ---
 
 ## Introduction
@@ -254,6 +254,35 @@ In case you want to send Rest API only if user message is not empty sample would
 
 > {{msg_clean_lowercase}} != // Do not enter anything
 
+### Polling
+
+If you expect that the response will be delayed, you can set up polling. This way, the bot will keep checking the response until it matches one of the output combinations.
+
+While doing, that web-server is keeping connection alive, which is not ideal for web application. It's better to use php-resque extension for that and have it happening in the background.
+
+Sample bot and Rest-API https://github.com/LiveHelperChat/chatGPT/tree/main/doc/assistant for ChatGPT integration.
+
+### Streaming
+
+Streaming allows to show visitor while tokens are generated on ChatGPT or any other platform which supports streaming.
+
+* `Streaming event type field` - In ChatGPT case it's returning `event: event.type` type response and `data: ` afterwards.
+
+#### Requirements
+
+ * You have to have a background worker running. [lhc-php-resque](https://github.com/LiveHelperChat/lhc-php-resque) extension is optional but highly recommended. Otherwise you will be keeping connection to your web server.
+ * [NodeJS-Helper](https://github.com/LiveHelperChat/NodeJS-Helper) server running. It is required.
+ * Before sending Rest API call in your bot make sure. Last message is a `Send typing` message. We use typing message indicator and fill its content with streaming content.
+
+#### Output parsing
+
+* `Output is matched only if event is this type.` If we want to match specific event for specific `Output combination` we can set a filter for that. `MessageReceived` event as example is expecting `thread.message.delta` as an example. 
+* If this output combination result should be streamed you can check `Stream this output` checkbox. This way it will be streamed to the visitor.
+* `Execute trigger on matched content. Stream will continue afterwards.` - If you want just execute trigger and flow is expected to continue check this option. `RunCreated` event as example is expecting `thread.run.created` as an example and expecting stream to continue. Messages will come afterward.
+* `If matched use response as final response.` - If this output is matched it's response should be set as a final response. This happens in `RequiresAction` event as an example. It's expecting `thread.run.requires_action` as an example.
+
+Sample bot and Rest-API https://github.com/LiveHelperChat/chatGPT/tree/main/doc/assistant_stream for ChatGPT integration.
+
 ## Replaceable variables
 
 Rest API in value fields you can use these replaceable variables. These variables by default are already in json format with quotes. To use them without quotes in JSON payload use them like `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
@@ -323,6 +352,7 @@ Other:
 * `{{footprint}}` - last 25 viewed pages url's
 * `{{chat_id}}` - chat ID
 * `{{timestamp}}` - unix timestamp
+* `{{date_utc}}` - date in full format in UTC timezone. E.g `2024-11-20 12:27:03 UTC.`
 * `{{subject_ids}}` - array of subject id's assigned to chat
 * `{{subject_list}}` - array of subjects objects with all attributes
 * `{{subject_list_names}}` - string of subject names imploded by comma 
@@ -588,7 +618,9 @@ In response have something like this. Pay attention second text message is send 
 
 ## How to handle API Errors?
 
-The easiest way is set fallback trigger on `Default trigger to execute`. If API works correctly your defined output combination will be executed.
+There is two ways to handle API errors.
+ * Set fallback trigger on `Default trigger to execute`. If API works correctly your defined output combination will be executed.
+ * You can just in your `Rest-API` configuration check `Log all request and their responses in audit log.` or `Log all request and their responses as system messages.`. This way you will see all requests made by your Rest API in Audit log.
 
 ## Events you can listen
 
