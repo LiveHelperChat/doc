@@ -280,6 +280,8 @@ Streaming allows to show visitor while tokens are generated on ChatGPT or any ot
 * If this output combination result should be streamed you can check `Stream this output` checkbox. This way it will be streamed to the visitor.
 * `Execute trigger on matched content. Stream will continue afterwards.` - If you want just execute trigger and flow is expected to continue check this option. `RunCreated` event as example is expecting `thread.run.created` as an example and expecting stream to continue. Messages will come afterward.
 * `If matched use response as final response.` - If this output is matched it's response should be set as a final response. This happens in `RequiresAction` event as an example. It's expecting `thread.run.requires_action` as an example.
+* `Stream content as HTML.` - If you want to stream content as HTML. We will render full HTML before feeding it to widget.
+  * This should be checked for `ScheduleRun -> MessageReceived (output combination)` and `ToolCallCompleted -> MessageReceived (output combination)` events.
 
 Sample bot and Rest-API https://github.com/LiveHelperChat/chatGPT/tree/main/doc/assistant_stream for ChatGPT integration.
 

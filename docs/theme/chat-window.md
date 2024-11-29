@@ -18,6 +18,23 @@ You can change header icons location by creating a new widget theme and setting 
 
 ![](/img/theme/chat-window-header.png)
 
+## Operator profile
+
+Different operator profiles can be set depending on the status of the chat. 
+
+### Start chat operator profile can be enabled at
+
+> System configuration -> Live help configuration -> Start chat form settings -> Default settings -> Additional form settings -> Show operator profile above input fields
+
+* To change how the profile looks, you should be using widget theme.
+* `Widget theme -> Custom content -> Use bot profile in the widget instead of default.`
+
+### Ongoing chat operator profile
+
+Depending on the status of the chat it can show bot profile or just operator profile.
+
+![](/img/theme/operator-profile.png)
+
 ## Chat window toolbar
 
 Toolbar with enabled all options looks like
