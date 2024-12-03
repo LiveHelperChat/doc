@@ -54,6 +54,8 @@ The appropriate method type for the request.
 
 URL to append to the host. It can be one of the replaceable variables.
 
+In this field URL can be `urlencode_{{args.chat.nick}}` or without escaped url `{{args.chat.id}}`. URL Encode should be used if URL contains spaces or in general, it's a query part of the URL.
+
 ![](/img/bot/rest-api-trigger.png)
 
 ### Params
