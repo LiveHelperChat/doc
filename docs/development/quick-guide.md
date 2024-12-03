@@ -61,6 +61,15 @@ During development process make sure you disable network cache `Network -> Disab
 * Override styles
 * Compile them with steps from `Preparing production build`
 
+## How to find which files is responsible for particular URL?
+
+Follow instructions [how to override any url](extending/override-module.md). The Same flow applies figuring out which files are responsible for particular URL.
+
+Using that flow you can find which file is responsible for AJAX based actions. 
+
+## How to find where the template is located?
+
+Follow instructions [how to override any template](extending/overriding-templates.md). The Same flow applies figuring out where template is located.
 
 ## Other usefull development links
 
