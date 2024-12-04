@@ -287,6 +287,32 @@ Streaming allows to show visitor while tokens are generated on ChatGPT or any ot
 
 Sample bot and Rest-API https://github.com/LiveHelperChat/chatGPT/tree/main/doc/assistant_stream for ChatGPT integration.
 
+#### Plain streaming
+
+This is sample how to stream plain text to the visitor if API always is streaming `data: ` content.
+
+ * Stream must follow `data: json_content` format E.g `data: {"delta":"text chunk"}`
+ * Check `Streaming` checkbox in Rest API configuration
+ * `Output parsing` Should have at-least one combination defined.
+
+Output parsing can look like this.
+
+![](/img/bot/streaming-plain.png)
+
+Body payload can look like this just
+
+![](/images/bot/rest-api-body-stream.png)
+
+That's all your need to have in your Rest API configuration.
+
+Trigger in bot can look like this.
+
+![](/images/bot/streaming-bot.png)
+
+Show response trigger content
+
+![](/images/bot/show-response-stream.png)
+
 ## Replaceable variables
 
 Rest API in value fields you can use these replaceable variables. These variables by default are already in json format with quotes. To use them without quotes in JSON payload use them like `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
