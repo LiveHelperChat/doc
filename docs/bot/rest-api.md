@@ -297,21 +297,21 @@ This is sample how to stream plain text to the visitor if API always is streamin
 
 Output parsing can look like this.
 
-![](/img/bot/streaming-plain.png)
+![](/img/bot/plain_streaming.png)
 
 Body payload can look like this just
 
-![](/images/bot/rest-api-body-stream.png)
+![](/img/bot/rest-api-body-stream.png)
 
 That's all your need to have in your Rest API configuration.
 
 Trigger in bot can look like this.
 
-![](/images/bot/streaming-bot.png)
+![](/img/bot/streaming-bot.png)
 
 Show response trigger content
 
-![](/images/bot/show-response-stream.png)
+![](/img/bot/show-response-stream.png)
 
 ## Replaceable variables
 
