@@ -98,6 +98,10 @@ Link
 
 > `[url=http://google.com]Live Helper Chat[/url]`
 
+Markdown link
+
+> `[example](https://example.com)`
+
 Youtube video
 
 > `[youtube]https://www.youtube.com/watch?v=TFJAW5bepLM&feature=youtu.be[/youtube]`
