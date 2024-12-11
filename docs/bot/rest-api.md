@@ -315,7 +315,7 @@ Show response trigger content
 
 ## Replaceable variables
 
-Rest API in value fields you can use these replaceable variables. These variables by default are already in json format with quotes. To use them without quotes in JSON payload use them like `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
+Rest API in value fields you can use these replaceable variables. These variables by default are already in json format with quotes. 
 
 All chat messages. These combinations are usefully in case you are implementing sentiment analysis and want for example determine the sentiment of operator/visitor or both messages:
 
@@ -375,6 +375,14 @@ For this to work you have to
 * In `Rest API Calls` section in `Remote Message ID` enter attribute location of send message.
  
  Reply to messages are support in official facebook whatsapp integration. So take a look there just.
+
+### Magic prefixes for replaceable variables
+
+There are three types of magic prefixes they apply to all replaceable variables and only to body,files payload.
+
+ * `raw_<replaceable_variable>` - will return value without wrapping quotes where content will be a valid JSON string. E.g `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
+ * `sensitive_<replaceable_variable>` - content of variable will be processed using `Messages content protection` rules.
+ * `raw_sensitive__<replaceable_variable>` - content of variable will be processed using `Messages content protection` rules and wrapping quotes will be removed content will be a valid JSON string.
 
 Other:
 

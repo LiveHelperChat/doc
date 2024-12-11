@@ -77,6 +77,7 @@ module.exports = {
             'chat/files',
             'chat/participant',
             'chat/web-push-notifications',
+            'chat/messages-content-protection'
         ],
         Mail: [
             'mail/intro',
