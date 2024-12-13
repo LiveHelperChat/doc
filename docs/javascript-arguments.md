@@ -9,13 +9,13 @@ Here you will find all possible javascript arguments for a new widget. If you wa
 
 ```js
 <script>
-var LHC_API = LHC_API||{};
+var LHC_API = LHC_API||{}; // Should be a global var. Can be replaced also with `window.LHC_API = window.LHC_API || {};`
 LHC_API.args = {
     mode: 'widget',      // widget, embed, popup | Required
-    cookie_enabled: true, // Is cookies enabled in for Live Helper Chat to use, | Optional | Default - true. See `Implementing GDPR scenario` section in this article
+    cookie_enabled: true,// Is cookies enabled in for Live Helper Chat to use, | Optional | Default - true. See `Implementing GDPR scenario` section in this article
     pnode : 'lhc-node-id'// Where should we render our HTML. By default we append it to body | Optional <div id="lhc-node-id"></div>
     lhc_base_url:'//demo.livehelperchat.com/',  // Required
-    react_attr: [       // Optional
+    react_attr: [        // Optional
         // In this case we set custom Intro operator message in HTML format
         {'k': ['chat_ui','intro_message_html'], 'v' : '<b>just dymmy html</b>'}, // 'k' : <attribute path>, 'v' : <attribute value>
         // For all possible UI related attributes please refer to React UI Attributes section 
