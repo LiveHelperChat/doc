@@ -360,7 +360,7 @@ http://example.com/link/to/file_1.pdf
 http://example.com/link/to/file_2.pdf 
 ```
 
-* `{if_previous_visitor_messages}{"content":{{previous_visitor_messages_url__100}},"role":"user"},{/if_previous_visitor_messages}` print last 100 messages if there is any. We print here only visitor last 100 messages.
+* `{if_previous_visitor_messages}{"content":{{previous_visitor_messages_url__100__1}},"role":"user"},{/if_previous_visitor_messages}` print last 100 messages if there is any. We print here only visitor last 100 messages. We skip very first message with `1` as a second argument. Offset in other words. It's an optional argument.
 
 Reply to scenario
 
