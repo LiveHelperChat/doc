@@ -141,7 +141,8 @@ module.exports = {
                     'bot/sentiment-analysis-per-message',
                     'bot/deeppavlov-faq',
                     'bot/verify-email-by-bot-and-rest-api',
-                    'bot/chatgpt-integration'
+                    'bot/chatgpt-integration',
+                    'bot/deepseek-integration'
                 ]
             },
             {

@@ -362,6 +362,43 @@ http://example.com/link/to/file_2.pdf
 
 * `{if_previous_visitor_messages}{"content":{{previous_visitor_messages_url__100__1}},"role":"user"},{/if_previous_visitor_messages}` print last 100 messages if there is any. We print here only visitor last 100 messages. We skip very first message with `1` as a second argument. Offset in other words. It's an optional argument.
 
+
+* `{previous_visitor_messages_list_url__10__1}
+{separator},{/separator}
+{
+"role": "{assistant}assistant{/assistant}{user}user{/user}",
+"content": {not_item_empty__args.item.msg}{{args.item.msg}}{/not_item_empty}
+}
+{end_separator},{/end_separator}
+{/previous_visitor_messages_list_url}` - print last 10 messages and skip the most recent one.
+
+And here is an example of how this can be used with AI integration. See [ChatGPT](bot/chatgpt.md) integration.
+
+```json
+"messages": [
+      {
+        "role": "system",
+        "content": "You are a helpful assistant. You can answer questions only from https://doc.livehelperchat.com. If you don't know the answer call `knowledge_base` function"
+      },
+
+{previous_visitor_messages_list_url__10__1}
+{separator},{/separator}
+{
+"role": "{assistant}assistant{/assistant}{user}user{/user}", 
+"content": {not_item_empty__args.item.msg}{{args.item.msg}}{/not_item_empty}
+}
+{end_separator},{/end_separator}
+{/previous_visitor_messages_list_url}
+
+      {
+        "role": "user",
+        "content": {{msg_url}}
+      }
+    ]
+```
+
+
+
 Reply to scenario
 
 ```
