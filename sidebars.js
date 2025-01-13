@@ -142,7 +142,8 @@ module.exports = {
                     'bot/deeppavlov-faq',
                     'bot/verify-email-by-bot-and-rest-api',
                     'bot/chatgpt-integration',
-                    'bot/deepseek-integration'
+                    'bot/deepseek-integration',
+                    'bot/ollama-integration'
                 ]
             },
             {
