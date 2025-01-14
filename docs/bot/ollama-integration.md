@@ -4,7 +4,9 @@ sidebar_label: Ollama integration (Completions, Tool calls)
 title: Integrating Ollama into Live Helper Chat with tool calls support
 ---
 
-Present sample is using [llama3-groq-tool-use](https://ollama.com/library/llama3-groq-tool-use) model 
+Present sample is using [llama3-groq-tool-use](https://ollama.com/library/llama3-groq-tool-use) model. You can use any other model as well.
+
+I had good experience also with https://ollama.com/library/mistral-nemo model.
 
 * You will need working ollama model and ollama server running.
 
