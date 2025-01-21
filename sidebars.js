@@ -143,7 +143,8 @@ module.exports = {
                     'bot/verify-email-by-bot-and-rest-api',
                     'bot/chatgpt-integration',
                     'bot/deepseek-integration',
-                    'bot/ollama-integration'
+                    'bot/ollama-integration',
+                    'bot/gemini-integration'
                 ]
             },
             {
