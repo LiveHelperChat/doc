@@ -21,7 +21,7 @@ Installation
 
 Important
 
-* After installation changes IP of running ollama service.
+* After installation change IP of running ollama service.
 * For debug you can just edit Rest API in back office and check `Log all request and their responses as system messages.`
 * Make sure your version has https://github.com/LiveHelperChat/livehelperchat/commit/fc1dc721d912a79064e8cbba451e6ac40dda831b those changes.
 
