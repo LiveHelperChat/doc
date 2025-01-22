@@ -9,7 +9,9 @@ This integration flow uses Chat Completions flow.
 * https://platform.openai.com/docs/api-reference/chat
 * https://platform.openai.com/docs/guides/text-generation
 
-Before that you will need few things
+For [Assistant api](https://platform.openai.com/docs/assistants/overview) take a look [here](https://github.com/LiveHelperChat/chatGPT?tab=readme-ov-file#demo)
+
+Before that you will need a few things
 
 * API Key https://platform.openai.com/api-keys
 * Rest API configuration in Live Helper Chat
@@ -27,6 +29,15 @@ The Difference from legacy is that we now support tool calls.
 ## Bot
 
 * Import a bot and choose correct triggers and API calls as per video. Download bot [here](/img/bot/chatgpt/lhc-bot-tool.json)
+
+### How to call a trigger based on defined function in ChatGPT?
+
+1. Notice defined function in Gemini `transfer_operator`
+2. Add [event](bot/triggers.md) to your trigger with `Type` of `Custom text matching` where `Should include any of these words` value should be `transfer_operator`
+
+E.g
+
+![transfer_operator](/img/bot/transfer-event.png)
 
 # Legacy flow without tool call support
 

@@ -25,6 +25,15 @@ Important
 * For debug you can just edit Rest API in back office and check `Log all request and their responses as system messages.`
 * Make sure your version has https://github.com/LiveHelperChat/livehelperchat/commit/fc1dc721d912a79064e8cbba451e6ac40dda831b those changes.
 
+### How to call a trigger based on defined function in Ollama?
+
+1. Notice defined function in Gemini `transfer_operator`
+2. Add [event](bot/triggers.md) to your trigger with `Type` of `Custom text matching` where `Should include any of these words` value should be `transfer_operator`
+
+E.g
+
+![transfer_operator](/img/bot/transfer-event.png)
+
 ### Forwarding port on WSL to Windows
 
 ```shell
