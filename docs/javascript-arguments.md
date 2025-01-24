@@ -310,7 +310,6 @@ function widgetV2Callbacks(loadcb) {
     // In this case we set default `Question` and disable bot.
     // we also change auto start to true and show widget.
     //window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true,'Question' : 'Custom question here'}}}]);
-    //window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
     //window.$_LHC.eventListener.emitEvent('showWidget');
 
     // Dispatch event directly with it's data
@@ -596,7 +595,7 @@ If you do not want to allow to start chat directly at all you can change setting
 
 ## Public methods
 
-Once you include live helper chat script you gain access to global variable `window.$_LHC`.
+Once you include live helper chat javascript you gain access to global variable `window.$_LHC`.
 
 ### Show a widget
 Let say you include widget with position api. Widget status will be invisible, but you can show widget by executing.
@@ -608,6 +607,27 @@ If you are opening widget from some child popup you can also use `postMessage` m
 
 ```js
 window.parent.postMessage('lhc::showWidget::{}','*');
+```
+
+### Start a chat
+
+This will act as a start a chat javascript command.
+
+```js
+window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'startChat'}]);
+```
+
+### Set custom content and start a chat
+
+Set's custom message and starts a chat.
+
+```js
+window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'ignore_bot' : true,'Question' : 'Custom question here'}}}]);
+
+// Because attribute set is happens asynchronously you have to wait a bit before starting a chat
+setTimeout(function(){
+    window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'startChat'}]);
+},200);
 ```
 
 ### Show/Hide status widget
