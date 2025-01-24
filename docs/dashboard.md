@@ -293,12 +293,18 @@ If operator has permission
 
 He will see also group chats settings in `System configuration`
 
-## Chat tabs options
+## Dashboard left menu
+
+There you can find quick navigation and most of the dashboard options.
+
+Few notes
+
+ * Widgets content will be shown only if the appropriate widget is selected in the dashboard. E.g bot list will be empty if you don't have bot widget selected.
+ * Content on the left is always in sync with selected filters in the widget.
+
+![](/img/chat/dashbaord-left-menu.png)
 
 You can choose few quick options how chat tabs are displayed
-
-​![](/img/dashboard/dashboard-tabs-settings.png)
-
 
 ### Open my active chats
 
@@ -339,6 +345,14 @@ If you are using new dashboard and don't want to see tab of opened chat you can 
 ### Tabs/List in left column
 
 You can switch left column to tab mode or have it as a list.
+
+### Switch to new editor
+
+In the chat new editor will be used where you can see applied styles in real time.
+
+### Single chat view
+
+You will see multiple open chats at the same time.
 
 ## Icons and their meanings
 
@@ -391,8 +405,6 @@ That's all after save you will see new dashboard tabs
 
 * In `Account -> Visible` lists page he has to active `Bot chats list enabled`
 * Operator in dashboard widget settings ​![](/img/dashboard/dashboard-icon.jpg) has to choose `Bot chats`
-
-
 
 ### How to change default dashboard widgets position?
 
