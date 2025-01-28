@@ -267,7 +267,7 @@ Hides option for a visitor to print a chat.
 
 ### Maximum message length in characters
 
-Visitor won't be able to send longer message than define value.
+Visitor won't be able to send longer message than define value. So this way you can limit how long visitor message can be.
 
 ### Messages box height
 

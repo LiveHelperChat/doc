@@ -4,6 +4,13 @@ title: How to setup Live Helper Chat cronjob?
 sidebar_label: Cronjobs
 ---
 
+:::tip
+ * Make sure all cronjobs are executing from `lhc_web` folder. E.g
+   * `cd /var/www/lhc_web && php cron.php -s site_admin -c cron/workflow`
+ * Make sure cronjobs are executed under the same user as web server. E.g `www-data`
+   * Also you can set proper user for cronjobs in `settings.ini.php` file at https://github.com/LiveHelperChat/livehelperchat/blob/4.52v/lhc_web/settings/settings.ini.default.php#L31-L32 E.g put `www-data` on both places.
+:::
+
 ## Default cronjob setup
 
 LHC uses cronjob for background chats assignment and maintenence tasks.
