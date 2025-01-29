@@ -29,6 +29,8 @@ You should set to one of the available [siteaccess options](https://github.com/L
 
 You should click clear cache in back office after you have changed this value.
 
+If you want that widget themes translations `Main` tab content would be used in your language add your language to `['default_site_access_list'] => ['eng','lit']`. E.g we will use `Main` translation if widget language is `lit` or `eng`. [Setting location](https://github.com/LiveHelperChat/livehelperchat/blob/4.52v/lhc_web/settings/settings.ini.default.php#L29)
+
 ## How to apply multiple languages for `Canned messages`, `Auto responder`, `Pro active chat invitations`?
 
 These objects has an option to be translated directly in their editing windows.
