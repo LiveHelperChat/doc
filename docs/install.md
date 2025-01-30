@@ -301,6 +301,8 @@ RewriteRule ^lhc_web/.*$ - [L]
 # Afterward rules
 ```
 
+If you experience logouts after some time being inactive. It can be that your main website uses same php session cookie name. You can change it in the settings file. Change in main settings [file](https://github.com/LiveHelperChat/livehelperchat/blob/da2815e5e5715594ef819a21da211d086061b58a/lhc_web/settings/settings.ini.default.php#L23) `php_session_cookie_name` to something like `lhc_session_id`
+
 ## How to log in?
 To log in, point your browser to the directory where the application is installed. The URL address should look like: http://<your_domain>/index.php/site_admin/
 
@@ -308,4 +310,26 @@ If for some reason, you forgot password and password reminder does not work for 
 
 ```sql
 UPDATE `lh_users` SET password = '$2y$10$IwnZfDcPm7nqvp/BLNmJietHT/TSHCRPXWHKFqheQfojwk4c4znVG' WHERE `id` = 1;
+```
+
+If you modified roles/groups/functions and you can't access the application, you can execute this query. It will set `admin` (user_id 1) to have all functions.
+
+Error you might be getting is
+
+```
+You do not have permission to access the module "front" and use "use" function
+```
+
+Execute those queries. They will restore admin group/role and permissions for very first user in users list.
+
+```sql
+DELETE FROM `lh_group` WHERE `id` = 1;
+DELETE FROM `lh_role` WHERE `id` = 1;
+DELETE FROM `lh_grouprole` WHERE `id` = 1;
+DELETE FROM `lh_groupuser` WHERE `id` = 1;
+
+INSERT INTO `lh_group` (`id`, `name`, `disabled`, `required`) VALUES (1,'Admin',0,0);
+INSERT INTO `lh_role` (`id`, `name`) VALUES (1,'Admin');
+INSERT INTO `lh_grouprole` (`id`, `group_id`, `role_id`) VALUES (1,1,1);
+INSERT INTO `lh_groupuser` (`id`, `group_id`, `user_id`) (SELECT 1,1,`lh_users`.`id` FROM `lh_users` ORDER BY `lh_users`.`id` ASC LIMIT 1);
 ```
