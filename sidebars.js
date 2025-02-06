@@ -85,7 +85,8 @@ module.exports = {
             'mail/close-from-chat',
             'mail/list',
             'mail/mail-window',
-            'mail/lifespan'
+            'mail/lifespan',
+            'mail/mail-auto-responder'
         ],
         Department: [
             'department/department',

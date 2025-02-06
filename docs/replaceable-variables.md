@@ -21,6 +21,12 @@ By applying conditions you can have variable only for specific chat.
 {args.chat.dep_id} = Department ID
 ```
 
+## How to have replaceable variable by department
+
+Here is a sample configuration. You will have a `{brand}` variable available across the app.
+
+![](/img/chat/replaceable-variable.png)
+
 ## Permission
 
 For operator to be able to edit variables he has to have this permission
