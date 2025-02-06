@@ -22,11 +22,6 @@ Important
 
 For auto responder to work with third party integrations make sure you have this webhook setup. `chat.before_auto_responder_msg_saved`
 
-Bot mode auto responders setup
-
-* Webhook/Auto-responder setup if bot is not replying for [60 seconds](development/webhooks.md#when-bot-does-not-respond-for-60-seconds)
-* Webhook/Auto-responder setup if visitor is not replying for [60 seconds](development/webhooks.md#when-user-is-not-responding-to-bot-for-60-seconds)
-
 ## Auto responder apply order
 1. First we check does chat department has department specific auto responder. If it does we apply it.
 2. If not we search for default auto responder. (Without chosen department)
@@ -153,3 +148,36 @@ To manage all auto responders
 To have personal auto responder
 
 > 'lhuser','personalautoresponder'
+>
+
+# FAQ
+
+## Bot mode auto responders setup
+
+Auto responders do not have messaging options for bot chats. But you can make workaround using continuous webhooks. See few samples below. Same can be applied for automatic chat closing.
+
+* Webhook/Auto-responder setup if bot is not replying for [60 seconds](development/webhooks.md#when-bot-does-not-respond-for-60-seconds)
+* Webhook/Auto-responder setup if a visitor is not replying for [60 seconds](development/webhooks.md#when-user-is-not-responding-to-bot-for-60-seconds)
+
+## How to send a visitor a message before closing an active chat?
+
+For that you can just use `Visitor not replying messaging` and `Operator not replying messaging` messaging. For all other chats, you can set up [automatic chat closing](automatic-closing-purging.md).
+
+Setup should look something like this.
+```
+Timeout 10 [10 seconds]
+Message for timeout 
+```
+
+```
+Timeout 20 [20 seconds]
+Message for timeout 
+```
+
+```
+Timeout 30 [30 seconds]
+Message for timeout. There you can just enter nothing and choose bot trigger which would close a chat.
+```
+
+Chat you can close with bot trigger which would use `Close chat` action in `Update current chat` [response type](bot/update-current-chat.md#close-chat)
+
