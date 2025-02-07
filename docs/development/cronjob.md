@@ -78,7 +78,37 @@ This cronjob sends saved reports. Should be run every minute
 php cron.php -s site_admin -c cron/archive
 ```
 
-This cronjob does automatic chat's archiving
+This cronjob does automatic chat's archiving. 
+
+If you accidentally archived to much files you can restore them by executing these queries. In this example we restore archive with number 1.
+
+You must 
+
+* Stop archiving cronjob before executing these queries.
+* Delete related archive id from `lh_chat_archive_range` table. E.g `DELETE FROM lh_chat_archive_range WHERE id = 1;` 
+* Modify archive policy so it does not archive restored chats.
+
+```sql
+INSERT INTO lh_group_chat SELECT * FROM lh_group_chat_1;
+INSERT INTO lh_group_chat_member SELECT * FROM lh_group_chat_member_1;
+INSERT INTO lh_chat_participant SELECT * FROM lh_chat_participant_1;
+INSERT INTO lh_chat_action SELECT * FROM lh_chat_action_1;
+INSERT INTO lh_abstract_subject_chat SELECT * FROM lh_abstract_subject_chat_1;
+INSERT INTO lh_chat SELECT * FROM lh_chat_archive_1;
+INSERT INTO lh_msg SELECT * FROM lh_chat_archive_msg_1;
+
+TRUNCATE TABLE lh_abstract_subject_chat_1;
+TRUNCATE TABLE lh_chat_archive_1;
+TRUNCATE TABLE lh_chat_archive_msg_1;
+TRUNCATE TABLE lh_group_chat_1;
+TRUNCATE TABLE lh_group_chat_member_1;
+TRUNCATE TABLE lh_chat_participant_1;
+TRUNCATE TABLE lh_chat_action_1;
+```
+
+
+
+
 
 ## Department availability cronjob
 

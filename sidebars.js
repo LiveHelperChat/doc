@@ -99,6 +99,7 @@ module.exports = {
             'bot/triggers',
             'bot/conditions',
             'bot/multiple-languages',
+            'bot/ai-integration-flows',
             {
                 type: 'category',
                 label: 'Response types',
