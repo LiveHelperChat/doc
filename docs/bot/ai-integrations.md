@@ -57,11 +57,16 @@ Disadvantages
 
 Open question
 
-What is the best way to have RAG and function calling?
+What is the best way to have RAG and function calling at the same time?
 
 We for testing purposes tried to have system prompt where we ask him to specific function if question is not related to any of the defined functions. But I ques it's not the best way to do it.
 
 https://ai.google.dev/gemini-api/docs/models/gemini
+
+Few youtube vides I found to help understand a workflow
+
+* https://www.youtube.com/watch?v=iK9wefkOjkY - very easy to understand basic concept about RAG and context window meaning.
+* https://www.youtube.com/watch?v=v4s5eU2tfd4
 
 ### DeepSeek
 
@@ -104,7 +109,11 @@ Search flow
 
 ### Text preparation tools
 
- * Website crawler - https://github.com/LiveHelperChat/crawler-to-md
+ * Website crawler - https://github.com/LiveHelperChat/crawler-to-md - utilizes `markitdown` library
+   * Documents parsing raw libraries
+     * https://github.com/DS4SD/docling
+     * https://github.com/microsoft/markitdown
+       * https://dev.to/leapcell/deep-dive-into-microsoft-markitdown-4if5 example how to host single file as a service on https://leapcell.io/
  * Text chunking Rest API server - https://hubgw.docker.com/r/rbehzadan/text-chunking-api
 
 ### Vector storage engines
@@ -112,6 +121,7 @@ Search flow
  * ChromaDB - few sample article I found.
    * https://github.com/PromptEngineer48/Ollama/tree/main/2-ollama-privateGPT-chat-with-docs
    * https://github.com/pixegami/rag-tutorial-v2
+   * https://github.com/chroma-core/chroma/pkgs/container/chroma - host it as a docker
  * ElasticSearch - https://medium.com/bigdata-blog/how-to-use-elasticsearch-as-vector-database-5f1768f7d46a
  * PostgreSQL - https://medium.com/@scholarly360/postgresql-as-vector-database-bae6dd7097a1
  * FAISS - https://www.matillion.com/blog/step-by-step-guide-building-a-rag-model-with-open-source-llm-llama-2-and-vector-store-faiss

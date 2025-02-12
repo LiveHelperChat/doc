@@ -86,7 +86,8 @@ module.exports = {
             'mail/list',
             'mail/mail-window',
             'mail/lifespan',
-            'mail/mail-auto-responder'
+            'mail/mail-auto-responder',
+            'mail/sample-mailbox'
         ],
         Department: [
             'department/department',
