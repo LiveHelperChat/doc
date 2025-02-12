@@ -56,4 +56,5 @@ You have to choose at least one matching rule for the mailbox.
 
 * You can reduce sync interval to 30 seconds and run crojob manually.
 * If something does not work look at `Utilities` tab
+* You can in Utilities tab click `Reset and import` or just `Reset import status` and run cronjob again.
 * If nothing there read [how to see logs](debug.md#during-some-action-app-returns-white-screen-what-to-do)
