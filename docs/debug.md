@@ -1,7 +1,7 @@
 ---
 id: debug
-title: Debuging application
-keywords: debug, debuging, application, white screen
+title: Debugging application
+description: Describes how to debug an application
 ---
 
 ## Enabling debug output
