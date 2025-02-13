@@ -56,5 +56,11 @@ You can remove those conditions.
 
 ![](/img/mail/auto-responder.png)
 
+## How to have different auto-responder for different departments
 
+Few ways
+
+ * In webhook conditions as per sample have `{args.chat.dep_id} = 1` as your condition and have different trigger for each of them.
+ * Use [Replaceable variables](replaceable-variables.md) in your trigger body. Preferred way
+ * In bot trigger have `Check for conditions to proceed` and have there condition `{args.chat.dep_id} = 1` and have different trigger for each of them.
 

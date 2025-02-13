@@ -9,6 +9,7 @@ sidebar_label: Cronjobs
    * `cd /var/www/lhc_web && php cron.php -s site_admin -c cron/workflow`
  * Make sure cronjobs are executed under the same user as web server. E.g `www-data`
    * Also you can set proper user for cronjobs in `settings.ini.php` file at https://github.com/LiveHelperChat/livehelperchat/blob/4.52v/lhc_web/settings/settings.ini.default.php#L31-L32 E.g put `www-data` on both places.
+ * You can test does your php in CLI interface has all extensions run `cd /var/www/lhc_web && php cron.php -s site_admin -c cron/dependencies` most of the items should be installed.
 :::
 
 ## Default cronjob setup
