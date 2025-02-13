@@ -77,6 +77,14 @@ Rest API can look like this. We acceess external Chat ID so third party API know
 
 See [WhatsApp integration](integrating/whatsapp.md) using open https://github.com/open-wa
 
+## How incoming webhook icon/image is determined?
+
+As for example in [fbmessenger](https://github.com/LiveHelperChat/fbmessenger) extension webhooks images are defined like `social/instagram-ico.png` but real path is `extension/fbmessenger/design/fbmessengertheme/images/social/instagram-ico.png` images prefix is not required!
+
+Live Helper Chat determines those itself. You can also put icon identifier from https://fonts.google.com/icons E.g [webhook](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:webhook:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=webhook&icon.size=24&icon.color=%23e8eaed)
+
+If image does not load for you means your image path is incorrect in incoming webhook and we could not find a full path.
+
 ## How to debug if something does not work
 
 1. [Disable cache](debug.md)
