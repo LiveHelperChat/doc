@@ -35,11 +35,22 @@ You can also click right mouse button and see context menu related to a message.
  * `Quote` - will append message area with quoted message text. 
    * General `lhchat,use` permission is required.
    * Chat must be not closed
- * `Edit` - will be visible if
-   * Chat is not closed
-   * Selected message is not the last one operator message and operator has `lhchat,editpreviousall` permission
-   * Selected message is visitor message and operator has `lhchat,editpreviouvis` permission
-   * Selected message is the last operator message and operator has `lhchat,editprevious` permission
+   * `Edit` - will be visible if
+     * Chat is not closed
+     * Selected message is not the last operator message and operator has `lhchat,editpreviousall` permission
+     * Selected message is visitor message and operator has `lhchat,editpreviouvis` permission
+     * Selected message is the last operator message and operator has `lhchat,editprevious` permission
+     * Edit history will be saved if operator does not have permission `'lhchat','no_edit_history'` or he is editing not his own message.
+     * Two events wil be dispatched on successful message edit
+       * `chat.message_updated` - General messages was updated event
+       * `chat.message_updated_admin` - Event indicates that operator has an updated message manually. Should be listened if for example you want to add a subject to chat to indicate that it has a message modified by operator.
+```php
+// General messages was updated event
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.message_updated', array('msg' => & $msg, 'chat' => & $Chat));
+
+// Event indicates that admin has an updated message manually
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.message_updated_admin', array('user' => $currentUser->getUserData(true), 'msg' => & $msg, 'chat' => & $Chat));
+```
  * `Remove` - Removes messages permanently from database
    * To remove `Visitor` message `lhchat,removemsgvi` permission is required
    * To remove `Operator` or `Bot` message `lhchat,removemsgop` permission is required. It will allow to remove message independently who wrote this message.
@@ -354,13 +365,15 @@ Shows mail sending to visitor modal window. ​![](/img/chat/send-mail.png)
 
 ​![](/img/chat/send-mail-visitor.png)
 
-Required permissions
+This option can be seen if 
 
-> 'lhchat','sendmail'
+ * Operator has permission to `'lhmailconv','use_admin'` and there is a mailbox defined with same mail as in the department.
 
-:::tip
-This option can be [disabled by department](department/department.md#miscellaneous).
-:::
+OR
+
+ * Operator has permission `'lhchat','sendmail'` and `Hide send e-mail button for operators in chat window` is not checked in [department settings](department/department.md#miscellaneous).
+   * We will use mail module if that option is activated in `Mail general options` in mail module. 
+   * If above that option is not activated, we will use the default send mail a modal window.
 
 ### Changing chat status
 
