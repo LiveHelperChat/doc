@@ -147,7 +147,8 @@ module.exports = {
                     'bot/chatgpt-integration',
                     'bot/deepseek-integration',
                     'bot/ollama-integration',
-                    'bot/gemini-integration'
+                    'bot/gemini-integration',
+                    'bot/summarize-with-ai'
                 ]
             },
             {

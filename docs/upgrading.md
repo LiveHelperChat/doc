@@ -8,8 +8,10 @@ Here is basic tutorial how to perform upgrades since 2.04 version. This version 
 If you are upgrading from older version to any version 3.30v and higher you have to install composer dependencies.
 ```
 cd lhc_web
-composer install
+composer.phar install
 ```
+
+If you don't have `composer.phar` you can download it from https://getcomposer.org/download/
 
 * You can download version with dependencies included https://github.com/LiveHelperChat/livehelperchat/releases look for newest file name `*.**v-with-dependencies.tgz` **8.2 PHP** version is required.
 
@@ -28,7 +30,7 @@ It has a folder `lib/vendor` in it so you don't need to install composer thing y
 5. [Download the most recent LHC version](http://livehelperchat.com/article/static/5) Overwrite `doc`,`ezcomponents`,`lib`,`modules`,`pos`,`translations`,`design` folders. Also, overwrite `index.php` and `cron.php` files with the new version.
    1. https://github.com/remdex/livehelperchat/archive/master.zip - latest master branch zip without composer denpendencies
    2. https://github.com/LiveHelperChat/livehelperchat/releases - latest release with composer dependencies.
-6. Overwrite `composer.json` and `composer.lock` files and run `composer install` or `composer update` command.
+6. Overwrite `composer.json` and `composer.lock` files and run `composer.phar install` or `composer.phar update` command.
 7. Disable [cache in settings.ini.php](debug.md#disabling-cache)
 8. Log in to LHC again and go to `"System configuration" -> "Clear Cache" and click Clear Cache`
    1. You can also clear the cache by executing this command from the command line: `php cron.php -s site_admin -c cron/util/clear_cache`
@@ -61,7 +63,7 @@ You will loose facebook messenger compatibility.
     "symfony/event-dispatcher": "^7.1",
 ```
 
-* Execute `composer update`
+* Execute `composer.phar update`
 
 ## Permissions
 

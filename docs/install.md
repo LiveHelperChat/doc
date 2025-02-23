@@ -61,6 +61,8 @@ rm composer.lock
 composer.phar install
 ```
 
+`composer.phar` you can download from https://getcomposer.org/download/
+
 ## Folders permissions
 
 * After granting permission to write to the cache folder, you should see the following window. If you encounter a strange error instead of the installation page, please ensure that:
