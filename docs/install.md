@@ -116,17 +116,6 @@ You can fill in these settings according to your needs.
 
 ​![](/img/install/install-completed.png)
 
-## Installing Composer Dependencies for Third-Party Extensions and AWS Translations
-
-From the `lhc_web` folder, run:
-
-> `composer install`
-
-Uncomment these two lines by removing the dashes in `lhc_web/index.php` and `lhc_web/cron.php`.
-
-* https://github.com/LiveHelperChat/livehelperchat/blob/ee3aea143c3f57751206ca4b3cfeee95f4ba51d5/lhc_web/index.php#L31
-* https://github.com/LiveHelperChat/livehelperchat/blob/ee3aea143c3f57751206ca4b3cfeee95f4ba51d5/lhc_web/cron.php#L25
-
 ## Logging into the Application
 
 After clicking `Login here`, you should be presented with a login window.
