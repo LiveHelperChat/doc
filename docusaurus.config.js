@@ -50,7 +50,7 @@ module.exports = {
         },
         {
             label: 'Forum',
-            href: 'https://forum.livehelperchat.com'
+            href: 'https://github.com/orgs/LiveHelperChat/discussions'
         },
         {
             label: 'Commercial Support',
