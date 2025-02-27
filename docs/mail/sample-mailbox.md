@@ -58,3 +58,5 @@ You have to choose at least one matching rule for the mailbox.
 * If something does not work look at `Utilities` tab
 * You can in Utilities tab click `Reset and import` or just `Reset import status` and run cronjob again.
 * If nothing there read [how to see logs](debug.md#during-some-action-app-returns-white-screen-what-to-do)
+* You can also try to run cronjob manually. It will always try to fetch e-mails. You can look at `Utilities` tab afterward.
+* `php cron.php -s site_admin -c cron/mail/debug_mailbox -p <mailbox_id>`

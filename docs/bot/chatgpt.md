@@ -17,6 +17,18 @@ Before that you will need a few things
 * Rest API configuration in Live Helper Chat
 * Bot configuration in LHC
 
+# Streaming support
+
+For streaming version instead of using links in instructions, use those files instead. Everything else is the same.
+
+ * [Rest API](/img/bot/chatgpt/open-ai-rest-api-completions-stream.json)
+ * [Bot](/img/bot/chatgpt/open-ai-bot-completions-stream.json)
+
+This configuration works only with OpenAI chat completion. For any other provider you will need to make few changes to bot and Rest API. Here is another sample which works E.g with Gemini using https://openrouter.ai
+
+* [Rest API](/img/bot/chatgpt/openrouter-ai-rest-api.json)
+* [Bot](/img/bot/chatgpt/openrouter-gemini-bot.json)
+
 # Flow with tool call support
 
 The Difference from legacy is that we now support tool calls.
