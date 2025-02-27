@@ -19,7 +19,7 @@ Before that you will need a few things
 
 # Streaming support
 
-For streaming version instead of using links in instructions, use those files instead. Everything else is the same.
+For streaming version instead of using links in instructions, use those files instead. Everything else is the same. In this sample arguments for function calling is passed as separate stream.
 
  * [Rest API](/img/bot/chatgpt/open-ai-rest-api-completions-stream.json)
  * [Bot](/img/bot/chatgpt/open-ai-bot-completions-stream.json)
@@ -28,6 +28,9 @@ This configuration works only with OpenAI chat completion. For any other provide
 
 * [Rest API](/img/bot/chatgpt/openrouter-ai-rest-api.json)
 * [Bot](/img/bot/chatgpt/openrouter-gemini-bot.json)
+
+In this sample arguments are passed directly within the function call structure. For me it's impossible to cover all scenarios. So if you have some requirements, it can be done for a small fee :). Or better you can do it yourself :)
+
 
 # Flow with tool call support
 
