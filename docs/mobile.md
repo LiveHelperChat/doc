@@ -30,6 +30,14 @@ In order for mobile app to work correctly operator has to have permission to
 
 > 'lhrestapi','use_direct_logins'
 
+## Voice messages from mobile application
+
+If you are getting an error while sending a voice message you have to allow to upload `m4a`, `ogg`, `wav` files. This can be enabled in 
+
+> System configuration > Live help configuration > Files configuration
+
+It has `Allowed files types for operators` just edit and add `|ogg|m4a|wav` at the end.
+
 ## Notifications
 
 In order to enable mobile app notifications you have to enable mobile notifications there.
