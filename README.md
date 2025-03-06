@@ -4,7 +4,9 @@ This is the official Live Helper Chat documentation [https://doc.livehelperchat.
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-### Build locally
+### Build the website locally
+
+To build the website locally, run the following commands:
 
 ```
 npm install

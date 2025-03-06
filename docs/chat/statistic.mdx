@@ -276,6 +276,21 @@ This chart is available only if you are using ElasticSearch
 
 <Image img={require('../../static/img/statistic/pending-vs-online.jpg')} />
 
+### How it works
+* It is handled by this cronjob running every minute `php cron.php -s site_admin -e elasticsearch -c cron/cron_1m`
+* Every minute we log
+    * Pending chats
+    * Active chats
+    * Operator who were online and active in the last 60 seconds
+* During chat generation we group by date time and chat status `pending` and `active`
+* Afterwards we group by online operator which selected operators who were online
+
+### How can I determine an operator's workload at a specific time for a particular department?
+
+ * If you are using ElasticSearch extension you can generate this data using same chart
+ * Regular way you can go to users list and click `Chats momentary history` and you will see how many chats he had at specific time.
+ * Also you can check agent `Online hours` where you will see how many chats he took in specific period of time.
+
 ## Configuration
 
 In this section you can choose what charts should be checked by default for generation.
