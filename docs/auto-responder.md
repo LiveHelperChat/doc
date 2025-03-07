@@ -4,27 +4,29 @@ title: Auto responder
 sidebar_label: Auto responder
 ---
 
-1. Auto responder in proactive chat invitations.
-2. Independent responder. Without choosing department.
-3. Auto responder for specific department.
+Auto-responders can be configured for:
 
-Important
+1.  Proactive chat invitations.
+2.  Independent responders (without choosing a department).
+3.  Specific departments.
 
-* Bot responses will work only if there is also main message in responder text area. Text message above bot choosing option has to be filled.
-* Text messages from first level bot responses are not saved, only from child. See example [how to transfer chat to pending state if operator is not responding](bot/operator-not-responding.md).
-* Text messages supports translations syntax `{identifier_text__My message here}`
-* Auto responder works only for active/pending status chats
-* Auto responder in third party integrations supports
-  * WhatsApp - https://github.com/LiveHelperChat/fbmessenger
-  * GoogleBusinessMessage - https://github.com/LiveHelperChat/GoogleBusinessMessage
-  * MessageBird - https://github.com/LiveHelperChat/messagebird
-* If you are using auto responder with any of third party services make sure you are using [workflow cronjob every 5 seconds](development/cronjob.md#default-cronjob-setup).
+**Important:**
 
-For auto responder to work with third party integrations make sure you have this webhook setup. `chat.before_auto_responder_msg_saved`
+*   For bot responses to work, a main message must also be present in the responder text area. The text message above the bot selection option must be filled.
+*   Text messages from first-level bot responses are not saved; only those from child responses are. See the example on [how to transfer a chat to a pending state if an operator is not responding](bot/operator-not-responding.md).
+*   Text messages support translation syntax: `{identifier_text__My message here}`.
+*   Auto-responders function only for active/pending status chats.
+*   Auto-responders in third-party integrations are supported for:
+    *   WhatsApp - [https://github.com/LiveHelperChat/fbmessenger](https://github.com/LiveHelperChat/fbmessenger)
+    *   GoogleBusinessMessage - [https://github.com/LiveHelperChat/GoogleBusinessMessage](https://github.com/LiveHelperChat/GoogleBusinessMessage)
+    *   MessageBird - [https://github.com/LiveHelperChat/messagebird](https://github.com/LiveHelperChat/messagebird)
+*   If using auto-responders with third-party services, ensure you are using the [workflow cron job every 5 seconds](development/cronjob.md#default-cronjob-setup).
 
-## Auto responder apply order
-1. First we check does chat department has department specific auto responder. If it does we apply it.
-2. If not we search for default auto responder. (Without chosen department)
+For auto-responders to work with third-party integrations, ensure this webhook is set up: `chat.before_auto_responder_msg_saved`
+
+## Auto-Responder Application Order
+1.  First, the system checks if the chat department has a department-specific auto-responder. If it exists, it is applied.
+2.  If not, the system searches for a default auto-responder (without a chosen department).
 
 ## Random not replying messages
 

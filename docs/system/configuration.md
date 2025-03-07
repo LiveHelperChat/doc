@@ -6,18 +6,18 @@ sidebar_label: Configuration
 
 ## Introduction
 
-This is main Live Helper Chat configuration window. Each of these items can be visible only for a specific operator based on their permissions. Settings page can be accessed either from top menu ![](/img/chat/settings-icon.png).
+This is the main configuration window for Live Helper Chat. The visibility of each item within this window can be restricted to specific operators based on their permissions. The settings page can be accessed from the top menu ![](/img/chat/settings-icon.png).
 
-User also can acess settings page from left menu.
+Users can also access the settings page from the left menu.
 
 ![System configuration](/img/system/settings-page.png)
 
-Main window
+Main Configuration Window
 
 ![System configuration](/img/chat/system-configuration.png)
 
 ## Permissions
 
-For operator to be able to see in general `System configuration` item he has to have
+For an operator to view the `System configuration` item, they must have the following permission:
 
 > 'system','configuration'

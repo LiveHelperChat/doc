@@ -1,23 +1,23 @@
 ---
 id: log-action
-title: Log action
+title: Log Action
 ---
 
-This trigger logs custom content into separate table `lh_chat_action`.
+This trigger logs custom content into a separate table, `lh_chat_action`.
 
-Bot configuration can look like this
+A bot configuration might look like this:
 
 ![](/img/bot/log-action.png?v=2)
 
-In above scenario we log 
+In the scenario above, we log:
 
-* Current trigger data
-* First trigger which was executed as soon bot workflow started
-* Trigger data which execute Log action trigger from using `Send predefined block` response type
+*   The current trigger's data.
+*   The first trigger that was executed when the bot workflow started.
+*   The trigger data that executes the Log Action trigger, using the `Send predefined block` response type.
 
-About `first_trigger`, `current_trigger` variables you can read in [Text messages](bot/text.md)
+You can read about the `first_trigger` and `current_trigger` variables in [Text messages](bot/text.md).
 
-`predefined_trigger` - is a special variable is available only if `Log action` trigger is called from `Send predefined block`
+`predefined_trigger` is a special variable that is available only if the `Log action` trigger is called from `Send predefined block`.
 
 ```json
 {
@@ -30,4 +30,4 @@ About `first_trigger`, `current_trigger` variables you can read in [Text message
 }
 ```
 
-Log itself can be fetched using Rest API and `chat_actions` prefill variable in https://api.livehelperchat.com/#/chat/get_restapi_chats call.
+The log itself can be fetched using the Rest API and the `chat_actions` prefill variable in the https://api.livehelperchat.com/#/chat/get_restapi_chats call.

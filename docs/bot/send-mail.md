@@ -5,50 +5,51 @@ title: Send mail
 
 ## Introduction
 
-This article explains how to use `Send mail` response type.
+This article explains how to use the `Send mail` response type.
 
 ## Attributes
 
-You can use all attributes in the fields same as in [Send text](bot/text.md) response type.
+You can use all the same attributes in the fields as in the [Send text](bot/text.md) response type.
 
-In addition to that `Mail body` supports [rest api](bot/rest-api.md) variables like `{{msg_all}}`.
+In addition, the `Mail body` supports [REST API](bot/rest-api.md) variables like `{{msg_all}}`.
 
-## How to send an e-mail if survey is filled?
+## How to send an email if a survey is filled?
 
-This is usefull in case you want to monitor how your operators are working.
+This is useful if you want to monitor how your operators are performing.
 
 ![](/img/bot/survey-filled-webhook.png)
 
-Bot trigger content looks like
+The bot trigger configuration should look like this:
 
 ![](/img/bot/survey-filled-trigger.png)
 
-## How to send an e-mail on chat close to visitor?
+## How to send an email to a visitor when a chat is closed?
 
-For that we need two things. 
+For this, we need two things:
 
-### Webhook to catch chat close event.
+### A webhook to catch the chat close event.
 
-In this even we listen for chat close event and execute this only if this chat had an operator. You can add more conditions like department etc...
+In this event, we listen for the chat close event and execute the trigger only if the chat had an operator. You can add more conditions, such as department, etc.
 
 ![](/img/bot/chat-close-email.png)
 
-### Bot trigger to send an e-mail
+### A bot trigger to send an email
 
-In this trigger we just send an email with all chat messages.
+In this trigger, we simply send an email containing all chat messages.
 
 ![](/img/bot/send-mail-trigger.png)
 
 ## Structure
 
-Syntax for simple buttons looks like. This can be send directly as a meta_msg body to [https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin ](https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin)
+The syntax for a simple email configuration looks like this. This can be sent directly as a `meta_msg` body to [https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin](https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin):
+
 ```json
 [
   {
     "_id": "4U08JX0lD",
     "type": "mail",
     "content": {
-      "text": "Operator {args.chat.plain_user_name} has responded to your request.\n\nThis is your conversation history\n{{msg_all}}",
+      "text": "Operator {args.chat.plain_user_name} has responded to your request.\n\nThis is your conversation history:\n{{msg_all}}",
       "mail_options": {
         "subject": "Operator has responded to your request #{args.chat.id}",
         "from_name": "{args.chat.plain_user_name}",

@@ -1,21 +1,21 @@
 ---
 id: operator-not-responding
 sidebar_label: Transfer to pending if operator left
-title: How to transfer chat to pending state if operator left a chat
+title: Transfer Chat to Pending State When Operator Leaves
 ---
 
-For this scenario to work these conditions has to be met
+For this scenario to work, the following conditions must be met:
 
-* Visitor still has to be on `chat`
-* Auto responder has to be setup for the department
-* Bot has to be setup
+*   The visitor must still be in the chat.
+*   An auto-responder must be set up for the department.
+*   A bot must be configured.
 
-## Setup bot
+## Set up the bot
 
-In bot we will have two triggers
+The bot will have two triggers:
 
-* `Operator gone` - this will be our main trigger to choose in auto responder.
-* `Chat transfered to pending` - this will save system message within chat so operator will know that, chat was set to pending state.
+*   `Operator gone` - This will be our main trigger to select in the auto-responder.
+*   `Chat transferred to pending` - This will save a system message within the chat so that the operator knows the chat was set to the pending state.
 
 ### Operator gone
 
@@ -25,9 +25,9 @@ In bot we will have two triggers
 
 ![](/img/bot/transferred-to-pending.png)
 
-## Setup auto responder
+## Set up auto responder
 
-* You can setup either text either bot response trigger. It will send one or another or both.
+*   You can set up either text either bot response trigger. It will send one or another or both.
 
 ![](/img/bot/auto-responder-operator-gone.png)
 

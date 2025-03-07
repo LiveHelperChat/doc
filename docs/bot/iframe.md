@@ -3,13 +3,13 @@ id: iframe
 title: Sourceless Iframe
 ---
 
-This element allows to have custom response if you want to integrate third party apps.
+This element allows you to have a custom response when you want to integrate third-party apps.
 
 ![](/img/bot/iframe.png)
 
-Your HTML element can have custom class `lhc-iframe-close` and on these buttons click we will close iframe.
+Your HTML element can have a custom class `lhc-iframe-close`. Clicking on buttons with this class will close the iframe.
 
-Sample response. Paste it in your trigger response body to load.
+Here's a sample response. Paste it into your trigger response body to load.
 
 ```json
 [

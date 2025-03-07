@@ -1,31 +1,31 @@
 ---
 id: hosting-variations
-title: Hosting variations
+title: Hosting Variations
 ---
 
-Purpose of this article is to give ideas how much hosting can cost depending on your requirements. E.g numbers of chats per day or operators. Article is dedicated for devOps who is trying to make estimations what kind of reliability they want.
+This article aims to provide cost estimates for hosting based on your specific requirements, such as the number of chats per day or operators. It is intended for DevOps engineers who need to estimate the required reliability and associated costs.
 
-**Notices**
+**Important Notices**
 
- * Pricing used is based on DigitalOcean pricing at the date of writing this article **2021-02-12**.
- * If you run out of disk space you can always attach [Volumes](https://www.digitalocean.com/products/block-storage/) to var folder
- * All the hosting invoices will have to be paid by you directly. You just add us as project members.
+*   Pricing is based on DigitalOcean's pricing as of **2021-02-12**, the date this article was written.
+*   If you run out of disk space, you can attach [Volumes](https://www.digitalocean.com/products/block-storage/) to the `/var` folder.
+*   You are responsible for paying all hosting invoices directly. You will need to add us as project members to facilitate support.
 
-## Commercial support costs
+## Commercial Support Costs
 
- * Install fee for A.1 - A.3 (240 EUR)
- * Install fee for A.4 - A.5 (320 EUR)
- * Install fee for B.1 - B.3 (540 EUR)
- * Install fee for D.1 - D.3 (540 EUR)
- * Install fee for C.1 - C.3 (450 EUR)
- * Install fee for C.1 - C.3 (600 EUR) (if we make failover directly for Database Master-Master replication)
-    * Hosting cost would be identical to C calculations except database/redis part would cost 2x
-    * C1 - 85$ changes to 125$
-    * C2 - 135$ changes to 175$
-    * C3 - 235$ changes to 315$ (it's 200$ cheaper to host per a month than D.3 which is an identical setup)
- * Automatic updates and monthly support up to 3H - 120 EUR/Month. Every additional hour 35 EUR/H unless we make some other agreement.
- * If you want that I just did support on demand, standard fee applies 35 EUR/H. You will be responsible for servers maintenance, and I won't be monitoring resources.
- * Always once we have system live a lot of depends on customer website how he integrates a widget. Does he wants proactive invitations or not. E.g checks is live anyone online or not. All this increase/decrease load and can influence required resources for the hosting.
+*   Installation fee for A.1 - A.3: 240 EUR
+*   Installation fee for A.4 - A.5: 320 EUR
+*   Installation fee for B.1 - B.3: 540 EUR
+*   Installation fee for D.1 - D.3: 540 EUR
+*   Installation fee for C.1 - C.3: 450 EUR
+*   Installation fee for C.1 - C.3: 600 EUR (for Database Master-Master replication failover)
+    *   Hosting costs are identical to the C calculations, except the database/redis portion costs 2x:
+        *   C1: 85$ changes to 125$
+        *   C2: 135$ changes to 175$
+        *   C3: 235$ changes to 315$ (200$ cheaper per month than D.3, which is an identical setup)
+*   Automatic updates and monthly support (up to 3 hours): 120 EUR/month. Additional hours are billed at 35 EUR/hour unless otherwise agreed.
+*   On-demand support is available at a standard fee of 35 EUR/hour. You are responsible for server maintenance, and we will not be monitoring resources.
+*   Once the system is live, resource requirements depend heavily on how the customer integrates the widget, including factors like proactive invitations and online/offline status checks. These can significantly impact hosting resource needs.
 
 ## Example 1. Production example of real world hosting. 
 

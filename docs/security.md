@@ -6,7 +6,7 @@ sidebar_label: Security
 
 ## Secret hash
 
-Since 3.97v it was to weak for nowadays purposes. If you have present installation I suggest it to change to at-least 50 characters string. 80 recommended and include special characters.
+Since version 3.97, the secret hash was too weak for modern security purposes. If you have an existing installation, I suggest changing it to a string of at least 50 characters. 80 characters is recommended, and the string should include special characters.
 
 ```
 https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L12
@@ -14,7 +14,7 @@ https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/se
 
 ## Trusted hosts and Site address
 
-In 3.97v there is few new settings. If you are missing them you can add them in your `settings/settings.ini.php` file under `site` section.
+In version 3.97, there are a few new settings. If you are missing them, you can add them to your `settings/settings.ini.php` file under the `site` section.
 
 ```shell
 'site_address' => 'https://demo.livehelperchat.com',
@@ -32,10 +32,10 @@ https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/se
 
 ## Export hash
 
-As with `secrethash` same situation with `Export hash`
+As with `secrethash`, the same situation applies to the `Export hash`.
 
-Export hash can be changed in.
+The Export hash can be changed in:
 
 > System configuration > Live Help configuration > Chat configuration > Misc > Chats export secret hash
 
-Set it to at-least 50 characters length.
+Set it to a length of at least 50 characters.

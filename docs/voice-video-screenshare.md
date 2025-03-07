@@ -1,117 +1,117 @@
 ---
 id: voice-video-screenshare
-title: Voice & Video & ScreenShare
+title: Voice, Video, and Screen Sharing
 ---
 
-We are using [agora.io](https://www.agora.io/en/) as service provider for our implementation. In the future we might add support also for https://janus.conf.meetecho.com/demos.html
+We use [agora.io](https://www.agora.io/en/) as our service provider for voice, video, and screen sharing. In the future, we might add support for https://janus.conf.meetecho.com/demos.html.
 
-[agora.io](https://www.agora.io/en/) gives everyone 10000 minutes every month for free. It should be enough for most of the users.
+[agora.io](https://www.agora.io/en/) provides 10,000 free minutes every month, which should be sufficient for most users.
 
-You can also test video calls live on official website [demo](https://livehelperchat.com/demo-12c.html)
+You can also test video calls live on our official website [demo](https://livehelperchat.com/demo-12c.html).
 
 :::tip Tip
 
-Voice & Video & ScreenShare works only with a new widget. An old widget is not supported
+Voice, Video, and Screen Sharing only work with the new widget. The old widget is not supported.
 :::
 
-## Live Helper Chat installation.
+## Live Helper Chat Installation
 
-Navigate to 
+Navigate to:
 
 > System configuration -> Live help configuration -> Voice & Video & ScreenShare (Configuration)
 
-Adjust what features you want to enable
+Adjust the features you want to enable:
 
- * `Calls enabled` - is video calls enabled in general. This will activate call option in chat widget.
- * `Video enabled` - there will be an option to share a video cam for the visitor.
- * `ScreenShare` - screen sharing option is enabled
+*   `Calls enabled` - Enables video calls in general. This activates the call option in the chat widget.
+*   `Video enabled` - Provides an option for visitors to share their video camera.
+*   `ScreenShare` - Enables the screen sharing option.
 
-`Agora APP ID` and `Agora App Certificate` you will know from below.
+You will obtain the `Agora APP ID` and `Agora App Certificate` from the steps below.
 
-## Agora installation
+## Agora Installation
 
- * Create an account in their service  https://www.agora.io/en/
- * Create a new project. Click a blue button
+*   Create an account on their service: https://www.agora.io/en/
+*   Create a new project by clicking the blue button.
 
 ![](/img/voice-video/create-project.png)
-   
- * Enter project details. At this stage only name for your own purposes
+
+*   Enter the project details. At this stage, only a name for your own reference is required.
 
 ![](/img/voice-video/project-details.png)
-   
- * Once you do that click `edit`. Click an eye icon on `App ID` field. Field value will be copied to clipboard. Paste this value in Live Helper Chat `Agora APP ID` field.
+
+*   Once you have done that, click `edit`. Click the eye icon on the `App ID` field. The field value will be copied to your clipboard. Paste this value into the Live Helper Chat `Agora APP ID` field.
 
 ![](/img/voice-video/app-id.png)
-   
- * Now click on `App certificate: -> Primary certificate` field eye icon. Paste this value in Live Helper Chat `Agora App Certificate` field .
+
+*   Now, click the eye icon on the `App certificate: -> Primary certificate` field. Paste this value into the Live Helper Chat `Agora App Certificate` field.
 
 ![](/img/voice-video/app-certificate.png)
 
-Click save settings. That's it!
+Click "Save settings." That's it!
 
 ## Workflow
 
-As soon operator accepts a chat he will see on the right column options about voice calls
+When an operator accepts a chat, they will see options for voice calls in the right column.
 
 ![](/img/voice-video/voice-options-operator.png)
 
-Phone icon appears to the visitor as soon chat is accepted by operator.
+A phone icon appears to the visitor as soon as the chat is accepted by an operator.
 
 ![](/img/voice-video/video-call-widget.png)
 
-Visitor as soon clicks this icon will see. He can choose what call he want's audio/video
+When a visitor clicks this icon, they will see a prompt to choose whether they want an audio or video call.
 
 ![](/img/voice-video/visitor-call-starting.png)
 
-As soon visitor clicks join. He will see information that operator has to let in him.
+Once the visitor clicks "Join," they will see a message indicating that the operator needs to grant them access.
 
 ![](/img/voice-video/voice-video-waiting-confirm.png)
 
-Operator on his end will see a request that visitor want's to start a video call.
+The operator will see a request indicating that the visitor wants to start a video call.
 
 ![](/img/voice-video/informing-operator-about-call.png)
 
-If operator initates calls first. Visitor will see
+If the operator initiates the call first, the visitor will see:
 
 ![](/img/voice-video/operator-initiated-call.png)
 
-Operator also on the left will see new updates about call
+The operator will also see updates about the call on the left.
 
 ![](/img/voice-video/pending-status-indications.png)
 
-Opening call window will represent operator call status
+The call window will display the operator's call status.
 
 ![](/img/voice-video/pending-join-operator.png)
 
-As soon operator joins the call he will see an option to let in visitor
+As soon as the operator joins the call, they will see an option to let the visitor in.
 
 ![](/img/voice-video/operator-joined.png)
 
-After an operator let's in visitor operator will see call window. Yes it's me :D
+After the operator lets the visitor in, the operator will see the call window.
 
 ![](/img/voice-video/operator-joined-call.png)
 
-Operator additionally can
+The operator can also:
 
- * `Leave the call` - call status will not change. Usefull if other operator should take over a chat.
- * `End the call` - call status will be set as ended and chat will end also on visitor side.
+*   `Leave the call` - The call status will not change. This is useful if another operator needs to take over the chat.
+*   `End the call` - The call status will be set to "ended," and the chat will also end on the visitor's side.
 
-### Icons and their meanings
+### Icon Meanings
 
 ![](/img/voice-video/actions.png)
 
- * Mute/Un-mute a mic
- * Turn off/on camera
- * Share a screen
+*   Mute/Unmute the microphone
+*   Turn off/on the camera
+*   Share the screen
 
-Visitor/Operator at any moment can enable/disable mic/audio/screenshare while the call is happening. 
+The visitor/operator can enable/disable the microphone, audio, or screen sharing at any point during the call.
 
 ## Permissions
 
-To set [agora.io](https://www.agora.io/en/) parameters
+To configure [agora.io](https://www.agora.io/en/) parameters, you need:
 
 > 'lhvoicevideo','configuration'
 
-To use it as operator
+To use it as an operator, you need:
 
 > 'lhvoicevideo','use'

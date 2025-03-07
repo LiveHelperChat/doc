@@ -1,41 +1,41 @@
 ---
 id: slack-notification
-title: Slack notification
+title: Slack Notifications
 ---
 
 ## What does it do?
 
-This scenario will send a notification if a visitor sends a message with a specific keyword. Same way can be used to have notification about new chat etc...
+This guide explains how to send a Slack notification when a visitor sends a message containing a specific keyword. This method can also be adapted to send notifications for other events, such as new chats.
 
-## How does it works?
+## How does it work?
 
-* We setup `Home > System configuration > Webhooks` for `chat.addmsguser` 
-* We have a bot where we defined keyword we want to listen.
-* Bot executes our Rest API call and sends slack notification.
+*   Set up a webhook in `Home > System configuration > Webhooks` for the `chat.addmsguser` event.
+*   Create a bot and define the keyword to listen for.
+*   Configure the bot to execute a REST API call to send the Slack notification.
 
-### Rest API
+### REST API Setup
 
-For that you will need to setup APP for slack and get `Webhook URL` and `xoxb-xxx` token. Save below content as json and import. 
+To use this feature, you need to create a Slack app and obtain a `Webhook URL` and a `xoxb-xxx` token. Save the JSON configuration below and import it into your Live Helper Chat instance.
 
 ```json
-{"name":"SlackNotification","description":"","configuration":"{\"host\":\"https:\/\/hooks.slack.com\",\"ecache\":false,\"parameters\":[{\"method\":\"POST\",\"authorization\":\"bearer\",\"api_key_location\":\"header\",\"query\":[],\"header\":[],\"conditions\":[],\"postparams\":[],\"userparams\":[],\"output\":[{\"key\":\"\",\"value\":\"\",\"id\":\"temp1705310616950\",\"success_name\":\"Failure\",\"success_header\":\"400\"}],\"id\":\"temp1705065304030\",\"suburl\":\"\/services\/XXXXX\/XXXXXXXXXX\/XXXXXXXXXXXXXXXX\",\"name\":\"NotifySlack\",\"auth_bearer\":\"xoxb-XXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXX\",\"body_request_type\":\"raw\",\"body_request_type_content\":\"json\",\"body_raw\":\"{\\n\\t\\\"blocks\\\": [\\n\\t\\t{\\n\\t\\t\\t\\\"type\\\": \\\"rich_text\\\",\\n\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"rich_text_section\\\",\\n\\t\\t\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"PID: \\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"style\\\": {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"bold\\\": true\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"raw_{{args.chat.chat_variables_array.pid}} \\\"\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t},\\n\\t\\t{\\n\\t\\t\\t\\\"type\\\": \\\"rich_text\\\",\\n\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"rich_text_section\\\",\\n\\t\\t\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"Chat ID: \\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"style\\\": {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"bold\\\": true\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"raw_{{args.chat.id}} \\\"\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t},\\n                {\\n\\t\\t\\t\\\"type\\\": \\\"rich_text\\\",\\n\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"rich_text_section\\\",\\n\\t\\t\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"Keyword: \\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"style\\\": {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"bold\\\": true\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"raw_{{msg}} \\\"\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t},\\n\\t\\t{\\n\\t\\t\\t\\\"type\\\": \\\"actions\\\",\\n\\t\\t\\t\\\"elements\\\": [\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"button\\\",\\n\\t\\t\\t\\t\\t\\\"style\\\": \\\"primary\\\",\\n\\t\\t\\t\\t\\t\\\"text\\\": {\\n\\t\\t\\t\\t\\t\\t\\\"type\\\": \\\"plain_text\\\",\\n\\t\\t\\t\\t\\t\\t\\\"text\\\": \\\"Review\\\",\\n\\t\\t\\t\\t\\t\\t\\\"emoji\\\": true\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"url\\\": \\\"https:\/\/demo.livehelperchat.com\/site_admin\/front\/default\/(cid)\/{{args.chat.id}}\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t}\\n\\t]\\n}\"}]}"}
+{"name":"SlackNotification","description":"","configuration":"{\"host\":\"https:\/\/hooks.slack.com\",\"ecache\":false,\"parameters\":[{\"method\":\"POST\",\"authorization\":\"bearer\",\"api_key_location\":\"header\",\"query\":[],\"header\":[],\"conditions\":[],\"postparams\":[],\"userparams\":[],\"output\":[{\"key\":\"\",\"value\":\"\",\"id\":\"temp1705310616950\",\"success_name\":\"Failure\",\"success_header\":\"400\"}],\"id\":\"temp1705065304030\",\"suburl\":\"\/services\/XXXXX\/XXXXXXXXXX\/XXXXXXXXXXXXXXXX\",\"name\":\"NotifySlack\",\"auth_bearer\":\"xoxb-XXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXX\",\"body_request_type\":\"raw\",\"body_request_type_content\":\"json\",\"body_raw\":\"{\\n\\t\\\"blocks\\\": [{\\n\\t\\t\\\"type\\\": \\\"rich_text\\\",\\n\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\\"type\\\": \\\"rich_text_section\\\",\\n\\t\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"PID: \\\",\\n\\t\\t\\t\\t\\\"style\\\": {\\n\\t\\t\\t\\t\\t\\\"bold\\\": true\\n\\t\\t\\t\\t}\\n\\t\\t\\t},{\\n\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"raw_{{args.chat.chat_variables_array.pid}} \\\"\\n\\t\\t\\t}]}\n\\t\\t]},{ \\n\\t\\t\\\"type\\\": \\\"rich_text\\\",\\n\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\\"type\\\": \\\"rich_text_section\\\",\\n\\t\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"Chat ID: \\\",\\n\\t\\t\\t\\t\\\"style\\\": {\\n\\t\\t\\t\\t\\t\\\"bold\\\": true\\n\\t\\t\\t\\t}\\n\\t\\t\\t},{\\n\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"raw_{{args.chat.id}} \\\"\\n\\t\\t\\t}]}\n\\t\\t]},{ \\n\\t\\t\\\"type\\\": \\\"rich_text\\\",\\n\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\\"type\\\": \\\"rich_text_section\\\",\\n\\t\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"Keyword: \\\",\\n\\t\\t\\t\\t\\\"style\\\": {\\n\\t\\t\\t\\t\\t\\\"bold\\\": true\\n\\t\\t\\t\\t}\\n\\t\\t\\t},{\\n\\t\\t\\t\\t\\\"type\\\": \\\"text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"raw_{{msg}} \\\"\\n\\t\\t\\t}]}\n\\t\\t]},{ \\n\\t\\t\\\"type\\\": \\\"actions\\\",\\n\\t\\t\\\"elements\\\": [{\\n\\t\\t\\t\\\"type\\\": \\\"button\\\",\\n\\t\\t\\t\\\"style\\\": \\\"primary\\\",\\n\\t\\t\\t\\\"text\\\": {\\n\\t\\t\\t\\t\\\"type\\\": \\\"plain_text\\\",\\n\\t\\t\\t\\t\\\"text\\\": \\\"Review\\\",\\n\\t\\t\\t\\t\\\"emoji\\\": true\\n\\t\\t\\t},\\n\\t\\t\\t\\\"url\\\": \\\"https:\/\/demo.livehelperchat.com\/site_admin\/front\/default\/(cid)\/{{args.chat.id}}\\\"\\n\\t\\t}]}\n\\t]}]}"}
 ```
 
-* After import you will need to adjust `Sub URL` after import it's value will be `/services/XXXXX/XXXXXXXXXX/XXXXXXXXXXXXXXXX`
-* `Authorization` set proper value for Bearer token `xoxb-XXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXX`
-* You will need to edit `Body` section and set correct URL for live helper chat installation
+*   After importing, you will need to adjust the `Sub URL`. The default value after import will be `/services/XXXXX/XXXXXXXXXX/XXXXXXXXXXXXXXXX`.
+*   Set the correct value for the Bearer token in the `Authorization` field: `xoxb-XXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXX`.
+*   Edit the `Body` section and set the correct URL for your Live Helper Chat installation.
 
-### Bot setup
+### Bot Setup
 
-This is how looks trigger content for webhooks event. `chat.addmsguser` trigger
+The following screenshots illustrate the trigger configuration for the webhook event (`chat.addmsguser`).
 
 ![](/img/integration/slack-trigger.png)
 
-`Notify` trigger content
+`Notify` trigger configuration:
 
 ![](/img/integration/slack-notify.png?v=1)
 
-`Debug` trigger content
+`Debug` trigger configuration:
 
 ```
 {http_code}
@@ -46,7 +46,7 @@ This is how looks trigger content for webhooks event. `chat.addmsguser` trigger
 
 ![](/img/integration/slack-debug.png)
 
-### Webhook setup
+### Webhook Configuration
 
 ![](/img/integration/slack-webhook.png)
 

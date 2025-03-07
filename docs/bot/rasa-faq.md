@@ -4,78 +4,79 @@ sidebar_label: Rasa integration (FAQ)
 title: Integrating Rasa as FAQ server
 ---
 
-This is FAQ bot build on top of [Rasa AI](https://rasa.com). This workflow is similar to [intent detection using Rasa](bot/rasa-integration-intent.md)
+This FAQ bot is built on top of [Rasa AI](https://rasa.com). This workflow is similar to [intent detection using Rasa](bot/rasa-integration-intent.md).
 
-To have it running we will need
+To run it, you will need:
 
-* Rasa running API
-* Rest API configuration in Live Helper Chat
-* Bot configuration in LHC
+*   A running Rasa API
+*   A REST API configuration in Live Helper Chat
+*   A bot configuration in LHC
 
-## Install instructions for docker version
+## Installation Instructions for Docker Version
 
+```shell
 ```shell
 git clone https://github.com/LiveHelperChat/faq-rasa.git && cd faq-rasa
 ```
 
-Now to have your FAQ data you have to edit two files
+To customize your FAQ data, you need to edit two files:
 
-* `Dockerfiles/faq/faq/data/nlu.yml`
+*   `Dockerfiles/faq/faq/data/nlu.yml`
 
-This is sample how question intent should be defined with multiple alternative questions
+    This file provides a sample of how a question intent should be defined with multiple alternative questions:
 
-```yaml
-- intent: chitchat/ask_weather
-  examples: |
-    - What's the weather like today?
-    - Does it look sunny outside today?
-    - Oh, do you mind checking the weather for me please?
-    - I like sunny days in Berlin.
-```
+    ```yaml
+    - intent: chitchat/ask_weather
+      examples: |
+        - What's the weather like today?
+        - Does it look sunny outside today?
+        - Oh, do you mind checking the weather for me please?
+        - I like sunny days in Berlin.
+    ```
 
-Answers you have to define in
+*   `Dockerfiles/faq/faq/domain.yml`
 
-* `Dockerfiles/faq/faq/domain.yml`
+    This file is where you define the answers. The example below shows two possible responses the bot can provide:
 
-This is sample where we define answers. In this case we defined two combinations bot will be answering us.
+    ```yaml
+      utter_chitchat/ask_weather:
+      - text: "Oh, it does look sunny right now in Berlin."
+      - text: "I am not sure of the whole week but I can see the sun is out today."
+    ```
 
-```yaml
-  utter_chitchat/ask_weather:
-  - text: "Oh, it does look sunny right now in Berlin."
-  - text: "I am not sure of the whole week but I can see the sun is out today."
-```
-
-Now we can build our image
+Now you can build the image:
 
 ```shell
 docker-compose build
 ```
 
-Run for debug one time
-```
+Run it once for debugging:
+
+```shell
 docker-compose up
 ```
 
-Run as a service
+Run it as a service:
 
-```
+```shell
 docker-compose up -d
 ```
 
-To test
+To test the API:
+
 ```shell
 curl --request POST   --url http://localhost:5005/webhooks/rest/webhook   --header 'content-type: application/json'   --data '{
   "message": "weather berlin"
 }'
 ```
 
-Expected output
+Expected output:
 
 ```json
 [{"recipient_id":"default","text":"Oh, it does look sunny right now in Berlin."}]
 ```
 
-## Install instructions for non docker version
+## Installation Instructions for Non-Docker Version
 
 ```shell
 python3.6m -m venv ./venv
@@ -86,37 +87,36 @@ pip3 install rasa
 # Optional, if you get some errors you can try this
 pip3 --use-feature=2020-resolver install rasa
 
+```shell
 git clone https://github.com/LiveHelperChat/faq-rasa.git && cd faq-rasa
 ```
 
-Now to have your FAQ data you have to edit two files
+To customize your FAQ data, you need to edit two files:
 
-* `Dockerfiles/faq/faq/data/nlu.yml`
+*   `Dockerfiles/faq/faq/data/nlu.yml`
 
-This is sample how question intent should be defined with multiple alternative questions
+    This is a sample of how a question intent should be defined with multiple alternative questions:
 
-```yaml
-- intent: chitchat/ask_weather
-  examples: |
-    - What's the weather like today?
-    - Does it look sunny outside today?
-    - Oh, do you mind checking the weather for me please?
-    - I like sunny days in Berlin.
-```
+    ```yaml
+    - intent: chitchat/ask_weather
+      examples: |
+        - What's the weather like today?
+        - Does it look sunny outside today?
+        - Oh, do you mind checking the weather for me please?
+        - I like sunny days in Berlin.
+    ```
 
-Answers you have to define in
+*   `Dockerfiles/faq/faq/domain.yml`
 
-* `Dockerfiles/faq/faq/domain.yml`
+    This is a sample of how to define answers. In this case, we've defined two possible responses the bot will provide:
 
-This is sample where we define answers. In this case we defined two combinations bot will be answering us.
+    ```yaml
+      utter_chitchat/ask_weather:
+      - text: "Oh, it does look sunny right now in Berlin."
+      - text: "I am not sure of the whole week but I can see the sun is out today."
+    ```
 
-```yaml
-  utter_chitchat/ask_weather:
-  - text: "Oh, it does look sunny right now in Berlin."
-  - text: "I am not sure of the whole week but I can see the sun is out today."
-```
-
-After your modification you can train your bot and run it as Rest API server
+After modifying the files, you can train your bot and run it as a REST API server:
 
 ```shell
 cd rasa-faq/faq/Dockerfiles/faq/faq && rasa train
@@ -125,59 +125,59 @@ cd rasa-faq/faq/Dockerfiles/faq/faq && rasa train
 cd rasa-faq/faq/Dockerfiles/faq/faq && rasa run -p 5005
 ```
 
-## Live Helper Chat configuration
+## Live Helper Chat Configuration
 
-Create a new `Rest API` by navigating to
+Create a new `REST API` by navigating to:
 
-> System configuration > Live help configuration > Rest API Calls
+> System configuration > Live help configuration > REST API Calls
 
-Just create a `new`. Configuration looks like this
+Create a new entry. The configuration should look like this:
 
-We set body request as JSON and set content.
+We set the body request as JSON and set the content.
 
 ![](/img/bot/rasa-faq.png)
 
-We also set `Outpout parsing`
+We also configure `Output parsing`:
 
 ![](/img/bot/rasa-faq-outputparsing.png)
 
-Now just save.
+Now save the configuration.
 
-### Configuration bot in Live Helper Chat
+### Bot Configuration in Live Helper Chat
 
-For bot configuration we only need three triggers
+For the bot configuration, you need three triggers:
 
-* `Default` it has checked `Default`, `Default for unknown message`
-* `Message received` just message text with content `{content_1}`
-* `Unknown` - this message we will send if `Rasa` did not returned anything.
+*   `Default`: This trigger should have `Default` and `Default for unknown message` checked.
+*   `Message received`: This trigger should contain the message text with the content `{content_1}`.
+*   `Unknown`: This trigger sends a message if `Rasa` doesn't return anything.
 
-`Default` trigger configuration
+`Default` trigger configuration:
 
 ![](/img/bot/rasa-faq-default.png)
 
-Message received configuration
+`Message received` configuration:
 
 ![](/img/bot/rasa-message-received.png)
 
-Unknown message configuration
+`Unknown message` configuration:
 
 ![](/img/bot/rasa-unknown.png)
 
-Conversation example
+Conversation example:
 
 ![](/img/bot/rasa-faq-example.png)
 
-## What if I want to define custom answers in Live Helper Chat directly?
+## What if I Want to Define Custom Answers Directly in Live Helper Chat?
 
-Simples solution would be just as answer define keywords which afterwards ou can use in lhc bot.
+A simple solution would be to define keywords as answers, which you can then use in the LHC bot.
 
-We define just one answer
+Define just one answer:
 
 ```yaml
   utter_chitchat/ask_weather:
   - text: "rasa_weather"
 ```
 
-Bot setup should be similar to this [example](bot/rasa-integration-intent.md#configuration-bot-in-live-helper-chat)
+The bot setup should be similar to this [example](bot/rasa-integration-intent.md#configuration-bot-in-live-helper-chat).
 
-**Don't forget to set your bot as default department bot.**
+**Don't forget to set your bot as the default department bot.**

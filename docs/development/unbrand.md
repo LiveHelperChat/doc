@@ -4,20 +4,20 @@ title: How to make unbranded version of Live Helper Chat?
 sidebar_label: Unbranding
 ---
 
-There is two options to unbrand
+There are two options to unbrand Live Helper Chat:
 
-*   Use themes and restyle basic things from [back office](../theme/theme.md)
-*   Use unbranding extension and modify all required files by hand
+*   Use themes to restyle basic elements from the [back office](../theme/theme.md).
+*   Use the unbranding extension and manually modify all required files.
 
-For majority of users I suggest just use theming features [for restyling](../theme/theme.md).
+For most users, we suggest using the theming features for restyling, as described in the [theming documentation](../theme/theme.md).
 
-In order to unbrand esility Live Helper Chat we have a module for that. So unbranding takes just few steps.
+To unbrand Live Helper Chat, you can use the unbrand extension, which simplifies the process to just a few steps.
 
-Download "unbrand" extension from [https://github.com/remdex/livehelperchat-extensions](https://github.com/remdex/livehelperchat-extensions) and put it in extension folder.
+Download the "unbrand" extension from [https://github.com/remdex/livehelperchat-extensions](https://github.com/remdex/livehelperchat-extensions) and place it in the `extension` folder.
 
-Before making any changes please make sure that you have [disabled a cache.](debug.md#disabling-cache) Also it's would be nice if you read about [debug output.](debug.md#enabling-debug-output)
+Before making any changes, ensure that you have [disabled the cache](debug.md#disabling-cache). It's also recommended to read about [debug output](debug.md#enabling-debug-output).
 
-## Activate unbrand extension in settings/settings.ini.php
+## Activate the unbrand extension in `settings/settings.ini.php`
 
 ```php
  'extensions' =>  
@@ -25,103 +25,108 @@ Before making any changes please make sure that you have [disabled a cache.](deb
              0 => 'unbrand',  
        ),
 ```
- 
-## Modify "extension/unbrand/design/unbrandtheme/tpl/pagelayouts/parts" templates
 
-It's just enough write your own company copyright tag and replace images in "extension/unbrand/design/unbrandtheme/images". I have put all brand related images, favicon.ico, notificaiton icon and logo for back office and front office.
+## Modify the `"extension/unbrand/design/unbrandtheme/tpl/pagelayouts/parts"` templates
 
-Don't forget to change some settings in back office.
+Simply add your company's copyright tag and replace the images in the `"extension/unbrand/design/unbrandtheme/images"` directory. This directory contains all brand-related images, including `favicon.ico`, the notification icon, and logos for both the back office and front office.
 
-Also [enable cache](debug.md#disabling-cache) after you finished all changes.
+Don't forget to adjust the settings in the back office.
 
-## How to change default application sounds?
+After you finish all changes, [enable the cache](debug.md#disabling-cache).
 
-Here is workflow how to change desktop and web application default sounds.
+## How to change the default application sounds?
 
-In order to change default application sounds copy sounds from
+Here's how to change the default sounds for the desktop and web applications.
+
+To change the default application sounds, copy the sounds from:
 
 `design/defaulttheme/sound/*`
 
-to, create folder if it does'nt exists.
+to (create the folder if it doesn't exist):
 
 `design/customtheme/sound/*`
 
-That way you will override default sounds without modifying default sounds.
+This will override the default sounds without modifying the original files.
 
-For desktop application just change sounds in "sounds" folder.
+For the desktop application, simply change the sounds in the `"sounds"` folder.
 
-## How to change header link and footer content?
-I highly recommend the following way for changing header and footer. Default header and footer is located at
+## How to change the header link and footer content?
 
-> design/defaulttheme/tpl/pagelayouts/parts/page_head_logo.tpl.php
-> design/defaulttheme/tpl/pagelayouts/parts/page_footer_user.tpl.php
+We highly recommend the following method for changing the header and footer. The default header and footer are located at:
 
-In order to change header or logo just copy templates from defaulttheme to customtheme
+> `design/defaulttheme/tpl/pagelayouts/parts/page_head_logo.tpl.php`
+> `design/defaulttheme/tpl/pagelayouts/parts/page_footer_user.tpl.php`
 
- > design/customtheme/tpl/pagelayouts/parts/page_head_logo.tpl.php
- > design/customtheme/tpl/pagelayouts/parts/page_footer_user.tpl.php​
+To change the header or logo, copy the templates from `defaulttheme` to `customtheme`:
 
-That way you will override default header and footer content without changing default designs.
+> `design/customtheme/tpl/pagelayouts/parts/page_head_logo.tpl.php`
+> `design/customtheme/tpl/pagelayouts/parts/page_footer_user.tpl.php`
 
-## How to change logo?
+This will override the default header and footer content without modifying the default designs.
 
-If you want just change logo for visitors you can just use themes.
+## How to change the logo?
 
-I highly recommend the following way for changing default app logo. Default logo is located at:
+If you only want to change the logo for visitors, you can use themes.
 
- > design/defaulttheme/images/general/logo.png
+We highly recommend the following method for changing the default app logo. The default logo is located at:
 
-In order to change logo just create your logo in
+> `design/defaulttheme/images/general/logo.png`
 
- > design/customtheme/images/general/logo.png
+To change the logo, create your logo in:
 
-That way you will override default logo without changing kernel. If after change logo is displayed the same, clean the cache.
+> `design/customtheme/images/general/logo.png`
 
-## How to change/override style CSS?
+This will override the default logo without modifying the core files. If the logo doesn't update after the change, clear the cache.
 
-See sample extension at https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridecss
+## How to change/override CSS styles?
 
-To include custom CSS read [how to override templates](extending/overriding-templates.md)
+See the sample extension at [https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridecss](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridecss).
 
-Main css files to override in your extension
+To include custom CSS, read [how to override templates](extending/overriding-templates.md).
+
+Main CSS files to override in your extension:
 
 ### Back office related
 
-* `css/override.css` - put your back office style overrides in this file in your own extension
+*   `css/override.css` - Place your back office style overrides in this file within your extension.
 
-### A new widget related
+### New widget related
 
-New widget popup related
-* `css/widgetv2/widget_popup_override.css` - override look of the popup window of a new widget
-* `css/widgetv2/widget_mobile_popup_override.css` - if device is mobile in popup chat window we will include this CSS
+New widget popup related:
 
-Widget related
-* `css/widgetv2/widget_override.css` - put your custom CSS for a new widget look. (LTR)
-* `css/widgetv2/widget_override_rtl.css` - put your custom CSS for a new widget look. (RTL)
-* `css/widgetv2/widget_mobile_override.css` - if device is mobile we will include this additional CSS
+*   `css/widgetv2/widget_popup_override.css` - Override the look of the popup window of a new widget.
+*   `css/widgetv2/widget_mobile_popup_override.css` - If the device is mobile, this CSS will be included in the popup chat window.
 
-Status widget related
-* `css/widgetv2/status_override.css` - override status widget look
+Widget related:
 
-Page embed mode override
-* `css/widgetv2/embed_override.css` - override page embed mode for a new widget
+*   `css/widgetv2/widget_override.css` - Place your custom CSS for a new widget look (LTR).
+*   `css/widgetv2/widget_override_rtl.css` - Place your custom CSS for a new widget look (RTL).
+*   `css/widgetv2/widget_mobile_override.css` - If the device is mobile, this additional CSS will be included.
+
+Status widget related:
+
+*   `css/widgetv2/status_override.css` - Override the status widget look.
+
+Page embed mode override:
+
+*   `css/widgetv2/embed_override.css` - Override the page embed mode for a new widget.
 
 ## How to change/override JS?
 
-Just add custom JS for your extension logic. Read [here](extending/overriding-templates.md) where to include your own JS
+Simply add custom JS for your extension logic. Read [here](extending/overriding-templates.md) about where to include your own JS.
 
 ## My styles are not applied
 
-If you are modifying CSS files directly most likely static cache are used. Static cache is not used if [debug output](../debug/#enabling-debug-output) is enabled. I always recommend to override CSS files properly either with extensions or custom themes. You can avoid this problem by [generating static cache.](cronjob.md#static-cache)
+If you are modifying CSS files directly, it's likely that static cache is being used. Static cache is not used if [debug output](../debug/#enabling-debug-output) is enabled. We always recommend overriding CSS files properly, either with extensions or custom themes. You can avoid this problem by [generating static cache](cronjob.md#static-cache).
 
-If you have a merge conflicts in `design/defaulttheme/css/css_static` or `design/defaulttheme/js/js_static` there is no need to solve these manually. Just [regenerate a static cache](development/quick-guide.md).
+If you have merge conflicts in `design/defaulttheme/css/css_static` or `design/defaulttheme/js/js_static`, there's no need to resolve them manually. Just [regenerate the static cache](development/quick-guide.md).
 
 ## Boosting performance for static files
 
-Once you active an extension or add custom theme CSS/JS files are generated on the fly. By default LHC if no extensions or custom themes are used uses once per lifetime compiled CSS/JS files.
+Once you activate an extension or add a custom theme, CSS/JS files are generated on the fly. By default, if no extensions or custom themes are used, LHC uses pre-compiled CSS/JS files.
 
 ### How do I generate static cache?
 
-[generating static cache.](cronjob.md#static-cache)
+[Generate static cache](cronjob.md#static-cache).
 
 

@@ -1,34 +1,35 @@
 ---
 id: move-chat
-title: How to move chat from one location to another?
-sidebar_label: Moving chat
+title: How to Move a Chat from One Location to Another
+sidebar_label: Moving Chat
 ---
 
 ## Steps
-Small tutorial how to move from one location to another location LHC instance.
 
-* Dump/Export database. For example form phpmyadmin or any other database tool.
-* Transfer chat folder from old location to new location.
-* Import database to new server
-* Disable cache 
+This tutorial explains how to move a Live Helper Chat (LHC) instance from one location to another.
+
+1.  **Dump/Export the database:** Use a database tool such as phpMyAdmin to export the database.
+2.  **Transfer the chat folder:** Move the chat folder from the old location to the new location.
+3.  **Import the database:** Import the database into the new server.
+4.  **Disable the cache:** Modify the `settings/settings.ini.php` file to disable caching.
 ```php
 'templatecache' => false,
 'templatecompile' => false,
 'modulecompile' => false
 ```
-* Update database settings in settings/settings.ini.php file
+5.  **Update database settings:** Update the database settings in the `settings/settings.ini.php` file.
 ```php
 'db' =>
     array (
       'host' => '<host>',
       'user' => '<username>',
-      'password' => '<password>,
+      'password' => '<password>',
       'database' => '<database>'
 ```
- * Make sure cache folder is writable
- * Clear cache in back offce
- * Enable caching by setting previous values to true
- 
-# Should I export table lh_chat_online_user footprint as well?
+6.  **Ensure the cache folder is writable.**
+7.  **Clear the cache:** Clear the cache in the back office.
+8.  **Enable caching:** Re-enable caching by setting the values in step 4 back to `true`.
 
-No it's not necessarily. It will fill up again just you won't have users browsing path.
+## Should I export the `lh_chat_online_user` footprint table as well?
+
+No, it is not necessary. The table will be populated again. You will only lose the users' browsing paths.

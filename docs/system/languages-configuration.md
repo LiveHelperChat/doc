@@ -6,33 +6,32 @@ sidebar_label: Languages configuration
 
 ## Introduction
 
-In languages configuration you can set your default back office language and few other settings
+In the languages configuration, you can set the default back-office language and other related settings.
 
 > System configuration -> Languages configuration
 
-## Changing your language
+## Changing Your Language
 
-Here you can choose your default language.
+Here, you can choose your default language.
 
-![](/img/system/languages-configuration.jpg) 
+![](/img/system/languages-configuration.jpg)
 
-## General language settings
+## General Language Settings
 
-In this section you can change default site_access languages or set new default url.
+In this section, you can change the default site access languages or set a new default URL.
 
-![](/img/system/general-language-settings.jpg) 
+![](/img/system/general-language-settings.jpg)
 
 :::tip
-If you set default module to `user` and Default view to `login` users entering direct address to root folder of Live Helper Chat would be presented with login form instead of chat start form.
+If you set the default module to `user` and the default view to `login`, users who enter the direct address to the root folder of Live Helper Chat will be presented with a login form instead of the chat start form.
 :::
-
 
 ## Permissions
 
-To access languages section required permission
+To access the languages section, the following permission is required:
 
 > 'lhsystem','changelanguage'
 
-To change general language settings required permission
+To change general language settings, the following permission is required:
 
 > 'lhsystem','configurelanguages'

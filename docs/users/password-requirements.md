@@ -5,13 +5,13 @@ title: Password requirements
 
 ## Introduction
 
-You can force users to have password based on security requirements.
+You can enforce password requirements for users to enhance security.
 
 ![](/img/user/password-requirements.jpg)
 
-To have automatic workflow of `Disable user automatically if from last login passed X number of days` and `Force user logout if last login was X hours ago` please setup a login monitoring cronjob.
+To enable the automatic workflows of "Disable user automatically if X days have passed since the last login" and "Force user logout if the last login was X hours ago," set up a login monitoring cron job.
 
-Should be run every hour
+This job should be run every hour:
 
 ```shell script
 php cron.php -s site_admin -c cron/login_monitoring
@@ -19,6 +19,6 @@ php cron.php -s site_admin -c cron/login_monitoring
 
 ## Permissions
 
-Required permissions
+The following permissions are required:
 
-> 'lhuser','pswdsecurity'
+`lhuser`, `pswdsecurity`

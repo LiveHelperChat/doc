@@ -1,65 +1,79 @@
 ---
 id: need-help
-title: Need help tool-tip configuration
-sidebar_label: Need Help tooltip
+title: Need Help Tooltip Configuration
+sidebar_label: Need Help Tooltip
 ---
 
-By default tooltip is enabled. You can disable it at
+By default, the "Need Help" tooltip is enabled. You can disable it in:
 
-Configuration -> Chat configuration -> Online Tracking -> "Show need help tooltip?"
+`Configuration -> Chat configuration -> Online Tracking -> "Show need help tooltip?"`
 
-# New widget
+# New Widget
 
-New widget look and feel can by changed in themes.
+The appearance of the new widget can be customized using themes.
 
-![Need help tool tip](/img/chat/need-help.png)
+![Need help tooltip](/img/chat/need-help.png)
 
-# Old widget
+# Old Widget
 
 ![](https://livehelperchat.com/var/media/images/need-help.png)
 
-You can also set timeout after how many hours this tooltip should be shown for the same user again. This tooltip is highly configurable and with embed options you can change photo, main title and subtitle
+You can also set a timeout to control how often the tooltip is shown to the same user. This tooltip is highly configurable, and you can change the photo, main title, and subtitle using embed options.
 
-## You can style how this widget looks like from back office by [creating theme](https://livehelperchat.com/how-to-use-themes-330a.html).
+## Styling the Widget from the Back Office
 
-Bellow mentioned option are for advanced users who needs custom solutions.
+You can style the widget's appearance from the back office by [creating a theme](https://livehelperchat.com/how-to-use-themes-330a.html).
 
-## Let say you do not want photo
+The options below are for advanced users who require custom solutions.
+
+## Removing the Photo
+
 ```js
-LHCChatOptions.opt = {widget_width:320,nh_image:false};
+LHCChatOptions.opt = {widget_width:320, nh_image: false};
 ```
-## Let say you want another photo
+
+## Using a Different Photo
+
 ```js
-LHCChatOptions.opt = {widget_width:320,nh_image:'url to image'};
+LHCChatOptions.opt = {widget_width:320, nh_image: 'url to image'};
 ```
-## Let say you want to remove sub title
+
+## Removing the Subtitle
+
 ```js
-LHCChatOptions.opt = {widget_width:320,nh_sub_title_text:''};
+LHCChatOptions.opt = {widget_width:320, nh_sub_title_text: ''};
 ```
-### Let say you want to change title and subtitle
+
+## Changing the Title and Subtitle
+
 ```js
-LHCChatOptions.opt = {widget_width:320,nh_title_text:'My main title',nh_sub_title_text:'My subtitle'};
+LHCChatOptions.opt = {widget_width:320, nh_title_text: 'My main title', nh_sub_title_text: 'My subtitle'};
 ```
-All these options can be combined together.
 
-## How do I change background color of tooltip?
+All these options can be combined.
 
-Just in your site css add
+## Changing the Background Color of the Tooltip
 
-#lhc_need_help_container{background:red !important;}
+Add the following CSS to your site's stylesheet:
 
-## I do not see any tooltip?
+```css
+#lhc_need_help_container {
+  background: red !important;
+}
+```
 
- * Try to open window in incognito mode.
- * Once chat is started it won't show invitation for the next 24h.
- * Make sure you have enabled [need help tooltip](chat/configuration.md#show-need-help-tooltip)
- * Make sure tooltip [timeout value](chat/configuration.md#need-help-tooltip-timeout-after-how-many-hours-show-again-tooltip) is bigger than 0 
- * If you are using themes, make sure you have not disabled it accidentally
- * With [fresh: true javascript option](javascript-arguments.md#javascript-options) cookies are not saved so need help tooltip does not work 
+## Troubleshooting: Tooltip Not Visible
 
-## How do I change general tooltip style?
+*   Try opening the window in incognito mode to rule out caching issues.
+*   The invitation won't appear for 24 hours after a chat has started.
+*   Ensure that you have enabled the [Need Help tooltip](chat/configuration.md#show-need-help-tooltip).
+*   Verify that the [timeout value](chat/configuration.md#need-help-tooltip-timeout-after-how-many-hours-show-again-tooltip) is greater than 0.
+*   If you are using themes, ensure that you have not disabled the tooltip accidentally.
+*   If you are using the `fresh: true` [JavaScript option](javascript-arguments.md#javascript-options), cookies are not saved, so the "Need Help" tooltip will not function.
 
-*   Either override using important flag.
-*   Either override tooltip template [https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/tpl/lhchat/getstatus/we_here.tpl.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/tpl/lhchat/getstatus/we_here.tpl.php)
+## Changing the General Tooltip Style
+
+*   Override the styles using the `!important` flag in your CSS.
+*   Alternatively, override the tooltip template: [https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/tpl/lhchat/getstatus/we_here.tpl.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/design/defaulttheme/tpl/lhchat/getstatus/we_here.tpl.php)
 
 

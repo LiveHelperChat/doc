@@ -1,23 +1,23 @@
 ---
 id: single-sign-on
-title: How to implement login to LHC using third party logins providers (SimpleSAMLphp)?
-sidebar_label: Single Sign On
+title: Implementing Login to LHC Using Third-Party Login Providers (SimpleSAMLphp)
+sidebar_label: Single Sign-On
 ---
 
-This article explain how to implement Single Sign On. This is usefull if you are integrating LHC to third party systems and want to keep single Sing On
+This article explains how to implement Single Sign-On (SSO). This is useful if you are integrating LHC with third-party systems and want to maintain a single sign-on experience.
 
-So purpose of this extension is
+The purpose of this extension is to:
 
-*   Extension upon first login should create a user based on SimpleSAMLphp provided data
-*   If user exists it should login user
-*   Extension should override default user/login url with SSO support and should keep possible to login old way using login/loginadmin
-*   There should be mapping for lhc user attributes upon first time user creation
-*   There should be setting for default department and group for newly created users
+*   Create a user upon their first login based on data provided by SimpleSAMLphp.
+*   Log in the user if they already exist.
+*   Override the default user/login URL with SSO support, while still allowing login via the traditional method using login/loginadmin.
+*   Map LHC user attributes upon initial user creation.
+*   Provide settings for default department and group assignment for newly created users.
 
-For all these cases there is new extension
+A new extension is available for these scenarios:
 
 [https://github.com/LiveHelperChat/sso-boilerplate](https://github.com/LiveHelperChat/sso-boilerplate)
 
-### Where this extension can be used?
+### Use Cases
 
-*   You are integrating LHC in third party systems and want to keep single login everywhere? That's perfect use case for this extension
+*   Are you integrating LHC with third-party systems and want to maintain a single login across all of them? This extension is a perfect solution.

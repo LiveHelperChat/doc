@@ -5,72 +5,74 @@ title: Triggers
 
 ## Introduction
 
-Triggers act as response holders and are always placed in a [Trigger group](#trigger-groups).
+Triggers hold predefined responses and are always organized within a [Trigger group](#trigger-groups).
 
 ## Trigger groups
 
-Trigger groups are useful for segregating logic based on business needs. For instance, logic related to user password reminders should be placed in one group, while another group can contain the parcel tracking workflow, for example.
+Trigger groups help organize triggers based on business needs. For example, you might place triggers related to user password reminders in one group and triggers for a parcel tracking workflow in another.
 
-Each trigger group can be exported or deleted separately.
+Each trigger group can be exported or deleted independently.
 
 ![](/img/bot/delete-export.png)
 
 ## Trigger
 
-There are three general types of triggers:
+There are several types of triggers:
 
 ![](/img/bot/trigger-type.png?v3)
 
-* `Default` - This trigger is executed as the default trigger as soon as the chat starts.
-* `Default for unknown message` - This trigger is executed when the bot does not find a relevant trigger for the user's message.
-* `Default for unknown button click` - This trigger is executed when the bot does not find a relevant trigger for a button click.
-* `Execute always` - This trigger is executed very first all the time. Most of the time, you don't need to use this trigger.
-* `Can be passed as an argument` - This must be checked for the trigger to be used in Widget themes, Proactive Invitation, or with `trigger_id` as an argument.
+*   `Default` - This trigger is executed automatically when a chat starts.
+*   `Default for unknown message` - This trigger is executed when the bot cannot find a suitable trigger for the user's message.
+*   `Default for unknown button click` - This trigger is executed when the bot cannot find a suitable trigger for a button click.
+*   `Execute always` - This trigger is always executed first. In most cases, you won't need this trigger type.
+*   `Can be passed as an argument` - Select this option to use the trigger in Widget themes or Proactive Invitations, or to call it using `trigger_id`.
 
-## Trigger events
+## Trigger Events
 
-A trigger event defines what user message triggers the `Trigger` to be executed. There are three types of trigger events:
+A trigger event specifies the user input that will cause the `Trigger` to be executed. There are three types of trigger events:
 
-* Text
-* Click
-* Custom text matching
+*   Text
+*   Click
+*   Custom text matching
 
 ## Trigger attributes
 
-### `Chat start behaviour`
+### `Chat start behavior`
 
-We have 4 options. Most of the time, for building simple triggers, you do not need to change these.
+There are several options that control how the trigger behaves when a chat starts. In most cases, you don't need to adjust these settings for simple triggers.
 
-* `Do not check on chat start` - By default, only the default trigger is sent. The next options are used for more complex behavior.
-* `Instant execution (Executes and continues workflow)` - Usage example (Pending article...)
-* `Instant execution and block (Executes and blocks further trigger execution)` - Usage example (Pending article...)
-* `Instant execution and continue if stop is returned from this trigger` - Usage example (Pending article...)
-* `Schedule (Schedules further execution triggers)` - Usage example (Pending article...)
-
+*   `Do not check on chat start` - The default trigger is executed only. The following options are for more advanced scenarios.
+*   `Instant execution (Executes and continues workflow)` - (Usage example pending)
+*   `Instant execution and block (Executes and blocks further trigger execution)` - (Usage example pending)
+*   `Instant execution and continue if stop is returned from this trigger` - (Usage example pending)
+*   `Schedule (Schedules further execution triggers)` - (Usage example pending)
 
 ### `Priority of start check`
 
-Priority defines which trigger should be executed if more than one trigger event is matched.
+This setting determines which trigger is executed when multiple trigger events match the user's input.
 
-Trigger events with higher number will be executed the last one. It's an `pririty asc` order.
+Triggers with a higher priority number are executed later. The order is ascending (`priority asc`).
 
 ### `Available for these departments` and `Disabled for these departments`
 
-If you have one bot for multiple departments and if a specific department does not require functionality for certain triggers, you can skip them by entering the department IDs.
+### `Available for these departments` and `Disabled for these departments`
+
+If you use a single bot across multiple departments, you can use these settings to enable or disable specific triggers for certain departments by entering their IDs. This allows you to customize the bot's behavior for each department.
 
 ## Text
 
-The Text event is used to match a user's message based on its text.
+The Text event matches a user's message based on its text content.
 
-`Matching text phrase` Matching rule is:
+`Matching text phrase` Matching rule:
 
 ```
-parcel* - user message has to start with `parcel` and afterwords any word is expected. 
+parcel* - The user's message must start with "parcel," followed by any word.
 ```
 
 ![](/img/bot/text-event.png)
 
-For instance, the trigger defined from the screenshot above would match these user messages:
+For example, the trigger defined in the screenshot above would match these user messages:
+
 ```
 parcel
 parcels
@@ -78,11 +80,11 @@ parcels
 
 ### Click
 
-The Click event is used when payload-type events are employed in quick response buttons. However, it's recommended to use `Text` or `Custom text matching` event types instead.
+The Click event is used with payload-type events in quick response buttons. However, using the `Text` or `Custom text matching` event types is generally recommended.
 
 ### Custom text matching
- 
-This is the most powerful event trigger.
+
+This is the most flexible event trigger.
 
 ![](/img/bot/custom-text-matching.png)
 
@@ -90,67 +92,67 @@ In addition to the default attributes, it has a few more.
 
 #### `Should include any of these words` and `But not any of these`
 
-These specify the words that a user message should or should not include, respectively. You can define more than one word separated by commas.
+These fields specify which words a user's message should include or exclude, respectively. Separate multiple words with commas.
 
-Defining the number of typos per word:
+You can define the maximum number of typos allowed per word:
 
-`price{2}` - means word can have two mistakes
+*   `price{2}` - The word "price" can have up to two typos.
 
-Requiring the exact end of the word:
+You can require an exact ending for a word:
 
-`price$` - word has to end with a letter `e`
+*   `price$` - The word must end with the letter "e".
 
-Requiring any end of the word. The number of typos in the word still applies:
+You can match any ending of a word, with the specified number of typos still applying:
 
-`cash*`
+*   `cash*` - Matches "cash," "cashes," etc.
 
-Requiring any part of the word. The number of typos in the word still applies:
+You can match any part of a word, with the specified number of typos still applying:
 
-`*cash*`
+*   `*cash*` - Matches "cash," "cashes," "incash," etc.
 
-Requiring any end of the word, but it has to end with the letter `h`:
+You can require a specific ending for a word while also allowing any other ending:
 
-`cash$*`
+*   `cash$*` - The word must end with "h" but can have any other ending.
 
-You can also define preg_match rules. To specify a comma, use the com keyword for the comma character in your preg_match rules. Remember to enclose the regular expression with '/' on both sides.
+You can also use regular expressions (preg_match rules). To specify a comma within the expression, use `_com_`. Enclose the regular expression with forward slashes `/`.
 
-E.g 1
-`/^[A-Za-z0-9]{3_com_6}$/` would translate to `^[A-Za-z0-9]{3,6}$`
+*   Example 1: `/^[A-Za-z0-9]{3_com_6}$/` translates to `^[A-Za-z0-9]{3,6}$`
+*   Example 2: `/^cashba(.*?)/is`
 
-E.g 2
+You can require combinations of words:
 
-`/^cashba(.*?)/is`
+*   `car && price` - The message must contain both "car" and "price".
 
-Requiring word combinations:
+You can combine these rules:
 
-`car && price`
+*   `fish,car && price{2}$` - The message must contain either "fish" or "car," and it must also contain "price" (with up to two typos) ending with any character.
 
-You can combine all these into something like:
+This would match these messages, regardless of the words' order:
 
-`fish,car && price{2}$`
+*   fish price
+*   car price
+*   car prike `(notice a typo)`
 
-This would match these messages, regardless of the words' locations:
+You can limit the number of words in the message:
 
-* fish price
-* car price
-* car prike `notice a typo`
+*   `fish,car && price [params max_words=3]`
 
-`fish,car && price [params max_words=3]`
+This will match:
 
-This means it will match:
+*   fish price please
+*   car price
+*   ~~car price and fish price~~ `(but not this because it has too many words)`
 
-* fish price please
-* car price 
-* ~~car price and fish price~~ `but not this because of too many words`
+#### `Typos number (include words)` and `Typos number (exclude words)`
 
-#### `Typos number (include words)` && `Typos number (exclude words)`
-
-If you do not want to define the number of allowable typos per word, you can define them here. They will be applied to all words.
+If you prefer not to define the number of typos per word directly in the `Should include` or `Should not include` fields, you can specify a global typo allowance here. This allowance will apply to all words.
 
 #### `Should include only words from above, not any.`
 
-This means the message has to contain only the defined words. In that case, you should not use the `&&` operator.
+If selected, the message must contain only the words defined in the `Should include` field. Do not use the `&&` operator in this case.
+
+For example:
 
 `car,price`
 
-This would mean that the visitor's message can only contain these words.
+The visitor's message can only contain the words "car" and "price".

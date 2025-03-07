@@ -27,9 +27,9 @@ If you want to pass nick you have to define it first in variables.
 
 [![](https://livehelperchat.com/var/media/images/customvars.png)](https://livehelperchat.com/var/media/images/customvars.png)
 
-### Additional chart variable visible by operator
+### Additional chat variable visible by operator
 
-Fields while defining custom chat variable which will be visible by operator. This variable is non main chat variable.
+Fields for defining a custom chat variable that will be visible to the operator. This variable is a non-main chat variable.
 
 ![](/img/chat/additional-variable.png)
 

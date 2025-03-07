@@ -6,21 +6,21 @@ sidebar_label: Canned messages
 
 ## Introduction
 
-Canned messages purpose is to provide prepared answers for standard questions. Canned messages can be found at
+The purpose of canned messages is to provide pre-written answers for frequently asked questions. Canned messages can be configured in the back office under:
 
 > System configuration -> Live help configuration -> Canned messages
 
-## Exploring canned messages list
+## Accessing the Canned Messages List
 
-For operator to access canned messages list he has to have this permission
+To access the canned messages list, an operator must have the following permission:
 
 > 'lhchat', 'explorecannedmsg'
 
-To see all canned messages, not only from departments he is member of he has to have this permission
+To view all canned messages, including those not associated with their department, the operator needs this permission:
 
 > 'lhchat', 'explorecannedmsg_all'
 
-To have possibility create/edit canned message's operator has to have this permission
+To create or edit canned messages, the operator requires this permission:
 
 > 'lhchat', 'administratecannedmsg'
 
@@ -28,85 +28,86 @@ To have possibility create/edit canned message's operator has to have this permi
 
 ![Canned messages](/img/chat/canned-messages.jpg)
 
-Canned messages also supports these template variables.
+Canned messages support the following template variables:
 
-
-* `{nick}` - visitor name 
-* `{operator}` - operator name
-* `{email}` - visitor e-mail
-* `{phone}` - visitor phone
-* `{<field_identifier>}` - field identifier from custom fields managed in back office
+*   `{nick}` - Visitor name
+*   `{operator}` - Operator name
+*   `{email}` - Visitor email address
+*   `{phone}` - Visitor phone number
+*   `{<field_identifier>}` - Field identifier from custom fields managed in the back office
 
 ## Definition
 
 ### Title
-Visible in back office
 
-### Tag's
-Tag's allow to do quick search for canned message directly in message send area by typing `#<tag>` keyword or just `#`
+This title is visible in the back office.
+
+### Tags
+
+Tags allow for quick searching of canned messages directly in the message sending area by typing `#<tag>` or just `#`.
 
 ![Tag attribute](/img/chat/tag.jpg)
 
-There can be multiple tags in one canned messages if they are separated by a comma. E.g apple, fruit.
+Multiple tags can be assigned to a single canned message if separated by a comma (e.g., apple, fruit).
 
 :::tip
-You can navigate quickly through dropdown using up/down right/left arrows.
+You can quickly navigate through the dropdown menu using the up, down, right, and left arrow keys.
 :::
 
-## Canned messages in chat interface
+## Canned Messages in the Chat Interface
 
-Canned messages are visible in chat interface at the bottom.
+Canned messages are accessible in the chat interface at the bottom of the window.
 
 ![Canned messages in chat interface](/img/chat/canned-chat.jpg)
 
-Search is performed in these fields
+The search function looks for matches in the following fields:
 
- * Title
- * Message text
+*   Title
+*   Message text
 
 ### Explain
 
-Just for personal reasons to know for what purposes is this canned message.
+This field is for personal notes to remember the purpose of this canned message.
 
-### Automatically send this message to user then chat is accepted
+### Automatically Send This Message When a Chat is Accepted
 
-This message is send to user then operator accepts a chat. If there is few messages the very first one is send. This feature works only for web client.
+If enabled, this message is automatically sent to the user when an operator accepts the chat. If multiple messages are configured, only the first one will be sent. This feature is only available for the web client.
 
-### Delay in seconds
+### Delay in Seconds
 
-This delay gives few time between users sees Operator is typing and message appearance in user chat.
+This setting introduces a delay between when the operator accepts the chat and when the canned message appears in the user's chat window. This provides a more natural typing effect.
 
 ### Department
 
-To what department message is visible. If you do not choose department message will be visible for all chats.
+This setting determines which departments can see the message. If no department is selected, the message will be visible in all chats.
 
 ### Message
 
-Default canned message.
+This is the default canned message that will be sent.
 
-### Fallback message
+### Fallback Message
 
-If not all variables were placed in default message we send this message instead.
+If not all variables are present in the default message, this message will be sent instead.
 
 ### HTML Snippet
 
-If you enter html in this field it will be send as html code to visitor. E.g perhaps you want to execute some javascript on his browser. Like redirect to custom page.
+If you enter HTML code in this field, it will be sent as HTML to the visitor. For example, you can use this to execute JavaScript on their browser, such as redirecting them to a custom page.
 
-## Permission
+## Permissions
 
-For operator to be able edit canned message he has to have this permission
+To edit canned messages, an operator needs the following permission:
 
 > 'lhchat', 'administratecannedmsg'
 
-For operator to be able to see global ones he has to have in addition this permission
+To view global canned messages, the operator also needs this permission:
 
 > 'lhcannedmsg', 'see_global'
 
-For operators to have personal canned messages, to them have to be assigned this permission
+To enable personal canned messages for operators, assign them this permission:
 
 > 'lhuser', 'personalcannedmsg'
 
-For operators to be able to use canned messages module in chat window this permission is required
+To use the canned messages module in the chat window, operators require this permission:
 
 > 'lhcannedmsg', 'use'
 

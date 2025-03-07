@@ -1,40 +1,40 @@
 ---
 id: execute-bot-of-transferred-department
-sidebar_label: Execute bot after chat was transferred to other department.
-title: Execute bot after chat was transferred to other department, because chat stayed to long in pending state of original department.
+sidebar_label: Execute bot after chat transfer
+title: Execute bot after chat transfer to another department
 ---
 
-Our goal here is
+The goal is to:
 
-* To have `Bot A` in `Department A`
-* Bot A has trigger which sets chat to pending state
-* `Department A` has configured that if chat is not accepted in 30 seconds transfer chat to `Department B`
-* `Department B` has `Bot B`
-* After transfer, we should put chat back to bot status and execute `Bot B` trigger
+*   Have `Bot A` in `Department A`.
+*   Bot A has a trigger that sets the chat to a pending state.
+*   `Department A` is configured to transfer the chat to `Department B` if the chat is not accepted within 30 seconds.
+*   `Department B` has `Bot B`.
+*   After the transfer, the chat should revert to bot status, and `Bot B`'s trigger should execute.
 
-Requirements
+Requirements:
 
-* Minimum 4.16v
-* [Cronjob setup described here](department-transfer.md#what-happens-then-user-closes-the-chat)
-  * It will allow to execute transfer between departments even if visitor left a chat.
-  * This is required also with third party integrations
+*   Minimum version 4.16v.
+*   [Cron job setup as described here](department-transfer.md#what-happens-then-user-closes-the-chat).
+    *   This setup allows the transfer between departments even if the visitor has left the chat.
+    *   This is also required for third-party integrations.
 
-How it works
+How it works:
 
-* Transfer between departments happens only if chat is in pending state
-* After transfer happens we have to listen to `chat.data_changed_assigned_department` and adjust chat attributes accordingly
-  * Change chat `bot_id` attribute
-  * Set chat status to bot chat
-* It also makes sense to check in incoming webhook configuration -> `Chat should be reset to default department. Bot also will be set to default.` so if chat was closed it will start in original `Department A` with original bot.
+*   Transfer between departments occurs only if the chat is in a pending state.
+*   After the transfer, listen to `chat.data_changed_assigned_department` and adjust chat attributes accordingly:
+    *   Change the chat's `bot_id` attribute.
+    *   Set the chat status to bot chat.
+*   It is also advisable to check the incoming webhook configuration -> `Chat should be reset to default department. Bot also will be set to default.` so that if the chat was closed, it will start in the original `Department A` with the original bot.
 
-![Transfer event](/img/bot/transfer/transfer-dep.png)
+![Department Transfer Configuration](/img/bot/transfer/transfer-dep.png)
 
-Trigger configuration
+Trigger Configuration:
 
-![Transfer happened](/img/bot/transfer/transfer-happened.png)
+![Transfer Trigger Configuration](/img/bot/transfer/transfer-happened.png)
 
-`Department A` configuration to transfer chat to `Department B`
+`Department A` configuration to transfer chat to `Department B`:
 
-![Transfer happened](/img/bot/transfer/transfer-dep-options.png)
+![Department Transfer Options](/img/bot/transfer/transfer-dep-options.png)
 
 

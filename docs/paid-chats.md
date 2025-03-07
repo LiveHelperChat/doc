@@ -1,15 +1,15 @@
 ---
 id: paid-chats
-title: Paid chats
+title: Paid Chats
 ---
 
-What for it can be used. Let say you want to have live help chat based on some identifier and chat session would be possible only if chat is not closed and only for this identifier. Similar to chatbox functionality except it's based on live help widget not chatbox.
+Paid chats can be used when you want to restrict live help chat sessions to a specific identifier, ensuring that a chat session is only possible if the chat is not closed and only for that identifier. This is similar to chatbox functionality, except it's based on the live help widget instead of a chatbox.
 
-How to enable?
+How to enable:
 
-1. Go to "System configuration" => "Paid chat configuration"
-2. Enable
-3. You can change secret hash, it's used for verification
+1.  Go to "System configuration" => "Paid chat configuration."
+2.  Enable the feature.
+3.  You can change the secret hash, which is used for verification.
 
 ## New widget
 
@@ -17,25 +17,24 @@ How to enable?
 var LHC_API = LHC_API||{};
 LHC_API.args = {
 ...
-phash : 'payment_id',    // Payment ID | Optional
-pvhash : '<?php echo sha1('<secret_validation_hash>'.sha1('<secret_validation_hash>'.'payment_id'))?>',  // Payment verify hash | Optional
+phash : 'payment_id',    // Payment ID (Optional)
+pvhash : '<?php echo sha1('<secret_validation_hash>'.sha1('<secret_validation_hash>'.'payment_id'))?>',  // Payment verify hash (Optional)
 ...
 }
 ```
 
 ## Old widget
 
-In live help arguments if it's used for standard widget, not page widget value can be generated like
+If you are using the standard widget (not a page widget), you can generate the value in the live help arguments like this:
 
 ```js
 <script>
-var LHCChatOptions = {};  
+var LHCChatOptions = {};
 LHCChatOptions.attr_paid = {phash:'payment_id_hash',pvhash:'<?php echo sha1('<secret_validation_hash>'.sha1('<secret_validation_hash>'.'payment_id_hash'))?>'};
 </script>
 ```
 
-
-For page embed code it can look like
+For a page embed code, it can look like this:
 
 ```js
 <script type="text/javascript">
@@ -44,4 +43,4 @@ LHCChatOptionsPage.attr_paid = {phash:'payment_id_hash',pvhash:'<?php echo sha1(
 </script>
 ```
 
-So now each live helper chat will be based on phash value. User won't be able to start new chat if chat is already started.
+Now, each live helper chat will be based on the `phash` value. A user will not be able to start a new chat if a chat has already been started.

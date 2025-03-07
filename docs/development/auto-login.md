@@ -1,37 +1,37 @@
 ---
 id: auto-login
-title: How to use auto login module?
+title: How to Use the Auto Login Module
 sidebar_label: Auto login
 ---
 
-First take a look at github [autologin.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/doc/autologin/autologin.php)
+First, take a look at the GitHub repository for [autologin.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/doc/autologin/autologin.php).
 
-Autologin module in LHC itself can be found at "Configuration" => "System" => "Auto login settings"
+The Auto Login module in LHC can be found at "Configuration" => "System" => "Auto login settings".
 
-1.  In this window you have to change two variables after install.
-    1.  You have to enable it
-    2.  Also you have to change a secret hash, just enter any random text. Min 10 characters length
+1.  In this window, you have to configure two settings after installation:
+    1.  Enable the module.
+    2.  Change the secret hash. Enter any random text with a minimum length of 10 characters.
 
-It's all changes which had to be done in LHC itself. Now we can proceed to autologin link generation. First in autologin.php file there is few parameters which you can pass
+These are all the changes that need to be made within LHC itself. Now, we can proceed to generate the auto-login link. The `autologin.php` file accepts several parameters:
 
 ```php
-<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'u' => 1,/* 'l' => 'admin', */ 't' => time() + 60, 'secret_hash' => '12456456456456fghfghfghfgh'))?>
+<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'u' => 1,/* 'l' => 'admin', */ 't' => time() + 60, 'secret_hash' => '12456456456456fghfghfghfgh'))?>
 ```
 
- * r - stands for URL, it has to be module url without site_admin prefix. It can be also as chat/single/5993  
- * u - stands for User ID under which user should be logged in. User ID you can find in users lists.  
- * l - is user login/username. It's optional. You have to pass either **u **or **l **but **NOT** both at the same time  
- * t - stands how long auto login link should be valid. It's unix timestamp value in the future. In the above example link is valid for 60 seconds after it's genration. Also you can ommit this argument, that means link never expires. I suggest always pass some timestamp for this.  
- * secret_hash - is a secret hash from LHC back office. It's a random string you have entered previously.  
+*   `r` - Represents the URL. It should be the module URL without the `site_admin` prefix. For example: `chat/single/5993`.
+*   `u` - Represents the User ID that the user should be logged in as. You can find the User ID in the users list.
+*   `l` - Represents the user login/username. This is optional. You must pass either `u` or `l`, but not both at the same time.
+*   `t` - Represents the validity duration of the auto-login link. It's a Unix timestamp value in the future. In the example above, the link is valid for 60 seconds after its generation. You can omit this argument, which means the link never expires. It is recommended to always include a timestamp for security.
+*   `secret_hash` - This is the secret hash from the LHC back office. It's the random string you entered previously.
 
-So that's all. This function in autologin.php file will return link except location where lhc is installed. So for example if you have installed chat in subdir it should look like. We login user based on user ID here. Link is valid for 60 seconds  
-​
+That's all there is to it! The `generateAutoLoginLink` function in the `autologin.php` file will return the link, excluding the base LHC installation path. For example, if you have installed the chat in a subdirectory, the link should look like this (logging in a user based on User ID, valid for 60 seconds):
+
 ```html
-<a target="_blank" href="**http://example.com/chat/**<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'u' => 1, 't' => time() + 60,  'secret_hash' => '12456456456456fghfghfghfgh'))?>">Login me</a>_
+<a target="_blank" href="**http://example.com/chat/**<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'u' => 1, 't' => time() + 60, 'secret_hash' => '12456456456456fghfghfghfgh'))?>">Login me</a>
 ```
 
-If chat is installed as subdomain link generation code could look like. We login user based on username. Link is valid for 60 seconds
+If the chat is installed as a subdomain, the link generation code could look like this (logging in a user based on username, valid for 60 seconds):
 
 ```html
-_<a target="_blank" href="**http://support.example.com/**<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'l' => 'admin', 't' => time() + 60, 'secret_hash' => '12456456456456fghfghfghfgh'))?>">Login me</a>_
+<a target="_blank" href="**http://support.example.com/**<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'l' => 'admin', 't' => time() + 60, 'secret_hash' => '12456456456456fghfghfghfgh'))?>">Login me</a>
 ```

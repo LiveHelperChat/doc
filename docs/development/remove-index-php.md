@@ -4,25 +4,28 @@ title: How to remove index.php from URL?
 sidebar_label: Remove index.php
 ---
 
-In `settings/settings.ini.php` file change
+In the `settings/settings.ini.php` file, change:
+
 ```php
 'force_virtual_host' => false,
 ```
-to
+
+to:
+
 ```php
 'force_virtual_host' => true,
 ```
 
-After that clear cache in back office.
+After this change, clear the cache in the back office.
 
-Also make sure that you
+Also, ensure that you:
 
-* Have installed atleast 1.69v
-* Have installed app in root folder of domain/subdomain.
-* Have copied `.htaccess` file from `doc/http_conf`_examples
-* There are few samples. Running apache `.htaccess.example` should be just file so just copy it to root folder and rename it to `.htaccess`
+*   Have installed at least version 1.69.
+*   Have installed the application in the root folder of your domain or subdomain.
+*   Have copied the `.htaccess` file from `doc/http_conf_examples`.
+*   Note that there are a few samples provided. For Apache, the `.htaccess.example` file should be copied to the root folder and renamed to `.htaccess`.
 
-.htaccess file example
+Here's an example of an `.htaccess` file:
 
 ```apacheconfig
 AddType application/wasm .wasm
@@ -35,13 +38,13 @@ AddType application/wasm .wasm
 
 RewriteEngine On
 
-# If for some reason you can't authentificate for Rest API try to uncomment following lines
+# If, for some reason, you can't authenticate for the Rest API, try uncommenting the following lines:
 # https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request
 
 # RewriteCond %{HTTP:Authorization} ^(.*)
 # RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
-# Adds support for URL without index.php in URL
+# Adds support for URLs without index.php
 RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
 RewriteRule ^upgrade.php - [L]
 RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|svg|ico|mp3|wasm|ogg|wav|ogv|swf|map|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
@@ -49,4 +52,4 @@ RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|svg|ico|mp3|wasm|ogg|wav|
 DirectoryIndex index.php
 ```
 
-For nginx refer [nginx configuration tips](..//nginx-configuration-tips.md)
+For Nginx, refer to [Nginx configuration tips](..//nginx-configuration-tips.md).

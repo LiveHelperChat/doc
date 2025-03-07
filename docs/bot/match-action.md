@@ -1,33 +1,33 @@
 ---
 id: match-action
-title: Search for default actions on message
+title: Matching Actions Based on User Message
 ---
 
-This trigger allows to search for a keyword on first user message.
+This trigger allows you to search for a keyword in the user's first message to determine which action to take.
 
-Bot configuration can look like this
+A bot configuration for this might look like this.
 
-We will need 3 trigger for a minimal scenario.
+For a minimal scenario, we need three triggers:
 
-* `Default` - this will be our default trigger
-* `Cars` - this will be trigger used for a `cars` keywords
-* `No response found` - this will be a trigger if we did not found any matching trigger.
+*   `Default` - This will be our default trigger.
+*   `Cars` - This trigger will be used if the user enters the keyword "cars."
+*   `No response found` - This trigger will be used if no matching trigger is found.
 
 ![](/img/bot/match-triggers.png)
 
 ## Default
 
-This trigger is checked as default trigger.
+This trigger is set as the default trigger.
 
 ![](/img/bot/default-search-actions.png)
 
 ## Cars
 
-Content of a trigger
+Content of the "Cars" trigger:
 
 ![](/img/bot/match-actions-cars.png)
 
-This trigger has also defined event for a keyword `cars`
+This trigger also has an event defined for the keyword `cars`.
 
 ![](/img/bot/cars-event.png)
 
@@ -37,6 +37,6 @@ This trigger has also defined event for a keyword `cars`
 
 ## Samples
 
-Now if visitor stars chat by writing `cars` word `Cars` trigger will be executed. [Read documentation](bot/triggers.md) how you can have more abstract matching of words.
+Now, if a visitor starts a chat by writing the word "cars," the "Cars" trigger will be executed. For more information on abstract matching of words, refer to the [Triggers documentation](bot/triggers.md).
 
-If we do not find trigger for user text alternative trigger `No response found` will be executed.
+If no trigger is found that matches the user's text, the alternative "No response found" trigger will be executed.

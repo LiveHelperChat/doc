@@ -6,42 +6,42 @@ sidebar_label: Validate e-mail by bot and Rest API
 
 ## Introduction
 
-This is a small sample how combining Rest API and Bot you can verify visitor e-mail using third party Rest API
+This is a small sample demonstrating how you can verify a visitor's email address using a combination of the Rest API and a bot.
 
 ## Download
 
-You can download and import bot.
-[download](/img/bot/bot-email.json). Just right click and "save link as"
+You can download and import the bot configuration:
+[Download](/img/bot/bot-email.json) (Right-click and "Save link as").
 
-## Chat workflow
+## Chat Workflow
 
-Chat started
+**Chat Started**
 
 ![](/img/bot/chat-workflow-started.png)
 
-Validate e-mail clicked
+**Validate Email Clicked**
 
 ![](/img/bot/validate-e-mail-clicked.png)
 
-Invalid e-mail format
+**Invalid Email Format**
 
 ![](/img/bot/invalid-format-email.png)
 
-Format valid, but not Rest API validation
+**Format Valid, but Not Validated by Rest API**
 
 ![](/img/bot/format-valid-but-not-rest-api.png)
 
-Validated by Rest API call
+**Validated by Rest API Call**
 
 ![](/img/bot/valid-rest-api.png)
 
-If e-mail was an already verified visitor won't be asked for it again.
+If an email address has already been verified, the visitor will not be prompted to enter it again.
 
 ![](/img/bot/already-verified-email.png)
 
-## Third party API sample
+## Third-Party API Sample
 
-It just verified that visitor has entered expected e-mail.
+This sample API verifies that the visitor has entered the expected email address.
 
 ```php
 <?php
@@ -56,55 +56,55 @@ if (isset($_POST['email']) && $_POST['email'] == 'remdex@gmail.com') {
 exit;
 ```
 
-### Rest API configuration
+### Rest API Configuration
 
-Main configuration looks like
+The main configuration looks like this:
 
 ![](/img/bot/validate-email-rest-api.png)
 
-Our output parsing looks like
+The output parsing is configured as follows:
 
 ![](/img/bot/validate-email-output-parsing.png)
 
-### Bot setup
+### Bot Setup
 
-Our triggers
+The bot's triggers are configured as shown below:
 
 ![](/img/bot/validate-email-triggers.png)
 
 #### Starting
 
-Everything starts here once a visitor starts a chat. We just suggest a vistior to validate his e-mail.
+This is where everything begins when a visitor starts a chat. The bot suggests that the visitor validate their email address.
 
 ![](/img/bot/starting-validate-email.png)
 
-#### Validate e-mail
+#### Validate Email
 
-Once visitor clicks `Validate e-mail` e-mail button or in our system trigger named `Starting` we execute this trigger.
+When the visitor clicks the "Validate Email" button (or the `Starting` trigger is activated), this trigger is executed.
 
-Here we do few things
+Here's what happens:
 
-* We verify that we have not already collected his e-mail. This step is optional.
-* We execute `Collect custom attribute` and if format is valid we execute then `Validate Rest API`
+*   The bot verifies whether the email address has already been collected. This step is optional.
+*   The bot executes the `Collect custom attribute` action. If the format is valid, the `Validate Rest API` trigger is executed.
 
 ![](/img/bot/validate-email-starting-format.png)
 
 #### Verified by API
 
-This trigger does nothing as we already have visitor e-mail in `lhc.email` attribute. It just sends a message.
+This trigger doesn't perform any actions, as the visitor's email address is already stored in the `lhc.email` attribute. It simply sends a confirmation message.
 
-#### E-mail unverified
+#### Email Unverified
 
-If Rest API check fails we execute this trigger and we
+If the Rest API check fails, this trigger is executed. It performs the following actions:
 
-* We inform visitor that verification process failed.
-* Reset e-mail which was set previously by `Validate e-mail` trigger.
-* Send again `Starting` trigger.
+*   Informs the visitor that the verification process failed.
+*   Resets the email address that was previously set by the `Validate Email` trigger.
+*   Re-sends the `Starting` trigger.
 
 ![](/img/bot/email-unverified.png)
 
 #### Validate Rest API
 
-This trigger executes our defined Rest API call and based on output executes either `Verified by API` or `E-mail unferified` trigger.
+This trigger executes the defined Rest API call. Based on the API's output, either the `Verified by API` or the `Email Unverified` trigger is executed.
 
 ![](/img/bot/validate-email-rest-api-call.png)

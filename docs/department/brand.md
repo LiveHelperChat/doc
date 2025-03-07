@@ -6,40 +6,37 @@ sidebar_label: Brand
 
 ## Introduction
 
-Brand concept is used to have generic bot to be able to handle multiple brands. E.g
+The brand concept allows a generic bot to handle multiple brands. For example, imagine you have multiple shops, and each shop has multiple categories. In this concept:
 
-Imagine you have multiple shop. Each shop can have multiple categories. In that concept
+*   Brand (Shop A)
+    *   (Support) - brand member with identifier (role) `support`
+    *   (Food) - brand member with identifier (role) `food`
+    *   (Drinks) - brand member with identifier (role) `drink`
+*   Brand (Shop B)
+    *   (Support) - brand member with identifier (role) `support`
+    *   (Food) - brand member with identifier (role) `food`
+    *   (Drinks) - brand member with identifier (role) `drink`
 
-* Brand (Shop A)
-  * (Support) - brand member with identifier (role) `support`
-  * (Food) - brand member with identifier (role) `food`
-  * (Drinks) - brand member with identifier (role) `drink`
-* Brand (Shop B)
-  * (Support) - brand member with identifier (role) `support`
-  * (Food) - brand member with identifier (role) `food`
-  * (Drinks) - brand member with identifier (role) `drink`
+One department should be a member of only *one* brand.
 
-One department should be member of only *one* brand
+Brands differ from departments in that they operate independently of department groups and the departments themselves. They are used to manage bot department changes and chat priority without duplicating priority rules.
 
-Different from department is that they work independently of department groups and departments themselves. They are used just to manage Bot department changes Chat priority, without having to duplicate priority rules.
-
-Current chat department role can be accessed in conditions checks using `{args.chat.department_role.role}`
+The current chat department role can be accessed in condition checks using `{args.chat.department_role.role}`.
 
 ## Sample configuration using chat priority
 
-In this configuration chat department will be set to brand department with role `food` independently in which shop customer started a chat. We are also checking [condition](bot/conditions.md). We also check that transfer can happen only if present department role is `support`. E.g. bot has changed department to some other than `support`
+In this configuration, the chat department will be set to the brand department with the role `food` regardless of which shop the customer started a chat from. We are also checking a [condition](bot/conditions.md). Additionally, we check that a transfer can only happen if the current department role is `support`. For example, the bot has changed the department to something other than `support`.
 
 ![](/img/department/brand-chat-priority.png)
 
 ## Sample configuration using bot trigger
 
-In this scenario instead of entering department id we enter brand role. Live Helper Chat will pickup of what brand present chat is and try to find department with required role `food` in this scenario.
+In this scenario, instead of entering a department ID, we enter a brand role. Live Helper Chat will identify the brand of the current chat and attempt to find a department with the required role (`food` in this scenario).
 
 ![](/img/department/brand-bot.png)
 
-
 ## Permissions
 
-Required permission to brands.
+The following permission is required for brands:
 
 > 'lhdepartment', 'managebrands'

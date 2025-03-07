@@ -1,112 +1,113 @@
 ---
 id: performance
-title: Performance tweaks for high load environment
-sidebar_label: Performance tweaks
+title: Performance Tweaks for High-Load Environments
+sidebar_label: Performance Tweaks
 ---
 
-This article represents use case where monthly chats number is around 200K and messaegs number about 3M. I'll describe what changes were done to configuration and provider servers specs details. Single web server ir handling about 100Q/S. Peaks reaching 150 Q/S
+This article describes a use case involving approximately 200,000 monthly chats and 3 million messages. It details the configuration changes and server specifications used to handle this load. A single web server handles approximately 100 queries per second (Q/S), with peaks reaching 150 Q/S.
 
-### Servers specs
+### Server Specifications
 
-*   1 Web servers (nginx, php-fpm, redis, NodeJS, Cronjobs, PHP-Resque)
-    *   (4 threads) X Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+*   1 Web server (nginx, php-fpm, redis, NodeJS, Cronjobs, PHP-Resque)
+    *   4 x Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz (4 threads)
     *   5GB of memory
-*   1 DB Server (MariaDB) (No slow queries in slow query log!)
-    *   (8 threads) X Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
-    *   8GB of memory, I wish I had more :D
-*   1 ElasticSearch server
+*   1 Database server (MariaDB) (No slow queries in the slow query log!)
+    *   8 x Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz (8 threads)
+    *   8GB of memory (more is recommended)
+*   1 Elasticsearch server
 
-### General statistic
+### General Statistics
 
-*   There is constantly around 16 operators online
-*   Per month there is around 200K of chats
-*   Around 3M messages per month
+*   Approximately 16 operators are online at any given time.
+*   There are approximately 200,000 chats per month.
+*   There are approximately 3 million messages per month.
 
-### Used extensions
+### Used Extensions
 
-*   php-resque for background jobs. 
-    *   Indexing chats in background process
-    *   Client related business logic works
-*   Facebook messenger
+*   php-resque for background jobs:
+    *   Indexing chats in a background process
+    *   Handling client-related business logic
+*   Facebook Messenger
 *   Telegram
 *   Antivirus scan for uploaded files
-*   Elastic Search
-    *   Because Mysql is slow for generating statitic we use elastic search in this part.
+*   Elasticsearch:
+    *   Used for generating statistics, as MySQL is slower in this area.
 
-### Used features of Live Helper Chat
+### Used Features of Live Helper Chat
 
 *   Automatic chat assignment to operators and load balancing between operators
-*   Automatic chat archive
-*   All elastic search features
+*   Automatic chat archiving
+*   All Elasticsearch features
 
-### Configuration tweaks done to Live Helper Chat
+### Configuration Tweaks for Live Helper Chat
 
-*   Disabled for operators listing closed and unread chats
-    *   With a lot of chat's naturally that fetch all closed chat's and sort them takes a lot of resources we these two lists were disabled. In chat configuration `List unread chats` and `List closed chats` is unchecked
-*   Automatic auto assignment from visitors widgets were disabled. [workflow cronjob](development/cronjob.md#default-cronjob-setup)
-    *   In chat configuration "Disable live auto assign" was checked
-*   Synchronization and sound settings
-    *   How many seconds for a user to be considered as being online - 290
-    *   Sync for new chats, interval in seconds - 1.1 I suggest to keep it bigger. But client wanted more live experience
-    *   Check for messages from the operators, interval in seconds - 290
-*   "Chat configuration" -> "Visitor activity" -> "Interval between chat status checks in seconds, 0 disabled." I suggest to keep original one values only.
-*   Disabled online visitors listing for operator.
-  * We just disable online visitors widget for the operators by removing this permission. `'lhchat', 'use_onlineusers'`
-*   "Chat configuration" -> "Misc" -> "Home page tabs order" only dashboard is there
+*   Disabled listing of closed and unread chats for operators:
+    *   Fetching and sorting all closed chats consumes significant resources. Therefore, these two lists were disabled. In the chat configuration, the options `List unread chats` and `List closed chats` are unchecked.
+*   Automatic auto-assignment from visitor widgets was disabled. [workflow cronjob](development/cronjob.md#default-cronjob-setup)
+    *   In the chat configuration, "Disable live auto assign" was checked.
+*   Synchronization and sound settings:
+    *   The duration, in seconds, for a user to be considered online is set to 290.
+    *   The synchronization interval for new chats is 1.1 seconds (a larger value is recommended, but the client desired a more real-time experience).
+    *   The interval to check for messages from operators is 290 seconds.
+*   "Chat configuration" -> "Visitor activity" -> "Interval between chat status checks in seconds, 0 disabled." It is recommended to keep the original values.
+*   Disabled online visitor listing for operators:
+    *   The online visitors widget was disabled for operators by removing the `'lhchat', 'use_onlineusers'` permission.
+*   "Chat configuration" -> "Misc" -> "Home page tabs order" - only the dashboard is enabled.
 *   "Chat configuration" -> "Online tracking" -> "Cleanup should be done only using cronjob." - checked. [workflow cronjob](development/cronjob.md#default-cronjob-setup)
-*   Automatic chat archive is setup. [Archive cronjob](development/cronjob.md#chat-archive-cronjob-setup)
+*   Automatic chat archiving is set up. [Archive cronjob](development/cronjob.md#chat-archive-cronjob-setup)
     *   Automatic archiving - checked
-    *   Archive older chat's than defined days - 90
-    *   Create new archive If chat's number in last archive reaches defined number - 500000
-* Files maintenance and removement from file upload configuration window.
-* Enable [lazy loading](chat/start-chat-form-settings.md#lazy-load-widget-content-widget-content-will-be-loaded-only-if-visitor-clicks-a-status-icon) for start chat form
+    *   Archive chats older than 90 days.
+    *   Create a new archive if the number of chats in the last archive reaches 500,000.
+*   Files maintenance and removal from the file upload configuration window.
+*   Enabled [lazy loading](chat/start-chat-form-settings.md#lazy-load-widget-content-widget-content-will-be-loaded-only-if-visitor-clicks-a-status-icon) for the start chat form.
 
-### Running cronjobs
+### Running Cronjobs
 
 ```
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 5;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 10;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 15;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 20;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 25;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 30;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 35;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 40;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 45;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 50;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * sleep 55;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1  
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/cron_1m > log_1m.txt /dev/null 2>&1  
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/departament-availability > log_dep_availability.txt /dev/null 2>&1  
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/check_health > es_health.txt /dev/null 2>&1  
- */5 * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/cron > log_5m.txt /dev/null 2>&1  
- * * * * * cd /home/lhc_web/extension/lhcphpresque/doc/resque.sh && ./resque.sh >> /dev/null 2>&1  
- 8 */8 * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/archive > /dev/null 2>&1  
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/notifications > /dev/null 2>&1  
- 8 8 * * 0 cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/util/maintain_database > /dev/null 2>&1  
- 40 7 * * * /bin/touch /home/lhc_web/runresque.lock > /dev/null 2>&1  
- 10 */8 * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/index_precreate >> precreate.txt /dev/null 2>&1  
- #### Notifications messages  
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e fbmessenger -c cron/schedule_compaign > /dev/null 2>&1  
- * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e fbmessenger -c cron/collect_recipients > /dev/null 2>&1  
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 5;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 10;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 15;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 20;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 25;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 30;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 35;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 40;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 45;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 50;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * sleep 55;cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/workflow > /dev/null 2>&1
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/cron_1m > log_1m.txt /dev/null 2>&1
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/departament-availability > log_dep_availability.txt /dev/null 2>&1
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/check_health > es_health.txt /dev/null 2>&1
+ */5 * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/cron > log_5m.txt /dev/null 2>&1
+ * * * * * cd /home/lhc_web/extension/lhcphpresque/doc/resque.sh && ./resque.sh >> /dev/null 2>&1
+ 8 */8 * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/archive > /dev/null 2>&1
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/notifications > /dev/null 2>&1
+ 8 8 * * 0 cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -c cron/util/maintain_database > /dev/null 2>&1
+ 40 7 * * * /bin/touch /home/lhc_web/runresque.lock > /dev/null 2>&1
+ 10 */8 * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e elasticsearch -c cron/index_precreate >> precreate.txt /dev/null 2>&1
+ #### Notifications messages
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e fbmessenger -c cron/schedule_compaign > /dev/null 2>&1
+ * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e fbmessenger -c cron/collect_recipients > /dev/null 2>&1
  * * * * * cd /home/lhc_web && /usr/bin/php cron.php -s site_admin -e fbmessenger -c cron/send_notification > /dev/null 2>&1
+
 ```
 
-### Challenges we had
+### Challenges We Faced
 
-*   Because of concurency we had some probelms with MySQL transactions and table lockins.
-    *   Lesson learned - locking has to be done always by primary key to avoid problems in the future.
-*   Auto assign misbehaved and operators were receiving more chat's than they should. 
-    *   Lesson learned - auto assign has to work only from cronjob which works mutch better
-*   If MySQL does not have enough memory you will hang all app, developer won't be able to help for that. Slow log is a must...
-*   nginx + php-fpm servers mutch better. Migrated from apache. Apache was there then I come to project...
-*   Because of lacking chat locking there was scenario then operators opens a chat and it shows another operator as owner...
-    *   Lesson learned - use transactions and row lockings by primary keys.
-*   There was so many small issues because of concurency it's hard to remember what was changed, but app is now stable with sutch load...
+*   Due to concurrency, we encountered problems with MySQL transactions and table locking.
+    *   Lesson learned: Always lock by primary key to avoid future issues.
+*   Automatic assignment malfunctioned, causing operators to receive more chats than intended.
+    *   Lesson learned: Auto-assignment should only run from a cronjob, which functions more reliably.
+*   Insufficient memory for MySQL can halt the entire application, and developers cannot resolve this. A slow query log is essential.
+*   nginx + php-fpm servers are significantly better than Apache. We migrated from Apache after I joined the project.
+*   Due to a lack of chat locking, there were instances where an operator would open a chat and see another operator listed as the owner.
+    *   Lesson learned: Use transactions and row locking by primary keys.
+*   We encountered numerous minor issues due to concurrency. It's difficult to recall all the changes made, but the application is now stable under the specified load.
 
-### Mysql/MariaDB configuration
+### MySQL/MariaDB Configuration
 
-These settings are for 24GB, 8 threads server.
+These settings are for a server with 24GB of RAM and 8 threads.
 
 ```ini
 [mysqld]
@@ -135,7 +136,7 @@ innodb_flush_method=O_DIRECT
 innodb_file_per_table=1
 ```
 
-### Nginx configuration sample for main settings
+### Sample Nginx Configuration for Main Settings
 
 ```apacheconfig
 sendfile            on;
@@ -180,8 +181,8 @@ limit_req_zone $limit_bot zone=bots:10m rate=1r/m;
 limit_req zone=bots burst=2 nodelay;
 ```
 
-### Future
+### Future Improvements
 
-*   There is still some core tables missing archiving
-*   [NodeJS integration](https://github.com/LiveHelperChat/NodeJS-Helper) to reduce server load
-*   And many more things :)
+*   Archiving is still missing for some core tables.
+*   [NodeJS integration](https://github.com/LiveHelperChat/NodeJS-Helper) to reduce server load.
+*   And many more potential enhancements.

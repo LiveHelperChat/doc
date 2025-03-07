@@ -4,9 +4,9 @@ title: Mobile app setup
 sidebar_label: Mobile
 ---
 
-In order for mobile app to function properly you have to be using min 3.42v.
+To ensure proper functionality of the mobile app, please use version 3.42 or higher.
 
-## Mobile apps
+## Mobile Apps
 
 [![Apple store](https://livehelperchat.com/design/defaulttheme/images/apps/apple.svg)](https://apps.apple.com/us/app/id1530399116)
 
@@ -16,126 +16,126 @@ The most recent build can be found here.
 
 [![Codemagic build status](https://api.codemagic.io/apps/5f50c50be2db272d7690ae45/5f50c50be2db272d7690ae44/status_badge.svg)](https://codemagic.io/apps/5f50c50be2db272d7690ae45/5f50c50be2db272d7690ae44/latest_build)
 
-## How to keep online status?
+## Maintaining Online Status
 
-As we all know once app is closed background sync processe is stopped so Live Helper Chat can't know is it online or not. To retain your online status you can do following things.
+As background synchronization processes are halted once the app is closed, Live Helper Chat cannot determine your online status. To maintain your online status, consider the following:
 
- * Setup department online hours
- * Change your online status to "Always online" from "Based on activity"
- * Once you finished your work shift don't forget to go offline.
+*   Set up department online hours.
+*   Change your online status to "Always online" instead of "Based on activity."
+*   Remember to set yourself to offline once your work shift is over.
 
 ## Permissions
 
-In order for mobile app to work correctly operator has to have permission to
+For the mobile app to function correctly, the operator must have permission for:
 
-> 'lhrestapi','use_direct_logins'
+> 'lhrestapi','use\_direct\_logins'
 
-## Voice messages from mobile application
+## Voice Messages from the Mobile Application
 
-If you are getting an error while sending a voice message you have to allow to upload `m4a`, `ogg`, `wav` files. This can be enabled in 
+If you encounter an error while sending a voice message, you need to allow the upload of `m4a`, `ogg`, and `wav` files. This can be enabled in:
 
 > System configuration > Live help configuration > Files configuration
 
-It has `Allowed files types for operators` just edit and add `|ogg|m4a|wav` at the end.
+In the `Allowed files types for operators` setting, add `|ogg|m4a|wav` at the end.
 
 ## Notifications
 
-In order to enable mobile app notifications you have to enable mobile notifications there.
+To enable mobile app notifications, enable mobile notifications in:
 
 > Configuration -> System -> Mobile (Settings)
 
-## Notifications categories
+## Notification Categories
 
-Mobile version 1.7v and lhc version 3.90v supports Mobile Notifications categories. They will appear as soon you will receive a one notification in the mobile app. After that you will be able to set custom notifications settings per notification category.
+Mobile version 1.7 and LHC version 3.90 and later support mobile notification categories. These categories will appear after you receive your first notification in the mobile app. Afterward, you can customize notification settings for each category.
 
-### Ongoing trigger alerts!
+### Ongoing Trigger Alerts
 
-Since 3.93v you can receive in your mobile app also notifications if subject is added to the chat.
+From version 3.93 onwards, you can also receive notifications in your mobile app when a subject is added to a chat.
 
-In order to receive notification once subject is added to the chat you have
+To receive notifications when a subject is added to a chat:
 
-* To be online.
-* In ongoing trigger alerts settings to choose at least one subject.
-* If it is you who added subject, notification won't be sent.
-* You have to have permission to write to that department.
+*   Ensure you are online.
+*   Choose at least one subject in the ongoing trigger alerts settings.
+*   Note that if you add the subject yourself, a notification will not be sent.
+*   You must have permission to write to the relevant department.
 
-### Testing
+### Testing Notifications
 
-The Easiest way to test is just to login to Live Helper Chat back office and go to `System configuration -> Mobile (Sessions)` and edit session record. In edit window just click `Send test notification`.
+The easiest way to test notifications is to log in to the Live Helper Chat back office and go to `System configuration -> Mobile (Sessions)` and edit a session record. In the edit window, click `Send test notification`.
 
-If you are not receiving notification check those things.
+If you are not receiving notifications, check the following:
 
- * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
+*   Verify that you have enabled notifications in `Configuration -> System -> Mobile (Settings)`.
 
-Most of the time if app is installed on iPhone for some reason it does not receive notifications. If this is happening to you do the following
+Often, iPhones may not receive notifications after app installation. If this occurs, try the following:
 
- * Uninstall the app
- * Delete related session record `Configuration -> System -> Mobile (Sessions)`
- * Install an app
- * Now notifications should work.
+*   Uninstall the app.
+*   Delete the related session record in `Configuration -> System -> Mobile (Sessions)`.
+*   Reinstall the app.
+*   Notifications should now function correctly.
 
-### Live notifications testing
+### Live Notification Testing
 
-If you do not receive notification once chat is started, but you receive notification with `Send test notification` check those things.
+If you are not receiving notifications when a chat starts, but you do receive the test notification, check these points:
 
-For floating notification to be seen they have to be enabled in notifications settings Android and IOs. On android these can be enabled per notification category.
-
-:::tip
- * Test notification should be seen only on locked phone screen.
- * IOs
-   * Test notification will be visible on locked screen.
-   * They are not floating notification and won't be seen on un-locked phone, only on locked phone screen.
-   * Test notification does not influence is app running or not. 
-   * Unread number on IOs won't appear for test notification.
- * Android
-   * Red number appears on unlocked phone app icon.
-   * They are not floating notification and won't be seen on unlocked phone only on locked phone screen.
-   * Test notification does not influence is app running or not.
-:::
+Floating notifications must be enabled in the notification settings of both Android and iOS. On Android, these can be enabled per notification category.
 
 :::tip
- * Scenario with live notifications
- * App is or not running and phone is locked
-   * IOs
-     * Notification is seen on locked phone screen
-   * Android
-     * Notification is seen on locked phone screen
- * Phone is unlocked and app is or running in the background. App window is not active.
-   * IOs
-     * Notification is seen on locked phone screen
-   * Android
-     * Notification is seen on locked phone screen
- * Phone app is opened
-   * Floating notification is seen on the top.
+*   Test notifications should only be visible on a locked phone screen.
+*   iOS
+    *   Test notifications will be visible on the locked screen.
+    *   They are not floating notifications and will not be seen on an unlocked phone, only on the locked phone screen.
+    *   Test notifications do not affect whether the app is running or not.
+    *   The unread count on iOS will not appear for test notifications.
+*   Android
+    *   A red number appears on the unlocked phone app icon.
+    *   They are not floating notifications and will not be seen on an unlocked phone, only on the locked phone screen.
+    *   Test notifications do not affect whether the app is running or not.
 :::
 
- * You have proper permissions as operator
- * You are online as an operator.
- * You have enabled notifications in `Configuration -> System -> Mobile (Settings)`
- * You have permission to access department where chat started.
- * App is using few notifications channels where each channel can have different settings. Make sure app notifications settings are correct.
- * If for some reason sessions status is `thumbs down`. You can delete a session and re-login from the app and try again to test notifications.
-
-:::tip 
-At the moment clicking notifications does not open chat window. It just opens an app. This will be changed in next releases.
+:::tip
+*   Scenario with live notifications:
+*   App is either running or not, and the phone is locked:
+    *   iOS
+        *   Notifications are seen on the locked phone screen.
+    *   Android
+        *   Notifications are seen on the locked phone screen.
+*   The phone is unlocked, and the app is either running in the background or the app window is not active:
+    *   iOS
+        *   Notifications are seen on the locked phone screen.
+    *   Android
+        *   Notifications are seen on the locked phone screen.
+*   The phone app is opened:
+    *   A floating notification is seen at the top.
 :::
 
-## How to login?
+*   Ensure you have the correct operator permissions.
+*   Verify that you are online as an operator.
+*   Confirm that you have enabled notifications in `Configuration -> System -> Mobile (Settings)`.
+*   Ensure you have permission to access the department where the chat started.
+*   The app uses multiple notification channels, each with potentially different settings. Ensure the app's notification settings are correct.
+*   If a session's status is "thumbs down," you can delete the session, re-login from the app, and test notifications again.
 
-Login to demo of live helper chat details: 
- 
- * https://demo.livehelperchat.com
- * Login: admin
- * Password: demo
- * Un check "Append index.php to address"
+:::tip
+Currently, clicking a notification does not open the chat window; it only opens the app. This will be addressed in future releases.
+:::
 
-## I can't login?
+## How to Log In
 
- * Make sure you have entered domain address correctly, pay attention does your URL requires `www` or not. `https://www.example.com` and `https://example.com` are two different URL's
- * If you still can't login please apply this `.htaccess` file because sometimes `Authorization` headers are not parsed correctly by apache server.
- 
-Apache config file if you are running in a *root* directory. E.g `https://example.com/index.php/site_admin/user/login` or `https://example.com/site_admin/user/login`
- 
+To log in to the demo of Live Helper Chat, use the following details:
+
+*   URL: [https://demo.livehelperchat.com](https://demo.livehelperchat.com)
+*   Login: admin
+*   Password: demo
+*   Uncheck "Append index.php to address"
+
+## Troubleshooting Login Issues
+
+*   Ensure that you have entered the domain address correctly. Pay attention to whether your URL requires `www` or not, as `https://www.example.com` and `https://example.com` are treated as different URLs.
+*   If you still cannot log in, apply the `.htaccess` file provided below, as the `Authorization` headers are sometimes not parsed correctly by the Apache server.
+
+Apache configuration file for running in a root directory (e.g., `https://example.com/index.php/site_admin/user/login` or `https://example.com/site_admin/user/login`):
+
 ```apacheconfig
 AddType application/wasm .wasm
 
@@ -147,13 +147,13 @@ AddType application/wasm .wasm
 
 RewriteEngine On
 
-# If for some reason you can't authentificate for Rest API try to uncomment following lines
+# If you encounter authentication issues with the Rest API, try uncommenting the following lines:
 # https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request
 
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
-# Adds support for URL without index.php in URL
+# Adds support for URLs without index.php
 RewriteRule ^/var/[^/]+/cache/(stylesheets|images|javascripts?)/.* - [L]
 RewriteRule ^upgrade.php - [L]
 RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|map|swf|flv|otf|woff2|woff|eot|ttf)|var(.+)storage.pdf(.+)\.pdf$ index.php
@@ -161,7 +161,7 @@ RewriteRule !\.(gif|jpe?g|png|bmp|css|js|xml|html|json|ico|mp3|wasm|ogg|wav|ogv|
 DirectoryIndex index.php
 ```
 
-Apache config to try if you are running in a subdirectory. E.g https://example.com/lhc_web/index.php/site_admin/user/login
+Apache configuration to try if you are running in a subdirectory (e.g., `https://example.com/lhc_web/index.php/site_admin/user/login`):
 
 ```apacheconfig
 AddType application/wasm .wasm
@@ -174,48 +174,47 @@ AddType application/wasm .wasm
 
 RewriteEngine On
 
-# If for some reason you can't authentificate for Rest API try to uncomment following lines
+# If you encounter authentication issues with the Rest API, try uncommenting the following lines:
 # https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request
 
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 ```
 
-## What to enter if I'm running Live Helper Chat in subfolder/subdomain?
+## Entering Subfolder/Subdomain Details
 
- * If subdomain host in that case would be `https://<subdomain>.example.org`
- * If sub-folder host would be `https://example.org/support`  
+*   For a subdomain, the host would be `https://<subdomain>.example.org`.
+*   For a subfolder, the host would be `https://example.org/support`.
 
-## How to compile?
+## Compiling the App
 
-Refer to flutter documentation. Few quick tips.
+Refer to the Flutter documentation for compilation instructions. Here are a few quick tips:
 
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L18-L20
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L39-L46
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53
- * Comment these lines - https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72
+*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L18-L20](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L18-L20)
+*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L39-L46](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L39-L46)
+*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L53](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53)
+*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L72](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72)
 
-## How do I create firebird project
+## Creating a Firebase Project
 
- * https://console.firebase.google.com/ create project there
- * In `Project overview` page add Android or IOS depending on which one app you are configuring
+*   Create a project at [https://console.firebase.google.com/](https://console.firebase.google.com/).
+*   In the `Project overview` page, add either Android or iOS, depending on the app you are configuring.
 
 ![Mobile screenshot](/img/mobile/project-overview.png)
 
- * Navigate to `Project settings` page and click `Service accounts` tab.
+*   Navigate to the `Project settings` page and click the `Service accounts` tab.
 
 ![Mobile screenshot](/img/mobile/project-settings.png)
 
- * There click `Generate new private key`
+*   Click `Generate new private key`.
 
 ![Mobile screenshot](/img/mobile/service-account.png)
 
-After that you will download `*.json` file which one you will use to generate `Bearer token` for notifications.
+Afterward, you will download a `*.json` file, which you will use to generate a `Bearer token` for notifications.
 
-## How to send notification using tour own firebird project?
+## Sending Notifications Using Your Own Firebase Project
 
-Take a look at this file. Firebase recent version require Bearer AccessToken which I generate on my on server.
-https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/core/lhmobile/lhmobile.php#L437
+Refer to this file. Recent versions of Firebase require a Bearer AccessToken, which I generate on my server.  [https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc\_web/lib/core/lhmobile/lhmobile.php#L437](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/core/lhmobile/lhmobile.php#L437)
 
 ```shell
 <?php
@@ -292,7 +291,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.29.0');
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-    'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+    'grant_type' => 'urn:ietf:params:oauth:grant-type=jwt-bearer',
     'assertion' => $jwt
 ]));
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
@@ -321,11 +320,11 @@ if (isset($responseData['access_token'])) {
 }
 ```
 
-## My visitors can't see while I'm typing
+## Visitors Cannot See Typing Indicators
 
-Most likely it's a problem of apache because it removes `Authorization` header. Please see this [article](development/remove-index-php.md) for a possible fix.
+Most likely, this is an Apache configuration issue where the `Authorization` header is being removed. Refer to this [article](development/remove-index-php.md) for a possible solution.
 
-## Demo images
+## Demo Images
 
 ![Mobile screenshot](/img/mobile/screen-1.chat.jpg)
 ![Mobile screenshot](/img/mobile/screen-2.chat.jpg)

@@ -6,102 +6,102 @@ sidebar_label: Survey
 
 ## Introduction
 
-Surveys allow you to gather information how well customer was served.
+Surveys allow you to gather information about the quality of customer service.
 
 ![Survey list](/img/chat/survey-list.jpg)
 
-There you can do few options
+You have the following options:
 
-* Clicking on survey title will show you survey window where you can see all collected information over the time.
-* Clicking on edit button will show you survey edit interface.
+*   Clicking on a survey title displays a window with all the collected information over time.
+*   Clicking the edit button displays the survey edit interface.
 
-## Survey collection information
+## Survey Statistics
 
-In survey statistic page you can filter by various options and export report.
+On the survey statistics page, you can filter by various options and export a report.
 
 ![Survey stats](/img/chat/survey-stats.jpg)
 
-In chart window for stars you will see chart.
+The chart window displays a chart for star ratings.
 
 ![Survey chart](/img/chat/survey-chart.jpg)
 
-## Survey edit window
+## Survey Edit Window
 
 ![Survey window](/img/chat/survey-window.jpg)
 
 :::tip
-You can have custom values for survey options by defining survey option like
+You can define custom values for survey options using the following format:
 `[value=15] 15 value`
 :::
 
-### Feedback text
+### Feedback Text
 
-This attribute supports `Canned replaceable variables` and `{args.chat.<attribute>` syntax.
+This attribute supports `Canned replaceable variables` and the `{args.chat.<attribute>}` syntax.
 
-## Multilingual support
+## Multilingual Support
 
-Every question support Bot individualisation which you can set per department. So for questions/answers you can use.
+Each question supports bot individualization, which you can set per department. For questions and answers, use the following format:
 
 ```
 {main_question__Main question here}
 ```
 
-After that just translate text in [Bot individualisation](bot/multiple-languages.md)
+Then, translate the text in [Bot individualisation](bot/multiple-languages.md).
 
-## Chat and survey
+## Chat and Survey
 
-What survey should be shown to visitor can be set few ways
+You can configure which survey is shown to a visitor in a few ways:
 
-* Either you set it in department edit window survey tab.
-* Either you redirect visitor manually from chat.
-* Either you pass `survey` [argument](javascript-arguments.md).
+*   Set it in the department edit window's survey tab.
+*   Redirect the visitor manually from the chat.
+*   Pass a `survey` [argument](javascript-arguments.md).
 
-To redirect visitor to survey you have to click this icon in chat window
+To redirect a visitor to a survey, click this icon in the chat window:
 
 ![Survey icon](/img/chat/survey-icon.jpg)
 
-## How to redirect visitor to survey from bot?
+## How to Redirect a Visitor to a Survey from a Bot
 
-You can have this defined as button click or just as trigger to execute on auto responder.
+You can define this as a button click or as a trigger to execute in an auto-responder.
 
 > `Update current chat` -> `Update main chat attribute` -> and in `Chat attribute name` enter `status_sub` and value enter `5`
 
-Internally it just means `const STATUS_SUB_SURVEY_SHOW = 5;`
+Internally, this means `const STATUS_SUB_SURVEY_SHOW = 5;`
 
 ## Tips
 
-* [Disable/Enable a survey from bot?](bot/survey-control-from-bot.md)
+*   [Disable/Enable a survey from bot?](bot/survey-control-from-bot.md)
 
-## I close a chat, but I don't see any survey
+## I Closed a Chat, but I Don't See a Survey
 
-There is a few conditions has to be satisfied for a survey to be shown. On chat close event **one** these of these conditions has to be satisfied
+A few conditions must be met for a survey to be shown. On chat close, **one** of these conditions must be satisfied:
 
-* Chat has to be in bot mode
-* Chat has to be accepted by operator
+*   The chat must be in bot mode.
+*   The chat must have been accepted by an operator.
 
-If chat is closed by a visitor and chat is in pending state. Survey won't be shown.
+If a visitor closes a chat while it is in a pending state, the survey will not be shown.
 
-## Multiple clients support
+## Multiple Clients Support
 
-If operator does not have permission to access all departments survey is assigned he won't tbe able to view/edit survey details.
+If an operator does not have permission to access all departments to which a survey is assigned, they will not be able to view or edit the survey details.
 
-* Operator has to be assigned to all departments survey is assigned to
-* For basic permission just to view survey statistic `'lhsurvey', 'list_survey'` permission should be assigned.
+*   The operator must be assigned to all departments to which the survey is assigned.
+*   For basic permission to view survey statistics, the `'lhsurvey', 'list_survey'` permission should be assigned.
 
 ## Permissions
 
-In order operator to be able redirect visitor to custom survey they have to have this permission.
+For an operator to be able to redirect a visitor to a custom survey, they must have this permission:
 
 > 'lhsurvey', 'redirect_to_survey'
 
-In order to configure surveys. Create a new one/edit and old one. Operator has to have this permission.
+To configure surveys (create a new one or edit an existing one), an operator must have this permission:
 
 > 'lhsurvey', 'manage_survey'
 
-In order to list surveys and view their statistic he has to have this permission.
+To list surveys and view their statistics, an operator must have this permission:
 
 > 'lhsurvey', 'list_survey'
 
-In order to delete surveys he has to have this permission.
+To delete surveys, an operator must have this permission:
 
 > 'lhsurvey', 'delete_survey'

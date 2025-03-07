@@ -1,22 +1,22 @@
 ---
 id: back-office-theme
-title: Back office theming
+title: Back Office Theming
 ---
 
-## Change back office look directly in back office
+## Changing the Back Office Theme Directly
 
-Navigate to `Settings > Live help configuration > Back office theming` and change back office theme look directly.
+Navigate to `Settings > Live help configuration > Back office theming` to change the back office theme directly.
 
-## Coding way of changing back office theme
+## Changing the Back Office Theme via Code
 
-Since 2.23v back office is bootstrap 3 powered, the easiest way to change back office theme is
+Since version 2.23, the back office is powered by Bootstrap 3. The easiest way to change the back office theme is as follows:
 
-1.  Download/generate bootstrap css file. Few url's where you can do that
+1.  Download or generate a Bootstrap CSS file. Here are a few URLs where you can do that:
     1.  [http://bootswatch.com/](http://bootswatch.com/)
     2.  [http://getbootstrap.com/customize/](http://getbootstrap.com/customize/)
-2.  In `design/backendtheme/vendor/bootstrap/css` you will find few css files. These are demo files which will be looked for if default word from these files will be removed.
-3.  So just after you downloaded let say bootstrap.default.css put it in css folder and clear cache from back office. That's all new theme should be applied.
+2.  In `design/backendtheme/vendor/bootstrap/css`, you will find a few CSS files. These are demo files that will be used if the default styles from these files are removed.
+3.  After downloading a file (for example, `bootstrap.default.css`), place it in the `css` folder and clear the cache from the back office. The new theme should then be applied.
 
-If you want to change front office theme you can, use style widget's using internal [themes](theme/theme.md) or if you want to change front office widgets content you can do the same steps just for **design/customtheme/vendor/bootstrap/css **this folder. You can alo change themes using extension.
+To change the front office theme, you can use style widgets with internal [themes](theme/theme.md). To change the front office widgets' content, follow the same steps as above, but for the `design/customtheme/vendor/bootstrap/css` folder. You can also change themes using extensions.
 
-If you have created some cool theme share it with us!
+If you have created a cool theme, please share it with us!

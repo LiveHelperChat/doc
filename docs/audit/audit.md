@@ -4,38 +4,38 @@ title: Audit
 ---
 ## Introduction
 
-Here you can see all events logged. If you are developing and log records they will be visible here.
+The audit log displays all recorded events. If you are a developer and logging records, they will be visible here.
 
 > "System configuration" => "Audit log"
 
 ![](/img/audit/audit.jpg)
 
-## Audit configuration
+## Audit Configuration
 
-From audit configuration you can choose what basic objects changes should be logged
+The audit configuration allows you to choose which basic object changes should be logged.
 
 ![](/img/audit/audit-configuration.jpg)
 
 :::tip
-For older records deletion you have to be running [workflow cronjob](../development/cronjob.md#default-cronjob-setup) 
+To delete older records, you must run the [workflow cronjob](../development/cronjob.md#default-cronjob-setup).
 :::
 
-## How to search for specific object modification/deletion?
+## How to Search for Specific Object Modifications/Deletions
 
-You can search for objects modification by searching by category
+You can search for object modifications by filtering by category:
 
-* `CannedMsg` - canned message modification
-* `CannedMsgDelete` - canned message delete event
-* `AutoResponder` - Auto Responder modify event
-* `AutoResponderDelete` - Auto Responder delete event
-* `Subject` - Subject modify event
-* `SubjectDelete` - Subject delete event
+*   `CannedMsg` - Canned message modification
+*   `CannedMsgDelete` - Canned message delete event
+*   `AutoResponder` - Auto Responder modify event
+*   `AutoResponderDelete` - Auto Responder delete event
+*   `Subject` - Subject modify event
+*   `SubjectDelete` - Subject delete event
 
-If in search you provide Object ID you can see exactly what modified object.
+If you provide an Object ID in your search, you can see exactly which object was modified.
 
-## How to log custom events from extensions?
+## How to Log Custom Events from Extensions
 
-If you are developing extension you can log something there like this
+If you are developing an extension, you can log events like this:
 
 ```php
 erLhcoreClassLog::write(print_r(array('just some data to log'),true),
@@ -52,10 +52,10 @@ erLhcoreClassLog::write(print_r(array('just some data to log'),true),
 
 ## Permissions
 
-Required permissions to see log
+Required permissions to view the audit log:
 
 > 'lhsystem','auditlog'
 
-Required permissions to configure audit log
+Required permissions to configure the audit log:
 
 > 'lhaudit','use'

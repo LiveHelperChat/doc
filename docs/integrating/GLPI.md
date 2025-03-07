@@ -1,54 +1,54 @@
 ---
 id: GLPI
-title: GLPI integration
+title: GLPI Integration
 ---
 
 ## What is GLPI?
 
-As they write `The most complete open source service management software` https://glpi-project.org/
+GLPI is described as "The most complete open source service management software" on their website: https://glpi-project.org/
 
-## Integration flow
+## Integration Flow
 
-We integrate GLPI ticket generation using. One of these
+GLPI ticket generation can be integrated using one of the following methods:
 
-* Bot command `!glpi`
-* Or it can be automatic on chat close
+*   A bot command `!glpi`
+*   Automatically on chat close
 
-No extension is needed.
+No extension is required.
 
-## Rest API setup
+## REST API Setup
 
-You can import configuration - download it [here](/img/integration/glpi-restapi.json)
+You can import the configuration file, which can be downloaded [here](/img/integration/glpi-restapi.json).
 
-After import make sure you change
+After importing, ensure you modify the following settings:
 
-* `Host` from `https://tickets.livehelperchat.com/` to yours
-* In `CreateSession` call `Params` tab login and password `<LOGIN>`, `<PASSWORD>`
-* In `CreateSession` call `Headers` Field with name `App-Token` set yours `<APP_TOKEN>`
-* In `CreateTicket` call `Headers` Field with name `App-Token` set yours `<APP_TOKEN>`
+*   **Host:** Change the host from `https://tickets.livehelperchat.com/` to your GLPI instance URL.
+*   **CreateSession Call:** In the `Params` tab, set the login and password to `<LOGIN>` and `<PASSWORD>`, respectively.
+*   **CreateSession Call:** In the `Headers`, set the `App-Token` field to your `<APP_TOKEN>`.
+*   **CreateTicket Call:** In the `Headers`, set the `App-Token` field to your `<APP_TOKEN>`.
 
-## Bot setup
+## Bot Setup
 
-You can import configuration - download it [here](/img/integration/glpi-bot.json)
+You can import the bot configuration file, which can be downloaded [here](/img/integration/glpi-bot.json).
 
-* Edit `CreateSession` trigger and make it look like screenshot below.
+*   Edit the `CreateSession` trigger to match the screenshot below.
 
 ![](/img/integration/glpi/CreateSession.png)
 
-* Edit `CreateTicket` trigger and make it look like screenshot below.
+*   Edit the `CreateTicket` trigger to match the screenshot below.
 
 ![](/img/integration/glpi/CreateTicket.png)
 
-## Bot command setup
+## Bot Command Setup
 
-Now we just need to setup bot command operators will use to create a ticket in GLPI.
+Now, set up the bot command that operators will use to create tickets in GLPI.
 
 ![](/img/integration/glpi/BotCommand.png)
 
-After that you can just type `!glpi` in the chat messages area.
+After this setup, operators can simply type `!glpi` in the chat message area to create a ticket.
 
-## Webhook setup
+## Webhook Setup
 
-If you prefer to create a ticket for all chats you can just setup a webhook on chat close.
+If you prefer to automatically create a ticket for every chat, you can set up a webhook to trigger on chat close.
 
 ![](/img/integration/glpi/webhook.png)

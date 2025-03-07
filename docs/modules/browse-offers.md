@@ -1,11 +1,16 @@
 ---
 id: browse-offers
-title: Browse offers
+title: Browse Offers
 sidebar_label: Browse offers
 ---
 
-Pending documentation...
+## Browse Offers
+
+This module allows you to browse offers. Documentation is pending.
 
 ## Permissions
 
-> 'lhbrowseoffer', 'manage_bo'
+The following permissions are required to use this module:
+
+*   `lhbrowseoffer`
+*   `manage_bo`

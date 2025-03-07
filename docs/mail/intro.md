@@ -4,27 +4,27 @@ title: Mail module introduction
 sidebar_label: Introduction
 ---
 
-Module is used by clients who have in one installation over 300 mailbox and thousands of mails imported per day.
+This module is designed for clients managing over 300 mailboxes and importing thousands of emails daily within a single installation.
 
-Don't forget to setup cronjobs just.
+Remember to set up cron jobs.
 
-## How to upgrade to mail version
+## How to Upgrade the Mail Module
 
-As this module is a standard Live Helper Chat module just use default [upgrade workflow](upgrading.md)
+As this module is a standard Live Helper Chat module, use the default [upgrade workflow](upgrading.md).
 
-## Do I have to user mail module in order to use chat module?
+## Is the Mail Module Required to Use the Chat Module?
 
-No
+No.
 
-## What is a general flow of mail tickets?
+## What is the General Workflow for Mail Tickets?
 
-See [sample of setup](mail/sample-mailbox.md)
+See the [setup sample](mail/sample-mailbox.md).
 
-* Once new mail arrives, it arrives as New
-* Open Reply ticket becomes Closed
-* If new mail arrives, ticket is reopened. To create a new ticket or reopen old is controlled by `Timeout in days after last response before we create a new issue` from mailbox `Options` section.
-* In dashboard, you can choose what widgets you want to see. There are these new widgets.
-  * My active and new mails
-  * Active mails
-  * New mails
-  * Mail queue alarm
+*   When a new email arrives, its status is set to "New."
+*   When an open reply ticket is created, the status becomes "Closed."
+*   If a new email arrives, the ticket is reopened. Whether a new ticket is created or an old one is reopened is determined by the "Timeout in days after last response before we create a new issue" setting in the mailbox "Options" section.
+*   In the dashboard, you can select which widgets to display. The new widgets include:
+    *   My active and new emails
+    *   Active emails
+    *   New emails
+    *   Mail queue alarm

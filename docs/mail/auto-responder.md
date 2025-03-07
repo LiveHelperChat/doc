@@ -4,30 +4,30 @@ title: Mail auto responder
 sidebar_label: Mail auto responder
 ---
 
-This setup allows to send an e-mail on new mail arrival.
+This setup allows you to send an automatic email upon the arrival of a new email.
 
-Here are the steps to setup it
+Here are the steps to set it up:
 
-## Setup bot which will send an e-mail
+## Set up a bot to send the email
 
-Create a bot and a trigger named `New conversation Help/Support`
+Create a bot and a trigger named `New conversation Help/Support` with the following settings:
 
- * Subject - `Re: {args.chat.subject}`
- * From name - `{args.conversation.mailbox.name}` just use mailbox name.
- * From e-mail - `{args.conversation.mailbox.mail}` we want to use mailbox e-mail.
- * Reply to - `{args.conversation.mailbox.mail}` we want to use mailbox e-mail.
- * Recipient - `{args.conversation.from_address}` recipient will be the one who e-mail us.
- * `Create a copy in a send folder` - if you mail server does not create an e-mail copy automatically check this option.
+*   **Subject:** `Re: {args.chat.subject}`
+*   **From name:** `{args.conversation.mailbox.name}` (This will use the mailbox name.)
+*   **From email:** `{args.conversation.mailbox.mail}` (This will use the mailbox email.)
+*   **Reply to:** `{args.conversation.mailbox.mail}` (This will use the mailbox email.)
+*   **Recipient:** `{args.conversation.from_address}` (The recipient will be the person who emailed us.)
+*   **Create a copy in a send folder:** If your mail server does not automatically create an email copy, check this option.
 
-Mail body sample. Pay attention we have here `{brand}` variable which is variable replaced based on department and is setup in [Replaceable variables](replaceable-variables.md) section.
+Here's a sample email body. Note the `{brand}` variable, which is replaced based on the department and configured in the [Replaceable variables](replaceable-variables.md) section.
 
 ```
 Hi {args.conversation.from_name},
 
-Thank you for reaching out to {brand}.
-We have received your email and will be assigning it to one of our support representatives.
+Thank you for contacting {brand}.
+We have received your email and will assign it to one of our support representatives.
 
-Due to the high volume of incoming email traffic to our site, replies can take up to 24 business hours.
+Due to the high volume of emails we receive, replies may take up to 24 business hours.
 
 Your case number is {args.chat.conversation_id} for future reference.
 
@@ -37,30 +37,32 @@ Sincerely,
 Email: {args.conversation.mailbox.mail}
 ```
 
-Sample configuration screenshot
+Sample configuration screenshot:
 
 ![](/img/mail/trigger-auto-reply.png)
 
-## Setup webhook event for new e-mail conversation
+## Set up a webhook event for new email conversations
 
-1. Create a new `Webhook` with event listening to `mail.conversation_started`
-2. Do not enter any conditions if you do not want.
-3. Choose bot and trigger which will send an e-mail.
+1.  Create a new `Webhook` that listens for the `mail.conversation_started` event.
+2.  If you don't want any conditions, leave them blank.
+3.  Choose the bot and trigger that will send the email.
 
-Sample configuration. In this configuration we additionally
+Sample configuration:
 
-* Check that mailbox name would start with `help*, support*, vip*` one of those prefixes
-* Mail department is not `355`.
+In this configuration, we also:
 
-You can remove those conditions.
+*   Check that the mailbox name starts with `help*`, `support*`, or `vip*`.
+*   Ensure the mail department is not `355`.
+
+You can remove these conditions if desired.
 
 ![](/img/mail/auto-responder.png)
 
-## How to have different auto-responder for different departments
+## How to configure different auto-responders for different departments
 
-Few ways
+Here are a few methods:
 
- * In webhook conditions as per sample have `{args.chat.dep_id} = 1` as your condition and have different trigger for each of them.
- * Use [Replaceable variables](replaceable-variables.md) in your trigger body. Preferred way
- * In bot trigger have `Check for conditions to proceed` and have there condition `{args.chat.dep_id} = 1` and have different trigger for each of them.
+*   In the webhook conditions (as shown in the sample), use `{args.chat.dep_id} = 1` as a condition and create a different trigger for each department.
+*   Use [Replaceable variables](replaceable-variables.md) in your trigger body. (This is the preferred method.)
+*   In the bot trigger, use `Check for conditions to proceed` and set the condition to `{args.chat.dep_id} = 1`, then create a different trigger for each department.
 

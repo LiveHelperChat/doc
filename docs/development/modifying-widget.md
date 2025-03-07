@@ -1,75 +1,75 @@
 ---
 id: modifying-widget
-title: Best way to change widget style
+title: Modifying Widget Style
 sidebar_label: Modifying widget
 ---
 
 ## Introduction
 
-In this tutorial I'll try to explain how to modify new widget. For old widget you can refer to [this article](../debug.md#chrome)
+This tutorial explains how to modify the new widget. For the old widget, refer to [this article](../debug.md#chrome).
 
-Recommended way to change the look is directly from [themes](../theme/theme.md#custom-css) custom css section. You can change there independently widget content style and status icon style.
+The recommended way to change the appearance is directly through the custom CSS section in [themes](../theme/theme.md#custom-css). There, you can independently modify the widget's content style and the status icon style.
 
-New widget CSS files are located at
+The new widget's CSS files are located in:
 
 > design/defaulttheme/css/widgetv2
 
-There is special CSS files dedicated to CSS overriding.
+There are specific CSS files for overriding styles:
 
-* `design/defaulttheme/css/widgetv2/embed_override.css` if widget is embeded in page use this file to override it's style.
-* `design/defaulttheme/css/widgetv2/status_override.css` use this file to override status widget content style.
-* `design/defaulttheme/css/widgetv2/widget_override.css` use this file to override main widget content
-* `design/defaulttheme/css/widgetv2/widget_override_rtl.css` use this file to override RTL widget style.
-* `design/defaulttheme/css/widgetv2/widget_mobile_override.css` use this file to override widget while chat is happening on mobile device. `widget_override.css` this file still will be used.
-* `css/widgetv2/widget_popup_override.css` use this file to override popup layout
-* `css/widgetv2/widget_mobile_popup_override.css` use this style to override popup mobile layout
+*   `design/defaulttheme/css/widgetv2/embed_override.css`: Use this file to override the style of the widget when it is embedded in a page.
+*   `design/defaulttheme/css/widgetv2/status_override.css`: Use this file to override the style of the status widget content.
+*   `design/defaulttheme/css/widgetv2/widget_override.css`: Use this file to override the main widget content style.
+*   `design/defaulttheme/css/widgetv2/widget_override_rtl.css`: Use this file to override the style of the widget for right-to-left (RTL) languages.
+*   `design/defaulttheme/css/widgetv2/widget_mobile_override.css`: Use this file to override the widget's style when the chat is happening on a mobile device. The `widget_override.css` file will still be applied.
+*   `css/widgetv2/widget_popup_override.css`: Use this file to override the popup layout style.
+*   `css/widgetv2/widget_mobile_popup_override.css`: Use this file to override the popup layout style on mobile devices.
 
-## How to use CSS file dedicated to override?
+## How to Use CSS Files for Overriding
 
-See this sample extension.
+Refer to this sample extension:
 
 https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridecss
 
-Put it as 
+Place it in the following directory:
 
 > extension/overridecss
 
-Activate in `settings/settings.ini.php` file 
+Activate it in the `settings/settings.ini.php` file:
 
 ```php
 'extensions' => array ('overridecss'),
 ```
 
-## Where is source code for a new widget?
+## Where is the Source Code for the New Widget?
 
-There is two apps [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app)
+There are two applications: a [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and a [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app).
 
-Wrapper is responsible for rendering sourceless iframes in page itself.
+The wrapper is responsible for rendering sourceless iframes within the page.
 
-To compile wrapper
+To compile the wrapper, run:
 
 ```shell script
 cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build
 ```
 
-Widget is responsible for the chat logic itself.
+The widget is responsible for the chat logic.
 
-To compile widget itself
+To compile the widget, run:
 
 ```shell script
 cd lhc_web/design/defaulttheme/widget/react-app && npm install && npm run build && npm run build-ie
 ```
 
-## How to make status icon smaller based on user resolution?
+## How to Make the Status Icon Smaller Based on User Resolution
 
-You can use this approach also to edit placement of the status icon. In this particular case will make chat status icon smaller on small resolution devices.
+You can also use this approach to adjust the placement of the status icon. In this specific case, we will make the chat status icon smaller on devices with small resolutions.
 
-In theme `Custom CSS` tab `Status widget additional CSS, takes effect after save paste` section paste this
+In the theme, under the `Custom CSS` tab, in the `Status widget additional CSS, takes effect after save paste` section, paste the following:
 
 ```css
-/* This adjust icon size itself. If you want just to adjust position of the icon. You can ignore these rules. */
+/* This adjusts the icon size itself. If you only want to adjust the position of the icon, you can ignore these rules. */
 @media only screen and (max-device-width: 1366px){
-    #lhc_status_container { 
+    #lhc_status_container {
         bottom:3px!important;
         right:3px!important;
         padding-left:3px!important;
@@ -82,15 +82,15 @@ In theme `Custom CSS` tab `Status widget additional CSS, takes effect after save
 }
 ```
 
-In theme `Custom page CSS (new widget only)` section paste. This adjusts size of the icon itself.
+In the theme, under the `Custom page CSS (new widget only)` section, paste the following. This adjusts the size of the icon itself.
 
 ```css
 @media only screen and (max-device-width: 1366px) {
-    #lhc_container_v2 #lhc_status_widget_v2{ 
-        bottom:0px!important;   /* Adjust position from bottom */ 
+    #lhc_container_v2 #lhc_status_widget_v2{
+        bottom:0px!important;   /* Adjust position from bottom */
         right:0px!important;    /* Adjust position from right */
-        
-        /* Adjust dimensions themself to make smaller container to match new icon size */
+
+        /* Adjust dimensions themselves to make a smaller container to match the new icon size */
         min-height: 65px!important;
         min-width: 65px!important;
         max-height: 65px!important;
@@ -101,14 +101,14 @@ In theme `Custom page CSS (new widget only)` section paste. This adjusts size of
 }
 ```
 
-## How two write extension for a new widget?
+## How to Write an Extension for the New Widget
 
-This approach does not toucing kernel at all. Very good sample is just to take a look at https://github.com/LiveHelperChat/cbscheduler extension. 
+This approach does not involve touching the kernel at all. A very good example is the https://github.com/LiveHelperChat/cbscheduler extension.
 
-Main things to look at are
+The main things to consider are:
 
-* How you trigger modal window to show.
-* You register a script to load https://github.com/LiveHelperChat/cbscheduler/blob/master/bootstrap/bootstrap.php#L56
-* You write a script https://github.com/LiveHelperChat/cbscheduler/blob/master/design/cbschedulertheme/js/cbscheduler.widget.js
+*   How you trigger the modal window to appear.
+*   You register a script to load: https://github.com/LiveHelperChat/cbscheduler/blob/master/bootstrap/bootstrap.php#L56
+*   You write a script: https://github.com/LiveHelperChat/cbscheduler/blob/master/design/cbschedulertheme/js/cbscheduler.widget.js
 
 That's it.

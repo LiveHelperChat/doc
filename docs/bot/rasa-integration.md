@@ -4,47 +4,47 @@ sidebar_label: Rasa integration (chatbot)
 title: Integrating Rasa into Live Helper Chat (chatbot)
 ---
 
-Rasa is just AI bot which does all the hard work. Integration once you have `Rasa` running is dead simple.
+Rasa is an AI bot that handles the core AI processing. Integrating Rasa is straightforward once you have it running.
 
-We will need few things
+You will need the following:
 
-* Running Rasa service. https://rasa.com/docs/rasa/installation
-* Rest API configuration in Live Helper Chat
-* Bot configuration in LHC
+*   A running Rasa service. See the [Rasa installation guide](https://rasa.com/docs/rasa/installation).
+*   A configured REST API in Live Helper Chat.
+*   A bot configured in LHC.
 
 ## Running Rasa
 
-I assume you know how to run Rasa. Refer https://rasa.com/docs/rasa/installation/ documentation.
+This guide assumes you have some familiarity with Rasa. Refer to the [Rasa documentation](https://rasa.com/docs/rasa/installation/) for comprehensive instructions.
 
-Here is a quick version how to run Rasa
+Here's a quickstart to get Rasa running:
 
 ```shell script
 mkdir rasa
 cd rasa
 
-# Change to your python version
+# Adapt to your Python version
 python3.6m -m venv ./venv
 source ./venv/bin/activate
 pip3 install -U pip
 pip3 install rasa
 
-# Optional, if you get some errors you can try this
+# (Optional) Try this if you encounter errors
 pip3 --use-feature=2020-resolver install rasa
 
 mkdir bot
 cd ./bot
 
-# Choose yes to train initial model
+# Select 'yes' to train the initial model
 rasa init
 
-# To try out bot run
+# Test the bot
 rasa shell
 
-# To run rasa Rest API service
+# Start the Rasa REST API service
 rasa run
 ```
 
-You can try out Rasa rest API using `curl` commands
+You can test the Rasa REST API using `curl` commands:
 
 ```shell script
 curl -i http://localhost:5005
@@ -53,50 +53,48 @@ curl --request POST   --url http://localhost:5005/webhooks/rest/webhook   --head
   "message": "Hello"
 }'
 
-# Response
+# Expected response:
 [{"recipient_id":"default","text":"Hey! How are you?"}]
 ```
 
-## Configuring Rest API in Live Helper Chat
+## Configuring the REST API in Live Helper Chat
 
-Create a new `Rest API` by navigating to
+To create a new REST API, navigate to:
 
 > System configuration > Live help configuration > Rest API Calls
 
-Just create a `new`. Configuration looks like this
-
-We set body request as JSON and set content.
+Create a new entry. The configuration should resemble the following, ensuring the request body is set to JSON with the appropriate content.
 
 ![](/img/bot/rasa-1.png)
 
-We also set `Outpout parsing`
+Configure the `Output parsing` as shown below.
 
 ![](/img/bot/rasa-2.png)
 
-Now just save. 
+Save the configuration.
 
-## Bot configuration in Live Helper Chat
+## Bot Configuration in Live Helper Chat
 
-For bot configuration we only need three triggers
+For the bot configuration, you'll need three triggers:
 
-* `Default` it has checked `Default`, `Default for unknown message`
-* `Message received` just message text with content `{content_1}`
-* `Unknown` - this message we will send if `Rasa` did not returned anything.
+*   `Default`: This trigger should have both `Default` and `Default for unknown message` checked.
+*   `Message received`: This trigger's message text should contain `{content_1}`.
+*   `Unknown`: This trigger will send a message if Rasa doesn't return anything.
 
-`Default` trigger configuration
+Here's the `Default` trigger configuration:
 
 ![](/img/bot/rasa-bot-1.png)
 
-Message received configuration
+Here's the `Message received` configuration:
 
 ![](/img/bot/rasa-message-received.png)
 
-Unknown message configuration
+Here's the `Unknown` message configuration:
 
 ![](/img/bot/rasa-unknown.png)
 
-Conversation example
+Conversation example:
 
 ![](/img/bot/rasa-conv.png)
 
-**Don't forget to set your bot as default department bot.**
+**Important: Remember to set your bot as the default bot for the desired department.**

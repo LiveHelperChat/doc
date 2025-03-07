@@ -4,93 +4,100 @@ title: How to block visitors from starting a chat
 sidebar_label: Blocking
 ---
 
-## Block users directly from chat
+## Block Users Directly from Chat
 
-You can do this by clicking block icon ![](/img/chat/block-user.jpg)
+You can block users directly from the chat interface by clicking the block icon ![](/img/chat/block-user.jpg).
 
-You can see all blocked IP's in blocked visitors list.
+A list of all blocked IP addresses can be found in the blocked visitors list.
 
 > System configuration -> Live help configuration -> Blocked users
 
 ### Permissions
 
-For operator to be able to block he has to have this permission.
+To block users, an operator must have the following permission:
 
 > 'lhchat','allowblockusers'
 
-## Block users based on their location
+## Block Users Based on Their Location
 
-We have an option to block certain users by their country. This functionality can be found at 
+You can block users based on their country. This feature is located at:
 
- > "System configuration" => "Live help configuration" => "GEO adjustment"  
+> "System configuration" => "Live help configuration" => "GEO adjustment"
 
-Screenshot of main window
+Screenshot of the main window:
 
 ![](https://livehelperchat.com/var/media/images/geo-adjustment.png)
 
-### For this module to work geo detection have to be configured.
+### Configuration
 
-Variables explain
+For this module to function correctly, GEO detection must be configured.
 
-*   Offline status - that means for these visitors chat will be offline all the time.
-*   hidden/disabled - that means if user tries to start a chat he will see message that chat is not supported in his country. For him also pro active invitations won't be shown. He also won't be able to chat.
-*   "Apply to chat widget status indicator these rules also? performance decrease is associated with this option" that means that this logic will be applied to initial stage and chat status widget generating phrase and widget initially will be shown as offline or hidden. Otherwise check will be applied on widget content only if user clicks it. There is a little performance penalty involved becaue within each reques script have to check visitor location.
+The variables are explained below:
 
+*   **Offline status:** Chat will always appear offline to visitors from the selected countries.
+*   **Hidden/disabled:** If a user tries to start a chat, they will see a message indicating that chat is not supported in their country. Proactive invitations will also be disabled, and they will be unable to initiate a chat.
+*   **Apply to chat widget status indicator these rules also? performance decrease is associated with this option:** Applying these rules to the chat widget status indicator will reflect the status (offline or hidden) from the initial stage. If disabled, the check will only be applied when the user interacts with the widget. Note that enabling this option may slightly decrease performance because the script must check the visitor's location on each request.
 
 ### Permissions
 
-For operator to be able configuration GEO Adjustments he has to have permission to
+To configure GEO Adjustments, an operator must have the following permission:
 
 > 'chat', 'geoadjustment'
 
-### Few examples
+### Examples
 
-#### You want to allow chat only from Lithuania and Great Britain and show offline for all other visitors? So configuration regarding this case would look like
+#### Allow chat only from Lithuania and Great Britain, and show offline status for all other visitors
+
+The configuration for this scenario would be:
 
 ![](https://livehelperchat.com/var/media/images/example-geo-1.png)
 
-#### You want to to block all chat request from Lithuania and for all other countries show as usual?
+#### Block all chat requests from Lithuania, and show the usual status for all other countries
+
+The configuration for this scenario would be:
 
 ![](https://livehelperchat.com/var/media/images/example-geo-2.png)
 
-#### You want to show normal status for Frech and show offline for Germany and for all other countries just hide?
+#### Show normal status for France, offline status for Germany, and hide the chat for all other countries
+
+The configuration for this scenario would be:
 
 ![](https://livehelperchat.com/var/media/images/example-geo-3.png)
 
-## How to block users from starting a chat?
+## Block Users by IP Address
 
-For that navigate to
-
-> "Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
-
-and just edit "Which ip should not be allowed to chat"
-
-Possible values
-
-*   Wildcard format:     1.2.3.*
-*   CIDR format:         1.2.3/24  OR  1.2.3.4/255.255.255.0
-*   Start-End IP format: 1.2.3.0-1.2.3.255
-
-Values can be separated by comma, E.g 1.2.3.*,128.8.8.8
-
-## How to block users from appearing on online users list?
-
-For that navigate to 
+To block users from starting a chat based on their IP address, navigate to:
 
 > "Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
 
-and just edit "Which ip should be ignored in online users list, separate by comma"
+Edit the "Which IP should not be allowed to chat" field.
 
-Possible values
+Possible values:
 
-*   Wildcard format:     1.2.3.*
-*   CIDR format:         1.2.3/24  OR  1.2.3.4/255.255.255.0
-*   Start-End IP format: 1.2.3.0-1.2.3.255
+*   Wildcard format: `1.2.3.*`
+*   CIDR format: `1.2.3/24` OR `1.2.3.4/255.255.255.0`
+*   Start-End IP format: `1.2.3.0-1.2.3.255`
 
-Values can be separated by comma, E.g 1.2.3.*,128.8.8.8
+Separate multiple values with commas (e.g., `1.2.3.*,128.8.8.8`).
 
-## Live Helper Chat does not detect IP?
+## Ignore IPs in Online Users List
 
-If you are running under load balancer or any other proxy server. You have to change `settings.ini.php` `proxy_mode` to `true`.
+To prevent users from appearing on the online users list based on their IP address, navigate to:
 
-https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L18
+> "Configuration" -> "Live help configuration" -> "Chat configuration" -> "Online tracking"
+
+Edit the "Which IP should be ignored in online users list, separate by comma" field.
+
+Possible values:
+
+*   Wildcard format: `1.2.3.*`
+*   CIDR format: `1.2.3/24` OR `1.2.3.4/255.255.255.0`
+*   Start-End IP format: `1.2.3.0-1.2.3.255`
+
+Separate multiple values with commas (e.g., `1.2.3.*,128.8.8.8`).
+
+## IP Detection Issues
+
+If Live Helper Chat fails to detect IP addresses correctly, especially when running behind a load balancer or proxy server, change the `proxy_mode` setting in `settings.ini.php` to `true`.
+
+[https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L18](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L18)

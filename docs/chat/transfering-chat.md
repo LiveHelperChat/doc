@@ -1,10 +1,10 @@
 ---
 id: transferring-chat
-title: Transferring chat to another department/operator
+title: Transferring a Chat
 sidebar_label: Transferring chat
 ---
 
-This article explains how transferring chat to another user/department works and what permissions are involved.
+This article explains how to transfer a chat to another user or department, and the permissions required.
 
 ![](/img/chat/chat-transfer.png)
 
@@ -12,140 +12,140 @@ Transfer init icon
 
 ![](/img/chat/transfer-icon.jpg)
 
-## Transfer to a user
+## Transferring to a User
 
-For operator to be able to transfer chat to another department/operator first he has to have
+To transfer a chat to another operator, the operator must first have the following permission:
 
 > 'lhchat', 'allowtransfer'
 
-If you want that operator would be able to transfer to any online operator. Operator has to have this permission. Otherwise, he would see online operators only from departments he is member of.
+To allow an operator to transfer a chat to *any* online operator, they must have this permission. Otherwise, they will only see online operators from the departments they are a member of.
 
 > 'lhchat', 'allowtransfertoanyuser'
 
-This permission can have limitation like. It defines `user groups`, he can transfer chat to.
+This permission can be limited to specific user groups, defined as follows:
 
 ```json
 {"group":[1,2,3,9,10]}
 ```
 
 :::tip
-We always apply online timeout filter. 
+The system always applies an online timeout filter, which can be configured in:
 > System configuration > Synchronization and sound settings > How many seconds for a user to be considered as being online
 :::
 
 ### Notifications for operator whom chat was transferred
 
-If `Automatically accept assigned chats` *is checked* for chat recipient operator
+If `Automatically accept assigned chats` is enabled for the receiving operator:
 
-* If operator is on dashboard or chat list where tabs are present chat will load automatically for them.
-* If operator is on page where tabs are not available popup will be automatically shown. They have to be sure popups are not blocked. Top right corner indicates that popup was blocked. That way they could miss chat completely.
+*   If the operator is on the dashboard or chat list where tabs are present, the chat will load automatically.
+*   If the operator is on a page where tabs are not available, a popup will be shown. The operator must ensure that popups are not blocked, as indicated in the top right corner. Otherwise, they might miss the chat.
 
-If `Automatically accept assigned chats` *is NOT checked* for chat recipient operator
+If `Automatically accept assigned chats` is disabled for the receiving operator:
 
-* Alert is shown on the dashboard.
-* Alert is shown in any other page also.
+*   An alert is shown on the dashboard.
+*   An alert is shown on any other page as well.
 
-If operator is in inactive mode, because of inactivity, he won't receive transfer notification, but will receive one as soon he goes online.
+If the operator is in inactive mode due to inactivity, they will not receive the transfer notification until they go back online.
 
-## Transfer to a department
+## Transferring to a Department
 
-For operator to be able to transfer chat to another department/operator first he has to have
+To transfer a chat to another department, the operator must first have the following permission:
 
 > 'lhchat', 'allowtransfer'
 
-Operator sees only his departments and departments groups if he does not have permission
+An operator will only see their own departments and department groups unless they have the following permission:
 
 > 'lhdepartment', 'see_all'
 
-This permission can have limitation like. It defines `departments` and `departments groups`
+This permission can be limited to specific departments and department groups, defined as follows:
 
 ```json
 {"group":[1,2,3,9,10],"department":[45,46]}
 ```
 
-## Changing chat owner
+## Changing Chat Owner
 
-It's also from this modal window possible to change chat owner directly. For that operator has to have this permission.
+It is also possible to change the chat owner directly from this modal window. To do so, the operator must have the following permission:
 
- > 'lhchat','changeowner'
+> 'lhchat','changeowner'
 
-Operator can see all system operators there. It's not influenced by any restrictions.
+The operator can see all system operators without any restrictions.
 
-## Change department
+## Changing Department
 
-For operator to be able to change department directly. He has to have this permission.
+To change the department directly, the operator must have this permission:
 
 > 'lhchat','changedepartment'
 
-By default, operator can change department only to departments he is member of `Read Only` and `As Operator`
+By default, an operator can only change the department to departments they are a member of with either `Read Only` or `As Operator` permissions.
 
 > 'lhchat','allowtransfertoanydep'
 
-## For operator to be able to see all departments.
+## Allowing an operator to see all departments
 
-There is two ways either you have to give him permission
+There are two ways to achieve this: either grant the operator the following permission:
 
 > 'lhdepartment', 'see_all'
 
-or assign him read only departments.
+or assign them to read-only departments.
 
-## Transferring by command
+## Transferring by Command
 
-It's also possible to transfer chat directly by issuing command in message area. Transfer chat directly to another operator by operator username or e-mail
+It is also possible to transfer a chat directly using a command in the message area. To transfer a chat directly to another operator by username or email, use the following command:
 
 ```
 !transferforce <operator username||operator email>
 ```
 
-Operator has to have this permission.
+The operator must have the following permission:
 
 > 'lhchat', 'allowtransferdirectly'
 
 
 ## Transfer options by transferring chat to department
 
-There is also few options which can be applied during chat transfer event.
+There are also a few options that can be applied during a chat transfer event.
 
 ![](/img/chat/transfer-options.jpg)
 
-### Change chat department to transferred department on chat transfer
+### Change chat department to the transferred department upon chat transfer
 
-When chat is transfered to other department we do not change chat original department. If you want that department would be changed to transferred department you can enable this option.
+When a chat is transferred to another department, the original chat department is not changed by default. To change the department to the transferred department, enable this option.
 
-### Make chat status pending on transfer to department
+### Make chat status pending upon transfer to department
 
-When transfer happens we do not change chat status. It remains active. If you want that it's status would be reset to pending again you can check this option.
+When a transfer occurs, the chat status remains active by default. To reset the status to pending, enable this option.
 
-### Make chat unassigned. Assigned operator will be unassigned
+### Make chat unassigned; the assigned operator will be unassigned
 
-When transfer happens we keep original user until other operator accepts a chat. In case you want reset and assigned operator you can check this option.
+When a transfer occurs, the original user remains assigned until another operator accepts the chat. To reset and unassign the operator, enable this option.
 
 ## Permissions
 
-For operator to be able to edit these options he has to have this permission.
+To edit these options, the operator must have the following permission:
 
 > 'system', 'transferconfiguration'
 
-:::tip 
-If you do not want to allow operator to do anything with Transferring/changing owners just do not give them `'lhchat', 'allowtransfer'` permission.
+:::tip
+To prevent an operator from transferring or changing chat owners, do not grant them the `'lhchat', 'allowtransfer'` permission.
 :::
 
-## My operator sees only to him assigned departments and only his departments operators?
+## My operator only sees the departments and operators assigned to them. Why?
 
-There was a change recently what departments online operators can see without being assigned directly to them.
+A recent change affects which departments online operators can see without being directly assigned to them.
 
-For operator to be able to see all departments, not only assigned to him you have two ways
+To allow an operator to see all departments, not just those assigned to them, you can either:
 
-Either you assign him  
- > 'lhdepartment', 'see_all'
+Grant them the following permission:
+> 'lhdepartment', 'see_all'
 
-Or assign him other departments in `read only` mode.
+Or assign them to other departments in `read only` mode.
 
-To be able to see all online operators (from other groups he does not belong to) there is also two options
+To allow an operator to see all online operators (from other groups they do not belong to), there are also two options:
 
-Either you assign him
+Grant them the following permission:
 > 'lhuser', 'see_all'
 
-Or you modify user group and assign with what user groups user can work with.
+Or modify the user group and assign the user groups the user can work with.
 
-Having these two permission will result same behaviour as before.
+Having these two permissions will result in the same behavior as before.

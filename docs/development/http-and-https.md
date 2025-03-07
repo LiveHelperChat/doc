@@ -1,38 +1,42 @@
 ---
 id: http-and-https
-title: How to configure HTTPS and HTTP? Configuration if site has subdomains.
+title: Configuring HTTPS and HTTP for Your Site
 sidebar_label: HTTPS and HTTP
 ---
 
-Few things there is important. Possible scenario bellow
+Here are a few important points regarding HTTPS and HTTP configuration. Below are possible scenarios:
 
-## Applies to one domain/multiple domains if they internaly do not switch protocol from http to https
+## Scenarios for Sites That Do Not Switch Between HTTP and HTTPS Internally
 
-1.  **My site and chat is using http all the time, what should i change?**
-    1.  Completely nothing
-2.  **My site and chat is using https all the time, what should i change?**
-    1.  Completely nothing
-    2.  I recommend to check - "Use secure cookie, check this if you want to force SSL all the time"
-3.  **Some parts of my site is using https and some http what should i change also subdomain changes for checkout page? (changing subdomains case)**
-    1.  During embed code generation choose https mode
-    2.  In chat configuration enter "Chat configuration" => "Misc" in field "Please enter explicit http mode. Either http: or https:, do not forget : at the end." enter **https:**
-    3.  Enter your root domain in "Chat configuration" => "Misc" -> "Set your domain to enable user tracking across different domain subdomains." (E.g example.com)
-    4.  **Un**check if checked - "Use secure cookie, check this if you want to force SSL all the time"
-4.  **Chat is running on https mode and does not support http, but site is running on http what should i Change for chat to load all data using https all the time? (same domain all the time)**
-    1.  During embed code generation choose https mode
-    2.  In chat configuration enter "Chat configuration" => "Misc" in field "Please enter explicit http mode. Either http: or https:, do not forget : at the end." enter **https:**
-    3.  **Un**check if checked - "Use secure cookie, check this if you want to force SSL all the time"
-5.  ​**My site is running https but my chat is running on http and it fails to load data because it looks for https what should i change?**
-    1.  Browser does not allow loading scripts in http protocol if site is running on https please make sure that script is accesable through https
-6.  **My site has subdomains and chat session is lost during user navigation across subdomains, what should i do?**
-    1.  **​**Follow basic tips from question (3)
-    2.  Enter your domain in "Chat configuration" => "Misc" -> "Set your domain to enable user tracking across different domain subdomains."
+These scenarios apply to single or multiple domains that consistently use either HTTP or HTTPS.
 
-## Applies to one domain/multiple domains if they internaly do switch between http to https
+1.  **My site and chat are always using HTTP. What should I change?**
+    1.  No changes are required.
+2.  **My site and chat are always using HTTPS. What should I change?**
+    1.  No changes are required.
+    2.  It is recommended to check "Use secure cookie" if you want to force SSL all the time.
+3.  **Some parts of my site use HTTPS, and some use HTTP. What should I change if subdomain changes occur, such as for a checkout page (changing subdomains case)?**
+    1.  During embed code generation, choose HTTPS mode.
+    2.  In the chat configuration, navigate to "Chat configuration" => "Misc." In the field "Please enter explicit http mode. Either http: or https:, do not forget : at the end," enter **https:**.
+    3.  Enter your root domain in "Chat configuration" => "Misc" -> "Set your domain to enable user tracking across different domain subdomains" (e.g., example.com).
+    4.  **Uncheck** "Use secure cookie" if it is currently checked.
+4.  **The chat is running in HTTPS mode and does not support HTTP, but the site is running in HTTP. What should I change to load all chat data using HTTPS? (Same domain all the time)**
+    1.  During embed code generation, choose HTTPS mode.
+    2.  In the chat configuration, navigate to "Chat configuration" => "Misc." In the field "Please enter explicit http mode. Either http: or https:, do not forget : at the end," enter **https:**.
+    3.  **Uncheck** "Use secure cookie" if it is currently checked.
+5.  **My site is running HTTPS, but my chat is running on HTTP, and it fails to load data because it's looking for HTTPS. What should I change?**
+    1.  Browsers do not allow loading scripts via HTTP if the site is running on HTTPS. Ensure that the script is accessible via HTTPS.
+6.  **My site has subdomains, and the chat session is lost during user navigation across subdomains. What should I do?**
+    1.  Follow the basic tips from question (3).
+    2.  Enter your domain in "Chat configuration" => "Misc" -> "Set your domain to enable user tracking across different domain subdomains."
 
-1.  **I'm using LHC for different domains and some of domains has https some don't what should I change?**
-    1.  ​During embed code generation choose https mode
-    2.  In chat configuration enter "Chat configuration" => "Misc" in field "Please enter explicit http mode. Either http: or https:, do not forget : at the end." enter **https:**
-    3.  In chat configuration enter "Chat configuration" => "Misc" check "Disable HMTL5 storage, check it if your site is switching between http and https"
+## Scenarios for Sites That Switch Between HTTP and HTTPS Internally
 
-​​By default for 90% of cases you have to change nothing to get it work. These tips are usefull only for special cases
+These scenarios apply to single or multiple domains that switch between HTTP and HTTPS.
+
+1.  **I'm using LHC for different domains, and some of the domains use HTTPS while others don't. What should I change?**
+    1.  During embed code generation, choose HTTPS mode.
+    2.  In the chat configuration, navigate to "Chat configuration" => "Misc." In the field "Please enter explicit http mode. Either http: or https:, do not forget : at the end," enter **https:**.
+    3.  In the chat configuration, navigate to "Chat configuration" => "Misc." Check "Disable HMTL5 storage" if your site switches between HTTP and HTTPS.
+
+In 90% of cases, no changes are required by default. These tips are useful only for special cases.

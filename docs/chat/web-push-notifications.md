@@ -4,42 +4,46 @@ title: Web push notifications
 sidebar_label: Web push notifications
 ---
 
-In this tutorial I'll explain how to setup Web Pus notifications. Web push notifications does not work on iOS mobile devices, but they do work on google chrome, firefox, android phones and most of desktop PC.
+This tutorial explains how to set up Web Push notifications. Web push notifications do not work on iOS mobile devices, but they do work on Google Chrome, Firefox, Android phones, and most desktop PCs.
 
 ## Requirements
 
- * Site has to be using HTTPS.
- * Install composer dependencies. Web Push notifications requires composer to be executed after Live Helper Chat is installed. 7.x PHP version is required.
+*   Your site must use HTTPS.
+*   Install Composer dependencies. Web Push notifications require Composer to be executed after Live Helper Chat is installed. PHP version 7.x or higher is required.
 
-> ./composer.phar update
+    ```bash
+    ./composer.phar update
+    ```
 
 ## Configuration
 
-* Then you have to generate your private and public keys. https://web-push-codelab.glitch.me
-* Enter this information in notifications settings window.
-* Also fill other required fields in notifications settings window.
-* If you are using themes, notifications can be enabled/disabled per theme. By default it's disabled.
-* Next you have to download Service Worker file and place it in your domain root folder. `https://example.com/sw.lhc.js`
-* If you have done all correctly you should see now bell icon next to upvote/downvote icons.
+*   Generate your private and public keys. You can use this tool: [https://web-push-codelab.glitch.me](https://web-push-codelab.glitch.me)
+*   Enter this information in the notification settings window.
+*   Fill in the other required fields in the notification settings window.
+*   If you are using themes, notifications can be enabled or disabled per theme. By default, they are disabled.
+*   Download the Service Worker file and place it in your domain's root folder. For example: `https://example.com/sw.lhc.js`
+*   If you have done everything correctly, you should now see a bell icon next to the upvote/downvote icons.
 
-​![](https://livehelperchat.com/var/media/images/notifications(1).png) 
+    ​![](https://livehelperchat.com/var/media/images/notifications(1).png)
 
-* Next after you started chat and visitor clicks notifications icon. You should see a record in back office. This workflow works only if chat is embeded in widget or page embed mode, but not popup. (Will be done in the future)
+*   After you start a chat and a visitor clicks the notifications icon, you should see a record in the back office. This workflow only works if the chat is embedded in widget or page embed mode, not in popup mode. (Popup mode support will be added in the future.)
 
 ## How to test?
 
-Go to notifications subscribers list and click `Edit`. There you will find `Test notification` tab - click on it and enter chat id against which you want to test.
+Go to the notifications subscribers list and click `Edit`. There, you will find a `Test notification` tab. Click on it and enter the chat ID you want to use for testing.
 
-## When message is send to visitor?
+## When are messages sent to visitors?
 
-For messages about unread messages from operator to visitor is send using cronjob. Which command is like this
+Messages about unread messages from an operator to a visitor are sent using a cron job. The command for this is:
 
-> php cron.php -s site_admin -c cron/notifications
+```bash
+php cron.php -s site_admin -c cron/notifications
+```
 
-We inform visitors about unread messages only if
+Visitors are informed about unread messages only if:
 
- * Last operator message is written within last hour
- * From last operator message has passed 5 minutes.
- * Operator message was unread
- * We have not send this message to visitor yet.
- * You can always test message service by editing subscription and using "Test notification" tab
+*   The last operator message was written within the last hour.
+*   At least 5 minutes have passed since the last operator message.
+*   The operator message was unread.
+*   The message has not been sent to the visitor yet.
+*   You can always test the message service by editing a subscription and using the "Test notification" tab.

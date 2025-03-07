@@ -4,29 +4,30 @@ sidebar_label: Transfer chat back to bot if chat not accepted
 title: Transfer chat back to bot if chat not accepted
 ---
 
-There is two ways how you can do that.
+There are two ways to transfer a chat back to a bot if it is not accepted by an operator:
 
-* Via auto responder (at the moment this flow does not support third party integrations. E.g fb messenger)
-* Via continuous webhooks. Works in all scenarios.
+*   **Via auto responder** (This method does not currently support third-party integrations such as Facebook Messenger).
+*   **Via continuous webhooks.** This method works in all scenarios.
 
-We will cover sample how to do that via continuous webhooks. 
+This document covers how to accomplish this using continuous webhooks.
 
-Requirement
-* Min 4.16v version
-* [Continous webhooks cronjob](development/cronjob.md#continuous-webhooks-cronjob)
+**Requirements:**
 
+*   Minimum version: 4.16v
+*   [Continuous webhooks cronjob](development/cronjob.md#continuous-webhooks-cronjob)
 
-How it works
-* Continuous webhook checks is there any chat in pending status for more than 30 seconds, if so execute trigger.
-* Trigger set's chat status back to bot
-* If you wish these rules can be extended and include
-  * `{args.chat.incoming_chat.incoming.scope} = facebookwhatsappscope` would apply only to incoming webhook with defined scope
-  * `{args.chat.dep_id} = 4` would apply to department 4 only
+**How it works:**
 
-Sample of continous webhook configuration
+*   A continuous webhook checks if any chat has been in pending status for more than 30 seconds. If so, it executes a trigger.
+*   The trigger sets the chat status back to bot.
+*   You can extend these rules to include:
+    *   `{args.chat.incoming_chat.incoming.scope} = facebookwhatsappscope` to apply the rule only to incoming webhooks with a defined scope.
+    *   `{args.chat.dep_id} = 4` to apply the rule to department 4 only.
 
-![Including other bot](/img/bot/bots/continous-webhook.png)
+**Sample of continuous webhook configuration:**
 
-Trigger configuration sample
+![Continuous Webhook Configuration](/img/bot/bots/continous-webhook.png)
 
-![Including other bot](/img/bot/bots/trigger-sample-transfer.png)
+**Trigger configuration sample:**
+
+![Trigger Sample Transfer](/img/bot/bots/trigger-sample-transfer.png)

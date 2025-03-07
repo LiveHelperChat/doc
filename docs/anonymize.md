@@ -4,14 +4,14 @@ title: How to anonymize Live Helper Chat visitors Data?
 sidebar_label: Anonymization
 ---
 
-You can configure Live Helper Chat to hide vistior IP or anonymize visitors or operators messages after certain amount of time.
+You can configure Live Helper Chat to hide visitor IPs or anonymize visitor and operator messages after a specified period.
 
-To anonymize IP you can go to 
-> "System configuration" -> "Live help Configuration" -> "Chat configuration" .> "Data protection" 
+To anonymize IP addresses, navigate to:
+> "System configuration" -> "Live help Configuration" -> "Chat configuration" -> "Data protection"
 
-Check `Do not track visitors IP` user location detection still will work, but visitor IP won't be logged. Just first two numbers will be logged.
+Enable the `Do not track visitors IP` option. User location detection will still function, but the complete visitor IP address will not be logged. Only the first two octets of the IP address will be stored.
 
-You can anonymize visitors messages after certain amount of time. Enter after how many days messages should be anonymized. For it to work you have to setup cronjob to be run every day.
+You can also anonymize visitor messages after a defined period. Specify the number of days after which messages should be anonymized. For this feature to work, you must set up a cron job to run daily.
 
 ```shell script
 php cron.php -s site_admin -c cron/encrypt

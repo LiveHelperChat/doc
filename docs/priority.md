@@ -1,18 +1,18 @@
 ---
 id: priority
-title: Chat priority
+title: Chat Priority
 sidebar_label: Priority
 ---
 
-Priority defines how hight in pending chat list chat will be presented. The higher the priority the faster chat will be auto assigned automatically. Chat priority can be set three ways.
+Priority determines the position of a chat in the pending chat list. The higher the priority, the faster the chat will be automatically assigned. Chat priority can be set in three ways:
 
-1. Via [embed code](javascript-arguments.md)
-2. Heritage from [department priority](department/department.md#priority-used-for-chats-priority)
-3. Define priority condition in `System configuration > Live Help configuration > Chat priority`
+1.  Via [embed code](javascript-arguments.md)
+2.  Inheriting from [department priority](department/department.md#priority-used-for-chats-priority)
+3.  Defining a priority condition in `System configuration > Live Help configuration > Chat priority`
 
-## Via embed code
+## Via Embed Code
 
-While heritage from department does not require any additional actions from admin except set desirable priorities. Embed code requires additional attribute. Here is example of embed code with priority set to 5. It overrides department priority.
+While inheriting priority from a department does not require any additional actions from the administrator (except setting the desired priorities), using the embed code requires an additional attribute. Here is an example of embed code with the priority set to 5, which overrides the department priority.
 
 ### New widget
 
