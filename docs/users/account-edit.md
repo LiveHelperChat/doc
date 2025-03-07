@@ -5,57 +5,57 @@ title: Account Edit
 
 ## Introduction
 
-This article will explain everything about user account edit permissions
+This article explains user account editing permissions.
 
-## Assigned departments
+## Assigned Departments
 
 ​![](/img/user/assigned-departments.png)
 
-If operator clicks checked to the left of the `eye` icon he will get access to read this departments chats but not accept/chat.
+If an operator selects the checkbox to the left of the "eye" icon, they will gain access to read chats from that department, but will not be able to accept or participate in the chats.
 
 ### Permissions
 
-To edit groups of other users editing user has to be a member of all groups edited user is.
-Example: In order to edit groups of user A, who is a is member of groups B,C I also have to be a member of groups B,C
-To overcome this you can add permission:
+To edit the groups of other users, the editing user must be a member of all the groups that the user being edited is a member of.
+For example: To edit the groups of user A, who is a member of groups B and C, you must also be a member of groups B and C.
+To bypass this requirement, you can add the following permission:
 
 > 'lhuser', 'editusergroupall'
 
-Required permissions to access assigned departments tab, one of
+The following permissions are required to access the assigned departments tab:
 
-#### Individual departments related permissions
+#### Individual Department Permissions
 
 > `'lhuser','see_user_assigned_departments'`
 > `'lhuser','assign_all_department_individual'`
 > `'lhuser','assign_to_own_department_individual'`
 
-To see other operators departments in edit window user has to have
+To see other operators' departments in the edit window, the user must have:
 
 > 'lhuser','see_user_assigned_departments'
 
-To allow operator assign any department to another operator he has to have this permission
+To allow an operator to assign any department to another operator, they must have this permission:
 
 > 'lhuser','assign_all_department_individual'
 
-To allow operator assign one of his own department to another operator he has to have this permission. He will be able to assign department only if he is has access to it.
+To allow an operator to assign one of their own departments to another operator, they must have this permission. They will only be able to assign a department if they have access to it.
 
 > 'lhuser','assign_to_own_department_individual'
 
-#### Departments groups related permissions
+#### Department Group Permissions
 
 > `'lhuser','assign_all_department_group'`
 > `'lhuser','see_user_assigned_departments_groups'`
 > `'lhuser','assign_to_own_department_group'`
 
-To see other operators departments groups in edit window user has to have
+To see other operators' department groups in the edit window, the user must have:
 
 > 'lhuser','see_user_assigned_departments_groups'
 
-To allow operator assign any department group to another operator he has to have this permission
+To allow an operator to assign any department group to another operator, they must have this permission:
 
 > 'lhuser','assign_all_department_group'
 
-To allow operator assign one of his own department group to another operator he has to have this permission. He will be able to assign department group only if he is has access to it.
+To allow an operator to assign one of their own department groups to another operator, they must have this permission. They will only be able to assign a department group if they have access to it.
 
 > 'lhuser','assign_to_own_department_group'
 

@@ -1,20 +1,20 @@
 ---
 id: override-quick
-title: Please, customize web application by overriding templates, images, css.
-sidebar_label: Override everything
+title: Customize Your Web Application by Overriding Templates, Images, and CSS
+sidebar_label: Override Everything
 ---
 
-Just thought it would be usefull to remind all that.
+This document serves as a reminder of the customization options available.
 
-* It's possible to override any image in web application without [overriding default ones](development/unbrand.md#how-to-change-logo)
-* It's possible to override any CSS in web application without [overriding default ones](development/unbrand.md)
-* It's possible to override [any template](extending/overriding-templates.md) without overriding default ones
-* It's possible to override [any class](development/override-class.md)
-* It's possible to override [any module, or just a single url](extending/override-module.md)
-* It's possible to override [translations](language.md#how-to-override-default-translations)
-* If you are not sure which template is used enable [debug output](debug.md)
-* If you change templates and nothing changes [disable cache](debug.md#disabling-cache)
-* You can write [your own extensions](extending/writing-extension.md)
-* We are using bootstrap 4 CSS framework.
+*   You can override any image in the web application without [overriding the default ones](development/unbrand.md#how-to-change-logo).
+*   You can override any CSS in the web application without [overriding the default ones](development/unbrand.md).
+*   You can override [any template](extending/overriding-templates.md) without overriding the default ones.
+*   You can override [any class](development/override-class.md).
+*   You can override [any module or a single URL](extending/override-module.md).
+*   You can override [translations](language.md#how-to-override-default-translations).
+*   If you are unsure which template is being used, enable [debug output](debug.md).
+*   If you change templates and nothing happens, [disable the cache](debug.md#disabling-cache).
+*   You can write [your own extensions](extending/writing-extension.md).
+*   We use the Bootstrap 4 CSS framework.
 
-Each time you are modifying original files you are losing upgrade capabilities. Live Helper Chat is very flexible and allows change almost everything without changing kernel.
+Each time you modify the original files, you lose upgrade capabilities. Live Helper Chat is very flexible and allows you to change almost everything without modifying the core.

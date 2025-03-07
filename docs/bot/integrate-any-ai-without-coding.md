@@ -6,59 +6,60 @@ sidebar_label: Integrating AI (without coding)
 
 ## Introduction
 
-In this tutorial I'll give and explain how to integrate any AI without coding into Live Helper Chat
+In this tutorial, I will explain how to integrate any AI into Live Helper Chat without coding.
 
-## How it works?
+## How it works
 
-Workflow is as simple as
+The workflow is simple:
 
-* We define AI Rest API calls.
-* We define bot which uses them.
-* Upon conversation start it set's `uuid` and it act's as present conversation handler for third party AI.
+*   Define AI REST API calls.
+*   Define a bot that uses them.
+*   Upon starting a conversation, set a `uuid` which acts as the current conversation handler for the third-party AI.
 
-Rest API has only one request defined.
+The REST API has only one request defined.
 
 ![](/img/bot/ai/body.jpg)
 
-In user param we define additional argument `task_key` which is set directly in the bot and request body.
+In the user parameters, we define an additional argument `task_key`, which is set directly in the bot and the request body.
 
 ![](/img/bot/ai/user_param.png)
 
-In output parsing we have defined 3 possible combinations
+In the output parsing, we have defined three possible combinations:
 
-* Standard message
-* Indication that chat should be transferred to an operator
-* Indication to end a conversation
+*   Standard message
+*   Indication that the chat should be transferred to an operator
+*   Indication to end the conversation
 
 ![](/img/bot/ai/output-parsing.png)
 
-Bot itself needs only 4 triggers
+The bot itself needs only four triggers.
 
 ![](/img/bot/ai/bot-triggers.png)
 
 ## Chat started
-This trigger is always executed if visitor sends a message or clicks a button replied by bot `meta_msg` msg field.
+
+This trigger is always executed if a visitor sends a message or clicks a button replied to by the bot (the `meta_msg` message field).
 
 ![](/img/bot/ai/chat-started-options.png)
 
-Trigger structure. It defines what method we should execute if visitor sends a message and what trigger to execute based on bot response. Response types we have defined in Rest API itself.
+The trigger structure defines which method to execute when a visitor sends a message and which trigger to execute based on the bot's response. The response types are defined in the REST API itself.
 
 ![](/img/bot/ai/chat-started-trigger.png)
 
 ## Bot message send
 
-It's a standard message we received from bot. Additionally we set additional chat variable based on response. Which we later reuse in Rest API call itself. It's required for AI to know about what present conversation is going on.
+This is a standard message received from the bot. Additionally, we set an additional chat variable based on the response, which we later reuse in the REST API call itself. This is required for the AI to know what the current conversation is about.
 
 ![](/img/bot/ai/bot-message-send.png)
 
 ## Transfer to Operator
 
-Just transfers chat to an operator.
+This simply transfers the chat to an operator.
 
 ![](/img/bot/ai/transfer-to-operator.png)
 
 ## Default response
 
-Default response in this case act's just as conversation ending trigger and shows bot message.
+In this case, the default response acts as a conversation-ending trigger and displays a bot message.
 
 ![](/img/bot/ai/default-response.png)

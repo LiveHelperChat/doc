@@ -1,18 +1,19 @@
 ---
 id: custom-post-survey
-title: Custom post survey
+title: Custom Post-Survey
 ---
 
-This is small example how you can integrate custom post survey into Live Helper Chat.
+This is a small example of how you can integrate a custom post-survey into Live Helper Chat.
 
 ## Extensions
 
-Extension should listen to this event
+The extension should listen for this event:
+
 ```php
-    $dispatcher->listen('widgetrestapi.initchat',array($this, 'initReactChat'));
+$dispatcher->listen('widgetrestapi.initchat',array($this, 'initReactChat'));
 ```
 
-Function can look like
+The function can look like this:
 
 ```php
 public function initReactChat($params) {
@@ -21,9 +22,9 @@ public function initReactChat($params) {
 }
 ```
 
-## How do I inform Live Helper Chat that survey has been completed?
+## How do I inform Live Helper Chat that the survey has been completed?
 
-You should call this javascript function. Once this happens Live Helper Chat will know that survey has been completed and will close widget for the visitor. You can have some kinda of `setTimeout` before calling this function.
+You should call this JavaScript function. Once this happens, Live Helper Chat will know that the survey has been completed and will close the widget for the visitor. You can use `setTimeout` before calling this function.
 
 ```js
 parent.postMessage("lhc_chat_closed_explicit","*"); // I would prefer this one

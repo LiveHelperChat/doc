@@ -1,49 +1,53 @@
 ---
 id: sentiment-analysis-per-message
-title: DeepPavlov (Sentiment analysis per message)
+title: DeepPavlov (Sentiment Analysis Per Message)
 ---
 
-In this article I'll show you how to setup sentiment analysis using https://deeppavlov.ai/ and my prepared [docker image](https://github.com/LiveHelperChat/sentiment-per-message)
+This article explains how to set up sentiment analysis using [DeepPavlov](https://deeppavlov.ai/) and a pre-built [Docker image](https://github.com/LiveHelperChat/sentiment-per-message).
 
-Required 4.48v Live Helper Chat version.
+Live Helper Chat version 4.48v or higher is required.
 
 ## Installing DeepPavlov
 
 ```shell
-git clone https://github.com/LiveHelperChat/sentiment-per-message && cd sentiment-per-message
+```shell
+git clone https://github.com/LiveHelperChat/sentiment-per-message
+cd sentiment-per-message
 docker-compose -f docker-compose.yml pull
 wget https://livehelperchat.com/var/deep_sentence_v2.tgz
 tar zxfv deep_sentence_v2.tgz
 rm -f deep_sentence_v2.tgz
 ```
 
-Run one time
+Run the following command once:
 
 ```
 docker-compose -f docker-compose.yml up
 ```
 
-Run as a service
+To run DeepPavlov as a service, execute:
 
 ```
 docker-compose -f docker-compose.yml up -d
 ```
 
-Testing
+### Testing the Installation
+
+Use the following `curl` command to test the DeepPavlov installation:
 
 ```
-curl -X 'POST' \
+curl -X POST \
   'http://127.0.0.1:5058/model' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
   "sentences": [
-    "I'\''m sad"
+    "I\'m sad"
   ]
 }'
 ```
 
-If you did everything right you should see output like this
+If the installation was successful, you should see an output similar to this:
 
 ```json
 [
@@ -61,89 +65,89 @@ If you did everything right you should see output like this
 ]
 ```
 
-You can also point your browser to 
+You can also access the documentation by opening the following URL in your browser:
 
 > http://127.0.0.1:5058/docs
 
 ## Configuring Live Helper Chat
 
-Our requirements are
+These steps outline the requirements for integrating sentiment analysis with Live Helper Chat:
 
-* We should send set sentiment on chat close event
-* We should see visitor sentiment while chat is going on
-* Support ElasticSearch for sentiment analysis.
+*   Set the sentiment on the chat close event.
+*   Display the visitor's sentiment during the chat.
+*   Support Elasticsearch for sentiment analysis.
 
-For that we will be using [webhooks](development/webhooks.md).
+We will use [webhooks](development/webhooks.md) to achieve this.
 
-### Configuring Rest API call
+### Configuring the REST API Call
 
-In this scenario Rest API will be sending individual message to get a sentiment. 
+In this setup, the REST API will send individual messages to determine their sentiment.
 
-[Download configuration](/img/bot/sentiment-per-message/rest-api-v3.json)
+[Download the configuration file](/img/bot/sentiment-per-message/rest-api-v3.json).
 
-After import make sure you change host if you are not running it on local machine.
+After importing the configuration, ensure that you update the host if you are not running it on the local machine.
 
-### Configuring bot
+### Configuring the Bot
 
-[Download configuration](/img/bot/sentiment-per-message/bot.json) you will need to set appropriate Rest API calls.
+[Download the bot configuration file](/img/bot/sentiment-per-message/bot.json). You will need to configure the appropriate REST API calls.
 
-In the bot for simplicity we will have
+For simplicity, the bot configuration includes the following triggers:
 
-* `Sentiment User Message` - this trigger is executed once we receive a message from visitor/operator (`chat.web_add_msg_admin`,`chat.chat_started`,`chat.addmsguser`) events
-* `Evaluate Sentiment Message` - this trigger works with response from Rest API call
-* `Sentiment Chat` - this trigger does all the aggregation and set's main chat sentiment attributes (`chat.close` event)
+*   `Sentiment User Message`: This trigger is activated when a message is received from a visitor or operator. It listens to the `chat.web_add_msg_admin`, `chat.chat_started`, and `chat.addmsguser` events.
+*   `Evaluate Sentiment Message`: This trigger processes the response from the REST API call.
+*   `Sentiment Chat`: This trigger performs all the aggregation and sets the main chat sentiment attributes. It is triggered by the `chat.close` event.
 
-In this configuration we set following sentiment attributes
+This configuration sets the following sentiment attributes:
 
-* Set sentiment for the operator and visitor.
-* Update visitor sentiment within each message.
-* Update visitor sentiment per chat
+*   Sentiment for the operator and visitor.
+*   Visitor sentiment within each message.
+*   Visitor sentiment per chat.
 
-#### Main configuration for the Rest API Call
+#### Main Configuration for the REST API Call
 
-I strongly suggest to use [php-resque](https://github.com/LiveHelperChat/lhc-php-resque) extensions and offload all Rest API calls...
+It is strongly recommended to use the [php-resque](https://github.com/LiveHelperChat/lhc-php-resque) extension to offload all REST API calls.
 
-If you webhooks worker is already `resque` type you can un-check. `Send Rest API Call in the background.` as  process already will be running in the background.
+If your webhook worker is already of the `resque` type, you can deselect the `Send Rest API Call in the background` option, as the process will already run in the background.
 
 ![](/img/bot/sentiment-per-message/rest-api.png)
 
-#### Evaluate Sentiment Message
+#### Evaluate Sentiment Message Trigger
 
-This trigger stores sentiment withing chat message and recalculates sentiment for the chat as a whole.
+This trigger stores the sentiment within the chat message and recalculates the sentiment for the entire chat.
 
 ![](/img/bot/sentiment-per-message/sentiment-outcome.png)
 
-More information about [Messages aggregation](bot/update-current-chat.md#messages-aggregation)
+For more information about [Messages aggregation](bot/update-current-chat.md#messages-aggregation), refer to the documentation.
 
-#### Sentiment Chat
+#### Sentiment Chat Trigger
 
-Calculates visitor messages sentiment using `SUM as comparator and AVG as value`
+Calculates the sentiment of visitor messages using `SUM as comparator and AVG as value`.
 
 ![](/img/bot/sentiment-per-message/sentiment-visitor-sample-1.png)
 
-Calculates operator messages sentiment using `SUM as comparator and AVG as value`
+Calculates the sentiment of operator messages using `SUM as comparator and AVG as value`.
 
 ![](/img/bot/sentiment-per-message/sentiment-visitor-sample-2.png)
 
-Calculates ratio of positive messages in comparison to negative and positive messages.
+Calculates the ratio of positive messages compared to negative and positive messages.
 
 ![](/img/bot/sentiment-per-message/sentiment-visitor-sample-3.png)
 
-### Configuring webhook
+### Configuring the Webhook
 
-In webhook we define what event we want to listen.
+In the webhook settings, define the events you want to listen for.
 
-Presently we are interested in for events
+We are currently interested in the following events:
 
-* `chat.web_add_msg_admin` - listen for operator message and set sentiment
-* `chat.chat_started` - listen for very first visitor message
-* `chat.addmsguser` - listen for visitor message
-* `chat.close` - make summary of sentiment based on chat messages
+*   `chat.web_add_msg_admin`: Listens for operator messages and sets the sentiment.
+*   `chat.chat_started`: Listens for the first visitor message.
+*   `chat.addmsguser`: Listens for visitor messages.
+*   `chat.close`: Summarizes the sentiment based on chat messages.
 
 ![](/img/bot/sentiment-per-message/webhooks.png)
 
 ## Bonus
 
-Using this configuration you can also show custom icon based on chat sentiment.
+With this configuration, you can also display a custom icon based on the chat sentiment.
 
 ![](/img/bot/sentiment-per-message/sentiment-icon-chat.png)

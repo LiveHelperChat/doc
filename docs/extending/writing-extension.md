@@ -1,40 +1,39 @@
 ---
 id: writing-extension
-title: How to write custom module/extension?
+title: Writing Custom Modules/Extensions
 sidebar_label: Writing extension
 ---
 
-Few extensions example can be found [here](https://github.com/LiveHelperChat/livehelperchat-extensions). I suggest to analyze few extensions there and you will get an idea how all works.
+You can find several example extensions [here](https://github.com/LiveHelperChat/livehelperchat-extensions). I suggest analyzing these extensions to understand how everything works.
 
- > https://github.com/LiveHelperChat/livehelperchat-extensions
+> https://github.com/LiveHelperChat/livehelperchat-extensions
 
-If you want to activate extension you have to edit
+To activate an extension, edit the following file:
 
- > settings/settings.ini.php
+> settings/settings.ini.php
 
-and change the following part to
+Modify the `'extensions'` array to include the extension's name. For example, to activate the `customstatus` extension, change the array to:
 
- > 'extensions' => array ( 0 => 'customstatus' )
+> 'extensions' => array ( 0 => 'customstatus' )
 
-In this exmaple we are activating customstatus extension. Make sure you disable cache while developing.
+Ensure you disable the cache during development.
 
-How to attatch event listeners to extension?
-Just take a look at this file
+To attach event listeners to your extension, examine this file:
 
- > https://github.com/LiveHelperChat/livehelperchat-extensions/blob/master/customstatus/bootstrap/bootstrap.php
+> https://github.com/LiveHelperChat/livehelperchat-extensions/blob/master/customstatus/bootstrap/bootstrap.php
 
-In this class you can define to what events your extension should listen.
+This class allows you to define the events your extension should listen for.
 
-What events does Live Helper Chat dispatches?
+For a list of events that Live Helper Chat dispatches, see:
 [List of events](hooks.md)
 
-Here is example to what events Automated hosting extension is listening
+Here's an example of the events the Automated hosting extension listens for:
 
- > https://github.com/LiveHelperChat/automated-hosting/blob/master/instancecustomer/bootstrap/bootstrap.php
+> https://github.com/LiveHelperChat/automated-hosting/blob/master/instancecustomer/bootstrap/bootstrap.php
 
-## How to include custom JS only for specific URL
+## Including Custom JS for a Specific URL
 
-You can just define `additional_footer_js` variable in `$Result` array
+Define the `additional_footer_js` variable in the `$Result` array:
 
 ```php
 // ...
@@ -42,9 +41,9 @@ $Result['content'] = $tpl->fetch();
 $Result['additional_footer_js'] = '<script src="'.erLhcoreClassDesign::designJS('js/angular.incoming.webhooks.js').'"></script>';
 ```
 
-## How to include custom CSS only for specific URL
+## Including Custom CSS for a Specific URL
 
-You can just define `additional_header_css` variable in `$Result` array
+Define the `additional_header_css` variable in the `$Result` array:
 
 ```php
 // ...
@@ -52,17 +51,17 @@ $Result['content'] = $tpl->fetch();
 $Result['additional_header_css'] = '<link rel="stylesheet" type="text/css" href="'.erLhcoreClassDesign::designCSS('css/jquery-ui-1.10.4.custom.css').'" />';
 ```
 
-## Translating extension
+## Translating Extensions
 
-There is command to generate extension default translations.
+Use the following command to generate the default translations for an extension:
 
 > php cron.php -s site_admin -c cron/util/generate_translation_file_ext -p extension/cbscheduler
 
-If running this command you can an error. Create a file in extension E.g
+If you encounter an error while running this command, create a file named `default.ts` in the extension's `doc` directory. For example:
 
 > extension/cbscheduler/doc/default.ts
 
-with following content and try to run again command.
+The file should contain the following content:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,11 +70,13 @@ with following content and try to run again command.
 </TS>
 ```
 
-Let say now you want to add Lithuanian translations. We have to create a folder/file location at this location.
+Then, rerun the command.
+
+To add Lithuanian translations, create a `translation.ts` file in the `translations/lt_LT` directory within your extension. For example:
 
 > extension/cbscheduler/translations/lt_LT/translation.ts
 
-Content we can copy from `extension/cbscheduler/doc/default.ts` or just write manually translations. E.g
+You can copy the content from `extension/cbscheduler/doc/default.ts` or manually write the translations. For example:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -93,5 +94,5 @@ Content we can copy from `extension/cbscheduler/doc/default.ts` or just write ma
 
 :::tip Tip
 
-You can copy from `extension/cbscheduler/doc/default.ts` only required translations as some of the strings will be system context `system/buttons` which is already translated.
+You can copy only the required translations from `extension/cbscheduler/doc/default.ts`, as some strings may belong to the system context (`system/buttons`), which is already translated.
 :::

@@ -1,67 +1,67 @@
 ---
 id: synchronization-sound
 title: Synchronization and sound settings
-sidebar_label: Sync && Sound
+sidebar_label: Sync & Sound
 ---
 
 ## Introduction
 
-This section is dedicated for advanced users who want's to play around with synchronization and sound settings.
+This section is for advanced users who want to configure synchronization and sound settings.
 
 ![](/img/chat/sync-and-sound.jpg)
 
 ## Attributes
 
-### How many seconds for a user to be considered as being online
+### Online Presence Timeout
 
-It tells how long operator should be considered online after last his activity in back office. E.g if operator just turn's off a computer without logging out. We will wait 5 minutes before considering him being offline. Should not be set lower than 60 seconds.
+This setting determines how long an operator is considered online after their last activity in the back office. For example, if an operator turns off their computer without logging out, the system will wait 5 minutes before marking them as offline. The value should not be set lower than 60 seconds.
 
-### Sync for new chats, interval in seconds
+### New Chat Synchronization Interval
 
-It tells how ofter we should check for new chats as operator. This value can be set as low as 3 seconds.
+This setting determines how often the system checks for new chats for an operator. The value can be set as low as 3 seconds.
 
-### Check for messages from the operators, interval in seconds
+### Proactive Chat Invitation Check Interval
 
-This tells how ofter we should check for proactive invitation messages from operator in website.
+This setting determines how often the system checks for proactive chat invitation messages from operators on the website.
 
-### Preload previous chat messages on chat open
+### Preload Previous Chat Messages
 
-If visitor had previously chatted we can preload his previous chat messages.
+If a visitor has chatted previously, this setting enables preloading their previous chat messages.
 
-### Sync for a new user message, interval in seconds
+### New Message Synchronization Interval
 
-It tells how often check for messages from visitor/operator during chat session.
+This setting determines how often the system checks for new messages from visitors or operators during a chat session.
 
-### Show browser notification for new messages
+### Browser Notifications for New Messages
 
-You can also if you want enable browser notifications for new messages. By default notifications are shown only for new chats, but not messages.
+This setting enables browser notifications for new messages. By default, notifications are shown only for new chats, but not for individual messages.
 
-### Long polling (experimental)
+### Long Polling (Experimental)
 
-This will be removed in next release. So do not touch it :)
+This feature will be removed in a future release. It is not recommended to modify this setting.
 
-### Play a new pending chat sound on a new chat request
+### New Pending Chat Sound
 
-This is default setting for the operator who just logged first time.
+This is the default sound setting for operators the first time they log in. It plays a sound when a new chat request is pending.
 
-### Play a sound on a new message for a back office user
+### New Back Office Message Sound
 
-This is default setting for the operator who just logged first time.
+This is the default sound setting for operators the first time they log in. It plays a sound when a new message is received in the back office.
 
-### Play a sound on a new message for a front end user
+### New Front End Message Sound
 
-This is default setting for website visitor who just started a chat.
+This is the default sound setting for website visitors when they start a chat. It plays a sound when a new message is received in the chat window.
 
-### Show alert message on a new chat request
+### Alert Message on New Chat Request
 
-By default we show browser notification for transferred chats to operator. If you want interrupt more operator you can enable this section.
+By default, the system shows a browser notification for transferred chats to operators. Enabling this setting will display an alert message to further notify the operator.
 
 ## Permissions
 
-Permission required to configure these settings.
+The following permission is required to configure these settings:
 
-> 'chat','administratesyncsound'
+> `chat`,`administratesyncsound`
 
-## My operators go offline/online every few seconds?
+## Operators Frequently Switching Online/Offline
 
-This is a common mistake by setting to low `How many seconds for a user to be considered as being online`. Please keep it minimum 60 seconds.
+This issue commonly occurs when the "Online Presence Timeout" is set too low. Ensure that the value is set to a minimum of 60 seconds.

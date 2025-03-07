@@ -1,6 +1,6 @@
 ---
 id: back-office-theme
-title: Back office theme
+title: Back Office Themes
 ---
 
 Using back office themes he can have default back office theme which would be applied to all operators.

@@ -4,9 +4,9 @@ title: Text formatting syntax in Live Helper Chat - BBCode tags
 sidebar_label: BBCode
 ---
 
-These are all possible combinations you can use in Live Helper Chat BBCode. You can these tags everywhere where message is send to a visitor.
+These are the possible BBCode combinations you can use in Live Helper Chat. You can use these tags anywhere a message is sent to a visitor.
 
-Bold the text
+**Bold Text**
 
 > `[b]Bold[/b]`
 
@@ -14,125 +14,139 @@ OR
 
 > `**Bold**`
 
-Italic and bold at the same time
+**Italic and Bold Text**
 
 > `___bold and italic___`
 
-Headers
+**Headers**
 
-> `##` till `######`
+> `##` through `######`
 
-Italic text
+**Italic Text**
 
 > `[i]Italic[/i]`
 
-Underline
+**Underline**
 
 > `[u]Italic[/u]`
 
-Quote
+**Quote**
 
 > `[quote]Quote[/quote]`
 
-Code
+**Code**
 
-> `[quote]code your here[/quote]` or ``` or ` for inline code
+> `[quote]code your here[/quote]` or ``` or `for inline code`
 
-Strike-through
+**Strikethrough**
 
 > `[s]Strike-through[/s]`
 
-HTML Code. This tag is supported only by operators!
+**HTML Code**
 
-> `[html]your custom html goes here[/html]`
+This tag is supported only by operators!
 
-By default we ignore clicks on elements  for the visitor. To enable click process add a class `process-click` to an element.
+> `[html]your custom HTML goes here[/html]`
 
-Operators require this permission to use this bbcode
+By default, clicks on elements are ignored for the visitor. To enable click processing, add the class `process-click` to an element.
 
-`lhchat`,`htmlbbcodeenabled`
+Operators require the `lhchat` and `htmlbbcodeenabled` permissions to use this BBCode.
 
-This tag also supports plain *JS* code. This can lead so some security concerns. As operator can execute JS directly on visitor side. That's why it requires special permission to use.
+This tag also supports plain JavaScript code, which can lead to security concerns, as operators can execute JS directly on the visitor's side. That's why it requires special permission to use.
 
-Change font size. Font size can be to whatever value you want, actually.
+**Change Font Size**
+
+Font size can be any value.
 
 > `[fs12]Font size 12[/fs]`
 
-Mark text button
+**Mark Text**
 
 > `[mark]mark text syntax[/mark]` => `<mark>mark text syntax</mark>`
 
-Paypal donate button
+**PayPal Donate Button**
 
 > `[paypal]remdex@gmail.com[/paypal]`
 
-Change color
+**Change Color**
 
 > `[color=FF0000]Custom color text[/color]`
 
-Location google maps
+**Location (Google Maps)**
 
 > `[loc]55.9314582,23.2975904[/loc]`
 
-File or Image
+**File or Image**
 
 > `[file=639_f2f84b4d09a2e5bb492efa189b8ebad4]`
 
-Link to file with your own link title
+**Link to File with Custom Title**
 
 > `[url=[baseurl]file/downloadfile/639/f2f84b4d09a2e5bb492efa189b8ebad4[/baseurl]] Click to download an invoice [/url]`
 
-Image with a link to some URL
+**Image with Link**
 
 > `[file=639_f2f84b4d09a2e5bb492efa189b8ebad4_img link=http://google.com]`
 
-Embedded image with a link to an image. Quick way to download image for a visitor.
+**Embedded Image with Link to Image**
+
+This is a quick way to allow a visitor to download an image.
 
 > `[file=639_f2f84b4d09a2e5bb492efa189b8ebad4_img link]`
 
-External image
+**External Image**
 
 > `[img]https://livehelperchat.com/design/frontendnew/images/lhc.png[/img]`
 
-Link
+**Link**
 
 > `[url=http://google.com]Live Helper Chat[/url]`
 
-Markdown link
+**Markdown Link**
 
 > `[example](https://example.com)`
 
-Youtube video
+**YouTube Video**
 
 > `[youtube]https://www.youtube.com/watch?v=TFJAW5bepLM&feature=youtu.be[/youtube]`
 
-Upload a file link. Files upload has to be enabled. This code is usefull with !files command.
+**Upload File Link**
+
+File uploads must be enabled. This code is useful with the `!files` command.
 
 > `[fupload]Upload a file[/fupload]`
- 
-Base URL. This will render URL as internal URL.
+
+**Base URL**
+
+This renders the URL as an internal URL.
 
 > `[baseurl]user/login[/baseurl]`
 
-Renders link to view survey results for the admin
+**Survey Results Link**
+
+Renders a link for the admin to view survey results.
 
 > `[survey="?(.*?)"?\]`
 
-Renders button. Chat should have assigned bot
+**Button Action**
+
+Renders a button. The chat should have an assigned bot.
 
 > `[button_action="?(.*?)"?\](.*?)\[/button_action]`
 
-Plain text. This would avoid content to be parsed for BBCode tags.
+**Plain Text**
 
-> `[plain]info@exmaple.com[/plain]` would avoid rendering text as a link.
+This prevents the content from being parsed for BBCode tags.
 
-Date format. 
+> `[plain]info@exmaple.com[/plain]` prevents the text from being rendered as a link.
 
-> `[dateformat=Y.m.d H:i:s]{args.chat.time}[/dateformat]` Would print chat creation date in your preferred format.
-> `[dateformat=m/d/Y]{lhc.var.remind_dob}[/dateformat]` Would print chat variable in date format where unix timestamp is stored.
-> `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]` {current_time_ts} - if this variables is not printed, means in that place it's not supported
+**Date Format**
 
-Ordered list
+> `[dateformat=Y.m.d H:i:s]{args.chat.time}[/dateformat]` Prints the chat creation date in your preferred format.
+> `[dateformat=m/d/Y]{lhc.var.remind_dob}[/dateformat]` Prints the chat variable in date format, assuming a Unix timestamp is stored.
+> `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]` If the `{current_time_ts}` variable is not printed, it means it's not supported in that context.
+
+**Ordered List**
 
 ```
 [list]
@@ -141,7 +155,9 @@ Ordered list
 [/list]
 ```
 
-Numbered list. Number indicates starting point.
+**Numbered List**
+
+The number indicates the starting point.
 
 ```
 [list=1]
@@ -150,16 +166,16 @@ Numbered list. Number indicates starting point.
 [/list]
 ```
 
-Text with css class 
+**Text with CSS Class**
 
 > `[level=bg-warning]css class[/level]`
 
-Generate button clicks
+**Generate Button Clicks**
 
 ```
-To return to main menu click [link_trigger=1355]here[/link_trigger]
+To return to the main menu, click [link_trigger=1355]here[/link_trigger]
 ```
 
-How you hide BB Code button in the visitor widget you can read [here](theme/chat-window.md#face-icon)
+You can read how to hide the BBCode button in the visitor widget [here](theme/chat-window.md#face-icon).
 
-You can also control which bbcode tags is supported at `System configuration -> Live help configuration -> BBCode configuration`
+You can also control which BBCode tags are supported at `System configuration -> Live help configuration -> BBCode configuration`.

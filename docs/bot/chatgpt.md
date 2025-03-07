@@ -1,78 +1,77 @@
 ---
 id: chatgpt-integration
-sidebar_label: ChatGPT integration (Completions, Tool calls)
-title: Integrating ChatGPT into Live Helper Chat with tool calls support
+sidebar_label: ChatGPT Integration (Completions, Tool Calls)
+title: Integrating ChatGPT into Live Helper Chat with Tool Calls Support
 ---
 
-This integration flow uses Chat Completions flow.
+This integration uses the Chat Completions API.
 
-* https://platform.openai.com/docs/api-reference/chat
-* https://platform.openai.com/docs/guides/text-generation
+* [API Reference](https://platform.openai.com/docs/api-reference/chat)
+* [Text Generation Guide](https://platform.openai.com/docs/guides/text-generation)
 
-For [Assistant api](https://platform.openai.com/docs/assistants/overview) take a look [here](https://github.com/LiveHelperChat/chatGPT?tab=readme-ov-file#demo)
+For the [Assistant API](https://platform.openai.com/docs/assistants/overview), see [this demo](https://github.com/LiveHelperChat/chatGPT?tab=readme-ov-file#demo).
 
-Before that you will need a few things
+Before you begin, you will need:
 
-* API Key https://platform.openai.com/api-keys
-* Rest API configuration in Live Helper Chat
-* Bot configuration in LHC
+* An OpenAI API Key: [Get your API key here](https://platform.openai.com/api-keys)
+* A configured REST API in Live Helper Chat
+* A configured Bot in LHC
 
-# Streaming support
+# Streaming Support
 
-For streaming version instead of using links in instructions, use those files instead. Everything else is the same. In this sample arguments for function calling is passed as separate stream.
+For the streaming version, use the following files instead of the links in the instructions. The rest remains the same. In this example, arguments for function calling are passed as a separate stream.
 
- * [Rest API](/img/bot/chatgpt/open-ai-rest-api-completions-stream.json)
- * [Bot](/img/bot/chatgpt/open-ai-bot-completions-stream.json)
+* [REST API](/img/bot/chatgpt/open-ai-rest-api-completions-stream.json)
+* [Bot](/img/bot/chatgpt/open-ai-bot-completions-stream.json)
 
-This configuration works only with OpenAI chat completion. For any other provider you will need to make few changes to bot and Rest API. Here is another sample which works E.g with Gemini using https://openrouter.ai
+This configuration is designed for OpenAI chat completion. For other providers, you may need to adjust the bot and REST API configurations. Here's an example that works with Gemini using [OpenRouter](https://openrouter.ai):
 
-* [Rest API](/img/bot/chatgpt/openrouter-ai-rest-api.json)
+* [REST API](/img/bot/chatgpt/openrouter-ai-rest-api.json)
 * [Bot](/img/bot/chatgpt/openrouter-gemini-bot.json)
 
-In this sample arguments are passed directly within the function call structure. For me it's impossible to cover all scenarios. So if you have some requirements, it can be done for a small fee :). Or better you can do it yourself :)
+In this example, arguments are passed directly within the function call structure. Due to the vast number of potential scenarios, it's impossible to cover them all. If you have specific requirements, custom solutions are available for a fee. Alternatively, you can implement the changes yourself.
 
+# Flow with Tool Call Support
 
-# Flow with tool call support
+The main difference from the legacy flow is the support for tool calls.
 
-The Difference from legacy is that we now support tool calls.
+## REST API
 
-## Rest API
-
-* After you have got your API key just import [Rest-API](/img/bot/chatgpt/rest-api-tool.json) and set a `Bearer` token.
-* Also modify `system` prompt as per Youtube video.
+* After obtaining your API key, import the [REST API configuration](/img/bot/chatgpt/rest-api-tool.json) and set a `Bearer` token.
+* Modify the `system` prompt as shown in the YouTube video.
 
 ## Bot
 
-* Import a bot and choose correct triggers and API calls as per video. Download bot [here](/img/bot/chatgpt/lhc-bot-tool.json)
+* Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration [here](/img/bot/chatgpt/lhc-bot-tool.json).
 
-### How to call a trigger based on defined function in ChatGPT?
+### Calling a Trigger Based on a Defined Function in ChatGPT
 
-1. Notice defined function in Gemini `transfer_operator`
-2. Add [event](bot/triggers.md) to your trigger with `Type` of `Custom text matching` where `Should include any of these words` value should be `transfer_operator`
+1. Note the defined function in Gemini, `transfer_operator`.
+2. Add an [event](bot/triggers.md) to your trigger with the `Type` set to `Custom text matching`. The `Should include any of these words` value should be `transfer_operator`.
 
-E.g
+For example:
 
 ![transfer_operator](/img/bot/transfer-event.png)
 
-### How to limit knowledge base to my uploaded documents aka. Vector storage?
+### Limiting the Knowledge Base to Uploaded Documents (Vector Storage)
 
-This is my `System instructions` for the bot you see on documentation page
+Here are my `System instructions` for the bot used on the documentation page:
 
 ```
-You are helpfull Live Helper Chat Bot. You answer questions just file search. If you don't know an answer you answer "I can help only with Live Helper Chat related questions.". You will asswer with one most related answer to visitor question. Your answer should not exceed 100 words. You should include link for more information about your answer.
+You are a helpful Live Helper Chat Bot. You answer questions based on file search. If you don't know the answer, respond with "I can only help with Live Helper Chat related questions." Provide the most relevant answer to the visitor's question, not exceeding 100 words. Include a link for more information about your answer.
 ```
 
-# Legacy flow without tool call support
+# Legacy Flow Without Tool Call Support
 
-Video tutorial you can find here - https://youtu.be/A0_zTeynmOA
+A video tutorial is available here: https://youtu.be/A0_zTeynmOA
 
-## Rest API
+## REST API
 
-* After you have got your API key just import [Rest-API](/img/bot/chatgpt/rest-api.json) and set a `Bearer` token.
-* Also modify `system` prompt as per Youtube video.
+* After obtaining your API key, import the [REST API configuration](/img/bot/chatgpt/rest-api.json) and set a `Bearer` token.
+* Modify the `system` prompt as shown in the YouTube video.
 
 ## Bot
 
-* Import a bot and choose correct triggers and API calls as per video. Download bot [here](/img/bot/chatgpt/lhc-bot.json)
+* Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration [here](/img/bot/chatgpt/lhc-bot.json).
 
-Now you can edit the department and choose which bot to use.
+You can now edit the department and choose which bot to use.

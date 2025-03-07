@@ -6,34 +6,34 @@ sidebar_label: Working with messages
 
 ## Introduction
 
-Purpose of this article to introduce the way you can save a message from your extension.
+The purpose of this article is to introduce how you can save messages from your extension.
 
-## Make direct ajax call to save a message as operator
+## Make a direct AJAX call to save a message as an operator
 
-This can be usefull in case you have added custom button and want to save a custom message on your button click.
+This can be useful if you have added a custom button and want to save a custom message when the button is clicked.
 
 ```javascript
-// Quck way
+// Quick way
 lhinst.addmsgadmin(chat_id,'message');
 
 // OR Manual way
-var chat_id = 1;                    // Change to your chat ID
-var pdata = {msg : 'adminhere'};    // change to your message text.
+var chat_id = 1;                    // Change this to your chat ID
+var pdata = {msg : 'adminhere'};    // Change this to your message text.
 
 $.postJSON(WWW_DIR_JAVASCRIPT + 'chat/addmsgadmin/' + chat_id, pdata , function(data) {
-    
+
     // Call old style callback
     if (LHCCallbacks.addmsgadmin) {
         LHCCallbacks.addmsgadmin(chat_id);
-    };
-    
+    }
+
     // Call new style of callback
     ee.emitEvent('chatAddMsgAdmin', [chat_id]);
 
     // Prepend response if any
-    if (data.r != '') {
+    if (data.r !== '') {
         $('#messagesBlock-'+chat_id).append(data.r).scrollTop($("#messagesBlock-"+chat_id).prop("scrollHeight")).find('.pending-storage').remove();
-    };
+    }
 
     // Hold action handling
     if (data.hold_removed === true) {
@@ -43,10 +43,10 @@ $.postJSON(WWW_DIR_JAVASCRIPT + 'chat/addmsgadmin/' + chat_id, pdata , function(
     }
 
     if (data.update_status === true) {
-        lhinst.updateVoteStatus(chat_id); // This will force right column to be updated with new information
+        lhinst.updateVoteStatus(chat_id); // This will force the right column to be updated with new information
     }
 
-    lhinst.syncadmincall(); // Forces to fetch for a new messages
+    lhinst.syncadmincall(); // Forces a fetch for new messages
 
     return true;
 });

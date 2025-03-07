@@ -8,27 +8,26 @@ Default mail window look
 
 ![](/img/mail/mail-window.png)
 
-## Right column information 
+## Right column information
 
 ### Sender
 
-This holds information who have send an e-mail. If you want to hide sender e-mail from operators. They should not have permission
+This section displays information about the sender of the email. To prevent operators from seeing the sender's email address, they should not have the following permission:
 
 > 'lhmailconv','mail_see_unhidden_email'
 
 ### Phone
 
-There is two related permissions
+There are two related permissions for displaying phone numbers:
 
-For operator to see full phone number with possible to click it he has to have those two permissions
-> 'lhmailconv','phone_see_unhidden'
-> 'lhmailconv','have_phone_link'
+*   To allow an operator to see the full phone number and be able to click it, they must have both of these permissions:
 
+    > 'lhmailconv','phone_see_unhidden'
+    > 'lhmailconv','have_phone_link'
 
-If you want to show only part of phone number with possible to click it. Phone number will be exposed as a link.
+*   To show only a portion of the phone number, with the full number exposed as a clickable link, grant only this permission:
 
-Add this permission only
-> 'lhmailconv','have_phone_link'
+    > 'lhmailconv','have_phone_link'
 
 
 ## Mail options
@@ -37,28 +36,28 @@ Add this permission only
 
 ## Download (eml)
 
-For operator to be able to download in it's original format `.eml`
+To allow an operator to download the email in its original `.eml` format, they must have the following permission:
 
 > 'lhmailconv', 'can_download'
 
 ## Forward
 
-To be able to forward operator has to have this permission
+To allow an operator to forward emails, they must have this permission:
 
 > 'lhmailconv', 'send_as_forward'
 
 ## Change mailbox
 
-To be able to change mailbox by clicking on mailbox operator has to have this permission
+To allow an operator to change the mailbox by clicking on it, they must have this permission:
 
 > 'lhmailconv', 'change_mailbox'
 
 ## Change recipients
 
-While replying for operator be able to change recipient he has to have this permission.
+To allow an operator to change the recipients while replying, they must have this permission:
 
 > 'lhmailconv', 'manage_reply_recipients'
 
-Operator also has to have this permission to do that
+The operator also needs this permission:
 
 > 'lhmailconv','mail_see_unhidden_email'

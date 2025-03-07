@@ -4,46 +4,46 @@ title: Unread chat notifications
 sidebar_label: Unread chat notifications
 ---
 
-Live Helper Chat has two types of notifications to inform a visitor about unread messages from an operator.
+Live Helper Chat offers two types of notifications to inform visitors about unread messages from an operator:
 
-* Mail notifications
-* Browser notifications
+*   Email notifications
+*   Browser notifications
 
-## Mail notifications
+## Email Notifications
 
 ### Requirements
 
-* You have to enable notifications in chat configuration.
+*   Enable notifications in the chat configuration:
 
-> System configuration -> Live help configuration -> Chat configuration -> Workflow
+    > System configuration -> Live help configuration -> Chat configuration -> Workflow
 
-Enter 1 in `Inform visitor about unread messages from operator, value in minutes. 0 - disabled`
+    Enter `1` in `Inform visitor about unread messages from operator, value in minutes. 0 - disabled`.
+*   The workflow cron job must be [set up](../development/cronjob.md#default-cronjob-setup).
 
-* Workflow cronjob has to be [setup](../development/cronjob.md#default-cronjob-setup)
+### When is an Email Sent?
 
-### When does an e-mail is send?
+During workflow execution, the system identifies chats that meet the following criteria:
 
-During workflow execution we are looking for the chats with these conditions
-
-* From last operator message has to be passed more than 1 minutes
-* Chat has to have a flag that it has unread operator messages
-* Chat messages has not yet been delivered to the visitor.
-* You can see in database for this chat attributes if you do not receive an e-mails.
-* Visitor e-mail has to be known.
-* Visitor side conditions
-    * Visitor has to have closed widget
-    * Visitor is not receiving messages.
-    * If visitor has minimized widget sync calls are still happening!
-* Make sure your server can send e-mails.
+*   More than 1 minute has passed since the last operator message.
+*   The chat has a flag indicating unread operator messages.
+*   The chat messages have not yet been delivered to the visitor.
+*   You can check the database for specific chat attributes if emails are not being received.
+*   The visitor's email address is known.
+*   Visitor-side conditions:
+    *   The visitor has closed the widget.
+    *   The visitor is not actively receiving messages.
+    *   If the visitor has minimized the widget, synchronization calls are still in progress!
+*   Ensure your server is configured to send emails.
 
 ```php
 array('limit' => 10, 'filterlt' => array('last_op_msg_time' => (time() - (1*60))), 'filter' => array('has_unread_op_messages' => 1, 'unread_op_messages_informed' => 0));
 ```
-### Troubleshoot
 
-* Check before running workflow cronjob that chat has required attribute.
-* Check your server mail setting.
+### Troubleshooting
 
-## Browser notifications
+*   Before running the workflow cron job, verify that the chat has the required attributes.
+*   Check your server's mail settings.
+
+## Browser Notifications
 
 Pending...

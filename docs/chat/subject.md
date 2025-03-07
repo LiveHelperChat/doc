@@ -6,7 +6,7 @@ sidebar_label: Subject
 
 ## Introduction
 
-Subjects allows you to tag chat with specific subject/topic. Defined subjects list can be found at
+Subjects allow you to tag chats with a specific subject or topic. You can find the defined subjects list at:
 
 > System configuration -> Live help configuration -> Subjects
 
@@ -14,22 +14,22 @@ Subjects allows you to tag chat with specific subject/topic. Defined subjects li
 
 ## Subject and Chat
 
-In main chat interface on the right column you will see subject row. 
+In the main chat interface, you will see the subject row in the right column.
 
 ![Subject chat](/img/chat/chat-subject.jpg)
 
-By clicking `+` you will see modal window where you can choose subject.
+By clicking the `+` button, a modal window will appear, allowing you to choose a subject.
 
 ![Choosing subject](/img/chat/choosing-subject.jpg)
 
-Afterwards you can search chats by subject in chat list window or you can generate [chart by subject](statistic.mdx#number-of-chats-by-subject).
+Afterward, you can search chats by subject in the chat list window, or you can generate a [chart by subject](statistic.mdx#number-of-chats-by-subject).
 
 ## Permissions
 
-For operator to be able to set subject in the chat he has to have this permission
+For an operator to be able to set a subject in the chat, they must have the following permission:
 
 > 'lhchat', 'setsubject'
 
-In order for operator to edit subjects he has to have this permission
+In order for an operator to edit subjects, they must have this permission:
 
 > 'lhchat', 'administratesubject'

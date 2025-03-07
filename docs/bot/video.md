@@ -3,26 +3,26 @@ id: bot-video
 title: Video
 ---
 
-This article explains `Send Video` response type
+This article explains the `Send Video` response type.
 
 ![](/img/bot/video.png)
 
-It supports also any iframe video provider like Youtube. You just have to paste embed code in video URL.
+It also supports any iframe video provider like YouTube. You just have to paste the embed code in the video URL.
 
-There you can generate iframe parameters for youtube video. You can also generate embed code from youtube video itself.
+You can generate iframe parameters for a YouTube video using the YouTube Player Demo. You can also generate the embed code from the YouTube video itself.
 https://developers.google.com/youtube/youtube_player_demo
 
-You can paste direct url to your video file.
+You can paste a direct URL to your video file.
 
-Direct video 
+**Direct video**
 
 ![](/img/bot/direct-video.png)
 
-Youtube video
+**YouTube video**
 
 ![](/img/bot/youtube-video.png)
 
-Iframe JSON
+**Iframe JSON**
 ```json
 [
     {
@@ -40,7 +40,7 @@ Iframe JSON
 ]
 ```
 
-Direct video JSON
+**Direct video JSON**
 ```json
 [
     {

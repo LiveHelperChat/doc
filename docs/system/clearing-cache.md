@@ -4,17 +4,17 @@ title: Clearing cache
 sidebar_label: Clearing cache
 ---
 
-If you update something in templates without disabling cache or just updated Live Helper Chat it makes sense just to clear cache.
+If you update templates without disabling the cache, or after updating Live Helper Chat, it is recommended to clear the cache.
 
-## Clearing cache from web
-You can click `Clean cache` link in lhc back office.
+## Clearing Cache from the Web Interface
+You can click the `Clean cache` link in the LHC back office.
 
-## Clearing cache from console
+## Clearing Cache from the Console
 
-Please refer to this [article](system/command.md#clear-cache)
+Refer to [this article](system/command.md#clear-cache) for instructions.
 
 ## Permissions
 
-Required permissions to clear cache from web
+The following permissions are required to clear the cache from the web interface:
 
 > 'lhsystem','expirecache'

@@ -1,64 +1,64 @@
 ---
 id: auto-close-delete
-title: How to setup automatic chat's closing/purging?
+title: How to set up automatic chat closing/purging
 sidebar_label: Automatic closing/deleting
 ---
 
-For it you have to setup in chat configuration
+To configure automatic chat closing/purging, you need to set it up in the chat configuration settings.
 
 ![](https://livehelperchat.com/var/media/images/closing.png)
 
-To execute process itself there is two options
+To execute the closing/purging process, you have two options:
 
- * Execute automatic chats closing/purging in back office by navigating to "System configuration" => "Live help configuration" => "Maintenence" and there you will be able to close, delete chats
- * If you do not want manually maintain these things you can just setup [cronjob](development/cronjob.md)
+*   **Manual Execution:** Navigate to "System configuration" => "Live help configuration" => "Maintenance" in the back office. From there, you can manually close and delete chats.
+*   **Automated Execution via Cronjob:** If you prefer to automate the process, you can set up a [cron job](development/cronjob.md).
 
-What chat's closes **"Automatic chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
+**What chats are closed by the "Automatic chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
-1. Where chat is active and visitor has send more than one message and from his last message passed defined amount of time
-2. Where chat is pending or active and the only message was visitor first message
+1.  Chats that are active, where the visitor has sent more than one message, and the specified amount of time has passed since their last message.
+2.  Chats that are pending or active, where the only message was the visitor's first message.
 
-What chat's closes **"Automatically close active chat if from last visitor/operator message passed. 0 - disabled, n > 0 time in minutes"?**
+**What chats are closed by the "Automatically close active chat if from last visitor/operator message passed" setting (0 - disabled, n > 0 time in minutes)?**
 
-1. We close all active chats if from last chat activity passed defined amount of time. Activity happens on
-    1. Operator accepts a chat
-    2. Visitor writes a message
-    3. Operator writes a message
+1.  All active chats are closed if the specified amount of time has passed since the last chat activity. Activity includes:
+    *   Operator accepting a chat
+    *   Visitor sending a message
+    *   Operator sending a message
 
-What chat's closes **"Automatic pending chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"?**
+**What chats are closed by the "Automatic pending chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
-1. Where chat is pending and from chat start passed defined amount of time. Means chat was not accepted for this period of time.
+1.  Chats that are pending and the specified amount of time has passed since the chat started. This means the chat was not accepted within this period.
 
-What chat's closes **"Automatic active chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"**?
+**What chats are closed by the "Automatic active chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
-1. Where chat is active and from chat start passed defined amount of time.
+1.  Chats that are active and the specified amount of time has passed since the chat started.
 
-What chat's closes **"Automatic bot chats closing. 0 - disabled, n > 0 time in minutes before chat is automatically closed"**?
+**What chats are closed by the "Automatic bot chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
-1. Where chat is bot chat and from chat start passed defined amount of time, and the only message was user first message.
-2. Where chat is bot chat and from last visitor message passed defined amount of time.
+1.  Chats that are bot chats, the specified amount of time has passed since the chat started, and the only message was the user's first message.
+2.  Chats that are bot chats and the specified amount of time has passed since the last visitor message.
 
-What chat's deletes **"Automatic chats purging. 0 - disabled, n > 0 time in minutes before chat is automatically deleted"**?
+**What chats are deleted by the "Automatic chats purging" setting (0 - disabled, n > 0 time in minutes before chat is automatically deleted)?**
 
-1. Chat is closed and from user last message passed defined amount of time. 
+1.  Chats that are closed and the specified amount of time has passed since the user's last message.
 
-What chat's closes **"Automatically close pending chats where visitor has left a chat. Timeout in minutes, last activity by visitor `desktop timeout`,`mobile timeout`,`status chat`."**?
+**What chats are closed by the "Automatically close pending chats where visitor has left a chat" setting (Timeout in minutes, last activity by visitor `desktop timeout`,`mobile timeout`,`status chat`)?**
 
-1. Chats where visitor
-    1. Has been redirected to survey form
-    2. Has been redirected to offline form
-    3. Has closed chat explicitly
-2. Visitor was seen online based on defined timeout values
-    1. `desktop timout` - applies to desktop devices
-    2. `mobile timeout` - applies to mobile and tablet devices
-    3. `status chat` - 
-       1. 0 or absent close include only pending, 
-       2. 1 - include only active
-       3. 2 - include pending and active chats
-       4. 3 - pending/bot chats
-       5. 4 - only bot chats
+1.  Chats where the visitor:
+    *   Has been redirected to a survey form
+    *   Has been redirected to an offline form
+    *   Has explicitly closed the chat
+2.  Visitors were seen online based on defined timeout values:
+    *   `desktop timeout` - applies to desktop devices
+    *   `mobile timeout` - applies to mobile and tablet devices
+    *   `status chat` - determines which chats are included based on visitor status:
+        *   0 or absent: include only pending chats
+        *   1: include only active chats
+        *   2: include pending and active chats
+        *   3: include pending and bot chats
+        *   4: include only bot chats
 
-* E.g `1,3` would mean that pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
-* E.g `1,3,1` would mean that active chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
-* E.g `1,3,2` would mean that active/pending chats where `desktop timeout` is 1 minutes and `mobile timeout` is 3 minutes will be closed automatically. 
-* E.g `20,30,3` would mean that pending/bot chats where `desktop timeout` is 20 minutes and `mobile timeout` is 30 minutes will be closed automatically.
+*   For example, `1,3` would mean that pending chats where `desktop timeout` is 1 minute and `mobile timeout` is 3 minutes will be closed automatically.
+*   For example, `1,3,1` would mean that active chats where `desktop timeout` is 1 minute and `mobile timeout` is 3 minutes will be closed automatically.
+*   For example, `1,3,2` would mean that active/pending chats where `desktop timeout` is 1 minute and `mobile timeout` is 3 minutes will be closed automatically.
+*   For example, `20,30,3` would mean that pending/bot chats where `desktop timeout` is 20 minutes and `mobile timeout` is 30 minutes will be closed automatically.

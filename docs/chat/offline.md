@@ -4,138 +4,137 @@ title: Offline messaging
 sidebar_label: Offline messaging
 ---
 
-## Default behaviour
+## Default Behavior
 
-By default leave a message functionality is enabled in generated embed code. If you in embed code generation window un-check
+By default, the "leave a message" functionality is enabled in the generated embed code. In the embed code generation window, if you uncheck:
 
 > Show a ‘leave a message form’ when there are no online operators
 
-when chat is offline - widget will be hidden. If you in "[Start chat form settings](start-chat-form-settings.md)" page enable.
- 
+the widget will be hidden when the chat is offline. If you enable the following option in the "[Start chat form settings](start-chat-form-settings.md)" page:
+
 > Enable leave a message functionality automatically if there are no online operators
 
-Offline widget will be shown again. So you can genarate embed code without enable leave a message functionality and later enable in start chat form settings page just. Offline widget looks like.
+the offline widget will be shown again. Therefore, you can generate the embed code without enabling the "leave a message" functionality initially and enable it later in the start chat form settings page. The offline widget looks like this:
 
 ![Offline widget](/img/chat/offline-widget.png)
 
 ## Disable the offline message for a widget
 
-* Generate embed code without `Show a ‘leave a message form’ when there are no online operators`
-* Make sure you do **not** have checked `Enable leave a message functionality automatically if there are no online operators` in  "[Start chat form settings](start-chat-form-settings.md)"
-* Widget should be hidden now if there is no online operators.
+*   Generate embed code without selecting `Show a ‘leave a message form’ when there are no online operators`.
+*   Ensure that `Enable leave a message functionality automatically if there are no online operators` is **not** selected in the "[Start chat form settings](start-chat-form-settings.md)".
+*   The widget should now be hidden if there are no online operators.
 
 ## How to show a custom message if there is no online operators?
 
-This scenario is usefull for the widget if you still want to show a status widget. On widget open they should see a custom message.
+This scenario is useful if you want to display a status widget and show a custom message when the widget is opened and no operators are online.
 
-* Make sure you **DO** have checked `Enable leave a message functionality automatically if there are no online operators` in  "[Start chat form settings](start-chat-form-settings.md)"
-* In disable conditions check `Disable conditions.`
-* Click `Add conditions` like `{args.is_online} = 0`
-* Enter custom message in `Show this message to the visitors who opens a chat widget.`
+*   Ensure that `Enable leave a message functionality automatically if there are no online operators` **is** selected in the "[Start chat form settings](start-chat-form-settings.md)".
+*   In the "Disable conditions" section, check `Disable conditions`.
+*   Click `Add conditions` and add a condition like `{args.is_online} = 0`.
+*   Enter your custom message in the `Show this message to the visitors who opens a chat widget` field.
 
 ## Disable the offline message for a static url
 
-Two scenarios here. 
+There are two scenarios here:
 
-* If you pass one department like.
+*   If you specify a single department, such as:
 
-> https://exmaple.com/chat/start/(department)/1
+    > https://example.com/chat/start/(department)/1
 
-and this department is offline and you do **not** pass `/(leaveamessage)/true` or do **not** `Enable leave a message functionality automatically if there are no online operators` have checked you should see something like.
+    and that department is offline, and you do **not** include `/(leaveamessage)/true` in the URL or have `Enable leave a message functionality automatically if there are no online operators` selected, you should see the following:
 
-![Offline single](/img/chat/offline-single.png)
+    ![Offline single](/img/chat/offline-single.png)
 
-* If you pass more than one department or do not pass any
+*   If you specify more than one department, or do not specify any department:
 
-Offline message form **always** will be shown even if you do not pass department. 
+    The offline message form will **always** be shown, even if you do not specify a department.
 
 :::caution
-This behaviour should change in future releases and respect offline request settings per department.
+This behavior is subject to change in future releases to respect offline request settings per department.
 :::
 
 ## Widget behaviour
 
-If there is at-least one online operator widget will be shown as online. In department dropdown offline department will be marked as offline.
+If there is at least one online operator, the widget will be shown as online. In the department dropdown, offline departments will be marked as offline.
 
 ![Offlime multiple departments](/img/chat/offline-multi.png)
 
-* If you choose offline department you should see offline form instantly.
-* If you pass only one department, department option will be hidden.
+*   If you select an offline department, you will immediately see the offline form.
+*   If you only specify one department, the department option will be hidden.
 
 ## Defining recipient
  
-You can also edit template in e-mail templates section.
+You can also edit the email template in the "E-mail templates" section.
 
-*   Recipient decision order
-    *   If department has assigned e-mail this email receives the requests
-    *   If department does not have assigned e-mail, check perhaps e-mail template has recipient field filled
-    *   If none of the above conditions are met, mail is send to first from users list. In most cases it's the admin.
+*   Recipient decision order:
+    *   If the department has an assigned email address, this email address will receive the requests.
+    *   If the department does not have an assigned email address, the system checks if the email template has a recipient field filled.
+    *   If none of the above conditions are met, the email is sent to the first user in the users list, which is typically the administrator.
 
 ## Redirecting user manually from chat to contact form
 
 ![Redirect to contact](/img/files/redirect-contact.jpg)
 
-Required permission for operator to be able to do this
+Required permission for operators to use this feature:
 
 > 'lhchat','redirectcontact'
 
-## How to redirect user to contact form if chat is not accepted for some time?
+## How to Redirect a User to the Contact Form if a Chat is Not Accepted Within a Certain Time
 
-Just edit depatment and set after how many seconds user should be redirected to leave a message form.
+Simply edit the department and set the number of seconds after which the user should be redirected to the "leave a message" form.
 
 ![](https://livehelperchat.com/var/media/images/redirect.png)
 
-As for bonus you can have the following fancy workflow
+As a bonus, you can implement the following advanced workflow:
 
-*   Have a please wait a mesage using auto responder.
-*   Setup delayed responder let say after 30 seconds if chat is not accepted. Let say inform user there that he will be redirected to leave a message form.
-*   And set that after 35 seconds user is redirected to offline form.
+*   Use an auto-responder to send a "please wait" message.
+*   Set up a delayed responder to inform the user after 30 seconds (if the chat is not accepted) that they will be redirected to the "leave a message" form.
+*   Configure the system to redirect the user to the offline form after 35 seconds.
 
-This workflow can be even futher enhanced by transfering chat to another department first and only then showing feedback form. In that case "Rejected" department have to be configured to redirect user to feedback form.
+This workflow can be further enhanced by transferring the chat to another department first and then showing the feedback form. In that case, the "Rejected" department must be configured to redirect the user to the feedback form.
 
 ## How do not prefill an offline message?
 
-* Create a widget theme in back office
-* Set it as default
-* In theme edit page `Widget container` check `Do not prefill offline message with chat messages.`
+*   Create a widget theme in the back office.
+*   Set it as the default theme.
+*   In the theme edit page, under `Widget container`, select `Do not prefill offline message with chat messages`.
 
-## How to redirect visitor to offline form from bot?
+## How to Redirect a Visitor to the Offline Form from a Bot
 
-If there is no online operators you can use trigger
+If there are no online operators, you can use the following trigger:
 
 > `Update current chat` -> `Update main chat attribute` -> and in `Chat attribute name` enter `status_sub` and value enter `2`
 
-Internally it just means `const STATUS_SUB_CONTACT_FORM = 2;`
+Internally, this sets `const STATUS_SUB_CONTACT_FORM = 2;`
 
-You can also redirect visitor to survey
+You can also redirect a visitor to a survey using:
 
 `const STATUS_SUB_SURVEY_SHOW = 5;`
 
-## How to redirect visitor to offline form if no one accepts a chat in defined amount of time?
+## How to Redirect a Visitor to the Offline Form if No One Accepts a Chat Within a Defined Time
 
-See video tutorial https://www.youtube.com/watch?v=mqXDCwGy3U8
+See the video tutorial: https://www.youtube.com/watch?v=mqXDCwGy3U8
 
-Basic steps are
+The basic steps are:
 
-* Setup auto responder [Optional]
-* Edit department `Delay in seconds before leave a message form is shown. 0 Means functionality is disabled`
+*   Set up an auto-responder (optional).
+*   Edit the department settings: `Delay in seconds before leave a message form is shown. 0 Means functionality is disabled`.
 
-That's it. :)
+That's it! :)
 
-## How to redirect user to custom page then user clicks on offline widget?
+## How to Redirect a User to a Custom Page When They Click on the Offline Widget
 
-Let say you want to redirect user to some page then your operators are offline.
-
-You can do that by adjusting your embed code and appending redirect url. E.g
+If you want to redirect a user to a specific page when your operators are offline, you can adjust your embed code and append a redirect URL. For example:
 
 ```
 offline_redirect: 'https://livehelperchat.com', // Redirect user to this page if chat is offline | Optional
 ```
-### New widget
 
-Please refer to [javascript arguments](javascript-arguments.md) page.
+### New Widget
 
-### Old widget
+Please refer to the [javascript arguments](javascript-arguments.md) page.
+
+### Old Widget
 
 ```js
 <script type="text/javascript">
@@ -153,35 +152,35 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 </script>
 ```
 
-## Offline settings
+## Offline Settings
 
-You can also choose few options regarding offline message storage under
+You can also configure several options related to offline message storage under:
 
 > System configuration > Live Helper Configuration > Offline settings
 
 ![Offline settings](/img/chat/offline-settings.jpg)
 
-## Tracking offline messaging statistic
+## Tracking Offline Messaging Statistics
 
-If you have not checked option `Automatically change offline chat status to closed`. Most likely main chat status `status_sub` from 7 (offline request) upon chat acceptance or close will change to any other and statistic wll be mixed.
+If you have not selected the option `Automatically change offline chat status to closed`, the main chat status `status_sub` will likely change from 7 (offline request) to another status upon chat acceptance or closure, which will mix the statistics.
 
-To precisely track offline chats you can 
+To accurately track offline chats, you can:
 
-* Either `Automatically change offline chat status to closed` check in `Offline settings`
-* You can listen for an event `chat.chat_offline_request_saved` and add subject to a chat.
+*   Select `Automatically change offline chat status to closed` in `Offline settings`.
+*   Listen for the `chat.chat_offline_request_saved` event and add a subject to the chat.
 
 ![Offline settings](/img/chat/offline-saved-request.png)
 
-Bot trigger adds subject with ID 12 (replace to your own) to the chat.
+The bot trigger adds a subject with ID 12 (replace with your own ID) to the chat.
 
 ![Offline request subject](/img/chat/offline-request-subject.png)
 
-## What happens if both departments are `Visible only if online`
+## What Happens if Both Departments are Set to `Visible only if online`?
 
-E-mail and offline request will be assigned to the very first defined department.
+The email and offline request will be assigned to the very first defined department.
 
 ## Permissions
 
-Required permissions to manage offline settings.
+Required permissions to manage offline settings:
 
 > 'lhsystem', 'offlinesettings'

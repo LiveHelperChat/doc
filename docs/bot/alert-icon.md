@@ -1,16 +1,16 @@
 ---
 id: alert-icon
-title: Alert icon
+title: Alert Icon
 ---
 
-Alert icon allows to add an icon about going bot chat in chat lists.
+The Alert icon feature allows you to add an icon to chats handled by a bot in the chat list.
 
-Bot configuration looks like
+The bot configuration looks like this:
 
 ![](/img/bot/alert-icon.png)
 
-Once this trigger is executed you would see something like this. This chat as example has two alert icons added.
+Once this trigger is executed, you will see something like this. In this example, the chat has two alert icons added.
 
 ![](/img/bot/alert-icon-list.png)
 
-[See sample](bot/check-conditions.md) how to add alert icon if visitor message contains custom words.
+See the [sample](bot/check-conditions.md) on how to add an alert icon if a visitor's message contains specific words.

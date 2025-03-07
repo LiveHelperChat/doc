@@ -3,11 +3,11 @@ id: node-js
 title: NodeJS Support
 ---
 
-Requirements:
+## Requirements
 
-*   Node.js on server [Required]
-*   Redis [Optional]
-*   Browser with WebSockets support. Actually it works with IE8 >=, FF and Chrome [Optional]
+*   Node.js on the server (required)
+*   Redis (optional)
+*   Browser with WebSocket support (works with IE8+, Firefox, and Chrome) (optional)
 
 Read more to find out how to install it
 
@@ -15,52 +15,53 @@ Location to download:
 
 ### [https://github.com/LiveHelperChat/NodeJS-Helper](https://github.com/LiveHelperChat/NodeJS-Helper)
 
-### Install:
+## Installation
 
-1. Put nodejshelper folder on your server extensions folder. Live helper chat extensions folder. It should look like "extension/nodejshelp/..."
-2. Installing NodeJs
-    1.  Ubuntu [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
-    2.  Centos [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server)
-        1.  Easiest is just install from EPEL repository. See tutorial
-3. For publish notifications to work you have to install [Redis](http://redis.io/)
-   1.  On Centos it's easy as yum install redis
-   2.  Make redis startup then os starts
-       1.  systemctl enable redis.service
-   3.  Start redis service
-       1.  systemctl start redis.service
-4. Install composer dependencies. `cd extension/nodejshelper && componser install`
-5. Install node dependencies `cd extension/nodejshelper/serversc/lhc && npm install`
-6. https://github.com/LiveHelperChat/NodeJS-Helper/blob/master/nodejshelper/serversc/lhc/server.js#L54 file. Set same secret hash as your [settings.ini.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L12)
-7. extension/nodejshelper/settings/settings.ini.php (make copy of settings.ini.default.php)
-8. Enable extension in settings.ini.php file.
-   1.  'extensions' =>   
-             array (  
-               0 => 'nodejshelper',  
-             ),
-9. Clean cache from back office.
-10. Now ir order to make sure that everything works you can navigation to extension/nodejshelper/serversc/lhc and execute `node server.js`
-11.  Start some chat, you should see some node messages in console.
-12.  Making running NodeJs as service on Centos. `npm install -g forever`
-13.  Next we have to write nodejs service file. It's content can be the following (vim /usr/lib/systemd/system/nodejshelper.service). Adjust bolded variables based on your enviroment. You may want to add nodejs as user also (adduser nodejs)
+1.  Place the `nodejshelper` folder in your server's extensions folder. The path should look like `extension/nodejshelper/...`.
+2.  Install Node.js:
+    1.  Ubuntu: [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
+    2.  CentOS: [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server)
+        *   The easiest method is to install from the EPEL repository. See the tutorial.
+3.  To enable publish notifications, install [Redis](http://redis.io/).
+    1.  On CentOS, use `yum install redis`.
+    2.  Configure Redis to start on boot:
+        *   `systemctl enable redis.service`
+    3.  Start the Redis service:
+        *   `systemctl start redis.service`
+4.  Install Composer dependencies: `cd extension/nodejshelper && composer install`
+5.  Install Node dependencies: `cd extension/nodejshelper/serversc/lhc && npm install`
+6.  In the file [https://github.com/LiveHelperChat/NodeJS-Helper/blob/master/nodejshelper/serversc/lhc/server.js#L54](https://github.com/LiveHelperChat/NodeJS-Helper/blob/master/nodejshelper/serversc/lhc/server.js#L54), set the same secret hash as your [settings.ini.php](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L12).
+7.  Copy `extension/nodejshelper/settings/settings.ini.default.php` to `extension/nodejshelper/settings/settings.ini.php`.
+8.  Enable the extension in `settings.ini.php`:
 
-``` 
-     [Unit]
-     Description=Live helper chat NodeJS Daemon
-     
-     [Service]
-     User=nodejs
-     ExecStart=/usr/bin/forever /var/www/client/lhc_web/extension/nodejshelper/serversc/lhc/server.js
-     LimitNOFILE=100000
-     
-     [Install]
-     WantedBy=multi-user.target
-```
+    ```php
+    'extensions' => array(
+        0 => 'nodejshelper',
+    ),
+    ```
+9.  Clear the cache from the back office.
+10. To verify the installation, navigate to `extension/nodejshelper/serversc/lhc` and execute `node server.js`.
+11. Start a chat. You should see Node.js messages in the console.
+12. To run Node.js as a service on CentOS, use `npm install -g forever`.
+13. Create a Node.js service file (e.g., `/usr/lib/systemd/system/nodejshelper.service`) with the following content. Adjust the variables in **bold** based on your environment. You may also want to add a `nodejs` user (e.g., `adduser nodejs`).
 
-12.  systemctl start nodejshelper.service
+    ```
+    [Unit]
+    Description=Live Helper Chat NodeJS Daemon
 
-13.  To enable it on startup just execute systemctl enable nodejshelper.service
+    [Service]
+    User=nodejs
+    ExecStart=/usr/bin/forever /var/www/client/lhc_web/extension/nodejshelper/serversc/lhc/server.js
+    LimitNOFILE=100000
 
-### How to run nodejs under nginx as proxy?
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+14. Start the service: `systemctl start nodejshelper.service`
+15. Enable the service on startup: `systemctl enable nodejshelper.service`
+
+## Running Node.js behind an Nginx Proxy
 
 In this example node.js proxy listens on 444 port.
 
@@ -124,39 +125,39 @@ If your website is in `HTTPS` mode please put `secure` to `true`
 
 If you are providing separate installations for each client manually you can just set unique number for instance_id and each installation will have it's own space and will be able to use NodeJS. That means that this extension can be used for unlimited number of chats instances on the same server. You just have to be sure that instance_id is unique, it can be either number or text.
 
-### How to run node.js as background service?
+## Running Node.js as a Background Service
 
 Need to notice one thing that you may have to increase ulimit in system to accept more connections than 1024. I saw some flaws then nodejs stopped accepting connections because of this.
 
-### How does it works and what ajax calls it eliminates?
+## How It Works and Which AJAX Calls It Eliminates
 
 1.  When user sends a message using ajax and receives a html for message list append. This already formated html is send directly to Node.js and is distrubuted in real time to all connected users (Chatbox case). They do not have to execute sync. Actually there is no sync going in the background anymore with this extension. Also when user sends a message, admin is informted that there is some information and only then operator executes sync call.
 2.  Then operator sends a message to chat. User is informed that there is pending message and ajax call is executed. So there is no running ajax calls in the background anymore. Ajax is executed only then there is some information.
 3.  If you use publish notifications, administration interface sync calls are also eliminated.
 
-### Why there are still ajax calls involved?
+## Why AJAX Calls Are Still Involved
 
 1.  To remake completely all parts would take a lot of time which would involve permission checking/connecting to database and in general just duplicating php modules actions and so on. With this extension we basically just distribute load across connected users and do not have to pay attention to permissions because standard ajax calls takes cares of this. This extension does not override even a single core file or template. This extensions is like hybrid solution between full WebSockets application and ajax based. I just take what's the best from both worlds.
 
-### I do not receive a messages, what to do?
+## Troubleshooting: No Messages Received
 
 *   Enable debug output in NodeJS extension. Just edit settings.js file and enable debug output.
 *   When you accept or start new chat as a client, you should see some actions in the console. Also check in chrome debug that there is no errors and it connects to your server.
 
-### Does it also reduces back office operators sync calls?
+## Does It Reduce Back Office Operator Sync Calls?
 
 Yes it does. We are waiting users actions and only when there is some information we execute ajax sync call.
 
-### Does this extensions supports automated hosting plugin?
+## Does This Extension Support the Automated Hosting Plugin?
 
 Yes it does!
 
-### what does publish notifications option do?
+## What Does the Publish Notifications Option Do?
 
 When enabled they eliminate administration sync calls. (Right column chats list). Also publish notifications are used when desktop client writes a mesage. Like desktop client does not connect to NodeJs. Workflow is the following
 
 Desktop client -> Web server -> Redis -> NodeJs pulls notification -> Emits signal to listening socket -> Web browser issues ajax request to update it's messages list.
 
-### Is there any fail over if my NodeJs dies or client cannot connect?
+## Is There Failover if NodeJS Dies or a Client Cannot Connect?
 
 Yes. Ajax calls is eliminated only if client succesfully connects to NodeJs. If during chat session customer or operator looses connection to NodeJs, let say node dies. LHC automatically falls back to standard ajax queries.

@@ -1,71 +1,77 @@
 ---
 id: google-analytics
-title: Integration with Google Analytics event tracking
+title: Google Analytics Integration
 sidebar_label: Google Analytics
 ---
-## New widget
 
-In version 3.42v there is new option in `System configuration -> Live Help configuration -> Events Tracking` there you can configure Google Analytics integration. More information available at [Events Tracking](chat/events-tracking.md)
+## New Widget (version 3.42v and later)
 
-If you want manually configure integration you can do that using available callbacks see [Javascript Arguments](javascript-arguments.md) article
+In version 3.42v, a new option was added under `System configuration -> Live Help configuration -> Events Tracking`. This allows you to configure Google Analytics integration. For more information, refer to [Events Tracking](chat/events-tracking.md).
 
-## Old widget
+If you prefer to manually configure the integration, you can use the available callbacks described in the [Javascript Arguments](javascript-arguments.md) article.
 
-To integrate google analytics event tracking you just have to define callback for start chat action. Here is possible callbacks for widget embed code
+## Older Widgets (prior to version 3.42v)
 
-```js
- LHCChatOptions.callback = {  
- online_chat_started_cb : function(inst) {  
- // chat was started  
- },  
- chat_started_by_invitation_cb : function(inst) {  
- // chat was started by invitation  
- },  
- offline_request_cb:function(inst) {  
- // user has send offline request  
- },  
- show_widget_cb:function(inst){  
- // Show widget function was called, if you are using API embed you can generate custom html there.  
- console.log('is-online+'+inst.isOnline); // Can be used to render custom html etc or do some other stuff  
- },  
- start_chat_cb:function(type){ // User clicked widget  
-     _gaq.push(['_trackEvent', 'LiveHelperChat', 'StartChat', type]);  
- }};
-```
-
-
-So our final embed code can look like
+To integrate Google Analytics event tracking, you need to define a callback for the start chat action. The following callbacks are available for the widget embed code:
 
 ```js
- <script type="text/javascript">  
- var LHCChatOptions = {};  
- LHCChatOptions.opt = {widget_width:320};  
- LHCChatOptions.callback = {start_chat_cb:function(type){  
-     _gaq.push(['_trackEvent', 'LiveHelperChat', 'StartChat', type]);
- }}  
- **Other script....**  
- </script>
+LHCChatOptions.callback = {
+    online_chat_started_cb: function(inst) {
+        // Chat was started
+    },
+    chat_started_by_invitation_cb: function(inst) {
+        // Chat was started by invitation
+    },
+    offline_request_cb: function(inst) {
+        // User has sent an offline request
+    },
+    show_widget_cb: function(inst) {
+        // Show widget function was called. If you are using API embed, you can generate custom HTML here.
+        console.log('is-online+' + inst.isOnline); // Can be used to render custom HTML etc. or do some other stuff
+    },
+    start_chat_cb: function(type) { // User clicked widget
+        _gaq.push(['_trackEvent', 'LiveHelperChat', 'StartChat', type]);
+    }
+};
 ```
 
-Here is callbacks for page embed code
+Your final embed code might look like this:
 
 ```js
- LHCChatOptionsPage.callback = {  
- online_chat_started_cb : function(inst) {  
-     // Online chat started  
- },      
- offline_request_cb:function(inst) {  
-     // Offline request was send  
- }};
+<script type="text/javascript">
+var LHCChatOptions = {};
+LHCChatOptions.opt = {
+    widget_width: 320
+};
+LHCChatOptions.callback = {
+    start_chat_cb: function(type) {
+        _gaq.push(['_trackEvent', 'LiveHelperChat', 'StartChat', type]);
+    }
+}
+**Other script....**
+</script>
 ```
 
-Type variable can have the following values
+Here are the callbacks for page embed code:
 
-*   external - was opened popup window. Get's executed when clicking on status widget opens popup. Operators status is online.
-*   external_offline - was opened popup window. Get's executed when clicking on status widget opens popup. Operators status is offline.
-*   internal_invitation - was opened invitation widget
-*   internal - user clicked on status widget and widget was shown. Operators status is online.
-*   internal_offline - opened widget then operators status was offline
-*   internal_reopen - user was having chat and just navigated to another page and widget loaded.
+```js
+LHCChatOptionsPage.callback = {
+    online_chat_started_cb: function(inst) {
+        // Online chat started
+    },
+    offline_request_cb: function(inst) {
+        // Offline request was sent
+    }
+};
+```
 
-For more information you can see [https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#SettingUpEventTracking](https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#SettingUpEventTracking)
+The `type` variable can have the following values:
+
+*   `external`: The popup window was opened when the status widget was clicked and the operator status is online.
+*   `external_offline`: The popup window was opened when the status widget was clicked and the operator status is offline.
+*   `internal_invitation`: The invitation widget was opened.
+*   `internal`: The user clicked on the status widget and the widget was shown. The operator status is online.
+*   `internal_offline`: The widget was opened and the operator status was offline.
+*   `internal_reopen`: The user was having a chat, navigated to another page, and the widget loaded.
+
+For more information, see [https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#SettingUpEventTracking](https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#SettingUpEventTracking).

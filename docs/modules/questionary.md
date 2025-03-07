@@ -4,8 +4,13 @@ title: Questionary
 sidebar_label: Questionary
 ---
 
-Pending documentation...
+## Questionary Module
+
+Documentation for the Questionary module is currently in progress.
 
 ## Permissions
 
-> 'lhquestionary', 'manage_questionary'
+The Questionary module utilizes the following permissions:
+
+*   `lhquestionary`
+*   `manage_questionary`

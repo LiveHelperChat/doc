@@ -1,60 +1,60 @@
 ---
 id: site-access
-title: Understanding site access pattern
+title: Understanding Site Access Patterns
 sidebar_label: Site access
 ---
 
-This is kinda tricky feature used by Live Helper Chat. It allows us to do the following tricks
+This is a somewhat complex feature used by Live Helper Chat. It allows for the following:
 
-1.  Have different languages by different site acces
-2.  Have different design by different site access
+1.  Serving different languages based on site access.
+2.  Applying different designs based on site access.
 
-### How it is used?
+### How is it used?
 
-Let's take for example this fragment from configuration
+Consider the following configuration example:
 
 ```php
 'lit' => array (
-        'locale' => 'lt_LT',
-        'content_language' => 'lt',
-          'dir_language' => 'ltr',
-        'title' => '',
-        'description' => '',
-        'theme' =>
-        array (
-          0 => 'customtheme',
-          1 => 'defaulttheme',
-        ),
-        'default_url' =>
-        array (
-          'module' => 'chat',
-          'view' => 'startchat',
-        ),
-      ),
+    'locale' => 'lt_LT',
+    'content_language' => 'lt',
+    'dir_language' => 'ltr',
+    'title' => '',
+    'description' => '',
+    'theme' =>
+    array (
+      0 => 'customtheme',
+      1 => 'defaulttheme',
+    ),
+    'default_url' =>
+    array (
+      'module' => 'chat',
+      'view' => 'startchat',
+    ),
+  ),
 ```
 
-I would like to pay attention to the theme array. This theme array describe in what order to look for design files. So if you want to have completely different interface for two difference domains it would be logical just create another site access E.g exmaplecom . Example configuration
+Pay attention to the `theme` array. This array defines the order in which the system searches for design files. If you want a completely different interface for two different domains, create another site access. For example: `examplecom`.
 
 ```php
 'exmaplecom' =>
-      array (
-        'locale' => 'lt_LT',
-        'content_language' => 'lt',
-          'dir_language' => 'ltr',
-        'title' => '',
-        'description' => '',
-        'theme' =>
-        array (
-           0 => 'examplecomtheme',
-           1 => 'customtheme',
-           2 => 'defaulttheme',
-        ),
-        'default_url' =>
-        array (
-          'module' => 'chat',
-          'view' => 'startchat',
-        ),
-      ),
+  array (
+    'locale' => 'lt_LT',
+    'content_language' => 'lt',
+    'dir_language' => 'ltr',
+    'title' => '',
+    'description' => '',
+    'theme' =>
+    array (
+      0 => 'examplecomtheme',
+      1 => 'customtheme',
+      2 => 'defaulttheme',
+    ),
+    'default_url' =>
+    array (
+      'module' => 'chat',
+      'view' => 'startchat',
+    ),
+  ),
 ```
 
-So in this case **index.php/examplecom/chat/startchat** will look for files first in **examplecomtheme **theme.
+In this case, **index.php/examplecom/chat/startchat** will search for files in the following order: `examplecomtheme`, `customtheme`, and `defaulttheme`.

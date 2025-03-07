@@ -1,10 +1,10 @@
 ---
 id: automatic-translations
-title: Automatic translation's workflow
+title: Automatic Translation Workflow
 sidebar_label: Automatic translation
 ---
 
-Live Helper Chat supports automatic translations while conversation is going.
+Live Helper Chat supports automatic translations during conversations.
 
 Youtube manuals
 
@@ -13,57 +13,56 @@ Youtube manuals
 
 ## Setup
 
-Navigate to `System configuration -> Live help configuration -> Atomation (Automatic translations)`
+Navigate to `System configuration -> Live help configuration -> Automation (Automatic translations)`.
 
-There you can choose what service provider you want to use and enter it's details.
+Here, you can choose your preferred service provider and enter its details.
 
-## Usage workflow
+## Usage Workflow
 
-There is possible two workflows
+There are two possible workflows:
 
- * Automatic messages translation
- * Manual messages translations
+ * Automatic message translation
+ * Manual message translation
 
-### Automatic messages translation
+### Automatic Message Translation
 
-For messages being translated automatically you have to click on the right column 
+To enable automatic translation for messages, click on the icon in the right column:
 
 ![](/img/chat/automatic-translations-popoup.png)
 
-This will show possible options for the present chat
+This will display the available options for the current chat:
 
 ![](/img/chat/chat-translations-options.png)
 
-System always tries to detect a visitor and preferred operator language automatically.
+The system automatically attempts to detect the visitor's and operator's preferred languages.
 
-If you check `Automatically translate operator and visitor messages` every message send by visitor/operator will be translated automatically.
+If you select `Automatically translate operator and visitor messages`, every message sent by the visitor or operator will be translated automatically.
 
-Also while saving you can check `On save automatically translate old chat messages. If not checked only new messages will be translated.` so system will try to translate all previous visitor/operator messages.
+Additionally, when saving, you can select `On save automatically translate old chat messages. If not checked only new messages will be translated.` to translate all previous visitor/operator messages.
 
-### Manual messages translation
+### Manual Message Translation
 
-If you do not want to use automatic translations for whatever reason you can translate specific messages by clicking right mouse button on the message you want to translate.
+If you prefer not to use automatic translations, you can translate specific messages by right-clicking on the message you want to translate.
 
 ![](/img/chat/translation-opt-in-message.png)
 
-Also after you wrote a message you can click on the toolbar ![](/img/chat/toolbar-language-icon.png) and operator message will be translated in the message area.
+Alternatively, after writing a message, you can click the toolbar icon ![](/img/chat/toolbar-language-icon.png) to translate the operator message within the message area.
 
-### How to setup AWS messages translations
+### How to Set Up AWS Message Translations
 
-For AWS messages translations you have to setup composer first from `lhc_web` folder
+To use AWS for message translations, you must first set up Composer from the `lhc_web` folder.
 
-Just do. If you get an error make sure you have the most recent version from official repository. And your `composer.json` file look like https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/composer.json
-If you are updating from older version make sure you replace `index.php` and `cron.php` file
+Execute the following command. If you encounter an error, ensure you have the most recent version from the official repository and that your `composer.json` file resembles the one found at https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/composer.json. If you are updating from an older version, replace the `index.php` and `cron.php` files.
 
 > `composer install`
 
-Also uncomment those lines. Remove two dashes
+Next, uncomment the following lines by removing the two leading dashes:
 
 * https://github.com/LiveHelperChat/livehelperchat/blob/ee3aea143c3f57751206ca4b3cfeee95f4ba51d5/lhc_web/index.php#L31
 * https://github.com/LiveHelperChat/livehelperchat/blob/ee3aea143c3f57751206ca4b3cfeee95f4ba51d5/lhc_web/cron.php#L25
 
 ## Permissions
 
-Operators should have this permission in order to use translations functionality.
+Operators require the following permission to use the translation functionality:
 
 > 'lhtranslation','use'

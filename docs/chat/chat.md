@@ -6,60 +6,62 @@ sidebar_label: Chat window
 
 ## Introduction
 
-This is our main chat window. I'll explain what each of the item does there and how can it be used.
+This is the main chat window. This document explains the function of each item within the window and how it can be used.
 
 ​![](/img/chat/chat-window-v2.png)
 
-## Chat tab
+## Chat Tab
 
 ​![](/img/chat/chat-tab.jpg)
 
-Chat tab shows this information
+The chat tab displays the following information:
 
-* Was last message seen by vistior. If send icon is green ![](/img/chat/send-status-icon.jpg) he saw last message.
-* If operator clicks `x` button he closes chat tab, but chat status is **not** changed in any way.
-* If visitor icon is red means visitor is not connected anymore. ![](/img/chat/visitor-status-chat-tab.jpg)
-* And it shows shorten visitor nick.
+*   Whether the last message was seen by the visitor. If the send icon is green ![](/img/chat/send-status-icon.jpg), the visitor has seen the last message.
+*   If the operator clicks the `x` button, the chat tab closes, but the chat status remains unchanged.
+*   If the visitor icon is red ![](/img/chat/visitor-status-chat-tab.jpg), the visitor is no longer connected.
+*   The shortened visitor nickname.
 
-## Message area
+## Message Area
 
-In this area you will see visitor messages. Also if there are previous visitor messages you will see load a previous messages button.
+This area displays visitor messages. If there are previous visitor messages, a button to load them will appear.
 ​![](/img/chat/message-area.jpg)
 
-You can also click right mouse button and see context menu related to a message.
+You can right-click a message to see a context menu with related options.
 
-### Message edit actions
+### Message Edit Actions
 
 ![](/img/chat/chat-message-popover.png)
 
- * `Quote` - will append message area with quoted message text. 
-   * General `lhchat,use` permission is required.
-   * Chat must be not closed
-   * `Edit` - will be visible if
-     * Chat is not closed
-     * Selected message is not the last operator message and operator has `lhchat,editpreviousall` permission
-     * Selected message is visitor message and operator has `lhchat,editpreviouvis` permission
-     * Selected message is the last operator message and operator has `lhchat,editprevious` permission
-     * Edit history will be saved if operator does not have permission `'lhchat','no_edit_history'` or he is editing not his own message.
-     * Two events wil be dispatched on successful message edit
-       * `chat.message_updated` - General messages was updated event
-       * `chat.message_updated_admin` - Event indicates that operator has an updated message manually. Should be listened if for example you want to add a subject to chat to indicate that it has a message modified by operator.
+*   `Quote` - Appends the message area with the quoted message text.
+    *   Requires the general `lhchat,use` permission.
+    *   The chat must not be closed.
+*   `Edit` - Visible if:
+    *   The chat is not closed.
+    *   The selected message is not the last operator message, and the operator has the `lhchat,editpreviousall` permission.
+    *   The selected message is a visitor message, and the operator has the `lhchat,editpreviouvis` permission.
+    *   The selected message is the last operator message, and the operator has the `lhchat,editprevious` permission.
+    *   Edit history will be saved if the operator does not have the permission `'lhchat','no_edit_history'` or is not editing their own message.
+    *   Two events will be dispatched upon successful message edit:
+        *   `chat.message_updated` - General message updated event.
+        *   `chat.message_updated_admin` - Event indicating that an operator has manually updated a message. This should be listened to if, for example, you want to add a subject to the chat to indicate that it has a message modified by an operator.
+
 ```php
-// General messages was updated event
+// General message updated event
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.message_updated', array('msg' => & $msg, 'chat' => & $Chat));
 
-// Event indicates that admin has an updated message manually
+// Event indicates that admin has manually updated a message
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.message_updated_admin', array('user' => $currentUser->getUserData(true), 'msg' => & $msg, 'chat' => & $Chat));
 ```
- * `Remove` - Removes messages permanently from database
-   * To remove `Visitor` message `lhchat,removemsgvi` permission is required
-   * To remove `Operator` or `Bot` message `lhchat,removemsgop` permission is required. It will allow to remove message independently who wrote this message.
- * `Ask for help` Will work if
-   * Chat is not closed
-   * Operator has permission to use `lhgroupchat,use` permission
- * `Copy (Ctrl+C)` - will copy single message content
- * `Copy all` - will copy whole section of conversation part
- * `Translate` - will translate a message if chat translation service is set up.
+
+*   `Remove` - Permanently removes messages from the database.
+    *   To remove a `Visitor` message, the `lhchat,removemsgvi` permission is required.
+    *   To remove an `Operator` or `Bot` message, the `lhchat,removemsgop` permission is required. This allows removing messages regardless of who wrote them.
+*   `Ask for help` - Works if:
+    *   The chat is not closed.
+    *   The operator has the `lhgroupchat,use` permission.
+*   `Copy (Ctrl+C)` - Copies the content of a single message.
+*   `Copy all` - Copies the entire conversation section.
+*   `Translate` - Translates a message if a chat translation service is set up.
 
 ### Message delivery status indication
 

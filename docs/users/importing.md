@@ -5,12 +5,12 @@ title: Importing users
 
 ## Introduction
 
-You can import batch of users using this functionality. Usefull for large corporations.
+This functionality allows you to import users in batches, which is useful for large organizations.
 
 ![](/img/user/importing.jpg)
 
 ## Permissions
 
-Required permissions
+The following permissions are required:
 
 > 'lhuser','import'

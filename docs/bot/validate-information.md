@@ -6,7 +6,7 @@ sidebar_label: Validating information
 
 ## Introduction
 
-This is sample bot/extension which validates a customer provided information. 
+This is a sample bot/extension that validates information provided by a customer.
 
 ## Bot
 
@@ -16,23 +16,23 @@ You can download extension from https://github.com/LiveHelperChat/lhcparcel
 
 ## How does it work?
 
-As soon chat is started it asks a visitor what does he wants. If visitor clicks `Where is my parcel` then `Search for parcel` trigger is executed and extension does all the verifying process and returns output.
+When a chat is started, the bot asks the visitor what they want. If the visitor clicks "Where is my parcel," the "Search for parcel" trigger is executed. The extension then performs the verification process and returns the output.
 
 ## What it does?
 
-It asks for a customer for a tracking number and depending on third party response gives the following output
+It asks the customer for a tracking number and, depending on the third-party response, provides one of the following outputs:
 
-* Parcel number is invalid
-* Parcel is not found
-* Correct parcel status is returned.
+*   Parcel number is invalid.
+*   Parcel is not found.
+*   The correct parcel status is returned.
 
 ## How can it be used?
 
-It can be as boilerplate for similar extensions. Where you need to return something based what user has entered. E.g
+It can be used as a boilerplate for similar extensions where you need to return information based on what the user has entered. For example:
 
-* Tracking information
-* Order status
-* Etc...
+*   Tracking information
+*   Order status
+*   etc.
 
 ## Workflow
 

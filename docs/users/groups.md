@@ -1,27 +1,26 @@
 ---
 id: users-groups
-title: Working with groups
+title: Working with Groups
 ---
 
-Groups are one of the permission system part. It hold users. To create group first you have go to groups list and click create group icon. New group window provided below.
+Groups are a part of the permission system and are used to hold users. To create a group, first navigate to the groups list and click the create group icon. A new group window, as shown below, will appear.
 
 [![](https://livehelperchat.com/docimages/groups/new-group.png)](https://livehelperchat.com/docimages/groups/new-group.png)
 
-If you click &quat;Save and assign user&quat; after creating group you will see immediately window provided below. Fromt that window you can assign any user you want to new created group.
+If you click "Save and assign user" after creating the group, you will immediately see the window shown below. From this window, you can assign any user to the newly created group.
 
 [![](https://livehelperchat.com/docimages/groups/new-group-adduser.png)](https://livehelperchat.com/docimages/groups/new-group-adduser.png)
 
-In order to make group completely functional, next thing you have to do, is assign role to new created group. Role to group can be assigned from group editing window.
+To make the group fully functional, the next step is to assign a role to the newly created group. Roles can be assigned to a group from the group editing window.
 
 [![](https://livehelperchat.com/docimages/groups/edit-group.png)](https://livehelperchat.com/docimages/groups/edit-group.png)
 
-
-Clicking &quat;Assign role&quat; will show window provided below.
+Clicking "Assign role" will display the window shown below.
 
 [![](https://livehelperchat.com/docimages/groups/group-assign-role.png)](https://livehelperchat.com/docimages/groups/group-assign-role.png)
 
-Then just select role you want to grant your group.
+Then, simply select the role you want to grant to your group.
 
-Deleting group is also very simple process. Just use group list window and click delete icon.
+Deleting a group is also a very simple process. Just use the group list window and click the delete icon.
 
 [![](https://livehelperchat.com/docimages/groups/group-list.png)](https://livehelperchat.com/docimages/groups/group-list.png)

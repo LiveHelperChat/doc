@@ -1,33 +1,33 @@
 ---
 id: rezdy
-title: Integration with rezdy
+title: Rezdy Integration
 ---
 
-This is configuration flow for https://rezdy.com
+This document outlines the configuration process for integrating with [Rezdy](https://rezdy.com).
 
-We will use rezdy service via `!rezdy` command.
+We will interact with the Rezdy service using the `!rezdy` command.
 
-## Creating Rest API call
+## Creating a REST API Call
 
-* Download it and import as Rest API call - [download from here](/img/integration/rezdy/rest-api.json)
-* Don't forget to change your API key in rest api configuration. `your_api_key`
+*   Download and import the REST API call configuration file: [download from here](/img/integration/rezdy/rest-api.json).
+*   Remember to replace `your_api_key` with your actual API key in the REST API configuration.
 
-Import it here `https://example.com/site_admin/genericbot/listrestapi` change to your domain.
+Import the configuration at `https://example.com/site_admin/genericbot/listrestapi`. Remember to replace `https://example.com` with your actual domain.
 
 ![](/img/integration/rezdy/rest-api.png)
 
-## Create Bot
+## Create a Bot
 
-Download bot configuration [download from here](/img/integration/rezdy/bot.json)
+Download the bot configuration file: [download from here](/img/integration/rezdy/bot.json).
 
-Import bot `https://example.com/site_admin/genericbot/list`
+Import the bot at `https://example.com/site_admin/genericbot/list`.
 
-After importing a bot make sure `Send` button configuration looks like this.
+After importing the bot, ensure the `Send` button configuration matches the following:
 
 ![](/img/integration/rezdy/bot.png)
 
-## Create a command
+## Create a Command
 
-Create a command here `https://example.com/site_admin/genericbot/commands`
+Create the command at `https://example.com/site_admin/genericbot/commands`.
 
 ![](/img/integration/rezdy/command.png)

@@ -1,54 +1,55 @@
 ---
 id: rasa-intent-entities
 sidebar_label: Rasa entities extraction
-title: Rasa intent server with entities extraction
+title: Rasa Intent Server with Entities Extraction
 ---
 
-Rasa is just AI bot which does all the hard work. Integration once you have Rasa running is very simple.
+Rasa is an AI bot that handles the core processing. Integrating it is straightforward once Rasa is running.
 
-With this workflow by extending your training data you could do a 
+By extending your training data with this workflow, you can create:
 
-* A bot which you can ask for a stock price
-* A bot which you ask for a next match for the games
+*   A bot that can provide stock prices.
+*   A bot that can provide the next match for a sports game.
 
-We will need few things
+You will need the following:
 
-* Running Rasa service. https://rasa.com/docs/rasa/installation
-* Rest API configuration in Live Helper Chat
-* Bot configuration in LHC
+*   A running Rasa service. See: https://rasa.com/docs/rasa/installation
+*   A configured REST API in Live Helper Chat.
+*   A configured bot in LHC.
 
-For more information please read
+For more information, please refer to:
 
-* https://medium.com/better-programming/chatbots-and-whats-new-in-rasa-2-0-a51c61ca3c33
-* https://github.com/RasaHQ their main github repository where you can find also few more sample bots
-* https://towardsdatascience.com/a-beginners-guide-to-rasa-nlu-for-intent-classification-and-named-entity-recognition-a4f0f76b2a96
+*   https://medium.com/better-programming/chatbots-and-whats-new-in-rasa-2-0-a51c61ca3c33
+*   https://github.com/RasaHQ - The main GitHub repository where you can find sample bots.
+*   https://towardsdatascience.com/a-beginners-guide-to-rasa-nlu-for-intent-classification-and-named-entity-recognition-a4f0f76b2a96
 
-## Install instructions for docker version
+## Installation Instructions for Docker Version
 
 ```shell
 git clone https://github.com/LiveHelperChat/rasa-intent-entities.git && cd rasa-intent-entities
 ```
 
-Now you can edit `data/nlu.yml` and write your model data in this file. As example this file contains few examples about user requesting specific stock price
+You can now edit `data/nlu.yml` and add your model data. This file contains examples of users requesting a specific stock price.
 
-Build docker image
+Build the Docker image:
 
 ```shell
 docker-compose build
 ```
 
-Run one time
+Run it once:
+
 ```shell
 docker-compose up
 ```
 
-Run as a service
+Run it as a service:
 
 ```shell
 docker-compose up -d
 ```
 
-You can try out Rasa rest API using `curl` commands
+You can test the Rasa REST API using `curl` commands:
 
 ```shell script
 curl -i http://localhost:5005
@@ -57,7 +58,7 @@ curl -i http://localhost:5005
 curl localhost:5005/model/parse -d '{"text":"how much does the apple cost?"}'
 ```
 
-Example of JSON response.
+Example JSON response:
 
 ```json
 {
@@ -140,46 +141,46 @@ Example of JSON response.
 }
 ```
 
-As you see we have intent `stock_price` and extracted entity `stock`. Now the fun part to implement that in Rest API configuration.
+As you can see, we have the intent `stock_price` and the extracted entity `stock`. Now, let's implement this in the REST API configuration.
 
-## Configuring Rest API in Live Helper Chat
+## Configuring the REST API in Live Helper Chat
 
-Create a new `Rest API` by navigating to
+Create a new `REST API` by navigating to:
 
-> System configuration > Live help configuration > Rest API Calls
+> System configuration > Live help configuration > REST API Calls
 
-Just create a `new`. Configuration looks like this
+Create a new entry. The configuration should look like this:
 
-We set body request as JSON and set content.
+Set the body request as JSON and configure the content.
 
 ![](/img/bot/rasa-intent-1.png)
 
-We also set `Outpout parsing`
+Also, configure the `Output parsing`:
 
 ![](/img/bot/rasa-intent-extraction.png)
 
-Now just save. 
+Save the configuration.
 
-## Bot configuration in Live Helper Chat
+## Bot Configuration in Live Helper Chat
 
-For bot configuration we only need four triggers
+For the bot configuration, you need four triggers:
 
-* `Default` it has checked `Default`, `Default for unknown message`
-* `Inten parser` searches for a messages with intent
-* `nlu_fallback` - this message we will send if `Rasa` did not returned anything or returned not what we expected.
-* `stock_price` - this trigger will be executed once extracted entity was found.
+*   `Default`: This trigger should have `Default` and `Default for unknown message` checked.
+*   `Intent parser`: This trigger searches for messages with a specific intent.
+*   `nlu_fallback`: This trigger sends a message if Rasa doesn't return anything or returns an unexpected result.
+*   `stock_price`: This trigger executes when the `stock` entity is extracted.
 
-`Default` trigger configuration
+`Default` trigger configuration:
 
 ![](/img/bot/rasa-intent-extraction-default.png)
 
-`Inten parser` - searches our bot for an action
+`Intent parser` - searches our bot for an action
 
-It's possible just to execute directly response what you want to do with stock price. So there is many ways you can do same way. Our way has advantage if you define let say goodbye intent in Rasa you just need define keyword to search for goodbye.
+You could directly execute the response for the stock price request. There are multiple ways to achieve the same result. Our approach has the advantage that if you define, for example, a goodbye intent in Rasa, you only need to define a keyword to search for "goodbye."
 
 ![](/img/bot/rasa-intent-parser.png)
 
-`nlu_fallback` - if no correct response was returned we execute fallback event.
+`nlu_fallback` - If no correct response is returned, we execute a fallback event.
 
 ![](/img/bot/rasa-nlu_fallback-entity.png)
 
@@ -187,8 +188,8 @@ It's possible just to execute directly response what you want to do with stock p
 
 ![](/img/bot/stock-price-entity.png)
 
-Conversation example
+Conversation example:
 
 ![](/img/bot/chat-sample-intent-extraction.png)
 
-**Don't forget to set your bot as default department bot.**
+**Remember to set your bot as the default department bot.**

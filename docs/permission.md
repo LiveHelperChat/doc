@@ -4,17 +4,17 @@ title: Permission system explanation
 sidebar_label: Permissions
 ---
 
-Permission system consists of three items.
+The permission system consists of three elements:
 
-1.  Users
-2.  Groups
-3.  Roles
+1. Users
+2. Groups
+3. Roles
 
-Users can belong to n groups. Groups can belong to n Roles. Roles can have assigned custom module functions. These combination's gives very flexible permission system.
+Users can belong to multiple groups, and groups can have multiple roles. Roles can be assigned custom module functions. This combination provides a very flexible permission system.
 
 ### Users module
 
-Users module is responsible for managing all data associated with user. It consist of these functions.
+The Users module is responsible for managing all data associated with users. It consists of the following functions:
 
 <table cellpadding="0" cellspacing="0" class="lentele" width="100%">
 

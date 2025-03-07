@@ -1,34 +1,34 @@
 ---
 id: deeppavlov-faq
 sidebar_label: DeepPavlov (FAQ)
-title: DeepPavlov as FAQ server
+title: DeepPavlov as FAQ Server
 ---
 
-We will need few things. https://github.com/LiveHelperChat/faq-deeppavlov
+To integrate DeepPavlov with Live Helper Chat, you'll need the following:
 
-* DeepPavlov running API
-* Rest API configuration in Live Helper Chat
-* Bot configuration in LHC
+*   A running DeepPavlov API.
+*   A configured REST API in Live Helper Chat.
+*   A configured bot in LHC.
 
 ## Running DeepPavlov
 
-Here is a quick version how to run Rasa
+Here's a quick guide on how to run DeepPavlov:
 
 ```shell script
 git clone https://github.com/LiveHelperChat/faq-deeppavlov.git
 cd faq-deeppavlov
-# Now you can just edit `Dockerfiles/deep/train/file.csv` and put your data there
+# You can edit `Dockerfiles/deep/train/file.csv` and add your data.
 docker-compose -f docker-compose.yml build
 docker-compose -f docker-compose.yml up
 ```
 
-Run as service
+To run DeepPavlov as a service:
 
 ```shell script
 docker-compose -f docker-compose.yml up -d
 ```
 
-You can try out DeepPavlov API using `curl` commands
+You can test the DeepPavlov API using `curl` commands:
 
 ```shell script
 curl -i http://localhost:5005
@@ -39,46 +39,46 @@ curl -X POST "http://localhost:5000/model" -H "accept: application/json" -H "Con
 [[["very young?."],[0.0023965203802132793,0.0011658039174728067,0.0008657494625574156,0.0005414606203846541,0.0007059206448602602,0.0008255833104981557,0.0005902784679946099,0.0027601158497330015,0.0007642232438947259,0.0004863716305588563,0.0003268471415419398,0.0014544600835888503,0.0004896593450576205,0.9866270059016439],[13]]]
 ```
 
-## Configuring DeepPavlov API in Live Helper Chat
+## Configuring the DeepPavlov API in Live Helper Chat
 
-Create a new `Rest API` by navigating to
+Create a new `Rest API` by navigating to:
 
 > System configuration > Live help configuration > Rest API Calls
 
-Just create a `new`. Configuration looks like this
+Create a new REST API with the following configuration:
 
-We set body request as JSON and set content.
+Set the body request as JSON and configure the content.
 
 ![](/img/bot/deep-pavlov-faq.png)
 
-We also set `Outpout parsing`
+Configure the `Output parsing`:
 
 ![](/img/bot/deep-pavlov-answer.png)
 
-Now just save.
+Save the configuration.
 
-## Configuration bot in Live Helper Chat
+## Configuring a Bot in Live Helper Chat
 
-For bot configuration we only need three triggers
+For bot configuration, you need three triggers:
 
-* `Default` it has checked `Default`, `Default for unknown message`
-* `Message received` just message text with content `{content_1}`
-* `Unknown` - this message we will send if `Rasa` did not returned anything.
+*   `Default`: This trigger should have the `Default` and `Default for unknown message` options checked.
+*   `Message received`: This trigger should contain the message text with the content `{content_1}`.
+*   `Unknown`: This trigger will send a message if `Rasa` (should be DeepPavlov) doesn't return anything.
 
-`Default` trigger configuration
+`Default` trigger configuration:
 
 ![](/img/bot/deep-pavlov-faq-default.png)
 
-Message received configuration
+`Message received` configuration:
 
 ![](/img/bot/rasa-message-received.png)
 
-Unknown message configuration
+`Unknown` message configuration:
 
 ![](/img/bot/rasa-unknown.png)
 
-Conversation example
+Conversation example:
 
 ![](/img/bot/deep-pavlov-conv-faq.png)
 
-**Don't forget to set your bot as default department bot.**
+**Important: Remember to set your bot as the default department bot.**

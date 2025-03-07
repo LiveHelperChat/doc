@@ -1,25 +1,25 @@
 ---
 id: helpline-and-crisis-solution
-title: Helpline and crisis solution
-sidebar_label: Helpline and crisis solution
+title: Helpline and Crisis Solution
+sidebar_label: Helpline and Crisis Solution
 ---
 
-Live Helper Chat also can be used and helpline and crisis support solution. In this article I'll share few tips how you can give support anonymously 
+Live Helper Chat can also be used as a helpline and crisis support solution. In this article, I'll share a few tips on how to provide support anonymously.
 
-Using Live Helper chat as crisis/helpline solution need to fulfill these requirements.
+Using Live Helper Chat as a crisis/helpline solution requires fulfilling these requirements:
 
-* Agents should see as little as possible information about a visitor - preferable none.
-* Chats should be deleted after specific period of time. Or their data should be anonymized.
-* Agents should not see what visitor is typing
+*   Agents should see as little information as possible about a visitor – preferably none.
+*   Chats should be deleted after a specific period of time, or their data should be anonymized.
+*   Agents should not see what the visitor is typing.
 
-To fulfill this requirement I recommend.
+To fulfill these requirements, I recommend the following:
 
-* `Chat configuration -> Data protection` - check `Do not track visitors IP.` we will not log full IP of the visitor. Only country will be shown.
-* `Chat configuration -> Data protection` - enter `After how many days encrypt messaes.` we will encrypt visitor messages after specified period of data. You can also check to encrypt operator messages.
-* `Chat configuration -> Data protection` - check `Do not store what visitor is typing` we will not store what visitor is typing
+*   `Chat configuration -> Data protection` - Check `Do not track visitors IP.` This will prevent logging the full IP address of the visitor; only the country will be shown.
+*   `Chat configuration -> Data protection` - Enter a value for `After how many days encrypt messages.` This will encrypt visitor messages after the specified period. You can also choose to encrypt operator messages.
+*   `Chat configuration -> Data protection` - Check `Do not store what visitor is typing.` This will prevent storing what the visitor is typing.
 
-Live Helper Chat by default tracks visitor pageviews and his previous chat. This can be avoided by turning off online visitors tracking.
+Live Helper Chat, by default, tracks visitor pageviews and their previous chats. This can be avoided by turning off online visitor tracking:
 
-* `Chat configuration -> Online tracking` - uncheck `Enable online site visitors tracking`
+*   `Chat configuration -> Online tracking` - Uncheck `Enable online site visitors tracking.`
 
-To reduce UI for the operator you can remove unwanted permissions also.
+To simplify the user interface for operators, you can also remove unnecessary permissions.

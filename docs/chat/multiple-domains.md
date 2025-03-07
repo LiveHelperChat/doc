@@ -1,25 +1,25 @@
 ---
 id: multiple-domains
-title: How do I configure LHC to have different operators and widgets for different domains?
-sidebar_label: Multiple domains
+title: Configuring Different Operators and Widgets for Multiple Domains
+sidebar_label: Multiple Domains
 ---
 
-To have this functionality you can do the following trick, which should work just fine.
+To configure Live Helper Chat (LHC) to use different operators and widgets for different domains, you can use the following approach:
 
-1.  Create two departments
+1.  **Create Departments**:
     1.  example1.com
     2.  example2.com
-2.  Assign different operators to different departments. So each operator will be responsible for different department/domain.
-3.  During embed script generation choose for what department/domain you are generating a code.
+2.  **Assign Operators**: Assign different operators to each department. This ensures each operator is responsible for a specific department/domain.
+3.  **Generate Embed Script**: When generating the embed script, select the appropriate department/domain for which you are creating the code.
 
 ### Advantages
 
-No need to override any file or create a extension.
+This method does not require overriding any files or creating extensions.
 
 ### Disadvantages
 
-Partly we loose departments functionality. In LHC since 2.07 you can generated embed code with multiple departments selected at once. So if you create four departments. Let say "Support site 1","Commercial site 1","Support site 2","Commercial site 2" So for one site you can choose first and second department. For second site you chose third and fourth departments. So basically we avoid previous disatvantages.
+This approach may partially limit the full use of the departments functionality. In LHC version 2.07 and later, you can generate an embed code with multiple departments selected simultaneously. For example, create four departments: "Support site 1," "Commercial site 1," "Support site 2," and "Commercial site 2." For the first site, select the "Support site 1" and "Commercial site 1" departments. For the second site, select the "Support site 2" and "Commercial site 2" departments. This avoids the previously mentioned disadvantages.
 
-## How can we have a different invitation messages to chat for different sites?
+## Using Different Invitation Messages for Different Sites
 
-Just use identifiers while generating embed script and creating new invitations. By identifier you can separate invitations.
+Use identifiers when generating the embed script and creating new invitations to differentiate invitation messages for each site.

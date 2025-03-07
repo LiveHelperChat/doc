@@ -5,7 +5,7 @@ title: Users actions
 
 ## Introduction
 
-This window mainly is used by developer who want's to see users statistic for present time. How many chat's visitor is having. I used this window while developing/extending auto assignment workflow.
+This window is primarily used by developers who want to see user statistics in real-time, such as how many chats a visitor is currently engaged in. I used this window while developing and extending the auto-assignment workflow.
 
 > "System configuration" => "Users Actions"
 
@@ -13,6 +13,6 @@ This window mainly is used by developer who want's to see users statistic for pr
 
 ## Permissions
 
-Required permissions
+Required permissions:
 
 > 'lhsystem','usersactions'

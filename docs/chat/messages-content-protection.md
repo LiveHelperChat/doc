@@ -6,12 +6,13 @@ sidebar_label: Messages content protection
 
 ## Introduction
 
-These settings can be found at `Settings > Live Help Configuration > Messages content protection`.
+These settings can be found under `Settings > Live Help Configuration > Messages content protection`.
 
-* The Purpose of those rules does not show sensitive information to the operator if he does not have permission to see it.
-* The Visitor will see a defined warning message if his message contains sensitive information and the agent does not have permission to see sensitive information.
+The purpose of these rules is to prevent sensitive information from being displayed to operators who do not have the necessary permissions.
 
-Example of rules. Credit card in valid format and just 16 numbers and email.
+The visitor will see a defined warning message if their message contains sensitive information and the agent does not have permission to view it.
+
+Here are some example rules: Credit card in valid format (16 numbers) and email.
 
 ```phpregexp
 __credit_card__|||*
@@ -19,11 +20,11 @@ __credit_card__|||*
 __email__|||$|||*
 ```
 
-Those rules can be also used in [Rest API](bot/rest-api.md) calls.
+These rules can also be used in [Rest API](bot/rest-api.md) calls.
 
 ## Permissions
 
-In order for the operator to see not masked information, he has to have this permission
+To view unmasked information, the operator must have the following permission:
 
 > 'lhchat','see_sensitive_information'
 

@@ -1,42 +1,42 @@
 ---
 id: summarize-with-ai
 sidebar_label: Summarize With AI
-title: Summarize With AI
+title: Summarize with AI
 ---
 
-Here is a quick way you can have a chat summary after the chat has ended. It will summarize only if the following conditions were met
+Here's a quick way to automatically generate a chat summary after a conversation concludes. The summarization will occur only if the following conditions are met:
 
-* We should pass visitors and operators messages only.
-* Only chats with operators assigned.
-* There should be at-least one visitor message after a chat was accepted.
+*   Only visitor and operator messages are included.
+*   The chat must have been assigned to an operator.
+*   At least one visitor message must be present after the chat was accepted.
 
-We will need few things
+To set this up, you'll need to:
 
-* Listen on `chat.close` event
-* Define Rest API call
-* Create a bot with and trigger which will call `Rest API`
-* After you are happy how it works you can uncheck `Log all request and their responses as system messages.`
+*   Listen for the `chat.close` event.
+*   Define a REST API call.
+*   Create a bot with a trigger that invokes the REST API.
+*   Once you're satisfied with the results, you can disable the `Log all request and their responses as system messages` option.
 
-In this scenario, we will use ChatGPT as a sample. But any Chat completion api would work.
+In this example, we'll use ChatGPT, but any chat completion API should work.
 
-## Define Rest API call
+## Define the REST API Call
 
-* Download and import Rest API from [here](/img/bot/ai/summarize-rest-api.json)
-* Enter your API in `Rest API => Authorization` section. 
-* At the moment it uses `{{msg_all_since_transfer_content_date_nick}}` variable if you have an older version you can use just `{{msg_all_since_transfer_content}}`
-* You can also adjus system message in `Body` section.
+*   Download and import the REST API configuration from [here](/img/bot/ai/summarize-rest-api.json).
+*   Enter your API key in the `REST API => Authorization` section.
+*   The configuration currently uses the `{{msg_all_since_transfer_content_date_nick}}` variable. If you're using an older version, you can use `{{msg_all_since_transfer_content}}` instead.
+*   You can also adjust the system message in the `Body` section.
 
-## Bot setup
+## Bot Setup
 
-* Import bot from [here](/img/bot/ai/summarize-with-ai-bot.json) and choose just imported Rest API.
+*   Import the bot from [here](/img/bot/ai/summarize-with-ai-bot.json) and select the REST API you just imported.
 
-## Webhook setup
+## Webhook Setup
 
-Webhook will define that on chat close we will execute this trigger. Just setup as in screnshot below.
+A webhook will define that this trigger will execute when a chat closes. Configure it as shown in the screenshot below.
 
 ![Summarize With AI](/img/bot/summarize-with-ai.png)
 
-If you did everything correctly, you should see a summary after the chat has ended as a system message.
+If configured correctly, you should see a summary as a system message after the chat ends.
 
 
 

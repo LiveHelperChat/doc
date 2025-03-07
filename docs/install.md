@@ -4,21 +4,21 @@ title: Install Guide
 sidebar_label: Install Guide
 ---
 
-## Alternative Ways
+## Alternative Installation Methods
 
-* Use [Docker](https://github.com/LiveHelperChat/docker-standalone)
-* Use [Softaculous](https://softaculous.com/apps/customersupport/live_helper_chat)
+*   Use [Docker](https://github.com/LiveHelperChat/docker-standalone)
+*   Use [Softaculous](https://softaculous.com/apps/customersupport/live_helper_chat)
 
 ## Requirements
 
-If you are running a WordPress site, there is a very high likelihood that Live Helper Chat will work seamlessly.
+If you are running a WordPress site, Live Helper Chat is very likely to work seamlessly.
 
-* Download [zip](https://github.com/LiveHelperChat/livehelperchat/archive/refs/heads/master.zip) or [tgz](https://github.com/LiveHelperChat/livehelperchat/tarball/master).
-* You can download a version with dependencies included from https://github.com/LiveHelperChat/livehelperchat/releases. Look for the newest file named `*.**v-with-dependencies.tgz`.
-* Minimum PHP version 8.2 is required. If you need support for an older PHP version, you will have to install composer dependencies yourself.
-* MySQL 5.7 or MariaDB 10.2.3 or higher with `json_` functions support.
-* Apache or Nginx.
-* For the Laravel version, please visit https://github.com/LiveHelperChat/livehelperchat_laravel.
+*   Download the latest version as a [zip](https://github.com/LiveHelperChat/livehelperchat/archive/refs/heads/master.zip) or [tgz](https://github.com/LiveHelperChat/livehelperchat/tarball/master) archive.
+*   Alternatively, download a version with dependencies included from [the releases page](https://github.com/LiveHelperChat/livehelperchat/releases). Look for the newest file named `*.**v-with-dependencies.tgz`.
+*   PHP version 8.2 or higher is required. For older PHP versions, you will have to install composer dependencies manually.
+*   MySQL 5.7 or MariaDB 10.2.3 or higher with `json_` functions support.
+*   Apache or Nginx web server.
+*   For the Laravel version, see [livehelperchat_laravel](https://github.com/LiveHelperChat/livehelperchat_laravel).
 
 ```
 # Optional but Recommended
@@ -46,30 +46,30 @@ php-bcmath
 
 ## Composer Dependencies
 
-It's not required if you have downloaded a version with dependencies included.
+These steps are not required if you downloaded a version with dependencies included.
 
-If you are using a new version with mail support or any newer version from 3.30v, you have to run from the `lhc_web` folder.
+If you are using a version with mail support (version 3.30v or newer), run the following command from the `lhc_web` folder:
 
 ```
 composer.phar install
 ```
 
-If you encounter an issue like an incompatible PHP version, try removing the `composer.lock` file and then install again.
+If you encounter an issue such as an incompatible PHP version, try removing the `composer.lock` file and running the installation again:
 
 ```
 rm composer.lock
 composer.phar install
 ```
 
-You can download `composer.phar` from https://getcomposer.org/download/.
+You can download `composer.phar` from [https://getcomposer.org/download/](https://getcomposer.org/download/).
 
 ## Folder Permissions
 
-* After granting permission to write to the cache folder, you should see the following window. If you encounter an unexpected error instead of the installation page, please ensure that:
-    * Your browser is pointing to the correct URL: `index.php/site_admin/install/install`.
-    * You have given recursive write permission to the cache folder.
+*   After granting write permissions to the cache folder, you should see the installation page. If you encounter an error instead, ensure that:
+    *   Your browser is pointing to the correct URL: `index.php/site_admin/install/install`.
+    *   You have granted recursive write permissions to the cache folder.
 
-Try changing the owner to the Apache user or the user under which your HTTP server operates.
+Try changing the owner to the Apache user or the user under which your HTTP server operates:
 
 ```shell script
 chown apache:apache -R cache/
@@ -78,11 +78,11 @@ chown apache:apache settings/
 chmod -R 755 cache/
 ```
 
-After that, you should see something like this:
+After these changes, you should see a screen similar to this:
 
 ​![](/img/install/install-step-1.png)
 
-Now, just grant permission to write to the required folders/files.
+Next, grant write permissions to the required folders and files:
 
 ```shell script
 chmod 755 settings/
@@ -98,17 +98,17 @@ chmod -R 755 var/storagetheme
 chmod -R 755 var/tmpfiles
 ```
 
-After that, all items should be green.
+After this step, all items should be marked in green.
 
 ## Database Settings
 
-On the next screen, you should see a similar window. The database must be pre-created.
+On the next screen, you will see a window where you need to enter your database settings. Ensure that the database has already been created.
 
 ​![](/img/install/database-settings.png)
 
 ## Application Initial Settings
 
-You can fill in these settings according to your needs.
+Fill in these settings according to your requirements.
 
 ​![](/img/install/initial-app-settings.png)
 
@@ -118,35 +118,35 @@ You can fill in these settings according to your needs.
 
 ## Logging into the Application
 
-After clicking `Login here`, you should be presented with a login window.
+After clicking `Login here`, you will be redirected to the login window.
 
 ​![](/img/install/login-window.png)
 
-The install URL is always `index.php/site_admin/user/login`.
+The installation URL is always `index.php/site_admin/user/login`.
 
 ## Dashboard Page
 
-This is the main application window.  
+This is the main application window.
 
 ​![](/img/install/dashboard-installed.png)
 
 ## Generating Embed Code
 
-Now, click on the settings icon ​![](/img/install/settings.png) on the top menu. You should see this window. 
+Click the settings icon ​![](/img/install/settings.png) in the top menu. This will open the settings window.
 
 ​![](/img/install/settings-page.png)
 
-Navigate to
+Navigate to:
 
 > Embed code -> Widget embed code (new)
 
-You should see a window like this.
+You will then see a window like this:
 
 ​![](/img/install/html-code.png)
 
 To enable proactive chat, check the option `Check for operator invitation messages`.
 
-The embed code should look like this. If you copy this code, change `install.livehelperchat.com/index.php` to your installation path. 
+The embed code should look similar to this. If you copy this code, remember to change `install.livehelperchat.com/index.php` to your actual installation path:
 
 ```js
 <script>var LHC_API = LHC_API||{};
@@ -159,7 +159,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 </script>
 ```
 
-For more information and troubleshooting, please see the [integration article](integrating.md).
+For more information and troubleshooting, refer to the [integration article](integrating.md).
 
 ## Proactive Invitation Setup
 
@@ -167,61 +167,60 @@ Navigate to:
 
 > System configuration -> Live help configuration -> Proactive chat invitations
 
-Here is a demo configuration that we have on demo.livehelperchat.com. It includes the following settings:
+Here’s a demo configuration from demo.livehelperchat.com, which includes the following settings:
 
-* A message is sent to the user after they spend 20 seconds on the page or have more than 2 pageviews.
-* A random profile from online operators is shown.
-* There are also delayed messages available. Delayed messages can be configured in the autoresponder section.
-* Additionally, there is a long auto-delayed message set for 40 seconds. If no one accepts the chat during that period, a message is displayed indicating that all operators are busy.
+*   A message is sent to the user after 20 seconds on the page or after viewing more than 2 pages.
+*   A random profile from online operators is shown.
+*   Delayed messages are available and can be configured in the autoresponder section.
+*   A long auto-delayed message is set for 40 seconds. If no operator accepts the chat within this time, a message indicates that all operators are busy.
 
-You can see the proactive invitation setup on our demo installation.
+You can view the proactive invitation setup on our demo installation:
 
 ​![](/img/install/proactive-invitation.png)
 
-And here is the instant auto-response message.  
+Here is the instant auto-response message:
+
 ​![](/img/install/autoresponder.png)
 
-Here is the automatic auto-response message.  
+Here is the automatic auto-response message:
 
 ​![](/img/install/autoresponder-busy.png)
 
 ## Desktop Client
 
-The desktop application can be found at https://github.com/LiveHelperChat/electron. It is based on the Electron framework, acts as a standalone browser, and is much faster than Chrome.
+The desktop application is available at [https://github.com/LiveHelperChat/electron](https://github.com/LiveHelperChat/electron). It is based on the Electron framework, functions as a standalone browser, and is significantly faster than Chrome.
 
 ## Further Reading
 
-* [How to remove index.php from URL?](development/remove-index-php.md)
-* [Wondering how to set up automatic online/work hours?](online-hours.md)
-* [Need to automatically change operator status to offline/online?](offline-online-automation.md)
-* [Want to rebrand it according to your site's style?](theme/theme.md)
-* [Don't know how to use screen sharing?](co-browsing.md)
-* Try the [Windows app](https://livehelperchat.com/demo-12c.html) or the [Chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
-* [My users lose chat sessions when they navigate through the site, resulting in duplicate online user records](online-visitors.md#my-users-loose-chat-session-then-they-navigate-through-the-site-duplicate-online-users-records)
+*   [How to remove index.php from URL?](development/remove-index-php.md)
+*   [How to set up automatic online/work hours?](online-hours.md)
+*   [How to automatically change operator status to offline/online?](offline-online-automation.md)
+*   [How to rebrand it according to your site's style?](theme/theme.md)
+*   [How to use screen sharing?](co-browsing.md)
+*   Try the [Windows app](https://livehelperchat.com/demo-12c.html) or the [Chrome extension](https://livehelperchat.com/how-to-use-chrome-extension-245a.html)
+*   [Why do my users lose chat sessions when they navigate through the site, resulting in duplicate online user records?](online-visitors.md#my-users-loose-chat-session-then-they-navigate-through-the-site-duplicate-online-users-records)
 
-## On Windows IIS I Get 404 Error?
+## On Windows IIS, I Get a 404 Error
 
-Please refer to this comment. It might occur due to too many URL segments.
+Refer to [this comment](https://github.com/orgs/LiveHelperChat/discussions/1900#discussioncomment-9767891). This issue might occur due to too many URL segments.
 
-https://github.com/orgs/LiveHelperChat/discussions/1900#discussioncomment-9767891
+## Chat Does Not Start
 
-## Chat Does Not Start?
+If you are running behind CloudFlare or another proxy that affects the IP address seen by Live Helper Chat, enable it in the settings file:
 
-If you are running behind CloudFlare or any other proxy that affects the IP seen by Live Helper Chat, please enable it in the settings file.
+> [https://github.com/LiveHelperChat/livehelperchat/blob/a60a3b485ed08650b9e081ed827998e050717e37/lhc_web/settings/settings.ini.default.php#L18](https://github.com/LiveHelperChat/livehelperchat/blob/a60a3b485ed08650b9e081ed827998e050717e37/lhc_web/settings/settings.ini.default.php#L18)
 
-> https://github.com/LiveHelperChat/livehelperchat/blob/a60a3b485ed08650b9e081ed827998e050717e37/lhc_web/settings/settings.ini.default.php#L18
+## Widget Content Looks Very Small on My Website
 
-## Widget Content Looks Very Small on My Website?
-
-Make sure your website has a `viewport` tag.
+Ensure that your website includes a `viewport` tag:
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-## My Widget Does Not Load?
+## My Widget Does Not Load
 
-Try adding this to your `.htaccess` file in the root folder `lhc_web`. If this folder does not exist, place the `.htaccess` file in the same folder where the `index.php` file exists. It must be placed in the Live Helper Chat folder, not the website.
+Try adding the following to your `.htaccess` file in the root folder `lhc_web`. If this folder does not exist, place the `.htaccess` file in the same folder as the `index.php` file. The `.htaccess` file must be placed in the Live Helper Chat folder, not the website folder.
 
 ```apacheconfig
 AddType application/wasm .wasm
@@ -233,7 +232,7 @@ AddType application/wasm .wasm
 </Files>
 ```
 
-If, for some reason, the above solution does not work, try this without the `always` keyword.
+If the above solution does not work, try this configuration without the `always` keyword:
 
 ```apacheconfig
 AddType application/wasm .wasm
@@ -247,38 +246,38 @@ AddType application/wasm .wasm
 
 Other possible causes:
 
-* You have changed `Chat configuration -> Misc -> Domains where script can be embedded. E.g example.com, google.com`, but the embedded script is not listed in the domain.
-* You have enabled `System configuration -> GEO Adjustment`, but you have provided invalid data.
-* You have blocked yourself via `System configuration -> Live help configuration -> Blocking -> Blocked users`.
+*   You have modified `Chat configuration -> Misc -> Domains where script can be embedded. E.g example.com, google.com`, but the embedded script's domain is not listed.
+*   You have enabled `System configuration -> GEO Adjustment` with invalid data.
+*   You have blocked yourself via `System configuration -> Live help configuration -> Blocking -> Blocked users`.
 
-## What If You Have to Limit the Widget to a Few Domains and Subdomains?
+## How Can I Limit the Widget to a Few Domains and Subdomains?
 
-Embedded on multiple domains.
+The widget can be embedded on multiple domains.
 [More information](docs/integrating.md#what-if-you-have-to-limitate-the-widget-to-few-domain-and-subdomain).
 
-## Chat Was Closed by an Operator/Visitor, but When the Visitor Starts a New Chat, an Old Chat Opens?
+## Chat Was Closed, but When the Visitor Starts a New Chat, an Old Chat Opens
 
-Most likely, you have enabled `Chat configuration -> Misc -> Reopen chat functionality enabled`.
+This is likely because you have enabled `Chat configuration -> Misc -> Reopen chat functionality enabled`.
 
 [More information](chat/configuration.md#reopen-chat-functionality-enabled).
 
 ## Install from the Command Line
 
-It is also possible to install from the command line.
+You can also install Live Helper Chat from the command line.
 
-Copy the `install-cli.php` script to the root folder (`lhc_web` if you pulled from GitHub).
+Copy the `install-cli.php` script to the root folder (`lhc_web` if you cloned from GitHub):
 
 ```shell script
 cp cli/install-cli.php install-cli.php
 ```
 
-Copy the default `example.settings.ini` to `settings.ini`. Don't forget to modify them.
+Copy the default `example.settings.ini` to `settings.ini` and modify it:
 
 ```shell script
 cp cli/example.settings.ini cli/settings.ini
 ```
 
-Install Live Helper Chat.
+Install Live Helper Chat:
 
 ```shell script
 php install-cli.php cli/settings.ini
@@ -286,7 +285,7 @@ php install-cli.php cli/settings.ini
 
 ## Installation Under a Subfolder
 
-If you are running a WordPress site and have nice URLs, you might need to allow access to the Live Helper Chat subfolder. Your `.htaccess` file could look like this:
+If you are running a WordPress site with pretty permalinks, you might need to allow access to the Live Helper Chat subfolder. Your `.htaccess` file might look like this:
 
 ```apacheconfig
 RewriteEngine On
@@ -295,27 +294,27 @@ RewriteRule ^lhc_web/.*$ - [L]
 # Afterward rules
 ```
 
-If you experience logouts after being inactive for some time, it might be because your main website uses the same PHP session cookie name. You can change it in the settings file. Change `php_session_cookie_name` in the main settings [file](https://github.com/LiveHelperChat/livehelperchat/blob/da2815e5e5715594ef819a21da211d086061b58a/lhc_web/settings/settings.ini.default.php#L23) to something like `lhc_session_id`.
+If you experience logouts after a period of inactivity, it could be because your main website uses the same PHP session cookie name. Change `php_session_cookie_name` in the main settings [file](https://github.com/LiveHelperChat/livehelperchat/blob/da2815e5e5715594ef819a21da211d086061b58a/lhc_web/settings/settings.ini.default.php#L23) to something like `lhc_session_id`.
 
-## How to Log In?
+## How to Log In
 
-To log in, point your browser to the directory where the application is installed. The URL address should look like: http://<your_domain>/index.php/site_admin/
+To log in, navigate to the directory where the application is installed. The URL should look like: `http://<your_domain>/index.php/site_admin/`.
 
-If for some reason, you forgot your password and the password reminder does not work for you, you can execute this query. It will set the password for `admin` (user_id 1) to `demo`.
+If you forget your password and the password reminder does not work, execute the following query to reset the password for the `admin` user (user_id 1) to `demo`:
 
 ```sql
 UPDATE `lh_users` SET password = '$2y$10$IwnZfDcPm7nqvp/BLNmJietHT/TSHCRPXWHKFqheQfojwk4c4znVG' WHERE `id` = 1;
 ```
 
-If you modified roles/groups/functions and you can't access the application, you can execute this query. It will set `admin` (user_id 1) to have all functions.
+If you have modified roles, groups, or functions and cannot access the application, execute the following queries. They will grant all functions to the `admin` user (user_id 1).
 
-Error you might be getting is:
+The error you might encounter is:
 
 ```
 You do not have permission to access the module "front" and use "use" function.
 ```
 
-Execute these queries. They will restore the admin group/role and permissions for the very first user in the users list.
+Execute these queries to restore the admin group, role, and permissions for the first user in the users list:
 
 ```sql
 DELETE FROM `lh_group` WHERE `id` = 1;

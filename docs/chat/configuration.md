@@ -6,51 +6,52 @@ sidebar_label: Chat configuration
 
 ## Introduction
 
-This is main window where all the tricky :smile: things can be configured.
+This is the main window where you can configure various settings.
 
-You can these settings in
+You can find these settings in:
 
 > System configuration -> Chat configuration
 
-​![](/img/chat-configuration/chat-configuration.png)
+![Chat configuration](/img/chat-configuration/chat-configuration.png)
 
-## Notifications about new chats
+## Notifications for New Chats
 
-This is the same settings operator can change from his [account page](users/account.md#notifications).
+These settings are the same ones operators can modify from their [account page](users/account.md#notifications).
 
 ## Copyright settings
 
-### Application name
+### Application Name
 
-Here you can change basic copyright settings globally.
+Here you can change the basic copyright settings globally.
 
-​![](/img/chat-configuration/copyright-settings.png)
+![Copyright settings](/img/chat-configuration/copyright-settings.png)
 
-### Site settings
+### Site Settings
 
-Here you can change.
- * Copyright text visible in the bottom right corner
- * Terms of service URL visible as link within checkbox during start chat workflow.
+Here you can change:
 
-​![](/img/chat/site-settings.png)
+*   The copyright text visible in the bottom right corner.
+*   The Terms of Service URL, which is visible as a link within the checkbox during the start chat workflow.
 
-## Online tracking
+![Site settings](/img/chat/site-settings.png)
 
-In this section can be found all the settings related to online tracking.
+## Online Tracking
 
-​![](/img/chat-configuration/online-tracking.png)
+This section contains all the settings related to online tracking.
 
-### Which ip should be ignored in online users list, separate by comma
+![Online tracking](/img/chat-configuration/online-tracking.png)
+
+### IPs to Ignore in Online Users List (comma-separated)
 
 [More information](blocking.md#how-to-block-users-from-appearing-on-online-users-list)
 
-### Which ip should not be allowed to chat
+### IPs Not Allowed to Chat
 
 [More information](blocking.md#how-to-block-users-from-starting-a-chat)
 
-### Enable online site visitors tracking
+### Enable Online Site Visitor Tracking
 
-If you disable this option online visitor won't be tracked. This will also disable following items.
+If you disable this option, online visitors will not be tracked. This will also disable the following features:
 
  * Proactive invitations
  * Online visitors list

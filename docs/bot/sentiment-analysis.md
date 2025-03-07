@@ -1,9 +1,9 @@
 ---
 id: sentiment-analysis
-title: DeepPavlov (Sentiment analysis)
+title: DeepPavlov (Sentiment Analysis)
 ---
 
-In this article I'll show you how to setup sentiment analysis using https://deeppavlov.ai/ and my prepared [docker image](https://github.com/LiveHelperChat/sentiment)
+This article explains how to set up sentiment analysis using https://deeppavlov.ai/ and a pre-built [Docker image](https://github.com/LiveHelperChat/sentiment).
 
 ## Installing DeepPavlov
 
@@ -15,25 +15,25 @@ tar zxfv deep.tgz
 rm -f deep.tgz
 ```
 
-Run one time
+Run DeepPavlov:
 
 ```
 docker-compose -f docker-compose.yml up
 ```
 
-Run as a service
+Run DeepPavlov as a service:
 
 ```
 docker-compose -f docker-compose.yml up -d
 ```
 
-Testing
+Testing the installation:
 
 ```
 curl -X POST "http://localhost:5000/model" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"x\":[\"all went no so good, but could have been better\"]}"
 ```
 
-If you did everything right you should see output like this
+If the installation was successful, you should see output similar to this:
 
 ```shell
 [["neutral"]]
@@ -41,52 +41,52 @@ If you did everything right you should see output like this
 
 ## Configuring Live Helper Chat
 
-Our requirements are
+The requirements for this setup are:
 
-* We should send set sentiment on chat close event
-* Only for chats where operator participated
-* Set relevant chat subject
+*   Sentiment should be set on chat close.
+*   Sentiment analysis should only run for chats with operator participation.
+*   A relevant chat subject should be set based on the sentiment.
 
-For that we will be using [webhooks](development/webhooks.md).
+This configuration uses [webhooks](development/webhooks.md).
 
-### Configuring Rest API call
+### Configuring the REST API Call
 
-In this case we are sending to bot only messages (operator and visitor) which happened after chat become pending. For that there is placeholder `{{msg_all_since_transfer_content}}`. You can also use [other](bot/rest-api.md#replaceable-variables) if you want.
+This setup sends only messages from the operator and visitor that occurred after the chat became pending to the bot. The `{{msg_all_since_transfer_content}}` placeholder is used for this purpose. You can also use [other placeholders](bot/rest-api.md#replaceable-variables) if needed.
 
 ![](/img/bot/rest-api-sentiment-1.png)
 
-In output combination we expect `200` header and very first element should contain our evaluation.
+The configuration expects a `200` header in the output, and the sentiment evaluation should be contained in the first element of the response.
 
 ![](/img/bot/sentiment-output-parsing.png)
 
-### Configuring bot
+### Configuring the Bot
 
-In the bot for simplicity we will have
+For simplicity, the bot configuration includes:
 
-* `chat.close` This trigger will be the one who get's executed on chat close event.
-* `Set sentiment` This trigger will be executed if Rest API returns sentiment.
-* `very_negative`, `negative`, `neutral`, `positive`, `very_positive` just trigger which set's a subject.
+*   `chat.close`: This trigger is executed when a chat is closed.
+*   `Set sentiment`: This trigger is executed if the REST API returns a sentiment.
+*   `very_negative`, `negative`, `neutral`, `positive`, `very_positive`: These triggers set a subject based on the sentiment.
 
-`chat.close` trigger screenshot
+`chat.close` trigger:
 
 ![](/img/bot/sentiment-chat-close.png)
 
-`Set sentiment` trigger sceenshot
+`Set sentiment` trigger:
 
-In this trigger at the moment only two evaluations are defined `very_positive`,`neutral` same way you can add the missing ones.
+Currently, only `very_positive` and `neutral` evaluations are defined. You can add the missing evaluations in a similar way.
 
 ![](/img/bot/sentiment-set-sentiment.png)
 
-`very_positive`,`neutral` trigger screenshot
+`very_positive` and `neutral` triggers:
 
-First text message is just for debug purposes. Second one response we just set a subject with ID 1.
+The first text message is for debugging. The second response sets a subject with ID 1.
 
 ![](/img/bot/sentiment-very-positive.png)
 
-### Configuring webhook
+### Configuring the Webhook
 
-In webhook we define what event we want to listen. Also we want to listen to chats which had an operator.
+The webhook is configured to listen for the chat close event and to only trigger for chats that had operator involvement.
 
 ![](/img/bot/webhook-close.png)
 
-That's it :)
+That concludes the setup.

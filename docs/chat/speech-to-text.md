@@ -1,43 +1,43 @@
 ---
 id: speech-to-text
-title: Speech to text tutorial
+title: Speech-to-Text Tutorial
 sidebar_label: Speech to text
 ---
 
 ### Requirements
 
-*   Google chrome browser.
+*   Google Chrome browser
 *   Microphone
 *   Internet connection
-*   Live helper chat since 2.20 version
+*   Live Helper Chat version 2.20 or later
 
-### How to use it
+### How to Use It
 
-By default application listens for english language. You can change default language in "Configuration" -> "Speech" -> "Speech language"
+By default, the application listens for the English language. You can change the default language in **Configuration** -> **Speech** -> **Speech language**.
 
-Also operators can change their default listening language in their profile. To them has to be assigned "Speech module" -> "Allow user to change his personal speech recognition language" so operators in their profile will see an option to change default recognition language.
+Operators can also change their default listening language in their profile. To allow this, the role assigned to the operator must have the **Speech module** -> **Allow user to change his personal speech recognition language** permission. This will allow operators to see an option in their profile to change the default recognition language.
 
-Also it's possible to change Recognition language ant chat level. Just click microphone and settings button. To be able operators to do this to operators role has to be assigned "Speech module" -> "Allow operator to change chat recognition language"
+It is also possible to change the recognition language at the chat level. To do this, click the microphone and settings button. For operators to be able to do this, their role must have the **Speech module** -> **Allow operator to change chat recognition language** permission.
 
 ![](https://livehelperchat.com/var/media/images/mic-settings.png)
 
-Also then you click plain microphone button Chrome will ask you permission to access your microphone. For operators be able to use this feature in general to them has to be assigned "Speech module" -> "Allow operator to use speech recognition module"
+When you click the microphone button, Chrome will ask for permission to access your microphone. For operators to use this feature, their role must have the **Speech module** -> **Allow operator to use speech recognition module** permission.
 
-While speaking chat window will look like
+While speaking, the chat window will look like this:
 
 ![](https://livehelperchat.com/var/media/images/speak.png)
 
 ### FAQ
 
-### Why does chrome each time asks for permission to access my microphone?
+#### Why does Chrome ask for permission to access my microphone each time?
 
-This is chrome policy once message is send I stop listening and start listening again to avoid same message continous translation. This can be avoided if chat is using HTTPS just like our demo site.
+This is a Chrome security policy. To avoid continuous translation of the same message, the application stops listening after a message is sent and restarts listening again. This behavior can be avoided if the chat is using HTTPS, as our demo site does.
 
-### What languages are recognized?
+#### What languages are recognized?
 
-Bahasa Indonesia, Bahasa Melayu, Català, Čeština, Deutsch, English, Español, Euskara, Français, Galego, Hrvatski, IsiZulu, Íslenska, Italiano, Magyar, Nederlands, Norsk bokmål, Polski , Português, Română, Slovenčina, Suomi, Svenska, Türkçe, български, Pусский, Српски, 한국어, 中文, 日本語, Lingua latīna
+Bahasa Indonesia, Bahasa Melayu, Català, Čeština, Deutsch, English, Español, Euskara, Français, Galego, Hrvatski, IsiZulu, Íslenska, Italiano, Magyar, Nederlands, Norsk bokmål, Polski, Português, Română, Slovenčina, Suomi, Svenska, Türkçe, български, Pусский, Српски, 한국어, 中文, 日本語, Lingua latīna
 
-### Technical reference
+### Technical Reference
 
 *   [https://www.google.com/intl/en/chrome/demos/speech.html](https://www.google.com/intl/en/chrome/demos/speech.html)
 *   [http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API](http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API)

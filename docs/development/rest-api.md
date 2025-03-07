@@ -4,76 +4,76 @@ title: Rest API
 sidebar_label: Rest API
 ---
 
-## Where can I find available methods?
+## Where can I find the available methods?
+
+You can find the available methods at:
 
 https://api.livehelperchat.com/#/
 
-Chat Rest API modules allows to do the following things
+The Chat REST API module allows you to:
 
-* Check global status is anyone online
-* Check status for custom users
-* Check status for departments
-* And many more...
+*   Check the global online status.
+*   Check the status of specific users.
+*   Check the status of departments.
+*   And much more.
 
 ## How do I authenticate?
 
-You can use rest api using these two options.
+You can use the REST API using these two options:
 
-* You can create Rest API Key
+*   **Create a REST API Key:**
 
-> System configuration -> Live help configuration -> Rest API
+    > System configuration -> Live help configuration -> REST API
+*   **Use your regular back-office logins:** You must have the `'lhrestapi','use_direct_logins'` permission.
 
-* Use your regular back office logins. You have to have this permission.
+Authentication requires a username and password (Basic Authentication method).
 
-> 'lhrestapi','use_direct_logins'
+*   If you are using `REST API` keys, the username is the username of the account under which the API key was created.
+*   If you are using direct logins, the username is the account username, and the password is your account password.
 
-Authentication requires username and password (Basic Authentication method). If you are using `Rest API` keys. Username is a username of the account under which API key is created.
-
-If you are using direct logins username is the account username and password is your account password.
-
-If for some reasons you can't log in make sure that your `.htaccess` file has the following lines
+If you can't log in, ensure your `.htaccess` file has the following lines:
 
 ```apacheconf
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 ```
 
-## How to set up Rest API for third party?
+## How to set up the REST API for a third party?
 
-Let say you want to give third party developer access only to the chats and nothing else
+Let's say you want to give a third-party developer access only to the chats and nothing else. Here's how:
 
-* Create a role named `Rest API` under 
-  * List roles URL `/site_admin/permission/roles`
-  * New role URL `/site_admin/permission/newrole`
-* Give permission to that role `'lhchat', 'use'`
-* Create a group `Rest API`
-  * Group list URL `/site_admin/user/grouplist`
-  * New group URL `/site_admin/user/newgroup`
-* Assign just created role `Rest API` to this group by modifying it.
-* Create a user and assign him to `Rest API` group.
-* Don't forget to assign to that user departments, so only those departments chats he will be able to see.
-* Navigate to `/site_admin/restapi/index` and create a Rest API key under that user.
-* Your username will be 
-  * `e-mail` or `username`
-  * Password will be the one you created in Rest API section
+*   **Create a role named `REST API`:**
+    *   List roles URL: `/site_admin/permission/roles`
+    *   New role URL: `/site_admin/permission/newrole`
+*   **Give the role the `'lhchat', 'use'` permission.**
+*   **Create a group named `REST API`:**
+    *   Group list URL: `/site_admin/user/grouplist`
+    *   New group URL: `/site_admin/user/newgroup`
+*   **Assign the `REST API` role to this group by modifying the group.**
+*   **Create a user and assign them to the `REST API` group.**
+*   **Assign departments to that user** so they can only see chats from those departments.
+*   **Navigate to `/site_admin/restapi/index` and create a REST API key under that user.**
+*   **Your username will be:**
+    *   `e-mail` or `username`
+*   **The password will be the one you created in the REST API section.**
 
-To explore API navigate to `https://api.livehelperchat.com/#/` and change `https://demo.livehelperchat.com/restapi/swagger` to your address
+To explore the API, navigate to `https://api.livehelperchat.com/#/` and change `https://demo.livehelperchat.com/restapi/swagger` to your address.
 
-Quick reminder about chat messages types. Message type depends on `user_id`
+A quick reminder about chat message types (message type depends on `user_id`):
 
- * `0` - Visitor message, 
- * `> 0` - Operator Message, 
- * `-1` - System message. Not visible by visitor 
- * `-2` - Bot message
+*   `0` - Visitor message
+*   `> 0` - Operator Message
+*   `-1` - System message (not visible to the visitor)
+*   `-2` - Bot message
 
-Quick reminder about chat status
+A quick reminder about chat statuses:
 
- * const STATUS_PENDING_CHAT = 0;
- * const STATUS_ACTIVE_CHAT = 1;
- * const STATUS_CLOSED_CHAT = 2;
- * const STATUS_CHATBOX_CHAT = 3;
- * const STATUS_OPERATORS_CHAT = 4;
- * const STATUS_BOT_CHAT = 5;
+*   `const STATUS_PENDING_CHAT = 0;`
+*   `const STATUS_ACTIVE_CHAT = 1;`
+*   `const STATUS_CLOSED_CHAT = 2;`
+*   `const STATUS_CHATBOX_CHAT = 3;`
+*   `const STATUS_OPERATORS_CHAT = 4;`
+*   `const STATUS_BOT_CHAT = 5;`
 
 ## Where this module can be used?
 

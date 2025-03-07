@@ -6,51 +6,53 @@ sidebar_label: Mail settings
 
 ## Introduction
 
-Main mail settings. I suggest after installation set them to your settings. These settings can be found at
+These are the main mail settings. It is recommended to configure them after installation. You can find these settings at:
 
 > System configuration -> Mail settings
 
 ![](/img/system/mail-settings-main.jpg) 
 
-## E-mail templates
+## E-mail Templates
 
-E-mail templates can be changed in 
+You can modify e-mail templates in:
 
 > System configuration -> E-mail templates
 
 ## FAQ
 
-### How to use Google or any other SMTP server?
+### How do I use Google or another SMTP server?
 
-You can use google SMTP settings. There is demo configuration screenshot. Also I have provided some additional info below this image.
+You can use Google's SMTP settings or those of another provider. A configuration example is shown in the screenshot. Additional information is provided below the image.
 
-![](/img/system/mail-settings-smtp.jpg) 
+![](/img/system/mail-settings-smtp.jpg)
 
 In general:
 
-* host: tls://smtp.gmail.com
-* port: 587
-* Username: Your google email address
-* Password: Your google password
+*   Host: `tls://smtp.gmail.com`
+*   Port: 587
+*   Username: Your Google email address
+*   Password: Your Google password
 
-If during configuraiton you get error like Authentification error, you may need to create an application password. It's security policy used by google to avoid third party applications accesing your account. 
+If you encounter an "Authentication error" during configuration, you may need to create an application password. This is a security measure used by Google to prevent third-party applications from accessing your account.
 
-[https://support.google.com/accounts/answer/185833?hl=en](https://support.google.com/accounts/answer/185833?hl=en)  
-https://security.google.com/settings/security/apppasswords?pli=1 - application password can be created there  
-[https://www.lifewire.com/what-are-the-gmail-smtp-settings-1170854](https://www.lifewire.com/what-are-the-gmail-smtp-settings-1170854) - a little bit more information
+*   [https://support.google.com/accounts/answer/185833?hl=en](https://support.google.com/accounts/answer/185833?hl=en)
+*   [https://security.google.com/settings/security/apppasswords?pli=1](https://security.google.com/settings/security/apppasswords?pli=1) - Application passwords can be created here.
+*   [https://www.lifewire.com/what-are-the-gmail-smtp-settings-1170854](https://www.lifewire.com/what-are-the-gmail-smtp-settings-1170854) - More information.
 
-### Some of the e-mails comes from root@localhost, where can I change that?
+### Some e-mails are being sent from root@localhost. How can I change that?
 
-You have to edit mail templates. E.g
-http://demo.livehelperchat.com/site_admin/abstract/list/EmailTemplate
+You need to edit the mail templates. For example:
 
-Edit "From e-mail" and set proper sender e-mail.
+[http://demo.livehelperchat.com/site\_admin/abstract/list/EmailTemplate](http://demo.livehelperchat.com/site_admin/abstract/list/EmailTemplate)
+
+Edit the "From e-mail" field and set the correct sender e-mail address.
 
 ## Permissions
 
-Required permissions to configure SMTP/Mail settings
-> 'lhsystem','configuresmtp'
+The following permissions are required to configure SMTP/Mail settings:
 
-Required permissions to change e-mail templates
+`'lhsystem','configuresmtp'`
 
- >'lhsystem','changetemplates'
+The following permissions are required to change e-mail templates:
+
+`'lhsystem','changetemplates'`

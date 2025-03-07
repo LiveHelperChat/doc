@@ -4,54 +4,54 @@ title: Department transfers
 sidebar_label: Department transfers
 ---
 
-This article defines how to use automatic chat transfer between departments.
+This article explains how to set up automatic chat transfers between departments.
 
 ## Attributes definition
 
-### To what department chat should be transferred if it is not accepted
+### Target Department for Unaccepted Chats
 
-Defines to what department chat should be transfered if chat is not accepted for specific amount of time.
+Specifies the department to which a chat should be transferred if it remains unaccepted for a specific period.
 
-### Timeout in seconds before chat is transferred to another department. Minimum 5 seconds.
+### Transfer Timeout (seconds)
 
-How long chat can be in pending state before it's transfered to to another department.
+The duration a chat can remain in a pending state before being transferred to another department (minimum 5 seconds).
 
-### Transfer immediately to this department if current department has no online operators?
+### Immediate Transfer if No Online Operators?
 
-You can transfer to this chat immediately after chat started if current department does not have online operators.
+Enable immediate transfer to this department if the current department has no online operators.
 
-### Reset assigned user on chat transfer?
+### Reset Assigned User on Transfer?
 
-If you are using auto assignment workflow and let say chat is assigned to operator, but operator did not accepted chat in time it makes sense to reset this operator. If other operator has it's own auto assignment workflow.
+If using auto-assignment, this option resets the assigned operator if they haven't accepted the chat within the specified time. This allows another operator's auto-assignment workflow to take over.
 
 ![](/img/department/department-transfer.jpg)
 
-### Execute new chat logic again for recipient department?
+### Treat as New Chat in Recipient Department?
 
-System will see this chat as new chat.
+If enabled, the system will treat the transferred chat as a new chat in the recipient department.
 
-### Execute unanswered chat logic again for recipient department?
+### Execute Unanswered Chat Logic in Recipient Department?
 
-System will see this chat as unanswered chat and execute all unanswered chat logic.
+If enabled, the system will treat the transferred chat as an unanswered chat and execute all unanswered chat logic in the recipient department.
 
-## How to setup automatic chat transfer workflow? 
+## Setting Up Automatic Chat Transfer
 
-This feature allows us to implement these types of workflows.
+This feature enables the implementation of various chat transfer workflows.
 
-### Precondition
+### Prerequisites
 
-*   "Default" is our main department | There is online operator
-*   "Default" is our initial department | There is online operator
-*   "Default" department has configured to what department chat has to be transfered if it was not accepted.
+*   "Default" is the main department with online operators.
+*   "Default" is the initial department with online operators.
+*   The "Default" department has a defined transfer target if a chat is unaccepted.
 
-### Workflow
+### Workflow Example
 
-*   User request chat, but operator from department "Default" does not accepts chat for 30 second. This variable was configured in department "Default". So since that time no one accepted chat, chat is transfered to "Failover" department. Message for transfer is also being recorded.
+*   A user requests a chat. If no operator in the "Default" department accepts the chat within 30 seconds (as configured in the "Default" department settings), the chat is transferred to the "Failover" department. A transfer message is also recorded.
 
-### What happens then user closes the chat?
+### Handling User Chat Closure
 
-*   Since user closes the chat workflow stops. To continue workflow cronjob have to be setup.
-*   `php cron.php -s site_admin -c cron/transfer_workflow` [more information](development/cronjob.md#default-cronjob-setup)
-*   [http://demo.livehelperchat.com/index.php/site_admin/chat/editchatconfig/run_departments_workflow](http://demo.livehelperchat.com/index.php/site_admin/chat/editchatconfig/run_departments_workflow) - variable have to be configured. 1 - it will allow cronjob to continue default workflow.
+*   If the user closes the chat, the workflow stops. To continue the workflow, a cron job must be set up.
+*   `php cron.php -s site_admin -c cron/transfer_workflow` ([more information](development/cronjob.md#default-cronjob-setup))
+*   The `http://demo.livehelperchat.com/index.php/site_admin/chat/editchatconfig/run_departments_workflow` variable must be configured. Setting it to 1 allows the cron job to continue the default workflow.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vA-Jik_vJPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

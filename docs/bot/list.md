@@ -3,11 +3,11 @@ id: bot-list
 title: List
 ---
 
-This article explains list. The element looks like
+This article explains the List element. The element looks like:
 
 [![](https://livehelperchat.com/var/media/images/list.png)​​](https://livehelperchat.com/var/media/images/list.png)
 
-Syntax for simple buttons looks like. This can be send directly as a meta_msg body to [https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin ](https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin)
+The syntax for simple lists is shown below. This can be sent directly as a `meta_msg` body to [https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin](https://api.livehelperchat.com/#/api/post_restapi_addmsgadmin)
 
 
 ```json

@@ -6,38 +6,38 @@ sidebar_label: Mail list
 
 ## Introduction
 
-Mail list can be accessed from left menu
+The mail list can be accessed from the left menu.
 
 ​![](/img/mail/mail-list.png)
 
-If you want to allow operator to list all mails by department grant him `'lhmailconv','list_all_mails'`
+To allow an operator to list all emails by department, grant them the permission `'lhmailconv','list_all_mails'`.
 
-if you want to limit that grant him only `'lhmailconv','list_my_mails'` also you can additionally grant `'lhmailconv','list_pending_mails'`
+To limit an operator to only listing their own emails, grant them `'lhmailconv','list_my_mails'`. You can additionally grant `'lhmailconv','list_pending_mails'` to allow them to list pending emails.
 
-Summary:
+**Summary:**
 
-Grant `'lhmailconv','list_all_mails'`(required) **or** `'lhmailconv','list_my_mails'`(required) `'lhmailconv','list_pending_mails'`(optional)
+Grant `'lhmailconv','list_all_mails'` (required) **or** `'lhmailconv','list_my_mails'` (required).  `'lhmailconv','list_pending_mails'` is optional.
 
 ## Permissions
 
-If you want to grant operator to list all mails independently of mail owner status
+To grant an operator the ability to list all emails, regardless of the email's owner, grant them the following permission:
 
 `Allow operator to list all mails independently of operator and status.`
 > 'lhmailconv','list_all_mails'
 
 ### OR
 
-If you want to allow operator to list only mails he is owner
+To allow an operator to list only the emails they own, grant them the following permission:
 
 `Allow operator to list mails he is owner`
 > 'lhmailconv','list_my_mails'
 
-Also if you want to allow hom to list pending mails without a mail owner grant him
+Additionally, to allow an operator to list pending emails without an assigned owner, grant them the following permission:
 
 `Allow operator to list mails without an owner and in status pending.`
 > 'lhmailconv','list_pending_mails'
 
 ### General permission
 
-General permission
+The general permission required to access the mail list is:
 > 'lhmailconv','use_admin'

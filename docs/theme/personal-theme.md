@@ -1,12 +1,12 @@
 ---
 id: personal-theme
-title: Personal theme
+title: Personal Themes
 ---
 
-Using personal themes visitors can change how backend looks like for them.
+Personal themes allow operators to customize the appearance of the backend.
 
 ## Permissions
 
-In order operator to be able edit themes, set default theme he has to have this permission
+To enable an operator to edit themes and set the default theme, they must have the following permission:
 
 > 'lhtheme','personaltheme'

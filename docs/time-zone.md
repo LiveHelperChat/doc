@@ -1,14 +1,14 @@
 ---
 id: time-zone
-title: Time zone
+title: Time Zone
 ---
 
-After you have installed application you should set your Time Zone. If you do not set time zone Live Helper Chat will use server time zone. If you are using [online hours](department/department.md#automate-online-hours) by department it will use time zone defined here.
+After installing the application, you should set your time zone. If you do not set a time zone, Live Helper Chat will use the server's time zone. If you are using [online hours](department/department.md#automate-online-hours) for a department, it will use the time zone defined here.
 
 ![Time Zone](/img/system/time-zone.jpg)
 
-Operators also can set their own personal time zone in their user account page.
+Operators can also set their own personal time zone in their user account page.
 
 ## Permissions
 
-> 'lhsystem','timezone'
+`lhsystem`,`timezone`

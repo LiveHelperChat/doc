@@ -4,8 +4,13 @@ title: FAQ
 sidebar_label: FAQ
 ---
 
-Pending documentation...
+## FAQ
+
+Documentation is pending.
 
 ## Permissions
 
-> 'lhfaq','manage_faq'
+The following permissions are required to manage FAQs:
+
+*   `lhfaq`
+*   `manage_faq`

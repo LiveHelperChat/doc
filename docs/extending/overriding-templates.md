@@ -4,86 +4,81 @@ title: How to override templates?
 sidebar_label: Overriding templates
 ---
 
-By default all templates are location in 
+By default, all templates are located in the
 
- > design/defaulttheme
+> design/defaulttheme
 
-folder. I have prepared custom theme where you can override default templates by creating identical template path in customtheme folder.
+folder. You can override the default templates by creating an identical template path in the `design/customtheme` folder.
 
- > design/customtheme
+For example, if a template is located in
 
-Example.
+> defaulttheme/tpl/lhchat/getstatus/container.tpl.php - this is the user status template used to show whether a user is online or not.
 
-If template is located in
+To override this template, create a template in
 
- > defaulttheme/tpl/lhchat/getstatus/container.tpl.php - it's user status template used to show user status is he online or not.
+> customtheme/tpl/lhchat/getstatus/container.tpl.php
 
-If you want to override this template you have to create template in
-
- > customtheme/tpl/lhchat/getstatus/container.tpl.php
-
-Like in settings/settings.ini.php themes order is in the following order
+As in `settings/settings.ini.php`, themes are ordered as follows:
 
 ```php
 0 => 'customtheme',
 1 => 'defaulttheme',
 ```
 
-Customtheme has priority against defaulttheme, so that way you can override any template you want without changing default templates. You can also override same way images/css/js and so on. Don't forget to disable cache while developing. Also after you enable cache again, clear it from back office by clicking clear cache.
+`customtheme` has priority over `defaulttheme`, so you can override any template without changing the default templates. You can also override images/css/js files in the same way. Remember to disable the cache while developing. After you enable the cache again, clear it from the back office by clicking "Clear cache."
 
 ## Main templates to override
 
-To include custom CSS
+To include custom CSS:
 
-* `design/defaulttheme/tpl/pagelayouts/parts/page_head_css_extension_multiinclude.tpl.php` - for back office pages
-* `design/defaulttheme/tpl/pagelayouts/parts/page_head_css_user_extension_multiinclude.tpl.php` - for front end pages
+*   `design/defaulttheme/tpl/pagelayouts/parts/page_head_css_extension_multiinclude.tpl.php` - for back-office pages
+*   `design/defaulttheme/tpl/pagelayouts/parts/page_head_css_user_extension_multiinclude.tpl.php` - for front-end pages
 
-Sample code
+Sample code:
 
 ```html
 <link rel="stylesheet" type="text/css" href="<?php echo erLhcoreClassDesign::designCSS('css/myextension.css');?>" />
 ```
 
-To include custom JS
+To include custom JS:
 
-* `design/defaulttheme/tpl/pagelayouts/parts/page_head_js_extension_multiinclude.tpl.php` - for back office pages
-* `design/defaulttheme/tpl/pagelayouts/parts/page_head_js_user_extension_multiinclude.tpl.php` - for front end pages
+*   `design/defaulttheme/tpl/pagelayouts/parts/page_head_js_extension_multiinclude.tpl.php` - for back-office pages
+*   `design/defaulttheme/tpl/pagelayouts/parts/page_head_js_user_extension_multiinclude.tpl.php` - for front-end pages
 
-Sample code
+Sample code:
 
 ```html
 <script type="text/javascript" src="<?php echo erLhcoreClassDesign::designJS('js/extension.lhc.js');?>"></script>
 ```
 
-`multiinclude` keyword at the end indicates that each time template is found (let say in another extension) it's included.
+The `multiinclude` keyword at the end indicates that the template is included each time it is found (e.g., in another extension).
 
-Read [here](development/unbrand.md) how to override only CSS/JS files
+Read [here](development/unbrand.md) how to override only CSS/JS files.
 
-## How do I know in what module template is executed. Usefull in case you want to execute your JS in specific modules only without overriding module itself.
+## How to determine the module in which a template is executed (useful for executing JS in specific modules without overriding the module itself)
 
-To check is it specific module.
+To check if it is a specific module:
 
 ```php
-
-// To get siteaccess site_admin/eng/fre etc.
+// To get the site access (site_admin/eng/fre, etc.)
 erLhcoreClassSystem::instance()->SiteAccess;
 
-// To get module
+// To get the module
 if (erLhcoreClassModule::getModuleName() == 'chat') {
-    // do your thing
+    // Do your thing
 };
 
-// To get function
+// To get the function/view
 if (erLhcoreClassModule::getCurrentView() == 'start') {
-    // do your thing
+    // Do your thing
 };
 
-// To check is it dashboard
+// To check if it is the dashboard
 if (erLhcoreClassModule::getModuleName() == 'front' && erLhcoreClassModule::getCurrentView() == 'default') {
-    // do your thing
+    // Do your thing
 };
 ```
 
-## Old widget
+## Overriding the old widget
 
-For native placement template you have to override `defaulttheme/tpl/lhchat/getstatus/native_placement.tpl.php`"` the most easiest way to override widget interface you which is rendered on site is just override it using css with !important flag.
+To override the native placement template, you have to override `defaulttheme/tpl/lhchat/getstatus/native_placement.tpl.php`. The easiest way to override the widget interface rendered on the site is to override it using CSS with the `!important` flag.

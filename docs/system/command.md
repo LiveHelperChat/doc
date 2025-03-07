@@ -1,34 +1,34 @@
 ---
 id: system-commands
-title: Useful console commands
+title: Useful Console Commands
 sidebar_label: Commands
 ---
 
-Here is all console commands you can execute besides [cronjobs](development/cronjob.md).
+Here are console commands you can execute, in addition to [cron jobs](development/cronjob.md).
 
-### Clear cache
+### Clear Cache
 
 ```
 php cron.php -s site_admin -c cron/util/clear_cache
 ```
 
-### Updates Live Helper Chat database directly from console
+### Update Live Helper Chat Database Directly from the Console
 
-You might not see differences compared to a new Live Helper if your server can't make request to remote URL. In that case you can update database by executing this shell command from `lhc_web` folder. In that case makes sense update files first just. If Live Helper Chat won't be able to download schema from github it will try local definition.
+You might not see any differences compared to a new Live Helper Chat installation if your server can't make requests to a remote URL. In that case, you can update the database by executing this shell command from the `lhc_web` folder. It makes sense to update the files first. If Live Helper Chat can't download the schema from GitHub, it will try a local definition.
 
 ```
 php cron.php -s site_admin -c cron/util/update_database
 ```
 
-### Test antivirus installation
+### Test Antivirus Installation
 
 ```
 php cron.php -s site_admin -c cron/util/test_antivirus -p <path_to_file>
 ```
 
-### Generate translation file
+### Generate Translation File
 
-This command I run every time I make some development.
+I run this command every time I make a development change.
 
 ```
 php cron.php -s site_admin -c cron/util/generate_translation_file

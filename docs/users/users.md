@@ -1,27 +1,27 @@
 ---
 id: users-users
-title: Working with users
+title: Working with Users
 ---
 
-There can be granted access to allow user edit his settings or not edit. Than can be reached using roles. But that part will be explained in modules and functions chapter. Standard account editing window looks like provided window below.
+Access can be granted to users to allow them to edit their settings. This access is managed through roles, which will be explained in the modules and functions chapter. The standard account editing window is shown below.
 
 [![](https://livehelperchat.com/docimages/users/account.png)](https://livehelperchat.com/docimages/users/account.png)
 
-Bellow user can see him assigned departments. If user do not have permission to change his account there checkbox is disabled. If user have permission to access all departments green text is written that he can see all departments chats. No additional departments assignment is needed.
+Below, a user can see their assigned departments. If a user does not have permission to change their account, the checkbox is disabled. If a user has permission to access all departments, a message indicates that they can see all department chats, and no additional department assignment is needed.
 
-New user can be crated from users list window by clicking add icon.
+A new user can be created from the users list window by clicking the add icon.
 
 [![](https://livehelperchat.com/docimages/users/list-users.png)](https://livehelperchat.com/docimages/users/list-users.png)
 
-During new user creating process him immediately can be assigned departments.
+During the new user creation process, departments can be immediately assigned to the user.
 
 [![](https://livehelperchat.com/docimages/users/new-user.png)](https://livehelperchat.com/docimages/users/new-user.png)
 
-In order to account begin functional fully, user have to be assigned some group. It can be done from group editing window.
+For an account to be fully functional, the user must be assigned to a group. This can be done from the group editing window.
 
-User editing window is similar to new user window.
+The user editing window is similar to the new user window.
 
 [![](https://livehelperchat.com/docimages/users/edit-user.png)](https://livehelperchat.com/docimages/users/edit-user.png)
 
-User can be deleted same way as groups, roles etc. By clicking delete icon in user list window.
+Users can be deleted in the same way as groups, roles, etc., by clicking the delete icon in the user list window.
 

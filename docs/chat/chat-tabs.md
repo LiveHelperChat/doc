@@ -6,14 +6,14 @@ sidebar_label: Chat tabs
 
 ## Introduction
 
-Chat tabs can be accessed by clicking top menu icon ​![](/img/chat/chat-tabs.png). It's just simplified UI for chat interface for operators.
+Chat tabs provide a simplified user interface for chat operators and can be accessed by clicking the top menu icon ![](/img/chat/chat-tabs.png).
 
-This window also can be accessed from left menu.
+This window can also be accessed from the left menu.
 
-​![](/img/chat/chat-tabs-menu.png)
+![](/img/chat/chat-tabs-menu.png)
 
 ## Permissions
 
-Required permissions
+The following permission is required:
 
 > 'lhchat','allowchattabs'

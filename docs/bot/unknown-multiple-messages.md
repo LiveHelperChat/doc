@@ -1,71 +1,68 @@
 ---
 id: multiple-unknown-messages
 sidebar_label: Multiple unknown messages
-title: How to send different messages on consecutive unknown visitor messages?
+title: Sending Different Messages for Consecutive Unknown Visitor Messages
 ---
 
-Bot should by the first unknown message the bot answers : 
+This document explains how to configure a bot to send different responses based on the number of consecutive unknown messages it receives from a visitor.
 
-> Hm...could you please explain me what you exactly need in simpler words?`
+The bot will respond as follows:
 
-By the second unknown message the bot answers :
+*   **First unknown message:** "Could you please explain what you need in simpler terms?"
+*   **Second unknown message:** "Could you be a little more specific? I really want to help you."
+*   **Third unknown message:** "Sorry, I don't have enough information to assist you. Please send an email to ... and my colleagues will respond tomorrow. Thank you for your effort! Goodbye!"
 
-> May you were a little bit more specific ? I really want to help you.  
+## Implementation
 
-By the third unknown message the bot answers
-
-> Sorry, it seems I am not experienced enough to advice you accordingly. But, i suggest you sending an E-mail to ..., so my collegues can answer to you tomorrow. Thank you for effort! Till next time!
-
-## Implementation 
-
-For that we need to track how many times bot has failed to detect visitor intent.
+To implement this, we need to track the number of times the bot fails to understand the visitor's intent.
 
 ![Triggers](/img/bot/unknown/triggers.png)
 
-We will need for simplest scenario `6` triggers
+For this basic scenario, we'll need six triggers:
 
-* `Default` - default trigger
-* `Car information` - trigger which is found by default
-* `Unknown 1` - trigger with checked flag `Default for unknown message`
-* `Unknown 2` - Trigger which is executed second time for unknown message
-* `Unknown 3` - Trigger which is executed third time for unknown message
+*   `Default`: The default trigger.
+*   `Car information`: A trigger activated by the keyword "car".
+*   `Unknown 1`: Triggered by the first unknown message; marked as "Default for unknown message".
+*   `Unknown 2`: Triggered by the second unknown message.
+*   `Unknown 3`: Triggered by the third unknown message.
+*   `Reset counter`: Resets the unknown message counter.
 
 ### Default
 
-Just a default trigger
+This is simply the default trigger.
 
 ![Default](/img/bot/unknown/default.png)
 
 ### Car information
 
-This trigger is executed if user enters `car` as a keyword. This trigger also has send block which sends a trigger which resets our unknown counter.
+This trigger is activated when the user enters "car". It also includes a "send block" that executes the "Reset counter" trigger.
 
 ![Car information](/img/bot/unknown/car-information.png)
 
 ### Unknown 1
 
- * This message is send first time on unknown visitor message.
- * It has checked `Default for unknown message`
- * First part of response is required if it's not a first time visitor sends something unknown. If that happens we execute `Unknown 2` trigger.
+*   This message is sent in response to the first unknown visitor message.
+*   It is marked as "Default for unknown message".
+*   The first part of the response is required to prevent an infinite loop if the visitor continues sending unknown messages. If another unknown message is received, the `Unknown 2` trigger is executed.
 
 ![Unknown 1](/img/bot/unknown/unknown-1.png)
 
 ### Unknown 2
 
-* This message is send second time on unknown visitor message.
-* First part of response is required if it's second time visitor sends something unknown. **Number 3** is **NOT** a typo. If that happens we execute `Unknown 3` trigger.
+*   This message is sent in response to the second unknown visitor message.
+*   The first part of the response is required to prevent an infinite loop if the visitor continues sending unknown messages. If another unknown message is received, the `Unknown 3` trigger is executed.
 
 ![Unknown 2](/img/bot/unknown/unknown-2.png)
 
 ### Unknown 3
 
-* This message is send third time on unknown visitor message.
-* We also send a block to reset repeat counter.
+*   This message is sent in response to the third unknown visitor message.
+*   It also includes a "send block" to execute the "Reset counter" trigger.
 
 ![Unknown 3](/img/bot/unknown/unknown-3.png)
 
 ### Reset counter
 
-* It resets our repeat counter so next time we will start from `Unknown 1` again.
+*   This trigger resets the "unknown message" counter, so the next time the bot encounters an unknown message, it will start from `Unknown 1` again.
 
 ![Repeat counter reset](/img/bot/unknown/repeat-counter-reset.png)

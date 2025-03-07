@@ -1,96 +1,90 @@
 ---
 id: waha
-title: WhatsApp WAHA integration
+---
+id: waha
+title: WhatsApp WAHA Integration
 ---
 
-This tutorial described how you can add WhatsApp support using https://waha.devlike.pro/. This tutorial won't teach you how to setup `WAHA` product. Only how to integrate it
+This tutorial describes how to integrate WhatsApp support using [WAHA](https://waha.devlike.pro/). It does not cover the setup of the WAHA product itself, but focuses solely on its integration with Live Helper Chat.
 
-Usefull information regarding wa
+For more information about WAHA, refer to:
 
-* https://waha.devlike.pro/
-* https://waha.devlike.pro/docs/overview/quick-start/
+*   [WAHA Official Website](https://waha.devlike.pro/)
+*   [WAHA Quick Start Guide](https://waha.devlike.pro/docs/overview/quick-start/)
 
-## Incoming webhook definition
+## Incoming Webhook Configuration
 
-First you have to create an incoming webhook. You can import configuration download it [here](/img/integration/waha/incoming-webhook.json)
+First, create an incoming webhook. You can import a pre-configured setup from [here](/img/integration/waha/incoming-webhook.json).
 
-You will need to do few bits now
+You will need to adjust the following settings:
 
-* Change `Identifier` to any random string.
-* Click `Show integration information.`
-* In `Attributes` change `http://server:8002` to your server address.
-* Choose a department
+*   **Identifier:** Change this to a unique, random string.
+*   Click **Show integration information**.
+*   In the **Attributes** section, update `http://server:8002` to your server's address.
+*   Choose the appropriate department for handling WhatsApp chats.
 
-Save changes.
+Save the changes.
 
-## WAHA Starting settings
+## Initial WAHA Setup
 
-After receiving the link in the `incoming webhook` section, we now proceed to our server where WAHA is already running to initiate a new session. To do this, we click on `Try it out`, replace the link with our link from LHC, and then click on `Execute`.
-![browser_xDmCkYB8Jm](https://github.com/LiveHelperChat/doc/assets/10582537/5eecab5d-73a5-456d-8ff7-311a2512af8f)
-![71RdrDJ9EQ](https://github.com/LiveHelperChat/doc/assets/10582537/14b99870-e8df-40a0-8ea0-5869a697ccec)
+After obtaining the link from the `incoming webhook` section, navigate to your server where WAHA is running to initiate a new session. Click on **Try it out**, replace the placeholder link with the link from Live Helper Chat, and then click **Execute**.
 
-Afterward, we scroll down to the `/api/screenshot` section, and similarly click on `Try it out`, followed by `Execute`, to view the screenshot, which helps us perform the login to the WhatsApp system.
+![WAHA Initiate Session](https://github.com/LiveHelperChat/doc/assets/10582537/5eecab5d-73a5-456d-8ff7-311a2512af8f)
+![WAHA Execute](https://github.com/LiveHelperChat/doc/assets/10582537/14b99870-e8df-40a0-8ea0-5869a697ccec)
 
+Next, scroll down to the `/api/screenshot` section. Similarly, click on **Try it out**, followed by **Execute**, to view the screenshot. This screenshot is used to log in to the WhatsApp system.
 
-## Rest API calls setup
+## REST API Call Configuration
 
-**One time configuration**
+**One-time configuration**
 
-This will be required for an admin messages being send back to visitor (WhatsApp).
+This configuration is required for sending messages from an administrator back to the visitor on WhatsApp.
 
-You can import configuration download it [here](/img/integration/waha/rest-api.json)
+You can import a pre-configured setup from [here](/img/integration/waha/rest-api.json).
 
+Import the configuration and change the host from `http://server:8002` to your server's address.
 
-Import configuration. 
+## Bot Configuration
 
-Change host `http://server:8002` to your server address.
+**One-time configuration**
 
-## Bot setup
+You need to set up a bot whose trigger will be executed upon a webhook event.
 
-**One time configuration**
+You can import a pre-configured setup from [here](/img/integration/waha/bot.json).
 
-We need to set a bot which trigger will be executed upon webhook event.
+*   Ensure you set the correct REST API (imported previously) and the method to call.
 
-You can import configuration download it [here](/img/integration/waha/bot.json)
+The configuration should resemble the following:
 
+![](/img/integration/whatsapp-bot.png)
 
-* Set correct Rest API whcih you imported previously and method to call.
+## Webhook Configuration
 
-Configuration should look like
+**One-time configuration**
 
-![](/img/integration/whatsapp-bot.png).
+Identical webhooks should be configured for the following events:
 
-## Webhook configuration
+*   `chat.web_add_msg_admin`
+*   `chat.workflow.canned_message_before_save`
+*   `chat.before_auto_responder_msg_saved`
+*   `chat.desktop_client_admin_msg`
 
-**One time configuration**
+Webhook configuration is necessary for sending messages from an administrator back to the visitor.
 
-Identical webhooks should be setup for these events
+**Condition**: Compare attribute (then click Add)
 
-* chat.web_add_msg_admin
-* chat.workflow.canned_message_before_save
-* chat.before_auto_responder_msg_saved
-* chat.desktop_client_admin_msg
+1.  **Attribute**: `{args.chat.incoming_chat.incoming.scope}`
+    **Condition**: `=`
+    **Value**: `whatsapp`
+2.  **Attribute**: `{args.chat.last_message.meta_msg_array.content.whisper}`
+    **Condition**: `!=`
+    **Value**: `1`
+3.  **Attribute**: `{args.chat.last_message.user_id}`
+    **Condition**: `!=`
+    **Value**: `-1`
 
-Webhook configuration is needed for an admin messages being send back to visitor.
+*   Ensure that you use the correct value for `whatsapp`. This value corresponds to the `scope` attribute from the `Incoming webhook` settings.
 
-Condition : Compare attribute (then click Add)
+![Webhook Example](https://github.com/LiveHelperChat/doc/assets/10582537/89806d7f-0d17-4674-97f3-518469e216b1)
 
-1. Attribute : `{args.chat.incoming_chat.incoming.scope}`
-Condition : =
-Value     : whatsapp
-
-2. Attribute : `{args.chat.last_message.meta_msg_array.content.whisper}`
-Condition : !=
-Value     : 1
-
-3. Attribute : `{args.chat.last_message.user_id}`
-Condition : !=
-Value     : -1
-
-
-* Make sure you put correct value for `whatsapp` it's a scope from `Incoming webhook` - `scope` attribute
-
-![image](https://github.com/LiveHelperChat/doc/assets/10582537/89806d7f-0d17-4674-97f3-518469e216b1)
-
-
-If you did everything correct you should have it all working. Without coding a single line.
+If you have configured everything correctly, the integration should be working without requiring any custom code.

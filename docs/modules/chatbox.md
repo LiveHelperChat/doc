@@ -4,8 +4,13 @@ title: Chatbox
 sidebar_label: Chatbox
 ---
 
-Pending documentation...
+## Chatbox
+
+Documentation for this module is pending.
 
 ## Permissions
 
-> 'lhchatbox', 'manage_chatbox'
+The following permissions are required to manage the chatbox:
+
+*   `lhchatbox`
+*   `manage_chatbox`
