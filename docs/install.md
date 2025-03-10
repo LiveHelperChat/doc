@@ -296,6 +296,20 @@ RewriteRule ^lhc_web/.*$ - [L]
 
 If you experience logouts after a period of inactivity, it could be because your main website uses the same PHP session cookie name. Change `php_session_cookie_name` in the main settings [file](https://github.com/LiveHelperChat/livehelperchat/blob/da2815e5e5715594ef819a21da211d086061b58a/lhc_web/settings/settings.ini.default.php#L23) to something like `lhc_session_id`.
 
+## I don't get a sound/notification for new chats
+
+Browser notifications and permission to play sound are shown at the top right in the back office. If you do not see any of those icons, it means the browser has permission to send notifications and play sound.
+
+![](/img/chat/notifications.png)
+
+* To enable sound permissions at the browser level:
+    * Click anywhere on the page.
+    * Navigate to `Site settings` and choose `Allow` for `Sound`.
+    * ![](/img/chat/site-settings-browser.png)
+    * ![](/img/chat/sound-enable-browser.png)
+
+Browser notifications can be enabled by clicking the `Ring` icon and allowing the web page to send browser notifications.
+
 ## How to Log In
 
 To log in, navigate to the directory where the application is installed. The URL should look like: `http://<your_domain>/index.php/site_admin/`.
