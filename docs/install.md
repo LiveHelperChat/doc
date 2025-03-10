@@ -305,14 +305,22 @@ Browser notifications and permission to play sound are shown at the top right in
 * To enable sound permissions at the browser level:
     * Click anywhere on the page.
     * Navigate to `Site settings` and choose `Allow` for `Sound`.
-    * ![](/img/chat/site-settings-browser.png)
-    * ![](/img/chat/sound-enable-browser.png)
+
+![](/img/chat/site-settings-browser.png)
+
+![](/img/chat/sound-enable-browser.png)
 
 Browser notifications can be enabled by clicking the `Ring` icon and allowing the web page to send browser notifications.
 
 ## How to Log In
 
-To log in, navigate to the directory where the application is installed. The URL should look like: `http://<your_domain>/index.php/site_admin/`.
+To log in, navigate to the directory where the application is installed. The URL should look like: `http://<your_domain>/index.php/site_admin/`. `site_admin` is not a folder!!!
+
+Few examples
+
+ * `https://example.com/lhc_web/` login URL will be `https://example.com/lhc_web/index.php/site_admin`
+ * `https://example.com/chat/` (you renamed `lhc_web` to `chat`) login URL will be `https://example.com/chat/index.php/site_admin`
+ * `https://chat.example.com/` (you put content from `lhc_web` directly as the root directory of the chat app) login URL will be `https://chat.example.com/index.php/site_admin`
 
 If you forget your password and the password reminder does not work, execute the following query to reset the password for the `admin` user (user_id 1) to `demo`:
 
