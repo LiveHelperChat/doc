@@ -28,6 +28,10 @@ This area displays visitor messages. If there are previous visitor messages, a b
 
 You can right-click a message to see a context menu with related options.
 
+To allow an operator to see the actual author of a message (instead of an alias), they must have the appropriate permission.
+
+`lhchat,see_operator_name`
+
 ### Message Edit Actions
 
 ![](/img/chat/chat-message-popover.png)
