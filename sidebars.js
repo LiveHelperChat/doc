@@ -145,6 +145,7 @@ module.exports = {
                     'bot/deeppavlov-faq',
                     'bot/verify-email-by-bot-and-rest-api',
                     'bot/chatgpt-integration',
+                    'bot/chatgpt-responses',
                     'bot/deepseek-integration',
                     'bot/ollama-integration',
                     'bot/gemini-integration',
