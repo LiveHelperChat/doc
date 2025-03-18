@@ -1,7 +1,7 @@
 ---
 id: chatgpt-integration
 sidebar_label: ChatGPT Integration (Completions, Tool Calls)
-title: Integrating ChatGPT into Live Helper Chat with Tool Calls Support
+title: Integrating ChatGPT into Live Helper Chat with Tool Calls Support (Completions API)
 ---
 
 This integration uses the Chat Completions API.

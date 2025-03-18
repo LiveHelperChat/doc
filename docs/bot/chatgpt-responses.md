@@ -1,7 +1,7 @@
 ---
 id: chatgpt-responses
 sidebar_label: ChatGPT Integration (Responses, Tool Calls, File Search)
-title: Integrating ChatGPT into Live Helper Chat with Tool Calls, File Search Support
+title: Integrating ChatGPT into Live Helper Chat with Responses API, Tool Calls, File Search Support
 ---
 
 This integration uses the Chat Responses API.
@@ -17,13 +17,13 @@ Before you begin, you will need:
 
 # Streaming Support
 
-Streaming support will be added in next few weeks.
+Import the version you want `Streaming` OR `Non Streaming`. Streaming version requires NodeJS and PHP-Resque extensions.
 
 # Flow with Tool Call Support
 
 ## Rest API
 
-* After getting your API key, import the [Non streaming Rest API configuration](/img/bot/chatgpt/rest-api-tool.json) and set a `Bearer` token.
+* After getting your API key, import the [Non streaming Rest API configuration](/img/bot/chatgpt/chatgpt-response.json) OR [Streaming Rest API configuration](/img/bot/chatgpt/chatgpt-response-stream-api.json) and set a `Bearer` token.
 * Modify the `system` message `content`
 * Make sure you change `YOUR_VECTOR_STORAGE_ID` and `API_KEY`
 * After testing you might want to uncheck `Log all request and their responses as system messages.`
@@ -76,7 +76,7 @@ Here is example how full `tools` section might look like. If you do not want to 
 
 ## Bot
 
-* Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration [here](/img/bot/chatgpt/chatgpt-response-bot.json).
+* Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration [Non streamin](/img/bot/chatgpt/chatgpt-response-bot.json) OR [Streaming](/img/bot/chatgpt/chatgpt-response-bot-stream.json).
 
 ### Calling a Trigger Based on a Defined Function in ChatGPT
 

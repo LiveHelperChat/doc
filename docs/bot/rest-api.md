@@ -421,6 +421,7 @@ There are three types of magic prefixes they apply to all replaceable variables 
  * `raw_<replaceable_variable>` - will return value without wrapping quotes where content will be a valid JSON string. E.g `raw_{{lhc.nick}}`, etc. `raw_{{args.chat.id}}`
  * `sensitive_<replaceable_variable>` - content of variable will be processed using `Messages content protection` rules.
  * `raw_sensitive__<replaceable_variable>` - content of variable will be processed using `Messages content protection` rules and wrapping quotes will be removed content will be a valid JSON string.
+ * `direct_<replaceable_variable>` - to content of variable will be applied `json_decode` and if output is a string, it's content will be used. Usefull in combination with `{{custom_args_1}}`
 
 Other:
 
