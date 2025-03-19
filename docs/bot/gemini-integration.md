@@ -14,8 +14,8 @@ Notes
 
 Installation
 
-* Import [Rest API](/img/bot/gemini/rest-api.json)
-* Import [Bot](/img/bot/gemini/bot.json) and choose just imported Rest API in import window.
+* Import [Rest API Not streaming](/img/bot/gemini/rest-api.json) or [Rest API Streaming](/img/bot/gemini/rest-api-streaming.json)
+* Import [Bot Not Streaming](/img/bot/gemini/bot.json) or [Bot streaming](/img/bot/gemini/bot-stream.json) and choose just imported Rest API in import window 
 * Replace in newly imported `Rest API` call `YOUR_API_KEY` with your [API KEY](https://ai.google.dev/gemini-api/docs/api-key)
 * Adjust `Rest API` call system prompts.
 
