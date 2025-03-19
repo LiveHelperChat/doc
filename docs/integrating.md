@@ -240,13 +240,14 @@ Here are a few possible cases:
 
 ### You are offline, but the page shows that you are online:
 
-*   You have set up department online hours, and the chat is showing the status based on that.
-*   There is a 5-minute timeout before the chat status changes to offline. This is the time since the operator was last seen. This can be changed in the chat configuration. I suggest not keeping it shorter than 30 seconds.
-*   By default, a page view is required to see the new operator status. If you do not want this, you can enable automatic status changes.
+* You have set up department online hours, and the chat is showing the status based on that.
+* There is a 5-minute timeout before the chat status changes to offline. This is the time since the operator was last seen. This can be changed in the chat configuration. I suggest not keeping it shorter than 30 seconds.
+* By default, a page view is required to see the new operator status. If you do not want this, you can enable automatic status changes.
 
 ### You are online, but the webpage shows that you are offline:
 
-*   You have checked "Ignore users online statuses and use department online hours" in the chat configuration but forgot to activate online hours in the department.
+* You have checked "Ignore users online statuses and use department online hours" in the chat configuration but forgot to activate online hours in the department.
+* You have embed code without department, but all your departments are hidden. Hidden departments do not participate in global online status check.
 
 ### How is it decided whether to show an online/offline user?
 

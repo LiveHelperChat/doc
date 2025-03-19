@@ -8,6 +8,7 @@ This integration uses the Chat Responses API.
 
 * https://platform.openai.com/docs/guides/tools-file-search
 * https://platform.openai.com/docs/quickstart?api-mode=responses
+* https://youtu.be/Z-DzsIygsX0 video how to setup.
 
 Before you begin, you will need:
 
