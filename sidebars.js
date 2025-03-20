@@ -173,6 +173,7 @@ module.exports = {
         System: [
             'system/configuration',
             'smtp',
+            'email-templates',
             'development/cronjob',
             'system/system-commands',
             'time-zone',

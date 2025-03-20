@@ -3394,7 +3394,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('abstract.edit_'.strto
 
 ## Abstract Module
 
-### abstract.edit\_\*\_path
+### abstract.edit_\*_path
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhabstract/edit.php  
 **Line:** 128  
 **Purpose:** Triggered when an abstract record is edited. The \* is replaced with the identifier of the abstract record.
@@ -3405,7 +3405,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('abstract.edit_'.strto
 
 ## Paid Chat Module
 
-### paidchat.expired\_path
+### paidchat.expired_path
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhpaidchat/invalidhash.php  
 **Line:** 11  
 **Purpose:** Triggered when a paid chat has expired.
@@ -3414,7 +3414,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('abstract.edit_'.strto
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('paidchat.expired_path',array('result' => & $Result));
 ```
 
-### paidchat.settings\_path
+### paidchat.settings_path
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhpaidchat/settings.php  
 **Line:** 61  
 **Purpose:** Triggered when paid chat settings are accessed.
@@ -3423,7 +3423,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('paidchat.expired_path
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('paidchat.settings_path',array('result' => & $Result));
 ```
 
-### paidchat.removedpaidchat\_path
+### paidchat.removedpaidchat_path
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhpaidchat/removedpaidchat.php  
 **Line:** 11  
 **Purpose:** Triggered when a paid chat is removed.
@@ -3443,7 +3443,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('paidchat.removedpaidc
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.workflow.started',array());
 ```
 
-### chat.pending\_process\_workflow
+### chat.pending_process_workflow
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhcron/workflow.php  
 **Line:** 33, 67  
 **Purpose:** Triggered when a pending chat is processed by the workflow.
@@ -3470,7 +3470,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.workflow',array(
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.modified', array('chat' => & $chat));
 ```
 
-### chat.check\_archive
+### chat.check_archive
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhcron/util/check_archives.php  
 **Line:** 15  
 **Purpose:** Triggered when checking chat archives.
@@ -3481,7 +3481,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.check_archive', 
 
 ## Translation Module
 
-### translate.before\_messagetranslated
+### translate.before_messagetranslated
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhtranslation/starttranslation.php  
 **Line:** 13  
 **Purpose:** Triggered before a message is translated.
@@ -3492,7 +3492,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('translate.before_mess
 
 ## Rest API Module
 
-### chat.trans\_lhcbo
+### chat.trans_lhcbo
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/trans/lhcbo.php  
 **Line:** 190  
 **Purpose:** Triggered during chat translation in the back office.
@@ -3510,7 +3510,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.trans_lhcbo', ar
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chatcheckoperatormessage', array('proactive_active' => & $proactiveInviteActive));
 ```
 
-### chat.validstatus\_chat
+### chat.validstatus_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/addmsguser.php  
 **Line:** 30  
 **Purpose:** Triggered when validating the chat status.
@@ -3519,7 +3519,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chatcheckoperato
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.validstatus_chat',array('chat' => & $chat, 'valid_statuses' => & $validStatuses));
 ```
 
-### chat.before\_msg\_user\_saved
+### chat.before_msg_user_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/addmsguser.php  
 **Line:** 50  
 **Purpose:** Triggered before a user message is saved.
@@ -3528,7 +3528,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.validstatus_chat
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_msg_user_saved',array('msg' => & $msg,'chat' => & $chat));
 ```
 
-### chat.unread\_chat
+### chat.unread_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/addmsguser.php  
 **Line:** 86  
 **Purpose:** Triggered when a chat is marked as unread.
@@ -3546,7 +3546,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.unread_chat',arr
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser',array('chat' => & $chat, 'msg' => & $msg, 'init' => 'restapi'));
 ```
 
-### chat.data\_changed
+### chat.data_changed
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/setchatstatus.php  
 **Line:** 43  
 **Purpose:** Triggered when chat data is changed.
@@ -3555,7 +3555,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser',arra
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.data_changed',array('chat' => & $chat, 'user_data' => $userData));
 ```
 
-### user.user\_created
+### user.user_created
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/user.php  
 **Line:** 98  
 **Purpose:** Triggered when a user is created.
@@ -3573,7 +3573,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.user_created', a
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('department.modified',array('department' => $dep, 'payload_data' => $requestBody));
 ```
 
-### file.before\_admin\_uploadfile.file\_store
+### file.before_admin_uploadfile.file_store
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/file.php  
 **Line:** 13  
 **Purpose:** Triggered before an admin uploads a file.
@@ -3582,7 +3582,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('department.modified',
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.before_admin_uploadfile.file_store', array('errors' => & $errors));
 ```
 
-### file.new.file\_path
+### file.new.file_path
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/file.php  
 **Line:** 22  
 **Purpose:** Triggered when a new file path is generated.
@@ -3591,7 +3591,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.before_admin_upl
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.new.file_path', array('path' => & $path));
 ```
 
-### file.file\_new\_admin.file\_store
+### file.file_new_admin.file_store
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/file.php  
 **Line:** 27  
 **Purpose:** Triggered when a new admin file is stored.
@@ -3609,7 +3609,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.file_new_admin.f
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.download', array('chat_file' => $file));
 ```
 
-### chat.operator\_status\_changed
+### chat.operator_status_changed
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/setoperatorstatus.php  
 **Line:** 47  
 **Purpose:** Triggered when an operator's status is changed.
@@ -3627,7 +3627,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.operator_status_
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('api.fetchchat', array('chat' => & $chat));
 ```
 
-### chat.before\_auto\_responder\_triggered
+### chat.before_auto_responder_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/startchat.php  
 **Line:** 176  
 **Purpose:** Triggered before an auto-responder is triggered.
@@ -3636,7 +3636,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('api.fetchchat', array
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_triggered', array('chat' => & $chat, 'errors' => & $beforeAutoResponderErrors));
 ```
 
-### chat.before\_auto\_responder\_message
+### chat.before_auto_responder_message
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/startchat.php  
 **Line:** 188  
 **Purpose:** Triggered before an auto-responder message is sent.
@@ -3645,7 +3645,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_message', array('chat' => & $chat, 'responder' => & $responder));
 ```
 
-### chat.auto\_responder\_triggered
+### chat.auto_responder_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/startchat.php  
 **Line:** 205  
 **Purpose:** Triggered when an auto-responder is triggered.
@@ -3654,7 +3654,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.auto_responder_triggered', array('chat' => & $chat));
 ```
 
-### chat.chat\_started
+### chat.chat_started
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/startchat.php  
 **Line:** 227  
 **Purpose:** Triggered when a chat is started.
@@ -3663,7 +3663,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.auto_responder_t
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chat_started',array('chat' => & $chat, 'msg' => $messageInitial));
 ```
 
-### chat.syncuser.operator\_typing
+### chat.syncuser.operator_typing
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/fetchchatmessages.php  
 **Line:** 80  
 **Purpose:** Triggered when an operator is typing.
@@ -3672,7 +3672,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chat_started',ar
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.syncuser.operator_typing',array('chat' => & $chat));
 ```
 
-### chat.unread\_chat
+### chat.unread_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/closechatasvisitor.php  
 **Line:** 66  
 **Purpose:** Triggered when chat is unread.
@@ -3681,7 +3681,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.syncuser.operato
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.unread_chat',array('chat' => & $chat));
 ```
 
-### chat.operator\_status\_changed
+### chat.operator_status_changed
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/setonlinestatus.php  
 **Line:** 32  
 **Purpose:** Triggered when operator status is changed.
@@ -3699,7 +3699,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.operator_status_
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('restapi.swagger', array(
 ```
 
-### chat.before\_msg\_admin\_saved
+### chat.before_msg_admin_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/addmsgadmin.php  
 **Line:** 164  
 **Purpose:** Triggered before admin message is saved.
@@ -3708,7 +3708,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('restapi.swagger', arr
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_msg_admin_saved',array('msg' => & $msg,'chat' => & $Chat));
 ```
 
-### chat.data\_changed
+### chat.data_changed
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/addmsgadmin.php  
 **Line:** 242  
 **Purpose:** Triggered when chat data is changed.
@@ -3726,7 +3726,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.data_changed',ar
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.accept',array('chat' => & $Chat, 'user_data' => $userData));
 ```
 
-### chat.web\_add\_msg\_admin
+### chat.web_add_msg_admin
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/addmsgadmin.php  
 **Line:** 279  
 **Purpose:** Triggered when web admin message is added.
@@ -3735,7 +3735,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.accept',array('c
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.web_add_msg_admin', array('msg' => & $msg,'chat' => & $Chat));
 ```
 
-### chat.operator\_visibility\_changed
+### chat.operator_visibility_changed
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/setinvisibilitystatus.php  
 **Line:** 45  
 **Purpose:** Triggered when operator visibility is changed.
@@ -3744,7 +3744,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.web_add_msg_admi
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.operator_visibility_changed',array('user' => & $userData, 'reason' => 'rest_api'));
 ```
 
-### chat.data\_changed\_chat
+### chat.data_changed_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhrestapi/updatechatattributes.php  
 **Line:** 32  
 **Purpose:** Triggered when chat data is changed.
@@ -3755,7 +3755,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.data_changed_cha
 
 ## Widget Rest API Module
 
-### chat.validstatus\_chat
+### chat.validstatus_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/addmsguser.php  
 **Line:** 64  
 **Purpose:** Triggered when chat status is valid.
@@ -3764,7 +3764,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.data_changed_cha
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.validstatus_chat',array('chat' => & $chat, 'valid_statuses' => & $validStatuses));
 ```
 
-### chat.before\_msg\_user\_saved
+### chat.before_msg_user_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/addmsguser.php  
 **Line:** 86  
 **Purpose:** Triggered before user message is saved.
@@ -3773,7 +3773,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.validstatus_chat
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_msg_user_saved',array('msg' => & $msg,'chat' => & $chat));
 ```
 
-### chat.unread\_chat
+### chat.unread_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/addmsguser.php  
 **Line:** 153  
 **Purpose:** Triggered when chat is unread.
@@ -3800,7 +3800,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser',arra
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('widgetrestapi.getinvitation',array('output' => & $outputResponse, 'ou' => $onlineUser, 'theme' => (isset($theme) ? $theme : null)));
 ```
 
-### chat.before\_chat\_started
+### chat.before_chat_started
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/submitoffline.php  
 **Line:** 89  
 **Purpose:** Triggered before chat is started.
@@ -3809,7 +3809,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('widgetrestapi.getinvi
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_chat_started', array('chat' => & $chat, 'errors' => & $Errors, 'offline' => (isset($additionalParams['offline']) && $additionalParams['offline'] == true)));
 ```
 
-### chat.chat\_offline\_request\_presend
+### chat.chat_offline_request_presend
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/submitoffline.php  
 **Line:** 116  
 **Purpose:** Triggered before offline request is send.
@@ -3818,7 +3818,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_chat_star
 $attributePresend = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chat_offline_request_presend', array(
 ```
 
-### chat.chat\_offline\_request
+### chat.chat_offline_request
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/submitoffline.php  
 **Line:** 139  
 **Purpose:** Triggered when offline request is made.
@@ -3827,7 +3827,7 @@ $attributePresend = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('c
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chat_offline_request', array(
 ```
 
-### chat.chat\_offline\_request\_saved
+### chat.chat_offline_request_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/submitoffline.php  
 **Line:** 172  
 **Purpose:** Triggered when offline request is saved.
@@ -3836,7 +3836,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chat_offline_req
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.chat_offline_request_saved', array(
 ```
 
-### chat.process\_invitation
+### chat.process_invitation
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhwidgetrestapi/submitonline.php  
 **Line:** 253  
 **Purpose:** Triggered when invitation is processed.
@@ -6735,7 +6735,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.online_user.afte
 
 ## Chat Module
 
-### chat.online\_user.after\_update
+### chat.online_user.after_update
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 94  
 **Purpose:** Triggered after an online user is updated.
@@ -6744,7 +6744,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.online_user.afte
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.online_user.after_update',array(
 ```
 
-### chat.online\_user.after\_remove
+### chat.online_user.after_remove
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 100  
 **Purpose:** Triggered after an online user is removed.
@@ -6753,7 +6753,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.online_user.afte
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.online_user.after_remove',array(
 ```
 
-### onlineuser.before\_proactive\_triggered
+### onlineuser.before_proactive_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 1114  
 **Purpose:** Triggered before a proactive chat invitation is triggered for an online user.
@@ -6762,7 +6762,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.online_user.afte
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.before_proactive_triggered', array('ou' => & $item, 'errors' => & $errors));
 ```
 
-### onlineuser.before\_store\_chat
+### onlineuser.before_store_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 1128  
 **Purpose:** Triggered before a chat is stored for an online user.
@@ -6780,7 +6780,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.before_sto
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.created', array('tpl' => (isset($paramsHandle['tpl']) ? $paramsHandle['tpl'] : false), 'ou' => & $item));
 ```
 
-### onlineuser.pageview\_logged
+### onlineuser.pageview_logged
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 1139  
 **Purpose:** Triggered after a page view is logged for an online user.
@@ -6789,7 +6789,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.created', 
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.pageview_logged', array('url_changed' => ($locationPrevious !== $item->current_page), 'tpl' => (isset($paramsHandle['tpl']) ? $paramsHandle['tpl'] : false), 'ou' => & $item));
 ```
 
-### chat.data\_changed\_chat
+### chat.data_changed_chat
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 1143  
 **Purpose:** Triggered when chat data is changed.
@@ -6798,7 +6798,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.pageview_l
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.data_changed_chat', array('chat_id' => $item->chat_id));
 ```
 
-### onlineuser.handle\_request
+### onlineuser.handle_request
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuser.php  
 **Line:** 1147  
 **Purpose:** Triggered when handling a request from an online user.
@@ -6816,7 +6816,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.handle_req
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlinefootprint.created', array('item' => & $item));
 ```
 
-### online.assign\_chat\_to\_pageviews
+### online.assign_chat_to_pageviews
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatonlineuserfootprint.php  
 **Line:** 108  
 **Purpose:** Triggered when assigning a chat to page views.
@@ -6825,7 +6825,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlinefootprint.creat
 $statusWorkflow = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('online.assign_chat_to_pageviews',array('online_user' => & $onlineUser));
 ```
 
-### file.remove\_file
+### file.remove_file
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatfile.php  
 **Line:** 49  
 **Purpose:** Triggered when a chat file is removed.
@@ -6834,7 +6834,7 @@ $statusWorkflow = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onl
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.remove_file', array('chat_file' => & $this));
 ```
 
-### chat.workflow.canned\_message\_filter
+### chat.workflow.canned_message_filter
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelcannedmsg.php  
 **Line:** 290  
 **Purpose:** Triggered when filtering canned messages in a chat workflow.
@@ -6843,7 +6843,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.remove_file', ar
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.workflow.canned_message_filter', array(
 ```
 
-### chat.workflow.canned\_message\_replace
+### chat.workflow.canned_message_replace
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelcannedmsg.php  
 **Line:** 393  
 **Purpose:** Triggered when replacing canned messages in a chat workflow.
@@ -6852,7 +6852,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.work
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.workflow.canned_message_replace', array(
 ```
 
-### chat.dynamic\_array
+### chat.dynamic_array
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php  
 **Line:** 564  
 **Purpose:** Triggered to populate chat dynamic array.
@@ -6861,7 +6861,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.workflow.canned_
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.dynamic_array', array('chat' => $this, 'dynamic_array' => & $chat_dynamic_array));
 ```
 
-### chat.incoming\_dynamic\_array
+### chat.incoming_dynamic_array
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhchat/erlhcoreclassmodelchatincoming.php  
 **Line:** 61  
 **Purpose:** Triggered to populate incoming chat dynamic array.
@@ -6870,7 +6870,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.dynamic_array', 
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.incoming_dynamic_array', array('incoming_chat' => $this, 'dynamic_array' => & $chat_dynamic_array));
 ```
 
-### user.remove\_photo
+### user.remove_photo
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhuser/erlhcoreclassmodeluser.php  
 **Line:** 197  
 **Purpose:** Triggered before user photo is removed.
@@ -6879,7 +6879,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.incoming_dynamic
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.remove_photo', array('user' => & $this));
 ```
 
-### user.remove\_photo (GenericBotBot)
+### user.remove_photo
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhgenericbot/erlhcoreclassmodelgenericbotbot.php  
 **Line:** 129  
 **Purpose:** Triggered before generic bot photo is removed.
@@ -6888,7 +6888,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.remove_photo', a
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.remove_photo', array('user' => & $this));
 ```
 
-### user.remove\_photo (GenericBotTrGroup)
+### user.remove_photo
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhgenericbot/erlhcoreclassmodelgenericbottrgroup.php  
 **Line:** 88  
 **Purpose:** Triggered before generic bot trigger group photo is removed.
@@ -6897,7 +6897,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.remove_photo', a
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.remove_photo', array('user' => & $this));
 ```
 
-### feature.can\_use\_proactive (ProactiveChatInvitation)
+### feature.can_use_proactive
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 129  
 **Purpose:** Triggered to check if proactive chat invitation can be used.
@@ -6906,7 +6906,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('user.remove_photo', a
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proactive', array('object_meta_data' => & $metaData));
 ```
 
-### onlineuser.proactive\_triggered (ProactiveChatInvitation)
+### onlineuser.proactive_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 422  
 **Purpose:** Triggered when a proactive chat invitation is triggered for an online user.
@@ -6915,7 +6915,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proac
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.proactive_triggered', array('message' => & $message, 'variation' => & $messageContent, 'ou' => & $item));
 ```
 
-### onlineuser.proactive\_triggered (ProactiveChatInvitation Campaign)
+### onlineuser.proactive_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 921  
 **Purpose:** Triggered when a proactive chat invitation campaign is triggered for an online user.
@@ -6924,7 +6924,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.proactive_
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.proactive_triggered', array('campaign' => & $campaign, 'variation' => & $messageContent, 'message' => & $message, 'ou' => & $item));
 ```
 
-### theme.download\_image.\* (ProactiveChatInvitation)
+### theme.download_image.\* 
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 1028  
 **Purpose:** Triggered when a theme image is downloaded.
@@ -6933,7 +6933,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('onlineuser.proactive_
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.download_image.'.$attr, array('theme' => $this, 'attr' => $attr));
 ```
 
-### theme.edit.\*\_path (ProactiveChatInvitation)
+### theme.edit.\*_path 
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 1043  
 **Purpose:** Triggered when a theme edit path is accessed.
@@ -6942,7 +6942,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.dow
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.'.$attr.'_path',array('dir' => & $dir, 'storage_id' => $this->id));
 ```
 
-### theme.edit.store\_\* (ProactiveChatInvitation)
+### theme.edit.store_\* 
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 1061  
 **Purpose:** Triggered when a theme edit store is accessed.
@@ -6951,7 +6951,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edi
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.store_'.$attr,array(
 ```
 
-### theme.edit.remove\_\* (ProactiveChatInvitation)
+### theme.edit.remove_\*
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatinvitation.php  
 **Line:** 1084  
 **Purpose:** Triggered when a theme edit remove is accessed.
@@ -6960,7 +6960,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edi
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.remove_'.$attr,array(
 ```
 
-### feature.can\_use\_proactive (ProactiveChatEvent)
+### feature.can_use_proactive
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatevent.php  
 **Line:** 56  
 **Purpose:** Triggered to check if proactive chat event can be used.
@@ -6969,7 +6969,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.remove_'.$
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proactive', array(
 ```
 
-### feature.can\_use\_proactive (ProactiveChatVariables)
+### feature.can_use_proactive
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatvariables.php  
 **Line:** 45  
 **Purpose:** Triggered to check if proactive chat variables can be used.
@@ -6978,7 +6978,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proac
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proactive', array('object_meta_data' => & $metaData));
 ```
 
-### lhabstract.erlhabstractmodelwidgettheme.getstate (WidgetTheme)
+### lhabstract.erlhabstractmodelwidgettheme.getstate
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelwidgettheme.php  
 **Line:** 110  
 **Purpose:** Triggered to get widget theme state.
@@ -6987,7 +6987,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proac
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('lhabstract.erlhabstractmodelwidgettheme.getstate',array('state' => & $stateArray, 'object' => & $this));
 ```
 
-### theme.download\_image.\* (WidgetTheme)
+### theme.download_image.\*
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelwidgettheme.php  
 **Line:** 127  
 **Purpose:** Triggered when a theme image is downloaded.
@@ -6996,7 +6996,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('lhabstract.erlhabstra
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.download_image.'.$attr, array('theme' => $this, 'attr' => $attr));
 ```
 
-### theme.edit.\*\_path (WidgetTheme)
+### theme.edit.\*_path
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelwidgettheme.php  
 **Line:** 142  
 **Purpose:** Triggered when a theme edit path is accessed.
@@ -7005,7 +7005,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.download_image.
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.'.$attr.'_path',array('dir' => & $dir, 'storage_id' => $this->id));
 ```
 
-### theme.edit.store\_\* (WidgetTheme)
+### theme.edit.store_\*
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelwidgettheme.php  
 **Line:** 162  
 **Purpose:** Triggered when a theme edit store is accessed.
@@ -7014,7 +7014,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edi
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.store_'.$attr,array(
 ```
 
-### theme.edit.remove\_\* (WidgetTheme)
+### theme.edit.remove_\*
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelwidgettheme.php  
 **Line:** 185  
 **Purpose:** Triggered when a theme edit remove is accessed.
@@ -7023,7 +7023,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edi
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.remove_'.$attr,array(
 ```
 
-### feature.can\_use\_themes (WidgetTheme)
+### feature.can_use_themes
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelwidgettheme.php  
 **Line:** 210  
 **Purpose:** Triggered to check if themes can be used.
@@ -7032,7 +7032,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('theme.edit.remove_'.$
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_themes', array('object_meta_data' => & $metaData));
 ```
 
-### file.remove\_file (AdminTheme)
+### file.remove_file (AdminTheme)
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeladmintheme.php  
 **Line:** 81  
 **Purpose:** Triggered before admin theme file is removed.
@@ -7041,7 +7041,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_theme
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.remove_file', array('chat_file' => & $std, 'files_path_storage' => 'images_path' ));
 ```
 
-### feature.can\_use\_autoresponder (AutoResponder)
+### feature.can_use_autoresponder
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponder.php  
 **Line:** 140  
 **Purpose:** Triggered to check if auto responder can be used.
@@ -7050,7 +7050,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.remove_file', ar
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_autoresponder', array('object_meta_data' => & $metaData));
 ```
 
-### chat.before\_auto\_responder\_msg\_saved (AutoResponder)
+### chat.before_auto_responder_msg_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponder.php  
 **Line:** 471  
 **Purpose:** Triggered before auto responder message is saved.
@@ -7059,7 +7059,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_autor
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_msg_saved', array('no_auto_events' => true, 'ignore_times' => true, 'msg' => & $newMessage, 'chat' => & $chat));
 ```
 
-### chat.validate\_canned\_msg\_user\_departments (AutoResponder)
+### chat.validate_canned_msg_user_departments
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponder.php  
 **Line:** 754  
 **Purpose:** Triggered to validate canned message user departments.
@@ -7068,7 +7068,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.validate_canned_msg_user_departments',array('canned_msg' => & $cannedMessage, 'errors' => & $Errors));
 ```
 
-### feature.can\_use\_forms (Form)
+### feature.can_use_forms
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelform.php  
 **Line:** 84  
 **Purpose:** Triggered to check if forms can be used.
@@ -7077,7 +7077,7 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.vali
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_forms', array('object_meta_data' => & $metaData));
 ```
 
-### feature.can\_use\_subject (Subject)
+### feature.can_use_subject
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelsubject.php  
 **Line:** 51  
 **Purpose:** Triggered to check if subject can be used.
@@ -7086,7 +7086,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_forms
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_subject', array('object_meta_data' => & $metaData));
 ```
 
-### feature.can\_use\_proactive (ProactiveChatCampaign)
+### feature.can_use_proactive
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodeleproactivechatcampaign.php  
 **Line:** 54  
 **Purpose:** Triggered to check if proactive chat campaign can be used.
@@ -7095,7 +7095,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_subje
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proactive', array(
 ```
 
-### feature.can\_use\_product (Product)
+### feature.can_use_product
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelproduct.php  
 **Line:** 49  
 **Purpose:** Triggered to check if product can be used.
@@ -7104,7 +7104,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_proac
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_product', array('object_meta_data' => & $metaData));
 ```
 
-### chat.before\_auto\_responder\_msg\_saved (AutoResponderChat - 1)
+### chat.before_auto_responder_msg_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 60  
 **Purpose:** Triggered before auto responder message is saved.
@@ -7113,7 +7113,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('feature.can_use_produ
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_msg_saved', array('ignore_times' => true, 'msg' => & $msg, 'chat' => & $this->chat));
 ```
 
-### chat.before\_msg\_admin\_saved (AutoResponderChat)
+### chat.before_msg_admin_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 93  
 **Purpose:** Triggered before admin message is saved.
@@ -7122,7 +7122,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_msg_admin_saved', array('no_auto_events' => true, 'msg' => & $msg, 'chat' => & $this->chat));
 ```
 
-### chat.web\_add\_msg\_admin (AutoResponderChat)
+### chat.web_add_msg_admin
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 95  
 **Purpose:** Triggered when a web admin adds a message.
@@ -7131,7 +7131,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_msg_admin
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.web_add_msg_admin', array('no_auto_events' => true, 'msg' => & $msg, 'chat' => & $this->chat));
 ```
 
-### chat.before\_auto\_responder\_triggered (AutoResponderChat)
+### chat.before_auto_responder_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 111  
 **Purpose:** Triggered before auto responder is triggered.
@@ -7140,7 +7140,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.web_add_msg_admi
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_triggered', array(
 ```
 
-### chat.before\_auto\_responder\_msg\_saved (AutoResponderChat - 2)
+### chat.before_auto_responder_msg_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 165  
 **Purpose:** Triggered before auto responder message is saved.
@@ -7149,7 +7149,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_msg_saved', array('no_auto_events' => true, 'ignore_times' => true, 'msg' => & $msg, 'chat' => & $this->chat));
 ```
 
-### chat.before\_auto\_responder\_msg\_saved (AutoResponderChat - 3)
+### chat.before_auto_responder_msg_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 227  
 **Purpose:** Triggered before auto responder message is saved.
@@ -7158,7 +7158,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_msg_saved', array('no_auto_events' => true, 'ignore_times' => true,'msg' => & $msg, 'chat' => & $this->chat));
 ```
 
-### chat.before\_auto\_responder\_msg\_saved (AutoResponderChat - 4)
+### chat.before_auto_responder_msg_saved
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 259  
 **Purpose:** Triggered before auto responder message is saved.
@@ -7167,7 +7167,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_resp
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.before_auto_responder_msg_saved', array('no_auto_events' => true, 'ignore_times' => true,'msg' => & $msg, 'chat' => & $this->chat));
 ```
 
-### chat.redirected\_to\_survey\_by\_autoresponder (AutoResponderChat)
+### chat.redirected_to_survey_by_autoresponder
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/lib/models/lhabstract/erlhabstractmodelautoresponderchat.php  
 **Line:** 273  
 **Purpose:** Triggered when chat is redirected to survey by auto responder.
