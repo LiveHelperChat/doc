@@ -48,6 +48,7 @@ module.exports = {
             'chat/list',
             'chat/unread-chat-notifications',
             'dashboard',
+            'chat/connection-status',
             'chat/offline',
             'chat/automatic-translations',
             'chat/start-chat-form-settings',

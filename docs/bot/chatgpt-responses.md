@@ -25,11 +25,15 @@ Import the version you want `Streaming` OR `Non Streaming`. Streaming version re
 
 ## Rest API
 
-* After getting your API key, import the [Non streaming Rest API configuration](/img/bot/chatgpt/chatgpt-response.json) OR [Streaming Rest API configuration](/img/bot/chatgpt/chatgpt-response-stream-api.json) and set a `Bearer` token.
+* After getting your API key, import the [Non streaming Rest API configuration](/img/bot/chatgpt/chatgpt-response.json) OR [Streaming Rest API configuration V1](/img/bot/chatgpt/chatgpt-response-stream-api.json) OR [Streaming Rest API configuration V2](/img/bot/chatgpt/chatgpt-response-stream-api-v2.json) and set a `Bearer` token.
 * Modify the `system` message `content`
 * Make sure you change `YOUR_VECTOR_STORAGE_ID` and `API_KEY`
 * After testing you might want to uncheck `Log all request and their responses as system messages.`
 * If response takes long time you might want also increase `Maximum execution time`
+
+### What are the differences between V1 and V2 streaming API?
+
+After some testing, I found few edge scenarios that V1 could fail. So V2 fixes those. You do not need to make any changes to bot itself.
 
 ### Provide your own vector storage ID (optional)
 
