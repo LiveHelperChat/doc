@@ -166,6 +166,48 @@ Examples of variable extraction:
 }
 ```
 
+`output:0:content:0:text___json_text:summary` converts `text` attribute content to json array and returns summary attribute.
+
+```json
+{"output": [
+        {
+            "type": "message",
+            "id": "msg_67e5506f329481928e778a945cbfd439010aa033a24ce511",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "output_text",
+                    "text": "{\"summary\":\"Chat summary.\",\"sentiment\":\"positive\"}",
+                    "annotations": []
+                }
+            ]
+        }
+    ]
+}
+```
+
+`links:link___array_pop:type` returns last element in `link` array and returns type of it.
+
+```json
+{
+    "links": {
+        "link": [
+            {
+                "type": "prices",
+                "url": {},
+                "chat_message": "We do not have that information available online.   We could follow up with you directly to discuss."
+            },
+            {
+                "type": "forms",
+                "url": "https://livehelperchat.com",
+                "chat_message": "You can view and download our forms on this page"
+            }
+        ]
+    }
+}
+```
+
 ##### Parsing array for the output
 
 * `user_info:phones^implode=={n}` would output phones array combined with new line character.

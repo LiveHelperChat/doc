@@ -28,7 +28,7 @@ In this example, we'll use ChatGPT, but any chat completion API should work.
 
 ## Bot Setup
 
-*   Import the bot from [here](/img/bot/ai/summarize-with-ai-bot.json) and select the REST API you just imported.
+* Import the bot from [here](/img/bot/ai/summarize-with-ai-bot.json) and select the REST API you just imported.
 
 ## Webhook Setup
 
@@ -38,9 +38,8 @@ A webhook will define that this trigger will execute when a chat closes. Configu
 
 If configured correctly, you should see a summary as a system message after the chat ends.
 
+## Sample with Responses API
 
+This Rest API uses `Responses API` and JSON output to get chat summary and sentiment with a single call.
 
-
-
-
-
+Rest API configuration file sample download [here](/img/bot/chatgpt/chatgpt-summary-sentiment.json)

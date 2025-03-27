@@ -41,6 +41,26 @@ To allow an operator to list pending chats without a chat owner, grant them the 
 `Allow operator to list chats without an owner and in status pending.`
 > 'lhchat','list_pending_chats'
 
+## Chat export related permissions
+
+To allow an operator to export chats, grant them the following permission:
+
+> `lhchat`,`export_chats`
+
+To include the `phone` field in the exported file, the operator needs these permissions:
+
+> `lhchat`,`use_unhidden_phone`
+
+> `lhchat`,`chat_export_phone`
+
+To include the `email` field in the exported file, the operator needs these permissions:
+
+> `lhchat`,`chat_see_email`
+
+> `lhchat`,`chat_see_unhidden_email`
+
+> `lhchat`,`chat_export_email`
+
 ### General permission
 
 The general permission required to access the chat list is:

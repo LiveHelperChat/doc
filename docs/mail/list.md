@@ -37,6 +37,25 @@ Additionally, to allow an operator to list pending emails without an assigned ow
 `Allow operator to list mails without an owner and in status pending.`
 > 'lhmailconv','list_pending_mails'
 
+
+## Mail export related permissions
+
+To allow an operator to export mails, grant them the following permission:
+
+> `lhmailconv`,`export_mails`
+
+To include the `phone` field in the exported file, the operator needs these permissions:
+
+> `lhmailconv`,`phone_see_unhidden`
+
+> `lhmailconv`,`phone_export`
+
+To include the `email` field in the exported file, the operator needs these permissions:
+
+> `lhmailconv`,`mail_see_unhidden_email`
+
+> `lhmailconv`,`mail_export`
+
 ### General permission
 
 The general permission required to access the mail list is:
