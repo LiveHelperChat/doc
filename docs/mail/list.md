@@ -56,6 +56,10 @@ To include the `email` field in the exported file, the operator needs these perm
 
 > `lhmailconv`,`mail_export`
 
+To include `chat_variables` column content in exported file
+
+> `lhmailconv`,`export_variables`
+
 ### General permission
 
 The general permission required to access the mail list is:

@@ -361,6 +361,25 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.uploadfileadmin.
 
 ## Mailing Module
 
+### mail.list_export_columns
+**File:** https://github.com/LiveHelperChat/livehelperchat/blob/7c0ec7dbc9cf1bb1efa6a632bb09a8d3706c716a/lhc_web/lib/core/lhmailconv/lhmailconvexport.php#L148
+**Line:** 39  
+**Purpose:** To have custom column title
+
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('mail.list_export_columns',array('items' => & $firstRow));
+```
+
+### mail.list_export_item_data
+**File:** https://github.com/LiveHelperChat/livehelperchat/blob/7c0ec7dbc9cf1bb1efa6a632bb09a8d3706c716a/lhc_web/lib/core/lhmailconv/lhmailconvexport.php#L308
+**Line:** 39  
+**Purpose:** To have custom column data
+
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('mail.list_export_item_data',array('item' => & $itemCSV, 'conversation' => $item));
+```
+
+
 ### theme.temppath
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhmailing/import.php  
 **Line:** 39  
