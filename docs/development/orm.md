@@ -4,7 +4,12 @@ title: Object-relational mapping
 sidebar_label: ORM
 ---
 
-## Introduction
+## Inroduction
+
+ * Database schema can be found at https://dbdiagram.io/d/Live-Helper-Chat-67e68aa04f7afba184913d62
+ * Also look at existing API here https://api.livehelperchat.com/#/
+
+## Fetching data
 
 This is a short guide to the main Live Helper Chat classes and how to fetch data from the database.
 
