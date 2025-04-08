@@ -123,7 +123,8 @@ RAG involves vector storage and text chunking. I won't go into much detail but w
         *   <https://github.com/DS4SD/docling>
         *   <https://github.com/microsoft/markitdown>
             *   <https://dev.to/leapcell/deep-dive-into-microsoft-markitdown-4if5> - Example of how to host a single file as a service on <https://leapcell.io/>.
-*   Text chunking REST API server - <https://hubgw.docker.com/r/rbehzadan/text-chunking-api>
+* Text chunking REST API server - https://hubgw.docker.com/r/rbehzadan/text-chunking-api
+* Text chunking and embeding server all at once - https://github.com/LiveHelperChat/rag-embed
 
 ### Vector Storage Engines
 

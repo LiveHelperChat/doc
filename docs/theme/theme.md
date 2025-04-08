@@ -480,7 +480,8 @@ If you want to style messages depending on their state here is logic to follow.
 * Messages appearing as intro bot messages can be selected by `.start-chat > .index-row-0` should *be* animated
 * Messages which are fetched first can be selected by `.online-chat > .index-row-0` these should *not be* animated
 * Messages not having `.online-chat > .index-row-0` should be animated.
-
+* Stylings buttons default button has those CSS classes `btn btn-sm btn-outline-primary btn-bot`
+* While button click being processed it has `disabled` attribute set.
 
 #### CSS Rules to style form buttons and inputs and their shadows
 
@@ -663,6 +664,15 @@ Community Themes will be published in github.
 
 https://github.com/LiveHelperChat/themes
 
+Few samples how widget look can be styled using widget themes in back office and start chat form settings. There was no file changes except back office settings.
+
+![](/img/chat/theme-chat-1.png)
+
+![](/img/chat/widget-theme-2.png)
+
+![](/img/chat/widget-theme-3.png)
+
+![](/img/chat/widget-theme-4.png)
 
 ### How do I apply a theme?
 

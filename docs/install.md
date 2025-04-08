@@ -312,6 +312,15 @@ Browser notifications and permission to play sound are shown at the top right in
 
 Browser notifications can be enabled by clicking the `Ring` icon and allowing the web page to send browser notifications.
 
+### Notifications/Sound requirements
+
+ * Make sure you see `Pending` or `My active and pending chats` widgets in dashboard and your chats limit in them is bigger than the number of chats in the widgets, otherwise you won't get notification.
+ * You have granted `Browser notifications` and `Sound notification` for the agent. ![](/img/chat/notifications.png) Those should NOT be visible for operator.
+ * Make sure you are `Online` OR in your account have checked `Show notifications if I am offline`
+ * Test notification in your account by clicking `Test notification` and entering chat ID
+
+Try using https://github.com/LiveHelperChat/electron/releases native desktop application.
+
 ## How to Log In
 
 To log in, navigate to the directory where the application is installed. The URL should look like: `http://<your_domain>/index.php/site_admin/`. `site_admin` is not a folder!!!

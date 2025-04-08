@@ -95,3 +95,44 @@ Important
 E.g
 
 ![transfer_operator](/img/bot/transfer-event.png)
+
+## RAG Integration
+
+In this example we will be making RAG solution I'm using on this documentation website as of 2025-04-08.
+
+### How it works
+
+Gemini has two functions defined `knowledge_base` and `support_price` it decides which one to call. If it calls `knowledge_base` information is retrieved from RAG. This version is using Stremning API
+
+### Preparation
+
+* First you should Chroma DB and embedding server running as per this sample https://github.com/LiveHelperChat/rag-embed/tree/main/sample-application
+* Next you should adopt this shell script and have it running daily to reindex your website https://github.com/LiveHelperChat/rag-embed/blob/main/sample-application/flow.sh
+* For documentation I'm running `CHUNK_SIZE=1500` and `CHUNK_OVERLAP=150`
+* After you have embedding server and chroma db server running with your documents we can go to LHC configuration
+
+### LHC Configuration
+
+We will need 3 API's running
+
+* [Gemini](/img/bot/gemini/rag/restapi-gemini.json). Set your `GEMINI_API_KEY`
+* [Embedding](/img/bot/gemini/rag/restapi-embeding.json)
+* [Chroma DB](/img/bot/gemini/rag/restapi-searchembed.json). Set your `COLLECTION_ID`
+
+Import bot
+
+* [bot](/img/bot/gemini/rag/bot.json). Set your `COLLECTION_ID`
+
+During import choose `Gemini API`
+
+Because LHC can presently map only one Rest API during import. Adjust other triggers per these screenshots
+
+You will need to adjust those triggers
+
+#### knowledge_base
+
+![transfer_operator](/img/bot/gemini/rag/knowledge_base.png)
+
+#### SearchChroma
+
+![transfer_operator](/img/bot/gemini/rag/SearchChroma.png)

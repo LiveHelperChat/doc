@@ -131,8 +131,9 @@ To log in to the demo of Live Helper Chat, use the following details:
 
 ## Troubleshooting Login Issues
 
-*   Ensure that you have entered the domain address correctly. Pay attention to whether your URL requires `www` or not, as `https://www.example.com` and `https://example.com` are treated as different URLs.
-*   If you still cannot log in, apply the `.htaccess` file provided below, as the `Authorization` headers are sometimes not parsed correctly by the Apache server.
+* Ensure that you have entered the domain address correctly. Pay attention to whether your URL requires `www` or not, as `https://www.example.com` and `https://example.com` are treated as different URLs.
+* If you still cannot log in, apply the `.htaccess` file provided below, as the `Authorization` headers are sometimes not parsed correctly by the Apache server.
+* Make sure your SSL configuration is valid by using https://www.sslshopper.com/ssl-checker.html
 
 Apache configuration file for running in a root directory (e.g., `https://example.com/index.php/site_admin/user/login` or `https://example.com/site_admin/user/login`):
 
