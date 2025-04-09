@@ -300,11 +300,15 @@ If you experience logouts after a period of inactivity, it could be because your
 
 Browser notifications and permission to play sound are shown at the top right in the back office. If you do not see any of those icons, it means the browser has permission to send notifications and play sound.
 
+The Browser title also blinks if there is a new chat.
+
 ![](/img/chat/notifications.png)
 
-* To enable sound permissions at the browser level:
+ * To enable sound permissions at the browser level:
     * Click anywhere on the page.
     * Navigate to `Site settings` and choose `Allow` for `Sound`.
+ * Make sure also `Notifications` is set to `Allow`
+ * As a precaution, you can in the same `Site settings` choose `Background sync` and set it as `Allow` explicitly
 
 ![](/img/chat/site-settings-browser.png)
 
@@ -318,6 +322,12 @@ Browser notifications can be enabled by clicking the `Ring` icon and allowing th
  * You have granted `Browser notifications` and `Sound notification` for the agent. ![](/img/chat/notifications.png) Those should NOT be visible for operator.
  * Make sure you are `Online` OR in your account have checked `Show notifications if I am offline`
  * Test notification in your account by clicking `Test notification` and entering chat ID
+ * If you have checked in your account `Show notification only if I am an owner pending chat` make sure you are using an auto assignment process.
+ * In `Synchronization and sound settings` you can set `How many times play sound notification` how many times play sound notification.
+ * If you have limit of 5 chats set in `Pending` or `My active and pending chats` and new chat comes you will not hear a sound because it would be six which is invisible.
+ * If you still did not got a sound while opening a dashboard check [connection status widget](chat/connection-status.md)
+ * Using `System -> Online hours` you can see were you online at that period or not.
+ * If you have set `Change my online/offline status based on my activity` in your account and you were offline at that moment, you won't receive notification.
 
 Try using https://github.com/LiveHelperChat/electron/releases native desktop application.
 
