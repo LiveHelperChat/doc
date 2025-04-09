@@ -98,11 +98,19 @@ E.g
 
 ## RAG Integration
 
-In this example we will be making RAG solution I'm using on this documentation website as of 2025-04-08.
+In this example, we will be making RAG solution I'm using on this documentation website as of 2025-04-08.
 
 ### How it works
 
-Gemini has two functions defined `knowledge_base` and `support_price` it decides which one to call. If it calls `knowledge_base` information is retrieved from RAG. This version is using Stremning API
+Gemini has two functions defined `knowledge_base` and `support_price` it decides which one to call. If it calls `knowledge_base` information is retrieved from RAG. This version is using Streaming API
+
+* User questions comes 
+* Gemini decides what function to call or general response
+* `knowledge_base` function triggered
+* Request to get embeddings issued
+* Request to Chroma DB to get relevant context
+* Tool call output generated and request to Gemini are issued
+* Response to a visitor is generated
 
 ### Preparation
 
