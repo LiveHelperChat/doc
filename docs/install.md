@@ -328,6 +328,7 @@ Browser notifications can be enabled by clicking the `Ring` icon and allowing th
  * If you still did not got a sound while opening a dashboard check [connection status widget](chat/connection-status.md)
  * Using `System -> Online hours` you can see were you online at that period or not.
  * If you have set `Change my online/offline status based on my activity` in your account and you were offline at that moment, you won't receive notification.
+ * In windows notifications settings `Sound` can be enabled for notification itself. `Play a sound when a notification arrives`. You should review a notification settings for Chrome browser.
 
 Try using https://github.com/LiveHelperChat/electron/releases native desktop application.
 

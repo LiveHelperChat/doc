@@ -34,7 +34,8 @@ module.exports = {
             'users/password-requirements',
             'users/importing',
             'users/auto-login',
-            'users/users-actions'
+            'users/users-actions',
+            'users/operators-notifications'
         ],
         Chat: [
             'chat/chat',
