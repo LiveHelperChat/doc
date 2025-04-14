@@ -476,6 +476,7 @@ Other:
 * `{{subject_list}}` - array of subjects objects with all attributes
 * `{{subject_list_names}}` - string of subject names imploded by comma 
 * `{{survey}}` - filled chat surveys
+* `{{replaceable.<identifier>}}` Use replaceable variables in Rest API
 
 Attributes usefull for sending content in `Sub URL for file`
 
