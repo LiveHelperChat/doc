@@ -31,7 +31,7 @@ Notification will be sent if those conditions are satisfied
 * After you click `Subscribe` in your account new record should appear with a `Test` button at the end.
 * If for some reason `Subscribe` action fails. Try to remove `Service Worker` as per screenshot and click again subscribe. Remove previous subscription.
 
-![](img/user/service-worker.png)
+![](/img/user/service-worker.png)
 
 ## Permissions
 

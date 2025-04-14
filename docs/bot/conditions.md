@@ -76,6 +76,15 @@ To match any value from a list of values, use:
 
 This operator checks if a string contains another string as a substring.
 
+## Live bot migration using actions conditions
+
+This is extremely useful in case you have a bot and to migrate some of its flows without creating a new bot.
+
+![](/img/bot/action-conditions.png)
+
+ * You can use E.g `is_lt_user` to expecting condition to be valid
+ * You can use E.g `-is_lt_user` (`-`) prefix for expecting condition to be invalid
+
 ## Bot Example
 
 Example usage in a bot:
