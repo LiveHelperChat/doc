@@ -31,13 +31,33 @@ This guide explains how to upgrade Live Helper Chat (LHC) from version 2.04 onwa
         2.  [https://github.com/LiveHelperChat/livehelperchat/releases](https://github.com/LiveHelperChat/livehelperchat/releases) (Latest release with Composer dependencies.)
 5.  **Update Composer Dependencies (If Applicable):**
     *   Overwrite `composer.json` and `composer.lock`.
-    *   Run `composer install` or `composer update`.
+    *   Run `composer install`.
 6.  **Disable Cache:** Disable the cache in `settings.ini.php` (refer to [debug.md#disabling-cache](debug.md#disabling-cache)).
 7.  **Clear Cache:**
     *   Log back in and go to "System configuration" -> "Clear Cache," then click "Clear Cache."
     *   Alternatively, run `php cron.php -s site_admin -c cron/util/clear_cache` from the command line.
 8.  **Re-enable Cache:** Re-enable the cache in `settings.ini.php`.
 9.  **Troubleshooting:** If errors persist, [enable debug output](debug.md).
+
+### Quick update commands if you have already installed Live Helper Chat from github directly
+
+Here are essential commands you can put in your custom auto update shell script.
+
+Make sure to adjust paths!
+
+```shell
+# Pull new files from github
+cd var/www/lhc_web && git pull origin master
+
+# Install new composer dependencies if any
+cd var/www/lhc_web && composer install
+
+# Update database
+cd var/www/lhc_web && php cron.php -s site_admin -c cron/util/update_database
+
+# Clear cache
+cd var/www/lhc_web && php cron.php -s site_admin -c cron/util/clear_cache
+```
 
 ### Upgrading from Older Versions
 
