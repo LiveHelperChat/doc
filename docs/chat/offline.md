@@ -35,7 +35,7 @@ This scenario is useful if you want to display a status widget and show a custom
 
 ## Disable the offline message for a static url
 
-There are two scenarios here:
+You will see a message saying `Chat is currently unavailable. Please try again later.` in those scenarios
 
 *   If you specify a single department, such as:
 

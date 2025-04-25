@@ -58,3 +58,50 @@ In summary, the chat will always be assigned first to the operator who sent the 
 This will start the chat automatically as soon as the operator sends a message to the visitor.
 
 *   The chat will be automatically assigned to the operator who sent the invitation, regardless of their online/offline status or visibility settings.
+
+## How passing UUID influences online visitor tracking
+
+**Scenario A**
+
+* I login, and UUID is passed, and I start a chat
+* I start a chat
+* I end a chat
+* I logout and do not pass UUID anymore
+* I start a chat
+
+Outcome:
+
+* Both chats will be assigned to the same online visitor profile
+
+**Scenario B**
+
+* I login and UUID is passed and I start a chat
+* I logout and do not pass UUID anymore and I start a chat
+* I end a chat
+* I login using another account and UUID is passed now different
+* I start a chat
+
+Outcome:
+
+* First two chats will see each other
+* Third chat won't see previous two chats
+
+**Scenario C**
+
+* I login and UUID is passed and I start a chat
+* I logout and do not pass UUID anymore and I start a chat
+* I login using another account and UUID is passed now different
+* I end a chat which was started before I logged to another account
+* I start a chat being logged in another account
+
+Outcome:
+
+* First two chats will see each other
+* Third chat won't see previous two chats
+
+#### How having Elastic Search influences the flow
+
+It does not influence flow in any way. Unless you check `Use Elastic Search for previous chats. Search By Username.` It would search previous chats by nick if Online profile record is not found.
+
+
+

@@ -7,7 +7,7 @@ sidebar_label: Custom fields
 This feature is usefull if you are integrating third party system and want to prefill/pass some variables to Live Helper Chat. Later these variables can be used in Rest API calls etc...
 
 ## Defining fields which visitor can fill
-Easiest way to do that is to define them in back office. It can be done in
+The easiest way to do that is to define them in back office. It can be done in
 
  > "Settings" > "Live help configuration" > "Start chat form settings" > "Default settings" > "Custom fields"
 
@@ -19,7 +19,7 @@ Easiest way to do that is to define them in back office. It can be done in
 
 This is preferred way to pass attributes without exposing any UI for the visitor.
 
-> System Configuration -> Additional chat variables
+> System Configuration -> Additional chat variables
 
 ### Main chart variable definition
 
@@ -285,7 +285,8 @@ Main attributes options
 /(operator)/<operator_id> - operator to set for pending chat
 /(bot)/<bot_id> - bot to use
 /(mode)/<popup/embed> - default mode if popup. If you are planning to use it as iframe source set it to embed. This is only usefull if you want to have multiple chat's in the same page.
-?jsvar[7]=customvar - prefill additional chat variable defined in `Additional chat variables` section. 7 is additional chat variable ID
+?jsvar[<additional chat variable ID>]=customvar - prefill additional chat variable defined in `Additional chat variables` section. 7 is additional chat variable ID
+?value_items_admin[<index_back_office_field>]=customvar - These field you define in back office `Start chat form settings` => `Custom fields`
 ```
 
 To know how URL would look like with prefilled E-mail, Phone. You can just generate embed code prefill variables with Javascript and click popup window. So in popup URL you would see how URL should look like.
@@ -351,7 +352,7 @@ Example of script for page widget script (first is shown status widget and form 
  LHCChatOptions.attr_prefill.push({'name':'username','value':'Username here'});  
  LHCChatOptions.attr_prefill.push({'name':'question','value':'Default user message'}); 
    
-// Prefill fields which were generated from back office
+// Prefill fields which were generated from back office `Start a chat form settings` => `Custom fields`
  LHCChatOptions.attr_prefill_admin = new Array();
  LHCChatOptions.attr_prefill_admin.push({'index':'0','value':'remdex@gmail.com'});
  LHCChatOptions.attr_prefill_admin.push({'index':'1','value':'remdex@gmail.com'});
