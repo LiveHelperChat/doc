@@ -44,6 +44,8 @@ To enable mobile app notifications, enable mobile notifications in:
 
 > Configuration -> System -> Mobile (Settings)
 
+You do not need to change anything else there.
+
 ## Notification Categories
 
 Mobile version 1.7 and LHC version 3.90 and later support mobile notification categories. These categories will appear after you receive your first notification in the mobile app. Afterward, you can customize notification settings for each category.
@@ -196,7 +198,7 @@ Refer to the Flutter documentation for compilation instructions. Here are a few 
 *   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L53](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53)
 *   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L72](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72)
 
-## Creating a Firebase Project
+### Creating a Firebase Project
 
 *   Create a project at [https://console.firebase.google.com/](https://console.firebase.google.com/).
 *   In the `Project overview` page, add either Android or iOS, depending on the app you are configuring.
@@ -213,9 +215,9 @@ Refer to the Flutter documentation for compilation instructions. Here are a few 
 
 Afterward, you will download a `*.json` file, which you will use to generate a `Bearer token` for notifications.
 
-## Sending Notifications Using Your Own Firebase Project
+### Sending Notifications Using Your Own Firebase Project
 
-Refer to this file. Recent versions of Firebase require a Bearer AccessToken, which I generate on my server.  [https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc\_web/lib/core/lhmobile/lhmobile.php#L437](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/core/lhmobile/lhmobile.php#L437)
+Refer to this file. Recent versions of Firebase require a Bearer AccessToken, which I generate on my server.  [https://github.com/LiveHelperChat/livehelperchat/blob/145d6415a27701a367274550109e9703e5c2f9ba/lhc_web/lib/core/lhmobile/lhmobile.php#L525](https://github.com/LiveHelperChat/livehelperchat/blob/145d6415a27701a367274550109e9703e5c2f9ba/lhc_web/lib/core/lhmobile/lhmobile.php#L525)
 
 ```shell
 <?php
@@ -319,6 +321,28 @@ if (isset($responseData['access_token'])) {
     http_response_code(400);
     echo json_encode(['error' => 'Could not get access token!']);
 }
+```
+
+### Using local `service-account.json` file
+
+In mobile settings enable `Use local service file` and create file `var/external/service_account.php` with content from sample.
+
+```php
+<?php
+return '{
+    "type": "service_account",
+    "project_id": "",
+    "private_key_id": "",
+    "private_key": "",
+    "client_email": "",
+    "client_id": "",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "",
+    "universe_domain": "googleapis.com"
+  }';
+?>
 ```
 
 ## Visitors Cannot See Typing Indicators
