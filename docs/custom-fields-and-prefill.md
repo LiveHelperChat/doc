@@ -215,13 +215,14 @@ The most important part is this. It encrypts data using key.
 
 ```php
 <?php echo lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>')?>
+<?php echo lhSecurity::encrypt('<data_to_encrypt>|_varex<unix timestamp + valid period>,'<secret_key>')?>
 ```
 
 Example
-```
+```js
 <script>
 
-    if (typeof window.lhc_var === 'undefined'){
+    if (typeof window.lhc_var === 'undefined') {
         window.lhc_var = {};
     };
 
@@ -231,7 +232,22 @@ Example
      */
     // Can be changed on the fly
     lhc_var.login = '<?php echo lhSecurity::encrypt("remdex_encrypted","<your_secret_key>")?>'; // this has to be encrypted
+    
+    // Variable also can have valid period. E.g 30 seconds from it's definition.
+    // <user_id>__varex.<current unix time + valid period>
+    // In this scenario we are passing user_id which will be valid for 20 seconds from variable definition.
+    lhc_var.user_id = '<?php echo lhSecurity::encrypt("20__varex". (time() + 30),"<your_secret_key>")?>';
     ...
+```
+
+If your variables can be passed insecure and secure way at the same time. You can in your embed code set
+
+```js
+<script>
+var LHC_API = LHC_API||{};
+LHC_API.args = {
+vars_encrypted:true // Variables will be considered as secure even in back office they are not checked as that.
+...
 ```
 
 ## How to update attributes while user already is having a chat?

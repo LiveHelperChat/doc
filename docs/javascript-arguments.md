@@ -24,6 +24,7 @@ LHC_API.args = {
     wwidth: 350,
     pheight: 520,
     pwidth: 500,
+    vars_encrypted:false,// If set true, all passed variables via lhc_var will be considered as encrypted even back offise indicates it's non ecrypted var. Usefull if you have many brands and want to migrated to encrypted flow.
     hide_parent: false,  // If we get event if any iframe page has already lhc embeded we just hide script in parent page. Oposite action to `hide_iframe`
     hide_iframe: false,  // If script is embeded in iframe we can hide automatically it if we detect that parent page already has Live Helper Chat script embeded
     mobile_view: null    // You can force widget to render in mobile view (full screen) or not | Optional | Default - shows full screen on mobile devices | Possible value true or false
@@ -644,6 +645,14 @@ window.$_LHC.attributes.shidden.next(false);
 // Hide a status widget
 window.$_LHC.attributes.shidden.next(true);
 
+```
+
+### Hide need help widget
+
+It will hide widget manually. Widget will not be shown after page refresh.
+
+```js
+window.$_LHC.eventListener.emitEvent('nhClose');
 ```
 
 ### Set profile picture for the visitor on the fly
