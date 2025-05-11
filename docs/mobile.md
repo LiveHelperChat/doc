@@ -131,6 +131,12 @@ To log in to the demo of Live Helper Chat, use the following details:
 *   Password: demo
 *   Uncheck "Append index.php to address"
 
+## I'm seeing you are not a chat owner and I can't send a message
+
+1. Make sure your server config includes `.htaccess` file from below. `Troubleshooting Login Issues`
+2. Try to login with `username` and not an `e-mail`.
+3. Try remove and add server again after first change.
+
 ## Troubleshooting Login Issues
 
 * Ensure that you have entered the domain address correctly. Pay attention to whether your URL requires `www` or not, as `https://www.example.com` and `https://example.com` are treated as different URLs.

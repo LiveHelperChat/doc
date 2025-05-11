@@ -24,6 +24,8 @@ LHC_API.args = {
     wwidth: 350,
     pheight: 520,
     pwidth: 500,
+    chat_id: null,       // Manually passed chat id
+    chat_hash: null,     // Manually passed chat hash
     vars_encrypted:false,// If set true, all passed variables via lhc_var will be considered as encrypted even back offise indicates it's non ecrypted var. Usefull if you have many brands and want to migrated to encrypted flow.
     hide_parent: false,  // If we get event if any iframe page has already lhc embeded we just hide script in parent page. Oposite action to `hide_iframe`
     hide_iframe: false,  // If script is embeded in iframe we can hide automatically it if we detect that parent page already has Live Helper Chat script embeded
@@ -70,6 +72,11 @@ LHC_API.args = {
                                 // LHC_API.args.UUID = 'md5(user_id + some hash)';
                                 // window.$_LHC.init();
     before_init: function(inst) { // Called before Live Helper Chat starts it's workflow |  Optional
+
+            // You can set chat_id with chat_hash to reopen. It will reopen only if reopen is configured or chat itself is in pending/active/bot status.
+            // LHC_API.args.chat_hash = 'Py4WgXLFncg01qQsUiXFHMfueQxMiViurB5TDeHw';
+            // LHC_API.args.chat_id = 1647603393;
+        
             // If you are using manual_init = true, you can 
             LHC_API.args.manual_init = false; // if you app is started we can change to false and app will start normaly.
             LHC_API.args.manual_init = true;  // if you app has not started yet change to true and once you ready call

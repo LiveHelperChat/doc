@@ -62,6 +62,12 @@ Add the following CSS to your site's stylesheet:
 }
 ```
 
+## Hide widget via Javascript
+
+```js
+window.$_LHC.eventListener.emitEvent('nhClose');
+```
+
 ## Troubleshooting: Tooltip Not Visible
 
 *   Try opening the window in incognito mode to rule out caching issues.
