@@ -217,6 +217,7 @@ module.exports = {
             'development/move-chat',
             'development/unbrand',
             'nginx-configuration-tips',
+            'development/mobile-integration',
             'architecture',
             'performance',
             'development/reducing-request-number',
