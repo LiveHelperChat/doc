@@ -118,7 +118,7 @@ myVariable.gender = "Male seller";
 
 It's possible in dashboard window to show custom column. This can be done by navigating to
 
-> System Configuration -> Additional chat columns
+> System Configuration -> Additional chat columns
 
 You can set these values as `Variable name`
 
@@ -128,6 +128,9 @@ You can set these values as `Variable name`
  * `{args.chat.<any_var>.<any_var>}` - you can go as deep as you want.
  * `{args.chat.chat_variables_array.playerClass}||{args.chat.mail_variables_array.player.playerClass}` - will pickup which one founds first. Either `{args.chat.chat_variables_array.playerClass}` or `{args.chat.mail_variables_array.player.playerClass}`
 
+### How to show variable in chat window
+
+Just check `Enabled in chat window`. At the bottom you will see variable Name and it's value.
 
 ### Example how to define chat column from main chat attributes
 
