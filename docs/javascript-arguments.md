@@ -601,6 +601,10 @@ If you do not want to allow to start chat directly at all you can change setting
 ...
 ```
 
+## How to embed widget in full-screen mode?
+
+This is useful in case you are integrating it with a [third party application](development/mobile-integration.md).
+
 ## Public methods
 
 Once you include live helper chat javascript you gain access to global variable `window.$_LHC`.
