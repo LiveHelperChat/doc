@@ -253,6 +253,10 @@ vars_encrypted:true // Variables will be considered as secure even in back offic
 ...
 ```
 
+### What happens if decrypt fails?
+
+Error messages will be logged as passed variable value.
+
 ## How to update attributes while user already is having a chat?
 
 ### New widget
