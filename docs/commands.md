@@ -141,6 +141,24 @@ Since v4.37, it's possible to call a command directly from a chat window.
 
 ![](/img/bot/bot-command.png)
 
-Required permissions:
+## Example: Setting up a bot command for UI usage
+
+Configure bot commands with two additional variables that operators can fill.
+
+![](/img/bot/sms-command.png)
+
+The SMS Bot will appear as follows:
+
+![](/img/bot/sms-bot.png)
+
+These filled variables will be passed to the REST API call:
+
+![](/img/bot/sms-rest-api.png)
+
+In the chat UI, it will look like this:
+
+![](/img/bot/sms-chat-ui.png)
+
+## Required permissions:
 
 > `lhchatcommand`, `use`
