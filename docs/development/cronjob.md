@@ -208,6 +208,16 @@ php cron.php -s site_admin -c cron/util/maintain_database
 
 Should be run every few hours or so.
 
+## Department statistic cronjob
+
+This cronjob recalculates statistics for the `Departments status` widget. It's optional because usually there is an event it listens to and recalculates it live. It's useful for testing purposes or if you have a small number of departments.
+
+```shell
+php cron.php -s site_admin -c cron/stats/department_load
+```
+
+If you decide to run it, I would suggest having it run every minute.
+
 ## Statistic cronjob
 
 This cronjob calculates a statistic for two attributes of department

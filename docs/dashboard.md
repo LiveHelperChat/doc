@@ -123,6 +123,7 @@ Columns and their meanings
     * `Hard limit` - is the sum of max chats value of **logged** operators OR the operators who were online in last 10 minutes
     * `Active chats` - number of active chats in department or department group
     * `Soft limit` - is the sum of max chats of operators who were **active** during last **10** minutes.
+* `Operators online` - Total operators active in backend (last 10 min). (Number) is count of those also in online status.
 
 Operator also can click on `Load column` and see detailed load statistic.
 
@@ -131,6 +132,15 @@ Operator also can click on `Load column` and see detailed load statistic.
 > Statistics will be updated when first event happen after change of settings (es. user chat limits)
 > Operator has to be assigned explicitly to department or department group
 > Operator should have limits set (E.g Max Chats)
+
+Statistics are updated in the following scenarios:
+
+* New chat has started — the relevant department is updated
+* Chat has been closed/assigned/transferred to another department
+
+Operators' statistics are **NOT** updated if an operator goes online/offline until some action happens with a department-related chat!
+
+Statistics can be updated manually by running [department statistic cronjob](development/cronjob.md#department-statistic-cronjob).
 
 #### Required configuration
 
