@@ -123,7 +123,11 @@ You can also set a product directly from a bot.
 
 You can also change the department with `Update main chat attribute`. Since v3.42, an improvement was made, and now it's clearer how to change the department.
 
-To change the department, you just have to `Enter department ID`. You can find the ID in the department list.
+There is a multiple format you can enter as department:
+
+* Enter new department ID directly `Enter department ID`. You can find the ID in the department list.
+* You can enter [brand identifier](department/brand.md).
+* Enter chat variable E.g `{args.chat.chat_variables_array.new_dep_id}`
 
 ## Disable Visitor Sending Messages Until the Next Operator/Bot Message
 
