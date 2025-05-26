@@ -39,6 +39,13 @@ Now, we just create a new translated message.
 
 ![](/img/bot/translation-item.png)
 
+In this scenario, we show one content if a replaceable variable is filled and if not default message.
+
+```
+{is_empty__args.replace_array.{account_recover_edge_case}}You account was recovered{/is_empty}
+{not_empty__args.replace_array.{account_recover_edge_case}}{account_recover_edge_case}{/not_empty}
+```
+
 ## Translating Automatically Items from Translation Items
 
 This feature allows to translate automatically translation items if we don't find user language translation in translation item. It's like fine grain control where to use automatic translations.
