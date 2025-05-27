@@ -246,7 +246,8 @@ module.exports = {
             'integrating/cloudtalk',
             'integrating/slack-notification',
             'integrating/waha',
-            'integrating/rezdy'
+            'integrating/rezdy',
+            'integrating/widget'
         ]
     },
 };
