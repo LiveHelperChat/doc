@@ -459,7 +459,8 @@ Operator can open a chat or write a message if
 
 * For operator to be able to open **closed chat** he has to have `lhchat`,`allowopenclosedchats` at first place.
 * He is assigned to a chat.
-* (Chat is pending AND (chat is assigned to him **OR** operator has permission `lhchat`,`open_all`)) **AND** operator is a member of chat department.
+* (Chat is pending **AND** (chat is assigned to him **OR** operator has permission `lhchat`,`open_all`)) **AND** operator is a member of chat department.
+* (Chat is pending **AND** chat is unassigned, and operator has permission `lhchat`,`open_unassigned_chat`) **AND** operator is a member of chat department.
 * Chat is assigned to other operator **AND** operator has permission `lhchat`,`allowopenremotechat` so he can open other's operators chats **AND** operator is a member of chat department.
 * Operator can write a message if operator has write permission to department **AND** (he has `'lhchat','writeremotechat'` permission **OR** chat is not assigned yet to anyone **OR** he is a chat owner)
 

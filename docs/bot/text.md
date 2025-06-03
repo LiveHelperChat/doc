@@ -62,6 +62,7 @@ Text area supports these replaceable variables
          * `{args.chat.user.name_support}` name visible in the widget or
          * `{args.chat.user.name_official}` name visible in the back office
  * `{current_time_ts}` current time in unix timestamp. E.g `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]`
+ * `{args.msg.udate__datef__Y-m-d H:i}` Use field timestamp and format a date
 
 These are the main classes
 
@@ -78,7 +79,6 @@ You can also set value from [Rest API](bot/rest-api.md#output-variables-in-trigg
 * `{content_1}` up to `{content_6}` (these will be string values)
 * `{content_1_json}` up to `{content_6_json}` (will be already json encoded string). This is usefull in case you set [chat variable](bot/update-current-chat.md#set-chat-variable-not-visible-by-operator)
 
-
 ### Escaping variables for url and [html] blocks
 
 Escape arguments are supported only for `{args.*` syntax.
@@ -88,6 +88,16 @@ Escape arguments are supported only for `{args.*` syntax.
 * `{args.chat.nick__escape}` - escape argument in the `[html]{args.chat.nick__escape}[/html]` block.
 
 This feature is used in [Jitsi](integrating/jitsi.md) integration
+
+### Or condition
+
+* `{variable.location__or__variable.location_2__or__variable.location_3...}` E.g if `from_name` is empty use `from_address` `{args.msg.from_name__or__msg.from_address}`
+
+### If conditions
+
+This can be used anywhere and useful in case variable has to be not empty to be printed.
+
+* `{variable.location__not_empty__Use this if not empty}` E.g `{args.msg.from_name__not_empty__<b>}{args.msg.from_name}{args.msg.from_name__not_empty__</b> }<{args.msg.from_address}><br/>`
 
 ### Foreach cycle
 
