@@ -11,6 +11,10 @@ This article describes how to setup auto assignment workflow in Live Helper Chat
 * Live auto assignment - means chats are auto assignment on chat sync event in visitor widget. This allows auto assignment work even if there is no cronjob running. Disadvantage is it **does not** respect FIFO order if you have a lot of chats.
 * Using [workflow cronjob](development/cronjob.md#default-cronjob-setup) - this is a recommended way of having auto assignment setup. You should also **disable** [live auto assignment](#disable-live-auto-assignment) in that case. Using cronjob chats will be assigned in FIFO order.
 
+:::tip
+* Operators must be explicitly assigned to specific departments to participate in the auto assignment workflow. This is configured in each operator's account settings.
+:::
+
 ## Introduction
 In department you can find auto assignment settings.
 
@@ -113,6 +117,7 @@ User in his account has `Min and Max chat priority for chat being assigned by my
 
 * Min chat priority - chats only with equal or higher priority will be assigned to that agent.
 * Max chat priority - chats only with equal or less priority will be assigned to that agent.
+* As mentioned before, operators must be explicitly assigned to department or department group to participate in the auto assignment workflow - simply checking "All departments" in user settings is not sufficient
 
 ```
 $appendSQLPriority .= ' AND (chat_max_priority = 0 OR chat_max_priority >= ' . (int)$chat->priority .') AND (chat_min_priority = 0 OR chat_min_priority <= ' . (int)$chat->priority .')';

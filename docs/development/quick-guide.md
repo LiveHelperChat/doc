@@ -26,7 +26,7 @@ To compile JS from the `lhc_web` folder, execute the following. This will compil
 
 ## New Frontend Widget
 
-To compile the new widget V2 (frontend):
+To compile the new widget V2 (frontend) ReactJS:
 
 *   There are two apps: [wrapper](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/wrapper) and [widget](https://github.com/LiveHelperChat/livehelperchat/tree/master/lhc_web/design/defaulttheme/widget/react-app).
 *   `cd lhc_web/design/defaulttheme/widget/wrapper && npm install && npm run build`
@@ -36,7 +36,7 @@ To compile the new widget V2 (frontend):
 
 The back office consists of multiple mini parts:
 
-*   Dashboard Left toolbar (`DashboardChatTabs.js`), Group Chat (`GroupChat.js`), Canned Messages (`CannedMessages.js`), Mail application (`MailChat.js`)
+*   Dashboard Left toolbar (`DashboardChatTabs.js`), Group Chat (`GroupChat.js`), Canned Messages (`CannedMessages.js`), Mail application (`MailChat.js`) they all are ReactJS APPs
     *   `cd lhc_web/design/defaulttheme/js/admin && npm run build`
 *   Bot builder application (ReactJS)
     *   `cd lhc_web/design/defaulttheme/js/react && npm run build`
