@@ -16,6 +16,8 @@ templatecompile => false
 modulecompile => false
 ```
 
+Take a look also at copilot instructions — https://github.com/LiveHelperChat/livehelperchat/blob/master/.github/copilot-instructions.md
+
 ## Compressing JS Files
 
 Each time you modify any JS file, run this command to compress the JS files.
