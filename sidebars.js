@@ -151,7 +151,8 @@ module.exports = {
                     'bot/deepseek-integration',
                     'bot/ollama-integration',
                     'bot/gemini-integration',
-                    'bot/summarize-with-ai'
+                    'bot/summarize-with-ai',
+                    'bot/n8n-integration'
                 ]
             },
             {
