@@ -131,7 +131,7 @@ Need to notice one thing that you may have to increase ulimit in system to accep
 
 ## How It Works and Which AJAX Calls It Eliminates
 
-1.  When user sends a message using ajax and receives a html for message list append. This already formated html is send directly to Node.js and is distrubuted in real time to all connected users (Chatbox case). They do not have to execute sync. Actually there is no sync going in the background anymore with this extension. Also when user sends a message, admin is informted that there is some information and only then operator executes sync call.
+1.  When user sends a message using ajax and receives a html for message list append. This already formated html is send directly to Node.js and is distrubuted in real time to all connected users (Chatbox case). They do not have to execute sync. Actually there is no sync going in the background anymore with this extension. Also when user sends a message, admin is informed that there is some information and only then operator executes sync call.
 2.  Then operator sends a message to chat. User is informed that there is pending message and ajax call is executed. So there is no running ajax calls in the background anymore. Ajax is executed only then there is some information.
 3.  If you use publish notifications, administration interface sync calls are also eliminated.
 
