@@ -86,6 +86,8 @@ Escape arguments are supported only for `{args.*` syntax.
 * `{args.chat.plain_user_name__url}` - escape argument in the url
 * `{args.chat.nick__url}` - escape argument in the url
 * `{args.chat.nick__escape}` - escape argument in the `[html]{args.chat.nick__escape}[/html]` block.
+* `{args.chat.nick__direct}` - do not encode as JSON even if in text block this option is chosen.
+* `{args.chat.nick__json}` - `json_encode` is applied twice to the chat variable.
 
 This feature is used in [Jitsi](integrating/jitsi.md) integration
 

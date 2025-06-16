@@ -21,13 +21,29 @@ Before you begin, you will need:
 
 Import the version you want `Streaming` OR `Non Streaming`. Streaming version requires NodeJS and PHP-Resque extensions.
 
+# Reasoning models support
+
+If you have imported bot previously and want to upgrade a model with reasoning capabilities, you can
+
+* Make changes as new versions of Rest API and Bot has
+* Just set `store: false` in the Rest APi call.
+* Make sure you have version released after 2025-06-14 or just pull from `master` branch just.
+
 # Flow with Tool Call Support
 
 ## Rest API
 
-* After getting your API key, import the [Non streaming Rest API configuration](/img/bot/chatgpt/chatgpt-response.json) OR [Streaming Rest API configuration V1](/img/bot/chatgpt/chatgpt-response-stream-api.json) OR [Streaming Rest API configuration V2](/img/bot/chatgpt/chatgpt-response-stream-api-v2.json) and set a `Bearer` token.
+* After getting your API key, import the 
+  * Non streaming versions
+    * [Non streaming Rest API configuration V1](/img/bot/chatgpt/chatgpt-response.json)
+    * [Non streaming Rest API configuration V2](/img/bot/chatgpt/cahtgpt-response-reasoning-rest-api.json) with reasoning format support
+  * Streaming versions
+    * [Streaming Rest API configuration V1](/img/bot/chatgpt/chatgpt-response-stream-api.json)
+    * [Streaming Rest API configuration V2](/img/bot/chatgpt/chatgpt-response-stream-api-v2.json) 
+    * [Streaming Rest API configuration V3](/img/bot/chatgpt/cahtgpt-response-reasoning-stream-rest-api.json) with reasoning format support
+* Set a `Bearer` token value in all cases
 * Modify the `system` message `content`
-* Make sure you change `YOUR_VECTOR_STORAGE_ID` and `API_KEY`
+* Make sure you change `YOUR_VECTOR_STORAGE_ID` (optional) and `API_KEY`
 * After testing you might want to uncheck `Log all request and their responses as system messages.`
 * If response takes long time you might want also increase `Maximum execution time`
 
@@ -82,7 +98,13 @@ Here is example how full `tools` section might look like. If you do not want to 
 
 ## Bot
 
-* Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration [Non streamin](/img/bot/chatgpt/chatgpt-response-bot.json) OR [Streaming](/img/bot/chatgpt/chatgpt-response-bot-stream.json).
+* Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration 
+  * Non streaming
+    * [Non streaming](/img/bot/chatgpt/chatgpt-response-bot.json)
+    * [Non streaming](/img/bot/chatgpt/chatgpt-response-reasoning-bot.json)
+  * Streaming
+    * [Streaming](/img/bot/chatgpt/chatgpt-response-bot-stream.json)
+    * [Streaming](/img/bot/chatgpt/chatgpt-response-reasoning-bot-stream.json) with reasoning support
 
 ### Calling a Trigger Based on a Defined Function in ChatGPT
 
