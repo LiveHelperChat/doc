@@ -6,9 +6,11 @@ sidebar_label: Replaceable variables
 
 ## Introduction
 
-Replaceable variables can be used in canned messages, bot messages, and more.
+Replaceable variables can be used in canned messages, bot messages, bot translations, and more.
 
 > System configuration -> Replaceable variables
+
+* [Bot Translations items](bot/multiple-languages.md) can be used inside value definition
 
 ## Conditions
 

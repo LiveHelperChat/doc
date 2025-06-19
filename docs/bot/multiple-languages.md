@@ -46,6 +46,10 @@ In this scenario, we show one content if a replaceable variable is filled and if
 {not_empty__args.replace_array.{account_recover_edge_case}}{account_recover_edge_case}{/not_empty}
 ```
 
+* [Replaceable variables](replaceable-variables.md) are supported in `Translation items`.
+* You can also use replaceable variables in the translation definition.
+* `Translation items` can be nested within other `Translation items`.
+
 ## Translating Automatically Items from Translation Items
 
 This feature allows to translate automatically translation items if we don't find user language translation in translation item. It's like fine grain control where to use automatic translations.
