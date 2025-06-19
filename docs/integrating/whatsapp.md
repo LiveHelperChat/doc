@@ -3,6 +3,13 @@ id: whatsapp
 title: WhatsApp integration
 ---
 
+:::tip
+If you want to integrate business Whatsapp please use official integration https://github.com/LiveHelperChat/fbmessenger which supports
+* Facebook messenger
+* Whatsapp
+* Instagram
+:::
+
 This tutorial described how you can add WhatsApp support using https://github.com/open-wa product. This tutorial won't teach you how to setup `open-wa` product. Only how to integrate it
 
 Usefull information regarding wa
