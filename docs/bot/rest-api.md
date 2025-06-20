@@ -415,7 +415,7 @@ http://example.com/link/to/file_2.pdf
 "content": {not_item_empty__args.item.msg}{{args.item.msg}}{/not_item_empty}
 }
 {end_separator},{/end_separator}
-{/previous_visitor_messages_list_url}` - print last 10 messages and skip the most recent one.
+{/previous_visitor_messages_list_url}` - print last 10 messages and skip the most recent one. It will start rendering items after from a result set we detect a visitor message (Required by Gemini 2.5 models).
 
 And here is an example of how this can be used with AI integration. See [ChatGPT](bot/chatgpt.md) integration.
 
