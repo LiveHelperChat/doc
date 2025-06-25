@@ -22,6 +22,19 @@ To see all used templates, you must also disable the cache.
 'modulecompile' => true,
 ```
 
+## Modify `index.php` to enable debug output directly
+
+This should be used only as a last option if anything else does not work.
+
+https://github.com/LiveHelperChat/livehelperchat/blob/a74e72a0db352f8b3cb9387325bcc97620cb8899/lhc_web/index.php#L18-L19
+
+and change to
+
+```php
+@ini_set('error_reporting', 1);
+@ini_set('display_errors', E_ALL);
+```
+
 ## Web Application Folder Structure
 
 The web application has the following folder structure:

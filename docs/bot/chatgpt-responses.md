@@ -101,7 +101,7 @@ Here is example how full `tools` section might look like. If you do not want to 
 * Import a bot and configure the correct triggers and API calls as shown in the video. Download the bot configuration 
   * Non streaming
     * [Non streaming](/img/bot/chatgpt/chatgpt-response-bot.json)
-    * [Non streaming](/img/bot/chatgpt/chatgpt-response-reasoning-bot.json)
+    * [Non streaming](/img/bot/chatgpt/chatgpt-response-reasoning-bot.json) with reasoning support
   * Streaming
     * [Streaming](/img/bot/chatgpt/chatgpt-response-bot-stream.json)
     * [Streaming](/img/bot/chatgpt/chatgpt-response-reasoning-bot-stream.json) with reasoning support
