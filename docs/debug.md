@@ -4,6 +4,8 @@ title: Debugging Application
 description: This document describes how to debug the application.
 ---
 
+* Make sure you have installed [composer dependencies](install.md#composer-dependencies) first of all
+
 ## Enabling Debug Output
 
 To see which templates are used during page rendering, enable debug output in the `settings/settings.ini.php` file:
