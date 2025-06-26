@@ -152,7 +152,8 @@ module.exports = {
                     'bot/ollama-integration',
                     'bot/gemini-integration',
                     'bot/summarize-with-ai',
-                    'bot/n8n-integration'
+                    'bot/n8n-integration',
+                    'bot/meilisearch-as-rag'
                 ]
             },
             {
