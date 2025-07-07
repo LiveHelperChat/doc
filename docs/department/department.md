@@ -112,6 +112,9 @@ If there are no operators online and you still see the offline form, you might n
 
 Usually, the chat system does not know if you have more than one department and for which department you are generating the code, so it naturally falls back to offline mode.
 
+ > `Transfer to bot only if department is offline` This will skip bot completely and chat will go to pending status instantly
+
+
 ## Survey
 
 Choose the survey to which visitors should be redirected.

@@ -72,6 +72,8 @@ To match any value from a list of values, use:
 
 > `{args.chat.dep_id}` `Text like` `5,8` (matches if the department ID is 5 or 8).
 
+You can use any variable from [Check for conditions to proceed](bot/check-conditions.md#attribute-supported-placeholders)
+
 ### `Contains`
 
 This operator checks if a string contains another string as a substring.

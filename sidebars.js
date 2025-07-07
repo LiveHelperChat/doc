@@ -153,7 +153,8 @@ module.exports = {
                     'bot/gemini-integration',
                     'bot/summarize-with-ai',
                     'bot/n8n-integration',
-                    'bot/meilisearch-as-rag'
+                    'bot/meilisearch-as-rag',
+                    'bot/offline-scenarios'
                 ]
             },
             {
