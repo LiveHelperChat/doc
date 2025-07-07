@@ -764,12 +764,18 @@ From backend. PHP Example
 setcookie('lhc_per', '', time() - 300, '/', 'example.com');
 ```
 
-### To add tag. 
+### To add tag
 
-We automatically check for matching invitation once you add a event.
+We automatically check for matching invitation once you add a tag.
 
 ```js
 window.$_LHC.eventListener.emitEvent('addTag',['some_tag']);
+```
+
+or to force show invitation always use `__reset` suffix
+
+```js
+window.$_LHC.eventListener.emitEvent('addTag',['some_tag__reset']);
 ```
 
 With `postMessage` protocol
@@ -777,7 +783,6 @@ With `postMessage` protocol
 ```js
 window.parent.postMessage('lhc::addTag::["error_deposit"]','*');
 ```
-error_deposit
 
 ### To make conversion
 
