@@ -66,6 +66,11 @@ Users can choose which lists they can see.
 
 You can disable this window for an operator and remove the option to see bot chats, so the operator will not see bot chats.
 
+This can be done two ways
+
+ * Logging as operator and editing their setting
+ * Editing operator account from back office directly via Edit user flow.
+
 ### Permissions
 
 The following permission is required to change lists:
