@@ -27,6 +27,7 @@ To configure conditional buttons:
 1. Click the `Show advanced options` button under your button configuration
 2. Enter your condition `Identifier` in the `Bot conditions` field under button advanced options
 3. First, define your condition in [Bot Conditions](bot/conditions.md)
+4. Conditions are checked only once on the first time bot message send action !!!. Make sure you trigger the same message again while testing.
 
 **Example condition configuration:**
 

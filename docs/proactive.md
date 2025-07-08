@@ -183,7 +183,7 @@ Let say we have two domains. example1.com and example2.com so here are the steps
 
 That's all. Different domains will show different messages. Using this trick you can also show different messages not only by domain, but also by language etc.
 
-### Triggering proactive invitation with a tag
+## Triggering proactive invitation with a tag
 
 We automatically check for matching invitation once you add a tag.
 

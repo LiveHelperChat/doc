@@ -353,15 +353,17 @@ We will set this DOM element ID as defined in this field.
 
 You can enter condition `Identifier` [read more about conditions](bot/conditions.md)
 
-Idea is that this button will be shown only if condition is satisfied, otherwise button will be hidden.
+Idea is that this button will be shown only if the condition is satisfied, otherwise the button will be hidden.
 
-You can enter multiple conditions and all of them has to be satisfied.
+You can enter multiple conditions and all of them have to be satisfied.
 
 ![](/img/bot/is-vip.png)
 
-and condition itself can look like this
+and the condition itself can look like this
 
 ![](/img/bot/condition-vip-check.png)
+
+Conditions are checked only once on the first time bot message send action.
 
 ## Add action on message
 

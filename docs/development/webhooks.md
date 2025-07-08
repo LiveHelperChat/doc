@@ -76,8 +76,6 @@ This condition allows you to check if a visitor's message contains specific keyw
 
 ### Compare attribute
 
-### Compare attribute
-
 You can compare any chat attribute using this condition. You also have access to the special placeholder `{time}`, which represents the current timestamp. Mathematical expressions are also supported.
 
 Supported placeholders:
@@ -227,6 +225,16 @@ Our close trigger configuration can look like this.
 ## How to configure Rest API call.
 
 Rest API can be configured same way as it's working with normal bot workflow. Please read [an article](../bot/rest-api.md).
+
+:::tip
+If you are using [lhc-php-resque](https://github.com/LiveHelperChat/lhc-php-resque) you do NOT need to choose in your Rest API trigger.
+
+ * Send Rest API Call in the background always.
+ * Send Rest API Call in the background if we are not already in it.
+
+Webhooks already will be processed in the background without blocking UI
+
+:::
 
 ## How to send to Rest API only bot chats?
 
