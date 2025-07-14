@@ -216,6 +216,7 @@ module.exports = {
             'development/working-with-messages',
             'development/common-classes',
             'development/modifying-widget',
+            'development/operator-chat-window',
             'development/rest-api',
             'development/move-chat',
             'development/unbrand',
