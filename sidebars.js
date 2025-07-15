@@ -154,7 +154,8 @@ module.exports = {
                     'bot/summarize-with-ai',
                     'bot/n8n-integration',
                     'bot/meilisearch-as-rag',
-                    'bot/offline-scenarios'
+                    'bot/offline-scenarios',
+                    'bot/image-file-verification-flow'
                 ]
             },
             {

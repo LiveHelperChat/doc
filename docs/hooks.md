@@ -143,6 +143,30 @@ $response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('questiona
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.storescreenshot.before_store', array('errors' => & $errors, 'chat' => & $chat, 'data' => $_POST['data']));
 ```
 
+### file.download_verified
+
+**Purpose:** Verified file was downloadd by operator. Listen for this event to inform third party systems about verified file download.
+
+```
+$response = erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.download_verified', array('chat' => $chat, 'user' => erLhcoreClassUser::instance()->getUserData(true), 'chat_file' => $file));
+```
+
+### file.verify_img_file
+
+**Purpose:** Uploaded file should be verified. Listen for this event to have your own flow for verifying files.
+
+```
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.verify_img_file', array('chat'=> $chat, 'chat_file' => $upload_handler->uploadedFile));
+```
+
+### file.verify
+
+**Purpose:** Uploaded file verification status was requested. You can listen for this event to modify verification messagesd. Should be done in extension.
+
+```
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.verify', array('response' => & $response, 'chat_file' => $file));
+```
+
 ### chat.sync_back_office
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhfile/storescreenshot.php  
 **Line:** 49  
