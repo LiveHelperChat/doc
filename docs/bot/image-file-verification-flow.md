@@ -15,6 +15,7 @@ The purpose of this flow is to display a custom cover for images that contain se
   * Was the image verified and its sensitivity determined? We apply 4 retries with 4 seconds delay. Each time in this call we dispatch the `file.verify` event.
   * If the image is sensitive, we show a cover with a `Click to reveal` button
 * Once the operator clicks `Click to reveal`, we dispatch the `file.download_verified` event indicating that the sensitive file was downloaded.
+* Audit log can be configured so reveal actions be logged `Chat file reveal`. Search for those events with `Sensitive chat file reveal` action.
 
 ## Sample flow using Moondream
 
@@ -33,8 +34,9 @@ Image `meta_msg` structure variations
     "success": true,                                                    # [Required] Indicates whether our verification was successful. E.g API is working normally. If you encounter any API error, set `success` to `false`. Only operators with `lhfile,download_unverified` permission will be able to see an image.
     "msg" : "Error message",                                            # [Optional] If verification process failed you can write error messages which will be shown to the operator.
     "sensitive": true,                                                  # [Optional] If verification process succeeded set this to true or you can omit this var completely if file is not sensitive. Just do not set it to save space :)
-    "protection_image" : "images/general/sensitive-information.jpg"     # [Optional] If verification process succeeded and you have custom image you can set it as "images/general/sensitive-information.jpg" or do not set it at all and default image will be used.
-    "protection_html" : "Your own custom html"                          # [Optional] Set your own custom HTML for verification result output. E.g you can set single string and listen to `file.verify` event and based on your string there. Just replace with proper HTML to save space.
+    "protection_image" : "images/general/sensitive-information.jpg",    # [Optional] If verification process succeeded and you have custom image you can set it as "images/general/sensitive-information.jpg" or do not set it at all and default image will be used.
+    "protection_html" : "Your own custom html",                         # [Optional] Set your own custom HTML for verification result output. E.g you can set single string and listen to `file.verify` event and based on your string there. Just replace with proper HTML to save space.
+    "btn_title" : "Sensitive Information"                               # [Optional] Set custom sensitive information tile
   }
 }
 ```
