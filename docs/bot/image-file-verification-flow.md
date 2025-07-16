@@ -16,6 +16,7 @@ The purpose of this flow is to display a custom cover for images that contain se
   * If the image is sensitive, we show a cover with a `Click to reveal` button
 * Once the operator clicks `Click to reveal`, we dispatch the `file.download_verified` event indicating that the sensitive file was downloaded.
 * Audit log can be configured so reveal actions be logged `Chat file reveal`. Search for those events with `Sensitive chat file reveal` action.
+* While configuring Rest API it makes sense to check `Skip request body. Only response will be logged.` so log messages will be smaller.
 
 ## Sample flow using Moondream
 
