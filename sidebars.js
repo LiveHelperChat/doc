@@ -155,7 +155,8 @@ module.exports = {
                     'bot/n8n-integration',
                     'bot/meilisearch-as-rag',
                     'bot/offline-scenarios',
-                    'bot/image-file-verification-flow'
+                    'bot/image-file-verification-flow',
+                    'bot/images-bot-integration'
                 ]
             },
             {
@@ -168,7 +169,8 @@ module.exports = {
                     'bot/operator-not-responding',
                     'bot/show-offline-form-if-no-online-operators',
                     'bot/transfer-to-bot-if-not-accepted',
-                    'bot/execute-bot-of-transferred-department'
+                    'bot/execute-bot-of-transferred-department',
+                    'bot/send-files-to-llm'
                 ]
             }
         ],

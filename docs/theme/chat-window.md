@@ -1,123 +1,139 @@
----
 id: chat-window
 title: Chat window
 ---
 
-This document describes how to customize the main UI elements of the chat widget.
+This document explains how to customize the main UI elements of the chat widget.
 
 ![](/img/theme/chat-window.png)
 
-*   Most of the widget's text can be translated directly within the [widget theme](theme/theme.md). You can also set custom content there.
-*   [Translations and multilanguage setup](chat/multiple-languages.md)
-*   To prefill the visitor's nickname, read about [prefilling custom variables](custom-fields-and-prefill.md).
-*   [Read how to override default translations](language.md#how-to-override-default-translations)
+**Quick Reference:**
+*   Customize widget text in [widget themes](theme/theme.md)
+*   Set up [translations and multiple languages](chat/multiple-languages.md)
+*   [Prefill visitor information](custom-fields-and-prefill.md)
+*   [Override default translations](language.md#how-to-override-default-translations)
 
 ## Header
 
-You can change the location of the header icons by creating a new widget theme and setting [custom header icons](theme/theme.md).
+Customize header icon placement by creating a new widget theme with [custom header icons](theme/theme.md).
 
 ![](/img/theme/chat-window-header.png)
 
-## Operator profile
+## Operator Profile
 
-Different operator profiles can be displayed depending on the chat's status.
+Display different operator profiles based on chat status.
 
-### Start chat operator profile
+### Start Chat Profile
 
-The start chat operator profile can be enabled in the following location:
+Enable the start chat operator profile:
 
-> System configuration -> Live help configuration -> Start chat form settings -> Default settings -> Additional form settings -> Show operator profile above input fields
+**Path:** System configuration → Live help configuration → Start chat form settings → Default settings → Additional form settings → Show operator profile above input fields
 
-*   To customize the appearance of the profile, use a widget theme.
-*   `Widget theme -> Custom content -> Use bot profile in the widget instead of default.`
+**Customization:** Widget theme → Custom content → Use bot profile in the widget instead of default
 
-### Ongoing chat operator profile
+### Ongoing Chat Profile
 
-The ongoing chat operator profile can display either a bot profile or an operator profile, depending on the chat's status.
+Shows either bot or operator profile depending on chat status.
 
 ![](/img/theme/operator-profile.png)
 
-## Chat window toolbar
+## Chat Window Toolbar
 
-The toolbar with all options enabled looks like this:
+Complete toolbar with all options enabled:
 
 ![](/img/theme/chat-window-toolbar.png)
 
-### Sound icon
+### Sound Icon
 
-By default, sounds are enabled for the visitor. You can disable them by default in:
-
-> System configuration -> Synchronization and sound settings -> Play a sound on a new message for a front-end user
-
-The sound icon itself cannot be hidden from the visitor.
+**Default:** Sounds are enabled for visitors
+**Disable:** System configuration → Synchronization and sound settings → Play a sound on a new message for a front-end user
+**Note:** The sound icon cannot be hidden from visitors
 
 ![](/img/theme/chat-window-sound-icon.png)
 
-### Print icon
+### Print Icon
 
-The print option for the visitor can be enabled in the [chat settings](chat/configuration.md#disable-chat-print).
+**Enable:** Configure in [chat settings](chat/configuration.md#disable-chat-print)
 
 ![](/img/theme/chat-window-print.png)
 
-### File icon
+### File Icon
 
-The file upload option can be enabled or disabled in the [file settings](chat/files.md).
+**Configure:** Enable/disable in [file settings](chat/files.md)
 
 ![](/img/theme/chat-window-file.png)
 
-### Face icon
+### Face Icon (BB Code)
 
-*   If you are not using a widget theme, the Face button can be disabled in the [chat configuration](chat/configuration.md#show-bb-code-button).
-*   If you are using a widget theme, the Face button should be disabled directly in the widget theme under [Hide BB Code button](theme/theme.md#hide-bb-code-button).
+**Without widget theme:** Disable in [chat configuration](chat/configuration.md#show-bb-code-button)
+**With widget theme:** Disable in [widget theme settings](theme/theme.md#hide-bb-code-button)
 
 ![](/img/theme/chat-window-bbcode.png)
 
-### Mail icon
+### Mail Icon
 
-The mail button can be disabled in the [chat settings](chat/configuration.md#disable-chat-transcript-send).
+**Disable:** Configure in [chat settings](chat/configuration.md#disable-chat-transcript-send)
 
 ![](/img/theme/chat-window-mail.png)
 
-### Close icon
+### Close Icon
 
-The close icon in the dropdown can also be hidden in the [chat settings](chat/configuration.md#hide-close-button-in-dropdown).
+**Hide:** Configure in [chat settings](chat/configuration.md#hide-close-button-in-dropdown)
 
 ![](/img/theme/chat-window-close.png)
 
-### Font size icon
+### Font Size Icon
 
-The font size change icon can be enabled in [widget themes](theme/theme.md#allow-visitor-to-change-font-size).
+**Enable:** Configure in [widget themes](theme/theme.md#allow-visitor-to-change-font-size)
 
 ![](/img/theme/font-size-icon.png)
 
-### Voice call
+### Voice Call
 
-The voice call icon is visible only if an operator accepts the chat. [More about voice calls](voice-video-screenshare.md)
+**Availability:** Only visible when operator accepts chat
+**Learn more:** [Voice calls documentation](voice-video-screenshare.md)
 
 ![](/img/theme/voice-call.png)
 
-### Voice message
+### Voice Message
 
-Read more about [voice messages](voice_messages.md).
+**Learn more:** [Voice messages documentation](voice_messages.md)
 
 ![](/img/theme/chat-window-voice-message.png)
 
-### Change language
+### Change Language
 
-This icon allows the visitor to change the widget's language.
+Allows visitors to switch widget language.
 
 ![](/img/bot/language.png)
 
-Read more about this option in the [chat settings](chat/configuration.md#show-users-option-to-switch-language-at-widget).
+**Configure:** [Chat settings](chat/configuration.md#show-users-option-to-switch-language-at-widget)
 
-### Download as txt
+### Download as TXT
 
-The download option can be disabled globally using the chat configuration [chat settings](chat/configuration.md#disable-chat-download).
+**Disable:** Configure in [chat settings](chat/configuration.md#disable-chat-download)
 
 ![](/img/theme/download-as-txt-v2.png)
 
-## I don't like some of the text, and it's not changeable in the widget theme?
+## Customizing Non-Theme Text
 
-Use a simple [extension](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridetranslation/translations) to translate the English text directly there.
+For text that cannot be changed in widget themes, use the [translation extension](https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/overridetranslation/translations).
 
-Read more [about languages](language.md#how-to-override-default-translations).
+**Learn more:** [Language override documentation](language.md#how-to-override-default-translations)
+
+## Troubleshooting: Chat Start Errors
+
+If visitors see this error message:
+
+> Your request was not processed as expected - but don't worry it was not your fault. Please re-submit your request. If you experience the same issue you will need to contact us via other means.
+
+By default, captcha is valid for 30 minutes. After that period on submit it's refreshed.
+
+**Check these solutions:**
+
+1. **Proxy setup:** Ensure Live Helper Chat [detects IP correctly](blocking.md#ip-detection-issues)
+2. **Session captcha:** Uncheck "Use session captcha" in Chat configuration (required for same domain/subdomain)
+3. **Debug captcha flow:**
+    - Look for `/captcha/captchastring/fake/1753085773` requests (timestamp varies)
+    - Verify response: `{"result":"d560e431361af7765bc44871a4e55799e683ec17"}`
+    - Check `widgetrestapi/submitonline` request includes captcha data E.g `"captcha_d560e431361af7765bc44871a4e55799e683ec17":1753085773,"tscaptcha":1753085773`
+4. **Still not working:** Environment-specific debugging required

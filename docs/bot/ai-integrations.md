@@ -17,6 +17,7 @@ Types of API:
     *   REST API and Bot export can be found here: <https://github.com/LiveHelperChat/chatGPT/tree/main/doc/assistant_stream>
 *   Chat completion API, which can be used with many providers with some adjustments.
     *   <https://doc.livehelperchat.com/docs/bot/chatgpt-integration>
+* [Images support](bot/images-bot.md)
 
 ## Remote AI Services
 

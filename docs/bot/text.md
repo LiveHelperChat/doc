@@ -62,7 +62,13 @@ Text area supports these replaceable variables
          * `{args.chat.user.name_support}` name visible in the widget or
          * `{args.chat.user.name_official}` name visible in the back office
  * `{current_time_ts}` current time in unix timestamp. E.g `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]`
- * `{args.msg.udate__datef__Y-m-d H:i}` Use field timestamp and format a date
+ *  `{args.msg.udate__datef__Y-m-d H:i}` Use field timestamp and format a date
+
+If message is media_type you can access uploaded file attributes
+
+ * `{args.msg.file.file_body_embed}` - will generate `[chatfilebody=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for file body replacement.
+ * `{args.msg.file.file_body}` - `'data:'.$this->type.';base64,'.base64_encode(file_get_contents($this->file_path_server));`
+
 
 These are the main classes
 

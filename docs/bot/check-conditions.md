@@ -36,6 +36,7 @@ One of the few possible scenarios can be
 * `{validation_event__<event_name>}` E.g `{validation_event__my_event_validator}` event with `my_event_validator` will be dispatched and result afterwards compared with expected output. `my_event_validator` `=` `1`
 * `{{args.chat.online_user.previous_chat.id}} > 0` and use that condition to check did visitor had chat before with you.
 * `{args.msg.msg}` OR `{args.chat.last_message}` check against last visitor message.
+* `media_type` you can check this way was uploaded file or not. In right part just enter extensions `jpg,png,jpeg,gif` and as a comparison variable choose `In list, items separated by ||` 
 
 If you do not enter `Value` means it's empty.
 
