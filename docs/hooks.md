@@ -385,6 +385,21 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('file.uploadfileadmin.
 
 ## Mailing Module
 
+### mailconv.file.verify_start
+**Purpose:** Mail file verification should start
+
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('mailconv.file.verify_start', array('mail' => $mail, 'chat_file' => $file));
+```
+
+### mailconv.file.download_verified
+**Purpose:** Sensitive mail file was downloaded. Listen for this event to send notification.
+
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('mailconv.file.download_verified', array('mail' => $mail, 'user' => erLhcoreClassUser::instance()->getUserData(true), 'chat_file' => $file));
+```
+
+
 ### mail.list_export_columns
 **File:** https://github.com/LiveHelperChat/livehelperchat/blob/7c0ec7dbc9cf1bb1efa6a632bb09a8d3706c716a/lhc_web/lib/core/lhmailconv/lhmailconvexport.php#L148
 **Line:** 39  

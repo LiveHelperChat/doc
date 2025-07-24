@@ -5,7 +5,7 @@ title: Image file verification flow
 
 The purpose of this flow is to display a custom cover for images that contain sensitive information, such as passports, credit cards, or other confidential documents.
 
-## Flow Overview
+## Chat Flow Overview
 
 * Image is uploaded
 * We check if the verification flow is enabled in the `File configuration` section under `Image file by operator can be downloaded if`
@@ -65,6 +65,8 @@ We will listen to `file.verify_img_file` event as it's dispatched once image nee
 
 ## Permissions
 
+Operator MUST have `lhfile,verify_file` permission to check verification of file access.
+
 ### Scenario A
 
  * Has permission to `lhfile,download_unverified`
@@ -86,3 +88,40 @@ We will listen to `file.verify_img_file` event as it's dispatched once image nee
 * Does not have permission to `lhfile,download_unverified`.
 * Does not have permission to `lhfile,download_verified`.
 * He won't see file content if image is not verified or its content is sensitive.
+
+### Debugging
+
+* Request from Rest API for chat calls will be logged under chat ID. Use `Object ID` field and enter chat ID.
+* If you have multiple servers running, you have to clear cache on all instances or just click clear cache multiple times.
+
+## Mail Images verification flow
+
+* Mail with inline OR image as attachment is received
+* Operator opens a mail message.
+* We check if the verification flow is enabled in the `File configuration` section under `Image file by operator can be downloaded if` in mail settings block.
+* Inline images verification starts automatically `mailconv.file.verify_start` is fired. If image is not verified within 60 seconds verification event is fired again. `mailconv.file.verify` is fired always.
+* Once the operator clicks `Click to reveal`, we dispatch the `mailconv.file.download_verified` event indicating that the sensitive file was downloaded.
+* While configuring Rest API it makes sense to check `Skip request body. Only response will be logged.` so log messages will be smaller.
+
+### Bot setup
+
+Identical to chat flow.
+
+### Webhook setup
+
+We will listen to `mailconv.file.verify_start` event as it's dispatched once image needs verification. Webhook event listener is identical as chat.
+
+## Permissions
+
+They are identical to chat permissions so same flow applies
+
+> `lhmailconv,download_unverified` - Allow operators to download unverified files
+
+> `lhmailconv,download_verified` - Allow operators to download verified, but sensitive files
+
+> `lhmailconv,can_download` - this permission should be removed from operators as it allows to download raw eml content which includes images themself.
+
+### Debugging
+
+* Request from Rest API for chat calls will be logged under message ID. Use `Object ID` field and enter Message ID. Message ID you can find by expanding message details and you will see `Message ID: <number>` field.
+* If you have multiple servers running, you have to clear cache on all instances or just click clear cache multiple times.
