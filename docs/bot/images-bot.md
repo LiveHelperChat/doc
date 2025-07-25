@@ -1,30 +1,57 @@
 ---
 id: images-bot-integration
-title: Support images for your LLM
+title: Support images for your AI LLM
 ---
 
-This article provides a generic workflow for integrating file support in your bot. In this particular case, we are implementing image support for our AI using OpenAI responses.
+# Images Bot Integration
 
-## Workflow Overview
+This document explains how to integrate image handling in bots that use the OpenAI API, following a clear workflow from image upload to API request handling.
 
-1. An image is uploaded by the user
-2. The system routes to a specific trigger based on the uploaded content type
+## Updated Workflow Overview
 
-![](/img/bot/bots/router-unknown.jpg)
+1. User uploads an image to the chat
+2. System detects the content type and routes to a specific trigger
+3. Bot processes the image using the OpenAI API
+4. AI generates a response based on the image content
 
-![](/img/bot/bots/image-was-uploaded.jpg)
+## Implementation Example
 
-Here's an example of the JSON structure used for OpenAI API requests when an image is uploaded:
+When an image is uploaded, the JSON payload for OpenAI looks like:
+
+In Live Helper Chat pictures are uploaded instantly and there is no possibility to write user question within image before uploading. So we hint AI that we will ask our question afterwards.
 
 ```json
 {
     "role": "user",
     "content": [
-        { "type": "input_text", "text": "I'll ask my question about uploaded picture in the next message" },
+        { "type": "text", "text": "I'll ask my question about uploaded picture in the next message" },
         {
-            "type": "input_image",
-            "image_url": "{args.msg.file.file_body_embed}"
+            "type": "image_url",
+            "image_url": {
+                "url": "{args.msg.file.file_body_embed}"
+            }
         }
     ]
 }
 ```
+
+## Sample Configuration Files
+
+You can download the necessary files to implement this functionality:
+
+* [REST API Configuration](/img/bot/images-bot/rest-api.json) - Remember to set your `OPENAI_API_KEY` in the configuration
+* [Bot Configuration](/img/bot/images-bot/bot.json) - Import this after setting up the REST API
+
+## Integration Points
+
+The system handles images through specific triggers that activate when image content is detected.
+
+![Image Upload Detection](/img/bot/bots/router-unknown.jpg)
+
+![Image Upload Confirmation](/img/bot/bots/image-was-uploaded.jpg)
+
+## Technical Notes
+
+* Image content is embedded using the `file_body_embed` parameter
+* The OpenAI API processes multimodal content through the content array
+* Both text and image data can be sent in the same request

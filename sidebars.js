@@ -156,7 +156,8 @@ module.exports = {
                     'bot/meilisearch-as-rag',
                     'bot/offline-scenarios',
                     'bot/image-file-verification-flow',
-                    'bot/images-bot-integration'
+                    'bot/images-bot-integration',
+                    'bot/voice-message-bot-integration'
                 ]
             },
             {
