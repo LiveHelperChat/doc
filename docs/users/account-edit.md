@@ -13,6 +13,10 @@ This article explains user account editing permissions.
 
 If an operator selects the checkbox to the left of the "eye" icon, they will gain access to read chats from that department, but will not be able to accept or participate in the chats.
 
+## Operator alias
+
+You can set operator alias nick, avatar, photo or job title by assigning operator to individual department or department group.
+
 ### Permissions
 
 To edit the groups of other users, the editing user must be a member of all the groups that the user being edited is a member of.

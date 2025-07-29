@@ -840,7 +840,7 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.unread_chat',arr
 **Purpose:** Triggered when a user adds a message.
 
 ```php
-erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser',array('chat' => & $chat, 'msg' => & $msg));
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser',array('files' => $files, 'chat' => & $chat, 'msg' => & $msg));
 ```
 
 ### chat.auto_responder_triggered

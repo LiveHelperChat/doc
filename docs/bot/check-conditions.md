@@ -25,8 +25,11 @@ One of the few possible scenarios can be
  So if you set variable `bot_touched` in attribute field you can use either `bot_touched` or `{args.chat.chat_variables_array.bot_touched}`
 * `{args.chat.<main chat attr>}` or `{args.msg.msg}` you can use text matching for visitor message. 
 * `online_department` use as attribute to check is department online (**respects** department online hours and operators online statuses). In value field 1 means online, 0 - means offline
+  * `online_department__<dep_id_1>,<dep_id_2>` - You can check other department online status by following example. E.g `online_department__5` it would check department with id 5 online status.
 * `online_op_department` use as attribute to check is department online (**ignores** department online hours) and checks only for operators. In value field 1 means online, 0 - means offline
+  * `online_op_department__<dep_id_1>,<dep_id_2>` - You can check other department online status by following example. E.g `online_op_department__5` it would check department with id 5 online status.
 * `online_department_hours` use as attribute to check is department online by online hours settings (**ignores** ignores operators statuses). In value field 1 means online, 0 - means offline
+  * `online_department_hours__<dep_id_1>,<dep_id_2>` - You can check other department online status by following example. E.g `online_department_hours__5` it would check department with id 5 online status.
 * `siteaccess` you can use this attribute to check what `siteaccess` visitor is on and execute appropriate trigger. E.g if you want different response by language. `eng`,`lit` [list of default siteacess](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L34-L66)
 * `chat_files` check does chat has files 
   * `chat_files` `>` `0` - chat has files
