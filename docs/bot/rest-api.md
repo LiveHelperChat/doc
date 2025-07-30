@@ -392,6 +392,7 @@ All messages at once
 * `{{msg_all_html}}` - all chat messages rendered as HTML. You might need to style classes.
 * `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
 * `{skip_empty_msg}` - will skip a message in `{previous_visitor_messages_list_url__10__1}` loop if message content is empty.
+* `{skip_media_msg}` - will skip a message in `{previous_visitor_messages_list_url__10__1}` loop if message is considered media one. E.g it has attached file or content is file attachement.
 * `{{media_all}}` - array of files attached `[file...` syntax.
 * `{{media_all_links}}` - plain text with structure of 
 ```

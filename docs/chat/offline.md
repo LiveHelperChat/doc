@@ -179,6 +179,62 @@ The bot trigger adds a subject with ID 12 (replace with your own ID) to the chat
 
 The email and offline request will be assigned to the very first defined department.
 
+## Replaceable variables in offline chat message and e-mail template
+
+* `{args.input_data.*}` - hold direct visitor entered data.
+* `{args.chat.phone}, {args.input_data.email}, {args.input_data.username}` - if you are prefilling variables via JS it will be overridden by it. So it won't hold visitor entered data. If you are not prefilling vars via JS it's safe just to use `{args.chat.*`
+
+Sample of offline chat message content
+
+```
+[b]Visitor query[/b]:
+{args.question}
+
+[b]Phone[/b]: {args.chat.phone} | {args.input_data.phone}
+[b]E-mail[/b]: {args.chat.email} | {args.input_data.email}
+[b]Nick[/b]: {args.chat.nick} | {args.input_data.username}
+[b]Additional data[/b]: {args.chat.additional_data}
+```
+
+Offline mail message
+
+The Same logic applies as for offline chat message.
+
+```
+Hello,
+
+===========
+{args.chatprefill.chat_variables_array.is_verified__not_empty__[⛊ Verified ⛊️]} Chat details
+===========
+Chat ID - {args.chatprefill.id}
+Name - {args.chatprefill.nick}
+E-mail - {args.chatprefill.email}
+
+===========
+[Unverified details] Request details
+===========
+Name: {name} | {args.input_data.username}
+Email: {email} | {args.input_data.email}
+Phone: {phone} | {args.input_data.phone}
+Department: {department}
+Country: {country}
+City: {city}
+IP: {ip}
+
+Message:
+{message}
+
+URL of page from which user has send request:
+{url_request}
+
+Link to chat if any:
+{prefillchat}
+
+Sincerely,
+Live Support Team
+```
+
+
 ## Permissions
 
 Required permissions to manage offline settings:

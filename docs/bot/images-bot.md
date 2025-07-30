@@ -3,7 +3,14 @@ id: images-bot-integration
 title: Support images for your AI LLM
 ---
 
-# Images Bot Integration
+# Images/Voice message Bot Integration
+
+* In order for visitor to write a question regarding his file upload. In `File => Files configuration` settings ` Show file preview before uploading file` has to be enabled.
+
+* [REST API Configuration](/img/bot/voice-messages/rest-api-v2.json) - Remember to set your `OPENAI_API_KEY` in the configuration
+* [Bot Configuration](/img/bot/voice-messages/bot-v2.json) - Import this after setting up the REST API
+
+# Images Bot Integration (old version)
 
 This document explains how to integrate image handling in bots that use the OpenAI API, following a clear workflow from image upload to API request handling.
 
@@ -39,8 +46,8 @@ In Live Helper Chat pictures are uploaded instantly and there is no possibility 
 
 You can download the necessary files to implement this functionality:
 
-* [REST API Configuration](/img/bot/images-bot/rest-api.json) - Remember to set your `OPENAI_API_KEY` in the configuration
-* [Bot Configuration](/img/bot/images-bot/bot.json) - Import this after setting up the REST API
+* [REST API Configuration](/img/bot/voice-messages/rest-api.json) - Remember to set your `OPENAI_API_KEY` in the configuration
+* [Bot Configuration](/img/bot/voice-messages/bot.json) - Import this after setting up the REST API
 
 ## Integration Points
 
