@@ -218,7 +218,7 @@ The most important part is this. It encrypts data using key.
 
 ```php
 <?php echo lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>')?>
-<?php echo lhSecurity::encrypt('<data_to_encrypt>|_varex<unix timestamp + valid period>,'<secret_key>')?>
+<?php echo lhSecurity::encrypt('<data_to_encrypt>|__varex<unix timestamp + valid period>,'<secret_key>')?>
 ```
 
 Example
@@ -238,7 +238,7 @@ Example
     
     // Variable also can have valid period. E.g 30 seconds from it's definition.
     // <user_id>__varex.<current unix time + valid period>
-    // In this scenario we are passing user_id which will be valid for 20 seconds from variable definition.
+    // In this scenario we are passing user_id 20 which will be valid for 30 seconds from variable definition.
     lhc_var.user_id = '<?php echo lhSecurity::encrypt("20__varex". (time() + 30),"<your_secret_key>")?>';
     ...
 ```
