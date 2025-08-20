@@ -183,6 +183,8 @@ The email and offline request will be assigned to the very first defined departm
 
 * `{args.input_data.*}` - hold direct visitor entered data.
 * `{args.chat.phone}, {args.input_data.email}, {args.input_data.username}` - if you are prefilling variables via JS it will be overridden by it. So it won't hold visitor entered data. If you are not prefilling vars via JS it's safe just to use `{args.chat.*`
+* `{args.chatprefil.*}` - holds original chat data
+* `{args.chat.*}` - holds chat data where it's data is set from visitor entered data.
 
 Sample of offline chat message content
 

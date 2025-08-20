@@ -843,6 +843,21 @@ erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.unread_chat',arr
 erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser',array('files' => $files, 'chat' => & $chat, 'msg' => & $msg));
 ```
 
+### chat.addmsguser_webhook
+**File:** https://github.com/LiveHelperChat/livehelperchat/commit/0dbda405f4e9fb6adc379c345788a23fcdd80848
+**Purpose:** Triggered when a user adds a message via incoming webhook.
+
+```php
+erLhcoreClassChatEventDispatcher::getInstance()->dispatch('chat.addmsguser_webhook', array(
+    'chat' => & $chat,
+    'msg' => $msg,
+    'source' => 'webhook',
+    'webhook' => & $incomingWebhook,
+    'webhook_data' => $payloadAll,
+    'webhook_msg' => $payloadMessage
+));
+```
+
 ### chat.auto_responder_triggered
 **File:** https://github.com/LiveHelperChat/livehelperchat/tree/cf4ff02ac116cc7b99f8192bb6d7a378c3a31aec/lhc_web/modules/lhchat/addmsguser.php  
 **Line:** 126  

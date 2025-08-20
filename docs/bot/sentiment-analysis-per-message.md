@@ -141,8 +141,9 @@ We are currently interested in the following events:
 
 *   `chat.web_add_msg_admin`: Listens for operator messages and sets the sentiment.
 *   `chat.chat_started`: Listens for the first visitor message.
-*   `chat.addmsguser`: Listens for visitor messages.
+*   `chat.addmsguser`: Listens for visitor messages (web widget).
 *   `chat.close`: Summarizes the sentiment based on chat messages.
+*   `chat.addmsguser_webhook`: Listens for visitor messages (incoming webhook).
 
 ![](/img/bot/sentiment-per-message/webhooks.png)
 

@@ -87,6 +87,16 @@ This is extremely useful in case you have a bot and to migrate some of its flows
  * You can use E.g `is_lt_user` to expecting condition to be valid
  * You can use E.g `-is_lt_user` (`-`) prefix for expecting condition to be invalid
 
+## Date range use case
+
+You can have conditions which work based on date
+
+![](/img/bot/conditions/conditions.jpg)
+
+After you have a defined condition, you can use it in trigger
+
+![](/img/bot/conditions/conditions-trigger.jpg)
+
 ## Bot Example
 
 Example usage in a bot:

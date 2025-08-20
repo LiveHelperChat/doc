@@ -40,6 +40,14 @@ One of the few possible scenarios can be
 * `{{args.chat.online_user.previous_chat.id}} > 0` and use that condition to check did visitor had chat before with you.
 * `{args.msg.msg}` OR `{args.chat.last_message}` check against last visitor message.
 * `media_type` you can check this way was uploaded file or not. In right part just enter extensions `jpg,png,jpeg,gif` and as a comparison variable choose `In list, items separated by ||` 
+* `custom_schedule` E.g `2,12:30-13:00;1,12:30-14:00` it will be valid on Monday and Tuesday within specific time ranges. You can use with `=` and `!=` comparable operators. E.g `custom_schedule = 1` (Schedule matches) or `custom_schedule != 1` (Schedule does not match). More examples:
+
+```
+1-5,11:00-20:00 - Monday to Friday, 11:00 to 20:00
+6-7,11:00-19:00 - Saturday to Sunday, 11:00 to 19:00
+1,10:00-18:00 - Monday only, 10:00 to 18:00
+7,09:00-17:00 - Sunday only, 09:00 to 17:00
+```
 
 If you do not enter `Value` means it's empty.
 

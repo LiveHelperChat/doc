@@ -63,7 +63,21 @@ We will listen to `file.verify_img_file` event as it's dispatched once image nee
 
 ![](/img/bot/moondream/webhook.jpg)
 
-## Permissions
+## Sample flow using OpenAI
+
+### Rest API
+
+* Import [Rest API](/img/bot/open-ai-image-verification/rest-api.json) and change `YOUR_API_KEY` in `Authorization` section with your own API key.
+
+### Bot setup
+
+* Import [Bot](/img/bot/open-ai-image-verification/bot.json). Choose in bot import window just imported Rest API
+
+### Webhook setup
+
+We will listen to `file.verify_img_file` event as it's dispatched once image needs verification.
+
+# Permissions
 
 Operator MUST have `lhfile,verify_file` permission to check verification of file access.
 
@@ -120,6 +134,8 @@ They are identical to chat permissions so same flow applies
 > `lhmailconv,download_verified` - Allow operators to download verified, but sensitive files
 
 > `lhmailconv,can_download` - this permission should be removed from operators as it allows to download raw eml content which includes images themself.
+
+> `lhmailconv,download_restricted` - this permission allows to download file if file extension is one of the restricted ones. `Mail conversations options => File download restrictions`
 
 ### Debugging
 

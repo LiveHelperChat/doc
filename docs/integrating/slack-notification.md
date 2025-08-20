@@ -9,7 +9,7 @@ This guide explains how to send a Slack notification when a visitor sends a mess
 
 ## How does it work?
 
-*   Set up a webhook in `Home > System configuration > Webhooks` for the `chat.addmsguser` event.
+*   Set up a webhook in `Home > System configuration > Webhooks` for the `chat.addmsguser` (web widget) and `chat.addmsguser_webhook` (incoming webhook) event.
 *   Create a bot and define the keyword to listen for.
 *   Configure the bot to execute a REST API call to send the Slack notification.
 

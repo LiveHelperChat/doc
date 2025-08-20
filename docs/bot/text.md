@@ -27,6 +27,8 @@ Text message can have few sending options
     * `{good_morning_monday__Good morning monday__t[7:9]||1}` show this message only on Monday
     * `{good_morning_tue_wed__Good morning monday__t[7:9]||2,3}` show this message only on Tuesday and Wednesday
 * You can give random answer by separating messages by `|||` or just clicking ![](/img/bot/new-variation.png)
+  * It has to be as a separate character from the new line
+  * Or wrap it with spaces so it won't be included in any other parsing tags.
 
 First message part before text message is text identifier and can be used to translating messages to multiple languages.
 
