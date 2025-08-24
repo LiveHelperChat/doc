@@ -7,24 +7,29 @@ This document demonstrates how to use [Meilisearch](https://www.meilisearch.com/
 
 ## How it works
 
-* Documents are stored in Meilisearch as a searchable index
-* LiveHelperChat searches using AI-generated queries. The AI extracts important keywords before performing the Meilisearch query
-* The LLM generates responses based on the retrieved context from relevant documents
+*   Documents are stored in Meilisearch as a searchable index
+*   LiveHelperChat searches using AI-generated queries. The AI extracts important keywords before performing the Meilisearch query
+*   The LLM generates responses based on the retrieved context from relevant documents
 
-# Setup
+# 🛠️ Setup
 
-## REST API Configuration
+## 🔌 REST API Configuration
 
-* In this example, we'll use the Gemini streaming version - [REST API](/img/bot/meilisearch/gemini-rest-api.json). Don't forget to change `YOUR_API_KEY`
-* MeiliSearch REST API configuration - [REST API](/img/bot/meilisearch/meilisearch-rest-api.json). Don't forget to change `MEILI_API_KEY`
+*   In this example, we'll use the Gemini streaming version - [REST API](/img/bot/meilisearch/gemini-rest-api.json). Don't forget to change `YOUR_API_KEY`
+*   MeiliSearch REST API configuration - [REST API](/img/bot/meilisearch/meilisearch-rest-api.json). Don't forget to change `MEILI_API_KEY`
 
-## Bot Configuration
+## 🤖 Bot Configuration
 
-* Import the MeiliSearch bot configuration - [Bot JSON](/img/bot/meilisearch/gemini-bot.json). When importing the bot, choose `GeminiStream`
+*   Import the MeiliSearch bot configuration - [Bot JSON](/img/bot/meilisearch/gemini-bot.json). When importing the bot, choose `GeminiStream`
+
+> **⚠️ Important:** After importing the bot, you must manually configure the trigger as shown in the screenshot below, as these settings are not applied automatically on import.
+> *   **Rest API:** `MeiliSearch`
+> *   **Method:** `Search`
+> *   **Execute trigger for [Success]:** `MeiliAnswer`
 
 ![](/img/bot/meilisearch/meilisearch.png)
 
-## Running Meilisearch
+## ධ Running Meilisearch
 
 Create a `docker-compose.yml` file with the following content:
 
@@ -51,11 +56,13 @@ Run the container with:
 docker-compose -f docker-compose.yml up -d
 ```
 
-## Storing documents in Meilisearch
+## 💾 Storing documents in Meilisearch
 
 In this example, I'll be using a generated markdown file from https://github.com/LiveHelperChat/crawler-to-md
 
 **Sample PHP script command:**
+
+> **⚠️ Note:** In the command below, `MEILI_API_KEY` should be replaced with the `MEILI_MASTER_KEY` from your `docker-compose.yml` file.
 
 ```shell
 cd /meili && /usr/bin/php ./command.php MEILI_API_KEY lhc_doc /path/to/output/doc_livehelperchat_com/httpsdoc.livehelperchat.com.md
@@ -365,4 +372,3 @@ if (is_dir($tempDir)) {
     rmdir($tempDir);
 }
 ?>
-```
