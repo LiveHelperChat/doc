@@ -68,9 +68,10 @@ Text area supports these replaceable variables
 
 If message is media_type you can access uploaded file attributes
 
- * `{args.msg.file.file_body_embed}` - will generate `[chatfilebody=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for file body replacement.
+ * `{args.msg.file.file_body_embed}` - will generate `[chatfilebody=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for `file_body` replacement.
  * `{args.msg.file.file_body}` - `'data:'.$this->type.';base64,'.base64_encode(file_get_contents($this->file_path_server));`
-
+ * `{args.msg.file.file_body_embed_raw}` - will generate `[chatfilebodyraw=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for `file_body_raw` replacement.
+ * `{args.msg.file.file_body_raw}` - `base64_encode(file_get_contents($this->file_path_server));`
 
 These are the main classes
 

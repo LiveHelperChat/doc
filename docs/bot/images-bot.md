@@ -59,6 +59,7 @@ The system handles images through specific triggers that activate when image con
 
 ## Technical Notes
 
-* Image content is embedded using the `file_body_embed` parameter
+* Image content is embedded using the `file_body_embed` parameter it's embeded like  `'data:'.$file->type.';base64,'.base64_encode(file_get_contents($file->file_path_server));`
 * The OpenAI API processes multimodal content through the content array
 * Both text and image data can be sent in the same request
+* If you are integrating some other AI and it does not require `'data:'.$file->type.';base64,'` you can use `file_body_embed_raw` file attribute 

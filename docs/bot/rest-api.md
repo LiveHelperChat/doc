@@ -482,13 +482,21 @@ Other:
 * `{{survey}}` - filled chat surveys
 * `{{replaceable.<identifier>}}` Use replaceable variables in Rest API
 
-Attributes usefull for sending content in `Sub URL for file`
+#### Do not send a request if this variable is empty
+
+This is useful if a message from webhook does not have content, and you want to skip it. It works only for first level replaceable variables, E.g
+
+* `{{msg}}`, `{{msg_lowercase}}`, `{{msg_url}}` etc...
+
+This happens if you use `Send Typing` or some other bot message which is visible in web widget but does not have any content third party integration.
+
+#### Attributes usefull for sending content in `Sub URL for file`
 
 * `{{file_body}}` - base64 encoded file content `'data:'.$mediaFile->type.';base64,'.base64_encode(file_get_contents($mediaFile->file_path_server));`
 * `{{file_url}}` - url to download file directly
 * `{{file_name}}` - uploaded file name from operator
 
-Additional attribute you can use for `Sub URL for file` and `If you are sending file you can have a different body content`
+#### Additional attribute you can use for `Sub URL for file` and `If you are sending file you can have a different body content`
 
 * `{file_api}your request body in case it's a file{/file_api}`
 * `{image_api}your request body in case it's an image{/image_api}` - 'image/jpeg','image/png','image/gif'
