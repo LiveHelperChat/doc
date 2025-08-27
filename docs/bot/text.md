@@ -69,9 +69,9 @@ Text area supports these replaceable variables
 If message is media_type you can access uploaded file attributes
 
  * `{args.msg.file.file_body_embed}` - will generate `[chatfilebody=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for `file_body` replacement.
- * `{args.msg.file.file_body}` - `'data:'.$this->type.';base64,'.base64_encode(file_get_contents($this->file_path_server));`
+ * `{args.msg.file.file_body}` - `'data:'.$this->type.';base64,'.base64_encode(file_get_contents($this->file_path_server));` OpenAI requires
  * `{args.msg.file.file_body_embed_raw}` - will generate `[chatfilebodyraw=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for `file_body_raw` replacement.
- * `{args.msg.file.file_body_raw}` - `base64_encode(file_get_contents($this->file_path_server));`
+ * `{args.msg.file.file_body_raw}` - `base64_encode(file_get_contents($this->file_path_server));` Gemini requires
 
 These are the main classes
 
@@ -103,12 +103,14 @@ This feature is used in [Jitsi](integrating/jitsi.md) integration
 ### Or condition
 
 * `{variable.location__or__variable.location_2__or__variable.location_3...}` E.g if `from_name` is empty use `from_address` `{args.msg.from_name__or__msg.from_address}`
+* `{variable.location__or__variable.location_2__or__string__Raw value as fallback}` E.g if `from_name` or `from_address` is empty use text `Fallback` `{args.msg.from_name__or__msg.from_address__or__string__Fallback}`
 
 ### If conditions
 
 This can be used anywhere and useful in case variable has to be not empty to be printed.
 
 * `{variable.location__not_empty__Use this if not empty}` E.g `{args.msg.from_name__not_empty__<b>}{args.msg.from_name}{args.msg.from_name__not_empty__</b> }<{args.msg.from_address}><br/>`
+* `{variable.location__is_empty__Use this if empty}` E.g `{args.msg.from_name__is_empty__From name is empty}`
 
 ### Foreach cycle
 
