@@ -442,6 +442,7 @@ Will result in a widget with a shadow. It set's style directly to an iframe itse
 
 ![](/img/theme/shadow-widget.png)
 
+
 ### Widget body additional CSS, takes effect after save
 
 ```css
@@ -482,6 +483,17 @@ If you want to style messages depending on their state here is logic to follow.
 * Messages not having `.online-chat > .index-row-0` should be animated.
 * Stylings buttons default button has those CSS classes `btn btn-sm btn-outline-primary btn-bot`
 * While button click being processed it has `disabled` attribute set.
+
+#### How to change widget loader colors?
+
+This is a loader circle which you see while the widget content loads for the first time.
+
+```css
+#lhc-spinner-overlay .lhc-spinner-circle {
+    border: 3px solid #f3f3f3!important;
+    border-top: 3px solid #007bff!important;
+}
+```
 
 #### CSS Rules to style form buttons and inputs and their shadows
 
