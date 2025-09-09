@@ -55,6 +55,7 @@ Text area supports these replaceable variables
    * `{args.chat.online_user.previous_chat.nick}` - access previous chat nick
    * `{args.chat.online_user.previous_chat.chat_variables_array.debts.0.nit}` - access previous chat chat variables
  * `{msg_id}` - present message id.
+ * `{base_url}` - Base URL to the application. E.g `https://chat.example.com`, `https://example.com/lhc_web/index.php`
  * `{args.current_trigger.<id|name>}` - current trigger id. Stores current trigger
  * `{args.first_trigger.<id|name>}` - first trigger id. As during bot trigger execution multiple triggers can be involved this variables stores very first one.
  * `{random_20}` - generate random string length of 20

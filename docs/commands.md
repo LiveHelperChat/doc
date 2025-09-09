@@ -90,17 +90,17 @@ You can define a custom command:
 If a text message is defined as:
 
 ```
-1. - {args.arg_1} {arg_1}
-2. - {args.arg_2} {arg_2}
-3. - {args.arg_3} {arg_3}
+1. {args.arg_1_title} - {args.arg_1} {arg_1}
+2. {args.arg_2_title} - {args.arg_2} {arg_2}
+3. {args.arg_3_title} - {args.arg_3} {arg_3}
 ```
 
 The output will be:
 
 ```
-1. - first first [first argument]
-2. - second second [second argument]
-3. - third third [third argument]
+1. Title of field - first first [first argument]
+2. Title of field - second second [second argument]
+3. Title of field - third third [third argument]
 ```
 
 ### How to dispatch a custom event and listen in an LHC extension
@@ -123,16 +123,38 @@ public function listenDispatchEvent($params) {
 
 ### How to listen for arguments in REST API Calls
 
+In bot Rest API you can also configure something like this for dynamic field list.
+
+In the field `Custom argument 1 for the Rest API Call` define content as an example. It will pass title with data only if operator has filled it.
+
+```
+{args.arg_1_title}{args.arg_1__not_empty__: }{args.arg_1}{args.arg_1__not_empty__
+}{args.arg_2_title}{args.arg_2__not_empty__: }{args.arg_2}{args.arg_2__not_empty__
+}{args.arg_3_title}{args.arg_3__not_empty__: }{args.arg_3}{args.arg_3__not_empty__
+}{args.arg_4_title}{args.arg_4__not_empty__: }{args.arg_4}{args.arg_4__not_empty__
+}
+```
+
+And in rest API you can define
+
+```
+{
+"custom_fields_data": "Operator data:\nraw_{{custom_args_1}}"
+}
+```
+
+#### Use directly custom args in API
+
 In a REST API call, you can access arguments like this:
 
 ```
 // json_encode output
-{{args.arg_1}}
-{{args.arg_2}}
+{{args.arg_1_title}} - {{args.arg_1}}
+{{args.arg_2_title}} - {{args.arg_2}}
 
 // Raw output
-raw_{{args.arg_1}}
-raw_{{args.arg_2}}
+raw_{{args.arg_1_title}} - raw_{{args.arg_1}}
+raw_{{args.arg_2_title}} - raw_{{args.arg_2}}
 ```
 
 ### UI to call a command directly from chat

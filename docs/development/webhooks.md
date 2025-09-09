@@ -20,6 +20,7 @@ First, enable webhooks in your `settings.ini.php` file:
     array(
         'enabled' => true,
         'worker' => 'http', // resque
+        'single_event' => false, // resque
     ),
 ```
 
@@ -32,6 +33,15 @@ If you are updating from a version older than 3.47v, you must add these settings
 By default, events are executed in `http` mode. This means that when an event occurs, it is executed immediately. The disadvantage of this approach is that it can slow down the user interface for the visitor or operator.
 
 If you are using the [lhc-php-resque](https://github.com/LiveHelperChat/lhc-php-resque) extension, it is recommended to use `resque` as the worker. This will execute all events in the background.
+
+## `single_event` setting purpose
+
+This setting is relevant only if worker is `resque`.
+
+* `single_event => false` - This is the default option. It means if during event processing, another event is dispatched, it will be processed as a separate job.
+* `single_event => true` - If we are already in background mode and during script execution another event is dispatched, it will be processed instantly. In other words, we will not schedule new jobs if we are already in the background.
+
+I would suggest keeping this value as false. If event execution order is important to you, you can set it to true.
 
 ## How to setup hook based event?
 
