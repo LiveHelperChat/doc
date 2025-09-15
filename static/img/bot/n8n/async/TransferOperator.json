@@ -1,0 +1,71 @@
+{
+  "name": "TransferOperator",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -300,
+        -80
+      ],
+      "id": "5eb22274-74ea-4de0-aaf4-05c7fe6bbe80",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1a46ce4b-143d-4fff-9b2b-44be2405d917",
+              "name": "chat_status",
+              "value": 10,
+              "type": "number"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -100,
+        -80
+      ],
+      "id": "5059f90c-8cc7-4f1b-8794-6b4304a77f1c",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c13b734b-9d3e-4107-9607-173c170c74db",
+  "meta": {
+    "instanceId": "d09a1e4768706d18b06651d69aa9e387d9b00344a531dc0eca7ed25c2022ee8a"
+  },
+  "id": "ul2z7Y5hhXptHtMl",
+  "tags": []
+}

@@ -1,0 +1,263 @@
+{
+  "name": "LHCAgent",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aa055d47-5227-427c-8306-c87897409c8e",
+        "authentication": "headerAuth",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        -40
+      ],
+      "id": "a722daa2-4939-46ca-9d9f-0af5f25e77a6",
+      "name": "Webhook",
+      "webhookId": "aa055d47-5227-427c-8306-c87897409c8e",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "bbmc5ktvrQQhhq6M",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.text }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a helpful assistant\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        300,
+        -40
+      ],
+      "id": "69a110a0-6994-4892-87ca-a0e5b073f9f5",
+      "name": "AI Agent",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "o4-mini-2025-04-16",
+          "mode": "list",
+          "cachedResultName": "o4-mini-2025-04-16"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        300
+      ],
+      "id": "029c8090-8781-40b2-ae3e-b0e1263ac687",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "jY9URUs4jsqTPYMV",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.body.chat_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        360,
+        300
+      ],
+      "id": "cbdb157a-6d5d-42c9-9529-390ac8fe28bf",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://example.livehelperchat.com/restapi/addmsgadmin",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "chat_id",
+              "value": "={{ $('Webhook').item.json.body.chat_id }}"
+            },
+            {
+              "name": "msg",
+              "value": "={{ $json.output.message }}"
+            },
+            {
+              "name": "sender",
+              "value": "bot"
+            },
+            {
+              "name": "status",
+              "value": "={{$json.output.chat_status === 10 ? 0 : -1}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        -40
+      ],
+      "id": "08fda78d-151f-4f1c-995b-71c858822603",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "WknWgNFYdMUclygs",
+          "name": "LHC Rest API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to transfer chat to operator.",
+        "workflowId": {
+          "__rl": true,
+          "value": "ul2z7Y5hhXptHtMl",
+          "mode": "list",
+          "cachedResultName": "TransferOperator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "chat_status"
+          ],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        540,
+        300
+      ],
+      "id": "3821b450-6376-4f14-9a3f-d5a5f18f3f62",
+      "name": "chat_status",
+      "notesInFlow": true,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"message\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"chat_status\": {\n\t\t\t\"type\": \"number\",\n            \"minimum\": 0\n\t\t}\n\t}\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        680,
+        300
+      ],
+      "id": "8eb372d8-71de-41d4-a7fa-5c0a44a0d9ba",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    },
+    "chat_status": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "26daf083-0cec-4daf-ab3c-3a577003a715",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d09a1e4768706d18b06651d69aa9e387d9b00344a531dc0eca7ed25c2022ee8a"
+  },
+  "id": "95Ds3SnTvErQeCs5",
+  "tags": []
+}

@@ -6,7 +6,12 @@ title: Tutorial how to integrate n8n with Live Helper Chat
 
 This tutorial demonstrates how to integrate n8n workflow automation with Live Helper Chat to create an AI-powered chatbot using OpenAI.
 
-For a visual walkthrough of this integration process, you can watch our [tutorial video on YouTube](https://youtu.be/Xu3r1mtaqHY).
+There is two flows in this integration 
+
+* Non async flow. Then we keep connection and receive response as soon all processes in the middle is kept. Connection is kept alive which is not ASYNC flow. CURL Limits applies php-resque is a must otherwise you will keep php-fpm connection alive with it's worker waiting for an answer.
+* Async flow. Then we call webhook, and receive callback to our Rest API endpoint. This is async and preferred way.
+
+Async flow for a visual walkthrough of this integration process, you can watch our [tutorial video on YouTube](https://youtu.be/Xu3r1mtaqHY).
 
 ## Prerequisites
 
@@ -28,9 +33,48 @@ This tutorial provides a foundation that you can extend with your own custom wor
 
 ## n8n Configuration
 
-You can download the pre-configured n8n [workflow file](/img/bot/n8n/n8n.json) and import it directly into your n8n instance.
+### Flow example with NON async flow.
 
-### Important: Configure OpenAI Credentials
+You can download the pre-configured n8n [workflow file](/img/bot/n8n/n8n.json) and import it directly into your n8n instance. Here we use `Respond to webhook` node type.
+
+For `Respond` field we use `Respond to Webhook` Node.
+
+### Flow example with async flow.
+
+There is two flows we import here
+
+* `TransferOperator.json` which is responsible for setting attribute which we will use afterward sending response. [Download](/img/bot/n8n/async/TransferOperator.json) Transferring chat to pending status.
+* `LHCAgent.json` Async flow integration for n8n  [Download](/img/bot/n8n/async/LHCAgent.json)
+
+
+## Credentials setup for async flow
+
+Please make sure to set up your authentification headers correctly!
+
+* Calling n8n Async flow requires Authentification! In LHC Rest API configuration enter `Authorization -> Authorization method -> Bearer token`
+* Calling LHC Rest API Requires Basic auth just like https://api.livehelperchat.com/#/.
+
+### N8N Credentials
+
+Credentials types in N8N
+
+![](/img/bot/n8n/async/credentials-on-n8n.png)
+
+Webhook in N8n Uses `N8N Webhook Credential`
+
+![](/img/bot/n8n/async/authorization-type-webhook.png)
+
+And this credential is put in 
+
+![](/img/bot/n8n/async/lhc-credentials.png)
+
+### Live Helper Chat Credentials
+
+This credentials is used to make call to LHC after N8N flow is completed. [More information](/docs/development/rest-api.md)
+
+![](/img/bot/n8n/async/credentials-for-lhc.png) 
+
+## Important: Configure OpenAI Credentials
 
 Before using the workflow, you must configure your OpenAI API credentials in n8n:
 
@@ -98,20 +142,20 @@ If you prefer to use n8n's hosted service:
 
 1. Sign up at [n8n.io](https://n8n.io/)
 2. Create a new workflow
-3. Import the [workflow file](/img/bot/n8n/n8n.json)
+3. Click **Import** and select the downloaded Async or Non-Async n8n flow file
 
 ## Live Helper Chat Configuration
 
 ### Step 1: Import Rest API Configuration
 
-1. Download the [Rest API configuration](/img/bot/n8n/n8n-rest-api.json)
+1. Download the [Non Async Rest API configuration](/img/bot/n8n/n8n-rest-api.json) or [Async Rest API configuration](/img/bot/n8n/async/rest-api-105.json)
 2. In Live Helper Chat admin panel, go to **System → Rest API**
-3. Click **Import** and select the downloaded file
+3. Click **Import** and select the downloaded Async or Non-Async n8n flow file
 4. Configure the API endpoint to point to your n8n instance. Enter correct `Host` and `Sub URL`
 
 ### Step 2: Import Bot Configuration
 
-1. Download the [bot configuration](/img/bot/n8n/n8n-bot.json)
+1. Download the [Non async bot configuration](/img/bot/n8n/n8n-bot.json) or [Async bot configuration](/img/bot/n8n/async/lhc-bot-308.json)
 2. In Live Helper Chat admin panel, go to **Chats → Bots**
 3. Click **Import** and select the downloaded file
 4. During import, choose the Rest API configuration you imported in Step 1

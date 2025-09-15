@@ -1,0 +1,5 @@
+{
+    "name": "n8n",
+    "description": "n8n",
+    "configuration": "{\"host\":\"https:\/\/example.com\",\"log_code\":\"\",\"log_audit\":false,\"log_system\":true,\"ecache\":false,\"parameters\":[{\"method\":\"POST\",\"position\":0,\"authorization\":\"bearer\",\"api_key_location\":\"header\",\"query\":[],\"header\":[],\"conditions\":[],\"postparams\":[],\"userparams\":[],\"output\":[{\"key\":\"\",\"value\":\"\",\"id\":\"temp1749639181023\",\"success_header\":\"200\",\"success_name\":\"Success\",\"success_location\":\"message\",\"output_priority\":\"5\"},{\"key\":\"\",\"value\":\"\",\"id\":\"temp1749643996752\",\"success_name\":\"Failue\",\"success_location\":\"\"}],\"id\":\"temp1749639017705\",\"suburl\":\"\/webhook-test\/aa055d47-5227-427c-8306-c87897409c8e\",\"name\":\"Init\",\"body_request_type\":\"raw\",\"body_request_type_content\":\"json\",\"body_raw\":\"{\\n   \\\"text\\\": {{msg_url}},\\n   \\\"chat_id\\\": {{args.chat.id}}\\n}\",\"max_execution_time\":60,\"auth_bearer\":\"YOUR_BEAR_TOKEN_FOR_N8N\"}]}"
+}
