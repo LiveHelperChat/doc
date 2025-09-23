@@ -11,6 +11,19 @@ All work by default are happening in dashboard. Operators during work session do
 * Chat with customers
 * See departments/operators statistic
 
+## Department filtering options
+
+Those options apply only to department list and not department groups.
+
+* `Only online` - will return departments where are online operator assigned to department. Either directly or `All departments`
+* `Only explicit online` - will return departments where are online operator assigned to department only directly assigned.
+* `Hide hidden` - will hide hidden departments.
+* `Hide disabled` - will hide disabled departments.
+
+If you choose any of those filters, it will be applied to list by applying those filters to selected department list.
+
+If you apply filter without choosing department, we will apply it to visible departments. As the department list is AJAX, you might get nothing. Make sure you choose departments first.
+
 ## Required permissions for chat listing
 
 In short grant `'lhchat','list_all_chats'`(required) **or** `'lhchat','list_my_chats'`(required) `'lhchat','list_pending_chats'`(optional)
