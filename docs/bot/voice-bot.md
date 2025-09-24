@@ -32,7 +32,7 @@ This guide explains how to integrate voice message functionality into your chat 
 Download and import these pre-configured components:
 
 * [REST API Configuration](/img/bot/voice-messages/rest-api.json) - Configure your `OPENAI_API_KEY` in both the "Transcription" and "ChatCompletion" API calls
-* [Bot Configuration](/bot/voice-messages/bot.json) - When importing, select the REST API you just imported
+* [Bot Configuration](/img/bot/voice-messages/bot.json) - When importing, select the REST API you just imported
 
 ## Technical Requirements
 

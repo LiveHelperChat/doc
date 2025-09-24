@@ -42,7 +42,7 @@ The dashboard also has a "Bot chats" widget. Activating this widget will display
     *   [Button list](bot/button-list.md)
     *   [Send list](bot/list.md)
     *   Send predefined block
-    *   Send Typing
+    *   [Send Typing](bot/send-typing.md)
     *   [Send Video](bot/video.md)
     *   [Send Carrousel](bot/carousel.md)
     *   [Update Current chat](bot/update-current-chat.md)

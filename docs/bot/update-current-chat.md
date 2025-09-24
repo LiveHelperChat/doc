@@ -13,6 +13,12 @@ Using this trigger, a chat can continue in bot mode and execute triggers dependi
 
 Using this trigger, you can transfer a chat back to a bot.
 
+## Disable visitor sending messages until next operator/bot message
+
+This is useful to block visitor from sending any other message while we are waiting for a response from bot. E.g. during integration with AI
+
+[Sample setup](bot/send-typing.md)
+
 ## Close Chat
 
 This trigger will close the chat. This is useful if the visitor is not authenticated, or for any other reason you might consider.

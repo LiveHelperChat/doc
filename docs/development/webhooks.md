@@ -20,7 +20,7 @@ First, enable webhooks in your `settings.ini.php` file:
     array(
         'enabled' => true,
         'worker' => 'http', // resque
-        'single_event' => false, // resque
+        'single_event' => false
     ),
 ```
 

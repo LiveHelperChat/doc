@@ -111,6 +111,7 @@ module.exports = {
                     'bot/bot-text',
                     'bot/bot-list',
                     'bot/bot-button-list',
+                    'bot/send-typing',
                     'bot/collect-custom-attribute',
                     'bot/rest-api',
                     'bot/trigger-body',

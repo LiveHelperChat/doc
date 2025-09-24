@@ -77,7 +77,7 @@ These steps outline the requirements for integrating sentiment analysis with Liv
 *   Display the visitor's sentiment during the chat.
 *   Support Elasticsearch for sentiment analysis.
 
-We will use [webhooks](development/webhooks.md) to achieve this.
+We will use webhooks to achieve this.
 
 ### Configuring the REST API Call
 
@@ -117,7 +117,7 @@ This trigger stores the sentiment within the chat message and recalculates the s
 
 ![](/img/bot/sentiment-per-message/sentiment-outcome.png)
 
-For more information about [Messages aggregation](bot/update-current-chat.md#messages-aggregation), refer to the documentation.
+For more information about [Messages aggregation](bot/update-current-chat.md#Messages Aggregation), refer to the documentation.
 
 #### Sentiment Chat Trigger
 
