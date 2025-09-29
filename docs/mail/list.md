@@ -64,3 +64,27 @@ To include `chat_variables` column content in exported file
 
 The general permission required to access the mail list is:
 > 'lhmailconv','use_admin'
+
+### Bulk delete related permissions
+
+With this permission, the operator can delete all conversations regardless of ticket ownership.
+
+This permission is also required to use archive functions.
+
+This button is not available if an operator does not have the permission, even if they have permission to delete their own tickets.
+
+> 'lhmailconv','delete_conversation'
+
+### Bulk closing conversations
+
+With this permission, the operator can close all conversations regardless of ticket ownership.
+
+This button is not available if an operator does not have the permission, even if they have permission to close their own tickets.
+
+> 'lhmailconv','close_all_conversation'
+
+### Quick actions
+
+The quick actions button enables operators to efficiently change the owner of multiple tickets simultaneously.
+
+> 'lhmailconv','quick_actions'

@@ -191,6 +191,8 @@ Text colors and their meanings
 * yellow text - check was received `Chat configuration < Visitor activity < Interval between chat status checks in seconds, 0 disabled.` + 300 seconds *OR* if activity tracking is enabled and check is received + 10 seconds
 * grey text - visitor is offline
 
+If in the widget you choose show only connected, make sure you have set `Chat configuration < Visitor activity < Interval between chat status checks in seconds, 0 disabled.` value.
+
 #### Required configuration
 
 Required permission for operators
