@@ -126,10 +126,11 @@ Currently, clicking a notification does not open the chat window; it only opens 
 
 To log in to the demo of Live Helper Chat, use the following details:
 
-*   URL: [https://demo.livehelperchat.com](https://demo.livehelperchat.com)
-*   Login: admin
-*   Password: demo
-*   Uncheck "Append index.php to address"
+* URL: [https://demo.livehelperchat.com](https://demo.livehelperchat.com)
+* Login: admin
+* Password: demo
+* Uncheck "Append index.php to address"
+
 
 ## I'm seeing you are not a chat owner and I can't send a message
 
@@ -139,6 +140,8 @@ To log in to the demo of Live Helper Chat, use the following details:
 
 ## Troubleshooting Login Issues
 
+* Make sure in `Settings > Mobile > Settings` you have enabled `Enable mobile application and mobile notifications`
+* Make sure in main `settings.ini.php` file `'disable_rest_api_by_user' => false` is false.
 * Ensure that you have entered the domain address correctly. Pay attention to whether your URL requires `www` or not, as `https://www.example.com` and `https://example.com` are treated as different URLs.
 * If you still cannot log in, apply the `.htaccess` file provided below, as the `Authorization` headers are sometimes not parsed correctly by the Apache server.
 * Make sure your SSL configuration is valid by using https://www.sslshopper.com/ssl-checker.html
@@ -199,10 +202,19 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
 Refer to the Flutter documentation for compilation instructions. Here are a few quick tips:
 
-*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L18-L20](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L18-L20)
-*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L39-L46](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L39-L46)
-*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L53](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53)
-*   Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L72](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72)
+You might need to adjust those files location to newer build locations
+
+* Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L18-L20](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L18-L20)
+* Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L39-L46](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L39-L46)
+* Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L53](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L53)
+* Comment out these lines: [https://github.com/LiveHelperChat/lhc\_messenger/blob/1.1v/android/app/build.gradle#L72](https://github.com/LiveHelperChat/lhc_messenger/blob/1.1v/android/app/build.gradle#L72)
+
+https://github.com/LiveHelperChat/lhc_messenger/tree/5b89256225b3374959b0596eb7da4ad510529e79
+
+For compilation android studio with those SDK were used
+
+* Flutter 3.35.4
+* Dart 3.9.2 • DevTools 2.48.0
 
 ### Creating a Firebase Project
 
