@@ -71,6 +71,15 @@ If you are not receiving notifications, check the following:
 
 Often, iPhones may not receive notifications after app installation. If this occurs, try the following:
 
+#### A Option
+
+* After opening app for the very first time and granting notifications permissions kill the app
+* Reopen the app. Add the server. Before 1.27v on initial login device token was not passed. It's fixed in 1.27v
+* Delete the related session record in `Configuration -> System -> Mobile (Sessions)`.
+* Try to remove and add server again just.
+
+#### B Option
+
 *   Uninstall the app.
 *   Delete the related session record in `Configuration -> System -> Mobile (Sessions)`.
 *   Reinstall the app.
