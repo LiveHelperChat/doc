@@ -19,6 +19,8 @@ Types of API:
     *   <https://doc.livehelperchat.com/docs/bot/chatgpt-integration>
 * [Images support](bot/images-bot.md)
 
+Generic AI integration flow https://youtu.be/spREDwfeoCE with tool calling.
+
 ## Remote AI Services
 
 These solutions include:

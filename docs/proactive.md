@@ -203,6 +203,27 @@ With `postMessage` protocol
 window.parent.postMessage('lhc::addTag::["error_deposit"]','*');
 ```
 
+### If invitation is triggered, would it be shown on another page?
+
+* Yes, but only if those conditions are met
+  * `How many times user show invitation, 0 - untill users closes it, > 0 limits.`
+  * `Invitation expire time, after that period of time invitation will be hidden`
+
+### I want the invitation content to be shown in the widget content after it was closed by visitor
+
+Just check `Show everytime it is matched`.
+
+You can control how long it's valid via
+
+* `How many times user show invitation, 0 - untill users closes it, > 0 limits.` Has to be bigger than 0.
+* `Invitation expire time, after that period of time invitation will be hidden` or just set expire time.
+
+### My invitation even after closing is shown again on another page?
+
+If you are using `Show everytime it is matched` it will be shown even if visitor minimizes a widget. So just don't check that option. `__reset` appendix will force to show invitation in any case.
+
+Another option is to check In `Design` section `If shown invitation was closed, next time show it minimized.`
+
 ## FAQ
 
 ### How do I test my invitation rules?
