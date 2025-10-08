@@ -10,17 +10,23 @@ Proactive invitations triggers messages which are automatically send to a visito
     *   "Name for personal purposes" - just enter a name. Will be used only for personal purposes
     *   "Operator name" - what name should we shown as operator.
     *   "Position" - invitation priority in other words. Invitations with lower value has higher priority. If two invitations are matched. Invitation with lower position value will be shown to visitor.
-    *   "Language, leave empty for all. E.g lit, rus, ger etc..." - Live Helper Chat in which user is visiting site. siteaccess or language in other words. Usefull if for different language visitors you want to show different messages.
+    *   "Language, leave empty for all. E.g lit, rus, ger etc..." - Live Helper Chat in which user is visiting site. siteaccess or language in other words. Usefull if for different language visitors you want to show different messages.
     *   "Time on site in seconds" - how much time user has to spend on site for invitation to be triggered.
-    *   "Pageviews" - Number of pageviews user has to make for invitation to be triggered.
+    *   "Pageviews" - Number of pageviews user has to make for invitation to be triggered.
     *   "Referrer domain without www, E.g google keyword will match any of google domain" - self explanatory
     *   "How many times user show invitation, 0 - untill users closes it, > 0 limits." - how many times show invitation to visitor once invitation is triggered.
     *   "Show random operator profile" - if checked will show random logged operator profile.
     *   "Enter operators IDs from whom random operator should be shown, separated by comma" - if you want to show random operator profile just from specific list. You can enter these operator's id's.
-    *   "Identifier, for what identifier this message should be shown, leave empty for all" - Identifier, by this identifier you can filter for what embed codes this invitation is active. During embed code generaetion you have to use same identifier. That way you can have separate messages for separate identifiers.
+    *   "Identifier, for what identifier this message should be shown, leave empty for all" - Identifier, by this identifier you can filter for what embed codes this invitation is active. During embed code generaetion you have to use same identifier. That way you can have separate messages for separate identifiers.
     *   "Tag" - show invitation only for specifically tagged online visitors. (**Tutorial pending**)
     *   "Department" - show invitation only for visitors where department is provided in embed code. Otherwise invitation won't be triggered. In embed code generation you have to choose department.
-    *   "Message to user" - message to be send to visitor. 
+    *   "Message to user" - message to be send to visitor.
+    * `Show everytime it is match` - widget content will be shown even if visitor closes a chat. Widget content will remain the widget itself, but widget won't be auto opened or invitation bubble shown.
+    * `Do not show invitation after it was closed in the same session.` - this applies only if `URL to match. Multiple URL can be defined by comma. Wildcard is supported at the end of URL` is used.
+    * `Show next matching invitation if URL changes and present invitation was closed` - if during navigation URL changes and we have already invitation being closed. Show the next invitation. By default, we would show only one invitation.
+    * `Invitation is visible only if URL matches` - activate this option if you are entering url to match.
+    * `Show widget on invitation to chat. Applies only to desktop devices.` - by default we are showing bubble with invitation message. You can show the full widget.
+      * `If shown invitation was closed, next time show it minimized.` - if `Show everytime it is matched` we want next time if invitation/widget was closed show it in content instead of popup widget again.
 
 ```
 [html]
