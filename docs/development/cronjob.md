@@ -20,6 +20,11 @@ LHC uses cronjob for background chats assignment and maintenence tasks.
 php cron.php -s site_admin -c cron/workflow
 ```
 
+If you are debuting auto assignment, you can run cronjob like this 
+```shell script
+php cron.php -s site_admin -c cron/workflow -p debug
+```
+
 This cronjob does the following things.
 
  * Automatic chat's transfer workflow

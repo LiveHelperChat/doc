@@ -1,6 +1,6 @@
 ---
 id: auto-assignment
-title: How to setup round robin/automatic chats assignment workflow?
+title: How to setup round robin/automatic/auto chats assignment workflow?
 sidebar_label: Auto assignment
 ---
 
@@ -195,6 +195,8 @@ By default users sees all pending department chats. To disable that and show onl
 
 ### Chat acceptance workflow
 
+This information you see once you move your mouse over assignment action icon
+
 * `click_notification` - notification was clicked
 * `click` - widget was clicked or chat list
 * `opened_chats` - chat was loaded because it was opened before
@@ -209,3 +211,21 @@ By default users sees all pending department chats. To disable that and show onl
 * `channel_message_open` - opened by received channel message
 * `channel_message_reload` - opened by received channel channel message
 * `popup_open` - chat was opened from popup
+
+### I don't understand why chat was assigned to operator A but not operator B?
+
+This is the most common question I get until support managers starts to understand every bit. Here is what you can check
+
+1. Check is both operator assigned to the department you are checking against. Use user edit window.
+2. Make sure any other setting are the same for those operators.
+2. Check were they online during specific moment. `System configuration -> Users -> Online hours` choose one user at a time. They both should be online during that moment.
+3. In specific chat which you think was assigned incorrectly move mouse over `Assignment icon` there you will see currently assigned operator status at that time and next candidate.check
+4. Filter chat list using those two operators to see how chat flow for them.
+
+In this block you will see exactly what was picked as an operator and who is next candidate.
+
+<img height="774" width="669" src={useBaseUrl('img/chat/assign-action.jpg')} />
+
+Precaution action
+
+1. Disable live auto assignment and let [workflow cronjob](development/cronjob.md#default-cronjob-setup) do that. Run cronjob in debug mode.
