@@ -124,7 +124,8 @@ module.exports = {
                     'bot/restrict-execution-more-than-defined-times',
                     'bot/log-action',
                     'bot/send-mail',
-                    'bot/iframe'
+                    'bot/iframe',
+                    'bot/send-predefined-block'
                 ]
             },
             {

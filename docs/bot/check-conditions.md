@@ -165,7 +165,6 @@ There is two scenarios
 
 ![](/img/bot/bot-conditions-trigger-reverse.png)
 
-
 ## How do I check if I had a chat with this user and skip bot in that scenario?
 
 We will have three triggers

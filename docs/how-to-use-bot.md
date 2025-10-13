@@ -41,7 +41,7 @@ The dashboard also has a "Bot chats" widget. Activating this widget will display
     *   [Collect custom attribute](bot/collecting-information.md)
     *   [Button list](bot/button-list.md)
     *   [Send list](bot/list.md)
-    *   Send predefined block
+    *   [Send predefined block](bot/send-predefined-block.md)
     *   [Send Typing](bot/send-typing.md)
     *   [Send Video](bot/video.md)
     *   [Send Carrousel](bot/carousel.md)
