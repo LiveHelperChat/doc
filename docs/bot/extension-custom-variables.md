@@ -3,6 +3,17 @@ id: custom-variables-extension
 title: Custom variables defined in extensions
 ---
 
+See sample of extension
+
+https://github.com/LiveHelperChat/livehelperchat-extensions/tree/master/lhccustomvariables
+
+After that you can just use `Debug chat attribute` from `Audit log` window.
+
+In this sample we define two variables
+
+ * `{args.msg.msg_dynamic_array.number_of_words}`
+ * `{args.chat.chat_dynamic_array.player_class}`
+
 You can define 
 
 `bootstrap.php` extension file sketch

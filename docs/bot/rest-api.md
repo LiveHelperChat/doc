@@ -58,6 +58,10 @@ In this field URL can be `urlencode_{{args.chat.nick}}` or without escaped url `
 
 ![](/img/bot/rest-api-trigger.png)
 
+### Split message into separate Rest API calls if message contains text and files at the same time.
+
+It's an easy fix to send operator message containing files and text at the same time as a separate messages. It can be used for Telegram, WhatsApp, Messenger or any other Rest API where you think it would be usefull.
+
 ### Params
 
 In the `Params` section, you define arguments that should be accessible as `GET` parameters.
