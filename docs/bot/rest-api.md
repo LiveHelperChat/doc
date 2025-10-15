@@ -480,7 +480,7 @@ Other:
 * `{{subject_list}}` - array of subjects objects with all attributes
 * `{{subject_list_names}}` - string of subject names imploded by comma 
 * `{{survey}}` - filled chat surveys
-* `{{replaceable.<identifier>}}` Use replaceable variables in Rest API
+* `{{replaceable.<identifier>}}` Use [Replaceable variables](../replaceable-variables.md) in Rest API. E.g if your replaceable variable identifier is `brand` you can use in `Rest API` `{{replaceable.brand}}` Usefull in case you want to have different system prompt or functions per department.
 
 #### Do not send a request if this variable is empty
 
