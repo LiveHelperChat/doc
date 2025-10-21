@@ -23,6 +23,8 @@ This guide explains how to integrate voice message functionality into your chat 
 
 ![Audio file upload detection](/img/bot/bots/audio-uploaded.jpg)
 
+**Important Trigger Configuration Note:** In the trigger setup, you'll see two conditional triggers. For the first trigger that checks for audio files, the **"If conditions are NOT met"** field must be left empty. For the final trigger in the chain, you should select **"default for unknown message"** to handle all other message types.
+
 2. The audio is transcribed and processed:
 
 ![Text transcription result](/img/bot/bots/text-transcribed.jpg)
