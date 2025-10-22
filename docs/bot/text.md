@@ -60,6 +60,9 @@ Text area supports these replaceable variables
  * `{args.current_trigger.<id|name>}` - current trigger id. Stores current trigger
  * `{args.first_trigger.<id|name>}` - first trigger id. As during bot trigger execution multiple triggers can be involved this variables stores very first one.
  * `{random_20}` - generate random string length of 20
+ * `{rnumber_10_<end_number>}` - generate random number.
+   * `{rnumber_10}` - random number from 1 till 10 inclusive
+   * `{rnumber_10_20}` - random number from 10 till 20 inclusive
  * `{args.chat.chat_dynamic_array.*}` - variables which were defined by extensions. Lear how to define [your own custom variables](bot/extension-custom-variables.md).
  * `{args.chat.id}` [Chat object](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/lib/models/lhchat/erlhcoreclassmodelchat.php#L196) also see `__get` method for magic attributes like
      * `department` or `user`
