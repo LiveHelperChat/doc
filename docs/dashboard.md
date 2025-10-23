@@ -387,8 +387,8 @@ You will see multiple open chats at the same time.
 * ![](/img/dashboard/icons/send-received-not.png) - last message we send was **not** received by visitor
 * ![](/img/dashboard/icons/visitor-online.png) - visitor is connected
   * Last sync from visitor on a desktop device happened less than 60 seconds ago, or on mobile devices less than 240 seconds ago.
-  * Or chat status is one of `erLhcoreClassModelChat::STATUS_SUB_SURVEY_COMPLETED`, `erLhcoreClassModelChat::STATUS_SUB_SURVEY_SHOW`, `erLhcoreClassModelChat::STATUS_SUB_USER_CLOSED_CHAT`, `erLhcoreClassModelChat::STATUS_SUB_CONTACT_FORM`
-* ![](/img/dashboard/icons/visitor-online-not.png) - visitor is **not** connected anymore
+  * Or chat status is **not** one of `erLhcoreClassModelChat::STATUS_SUB_SURVEY_COMPLETED`, `erLhcoreClassModelChat::STATUS_SUB_SURVEY_SHOW`, `erLhcoreClassModelChat::STATUS_SUB_USER_CLOSED_CHAT`, `erLhcoreClassModelChat::STATUS_SUB_CONTACT_FORM`
+* ![](/img/dashboard/icons/visitor-online-not.png) - visitor is **not** connected anymore. This occurs when the conditions for being connected are not met.
 * ![](/img/dashboard/icons/we-send-last-message.png) - we have sent the last message
 * ![](/img/dashboard/icons/we-received-last-message.png) - we have received the last message
 * ![](/img/dashboard/icons/timer-wait.png?v=1) - visitor is waiting reply from us longer than defined amount of time in `(Chat configuration -> Misc -> How long we should wait before we inform operator about unanswered chat.)` and chat is not closed. `($chat->status != erLhcoreClassModelChat::STATUS_CLOSED_CHAT && $chat->last_user_msg_time > ($chat->last_op_msg_time > 0 ? $chat->last_op_msg_time : $chat->pnd_time) && (time() - $chat->last_user_msg_time > (int)erLhcoreClassModelChatConfig::fetchCache('vwait_to_long')->current_value) ? erLhcoreClassChat::formatSeconds(time() - $chat->last_user_msg_time) : null));`
