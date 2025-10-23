@@ -386,6 +386,8 @@ You will see multiple open chats at the same time.
 * ![](/img/dashboard/icons/send-received.png) - last message we send was received by visitor
 * ![](/img/dashboard/icons/send-received-not.png) - last message we send was **not** received by visitor
 * ![](/img/dashboard/icons/visitor-online.png) - visitor is connected
+  * Last sync from visitor on a desktop device happened less than 60 seconds ago, or on mobile devices less than 240 seconds ago.
+  * Or chat status is one of `erLhcoreClassModelChat::STATUS_SUB_SURVEY_COMPLETED`, `erLhcoreClassModelChat::STATUS_SUB_SURVEY_SHOW`, `erLhcoreClassModelChat::STATUS_SUB_USER_CLOSED_CHAT`, `erLhcoreClassModelChat::STATUS_SUB_CONTACT_FORM`
 * ![](/img/dashboard/icons/visitor-online-not.png) - visitor is **not** connected anymore
 * ![](/img/dashboard/icons/we-send-last-message.png) - we have sent the last message
 * ![](/img/dashboard/icons/we-received-last-message.png) - we have received the last message
