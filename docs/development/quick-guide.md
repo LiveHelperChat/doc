@@ -81,13 +81,14 @@ Follow the instructions on [how to override any template](extending/overriding-t
 
 More useful links:
 
-*   It's possible to override any image in the web application without [overriding default ones](development/unbrand.md#how-to-change-logo).
-*   It's possible to override any CSS in the web application without [overriding default ones](development/unbrand.md).
-*   It's possible to override [any template](extending/overriding-templates.md) without overriding default ones.
-*   It's possible to override [any class](development/override-class.md).
-*   It's possible to override [any module, or just a single URL](extending/override-module.md).
-*   It's possible to override [translations](language.md#how-to-override-default-translations).
-*   If you are not sure which template is used, enable [debug output](debug.md).
-*   If you change templates and nothing changes, [disable the cache](debug.md#disabling-cache).
-*   You can write [your own extensions](extending/writing-extension.md).
-*   We are using the Bootstrap 4 CSS framework.
+* It's possible to override any image in the web application without [overriding default ones](development/unbrand.md#how-to-change-logo).
+* It's possible to override any CSS in the web application without [overriding default ones](development/unbrand.md).
+* It's possible to override [any template](extending/overriding-templates.md) without overriding default ones.
+* It's possible to override [any class](development/override-class.md).
+* It's possible to override [any module, or just a single URL](extending/override-module.md).
+* It's possible to override [translations](language.md#how-to-override-default-translations).
+* If you are not sure which template is used, enable [debug output](debug.md).
+* If you change templates and nothing changes, [disable the cache](debug.md#disabling-cache).
+* You can write [your own extensions](extending/writing-extension.md).
+* We are using the Bootstrap 4 CSS framework.
+* Debugging [incoming webhooks](development/incoming-webhooks.md#how-to-debug-if-something-does-not-work)

@@ -106,9 +106,10 @@ After doing that, a new window will open in Chrome. Just delete `"view-source:"`
 
 ## What to Do If the App Returns a White Screen During an Action
 
-*   [Disable cache](#disabling-cache)
-*   Enable [debug output](#enabling-debug-output)
-*   Check `cache/default.log` for an error message.
-*   Check the Chrome console for an error (`CTRL+SHIFT+J`).
-*   Read [My widget does not load](install.md#my-widget-does-not-load)
-*   See the [Audit Logs](audit/audit.md) section for an error.
+* [Disable cache](#disabling-cache)
+* Enable [debug output](#enabling-debug-output)
+* Check `cache/default.log` for an error message.
+* Check the Chrome console for an error (`CTRL+SHIFT+J`).
+* Read [My widget does not load](install.md#my-widget-does-not-load)
+* See the [Audit Logs](audit/audit.md) section for an error.
+* Debugging [incoming webhooks](development/incoming-webhooks.md#how-to-debug-if-something-does-not-work)
