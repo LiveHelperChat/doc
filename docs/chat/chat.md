@@ -32,6 +32,10 @@ To allow an operator to see the actual author of a message (instead of an alias)
 
 `lhchat,see_operator_name`
 
+For operator to see audit Rest API message he has to have 
+
+`'lhaudit','see_audit_system'` permission
+
 ### Message Edit Actions
 
 ![](/img/chat/chat-message-popover.png)
