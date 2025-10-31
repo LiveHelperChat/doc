@@ -1,3 +1,4 @@
+---
 id: chat-window
 title: Chat window
 ---
