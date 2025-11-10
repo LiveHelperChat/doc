@@ -17,7 +17,7 @@ Google offers a grounding feature that can act as your data source if the conten
 Below is an example of a RAW curl request:
 
 ```bash
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=API_KEY" \
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "system_instruction": {
@@ -96,7 +96,13 @@ E.g
 
 ![transfer_operator](/img/bot/transfer-event.png)
 
-## RAG Integration
+## RAG integration, gemini way
+
+Just navigate to and you will find all required information.
+
+https://github.com/LiveHelperChat/gemini-rag
+
+## RAG Integration, advanced locally hosted
 
 In this example, we will be making RAG solution I'm using on this documentation website as of 2025-04-08.
 

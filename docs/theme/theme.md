@@ -29,6 +29,15 @@ If you are embedding widget in other language than default you have two options
 * Either edit [`default_site_access`](https://github.com/LiveHelperChat/livehelperchat/blob/bb8f5b8c5b4e5df6cedc7dbae61cbfd463b14d9f/lhc_web/settings/settings.ini.default.php#L28) and put same value as your widget `lang` attribute without slashes 
 * Either add your language to `['default_site_access_list'] => ['eng','lit']`. E.g we will use `Main` translation if widget language is `lit` or `eng`. [Setting location](https://github.com/LiveHelperChat/livehelperchat/blob/4.52v/lhc_web/settings/settings.ini.default.php#L29) 
 
+## Operator profile before chat start
+
+#### Operator intro text
+
+This allows to change `Have a question? Ask us!` text
+
+
+
+
 ## Status widget style
 
 Here you can change main widget attributes. Like logo etc.
