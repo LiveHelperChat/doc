@@ -4,6 +4,10 @@ sidebar_label: ChatGPT Integration (Completions, Tool Calls)
 title: Integrating ChatGPT into Live Helper Chat with Tool Calls Support (Completions API)
 ---
 
+:::tip
+This integration flow using the Completions API is deprecated. Consider using the [Responses API](bot/chatgpt-responses.md) instead for newer implementations.
+:::
+
 This integration uses the Chat Completions API.
 
 * [API Reference](https://platform.openai.com/docs/api-reference/chat)

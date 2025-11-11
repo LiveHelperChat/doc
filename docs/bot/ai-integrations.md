@@ -57,15 +57,13 @@ I have not personally used it for RAG or function calling, so it's difficult to 
 
 **Advantages:**
 
-*   No need to rent, maintain, or train a server.
-*   Reliable provider.
-
-**Disadvantages:**
-
-*   Data is hosted remotely.
-*   There is no out-of-the-box back-office UI where you can upload your files and have vector storage. You need to do it manually or develop it.
-    *   Some samples using vector storage: <https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/use-cases/retrieval-augmented-generation/intro_multimodal_rag.ipynb>
-    *   You could host your own RAG locally and use Gemini just as an LLM generator.
+* No need to rent, maintain, or train a server.
+* Reliable provider.
+* RAG
+    * Some samples using vector storage: https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/use-cases/retrieval-augmented-generation/intro_multimodal_rag.ipynb
+    * You could host your own RAG locally and use Gemini just as an LLM generator.
+    * https://github.com/LiveHelperChat/gemini-rag New File Search approach directly storing document.
+    * https://doc.livehelperchat.com/docs/bot/meilisearch-as-rag Meili Search as RAG provider
 
 **Open Question:**
 

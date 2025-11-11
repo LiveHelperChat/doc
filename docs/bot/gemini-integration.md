@@ -6,9 +6,10 @@ title: Integrating Gemini into Live Helper Chat with tool calls support
 
 A good place to start your journey with Gemini is to read the [official documentation](https://ai.google.dev/gemini-api/docs/models/gemini).
 
-Notes
+Notes 
 
 * Gemini does not have UI like OpenAI where you can upload your docs. You can see their samples how to use a large context window and attach to running bot your docs.
+  * https://github.com/LiveHelperChat/gemini-rag RAG flow using Google file search feature. Complete RAG solution.
   * https://ai.google.dev/gemini-api/docs/long-context
   * https://ai.google.dev/gemini-api/docs/document-processing?lang=rest
 
