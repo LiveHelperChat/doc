@@ -87,9 +87,9 @@ Simply edit the department and set the number of seconds after which the user sh
 
 As a bonus, you can implement the following advanced workflow:
 
-*   Use an auto-responder to send a "please wait" message.
-*   Set up a delayed responder to inform the user after 30 seconds (if the chat is not accepted) that they will be redirected to the "leave a message" form.
-*   Configure the system to redirect the user to the offline form after 35 seconds.
+* Use an auto-responder to send a "please wait" message.
+* Set up a delayed responder to inform the user after 30 seconds (if the chat is not accepted) that they will be redirected to the "leave a message" form.
+* Configure the system to redirect the user to the offline form after 35 seconds.
 
 This workflow can be further enhanced by transferring the chat to another department first and then showing the feedback form. In that case, the "Rejected" department must be configured to redirect the user to the feedback form.
 
@@ -117,8 +117,8 @@ See the video tutorial: https://www.youtube.com/watch?v=mqXDCwGy3U8
 
 The basic steps are:
 
-*   Set up an auto-responder (optional).
-*   Edit the department settings: `Delay in seconds before leave a message form is shown. 0 Means functionality is disabled`.
+* Set up an auto-responder (optional).
+* Edit the department settings: `Delay in seconds before leave a message form is shown. 0 Means functionality is disabled`.
 
 That's it! :)
 

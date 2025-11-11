@@ -238,28 +238,31 @@ In any case, if you want it to be more real-time, you can reduce this time. Keep
 
 Here are a few possible cases:
 
-### You are offline, but the page shows that you are online:
+#### You are offline, but the page shows that you are online:
 
 * You have set up department online hours, and the chat is showing the status based on that.
 * There is a 5-minute timeout before the chat status changes to offline. This is the time since the operator was last seen. This can be changed in the chat configuration. I suggest not keeping it shorter than 30 seconds.
 * By default, a page view is required to see the new operator status. If you do not want this, you can enable automatic status changes.
+* You have assigned bot to department, but have not chosen `Bot follows online hours. Department will be offline if there is no online operators or it is outside work hours.`. Assigned bot to department always make widget online mode.
 
-### You are online, but the webpage shows that you are offline:
+#### You are online, but the webpage shows that you are offline:
 
-* You have checked "Ignore users online statuses and use department online hours" in the chat configuration but forgot to activate online hours in the department.
+* You have checked `Ignore users online statuses and use department online hours` in the chat configuration, but forgot to activate online hours in the department.
+* In department `Automate online hours` you have chosen `Ignore operators online statuses and use departments online hours. > Only for this department.` 
 * You have embed code without department, but all your departments are hidden. Hidden departments do not participate in global online status check.
 
-### How is it decided whether to show an online/offline user?
+#### How is it decided whether to show an online/offline user?
 
 You should check these conditions if you are online, but the widget shows that no operators are connected.
 
-*   A visitor can be assigned to an Individual department, a Department, a Department Group, or all departments.
-*   When checking if someone is online, we first check whether a department was provided or not.
-*   Whether a department ID **is or is not** provided, we decide whether to show the widget based on this workflow:
-    *   We check if someone is online from directly assigned operators or someone with all departments assigned.
-    *   If we did not find anyone, we check if department online hours are provided.
-    *   We also check if the department is overloaded or not. If the department is overloaded (the maximum pending chats limit has been reached), it will go to offline mode except if a bot is assigned.
-    *   We check that the operator is online and has write access to the specific department or at least one department.
-*   Operators themselves can have two statuses:
-    *   Online/Offline - Whether the operator is online or not.
-    *   Visible/Invisible - If an operator opens a pending chat while in invisible mode, the chat is not assigned to them, and the chat status does not change.
+* A visitor can be assigned to an Individual department, a Department, a Department Group, or all departments.
+* When checking if someone is online, we first check whether a department was provided or not.
+* Whether a department ID **is or is not** provided, we decide whether to show the widget based on this workflow:
+ * We check if someone is online from directly assigned operators or someone with all departments assigned.
+ * If we did not find anyone, we check if department online hours are provided.
+ * We also check if the department is overloaded or not. If the department is overloaded (the maximum pending chats limit has been reached), it will go to offline mode except if a bot is assigned.
+ * We check that the operator is online and has write access to the specific department or at least one department.
+ * If bot is assigned to department without choosing `Bot follows online hours. Department will be offline if there is no online operators or it is outside work hours.` department will be always online.
+* Operators themselves can have two statuses:
+ * Online/Offline - Whether the operator is online or not.
+ * Visible/Invisible - If an operator opens a pending chat while in invisible mode, the chat is not assigned to them, and the chat status does not change.
