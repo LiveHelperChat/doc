@@ -193,3 +193,13 @@ Trigger is triggered on `remember` keyword
 
 ![image](https://github.com/user-attachments/assets/68756188-cb5f-474e-90c5-a73a32dda394)
 
+
+## Example how to avoid redirect visitor to operator if there is no operators online/we are outside of defined work hours?
+
+First check that values are correct in department `Load statistic` window. This window can be reached by clicking `Circle` icon near department name in department list.
+
+![](/img/bot/check-conditions/load-dep.png)
+
+[Bot example using](/img/bot/check-conditions/lhc-bot.json) `online_department_hours`, `online_op_department` variables.
+
+

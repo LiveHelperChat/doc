@@ -1,0 +1,162 @@
+{
+    "bot": {
+        "nick": "isOnline",
+        "name": "IsOnline"
+    },
+    "groups": [
+        {
+            "group": {
+                "name": "Operators Online Check",
+                "is_collapsed": 0,
+                "pos": 0
+            },
+            "triggers": [
+                {
+                    "trigger": {
+                        "id": 2843,
+                        "name": "work_hours",
+                        "actions": "[{\"_id\":\"nKMufFtzK\",\"type\":\"conditions\",\"content\":{\"text\":\"\",\"conditions\":[{\"_id\":\"NShWEXG9J\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"eq\",\"val\":\"1\",\"attr\":\"online_department_hours\"}}],\"attr_options\":{\"callback_match\":\"2844\"}}},{\"_id\":\"cXupzDMkx\",\"type\":\"text\",\"content\":{\"text\":\"No operators online\"}}]",
+                        "default": 0,
+                        "default_unknown": 1,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "work_hours",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 0,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2844,
+                        "name": "There are operators online",
+                        "actions": "[{\"_id\":\"-TSpHA4gZ\",\"type\":\"text\",\"content\":{\"text\":\"You are during work hours or operator is online\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2845,
+                        "name": "is_op",
+                        "actions": "[{\"_id\":\"nKMufFtzK\",\"type\":\"conditions\",\"content\":{\"text\":\"\",\"conditions\":[{\"_id\":\"NShWEXG9J\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"eq\",\"val\":\"1\",\"attr\":\"online_op_department\"}}],\"attr_options\":{\"callback_match\":\"2844\"}}},{\"_id\":\"cXupzDMkx\",\"type\":\"text\",\"content\":{\"text\":\"No operators online\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "is_op",
+                            "pattern_exc": "",
+                            "configuration": "[]",
+                            "type": 0,
+                            "on_start_type": 0,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                }
+            ]
+        },
+        {
+            "group": {
+                "name": "Operators Online Reverse Check",
+                "is_collapsed": 0,
+                "pos": 0
+            },
+            "triggers": [
+                {
+                    "trigger": {
+                        "id": 2846,
+                        "name": "not_work_hours",
+                        "actions": "[{\"_id\":\"nKMufFtzK\",\"type\":\"conditions\",\"content\":{\"text\":\"\",\"conditions\":[{\"_id\":\"NShWEXG9J\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"eq\",\"val\":\"0\",\"attr\":\"online_department_hours\"}}],\"attr_options\":{\"callback_match\":\"2847\",\"callback_unmatch\":\"\",\"continue_all\":false}}},{\"_id\":\"cXupzDMkx\",\"type\":\"text\",\"content\":{\"text\":\"You are during work hours\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "not_work_hours",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 0,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2847,
+                        "name": "There are NO operators online",
+                        "actions": "[{\"_id\":\"-TSpHA4gZ\",\"type\":\"text\",\"content\":{\"text\":\"You are NOT during work hours or operator is online\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2850,
+                        "name": "not_is_op",
+                        "actions": "[{\"_id\":\"nKMufFtzK\",\"type\":\"conditions\",\"content\":{\"text\":\"\",\"conditions\":[{\"_id\":\"NShWEXG9J\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"eq\",\"val\":\"0\",\"attr\":\"online_op_department\"}}],\"attr_options\":{\"callback_match\":\"2847\"}}},{\"_id\":\"cXupzDMkx\",\"type\":\"text\",\"content\":{\"text\":\"Operators online\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "not_is_op",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 0,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                }
+            ]
+        }
+    ]
+}
