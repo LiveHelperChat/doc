@@ -108,7 +108,29 @@ Here is example how full `tools` section might look like. If you do not want to 
 
 ### Calling a Trigger Based on a Defined Function in ChatGPT
 
+This is how you would integrate transfer to operator scenario. Same flow applies to gemini bot.
+
 1. Note the defined function in Rest API, `transfer_operator`.
+
+```json
+{
+  "type": "function",
+  "name": "transfer_operator",
+  "description": "Transfers to operator (agent, human) if user asks to connect them to human agent OR you (the bot) are not confident you can resolve the issue.. It is enough for the user to say 'human' or 'agent' alone to call this function.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false,
+    "required": []
+  }
+}
+```
+
+To system prompt you can add this sentence for guidance also.
+
+> Always call transfer_operator function if (and only if) you are explicitly asked for a human (or agent) OR if you can not help user with specific task.
+
 2. Add an [event](bot/triggers.md) to your trigger with the `Type` set to `Custom text matching`. The `Should include any of these words` value should be `transfer_operator`.
 
 For example:
