@@ -88,6 +88,36 @@ For older versions, follow these steps:
     ```
 2.  **Update Composer:** Run `composer update`.
 
+### Autoloader/composer related configuration
+
+Since 4.74v we migrate from internal autoload to [composer](https://getcomposer.org) one. Updating now requires to run defined command to generate class autoload
+
+> composer dump-autoload -o -a
+
+If you have multiple extensions in `lhc_web/extension` folder, but not all of them a using make sure exclude them. You can just move them from `extensions` folder
+
+E.g here we exclude `elasticsearch` extension.
+
+```json
+ "autoload": {
+    "exclude-from-classmap": [
+      "extension/elasticsearch"
+    ],
+    "psr-4": {
+      "LiveHelperChat\\": "lib/vendor_lhc/LiveHelperChat/",
+      "Pachico\\": "lib/vendor_lhc/Pachico/",
+      "enshrined\\": "lib/vendor_lhc/enshrined/",
+      "LiveHelperChatExtension\\": "extension/"
+    },
+    "classmap": [
+      "lib/core",
+      "lib/models"
+    ]
+  },
+```
+
+This will ensure that your autoload file does not contain any classes you are not using.
+
 ### Permissions
 
 The operator requires the `'lhsystem', 'performupdate'` permission to view "Update information."
