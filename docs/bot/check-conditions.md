@@ -193,6 +193,25 @@ Trigger is triggered on `remember` keyword
 
 ![image](https://github.com/user-attachments/assets/68756188-cb5f-474e-90c5-a73a32dda394)
 
+## Internal comparison operators
+
+Supported comparator keys (`content.comp`) and their meaning:
+
+* `eq` \- Equality. 
+* `lt` \- Numeric less than.
+* `lte` \- Numeric less than or equal. 
+* `gt` \- Numeric greater than. 
+* `gte` \- Numeric greater than or equal. 
+* `neq` \- Not equal. 
+* `like` \- Pattern presence in `attr` (message) using internal matcher.
+* `notlike` \- Pattern must NOT be present.
+* `contains` \- `multiAttr`: intersection with comma separated `valAttr` not empty; else substring search.
+* `notempty` \- `attr` must not be empty.
+* `isempty` \- `attr` must be empty.
+* `in_list` \- `attr` in `valAttr` split by `||`.
+* `in_list_lowercase` \- Case insensitive `in_list`.
+* `not_in_list` \- `attr` NOT in `valAttr` split by `||`.
+* `not_in_list_lowercase` \- Case insensitive `not_in_list`.
 
 ## Example how to avoid redirect visitor to operator if there is no operators online/we are outside of defined work hours?
 

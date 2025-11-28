@@ -93,6 +93,7 @@ If a text message is defined as:
 1. {args.arg_1_title} - {args.arg_1} {arg_1}
 2. {args.arg_2_title} - {args.arg_2} {arg_2}
 3. {args.arg_3_title} - {args.arg_3} {arg_3}
+4. {args.arg_command_title} - Command name
 ```
 
 The output will be:

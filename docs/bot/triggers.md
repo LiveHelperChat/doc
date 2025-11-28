@@ -116,8 +116,9 @@ You can require a specific ending for a word while also allowing any other endin
 
 You can also use regular expressions (preg_match rules). To specify a comma within the expression, use `_com_`. Enclose the regular expression with forward slashes `/`.
 
-*   Example 1: `/^[A-Za-z0-9]{3_com_6}$/` translates to `^[A-Za-z0-9]{3,6}$`
-*   Example 2: `/^cashba(.*?)/is`
+* Example 1: `/^[A-Za-z0-9]{3_com_6}$/` translates to `^[A-Za-z0-9]{3,6}$`
+* Example 2: `/^cashba(.*?)/is`
+* Example 3: `/(.*?)testpages\/widget_news(.*?)/,/(.*?)testpages\/widget_new(.*?)/` Applies to `like` conditions also.
 
 You can require combinations of words:
 

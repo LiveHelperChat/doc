@@ -17,7 +17,7 @@ This guide explains how to upgrade Live Helper Chat (LHC) from version 2.04 onwa
     *   Go to "System" -> "Update information" to check for database differences. If any are found, click "Update database."
     *   If the web interface is inaccessible, run the following commands from the root folder:
         *   `php cron.php -s site_admin -c cron/util/update_database` (Updates from the remote URL.)
-        *   If the above command fails, use: `php cron.php -s site_admin -c cron/util/update_database -p local` (Run after replacing files).
+        *   If the above command fails, use: `php cron.php -s site_admin -c cron/util/update_database -p local` (Run after replacing files and running composer command).
     *   **Manual Database Update (If Files Were Overwritten):**
         1.  [Update the database from the local definition](system/command.md#updates-live-helper-chat-database-directly-from-console).
         2.  Alternatively, copy `doc/shell/upgrade.php` to the root folder and access it through your browser (e.g., `https://example.com/upgrade.php`).
@@ -25,13 +25,15 @@ This guide explains how to upgrade Live Helper Chat (LHC) from version 2.04 onwa
 4.  **Replace Files:**
     *   [Download the latest LHC version](http://livehelperchat.com/article/static/5).
     *   Overwrite the following folders: `doc`, `ezcomponents`, `lib`, `modules`, `pos`, `translations`, and `design`.
-    *   Also, overwrite `index.php` and `cron.php`.
+    *   Also, overwrite `index.php` and `cron.php`, `composer.json`, `composer.lock`and (`resque.php` if you are using it).
     *   **Downloads:**
         1.  [https://github.com/remdex/livehelperchat/archive/master.zip](https://github.com/remdex/livehelperchat/archive/master.zip) (Latest master branch without Composer dependencies.)
         2.  [https://github.com/LiveHelperChat/livehelperchat/releases](https://github.com/LiveHelperChat/livehelperchat/releases) (Latest release with Composer dependencies.)
 5.  **Update Composer Dependencies (If Applicable):**
     *   Overwrite `composer.json` and `composer.lock`.
-    *   Run `composer install` for first time install or `composer dump-autoload -o -a`
+    *   Run `composer install` for first time install or for consecutive. It's **required**
+      * `composer install`
+      * `composer dump-autoload -o -a`
 6.  **Disable Cache:** Disable the cache in `settings.ini.php` (refer to [debug.md#disabling-cache](debug.md#disabling-cache)).
 7.  **Clear Cache:**
     *   Log back in and go to "System configuration" -> "Clear Cache," then click "Clear Cache."
@@ -51,6 +53,9 @@ cd var/www/lhc_web && git pull origin master
 
 # Install new composer dependencies if any
 cd var/www/lhc_web && composer install
+
+# Regenerate composer class map
+cd var/www/lhc_web && composer dump-autoload -o -a
 
 # Update database
 cd var/www/lhc_web && php cron.php -s site_admin -c cron/util/update_database

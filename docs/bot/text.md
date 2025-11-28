@@ -26,6 +26,7 @@ Text message can have few sending options
     * `{good_morning__Good morning__t[0:17]}` - Show this message from midnight until evening
     * `{good_morning_monday__Good morning monday__t[7:9]||1}` show this message only on Monday
     * `{good_morning_tue_wed__Good morning monday__t[7:9]||2,3}` show this message only on Tuesday and Wednesday
+    * `{cond__Condition text__c[["{args.chat.id}","eq","1647604015"],["chat_variable","eq","1"]]}` Read more about [possible check conditions](bot/check-conditions.md#internal-comparison-operators)
 * You can give random answer by separating messages by `|||` or just clicking ![](/img/bot/new-variation.png)
   * It has to be as a separate character from the new line
   * Or wrap it with spaces so it won't be included in any other parsing tags.
