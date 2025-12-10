@@ -48,6 +48,9 @@ To execute the closing/purging process, you have two options:
     *   Has been redirected to a survey form
     *   Has been redirected to an offline form
     *   Has explicitly closed the chat
+
+**OR**
+
 2.  Visitors were seen online based on defined timeout values:
     *   `desktop timeout` - applies to desktop devices
     *   `mobile timeout` - applies to mobile and tablet devices
