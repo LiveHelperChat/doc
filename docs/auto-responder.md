@@ -117,13 +117,25 @@ These messages will be send when chat is in pending mode
 
 When operators writes message and visitor is not replying this type of messages will be send.
 
+Conditions
+
+ * Chat has to be in active state
+
 ### Operator not replying messaging
 
-When visitor writes a message and operator not replying this type of messages will be send.
+When a visitor writes a message and operator not replying, this type of messages will be send.
+
+ * This message will be send only after visitor writes message after chat was accepted
+
+Conditions
+
+* Chat has to be in active state
+* The Operator has to have at least one message sent after chat was accepted.
+* This message won't be sent if visitor writes another messages after chat being accepted and the operator still has not written any message after chat was accepted.
 
 ### On-hold chat messaging
 
-When operator makes chat on hold these type of messages will be send. Usefull while opeartor is looking for some information.
+When operator makes chat on hold these type of messages will be send. Usefull while operator is looking for some information.
 
 ### Close messaging
 
