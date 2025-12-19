@@ -41,6 +41,9 @@ One of the few possible scenarios can be
 * `{args.msg.msg}` OR `{args.chat.last_message}` check against last visitor message.
 * `media_type` you can check this way was uploaded file or not. In right part just enter extensions `jpg,png,jpeg,gif` and as a comparison variable choose `In list, items separated by ||` 
 * `custom_schedule` E.g `2,12:30-13:00;1,12:30-14:00` it will be valid on Monday and Tuesday within specific time ranges. You can use with `=` and `!=` comparable operators. E.g `custom_schedule = 1` (Schedule matches) or `custom_schedule != 1` (Schedule does not match). More examples:
+* `{text.rnumber_10_20}` use any replaceable variable from [text messages](bot/text.md)
+* `{text.args.chat.online_user_id}%10` modality of 10%. If you put eq to 1 till 10 it will mean 10 percent of the records should match.
+* `{condition.<defined condition identifier>} eq valid` checks does defined condition validates.
 
 ```
 1-5,11:00-20:00 - Monday to Friday, 11:00 to 20:00
@@ -222,3 +225,25 @@ First check that values are correct in department `Load statistic` window. This 
 [Bot example using](/img/bot/check-conditions/lhc-bot.json) `online_department_hours`, `online_op_department` variables.
 
 
+## How to setup random response logic A/B testing?
+
+You want to execute custom triggers randomly. E.g 10 percent for all the visitors.
+
+* You can either enter those conditions directly in the trigger or use Conditions response
+
+In this sample we will use conditions for easier reuse.
+
+Our `Bot -> Conditions` section looks like
+
+![](/img/bot/check-conditions/random-bot.png)
+
+And in our bot it looks like
+
+![](/img/bot/check-conditions/bot-condition.png)
+
+This will persitently execute `Match percentage` for 10% of our visitors.
+
+If you want different percentages 
+
+* You can just use comparison variable `{text.args.chat.online_user_id}%100 < 50` in this scenario 50% of records will match.
+* If you want pure randomnes each time chat start you can juse use `{text.args.chat.id}%100` instead of online record id.
