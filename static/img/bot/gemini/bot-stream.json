@@ -1,1 +1,217 @@
-{"bot":{"name":"Gemini"},"groups":[{"group":{"name":"Default","is_collapsed":0,"pos":0},"triggers":[{"trigger":{"id":12,"name":"Default for unknown message","actions":"[{\"_id\":\"A62f0Zv8V\",\"type\":\"typing\",\"content\":{\"text\":\"\",\"untill_message\":true}},{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":3,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"13\",\"temp1707819824689\":\"14\",\"temp1736423057534\":\"15\",\"default_trigger\":\"14\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]","default":1,"default_unknown":1,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[],"payloads":[]},{"trigger":{"id":13,"name":"Gemini Response","actions":"[{\"_id\":\"7Ea14rw2L\",\"type\":\"text\",\"content\":{\"text\":\"{content_1}\"},\"skip_resp\":false},{\"_id\":\"gsJYW-IcR\",\"type\":\"text\",\"content\":{\"text\":\"{http_code} - https status code returned from request\\n{http_error} - additional error explanation from curl_error($ch);\\n{content_raw} - raw response returned from Rest API call without any parsing\\n{http_data} - Request parameters used for rest api call.\",\"attr_options\":{\"as_system\":true}},\"skip_resp\":true}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[],"payloads":[]},{"trigger":{"id":14,"name":"Failure","actions":"[{\"_id\":\"bLcR-sUVb\",\"type\":\"text\",\"content\":{\"text\":\"There was a problem with your request. I'll transfer you to an agent.\\n\",\"attr_options\":{\"json_replace\":true}},\"skip_resp\":false},{\"_id\":\"Bav-kFxq5\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"setchatattribute\",\"payload\":\"gbot_id\",\"payload_arg\":\"288\"},\"skip_resp\":true},{\"_id\":\"Hx2kOdb6D\",\"type\":\"text\",\"content\":{\"text\":\"Searching for default action.\",\"attr_options\":{\"as_system\":true}},\"skip_resp\":true},{\"_id\":\"8jmoM6adE\",\"type\":\"match_actions\",\"content\":{\"text\":\"default_action_failover\",\"check_visitor_first\":true,\"check_visitor_msg\":true,\"on_start_type\":\"5\"}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[],"payloads":[]},{"trigger":{"id":15,"name":"ToolCall","actions":"[{\"_id\":\"_QfPZRbEu\",\"type\":\"text\",\"content\":{\"text\":\"Tool call trigger\",\"attr_options\":{\"as_system\":true}}},{\"_id\":\"5Ywuj8tLs\",\"type\":\"command\",\"content\":{\"text\":\"Tool call requestion\",\"attr_options\":{\"json_replace\":true,\"as_system\":true},\"command\":\"chatvariable\",\"payload\":\"{\\\"ai_action_id\\\":\\\"{content_1}\\\",\\\"ai_action_args\\\":{content_2}}\"},\"skip_resp\":false},{\"_id\":\"HPRQ_pxev\",\"type\":\"match_actions\",\"content\":{\"text\":\"{content_1}\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true},\"alternative_callback\":\"19\",\"on_start_type\":\"2\"}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[],"payloads":[]},{"trigger":{"id":16,"name":"ToolCall API","actions":"[{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":3,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"13\",\"temp1707819824689\":\"14\",\"temp1736423057534\":\"15\",\"default_trigger\":\"14\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[],"payloads":[]},{"trigger":{"id":17,"name":"password_reminder","actions":"[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{\\n  \\\"role\\\": \\\"model\\\",\\n  \\\"parts\\\": {content_3}\\n},\\n{\\n    \\\"role\\\": \\\"user\\\",\\n    \\\"parts\\\": [{\\n      \\\"functionResponse\\\": {\\n        \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n        \\\"response\\\": {\\n          \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n          \\\"content\\\": \\\"e-mail not found\\\"\\n        }\\n      }\\n    }]\\n  }\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"16\"}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[{"pattern":"password_reminder","pattern_exc":"","configuration":"{\"only_these\":true}","type":2,"on_start_type":2,"priority":0,"skip":0}],"payloads":[]},{"trigger":{"id":18,"name":"support_price","actions":"[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{\\n                    \\\"role\\\": \\\"model\\\",\\n                    \\\"parts\\\": [\\n                        {\\n                            \\\"functionCall\\\": {\\n                                \\\"name\\\": \\\"support_price\\\"\\n                            }\\n                        }\\n                    ]\\n                },\\n{\\n    \\\"role\\\": \\\"user\\\",\\n    \\\"parts\\\": [{\\n      \\\"functionResponse\\\": {\\n        \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n        \\\"response\\\": {\\n          \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n          \\\"content\\\": \\\"30 EUR\\\"\\n        }\\n      }\\n    }]\\n  }\\n\\n\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"16\"}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[{"pattern":"support_price","pattern_exc":"","configuration":"{\"only_these\":true}","type":2,"on_start_type":2,"priority":0,"skip":0}],"payloads":[]},{"trigger":{"id":19,"name":"Function not found","actions":"[{\"_id\":\"1nX3uRE0m\",\"type\":\"text\",\"content\":{\"text\":\"Function not found\"}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[],"payloads":[]},{"trigger":{"id":20,"name":"knowledge_base","actions":"[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{\\n  \\\"role\\\": \\\"model\\\",\\n  \\\"parts\\\": {content_3}\\n},\\n{\\n    \\\"role\\\": \\\"user\\\",\\n    \\\"parts\\\": [{\\n      \\\"functionResponse\\\": {\\n        \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n        \\\"response\\\": {\\n          \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n          \\\"content\\\": \\\"i don't know this information at the moment\\\"\\n        }\\n      }\\n    }]\\n  }\\n\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"16\"}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[{"pattern":"knowledge_base","pattern_exc":"","configuration":"{}","type":2,"on_start_type":2,"priority":0,"skip":0}],"payloads":[]},{"trigger":{"id":21,"name":"transfer_operator","actions":"[{\"_id\":\"ZrtEZ7nCV\",\"type\":\"text\",\"content\":{\"text\":\"You will be transfered to operator.\",\"attr_options\":{\"json_replace\":false,\"as_json\":false,\"as_system\":false}}},{\"_id\":\"GsugNpTaJ\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"stopchat\",\"payload_ignore_status\":true,\"payload_ignore_dep_hours\":true}}]","default":0,"default_unknown":0,"default_always":0,"default_unknown_btn":0,"as_argument":0,"in_progress":0,"pos":0},"events":[{"pattern":"transfer_operator","pattern_exc":"","configuration":"{\"only_these\":true}","type":2,"on_start_type":2,"priority":0,"skip":0}],"payloads":[]}]}]}
+{
+    "bot": {
+        "nick": "Gemini",
+        "name": "GeminiStream"
+    },
+    "groups": [
+        {
+            "group": {
+                "name": "Default",
+                "is_collapsed": 0,
+                "pos": 0
+            },
+            "triggers": [
+                {
+                    "trigger": {
+                        "id": 1,
+                        "name": "Default for unknown message",
+                        "actions": "[{\"_id\":\"A62f0Zv8V\",\"type\":\"typing\",\"content\":{\"text\":\"\",\"untill_message\":true}},{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":1,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"2\",\"temp1707819824689\":\"3\",\"temp1736423057534\":\"4\",\"default_trigger\":\"3\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]",
+                        "default": 1,
+                        "default_unknown": 1,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2,
+                        "name": "Gemini Response",
+                        "actions": "[{\"_id\":\"7Ea14rw2L\",\"type\":\"text\",\"content\":{\"text\":\"{content_1}\"},\"skip_resp\":false},{\"_id\":\"gsJYW-IcR\",\"type\":\"text\",\"content\":{\"text\":\"{http_code} - https status code returned from request\\n{http_error} - additional error explanation from curl_error($ch);\\n{content_raw} - raw response returned from Rest API call without any parsing\\n{http_data} - Request parameters used for rest api call.\",\"attr_options\":{\"as_system\":true}},\"skip_resp\":true}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 3,
+                        "name": "Failure",
+                        "actions": "[{\"_id\":\"bLcR-sUVb\",\"type\":\"text\",\"content\":{\"text\":\"There was a problem with your request. I'll transfer you to an agent.\\n\",\"attr_options\":{\"json_replace\":true}},\"skip_resp\":false},{\"_id\":\"Bav-kFxq5\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"setchatattribute\",\"payload\":\"gbot_id\",\"payload_arg\":\"288\"},\"skip_resp\":true},{\"_id\":\"Hx2kOdb6D\",\"type\":\"text\",\"content\":{\"text\":\"Searching for default action.\",\"attr_options\":{\"as_system\":true}},\"skip_resp\":true},{\"_id\":\"8jmoM6adE\",\"type\":\"match_actions\",\"content\":{\"text\":\"default_action_failover\",\"check_visitor_first\":true,\"check_visitor_msg\":true,\"on_start_type\":\"5\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 4,
+                        "name": "ToolCall",
+                        "actions": "[{\"_id\":\"5Ywuj8tLs\",\"type\":\"command\",\"content\":{\"text\":\"Tool call requestion\",\"attr_options\":{\"json_replace\":true,\"as_system\":true},\"command\":\"chatvariable\",\"payload\":\"{\\\"ai_action_id\\\":\\\"{content_1}\\\",\\\"ai_action_args\\\":{content_2}}\"},\"skip_resp\":false},{\"_id\":\"3LdNj6Z6M\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"chatvariable\",\"payload\":\"{\\\"ai_thought_signature\\\":\\\",\\\\\\\"thoughtSignature\\\\\\\":\\\\\\\"{content_4}\\\\\\\"\\\"}\",\"payload_remove\":\"ai_thought_signature\",\"ignore_if_empty\":true}},{\"_id\":\"HPRQ_pxev\",\"type\":\"match_actions\",\"content\":{\"text\":\"{content_1}\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true},\"alternative_callback\":\"8\",\"on_start_type\":\"2\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 5,
+                        "name": "ToolCall API",
+                        "actions": "[{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":1,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"2\",\"temp1707819824689\":\"3\",\"temp1736423057534\":\"4\",\"default_trigger\":\"3\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 6,
+                        "name": "password_reminder",
+                        "actions": "[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{\\n  \\\"role\\\": \\\"model\\\",\\n  \\\"parts\\\": {content_3}\\n},\\n{\\n    \\\"role\\\": \\\"user\\\",\\n    \\\"parts\\\": [{\\n      \\\"functionResponse\\\": {\\n        \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n        \\\"response\\\": {\\n          \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n          \\\"content\\\": \\\"e-mail not found\\\"\\n        }\\n      }\\n    }]\\n  }\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"5\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "password_reminder",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 2,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 7,
+                        "name": "support_price",
+                        "actions": "[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{\\n                    \\\"role\\\": \\\"model\\\",\\n                    \\\"parts\\\": [\\n                        {\\n                            \\\"functionCall\\\": {\\n                                \\\"name\\\": \\\"support_price\\\"\\n                            }{args.chat.chat_variables_array.ai_thought_signature__direct__not_empty__}\\n                        }\\n                    ]\\n                },\\n{\\n    \\\"role\\\": \\\"user\\\",\\n    \\\"parts\\\": [{\\n      \\\"functionResponse\\\": {\\n        \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n        \\\"response\\\": {\\n          \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n          \\\"content\\\": \\\"40 EUR\\\"\\n        }\\n      }\\n    }]\\n  }\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"5\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "support_price",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 2,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 8,
+                        "name": "Function not found",
+                        "actions": "[{\"_id\":\"1nX3uRE0m\",\"type\":\"text\",\"content\":{\"text\":\"Function not found\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 9,
+                        "name": "knowledge_base",
+                        "actions": "[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{\\n  \\\"role\\\": \\\"model\\\",\\n  \\\"parts\\\": {content_3}\\n},\\n{\\n    \\\"role\\\": \\\"user\\\",\\n    \\\"parts\\\": [{\\n      \\\"functionResponse\\\": {\\n        \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n        \\\"response\\\": {\\n          \\\"name\\\": \\\"{args.chat.chat_variables_array.ai_action_id}\\\",\\n          \\\"content\\\": \\\"i don't know this information at the moment. Try to ask on our discord channel!\\\"\\n        }\\n      }\\n    }]\\n  }\\n\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"5\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "knowledge_base",
+                            "pattern_exc": "",
+                            "configuration": "{}",
+                            "type": 2,
+                            "on_start_type": 2,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 10,
+                        "name": "transfer_operator",
+                        "actions": "[{\"_id\":\"ZrtEZ7nCV\",\"type\":\"text\",\"content\":{\"text\":\"You will be transfered to operator.\",\"attr_options\":{\"json_replace\":false,\"as_json\":false,\"as_system\":false}}},{\"_id\":\"GsugNpTaJ\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"stopchat\",\"payload_ignore_status\":true,\"payload_ignore_dep_hours\":true}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "transfer_operator",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 2,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                }
+            ]
+        }
+    ]
+}

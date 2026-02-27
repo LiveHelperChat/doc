@@ -218,7 +218,7 @@ The most important part is this. It encrypts data using key.
 
 ```php
 <?php echo lhSecurity::encrypt('<data_to_encrypt>,'<secret_key>')?>
-<?php echo lhSecurity::encrypt('<data_to_encrypt>|__varex<unix timestamp + valid period>,'<secret_key>')?>
+<?php echo lhSecurity::encrypt('<data_to_encrypt>__varex<unix timestamp + valid period>,'<secret_key>')?>
 ```
 
 Example

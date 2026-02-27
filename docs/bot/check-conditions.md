@@ -43,7 +43,7 @@ One of the few possible scenarios can be
 * `custom_schedule` E.g `2,12:30-13:00;1,12:30-14:00` it will be valid on Monday and Tuesday within specific time ranges. You can use with `=` and `!=` comparable operators. E.g `custom_schedule = 1` (Schedule matches) or `custom_schedule != 1` (Schedule does not match). More examples:
 * `{text.rnumber_10_20}` use any replaceable variable from [text messages](bot/text.md)
 * `{text.args.chat.online_user_id}%10` modality of 10%. If you put eq to 1 till 10 it will mean 10 percent of the records should match.
-* `{condition.<defined condition identifier>} eq valid` checks does defined condition validates.
+* `{condition.<defined condition identifier>} eq valid` checks does defined condition validates. You can use `not_valid` or just `not equal` comparison variable.
 
 ```
 1-5,11:00-20:00 - Monday to Friday, 11:00 to 20:00

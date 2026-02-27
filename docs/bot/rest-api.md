@@ -391,7 +391,7 @@ All messages at once
 * `{{msg_all_vis_since_transfer_content}}` - All visitor messages in the chat since operator took over the chat. All messages without `[<date>] [<nick>]` prefix within each message.
 * `{{msg_all_since_transfer_content_date_nick}}` - All visitor messages in the chat since operator took over the chat. All messages with `[<date>] [<nick>]` prefix within each message.
 * `{{msg_all}}` - all chat messages. All messages with  `[<date>] [<nick>]` and meta data including whisper messages.
-* `{{msg_all_conversation}}` - all chat messages without system and whisper messages.
+* `{{msg_all_conversation}}` - all chat messages with  `[<date>] [<nick>]`. Without system and whisper messages.
 * `{{msg_items}}` - all chat messages objects encoded in JSON. Just do `json_decode` on passed variable
 * `{{msg_all_html}}` - all chat messages rendered as HTML. You might need to style classes.
 * `{{msg_all_content}}` - all messages without `[<date>] [<nick>]` prefix within each message. System messages are not printed.
