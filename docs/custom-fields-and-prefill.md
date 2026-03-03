@@ -205,6 +205,12 @@ This future is usefull then user is logged and you want to pass let say logged u
 * req - field is required
 * show - (on - show this field only for online form, off - show this field only for offline form), if skipped for online and offline form field will be shown.
 
+### How to pass variable defined in back office start chat form settings as a custom field?
+
+While defining variable in `Custom fields` section of start chat form settings. Remember `Field identifier`. Let say in our scenario it's named `player_name`
+
+Now in `Automation -> Additional chat variables` put `Variable identifier` as `player_name`. As long they matches we will prefill and pass that variable.
+
 ## How securely pass attributes?
 
 You can securely pass attributes. User won't be able to see their values. Usefull for passing user ID etc...
