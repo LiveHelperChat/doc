@@ -24,6 +24,8 @@ LHC_API.args = {
     wwidth: 350,
     pheight: 520,
     pwidth: 500,
+    expandw: 1.2,        // Widget width expand ratio (1.01 - 1.99) or pixels if more than 2. Expand/collapse action.
+    expandh: 1.2,        // Widget height expand ratio (1.01 - 1.99) or pixels if more than 2. Expand/collapse action.
     chat_id: null,       // Manually passed chat id
     chat_hash: null,     // Manually passed chat hash
     vars_encrypted:false,// If set true, all passed variables via lhc_var will be considered as encrypted even back offise indicates it's non ecrypted var. Usefull if you have many brands and want to migrated to encrypted flow.

@@ -29,6 +29,41 @@ If you are embedding widget in other language than default you have two options
 * Either edit [`default_site_access`](https://github.com/LiveHelperChat/livehelperchat/blob/bb8f5b8c5b4e5df6cedc7dbae61cbfd463b14d9f/lhc_web/settings/settings.ini.default.php#L28) and put same value as your widget `lang` attribute without slashes 
 * Either add your language to `['default_site_access_list'] => ['eng','lit']`. E.g we will use `Main` translation if widget language is `lit` or `eng`. [Setting location](https://github.com/LiveHelperChat/livehelperchat/blob/4.52v/lhc_web/settings/settings.ini.default.php#L29) 
 
+
+## Replaceable variables in translatable text fields
+
+You can use any variable from `Online visitors` list in any of translatable field.
+
+Click info ico in line visitors list and navigate to `Debug` tab. There you will see json with all possible attributes
+
+E.g
+
+> `{args.ou.online_attr_array.first_name.value__is_empty__Visitor}` Would use attribute from defined json. Also would use `Visitor` as fallback,
+
+```json
+"online_attr_array": {
+    "first_name": {
+        "h": false,
+        "secure": true,
+        "identifier": "first_name",
+        "key": "First Name",
+        "value": "First name"
+    }
+}
+```
+
+
+> `{args.ou.id}` id of online visitor
+
+> `{args.ou.online_attr_system_array.playerClass__is_empty__Visitor}` Would use attribute from
+
+```json
+"online_attr_system_array": {
+        "playerClass": "vip_3",
+        "playerClass_secure": true
+    }
+```
+
 ## Operator profile before chat start
 
 #### Operator intro text
