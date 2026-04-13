@@ -151,6 +151,7 @@ module.exports = {
                     'bot/chatgpt-integration',
                     'bot/chatgpt-responses',
                     'bot/deepseek-integration',
+                    'bot/openrouter-integration',
                     'bot/ollama-integration',
                     'bot/gemini-integration',
                     'bot/summarize-with-ai',

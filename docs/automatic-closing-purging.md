@@ -60,6 +60,7 @@ To execute the closing/purging process, you have two options:
         *   2: include pending and active chats
         *   3: include pending and bot chats
         *   4: include only bot chats
+        *   5: include pending and active chats and bot chats
 
 *   For example, `1,3` would mean that pending chats where `desktop timeout` is 1 minute and `mobile timeout` is 3 minutes will be closed automatically.
 *   For example, `1,3,1` would mean that active chats where `desktop timeout` is 1 minute and `mobile timeout` is 3 minutes will be closed automatically.

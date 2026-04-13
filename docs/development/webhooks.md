@@ -157,7 +157,7 @@ Conditions:
 *   More than 60 seconds have passed since the visitor's last message: `{args.chat.last_user_msg_time} < {time}-60` OR `{args.chat.last_msg.time} < {time}-60`
 *   The widget is not closed: `{args.chat.status_sub} != 3`
 *   The visitor was seen in the last two minutes: `{args.chat.lsync} > {time}-120`. *Remove* this rule in third-party integrated chats, as this attribute is always zero in those cases (e.g., WhatsApp).
-*   The last message was a visitor message: `{args.chat.last_msg.user_id} = 0`. We don't want to terminate the chat if the visitor is not replying.
+*   The last message was a visitor message: `{args.chat.last_msg_text.user_id} = 0`. We don't want to terminate the chat if the visitor is not replying. `last_msg_text` ensures we ignore typing meta messages. If that's not the case you can use `last_msg`
 
 ![](/img/bot/bot-not-responding.png)
 
