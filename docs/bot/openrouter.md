@@ -16,6 +16,12 @@ Before you begin, you will need:
 OpenRouter uses an OpenAI-compatible Responses API (`/api/v1/responses`). The LHC configuration files below are nearly identical to the [ChatGPT Responses API](bot/chatgpt-responses.md) integration — the only differences are the host (`https://openrouter.ai`) and the model name.
 :::
 
+# Files support
+
+* In files configuration make sure `Show file preview before uploading file` is activated
+* Files upload is activated for the users
+* You can modify default query if image is uploaded without user question
+
 # Streaming vs Non-Streaming
 
 Choose the variant that fits your infrastructure:

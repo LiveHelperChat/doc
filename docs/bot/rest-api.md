@@ -413,7 +413,7 @@ http://example.com/link/to/file_2.pdf
 
 
 * `{previous_visitor_messages_list_url__10__1}
-{skip_empty_msg}
+{skip_empty_msg}{include_previous}
 {separator},{/separator}
 {
 "role": "{assistant}assistant{/assistant}{user}user{/user}",
@@ -421,6 +421,12 @@ http://example.com/link/to/file_2.pdf
 }
 {end_separator},{/end_separator}
 {/previous_visitor_messages_list_url}` - print last 10 messages and skip the most recent one. It will start rendering items after from a result set we detect a visitor message (Required by Gemini 2.5 models).
+
+Previous history inclusion. Only one should be used at a time.
+
+* `{include_previous}` tells to include messages from previously closed conversation by online profile.
+* `{include_previous_email}` tells to include messages from previously closed conversation or e-mail.
+* `{history_as_summary}` tells to make first message as summary from previous messages instead of rendering them as present conversation messages.
 
 And here is an example of how this can be used with AI integration. See [ChatGPT](bot/chatgpt.md) integration.
 

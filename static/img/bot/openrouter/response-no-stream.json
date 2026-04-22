@@ -15,7 +15,7 @@
                     "trigger": {
                         "id": 2912,
                         "name": "Default for unknown message",
-                        "actions": "[{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":123,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"2913\",\"temp1707819824689\":\"2914\",\"temp1736423057534\":\"2915\",\"temp1741947357907\":\"2913\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]",
+                        "actions": "[{\"_id\":\"7Y6Aytqgf\",\"type\":\"conditions\",\"content\":{\"text\":\"\",\"conditions\":[{\"_id\":\"YdWCh8lkS\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"in_list\",\"val\":\"jpg||png||jpeg\",\"attr\":\"media_type\"}}],\"attr_options\":{\"callback_match\":\"2921\"}}},{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":123,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"2913\",\"temp1707819824689\":\"2914\",\"temp1736423057534\":\"2915\",\"temp1741947357907\":\"2913\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]",
                         "default": 1,
                         "default_unknown": 1,
                         "default_always": 0,
@@ -148,6 +148,63 @@
                         "id": 2919,
                         "name": "Function not found",
                         "actions": "[{\"_id\":\"1nX3uRE0m\",\"type\":\"text\",\"content\":{\"text\":\"Function not found\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                }
+            ]
+        },
+        {
+            "group": {
+                "name": "Image",
+                "is_collapsed": 0,
+                "pos": 0
+            },
+            "triggers": [
+                {
+                    "trigger": {
+                        "id": 2921,
+                        "name": "Image was uploaded",
+                        "actions": "[{\"_id\":\"DXQtgvRV-\",\"type\":\"conditions\",\"content\":{\"text\":\"{\\n            \\\"role\\\": \\\"user\\\",\\n            \\\"content\\\": [\\n                { \\\"type\\\": \\\"input_text\\\", \\\"text\\\": {args.msg.msg} },\\n                {\\n                    \\\"type\\\": \\\"input_image\\\",\\n                    \\\"image_url\\\": {args.msg.file.file_body_embed}\\n                }\\n\\t\\t\\t]\\n}\",\"attr_options\":{\"as_json\":true,\"as_system\":true,\"json_replace_all\":false,\"json_replace_args\":true,\"json_replace\":false,\"no_reparse\":true,\"callback_match\":\"2922\",\"callback_unmatch\":\"2923\"},\"conditions\":[{\"_id\":\"AkaoBGXer\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"isempty\",\"val\":\"\",\"attr\":\"{args.msg.msg_plain}\"}}]}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2922,
+                        "name": "Without query",
+                        "actions": "[{\"_id\":\"DXQtgvRV-\",\"type\":\"text\",\"content\":{\"text\":\"{\\n            \\\"role\\\": \\\"user\\\",\\n            \\\"content\\\": [\\n                { \\\"type\\\": \\\"input_text\\\", \\\"text\\\":  \\\"help with\\\" },\\n                {\\n                    \\\"type\\\": \\\"input_image\\\",\\n                    \\\"image_url\\\": {args.msg.file.file_body_embed}\\n                }\\n\\t\\t\\t]\\n}\",\"attr_options\":{\"as_json\":true,\"as_system\":true,\"json_replace_all\":false,\"json_replace_args\":true,\"json_replace\":false,\"no_reparse\":true}}},{\"_id\":\"Gutk6DtZs\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"2916\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2923,
+                        "name": "With query",
+                        "actions": "[{\"_id\":\"DXQtgvRV-\",\"type\":\"text\",\"content\":{\"text\":\"{\\n            \\\"role\\\": \\\"user\\\", \\n            \\\"content\\\": [\\n                { \\\"type\\\": \\\"input_text\\\", \\\"text\\\":  {args.msg.msg} },\\n                {\\n                    \\\"type\\\": \\\"input_image\\\",\\n                    \\\"image_url\\\": {args.msg.file.file_body_embed}\\n                }\\n\\t\\t\\t]\\n}\",\"attr_options\":{\"as_json\":true,\"as_system\":true,\"json_replace_all\":false,\"json_replace_args\":true,\"json_replace\":false,\"no_reparse\":true}}},{\"_id\":\"Gutk6DtZs\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"2916\"}}]",
                         "default": 0,
                         "default_unknown": 0,
                         "default_always": 0,
