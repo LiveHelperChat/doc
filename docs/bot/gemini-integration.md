@@ -79,7 +79,10 @@ Here is an example of what the request body defined in LHC might look like:
 
 Installation
 
-* Import [Rest API Not streaming](/img/bot/gemini/rest-api.json) or [Rest API Streaming](/img/bot/gemini/rest-api-streaming.json)
+* (V2 - with file [Search support](https://github.com/LiveHelperChat/gemini-rag)) Import [Rest API Not streaming](/img/bot/gemini/rest-api-v2.json) or [Rest API Streaming](/img/bot/gemini/rest-api-streaming-v2.json)
+* OR
+* (V1) Import [Rest API Not streaming](/img/bot/gemini/rest-api-v1.json) or [Rest API Streaming](/img/bot/gemini/rest-api-streaming-v1.json)
+
 * Import [Bot Not Streaming](/img/bot/gemini/bot.json) or [Bot streaming](/img/bot/gemini/bot-stream.json) and choose just imported Rest API in import window 
 * Replace in newly imported `Rest API` call `YOUR_API_KEY` with your [API KEY](https://ai.google.dev/gemini-api/docs/api-key)
 * Adjust `Rest API` call system prompts.
