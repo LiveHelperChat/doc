@@ -53,6 +53,7 @@ LHC_API.args = {
                                               // In combination with Start chat form settings `Requires pre-filled department` user won't be able to figureout existing departments in the system
                                               // Department, can be multiple or one | Optional
     product: [4,5],     // Product to choose from | Optional
+    csp: null,          // Content Securiy Policy
     priority: 10005,    // Set priority for started chat | Optional
     theme: 1,           // Set theme | Optional. Can be either theme number or alias
                         // <theme id> or 'alias-of-theme'
@@ -1067,3 +1068,48 @@ loadcb.eventEmitter.addListener('offlineClickAction',function () {
 });
 ```
 
+## Content Security Policy
+
+As of 4.84v only wrapper fully supports Content Security Policy.
+
+```php
+<?php
+header('Content-Security-Policy-Report-Only: require-trusted-types-for \'script\'; report-uri /csp-report/; report-to csp-endpoint; trusted-types lhc-widget-loader lhc-main-widget-loader lhc-widget-html lhc-react-html;');
+?>
+```
+
+* `lhc-widget-loader` - Policy used by webpack to load it's own scripts https://github.com/LiveHelperChat/livehelperchat/blob/eeea1e23f5bddd0215ad5a81ea90fe28ae81e5d8/lhc_web/design/defaulttheme/widget/wrapper/webpack.config.js#L31
+* `lhc-main-widget-loader` - Responsible for main embedding of script. See sample. This policy is also passed as `LHC_API.args.csp` argument so LHC will relay on it loading external JS
+* `lhc-react-html` - React application responsible for it's own html generation
+* `lhc-widget-html` - Policy responsible for HTML embedding in wrapper application
+
+```js
+if (window.trustedTypes && window.trustedTypes.createPolicy) {
+    LHC_API.args.csp = window.widgetPolicy = window.trustedTypes.createPolicy('lhc-main-widget-loader', {
+        createScriptURL: (url) => {
+            // Security check: Only allow strings starting with your specific domain
+            if (url.startsWith('https://demo.livehelperchat.com/')) {
+                return url;
+            }
+            console.error('Blocked untrusted script URL:', url);
+            return null;
+        }
+    });
+}
+```
+
+Embed script also changes like
+
+```js
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.setAttribute('crossorigin','anonymous'); po.async = true;
+    var date = new Date();
+    rawUrl = 'https://devmysql.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+    po.src = window.widgetPolicy ? window.widgetPolicy.createScriptURL(rawUrl) : rawUrl;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+```
+
+* `lhc-widget-html` - Policy used by wrapper to render it's own status.
+
+So to avoid breaking CSP policy you will have to enable open popoup option instead of rendering widget inside website. This will change in future releases.

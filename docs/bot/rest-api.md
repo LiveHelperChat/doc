@@ -121,14 +121,16 @@ If you define a success location, it will parse the response as JSON and try to 
 
 Examples of variable extraction:
 
-`status` as location value would return `success`
+##### `status` as location value would return `success`
+
 ```json
 {
   "status": "success"
 }
 ```
 
-`response:location` as a location value would return `Lithuania`
+##### `response:location` as a location value would return `Lithuania`
+
 ```json
 {
   "response": {
@@ -137,7 +139,7 @@ Examples of variable extraction:
 }
 ```
 
-`items:0:name` as a location value would return `Sub item name`
+#####  `items:0:name` as a location value would return `Sub item name`
 
 ```json
 {
@@ -149,7 +151,7 @@ Examples of variable extraction:
 }
 ```
 
-`links:link:[type=forms]:url` as a location value would return an element where the type is forms
+#####  `links:link:[type=forms]:url` as a location value would return an element where the type is forms
 
 ```json
 {
@@ -170,7 +172,29 @@ Examples of variable extraction:
 }
 ```
 
-`output:0:content:0:text___json_text:summary` converts `text` attribute content to json array and returns summary attribute.
+##### `candidates:0:content:parts:[text=__EXIST__]:text` checks that array item has key `text`
+
+```json
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello! How can I help you today with Live Helper Chat? Feel free to ask any questions you have about the platform!",
+            "thoughtSignature": "signature"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ]
+}
+```
+
+##### `output:0:content:0:text___json_text:summary` converts `text` attribute content to json array and returns summary attribute.
 
 ```json
 {"output": [
@@ -191,7 +215,7 @@ Examples of variable extraction:
 }
 ```
 
-`links:link___array_pop:type` returns last element in `link` array and returns type of it.
+##### `links:link___array_pop:type` returns last element in `link` array and returns type of it.
 
 ```json
 {
