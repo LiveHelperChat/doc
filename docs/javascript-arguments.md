@@ -853,6 +853,37 @@ To inform Live Helper Chat that visitor accepted cookies. See section about GDPR
 window.$_LHC.eventListener.emitEvent('enableCookies');
 ```
 
+### How to send invisible message and later use it while generating first response
+
+In case you want to generate AI response to consequtive failed search query in the website for AI to take over it.
+
+This script takes search query element value `document.getElementById('search-query').value` and usese it as replaceavble variable in the trigger.
+
+Change to yours `'trigger_id' : 147` trigger id. Trigger has to have checked `Can be passed as argument`
+
+```js
+function startChatAuto() {
+    // Get user session
+    var chatParams = window.$_LHC.attributes['userSession'].getSessionAttributes();
+    // Chat has not started yet
+    if (!chatParams['id'] && window.$_LHC.attributes['onlineStatus'].value == true) {
+        // Prefill message field
+        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'trigger_id' : 147, 'trigger_args' : {'{message_invisible_1}' : document.getElementById('search-query').value }}}}]);
+        window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : true}}]);
+        // Just delay a little bit so AI can generate it's answer meanwhile
+        setTimeout(function(){
+            window.$_LHC.eventListener.emitEvent('showWidget');
+            
+            // Restore back original values
+            window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['chat_ui','auto_start'], data : false}}]);
+            window.$_LHC.eventListener.emitEvent('sendChildEvent',[{'cmd' : 'attr_set', 'arg' : {'type':'attr_set','attr': ['api_data'], data : {'trigger_id' : 0, 'trigger_args' : {'{message_invisible_1}' : '' }}}}]);
+        },2000);
+    }
+}
+```
+
+![](/img/bot/auto-start-trigger.png)
+
 ### Send a message as a visitor
 
 To send a message as a visitor from website. We take care of two scenarios

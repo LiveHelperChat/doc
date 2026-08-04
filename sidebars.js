@@ -160,7 +160,8 @@ module.exports = {
                     'bot/offline-scenarios',
                     'bot/image-file-verification-flow',
                     'bot/images-bot-integration',
-                    'bot/voice-message-bot-integration'
+                    'bot/voice-message-bot-integration',
+                    'bot/completions-integration'
                 ]
             },
             {
@@ -203,6 +204,7 @@ module.exports = {
         Developing: [
             'hooks',
             'development/webhooks',
+            'development/webhooks-examples',
             'development/incoming-webhooks',
             'debug',
             {
@@ -258,7 +260,8 @@ module.exports = {
             'integrating/slack-notification',
             'integrating/waha',
             'integrating/rezdy',
-            'integrating/widget'
+            'integrating/widget',
+            'integrating/flowroute'
         ]
     },
 };

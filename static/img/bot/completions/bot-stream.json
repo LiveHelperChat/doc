@@ -1,0 +1,238 @@
+{
+    "bot": {
+        "nick": "LocalLLMCompletionStream",
+        "name": "LocalLLMCompletionStream"
+    },
+    "groups": [
+        {
+            "group": {
+                "name": "Default",
+                "is_collapsed": 0,
+                "pos": 0
+            },
+            "triggers": [
+                {
+                    "trigger": {
+                        "id": 2948,
+                        "name": "Default for unknown message",
+                        "actions": "[{\"_id\":\"bXQZX-PNM\",\"type\":\"conditions\",\"content\":{\"text\":\"\",\"conditions\":[{\"_id\":\"uebuXbv1T\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"in_list\",\"val\":\"jpg||png||jpeg\",\"attr\":\"media_type\"}}],\"attr_options\":{\"callback_match\":\"2957\"}}},{\"_id\":\"2a8mToVg7\",\"type\":\"typing\",\"content\":{\"text\":\"Thinking...\",\"untill_message\":true,\"delay\":\"1\"}},{\"_id\":\"CeIPo47Mv\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"disableuntillopmsg\"},\"skip_resp\":false},{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":127,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"2949\",\"temp1707819824689\":\"2950\",\"temp1736423057534\":\"2951\",\"temp1741947357907\":\"2949\",\"temp1749807915503\":\"2956\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]",
+                        "default": 1,
+                        "default_unknown": 1,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2949,
+                        "name": "ChatGTP Response",
+                        "actions": "[{\"_id\":\"7Ea14rw2L\",\"type\":\"text\",\"content\":{\"text\":\"{content_1}\"},\"skip_resp\":false}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2950,
+                        "name": "Failure",
+                        "actions": "[{\"_id\":\"bLcR-sUVb\",\"type\":\"text\",\"content\":{\"text\":\"There was a problem with your request. I'll transfer you to an agent.\\n\",\"attr_options\":{\"json_replace\":false}}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2951,
+                        "name": "ToolCall",
+                        "actions": "[{\"_id\":\"5Ywuj8tLs\",\"type\":\"command\",\"content\":{\"text\":\"Tool call requestion\",\"attr_options\":{\"json_replace\":true,\"as_system\":true},\"command\":\"chatvariable\",\"payload\":\"{\\\"ai_action_id\\\":\\\"{content_3}\\\",\\\"ai_action_args\\\":{content_1},\\\"ai_function_name\\\":\\\"{content_2}\\\",\\\"ai_tool_call\\\":{content_4}}\"},\"skip_resp\":false},{\"_id\":\"HPRQ_pxev\",\"type\":\"match_actions\",\"content\":{\"text\":\"{content_2}\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true},\"alternative_callback\":\"2955\",\"on_start_type\":\"2\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2952,
+                        "name": "ToolCall API",
+                        "actions": "[{\"_id\":\"-MzIBSz8Y\",\"type\":\"command\",\"content\":{\"text\":\"\",\"command\":\"chatvariable\",\"payload_remove\":\"ai_tool_call_rs\"}},{\"_id\":\"cvBbfqqat\",\"type\":\"restapi\",\"content\":{\"text\":\"\",\"rest_api\":127,\"rest_api_method\":\"temp1707815934109\",\"rest_api_method_params\":[],\"rest_api_method_output\":{\"temp1707816009806\":\"2949\",\"temp1707819824689\":\"2950\",\"temp1736423057534\":\"2951\",\"temp1741947357907\":\"2949\",\"temp1749807915503\":\"2956\"},\"attr_options\":{\"as_system\":true,\"background_process_delegate\":true}}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2953,
+                        "name": "password_reminder",
+                        "actions": "[{\"_id\":\"wXAF9YMsZ\",\"type\":\"pauseBot\",\"content\":{\"text\":\"\",\"duration\":\"10\"},\"skip_resp\":true},{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{args.chat.chat_variables_array.ai_tool_call_rs__not_empty__}{args.chat.chat_variables_array.ai_tool_call_rs__direct__not_empty__,}\\n{\\n\\\"role\\\":\\\"assistant\\\",\\n\\\"content\\\":\\\"\\\",\\n\\\"tool_calls\\\": {args.chat.chat_variables_array.ai_tool_call}\\n},\\n{\\n    \\\"role\\\": \\\"tool\\\",\\n    \\\"tool_call_id\\\": {args.chat.chat_variables_array.ai_action_id},\\n    \\\"content\\\": \\\"e-mail not found\\\"\\n}\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true,\"json_replace_args\":true}}},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"2952\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "password_reminder",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 2,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2954,
+                        "name": "support_price",
+                        "actions": "[{\"_id\":\"HPRQ_pxev\",\"type\":\"text\",\"content\":{\"text\":\"{args.chat.chat_variables_array.ai_tool_call_rs__not_empty__}{args.chat.chat_variables_array.ai_tool_call_rs__direct__not_empty__,}\\n{\\n\\\"role\\\":\\\"assistant\\\",\\n\\\"content\\\":\\\"\\\",\\n\\\"tool_calls\\\": {args.chat.chat_variables_array.ai_tool_call}\\n},\\n{ \\n    \\\"role\\\": \\\"tool\\\",\\n    \\\"tool_call_id\\\": {args.chat.chat_variables_array.ai_action_id},\\n    \\\"content\\\": \\\"30 EUR\\\"\\n}\",\"attr_options\":{\"as_json\":true,\"json_replace\":true,\"as_system\":true,\"json_replace_args\":true,\"no_reparse\":false}},\"skip_resp\":false},{\"_id\":\"inQxADV1B\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"2952\"},\"skip_resp\":false},{\"_id\":\"odMmljEz8\",\"type\":\"actions\",\"content\":{\"text\":\"\",\"success_message\":\"Hi there\",\"event_background\":false,\"event_background_inst\":false,\"keep_locked\":false},\"skip_resp\":true}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [
+                        {
+                            "pattern": "support_price",
+                            "pattern_exc": "",
+                            "configuration": "{\"only_these\":true}",
+                            "type": 2,
+                            "on_start_type": 2,
+                            "priority": 0,
+                            "skip": 0
+                        }
+                    ],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2955,
+                        "name": "Function not found",
+                        "actions": "[{\"_id\":\"1nX3uRE0m\",\"type\":\"text\",\"content\":{\"text\":\"Function not found\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2956,
+                        "name": "Reasoning",
+                        "actions": "[{\"_id\":\"5Ywuj8tLs\",\"type\":\"command\",\"content\":{\"text\":\"Tool call requestion\",\"attr_options\":{\"json_replace\":true,\"as_system\":true},\"command\":\"chatvariable\",\"payload\":\"{\\\"ai_tool_call_rs\\\":{content_1}}\"},\"skip_resp\":false}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                }
+            ]
+        },
+        {
+            "group": {
+                "name": "Image",
+                "is_collapsed": 0,
+                "pos": 0
+            },
+            "triggers": [
+                {
+                    "trigger": {
+                        "id": 2957,
+                        "name": "Image was uploaded",
+                        "actions": "[{\"_id\":\"DXQtgvRV-\",\"type\":\"conditions\",\"content\":{\"text\":\"{\\n            \\\"role\\\": \\\"user\\\",\\n            \\\"content\\\": [\\n                { \\\"type\\\": \\\"input_text\\\", \\\"text\\\": {args.msg.msg} },\\n                {\\n                    \\\"type\\\": \\\"input_image\\\",\\n                    \\\"image_url\\\": {args.msg.file.file_body_embed}\\n                }\\n\\t\\t\\t]\\n}\",\"attr_options\":{\"as_json\":true,\"as_system\":true,\"json_replace_all\":false,\"json_replace_args\":true,\"json_replace\":false,\"no_reparse\":true,\"callback_match\":\"2958\",\"callback_unmatch\":\"2959\"},\"conditions\":[{\"_id\":\"AkaoBGXer\",\"type\":\"condition\",\"content\":{\"field\":\"\",\"comp\":\"isempty\",\"val\":\"\",\"attr\":\"{args.msg.msg_plain}\"}}]}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2958,
+                        "name": "Without query",
+                        "actions": "[{\"_id\":\"DXQtgvRV-\",\"type\":\"text\",\"content\":{\"text\":\"{\\n            \\\"role\\\": \\\"user\\\",\\n            \\\"content\\\": [\\n                { \\\"type\\\": \\\"text\\\", \\\"text\\\":  \\\"help with\\\" },\\n                {\\n                    \\\"type\\\": \\\"image_url\\\",\\n                    \\\"image_url\\\": {\\\"url\\\" : {args.msg.file.file_body_embed} }\\n                }\\n\\t\\t\\t]\\n}\",\"attr_options\":{\"as_json\":true,\"as_system\":true,\"json_replace_all\":false,\"json_replace_args\":true,\"json_replace\":false,\"no_reparse\":true}}},{\"_id\":\"Gutk6DtZs\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"2952\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                },
+                {
+                    "trigger": {
+                        "id": 2959,
+                        "name": "With query",
+                        "actions": "[{\"_id\":\"DXQtgvRV-\",\"type\":\"text\",\"content\":{\"text\":\"{\\n            \\\"role\\\": \\\"user\\\", \\n            \\\"content\\\": [\\n                { \\\"type\\\": \\\"text\\\", \\\"text\\\":  {args.msg.msg} },\\n                {\\n                    \\\"type\\\": \\\"image_url\\\",\\n                    \\\"image_url\\\":  {\\\"url\\\" : {args.msg.file.file_body_embed} }\\n                }\\n\\t\\t\\t]\\n}\",\"attr_options\":{\"as_json\":true,\"as_system\":true,\"json_replace_all\":false,\"json_replace_args\":true,\"json_replace\":false,\"no_reparse\":true}}},{\"_id\":\"Gutk6DtZs\",\"type\":\"predefined\",\"content\":{\"text\":\"\",\"payload\":\"2952\"}}]",
+                        "default": 0,
+                        "default_unknown": 0,
+                        "default_always": 0,
+                        "default_unknown_btn": 0,
+                        "as_argument": 0,
+                        "in_progress": 0,
+                        "pos": 0
+                    },
+                    "events": [],
+                    "payloads": []
+                }
+            ]
+        }
+    ]
+}

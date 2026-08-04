@@ -44,11 +44,11 @@ If the chat is installed as a subdomain, the link generation code could look lik
 <a target="_blank" href="http://support.example.com/<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'l' => 'admin', 't' => time() + 60, 'secret_hash' => '12456456456456fghfghfghfgh'))?>">Login me</a>
 ```
 
-Full example:
+Full example. Use only one of the provided functions:
 
 ```php
 <?php
-
+// if LHC <= 4.85v
 function generateAutoLoginLink($params){
 
     $dataRequest = array();
@@ -86,8 +86,54 @@ function generateAutoLoginLink($params){
 
     return "index.php/user/autologin/{$hashValidation}".implode('', $dataRequestAppend);
 }
+// if LHC > 4.85v
+function generateAutoLoginLink($params)
+{
+
+    $dataRequest = array();
+    $dataRequestAppend = array();
+
+    // Destination ID
+    if (isset($params['r'])) {
+        $dataRequest['r'] = $params['r'];
+        $dataRequestAppend[] = '/(r)/' . rawurlencode(base64_encode($params['r']));
+    }
+
+    // User ID
+    if (isset($params['u']) && is_numeric($params['u'])) {
+        $dataRequest['u'] = $params['u'];
+        $dataRequestAppend[] = '/(u)/' . rawurlencode($params['u']);
+    }
+
+    // Username
+    if (isset($params['l'])) {
+        $dataRequest['l'] = $params['l'];
+        $dataRequestAppend[] = '/(l)/' . rawurlencode($params['l']);
+    }
+
+    if (!isset($params['l']) && !isset($params['u'])) {
+        throw new Exception('Username or User ID has to be provided');
+    }
+
+    // One-time nonce — prevents replay within the validity window
+    $nonce = bin2hex(random_bytes(16));
+    $dataRequest['n'] = $nonce;
+    $dataRequestAppend[] = '/(n)/' . rawurlencode($nonce);
+
+    // Expire time for link — mandatory, default 300 s, capped at 3600 s
+    $ttl = isset($params['t']) && is_numeric($params['t']) ? (int)$params['t'] : 300;
+    $ttl = max(1, min($ttl, 3600));
+    $ts = time() + $ttl;
+    $dataRequest['t'] = $ts;
+    $dataRequestAppend[] = '/(t)/' . rawurlencode($ts);
+
+    $hashValidation = hash_hmac('sha256', implode(',', $dataRequest), $params['secret_hash']);
+
+    return "index.php/user/autologin/{$hashValidation}" . implode('', $dataRequestAppend);
+}
 
 ?>
+
 
 <a target="_blank" href="http://dev.livehelperchat.com/<?php echo generateAutoLoginLink(array('r' => 'chat/chattabs', 'u' => 1,/* 'l' => 'admin', *//* 't' => time() + 50000 */ 'secret_hash' => '12456456456456fghfghfghfgh'))?>">Login me</a>
 ```

@@ -92,6 +92,56 @@ If the operator recently went offline, there is icons which shows that
 
 After one-hour icon disappears.
 
+### Operators performance in the last 24 hours
+
+Required cronjob to be run every 5 minutes
+
+> php cron.php -s site_admin -c cron/stats/performance
+
+You can force to regenerate statistic manually
+
+> php cron.php -s site_admin -c cron/stats/performance -p force
+
+Required permission to see the widget
+
+Will see statistic for all operators where operator is member of write/read
+> 'lhstatistic','op_performance'
+
+OR
+
+Will see statistic for operators where operator is member with write permission
+> 'lhstatistic','op_performance_write'
+
+Required permission to configure performance widget columns
+
+> 'lhstatistic','performance_settings'
+
+What time zone is used while generating statistic?
+
+https://github.com/LiveHelperChat/livehelperchat/blob/9f70ac49edb27deb20abb8ad45c9b998dc1785bd/lhc_web/settings/settings.ini.default.php#L26
+
+### Department performance in the last 24 hours
+
+Required cronjob to be run every 5 minutes
+
+> php cron.php -s site_admin -c cron/stats/performance
+
+You can force to regenerate statistic manually
+
+> php cron.php -s site_admin -c cron/stats/performance -p force
+
+Required permission to see the widget
+
+> 'lhstatistic','dep_performance'
+
+Required permission to configure performance widget columns
+
+> 'lhstatistic','performance_settings'
+
+What time zone is used while generating statistic?
+
+https://github.com/LiveHelperChat/livehelperchat/blob/9f70ac49edb27deb20abb8ad45c9b998dc1785bd/lhc_web/settings/settings.ini.default.php#L26
+
 ### Ongoing trigger alerts!
 
 This widget shows only chats with specific triggers selected. It's usefull for monitoring purposes to see only chats with specific subjects.
@@ -373,7 +423,15 @@ You can switch left column to tab mode or have it as a list.
 
 ### Switch to new editor
 
-In the chat new editor will be used where you can see applied styles in real time.
+In the chat new editor will be used where you can see applied styles in real time. 
+
+For operator to be able to switch between new/old editor he has to have this permission.
+
+> 'lhfront', 'switch_editor'
+
+New Live Helper Chat versions set's new editor as default one.
+
+> (int)erLhcoreClassModelUserSetting::getSetting('new_editor', 1)
 
 ### Single chat view
 

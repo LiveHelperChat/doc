@@ -252,6 +252,101 @@ Examples of variable extraction:
 }
 ```
 
+##### Parsing array for the output, imploding internal array elements
+
+* `hits:hits^implode=={n}----------------DOCUMENT----------------{n}{n}[b]{item:_source:content}[/b]{n}`
+
+```json
+'{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 10,
+      "relation": "eq"
+    },
+    "max_score": 0.625678,
+    "hits": [
+      {
+        "_index": "chat-dev-lh_vector_storage",
+        "_id": "3G50-Z4B8h8ogyDFPmGz",
+        "_score": 0.625678,
+        "_source": {
+          "name": "chunk 1",
+          "content": "content 1"
+        }
+      },
+      {
+        "_index": "chat-dev-lh_vector_storage",
+        "_id": "8W52-Z4B8h8ogyDFXmFT",
+        "_score": 0.5675599,
+        "_source": {
+          "name": "chunk 2",
+          "content": "content 2"
+        }
+      },
+      {
+        "_index": "chat-dev-lh_vector_storage",
+        "_id": "4m50-Z4B8h8ogyDF-WGG",
+        "_score": 0.5612189,
+        "_source": {
+          "name": "chunk 3",
+          "content": "content 3"
+        }
+      },
+      {
+        "_index": "chat-dev-lh_vector_storage",
+        "_id": "9W52-Z4B8h8ogyDFXmFT",
+        "_score": 0.5416402,
+        "_source": {
+          "name": "chunk 4",
+          "content": "content 4"
+        }
+      },
+      {
+        "_index": "chat-dev-lh_vector_storage",
+        "_id": "9G52-Z4B8h8ogyDFXmFT",
+        "_score": 0.5302154,
+        "_source": {
+          "name": "chunk 5",
+          "content": "content 5"
+        }
+      }
+    ]
+  }
+}'
+```
+
+Output
+
+```json
+----------------DOCUMENT----------------
+
+content 1
+
+----------------DOCUMENT----------------
+
+content 2
+
+----------------DOCUMENT----------------
+
+content 3
+
+----------------DOCUMENT----------------
+
+content 4
+
+----------------DOCUMENT----------------
+
+content 5
+```
+
 ##### Parsing XML for the output
 
 when you parse xml you should omit first tag and start from the second tag:
