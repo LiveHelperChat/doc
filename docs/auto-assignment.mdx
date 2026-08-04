@@ -97,11 +97,11 @@ if (should I sort by agent assignment priority) {
 
 Assignment priority can be set in user account per department or department group.
 
-## Prioritized assignment workflow
+## Chat priority queue
 
-First, activate it by checking **Activate prioritized assignment** in the department's auto-assignment settings.
+First, enable it by checking **Enable chat priority queue** in the department's auto-assignment settings.
 
-Optionally, you can also sort agents by **Assign chat by operator priority also** within the prioritized workflow. This applies the same `assign_priority` ordering used by the regular queue (see [Assign chat by operator priority](#assign-chat-by-operator-priority)).
+Optionally, you can also sort agents by **Assign chat by operator priority also** within the chat priority queue. This applies the same `assign_priority` ordering used by the regular queue (see [Assign chat by operator priority](#assign-chat-by-operator-priority)).
 
 ### Department settings
 
@@ -109,12 +109,12 @@ These settings are configured in the department's **Auto assignment** tab, insid
 
 | Setting | Description |
 | --- | --- |
-| **Activate prioritized assignment** | Master switch. When enabled, chats that fall within the priority range are processed by the prioritized assignment workflow first. |
+| **Enable chat priority queue** | Master switch. When enabled, chats that fall within the priority range are processed by the chat priority queue first. |
 | **Assign chat by operator priority also** | Sort eligible operators by their `assign_priority` (highest first), on top of the default `last_accepted` ordering. |
-| **Assign only priority operators** | When enabled, only operators who have **Participate only in department priority assignment queue** checked in their user settings are eligible for the priority queue. Operators without that flag stay in the regular queue. |
+| **Assign only operators who have opted into the chat priority queue** | When enabled, only operators who have **Opt into chat priority queue** checked in their user settings are eligible for the priority queue. Operators without that flag stay in the regular queue. |
 | **Minimum agent assignment priority** | If set above `0`, only operators whose `assign_priority` is `>=` this value are considered for the priority queue. |
-| **Minimum chat priority** | Chats with priority below this value are **not** processed by the prioritized workflow and fall through to the regular queue. |
-| **Maximum chat priority** | Chats with priority above this value are **not** processed by the prioritized workflow and fall through to the regular queue. |
+| **Minimum chat priority** | Chats with priority below this value are **not** processed by the chat priority queue and fall through to the regular queue. |
+| **Maximum chat priority** | Chats with priority above this value are **not** processed by the chat priority queue and fall through to the regular queue. |
 
 ### User (operator) settings
 
@@ -123,9 +123,9 @@ These settings are configured per operator in their department assignment modal 
 | Setting | Description |
 | --- | --- |
 | **Operator assignment priority** (`assign_priority`) | Higher value = picked first when **Assign chat by operator priority** (or **also**) is enabled. |
-| **Min chat priority** (`chat_min_priority`) | Operator will only receive chats with priority `>=` this value from the prioritized workflow. `0` = no lower limit. |
-| **Max chat priority** (`chat_max_priority`) | Operator will only receive chats with priority `<=` this value from the prioritized workflow. `0` = no upper limit. |
-| **Participate only in department priority assignment queue** (`only_priority`) | When checked, the operator is **excluded** from the regular auto-assignment queue. They can only receive chats via the prioritized workflow. |
+| **Min chat priority** (`chat_min_priority`) | Operator will only receive chats with priority `>=` this value from the chat priority queue. `0` = no lower limit. |
+| **Max chat priority** (`chat_max_priority`) | Operator will only receive chats with priority `<=` this value from the chat priority queue. `0` = no upper limit. |
+| **Opt into chat priority queue** (`only_priority`) | When checked, the operator is **excluded** from the regular auto-assignment queue. They can only receive chats via the chat priority queue. |
 
 > ⚠️ Operators must be explicitly assigned to the department (or department group) — simply checking "All departments" in user settings is not sufficient.
 
@@ -133,8 +133,8 @@ These settings are configured per operator in their department assignment modal 
 
 Two settings control which queue an operator belongs to:
 
-* **Participate only in department priority assignment queue** — operator-level setting (per department or department group).
-* **Assign only priority operators** — department-level setting.
+* **Opt into chat priority queue** — operator-level setting (per department or department group).
+* **Assign only operators who have opted into the chat priority queue** — department-level setting.
 
 The scenarios below show how to combine them for common use cases. Assume a department priority range of `6`–`10` for all examples.
 
@@ -146,16 +146,16 @@ The scenarios below show how to combine them for common use cases. Assume a depa
 
 **Department configuration:**
 
-- ✅ **Activate prioritized assignment**  
-- ❌ **Assign only priority operators** — keep disabled  
+- ✅ **Enable chat priority queue**  
+- ❌ **Assign only operators who have opted into the chat priority queue** — keep disabled  
 - Set **Minimum chat priority** to `6` and **Maximum chat priority** to `10`
 
 **Per-operator configuration (for every operator):**
 
-- ❌ **Participate only in department priority assignment queue** — keep disabled  
+- ❌ **Opt into chat priority queue** — keep disabled  
 - Set **Min chat priority** and **Max chat priority** to `0` (or match the department range if you want to restrict some operators)
 
-**Result:** Chats in `6`–`10` are processed by the prioritized workflow and can be assigned to any operator whose priority ranges match. Chats in `0`–`5` use the regular queue and are also available to all operators.
+**Result:** Chats in `6`–`10` are processed by the chat priority queue and can be assigned to any operator whose priority ranges match. Chats in `0`–`5` use the regular queue and are also available to all operators.
 
 ---
 
@@ -165,20 +165,20 @@ The scenarios below show how to combine them for common use cases. Assume a depa
 
 **Department configuration:**
 
-- ✅ **Activate prioritized assignment**  
-- ✅ **Assign only priority operators** — enable this  
+- ✅ **Enable chat priority queue**  
+- ✅ **Assign only operators who have opted into the chat priority queue** — enable this  
 - Set **Minimum chat priority** to `6` and **Maximum chat priority** to `10`
 
 **Per-operator configuration:**
 
 *For priority-only operators:*
 
-- ✅ **Participate only in department priority assignment queue**  
+- ✅ **Opt into chat priority queue**  
 - Set **Min chat priority** to `0` and **Max chat priority** to `0` (or match `6`/`10`)
 
 *For normal-only operators:*
 
-- ❌ **Participate only in department priority assignment queue** — keep disabled  
+- ❌ **Opt into chat priority queue** — keep disabled  
 - Set **Min chat priority** to `0` and **Max chat priority** to `0`
 
 **Result:** Priority chats go only to the priority team. Normal chats go only to the normal team. The two pools are completely separate.
@@ -191,15 +191,15 @@ The scenarios below show how to combine them for common use cases. Assume a depa
 
 **Department configuration:**
 
-- ✅ **Activate prioritized assignment**  
-- ❌ **Assign only priority operators** — can be enabled or disabled depending on whether you want non-priority operators to also get priority chats (see Scenario 2 or 4)
+- ✅ **Enable chat priority queue**  
+- ❌ **Assign only operators who have opted into the chat priority queue** — can be enabled or disabled depending on whether you want non-priority operators to also get priority chats (see Scenario 2 or 4)
 
 **Per-operator configuration (for priority-only operators):**
 
-- ✅ **Participate only in department priority assignment queue**  
+- ✅ **Opt into chat priority queue**  
 - Set **Min chat priority** and **Max chat priority** to match the department range (e.g., `6` and `10`)
 
-**Result:** These operators are removed from the regular queue entirely. They only receive chats that pass through the prioritized workflow.
+**Result:** These operators are removed from the regular queue entirely. They only receive chats that pass through the chat priority queue.
 
 ---
 
@@ -209,15 +209,15 @@ The scenarios below show how to combine them for common use cases. Assume a depa
 
 **Department configuration:**
 
-- ✅ **Activate prioritized assignment**  
-- ✅ **Assign only priority operators** — enable this  
+- ✅ **Enable chat priority queue**  
+- ✅ **Assign only operators who have opted into the chat priority queue** — enable this  
 
 **Per-operator configuration (for normal-only operators):**
 
-- ❌ **Participate only in department priority assignment queue** — keep disabled  
+- ❌ **Opt into chat priority queue** — keep disabled  
 - Set **Min chat priority** to `0` and **Max chat priority** to `0`
 
-**Result:** Because **Assign only priority operators** is enabled at the department level, these operators (who do not have the operator-level flag) are excluded from the priority queue. They only receive regular chats.
+**Result:** Because **Assign only operators who have opted into the chat priority queue** is enabled at the department level, these operators (who do not have the operator-level flag) are excluded from the priority queue. They only receive regular chats.
 
 ---
 
@@ -240,10 +240,10 @@ These settings are configured in the department's **Auto assignment** → **Chat
 
 | Setting | Value | Why |
 | --- | --- | --- |
-| **Activate prioritized assignment** | ✅ Enable | Turns on the priority workflow |
+| **Enable chat priority queue** | ✅ Enable | Turns on the priority workflow |
 | **Minimum chat priority** | `100` | Chats below `100` use the regular queue |
 | **Maximum chat priority** | `200` | Chats above `200` use the regular queue |
-| **Assign only priority operators** | See sub-scenarios below | Controls whether normal operators are excluded from the priority queue |
+| **Assign only operators who have opted into the chat priority queue** | See sub-scenarios below | Controls whether normal operators are excluded from the priority queue |
 
 ---
 
@@ -251,7 +251,7 @@ These settings are configured in the department's **Auto assignment** → **Chat
 
 Each operator's settings are in their **department assignment modal** (see [user account](users/account.md)):
 
-| Operator | Min chat priority<br/>(`chat_min_priority`) | Max chat priority<br/>(`chat_max_priority`) | Participate only in priority queue<br/>(`only_priority`) | Handles |
+| Operator | Min chat priority<br/>(`chat_min_priority`) | Max chat priority<br/>(`chat_max_priority`) | Opted into chat priority queue<br/>(`only_priority`) | Handles |
 | --- | --- | --- | --- | --- |
 | Alice | `100` | `100` | See below | Priority-100 only |
 | Bob | `200` | `200` | See below | Priority-200 only |
@@ -259,7 +259,7 @@ Each operator's settings are in their **department assignment modal** (see [user
 | Dave | `0` | `0` | ❌ disabled | Regular only |
 | Eve | `0` | `0` | ❌ disabled | Regular only |
 
-The `only_priority` flag (**Participate only in department priority assignment queue**) and the department's **Assign only priority operators** setting work together. Two common sub-scenarios:
+The `only_priority` flag (**Opt into chat priority queue**) and the department's **Assign only operators who have opted into the chat priority queue** setting work together. Two common sub-scenarios:
 
 ---
 
@@ -267,11 +267,11 @@ The `only_priority` flag (**Participate only in department priority assignment q
 
 **Goal:** Alice, Bob, and Carol can receive both priority and regular chats. Dave and Eve handle regular chats only.
 
-**Department:** ❌ **Assign only priority operators** — disabled
+**Department:** ❌ **Assign only operators who have opted into the chat priority queue** — disabled
 
 **Per-operator `only_priority` flag:**
 
-| Operator | Participate only in priority queue<br/>(`only_priority`) |
+| Operator | Opted into chat priority queue<br/>(`only_priority`) |
 | --- | --- |
 | Alice | ❌ disabled |
 | Bob | ❌ disabled |
@@ -295,11 +295,11 @@ Alice, Bob, and Carol participate in both queues. Their `chat_min_priority`/`cha
 
 **Goal:** Alice, Bob, and Carol receive *only* priority chats. Dave and Eve receive *only* regular chats. No overlap.
 
-**Department:** ✅ **Assign only priority operators** — enabled
+**Department:** ✅ **Assign only operators who have opted into the chat priority queue** — enabled
 
 **Per-operator `only_priority` flag:**
 
-| Operator | Participate only in priority queue<br/>(`only_priority`) |
+| Operator | Opted into chat priority queue<br/>(`only_priority`) |
 | --- | --- |
 | Alice | ✅ enabled |
 | Bob | ✅ enabled |
@@ -315,13 +315,13 @@ Alice, Bob, and Carol participate in both queues. Their `chat_min_priority`/`cha
 | `100` | Alice, Carol |
 | `200` | Bob, Carol |
 
-With **Assign only priority operators** enabled, Dave and Eve are excluded from the priority queue. Alice, Bob, and Carol must have `only_priority` enabled to be eligible. The pools are completely separated.
+With **Assign only operators who have opted into the chat priority queue** enabled, Dave and Eve are excluded from the priority queue. Alice, Bob, and Carol must have `only_priority` enabled to be eligible. The pools are completely separated.
 
 ---
 
 ### Fallback behavior
 
-When **Assign only priority operators** is enabled, the system tries the prioritized queue first. If no eligible priority operator is found (all are offline, at capacity, or priority ranges don't match), the chat falls through to the regular assignment workflow.
+When **Assign only operators who have opted into the chat priority queue** is enabled, the system tries the chat priority queue first. If no eligible priority operator is found (all are offline, at capacity, or priority ranges don't match), the chat falls through to the regular assignment workflow.
 
 To keep priority chats strictly separated, ensure:
 - Priority operators are online and within capacity limits
