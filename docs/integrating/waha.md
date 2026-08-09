@@ -1,8 +1,6 @@
 ---
 id: waha
----
-id: waha
-title: WhatsApp WAHA Integration
+title: WAHA - WhatsApp HTTP API Integration
 ---
 
 This tutorial describes how to integrate WhatsApp support using [WAHA](https://waha.devlike.pro/). It does not cover the setup of the WAHA product itself, but focuses solely on its integration with Live Helper Chat.
