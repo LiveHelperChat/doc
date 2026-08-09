@@ -20,6 +20,13 @@ module.exports = {
         }*/
     ],
     themeConfig: {
+      // highlight-start
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
+      // highlight-end
       algolia: {
           appId: 'DU0VWURKF8',
           apiKey: '9eb0af19c0a5e66add270c05de84f985',
@@ -29,7 +36,7 @@ module.exports = {
               facetFilters: ['language:en'],
           }*//*,
           searchParameters: {},
-          algoliaOptions: {}, */// Optional, if provided by Algolia
+          algoliaOptions: {}, */ // Optional, if provided by Algolia
       },
     navbar: {
       title: 'Live Helper Chat',
