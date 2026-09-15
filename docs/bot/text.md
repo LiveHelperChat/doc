@@ -72,6 +72,14 @@ Text area supports these replaceable variables
  * `{current_time_ts}` current time in unix timestamp. E.g `[dateformat=Y/m/d, H:i:s]{current_time_ts}[/dateformat]`
  *  `{args.msg.udate__datef__Y-m-d H:i}` Use field timestamp and format a date
 
+#### Variables related to user language
+
+- Browser Locale: `{args.chat.chat_locale__or__string__n/a}`
+- Country: `{args.chat.country_name__or__string__n/a}`
+- User locale: `{args.chat.user_language.user_locale__or__string__n/a}`
+- Language name: `{args.chat.user_language.user_content_language_name__or__string__n/a}`
+- Content language: `{args.chat.user_language.user_content_language__or__string__n/a}`
+
 If message is media_type you can access uploaded file attributes
 
  * `{args.msg.file.file_body_embed}` - will generate `[chatfilebody=2013_fcff8995f3b457b586e3b2bba62e1d7f]` which afterwards will be used for `file_body` replacement.

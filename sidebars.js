@@ -10,6 +10,7 @@ module.exports = {
             'upgrading',
             'development/quick-guide',
             'chat/multiple-languages',
+            'mcp-setup',
             'security'
         ],
         Design: [
@@ -28,6 +29,7 @@ module.exports = {
             'permission',
             'users/advanced-permissions',
             'invisible-mode',
+            'offline-reasons',
             'operators-chat',
             'offline-online-automation',
             'auto-assignment',

@@ -48,6 +48,10 @@ This means that even if you have set your status to online, logging out will cha
 
 This means that if you log out while online, you will still be seen as online. This is useful if you are using a Telegram extension and want to remain visible as online. The widget will also be shown as online, and auto-assignment will continue to include you in the workflow.
 
+## Offline reasons
+
+Offline reasons let operators specify why they are going offline and are shown in the operator statistics. See the [Offline reasons documentation](/docs/offline-reasons).
+
 ## How Can Operators Change Their Visibility?
 
 Operators can change their visibility either from the top menu or directly in their account edit window.

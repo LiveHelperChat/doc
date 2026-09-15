@@ -79,6 +79,10 @@ In order to enable messaging other operators ![](/img/dashboard/start-chat-opera
 
 This is part of the `Group chats` functionality.
 
+To configure the Online operators widget columns, including their visibility and order, the operator needs:
+
+> 'lhstatistic', 'onlineop_settings'
+
 #### Offline indicators
 
 If the operator recently went offline, there is icons which shows that
@@ -104,17 +108,59 @@ You can force to regenerate statistic manually
 
 Required permission to see the widget
 
-Will see statistic for all operators where operator is member of write/read
+Will see statistic for all operators where operator is a department member (write or read only)
 > 'lhstatistic','op_performance'
 
 OR
 
-Will see statistic for operators where operator is member with write permission
+Will see statistic for operators where operator is a department member with write access
 > 'lhstatistic','op_performance_write'
 
 Required permission to configure performance widget columns
 
 > 'lhstatistic','performance_settings'
+
+#### What does `write` permission mean here?
+
+"Write" refers to the **department membership type**, not to the permission module itself. When an operator is assigned to a department (`Users -> Department` tab, or via a department group), the membership can be marked as `Read only`.
+
+* **Write member** — `Read only` is **not** checked. Operator can actively handle chats/mails of the department and takes part in auto-assignment.
+* **Read only member** — `Read only` is **checked**. Operator can only view/open chats of the department but does not take part in handling/auto-assignment.
+
+The two permissions differ only in which operators are visible in the widget:
+
+* `'lhstatistic','op_performance'` — operator sees performance rows for operators from **all departments** he is a member of, including departments where he is only a **read only** member.
+* `'lhstatistic','op_performance_write'` — operator sees performance rows **only for operators from departments where he is a write member**. Departments where he is only a read only member are excluded from the list.
+
+Both permissions open the widget, but `op_performance_write` narrows the visible rows to the departments the operator can actually work in. If both permissions are granted, the broader `op_performance` behavior applies.
+
+**Exceptions:** the department-based filtering above is skipped (and all rows are shown) when the operator has `All departments` checked in his account **or** has the `'lhuser','userlistonlineall'` permission.
+
+#### When the operator does not see any operators
+
+The widget content depends on three things: the **generated statistic**, the **assigned departments** and the **permissions**. If any of them is missing the widget will be empty.
+
+1. **Statistic has to be generated.** Rows come from the stored statistic table which is produced by the `cron/stats/performance` cronjob every 5 minutes. If the cronjob was never executed, or the statistic table has no data yet, the widget shows no rows (`up` value shows `n/a`).
+
+2. **Operator has to be a department member.** If the operator is not assigned to any department, the department-based filtering returns no rows and the widget is empty. The operator has to be assigned to at least one department (`Users -> Department` tab or via a department group).
+
+3. **Departments the operator sees depend on his permissions:**
+   * `'lhstatistic','op_performance'` — sees operators from **all departments** he is a member of (write and read only memberships).
+   * only `'lhstatistic','op_performance_write'` — sees operators **only from departments where he is a write member**. If he is not a write member of any department (only read only memberships), the widget is empty.
+
+Most common reasons why an operator sees an empty widget:
+
+* The `cron/stats/performance` cronjob has not run yet (or the statistic table has no data).
+* The operator is not a member of any department.
+* The operator has only `op_performance_write` and is only a read only member of his departments.
+* The operator enabled the `Myself` filter in the widget, but his own performance row is not present in the stored statistic yet.
+
+Ways to make more content visible:
+
+* Assign the operator to the relevant departments.
+* Grant `'lhstatistic','op_performance'` instead of (or in addition to) `op_performance_write` so read only memberships are also included.
+* Check `All departments` in the operator account, or grant `'lhuser','userlistonlineall'` — both bypass department filtering and show all operators from the stored statistic.
+* Make sure the `cron/stats/performance` cronjob is running.
 
 What time zone is used while generating statistic?
 
@@ -137,6 +183,28 @@ Required permission to see the widget
 Required permission to configure performance widget columns
 
 > 'lhstatistic','performance_settings'
+
+#### When the operator does not see departments
+
+Same as with the operators widget, the content depends on the **generated statistic**, the **assigned departments** and the **permissions**.
+
+1. **Statistic has to be generated.** Rows come from the stored statistic table produced by the `cron/stats/performance` cronjob every 5 minutes. Without it the widget is empty (`up` value shows `n/a`).
+
+2. **Permission to see the widget at all.** The operator needs `'lhstatistic','dep_performance'`. Without it the widget is not loaded at all.
+
+3. **Department membership.** If `All departments` is **not** checked in the operator account, the operator sees **only the departments he is a member of** (both write and read only memberships are included — unlike the operators widget there is no read only filtering here). If the operator is not a member of any department, the widget is empty.
+
+Most common reasons why an operator sees an empty widget:
+
+* The `cron/stats/performance` cronjob has not run yet (or the statistic table has no data).
+* The operator is not assigned to any department.
+* The operator does not have the `'lhstatistic','dep_performance'` permission (widget is not shown/loaded).
+
+Ways to make more content visible:
+
+* Assign the operator to the departments he should monitor.
+* Check `All departments` in the operator account to see all departments present in the stored statistic.
+* Make sure the `cron/stats/performance` cronjob is running.
 
 What time zone is used while generating statistic?
 

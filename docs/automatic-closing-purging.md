@@ -13,36 +13,44 @@ To execute the closing/purging process, you have two options:
 *   **Manual Execution:** Navigate to "System configuration" => "Live help configuration" => "Maintenance" in the back office. From there, you can manually close and delete chats.
 *   **Automated Execution via Cronjob:** If you prefer to automate the process, you can set up a [cron job](development/cronjob.md).
 
-**What chats are closed by the "Automatic chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
+**What chats are closed by the "Automatic chats closing" setting (`autoclose_timeout`, 0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
 1.  Chats that are active, where the visitor has sent more than one message, and the specified amount of time has passed since their last message.
 2.  Chats that are pending or active, where the only message was the visitor's first message.
 
-**What chats are closed by the "Automatically close active chat if from last visitor/operator message passed" setting (0 - disabled, n > 0 time in minutes)?**
+**What chats are closed by the "Automatically close active chat if from last visitor/operator message passed" setting (`autoclose_activity_timeout`, 0 - disabled, n > 0 time in minutes)?**
 
-1.  All active chats are closed if the specified amount of time has passed since the last chat activity. Activity includes:
-    *   Operator accepting a chat
-    *   Visitor sending a message
-    *   Operator sending a message
+1.  Active chats where the most recent message (visitor or operator) is older than the set time.
+2.  Active chats where no message has been sent and the chat was started more than the set time ago.
 
-**What chats are closed by the "Automatic pending chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
+Optionally, a second argument can be passed to close the chat only when the last message was sent by a specific side. In this case the "no message sent" rule above does not apply:
+
+*   `,1` - closes the chat only when the visitor sent the last message and that message is older than the set time.
+*   `,2` - closes the chat only when the operator sent the last message and that message is older than the set time.
+
+For example:
+
+*   `4,1` closes the active chat if the visitor sent the last message and 4 minutes have passed since that message.
+*   `4,2` closes the active chat if the operator sent the last message and 4 minutes have passed since that message.
+
+**What chats are closed by the "Automatic pending chats closing" setting (`autoclose_timeout_pending`, 0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
 1.  Chats that are pending and the specified amount of time has passed since the chat started. This means the chat was not accepted within this period.
 
-**What chats are closed by the "Automatic active chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
+**What chats are closed by the "Automatic active chats closing" setting (`autoclose_timeout_active`, 0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
 1.  Chats that are active and the specified amount of time has passed since the chat started.
 
-**What chats are closed by the "Automatic bot chats closing" setting (0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
+**What chats are closed by the "Automatic bot chats closing" setting (`autoclose_timeout_bot`, 0 - disabled, n > 0 time in minutes before chat is automatically closed)?**
 
 1.  Chats that are bot chats, the specified amount of time has passed since the chat started, and the only message was the user's first message.
 2.  Chats that are bot chats and the specified amount of time has passed since the last visitor message.
 
-**What chats are deleted by the "Automatic chats purging" setting (0 - disabled, n > 0 time in minutes before chat is automatically deleted)?**
+**What chats are deleted by the "Automatic chats purging" setting (`autopurge_timeout`, 0 - disabled, n > 0 time in minutes before chat is automatically deleted)?**
 
 1.  Chats that are closed and the specified amount of time has passed since the user's last message.
 
-**What chats are closed by the "Automatically close pending chats where visitor has left a chat" setting (Timeout in minutes, last activity by visitor `desktop timeout`,`mobile timeout`,`status chat`)?**
+**What chats are closed by the "Automatically close pending chats where visitor has left a chat" setting (`autoclose_abandon_pending`, timeout in minutes, last activity by visitor `desktop timeout`,`mobile timeout`,`status chat`)?**
 
 1.  Chats where the visitor:
     *   Has been redirected to a survey form
