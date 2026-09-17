@@ -4,6 +4,8 @@ sidebar_label: Completions generic api integration
 title: Completions generic api integration
 ---
 
+Live Helper Chat is the agent harness - it keeps the conversation, the triggers, the tools (actions) and the state - while the completions server supplies the model that drives the agent. Any service exposing an OpenAI compatible completions API can be used as the model provider.
+
 This integration was tested with https://github.com/ggml-org/llama.cpp.
 
 During testing I ran on an NVIDIA Tesla P4 using the following command:

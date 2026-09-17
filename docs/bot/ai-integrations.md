@@ -6,6 +6,8 @@ title: Basic Flow of AI Integrations and Possible Scenarios
 
 These observations reflect my personal opinions, so please consider them accordingly.
 
+In Live Helper Chat you build **AI agents**: the bot is the agent definition and interface, and the LHC bot engine is the **harness** that drives it - it owns the conversation, the triggers/events, the tools (actions) and the state (chat variables), while the AI service provides the model and reasoning.
+
 This article describes potential AI integration flows and their purposes.
 
 *   Remote AI servers

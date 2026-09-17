@@ -6,7 +6,9 @@ sidebar_label: Integrating AI (with Coding)
 
 ## Introduction
 
-This tutorial explains how to use a boilerplate template to integrate any AI into Live Helper Chat.
+This tutorial explains how to use a boilerplate template to plug any AI agent into the Live Helper Chat harness.
+
+In this setup Live Helper Chat is the harness: it keeps the conversation, the participant state and the tools (actions), while your code decides what the agent should do next. Swap in any model provider - or your own service - without changing the chat interface visitors use.
 
 :::tip
 This integration requires programming skills. New versions of the bot have a [Rest API](rest-api.md) response type, which allows you to integrate any third-party AI solution into Live Helper Chat [without coding](integrate-any-ai-without-coding.md).
@@ -27,7 +29,7 @@ The extension can be found at https://github.com/LiveHelperChat/lhcaibot.
 
 ## How it works?
 
-Basic principle is simple. Every single message is send to AI engine. Visitor message can be processed either sync or async way. Async way requires [background worker](https://github.com/LiveHelperChat/lhc-php-resque) extension.
+Basic principle is simple. Every single message is send to the AI agent - the model provider plus your instructions and tools. Visitor message can be processed either sync or async way. Async way requires [background worker](https://github.com/LiveHelperChat/lhc-php-resque) extension.
 
 In [bootstrap.php](https://github.com/LiveHelperChat/lhcaibot/blob/master/bootstrap/bootstrap.php) file you will see two main functions
 

@@ -348,7 +348,7 @@ When visitor clicks a button we will open defined URL just as a link.
 
 #### Click
 
-This will issue defined payload. It's usefull if you are integrating third party AI bots. As this event can be passed to them.
+This will issue defined payload. It's usefull if you are integrating third party AI agents. As this event can be passed to them.
 
 #### Update Chat
 

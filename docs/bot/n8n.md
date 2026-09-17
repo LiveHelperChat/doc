@@ -4,7 +4,7 @@ sidebar_label: n8n integration
 title: Tutorial how to integrate n8n with Live Helper Chat
 ---
 
-This tutorial demonstrates how to integrate n8n workflow automation with Live Helper Chat to create an AI-powered chatbot using OpenAI.
+This tutorial demonstrates how to integrate n8n workflow automation with Live Helper Chat to build an AI agent using OpenAI as the model provider. Live Helper Chat is the agent harness - it keeps the conversation, the triggers, the tools (actions) and the state - while n8n orchestrates the calls to the model.
 
 There is two flows in this integration 
 

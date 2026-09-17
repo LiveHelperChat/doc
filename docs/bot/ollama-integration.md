@@ -4,6 +4,8 @@ sidebar_label: Ollama Integration (Completions, Tool Calls)
 title: Integrating Ollama into Live Helper Chat with Tool Calls Support
 ---
 
+Live Helper Chat is the agent harness here - it keeps the conversation, the triggers, the tools (actions) and the state - while your Ollama server supplies the model that drives the agent.
+
 This sample uses the [llama3-groq-tool-use](https://ollama.com/library/llama3-groq-tool-use) model. You can use any other model as well.
 
 The following models are ones I have tried, and in my opinion, are the best:

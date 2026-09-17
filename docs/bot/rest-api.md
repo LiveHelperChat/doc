@@ -7,6 +7,8 @@ title: Bot Rest API
 
 This article explains how to use the REST API response type in a bot. With this feature, you can integrate any third-party API without any coding.
 
+This is also the mechanism that turns a bot into an AI agent: Live Helper Chat acts as the harness, sends the conversation to your AI service and executes what the service returns - either a message for the visitor or an instruction to run one of the agent's tools.
+
 In order to make it work, you need to set up two things:
 
 * The REST API call itself

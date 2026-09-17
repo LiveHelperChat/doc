@@ -4,7 +4,7 @@ sidebar_label: Rasa integration (FAQ)
 title: Integrating Rasa as FAQ server
 ---
 
-This FAQ bot is built on top of [Rasa AI](https://rasa.com). This workflow is similar to [intent detection using Rasa](bot/rasa-integration-intent.md).
+This FAQ agent is built on top of [Rasa AI](https://rasa.com). Live Helper Chat provides the harness (conversation, triggers, tools and state) around it. This workflow is similar to [intent detection using Rasa](bot/rasa-integration-intent.md).
 
 To run it, you will need:
 

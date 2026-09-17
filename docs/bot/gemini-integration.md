@@ -4,6 +4,8 @@ sidebar_label: Gemini integration (interactive chat, Tool calls)
 title: Integrating Gemini into Live Helper Chat with tool calls support
 ---
 
+Live Helper Chat is the agent harness here - it keeps the conversation, the triggers, the tools (actions) and the state - while Gemini supplies the model that drives the agent.
+
 A good place to start your journey with Gemini is to read the [official documentation](https://ai.google.dev/gemini-api/docs/models/gemini).
 
 Notes 

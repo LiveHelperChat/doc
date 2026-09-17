@@ -11,6 +11,10 @@ Live Helper Chat can expose its back office as a [Model Context Protocol](https:
 * *"Why can user 5 not open chat 1234?"*
 * *"Would chat 1234 be auto assigned, and if not, why?"*
 
+:::note
+This page is about Live Helper Chat acting as an MCP **server** - it exposes read only tools to an AI agent that runs elsewhere. To build an AI agent inside Live Helper Chat itself, where Live Helper Chat is the harness that drives the agent, see *How to use a bot (AI agent builder)*.
+:::
+
 The tools are **read only**. They inspect configuration and evaluate the same conditions the back office applies, but never change anything.
 
 ## Requirements

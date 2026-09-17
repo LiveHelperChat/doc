@@ -4,6 +4,8 @@ sidebar_label: ChatGPT Integration (Responses, Tool Calls, File Search)
 title: Integrating ChatGPT into Live Helper Chat with Responses API, Tool Calls, File Search Support
 ---
 
+Live Helper Chat is the agent harness here - it keeps the conversation, the triggers, the tools (actions) and the state - while OpenAI supplies the model that drives the agent. The REST API definition describes how the harness calls the model, and the bot defines the agent itself.
+
 This integration uses the Chat Responses API.
 
 * https://platform.openai.com/docs/guides/tools-file-search

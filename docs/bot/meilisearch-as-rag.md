@@ -5,6 +5,8 @@ title: Meilisearch as documentation retrieval generator
 
 This document demonstrates how to use [Meilisearch](https://www.meilisearch.com/) as document storage for a simplified RAG (Retrieval-Augmented Generation) system.
 
+Live Helper Chat is the agent harness here - it keeps the conversation, the triggers, the tools (actions) and the state - while Meilisearch retrieves the context and the LLM generates the answer.
+
 ## How it works
 
 *   Documents are stored in Meilisearch as a searchable index

@@ -4,6 +4,8 @@ sidebar_label: OpenRouter integration (Responses API, Tool Calls)
 title: Integrating OpenRouter into Live Helper Chat with Responses API and Tool Calls support
 ---
 
+Live Helper Chat is the agent harness here - it keeps the conversation, the triggers, the tools (actions) and the state - while OpenRouter routes the request to the model that drives the agent.
+
 [OpenRouter](https://openrouter.ai) is a unified API gateway that gives you access to hundreds of AI models — including OpenAI, Anthropic Claude, Google Gemini, Meta Llama, and many others — through a single OpenAI-compatible endpoint.
 
 Before you begin, you will need:

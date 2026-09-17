@@ -1,13 +1,39 @@
 ---
 id: how-to-use-bot
-title: How to use a bot
+title: How to use a bot (AI agent builder)
 ---
+
+Live Helper Chat is a visual **AI agent builder** with a bot interface. You build an agent from triggers, events and actions, and the LHC bot engine acts as the **harness** that runs it and talks to the AI service of your choice.
+
+## AI agents, harness and bots - terminology
+
+Throughout this documentation the following terms are used:
+
+| Term | Meaning |
+| --- | --- |
+| **AI agent** | The component that decides what happens next: a model (LLM) combined with instructions, tools and conversation state. |
+| **Harness** | The runtime that drives the agent. It receives events, keeps conversation state, calls the model, executes the returned actions/tool calls and delivers replies to the visitor. In Live Helper Chat the bot engine is the harness. |
+| **Bot** | The Live Helper Chat side definition and interface of an agent: trigger groups, events, actions and the visual builder. Creating a bot means defining the agent the harness runs. |
+| **Bot builder** | The visual editor (bot list -> bot -> triggers) used to build an agent without coding. |
+| **Tool / action** | Everything the agent can do besides sending a reply: send a predefined block, transfer to an operator, collect information, send mail, call a REST API, execute JavaScript, render an iframe, and so on. These are the agent's tools. |
+| **Memory / state** | Conversation scoped data the harness keeps for the agent between messages: chat variables, collected attributes, the bot workflow state and identifiers passed to an external AI service (for example a `uuid` per conversation). |
+| **Model provider** | The third party or self hosted service that performs the reasoning and generation: OpenAI, Gemini, DeepSeek, Ollama, Rasa, n8n, your own REST API, and so on. |
+
+In short:
+
+* **Live Helper Chat = builder + harness + agent/chat interface.**
+* **Your AI service (or LHC's built-in, rule based triggers) = the agent's brain.**
+* **A bot = the agent configuration you build in Live Helper Chat.**
+
+Because Live Helper Chat owns the harness, you can swap the model provider at any time without rebuilding the agent. The agent keeps the same triggers, tools, memory and escalation rules to human operators.
+
+## Key features
 
 Key features include:
 
 *   Extensions with custom information collection capabilities ([collecting information](bot/collecting-information.md)).
-*   Bots that can match text or quick reply buttons, enabling navigation-style workflows.
-*   AI Integrations: Integrate any third-party API.
+*   AI agents that can match text or quick reply buttons, enabling navigation-style workflows, use tools (actions) and escalate to human operators.
+*   AI Integrations: connect any model provider or third-party API.
 *   [Rasa integration (chatbot)](bot/rasa-integration.md)
 *   [Rasa integration (FAQ)](bot/rasa-faq.md)
 *   [Rasa integration (intent)](bot/rasa-integration-intent.md)
@@ -26,15 +52,15 @@ Key features include:
 
 The dashboard also has a "Bot chats" widget. Activating this widget will display bot chats. You may need to go to your account -> visible lists to enable bot chats listing.
 
-## Understanding the Bot-Building Workflow
+## Understanding the agent-building workflow
 
 *   The first step is to create a triggers group. A trigger is an action that initiates a response. Triggers can listen for multiple events, such as specific text inputs (e.g., "Hi," "Hey," "Hello") and button clicks.
-*   The middle column defines the actions the bot will take when a trigger is matched.
+*   The middle column defines the actions the bot will take when a trigger is matched. Those actions are the tools the agent can use - including the ones that hand the conversation over to a human operator.
 *   The right column displays what the visitor will see.
 
 ![](/img/bot/bot-building-workflow.png)
 
-## Types of Bot Replies
+## Types of Bot Replies and Agent Tools
 
 *   Basic
     *   [Send text](bot/text.md)

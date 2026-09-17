@@ -4,6 +4,8 @@ sidebar_label: ChatGPT Integration (Completions, Tool Calls)
 title: Integrating ChatGPT into Live Helper Chat with Tool Calls Support (Completions API)
 ---
 
+Live Helper Chat is the agent harness here - it keeps the conversation, the triggers, the tools (actions) and the state - while OpenAI supplies the model that drives the agent. A REST API definition describes how the harness calls the model, and a bot defines the agent itself.
+
 :::tip
 This integration flow using the Completions API is deprecated. Consider using the [Responses API](bot/chatgpt-responses.md) instead for newer implementations.
 :::

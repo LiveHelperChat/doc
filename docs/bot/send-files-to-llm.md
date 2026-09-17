@@ -3,11 +3,11 @@ id: send-files-to-llm
 title: How to send files to LLM?
 ---
 
-Most documentation focuses on handling text-based chat messages. However, visitors may want to report issues or ask questions by uploading files such as screenshots. This guide explains how to configure your bot to process file uploads and send them to a Large Language Model (LLM) for analysis.
+Most documentation focuses on handling text-based chat messages. However, visitors may want to report issues or ask questions by uploading files such as screenshots. This guide explains how to configure your AI agent to process file uploads and send them to a Large Language Model (LLM) for analysis.
 
 ## Prerequisites
 
-Before implementing file-to-LLM functionality, ensure your bot and LLM service support:
+Before implementing file-to-LLM functionality, ensure your agent's bot configuration and LLM service support:
 - File upload handling
 - Multi-modal content processing (text + images)
 - JSON message formatting

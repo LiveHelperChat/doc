@@ -6,15 +6,17 @@ sidebar_label: Integrating AI (without coding)
 
 ## Introduction
 
-In this tutorial, I will explain how to integrate any AI into Live Helper Chat without coding.
+In this tutorial, I will explain how to build an AI agent in Live Helper Chat without coding, using any third-party AI service as the model provider.
+
+Live Helper Chat provides the harness - the conversation, the triggers, the tools (actions) and the state - while the external AI service provides the reasoning. The bot interface is how you wire the two together.
 
 ## How it works
 
 The workflow is simple:
 
-*   Define AI REST API calls.
-*   Define a bot that uses them.
-*   Upon starting a conversation, set a `uuid` which acts as the current conversation handler for the third-party AI.
+*   Define AI REST API calls - these are the agent's connection to the model provider.
+*   Define a bot that uses them - this is the agent itself, with its triggers, events and tools.
+*   Upon starting a conversation, set a `uuid` which acts as the current conversation handler for the third-party AI - this is the agent's memory.
 
 The REST API has only one request defined.
 

@@ -4,7 +4,7 @@ sidebar_label: Rasa entities extraction
 title: Rasa Intent Server with Entities Extraction
 ---
 
-Rasa is an AI bot that handles the core processing. Integrating it is straightforward once Rasa is running.
+Rasa is an AI agent that handles the core processing. Integrating it is straightforward once Rasa is running - Live Helper Chat provides the harness (conversation, triggers, tools and state) around it.
 
 By extending your training data with this workflow, you can create:
 

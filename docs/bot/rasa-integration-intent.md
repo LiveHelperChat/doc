@@ -4,7 +4,7 @@ sidebar_label: Rasa Integration (Intent)
 title: Integrating Rasa into Live Helper Chat (Intent)
 ---
 
-Rasa is an AI bot that handles the core AI processing. Integrating it into Live Helper Chat is straightforward once you have Rasa set up and running.
+Rasa is an AI agent that handles the core AI processing. Integrating it into Live Helper Chat is straightforward once you have Rasa set up and running - Live Helper Chat provides the harness (conversation, triggers, tools and state) around it.
 
 You will need the following:
 
