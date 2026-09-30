@@ -125,6 +125,8 @@ These settings are configured per operator in their department assignment modal 
 | **Operator assignment priority** (`assign_priority`) | Higher value = picked first when **Assign chat by operator priority** (or **also**) is enabled. |
 | **Min chat priority** (`chat_min_priority`) | Operator will only receive chats with priority `>=` this value from the chat priority queue. `0` = no lower limit. |
 | **Max chat priority** (`chat_max_priority`) | Operator will only receive chats with priority `<=` this value from the chat priority queue. `0` = no upper limit. |
+| **Min chat priority — standard queue** (`chat_min_priority_std`) | Operator will only receive chats with priority `>=` this value from the **regular** auto-assignment queue. `0` = no lower limit. |
+| **Max chat priority — standard queue** (`chat_max_priority_std`) | Operator will only receive chats with priority `<=` this value from the **regular** auto-assignment queue. `0` = no upper limit. |
 | **Opt into chat priority queue** (`only_priority`) | When checked, the operator is **excluded** from the regular auto-assignment queue. They can only receive chats via the chat priority queue. |
 
 > ⚠️ Operators must be explicitly assigned to the department (or department group) — simply checking "All departments" in user settings is not sufficient.
@@ -328,6 +330,130 @@ To keep priority chats strictly separated, ensure:
 - Their `chat_min_priority` / `chat_max_priority` ranges cover the expected chat priorities
 - The department's minimum/maximum chat priority range is correctly set
 
+The fallback runs through the regular queue, so the operator level [standard queue priority range](#standard-queue-priority-range) is applied there as well - an operator whose standard range excludes the chat cannot receive it even as a fallback.
+
+
+## Standard queue priority range
+
+The regular (standard) auto assignment queue has its own operator level priority range: `chat_min_priority_std` and `chat_max_priority_std`. It is independent from the [chat priority queue](#chat-priority-queue) pair (`chat_min_priority` / `chat_max_priority`) and is meant for "this operator should only handle chats inside this priority band" routing.
+
+| Field | Meaning |
+| --- | --- |
+| `chat_min_priority_std` | The operator receives only chats with `priority >=` this value from the regular queue. `0` = no lower limit. |
+| `chat_max_priority_std` | The operator receives only chats with `priority <=` this value from the regular queue. `0` = no upper limit. |
+
+* Both values are **inclusive** and default to `0`, which means **no limit** - nothing changes until you set them.
+* Both fields are set per operator in the department (or department group) assignment modal, next to the [chat priority queue](#user-operator-settings) fields.
+
+Where the chat priority comes from:
+
+* The department **Priority** field (*Priority, used for chats priority*) is the priority of every new chat started in that department.
+* **System configuration → Chat priority** rules override the priority based on chat variables or the visitor role.
+* The chat start API/widget can pass `priority` explicitly.
+
+If the department priority is left at `0`, most chats have priority `0` - see [Important behaviour](#important-behaviour) before you set a minimum.
+
+### Which queue sees which chat
+
+| Situation | Query which picks the operator | Priority range which is applied |
+| --- | --- | --- |
+| The department chat priority queue is enabled and the chat priority is inside the department range | chat priority queue first | `chat_min_priority` / `chat_max_priority` |
+| The chat priority is outside the department range, or no priority operator was found | same language pre-pass, then the regular query | `chat_min_priority_std` / `chat_max_priority_std` |
+| The operator has **Opt into chat priority queue** checked | never the regular query | the standard range is irrelevant |
+
+### Examples
+
+#### Example 1: global cap - a team never receives chats below priority 50
+
+**Goal:** the senior team should handle only important chats, every chat with priority `0`-`49` must be handled by somebody else.
+
+**Per-operator configuration (for each senior team member):**
+
+| Min chat priority - standard queue | Max chat priority - standard queue |
+| --- | --- |
+| `50` | `0` |
+
+**Result:**
+
+| Chat priority | Offered to the senior team? |
+| --- | --- |
+| `0`-`49` | ❌ never |
+| `50`+ | ✅ normally (still subject to online state, capacity, assignment delay, ...) |
+
+:::warning
+If every operator of the department is capped this way and nobody else is online, the low priority chats simply stay in the pending queue. These fields have no "best effort" fallback - keep at least one operator with `0` / `0` in the department if you need a catch-all.
+:::
+
+#### Example 2: split one department by priority band (junior / senior)
+
+**Goal:** junior operators take the low priority tail, senior operators take everything else.
+
+| Operator group | Min chat priority - standard queue | Max chat priority - standard queue | Handles |
+| --- | --- | --- | --- |
+| Junior | `0` | `49` | `0`-`49` |
+| Senior | `50` | `0` (unlimited) | `50`+ |
+
+Because the two ranges do not overlap, a chat is offered to exactly one of the groups. This is the standard queue counterpart of Scenario 5 above, which partitions the *chat priority queue* instead.
+
+#### Example 3: VIP-only operator
+
+**Goal:** one dedicated agent handles everything from priority `100` up.
+
+| Min chat priority - standard queue | Max chat priority - standard queue |
+| --- | --- |
+| `100` | `0` |
+
+:::warning
+Chats with priority `0` - which is the default for a new chat - are **not** offered to this operator at all. Set the department **Priority** field and/or add **System configuration → Chat priority** rules first, otherwise the VIP agent receives nothing.
+:::
+
+#### Example 4: keep one specific band away from a team
+
+**Goal:** system generated chats with priority `200` should never reach the first line team, but first line should still get everything from `50` up.
+
+| Min chat priority - standard queue | Max chat priority - standard queue | Handles |
+| --- | --- | --- |
+| `50` | `199` | `50`-`199` |
+
+The second level team receives `200`+ with `chat_min_priority_std` = `200` (and `chat_max_priority_std` = `0`).
+
+#### Example 5: three tiers - chat priority queue and standard range together
+
+**Goal:** a dedicated desk for the priority band, everybody else split by the standard range, with a working fallback.
+
+**Department settings** (Auto assignment → Chat priority queue): ✅ enable the chat priority queue with **Minimum chat priority** `6` and **Maximum chat priority** `10`.
+
+| Operator | Opt into chat priority queue | Min chat priority<br/>(`chat_min_priority`) | Max chat priority<br/>(`chat_max_priority`) | Min chat priority - standard<br/>(`chat_min_priority_std`) | Max chat priority - standard<br/>(`chat_max_priority_std`) |
+| --- | --- | --- | --- | --- | --- |
+| VIP desk | ✅ enabled | `6` | `10` | - | - |
+| Senior | ❌ disabled | `0` | `0` | `0` | `0` |
+| Junior | ❌ disabled | `0` | `0` | `0` | `5` |
+
+**Result:**
+
+| Chat priority | Assigned to |
+| --- | --- |
+| `6`-`10` | VIP desk |
+| `0`-`5` | Senior and Junior |
+| `6`-`10` while the VIP desk is offline | Senior only - the chat falls through to the regular queue, where Junior is excluded by his standard maximum of `5` |
+
+### Important behaviour
+
+* **Applied per `lh_userdep` row.** Every department assignment and every department group assignment creates its own row and the regular query evaluates all rows of the chat department. If an operator has more than one row for the same department, the chat can be received through any row whose range matches.
+* **Only the regular path is affected.** The chat priority queue keeps using `chat_min_priority` / `chat_max_priority`.
+* **The same language pre-pass is affected too** - it belongs to the regular queue.
+* **The fallback is affected too.** When the chat priority queue finds nobody, the chat falls back to the regular queue where the standard range applies.
+* **No automatic bypass.** An operator outside the range is not a candidate at all. If nobody else matches, the chat stays pending - see *Example 1* above.
+* **Operators who opted into the chat priority queue** never participate in the regular queue, so these fields have no effect for them.
+* **Changing the values does not reassign anything.** Already assigned and pending chats keep their operator, the fields affect the next auto assignment run only.
+
+### How to verify
+
+* The operator statistic modal (*Users → operator → statistic*, or the chart icon next to an operator) has an **Auto assign test** tab: enter a chat ID and you get a rule by rule verdict for that operator, including the `operator.chat_priority_range_std` check.
+* The **User stats** tab of the same modal shows both priority ranges - the chat priority queue range and the standard queue priority range - of every assignment of that operator.
+* AI/MCP clients can ask the same question with the `explain_chat_auto_assign` tool (pass `user_id` or `email`); the answer lists reasons such as `operator_chat_priority_range_std`.
+* When a chat was assigned, hovering the assignment icon in the chat list shows the picked operator and the next candidate.
+
 
 ## Workflow cronjob influence
 
@@ -427,6 +553,7 @@ This is the most common question I get until support managers starts to understa
 2. Check were they online during specific moment. `System configuration -> Users -> Online hours` choose one user at a time. They both should be online during that moment.
 3. In specific chat which you think was assigned incorrectly move mouse over `Assignment icon` there you will see currently assigned operator status at that time and next candidate.check
 4. Filter chat list using those two operators to see how chat flow for them.
+5. Compare their priority ranges - both the [chat priority queue](#chat-priority-queue) range (`chat_min_priority` / `chat_max_priority`) and the [standard queue priority range](#standard-queue-priority-range) (`chat_min_priority_std` / `chat_max_priority_std`). A range which does not cover the chat `priority` removes the operator from the candidates. The quickest check is the **Auto assign test** tab of the operator statistic modal (chart icon next to an operator) - enter the chat ID and you get the exact reason.
 
 In this block you will see exactly what was picked as an operator and who is next candidate.
 
