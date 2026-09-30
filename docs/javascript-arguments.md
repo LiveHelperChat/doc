@@ -30,8 +30,8 @@ LHC_API.args = {
     chat_hash: null,     // Manually passed chat hash
     do_not_track_url: false,     // Do not track and pass present visitor URL
     vars_encrypted:false,// If set true, all passed variables via lhc_var will be considered as encrypted even back offise indicates it's non ecrypted var. Usefull if you have many brands and want to migrated to encrypted flow.
-    hide_parent: false,  // If we get event if any iframe page has already lhc embeded we just hide script in parent page. Oposite action to `hide_iframe`
-    hide_iframe: false,  // If script is embeded in iframe we can hide automatically it if we detect that parent page already has Live Helper Chat script embeded
+    hide_parent: false,  // If we get event if any iframe page has already lhc embeded we just hide script in parent page. Oposite action to `hide_iframe`. Demo https://livehelperchat.com/lhcsamples/iframe_hide_parent.html
+    hide_iframe: false,  // If script is embeded in iframe we can hide automatically it if we detect that parent page already has Live Helper Chat script embeded. Demo https://livehelperchat.com/lhcsamples/iframe_hide_iframe.html
     mobile_view: null    // You can force widget to render in mobile view (full screen) or not | Optional | Default - shows full screen on mobile devices | Possible value true or false
     sright: 0,           // How many pixels append from the right to the status widget, can be negative values also | Optional
     sbottom: 0,          // How many pixels append from the bottom to the status widget, can be negative values also | Optional
