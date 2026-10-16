@@ -64,6 +64,19 @@ E.g
     }
 ```
 
+You can also print a part of the text only when a [condition](bot/conditions.md#printing-content-based-on-a-condition) validates.
+
+```
+{if_condition_valid__<condition_identifier>}Printed when condition is valid{/if_condition_valid__<condition_identifier>}
+{if_condition_not_valid__<condition_identifier>}Printed when condition is not valid{/if_condition_not_valid__<condition_identifier>}
+```
+
+As visitor is not a chat yet, conditions are checked against online visitor - online visitor attributes and visitor department are available.
+
+E.g
+
+> `{if_condition_valid__vip_visitor}Hello VIP visitor!{/if_condition_valid__vip_visitor}`
+
 ## Operator profile before chat start
 
 #### Operator intro text
@@ -232,7 +245,7 @@ Your request was logged [b]bold[/b] [html]<i>Italic</i>[/html]
 
 ### Blocked visitor message
 
-This field also support replaceable variables.
+This field also support replaceable variables and [condition blocks](bot/conditions.md#printing-content-based-on-a-condition).
 
 * E.g department e-mail `{args.chat.department.email}`
 * Custom text from Translatable group items. `{blocked_email__Blocked email}`

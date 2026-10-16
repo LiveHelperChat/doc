@@ -43,7 +43,7 @@ One of the few possible scenarios can be
 * `custom_schedule` E.g `2,12:30-13:00;1,12:30-14:00` it will be valid on Monday and Tuesday within specific time ranges. You can use with `=` and `!=` comparable operators. E.g `custom_schedule = 1` (Schedule matches) or `custom_schedule != 1` (Schedule does not match). More examples:
 * `{text.rnumber_10_20}` use any replaceable variable from [text messages](bot/text.md)
 * `{text.args.chat.online_user_id}%10` modality of 10%. If you put eq to 1 till 10 it will mean 10 percent of the records should match.
-* `{condition.<defined condition identifier>} eq valid` checks does defined condition validates. You can use `not_valid` or just `not equal` comparison variable.
+* `{condition.<defined condition identifier>} eq valid` checks does defined condition validates. You can use `not_valid` or just `not equal` comparison variable. If you need to print something conditionally instead of comparing, see [Printing content based on a condition](bot/conditions.md#printing-content-based-on-a-condition)
 
 ```
 1-5,11:00-20:00 - Monday to Friday, 11:00 to 20:00
@@ -93,6 +93,43 @@ class erLhcoreClassExtensionValidateevent
 ## Value supported placeholders
 
 Value supports only `{args.` type placeholders. E.g `{args.msg.msg}` or `{args.chat.chat_variables_array.<variable>}`
+
+## Expose matching variables
+
+When you are using the `Check for conditions to proceed` response you can enable the `Expose matching variables` option.
+
+When enabled, details of the **latest matched condition** are stored and become available as `{bot_condition.*}` placeholders. You can use these placeholders in any message sent by the bot afterwards, so the reply can reference what exactly was matched without hardcoding the value in the message text.
+
+The following placeholders are available:
+
+| Placeholder | Description |
+| --- | --- |
+| `{bot_condition.variable}` | Matched condition attribute/variable without the curly braces. E.g `args.chat.nick`. |
+| `{bot_condition.variable_value}` | Resolved value of the condition variable. E.g the visitor message or attribute value. |
+| `{bot_condition.variable_value_partial}` | Partial value around the keyword that actually matched — up to 3 words before and 3 words after. For keyword lists such as `Friday,Thursday` or `edas && em`, the matched alternative (e.g. `Thursday`) is used as the anchor instead of the whole list. Falls back to the full value if no keyword can be located. |
+| `{bot_condition.variables_keyword}` | Keyword/value the variable was compared against. E.g `refund`. |
+| `{bot_condition.matched_keyword}` | Exact keyword from the pattern that actually matched. For keyword lists such as `Friday,Thursday` it returns the matched alternative (e.g. `Thursday`). Empty for `Text not like` (nothing should match) and for other comparators. |
+| `{bot_condition.comp}` | [Internal comparison operator](#internal-comparison-operators) that matched. E.g `eq`, `like`. |
+
+Notes:
+
+* Only the **latest** matched condition is exposed. If multiple conditions are checked, the last one that matched wins.
+* The option has to be enabled on the `Check for conditions to proceed` response for the values to be recorded.
+* Arrays and objects are converted to JSON, booleans become `1` (true) or an empty string (false).
+
+Example:
+
+Condition:
+
+> `{args.msg.msg}` `Text like` `Friday,Thursday`
+
+With `Expose matching variables` enabled and a visitor writing `I would like to schedule it for Thursday please`, a message like:
+
+> Matched `{bot_condition.variable}` with `{bot_condition.variables_keyword}` (matched `{bot_condition.matched_keyword}`, `{bot_condition.comp}`): ...{bot_condition.variable_value_partial}...
+
+renders as:
+
+> Matched `args.msg.msg` with `Friday,Thursday` (matched `Thursday`, `like`): ...schedule it for Thursday please...
 
 ## How do I check visitor message with internally stored chat variable?  
 

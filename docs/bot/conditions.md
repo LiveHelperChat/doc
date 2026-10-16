@@ -20,6 +20,31 @@ Conditions can also check other conditions during their evaluation. For example:
 
 ![](/img/bot/condition.png)
 
+## Printing content based on a condition
+
+Instead of just printing `valid` or `not_valid` you can wrap content and it will be printed only when condition validates. This way you can skip asking an operator to define anything and let the condition itself decide what visitor sees.
+
+```
+{if_condition_valid__<condition_identifier>}Printed when condition is valid{/if_condition_valid__<condition_identifier>}
+{if_condition_not_valid__<condition_identifier>}Printed when condition is not valid{/if_condition_not_valid__<condition_identifier>}
+```
+
+*   `<condition_identifier>` is the `Identifier` of the condition defined in the `Conditions` list.
+*   The closing tag has to repeat the same keyword and the same identifier.
+*   Both keywords are supported - `valid` and `not_valid`.
+*   Conditions are checked the same way as everywhere else, so all [supported placeholders](bot/check-conditions.md#attribute-supported-placeholders), chat variables and chat attributes can be used inside the condition itself.
+*   Content of the kept block is processed as usual, so replaceable variables and translations inside it still work. Blocks can also be nested.
+*   If more than one condition shares the same identifier, the content is printed when at least one of them validates.
+*   If no condition with the given identifier exists, content of a `valid` block is removed and content of a `not_valid` block is printed.
+
+E.g
+
+```
+{if_condition_valid__is_vip}Welcome back!{/if_condition_valid__is_vip}{if_condition_not_valid__is_vip}Hello!{/if_condition_not_valid__is_vip}
+```
+
+These blocks can be used in [text messages](bot/text.md#print-text-if-condition-is-valid), bot translations and widget theme text fields.
+
 ## Chat Attribute Extraction
 
 You can extract any chat attribute using this modal window:

@@ -126,6 +126,23 @@ This can be used anywhere and useful in case variable has to be not empty to be 
 * `{variable.location__not_empty__Use this if not empty}` E.g `{args.msg.from_name__not_empty__<b>}{args.msg.from_name}{args.msg.from_name__not_empty__</b> }<{args.msg.from_address}><br/>`
 * `{variable.location__is_empty__Use this if empty}` E.g `{args.msg.from_name__is_empty__From name is empty}`
 
+### Print text if condition is valid
+
+Instead of printing `valid` / `not_valid` you can wrap a part of the message and it will be sent only when the [condition](bot/conditions.md#printing-content-based-on-a-condition) validates.
+
+```
+{if_condition_valid__<condition_identifier>}Printed when condition is valid{/if_condition_valid__<condition_identifier>}
+{if_condition_not_valid__<condition_identifier>}Printed when condition is not valid{/if_condition_not_valid__<condition_identifier>}
+```
+
+E.g
+
+```
+{if_condition_valid__is_vip}Welcome back!{/if_condition_valid__is_vip}{if_condition_not_valid__is_vip}Hello!{/if_condition_not_valid__is_vip}
+```
+
+Everything inside a kept block is translated as usual, so replaceable variables, translations and other blocks can be used inside it. Also blocks can be nested.
+
 ### Foreach cycle
 
 You can foreach any chat variable. In this scenario we foreach `chat variable`
