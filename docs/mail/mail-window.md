@@ -61,3 +61,96 @@ To allow an operator to change the recipients while replying, they must have thi
 The operator also needs this permission:
 
 > 'lhmailconv','mail_see_unhidden_email'
+
+## Actions and their permissions
+
+To open the mail window at all an operator needs the `'lhmailconv','use_admin'` permission.
+
+Most actions are additionally limited by **write access** to the ticket - the operator is the ticket owner or a member of the ticket's department. Permissions below are required *in addition* to that.
+
+| Action | Permission |
+| --- | --- |
+| Close ticket | Write access only |
+| Change status (`New` / `Active` / `Closed`) | Write access only |
+| Interactions history | Read access. `Debug` tab requires `'lhchat','chatdebug'`, operator actions tab requires `'lhaudit','see_op_actions'` |
+| Transfer ticket → `Transfer to a user` / `Transfer to a department` | `'lhmailconv','allowtransfer'` |
+| Transfer ticket → `Change owner` | `'lhmailconv','changeowner'` |
+| Transfer ticket → `Change department` | `'lhmailconv','changedepartment'` |
+| Merge | Write access to the destination and all source tickets. `'lhmailconv','merge_cross_departments'` when they belong to different departments |
+| Print | No dedicated permission. Without `'lhmailconv','mail_see_unhidden_email'` e-mail addresses are masked in the printout |
+| Delete ticket | `'lhmailconv','delete_conversation'` |
+| Block sender | `'lhchat','allowblockusers'` (ticket owner can block without it) |
+| Change mailbox | `'lhmailconv','change_mailbox'` |
+| Reply, `Send as Closed`, `Send as Active` | Write access only |
+| `Send as New` | `'lhmailconv','send_as_new'` |
+| Change recipients | `'lhmailconv','manage_reply_recipients'` (and `'lhmailconv','mail_see_unhidden_email'`) |
+| Forward | `'lhmailconv','send_as_forward'` |
+| Download (eml) | `'lhmailconv','can_download'` |
+| Attach files | `'lhmailconv','allow_attach_files'` |
+| Download attachments | `'lhmailconv','download_unverified'`, `'lhmailconv','download_verified'`, `'lhmailconv','download_restricted'` |
+| Include images from the original e-mail | `'lhmailconv','include_images'` |
+| Add/Remove label | Write access only |
+| No reply required | Write access only |
+| Customer/Conversation remarks | Write access only |
+| Un-merge a merged message | `'lhmailconv','use_admin'` only |
+
+:::note
+Replying does **not** require `'lhmailconv','send_mail'`. That permission only gates the separate *new mail* form.
+:::
+
+### Close and status change
+
+The `Close` button and the status selector are shown only if the operator has write access to the ticket (and the ticket is not archived). Changing status is validated on the server as well - without write access the request is rejected.
+
+Closing tickets the operator does **not** own is possible only from the mail list bulk action and requires:
+
+> 'lhmailconv','close_all_conversation'
+
+### Transfer ticket
+
+The transfer modal has three tabs and each tab has its own permission:
+
+* `Transfer to a user` and `Transfer to a department` require `'lhmailconv','allowtransfer'`.
+* `Change owner` requires `'lhmailconv','changeowner'`.
+* `Change department` requires `'lhmailconv','changedepartment'`.
+
+If an operator has only one of these permissions, only the matching tab is displayed. The transfer itself is re-validated on the server.
+
+### Merge
+
+Merge requires read **and** write access to the destination ticket and to every source ticket. If the merged tickets belong to different departments, the operator also needs:
+
+> 'lhmailconv','merge_cross_departments'
+
+### Delete ticket
+
+The delete icon is displayed only when the operator has write access to the ticket and:
+
+> 'lhmailconv','delete_conversation'
+
+The same permission protects the delete API endpoint, so hiding the button is not the only protection.
+
+### Block sender
+
+Blocking the sender of the ticket is controlled by the chat permission:
+
+> 'lhchat','allowblockusers'
+
+The ticket owner can block the sender even without this permission. Already blocked tickets display `Sender is blocked!` next to the sender e-mail.
+
+### Print and interactions history
+
+Both the print link and the interactions history are available to every operator who can read the ticket; they have no dedicated permission. What an operator sees is limited instead:
+
+* Print - sender/recipient addresses are masked unless the operator has `'lhmailconv','mail_see_unhidden_email'`.
+* Interactions history - the `Debug` tab requires `'lhchat','chatdebug'` and the operator actions tab requires `'lhaudit','see_op_actions'`.
+
+## Opening pending tickets
+
+Opening a pending ticket that belongs to another operator or has no owner is limited by:
+
+> 'lhmailconv','open_all'
+
+> 'lhmailconv','open_unassigned_mail'
+
+Without `'lhmailconv','open_all'` an operator cannot open pending tickets assigned to someone else, and without `'lhmailconv','open_unassigned_mail'` they cannot open unassigned ones.
