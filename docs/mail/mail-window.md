@@ -79,7 +79,7 @@ Most actions are additionally limited by **write access** to the ticket - the op
 | Merge | Write access to the destination and all source tickets. `'lhmailconv','merge_cross_departments'` when they belong to different departments |
 | Print | No dedicated permission. Without `'lhmailconv','mail_see_unhidden_email'` e-mail addresses are masked in the printout |
 | Delete ticket | `'lhmailconv','delete_conversation'` |
-| Block sender | `'lhchat','allowblockusers'` (ticket owner can block without it) |
+| Block sender | `'lhmailconv','block_sender'` |
 | Change mailbox | `'lhmailconv','change_mailbox'` |
 | Reply, `Send as Closed`, `Send as Active` | Write access only |
 | `Send as New` | `'lhmailconv','send_as_new'` |
@@ -132,11 +132,13 @@ The same permission protects the delete API endpoint, so hiding the button is no
 
 ### Block sender
 
-Blocking the sender of the ticket is controlled by the chat permission:
+Blocking the sender of a ticket is controlled by its own mail permission - the chat blocking permission `'lhchat','allowblockusers'` is **not** used here:
 
-> 'lhchat','allowblockusers'
+> 'lhmailconv','block_sender'
 
-The ticket owner can block the sender even without this permission. Already blocked tickets display `Sender is blocked!` next to the sender e-mail.
+Without this permission an operator cannot block the sender, even if they are the ticket owner.
+
+The block link next to the sender e-mail is displayed when the operator has the permission above, **or** when the sender is already blocked - in that case the operator sees `Sender is blocked!` and can review who blocked the sender. Operators without the permission do not see the expiry/block form in the modal; the block action is re-validated on the server as well.
 
 ### Print and interactions history
 

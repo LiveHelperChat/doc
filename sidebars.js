@@ -34,6 +34,7 @@ module.exports = {
             'offline-online-automation',
             'auto-assignment',
             'users/password-requirements',
+            'users/passkey',
             'users/importing',
             'users/auto-login',
             'users/users-actions',

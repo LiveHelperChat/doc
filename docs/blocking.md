@@ -18,6 +18,10 @@ To block users, an operator must have the following permission:
 
 > 'lhchat','allowblockusers'
 
+:::note
+Blocking the sender of a **mail conversation** uses a separate permission - `'lhmailconv','block_sender'`. See [Mail window](/mail/mail-window#block-sender).
+:::
+
 ## Block Users Based on Their Location
 
 You can block users based on their country. This feature is located at:
