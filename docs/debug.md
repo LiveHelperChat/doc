@@ -14,6 +14,35 @@ To see which templates are used during page rendering, enable debug output in th
 'debug_output' => true,
 ```
 
+## Enabling Error Logging (`log_errors`)
+
+By default, an exception that ends with the "fatal error" page is only sent to the PHP error log and stored in `lh_audits`. To also write it to `cache/default.log`, enable `log_errors` in the `settings/settings.ini.php` file:
+
+```php
+'site' => array (
+    // ...
+    'debug_output' => false,
+    'log_errors' => true,
+),
+```
+
+The default value is `false`.
+
+What it does:
+
+* Applies to uncaught exceptions handled by the web entry point (`index.php`), by the module runner (`erLhcoreClassModule::runModule()`) and by the last-resort handler (`erLhcoreClassModule::defaultExceptionHandler()`).
+* Writes the full exception dump (`print_r($e, true)` — message, file, line and stack trace) with `WARNING` severity through `erLhcoreClassLog::write()` into `cache/default.log`.
+* The file is rotated automatically at about 200 KB, keeping up to 5 backups (`cache/default.log.1` … `cache/default.log.5`). The owner of a newly created file can be set with the `default_user` and `default_group` settings.
+* It is independent from the database audit log: `lh_audits` records (including those created by `erLhcoreClassModule::logException()`) are written regardless of this option.
+* `cron.php` always logs failures to `cache/default.log` — this option only controls the web request handlers.
+* It does not show anything to the visitor. Use [`debug_output`](#enabling-debug-output) to see the exception in the browser.
+
+Notes:
+
+* `debug_output` takes precedence: when it is enabled, the exception is printed and the request exits, so nothing is written to `cache/default.log`. Disable it to collect log entries.
+* PHP fatal errors that are not exceptions (memory exhaustion, `max_execution_time`, parse errors) are not handled by these handlers and will not appear in this log.
+* Make sure `cache/` is writable by the web server and that `cache/default.log` is not reachable over HTTP — log entries may contain request data and stack traces. `System configuration` contains a security check for this.
+
 ## Disabling Cache
 
 To see all used templates, you must also disable the cache.
@@ -108,7 +137,7 @@ After doing that, a new window will open in Chrome. Just delete `"view-source:"`
 
 * [Disable cache](#disabling-cache)
 * Enable [debug output](#enabling-debug-output)
-* Check `cache/default.log` for an error message.
+* Enable [`log_errors`](#enabling-error-logging-log_errors) and check `cache/default.log` for an error message.
 * Check the Chrome console for an error (`CTRL+SHIFT+J`).
 * Read [My widget does not load](install.md#my-widget-does-not-load)
 * See the [Audit Logs](audit/audit.md) section for an error.
