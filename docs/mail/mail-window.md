@@ -95,7 +95,7 @@ Most actions are additionally limited by **write access** to the ticket - the op
 | Un-merge a merged message | `'lhmailconv','use_admin'` only |
 
 :::note
-Replying does **not** require `'lhmailconv','send_mail'`. That permission only gates the separate *new mail* form.
+Replying does **not** require `'lhmailconv','send_mail'`. That permission gates the separate [new mail form](send-mail.md), where adding custom `Cc` / `Bcc` recipients additionally requires `'lhmailconv','send_mail_bcc_cc'`.
 :::
 
 ### Close and status change

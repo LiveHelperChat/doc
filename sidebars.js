@@ -90,6 +90,7 @@ module.exports = {
             'mail/close-from-chat',
             'mail/list',
             'mail/mail-window',
+            'mail/send-mail',
             'mail/lifespan',
             'mail/mail-auto-responder',
             'mail/sample-mailbox'
