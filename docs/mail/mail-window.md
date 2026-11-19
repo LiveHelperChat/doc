@@ -89,6 +89,7 @@ Most actions are additionally limited by **write access** to the ticket - the op
 | Attach files | `'lhmailconv','allow_attach_files'` |
 | Download attachments | `'lhmailconv','download_unverified'`, `'lhmailconv','download_verified'`, `'lhmailconv','download_restricted'` |
 | Include images from the original e-mail | `'lhmailconv','include_images'` |
+| View unmasked sensitive information in messages | `'lhmailconv','see_sensitive_information'` when guardrails are enabled |
 | Add/Remove label | Write access only |
 | No reply required | Write access only |
 | Customer/Conversation remarks | Write access only |
@@ -97,6 +98,16 @@ Most actions are additionally limited by **write access** to the ticket - the op
 :::note
 Replying does **not** require `'lhmailconv','send_mail'`. That permission gates the separate [new mail form](send-mail.md), where adding custom `Cc` / `Bcc` recipients additionally requires `'lhmailconv','send_mail_bcc_cc'`.
 :::
+
+### Sensitive information
+
+When guardrails are enabled, operators need this permission to see sensitive information without masking in mail subjects and message bodies:
+
+> 'lhmailconv','see_sensitive_information'
+
+Without it, applicable message content protection rules mask matching content in the mail window and message bodies in printouts. The rules depend on the message type and department; if no applicable rule is configured, no masking is applied. This permission is separate from `'lhmailconv','mail_see_unhidden_email'`, which controls the display of email addresses in sender and recipient fields.
+
+Although the permission description mentions sending, it does not bypass outgoing message content checks. When guardrails are enabled, replies and new emails matching an applicable outgoing email protection rule can be rejected even if the operator has this permission.
 
 ### Close and status change
 
@@ -144,7 +155,7 @@ The block link next to the sender e-mail is displayed when the operator has the 
 
 Both the print link and the interactions history are available to every operator who can read the ticket; they have no dedicated permission. What an operator sees is limited instead:
 
-* Print - sender/recipient addresses are masked unless the operator has `'lhmailconv','mail_see_unhidden_email'`.
+* Print - sender/recipient addresses are masked unless the operator has `'lhmailconv','mail_see_unhidden_email'`. Message bodies may also be masked by guardrails without `'lhmailconv','see_sensitive_information'`.
 * Interactions history - the `Debug` tab requires `'lhchat','chatdebug'` and the operator actions tab requires `'lhaudit','see_op_actions'`.
 
 ## Opening pending tickets
