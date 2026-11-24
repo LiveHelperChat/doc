@@ -385,6 +385,15 @@ OR
    * We will use mail module if that option is activated in `Mail general options` in mail module. 
    * If above that option is not activated, we will use the default send mail a modal window.
 
+### Escalate by e-mail
+
+Shows an `Escalate by e-mail` link in the right column of the chat window. Clicking it opens a popup window to compose and send an e-mail based on the current chat. Unlike sending an e-mail to the visitor, the recipient e-mail address is not pre-filled with the visitor's address, allowing the operator to enter any recipient e-mail address (even without the `'lhchat','chat_see_unhidden_email'` permission).
+
+Required permission
+
+> 'lhmailconv','email_escalation'
+> 'lhmailconv','send_mail'
+
 ### Changing chat status
 
 Chat status is shown in
