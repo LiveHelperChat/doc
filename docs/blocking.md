@@ -102,6 +102,83 @@ Separate multiple values with commas (e.g., `1.2.3.*,128.8.8.8`).
 
 ## IP Detection Issues
 
-If Live Helper Chat fails to detect IP addresses correctly, especially when running behind a load balancer or proxy server, change the `proxy_mode` setting in `settings.ini.php` to `true`.
+If Live Helper Chat fails to detect visitor IP addresses correctly—especially when running behind a reverse proxy, load balancer, or CDN—configure the proxy settings under `'site'` in `settings/settings.ini.php`:
 
-[https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L18](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L18)
+```php
+'proxy_mode' => true,
+'trusted_proxies' => [],
+'proxy_header' => 'HTTP_X_FORWARDED_FOR',
+```
+
+[https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L22-L24](https://github.com/LiveHelperChat/livehelperchat/blob/master/lhc_web/settings/settings.ini.default.php#L22-L24)
+
+### How Proxy IP Detection Works
+
+To prevent clients from spoofing their IP address via forged HTTP headers:
+
+*   **`proxy_mode`** (default: `false`): When `false`, all forwarded headers are ignored and `$_SERVER['REMOTE_ADDR']` is always used.
+*   **`trusted_proxies`** (default: `[]`): List of proxy IPs or subnets that Live Helper Chat is allowed to trust. Forwarded headers are only read if `$_SERVER['REMOTE_ADDR']` matches this list.
+    *   Supported formats: exact IPv4/IPv6 (`127.0.0.1`, `::1`), IPv4/IPv6 CIDR (`10.0.0.0/8`, `172.64.0.0/13`, `2400:cb00::/32`), and IPv4 wildcards/ranges (`10.0.*.*`, `10.0.0.1-10.0.0.255`).
+    *   If `trusted_proxies` is left empty while `proxy_mode` is `true`, only private/loopback `REMOTE_ADDR` addresses (`127.0.0.1`, `::1`, `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) are treated as trusted proxies. Direct requests from public IPs cannot spoof forwarded headers.
+*   **`proxy_header`** (default: `'HTTP_X_FORWARDED_FOR'`): The `$_SERVER` header key used to resolve the client IP (e.g., `'HTTP_X_FORWARDED_FOR'`, `'HTTP_CF_CONNECTING_IP'`, `'HTTP_X_REAL_IP'`).
+    *   When using `HTTP_X_FORWARDED_FOR`, Live Helper Chat reads the list **from right to left**, skips any IP that matches `trusted_proxies`, and returns the first valid untrusted IP. Any spoofed IP prepended by the client on the left is ignored.
+    *   `HTTP_CF_CONNECTING_IP` is **not** trusted unless explicitly configured via `proxy_header`, preventing attackers from spoofing `CF-Connecting-IP` through non-Cloudflare proxies.
+
+### Configuration Examples
+
+#### Behind a local reverse proxy (Nginx / Docker / Load Balancer)
+
+```php
+'proxy_mode' => true,
+'trusted_proxies' => [
+    '127.0.0.1',
+    '10.0.0.0/8',
+],
+'proxy_header' => 'HTTP_X_FORWARDED_FOR',
+```
+
+#### Behind Cloudflare (and/or Cloudflare → local proxy)
+
+When traffic passes through Cloudflare and then a local proxy, `X-Forwarded-For` typically contains both the visitor IP and Cloudflare's public edge IP (for example, `78.60.231.0, 172.64.200.181`). Without Cloudflare's ranges in `trusted_proxies`, Live Helper Chat will stop at Cloudflare's edge IP (`172.64.200.181`) because it is a public IP.
+
+Add your local proxy and [Cloudflare's published IP ranges](https://www.cloudflare.com/ips/) to `trusted_proxies`:
+
+```php
+'proxy_mode' => true,
+'trusted_proxies' => [
+    '127.0.0.1',
+    '10.0.0.0/8',
+    '173.245.48.0/20',
+    '103.21.244.0/22',
+    '103.22.200.0/22',
+    '103.31.4.0/22',
+    '141.101.64.0/18',
+    '108.162.192.0/18',
+    '190.93.240.0/20',
+    '188.114.96.0/20',
+    '197.234.240.0/22',
+    '198.41.128.0/17',
+    '162.158.0.0/15',
+    '104.16.0.0/13',
+    '104.24.0.0/14',
+    '172.64.0.0/13',
+    '131.0.72.0/22',
+    // Plus Cloudflare IPv6 CIDRs if applicable (e.g. '2400:cb00::/32', ...)
+],
+'proxy_header' => 'HTTP_X_FORWARDED_FOR',
+```
+
+Alternatively, if all traffic is strictly routed through Cloudflare (origin is not directly reachable from the public internet), you can read Cloudflare's header directly:
+
+```php
+'proxy_mode' => true,
+'trusted_proxies' => [
+    // Your local proxy IP(s) and/or Cloudflare's IP ranges
+    '127.0.0.1',
+],
+'proxy_header' => 'HTTP_CF_CONNECTING_IP',
+```
+
+:::warning
+Only set `'proxy_header' => 'HTTP_CF_CONNECTING_IP'` if your origin server or upstream proxy blocks direct non-Cloudflare traffic; otherwise, a client bypassing Cloudflare could spoof the `CF-Connecting-IP` header.
+:::
