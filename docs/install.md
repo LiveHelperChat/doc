@@ -138,7 +138,7 @@ Click the settings icon ​![](/img/install/settings.png) in the top menu. This 
 
 Navigate to:
 
-> Embed code -> Widget embed code (new)
+> Live help configuration -> Chat -> Embed code
 
 You will then see a window like this:
 

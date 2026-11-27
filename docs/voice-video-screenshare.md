@@ -18,7 +18,7 @@ Voice, Video, and Screen Sharing only work with the new widget. The old widget i
 
 Navigate to:
 
-> System configuration -> Live help configuration -> Voice & Video & ScreenShare (Configuration)
+> System configuration -> Live help configuration -> Voice & Video & ScreenShare -> Agora Calls
 
 Adjust the features you want to enable:
 

@@ -27,7 +27,7 @@ On fresh installations, `lhjitsi -> use` is granted to operators by default. If 
 
 ### 2. Configuring Jitsi in Live Helper Chat
 
-Navigate to **System Configuration -> Chat -> Jitsi Calls -> Configuration** (or `/jitsi/configuration`).
+Navigate to **System Configuration -> Live help configuration -> Voice & Video & ScreenShare -> Jitsi Calls** (or `/jitsi/configuration`).
 
 #### General
 

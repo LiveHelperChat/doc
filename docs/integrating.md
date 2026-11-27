@@ -8,11 +8,11 @@ sidebar_label: Integration
 
 Integrating Live Helper Chat into your website is straightforward. Navigate to:
 
-> System configuration -> Embed code -> Live help embed code
+> System configuration -> Live help configuration -> Chat
 
 You can test the widget on our [demo page](https://livehelperchat.com/demo-12c.html).
 
-Choose `Widget embed code`.
+Choose `Embed code`.
 
 ![Embed code](/img/integration/embed-code-v2.png)
 
